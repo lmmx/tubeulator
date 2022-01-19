@@ -1,0 +1,15 @@
+*.swp
+*.swo
+.tox
+.coverage
+.coverage.*
+build
+dist
+*.pyc
+_build
+*.egg-info
+.eggs
+.cache
+.pytest_cache/
+
+version.py
