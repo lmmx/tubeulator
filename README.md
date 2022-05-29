@@ -12,6 +12,7 @@ TfL open data interface library
 ## Requires
 
 - Python 3.9+
+- MongoDB
 
 ## Installation
 
