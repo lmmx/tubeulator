@@ -3,13 +3,11 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
-#from .tfl_utils import BookMetadata, get_isbn_metadata
-from .log_utils import Console
-#from .path_utils import data_path
+from .utils.logging import set_up_logging
 
 __all__ = ["Journey", "Place", "Destination", "Departure"]
 
-logger = Console(name=__name__).logger
+logger = set_up_logging(name=__name__)
 
 @dataclass
 class Journey:

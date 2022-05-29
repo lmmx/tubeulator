@@ -90,6 +90,11 @@ if __name__ == "__main__":
             "local_scheme": local_scheme,
         },
         setup_requires=["setuptools_scm"],
+        entry_points={
+            "console_scripts": [
+                "tubeulator= tubeulator.cli:main",
+            ],
+        },
         install_requires=INSTALL_REQUIRES,
         extras_require=EXTRAS_REQUIRE,
         python_requires=PYTHON_REQUIRES,

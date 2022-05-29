@@ -49,3 +49,22 @@ Possible features to customise the `Journey`:
 - `via` (routes, locations)
 - `avoid` (e.g. busy areas, or a particular interconnection)
 - `prefer` (fastest, least walking)
+
+## Storage
+
+A good option for storage would be to use MongoDB
+([PyMongo](https://pymongo.readthedocs.io/en/stable/tutorial.html))
+as done in [this project](https://github.com/milh0use/tfl/blob/master/monitor_buses.py).
+This would require the user to set up and run a MongoDB client with `mongod`,
+then the program would connect to it on localhost.
+
+For simplicity during development, I store the data in the package repo itself,
+rather than the default `/data/db` at the root of my file system.
+
+```
+mkdir -p data/db
+mongod --dbpath data/db
+```
+
+Data is stored in JSON-style documents (represented as dictionaries in PyMongo),
+converted from Python types to BSON types under the hood.
