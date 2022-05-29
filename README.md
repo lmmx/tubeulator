@@ -58,8 +58,13 @@ as done in [this project](https://github.com/milh0use/tfl/blob/master/monitor_bu
 This would require the user to set up and run a MongoDB client with `mongod`,
 then the program would connect to it on localhost.
 
-For simplicity during development, I store the data in the package repo itself,
+For simplicity, I store the data in the package itself (under `src/tubeulator` in this repo,
+which would be retained when distributed as an installed package in `site-packages`),
 rather than the default `/data/db` at the root of my file system.
+
+The program will not create this directory within its package directory if there is already an
+instance of MongoDB running (`mongod`) to connect to. To supply a different database path, run
+the following and substitute your path of choice:
 
 ```
 mkdir -p data/db
