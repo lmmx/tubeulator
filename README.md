@@ -74,3 +74,61 @@ mongod --dbpath data/db
 
 Data is stored in JSON-style documents (represented as dictionaries in PyMongo),
 converted from Python types to BSON types under the hood.
+
+## Data collection approach
+
+The available network is a configuration, liable to change (stations may open/close temporarily/permanently).
+
+However the network is also fairly static: it can be expected to remain fixed in the short-term.
+
+This situation motivates an incremental method of collection that builds from dynamically downloaded
+components (rather than hard-coding aspects liable to change),
+and can therefore be regenerated in response to change.
+
+Most of these can be found by looking for `Meta` API names in
+[the main Swagger doc](https://api.tfl.gov.uk/swagger/docs/v1). For `Line` these are `Modes`,
+`Severity`, `DisruptionCategories` and `ServiceTypes`. For `StopPoint` these are `Categories`,
+`StopTypes` and `Modes`.
+
+- Enumerate valid modes
+  ([`Line/Meta/Modes`](https://api-portal.tfl.gov.uk/api-details#api=Line&operation=Line_MetaModes) or equivalently `StopPoint/Meta/Modes`)
+  - For a 'tube' network I would include `tube`, `elizabeth-line`, `dlr`, `overground`, `tflrail`, `national-rail`, and at a push `bus`
+    and `replacement-bus`.
+  - For representing interchange I might include: `walking`, `interchange-keep-sitting`, and `interchange-secure`.
+  - I would not include: taxis, river boats, trams, bikes, coaches, cable cars.
+
+- Enumerate lines that serve the selected modes
+  ([`Line/Mode/{modes}`](https://api-portal.tfl.gov.uk/api-details#api=Line&operation=Line_GetByModeByPathModes))
+  - For example:
+    - The `elizabeth-line` mode has a single `Line` entity, id = "elizabeth", name = "Elizabeth line".
+    - The `dlr` mode has a single `Line` entity, id = "dlr", name = "DLR"
+    - The `tube` mode has 11 `Line` entities, the first has id "bakerloo" and name "Bakerloo" (etc).
+      Some tube lines have both "Regular" and "Night" `serviceTypes`.
+
+- Enumerate the types of `StopPoint` that are applicable to the selected modes
+  ([`StopPoint/Meta/StopTypes`](https://api-portal.tfl.gov.uk/api-details#api=StopPoint&operation=StopPoint_MetaStopTypes))
+  - For a 'tube' network I would include "NaptanMetroAccessArea", "NaptanMetroEntrance", "NaptanMetroPlatform",
+    "NaptanMetroStation", "NaptanRailAccessArea", "NaptanRailEntrance", "NaptanRailPlatform", "NaptanRailStation",
+    "TransportInterchange", "NaptanFlexibleZone", "NaptanUnmarkedPoint".
+    - Unfortunately `NaptanMetroStation` describes both tube stations and cable car 'stations' (at Greenwich),
+      as seen when obtaining all stop points of a given type
+  - At a push I would include "NaptanBusCoachStation", "NaptanBusWayPoint", "NaptanMarkedPoint",
+    "NaptanOnstreetBusCoachStopCluster", "NaptanOnstreetBusCoachStopPair", "NaptanPrivateBusCoachTram", "NaptanPublicBusCoachTram".
+  - I would exclude "CarPickupSetDownArea", "NaptanAirAccessArea", "NaptanAirEntrance", "NaptanAirportBuilding",
+    "NaptanCoachAccessArea", "NaptanCoachBay", "NaptanCoachEntrance", "NaptanCoachServiceCoverage",
+    "NaptanCoachVariableBay", "NaptanFerryAccessArea", "NaptanFerryBerth", "NaptanFerryEntrance",
+    "NaptanFerryPort", "NaptanHailAndRideSection", "NaptanLiftCableCarAccessArea",
+    "NaptanLiftCableCarEntrance", "NaptanLiftCableCarStop", "NaptanLiftCableCarStopArea",
+    "NaptanSharedTaxi", "NaptanTaxiRank"
+
+- List the stations for the given line IDs
+  ([`Line/{id}/StopPoints[?tflOperatedNationalRailStationsOnly]`](https://api-portal.tfl.gov.uk/api-details#api=Line&operation=Line_StopPointsByPathIdQueryTflOperatedNationalRailStationsOnly))
+  - Each entry returned (alphabetically) has
+    - a `commonName` (readable title)
+    - `lat` and `lon` floating points
+    - `modes` e.g. `['bus', 'tube']`
+    - `lines`
+    - `children` list with the same `commonName` but distinct `naptanId` (presumably these are for each platform/direction.
+  - Note that the child nodes do not have populated `modes` (`[]`), `lat` or `lon` (`0.0`).
+
+(TBC)

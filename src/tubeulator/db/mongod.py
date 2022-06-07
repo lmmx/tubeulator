@@ -1,12 +1,13 @@
 from __future__ import annotations
 
+from contextlib import AbstractContextManager
 from dataclasses import dataclass
 import subprocess
 
 from ..utils.logging import set_up_logging
 from ..utils.paths import db_path
 
-__all__ = ["start_mongod", "MongodProcess", "get_mongod_process"]
+__all__ = ["start_mongod", "MongodProcess", "get_mongod_process", "MongodExceptionGuard"]
 
 logger = set_up_logging(__name__)
 
@@ -44,3 +45,24 @@ def get_mongod_process() -> MongodProcess:
         proc.check_returncode()
     pid = proc.stdout.decode().splitlines()[0]
     return MongodProcess(pid=pid, fresh=nonexisting)
+
+
+# Idea via https://stackoverflow.com/a/60367619/
+class MongodExceptionGuard(AbstractContextManager):
+    def __init__(self, mongod_proc = get_mongod_process()):
+        """
+        Set up the Mongod daemon if a process is not found.
+        """
+        self.mongod_proc = mongod_proc
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        """
+        If the Mongod daemon was started 'fresh' upon initialisation, kill the process
+        upon exitting the context manager (before raising any errors if present).
+        """
+        if exc_type:
+            logger.error(f"{exc_type}, {exc_value}, {traceback}")
+            self.mongod_proc.clean_up()
+            raise
+        else:
+            self.mongod_proc.clean_up()
