@@ -127,7 +127,10 @@ Most of these can be found by looking for `Meta` API names in
     - a `commonName` (readable title)
     - `lat` and `lon` floating points
     - `modes` e.g. `['bus', 'tube']`
-    - `lines`
+    - `lines`, a list of dicts of each line, for all modes, with an `id` (e.g. `district`), proper `name` (e.g. `District`),
+      `uri` (which seems to just be `/Line/{id}`. The mode is not indicated for each line.
+    - `lineGroup` is again a list of dicts, whose purpose seems to be to indicate the side of the road for a bus, for each line
+    - `lineModeGroups` is again a list of dicts, which indicates the mode for each line (grouped by mode).
     - `children` list with the same `commonName` but distinct `naptanId` (presumably these are for each platform/direction.
   - Note that the child nodes do not have populated `modes` (`[]`), `lat` or `lon` (`0.0`).
 
