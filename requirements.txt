@@ -1,2 +1,3 @@
 dataclass_wizard
+defopt
 pymongo
