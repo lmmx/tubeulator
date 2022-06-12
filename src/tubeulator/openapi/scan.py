@@ -5,6 +5,7 @@ from ..utils.paths import openapi_schemas_path, unified_api_schema, find_schema
 
 import ujson
 from pathlib import Path
+from pprint import pprint
 
 __all__ = ["api_schema_inventory", "scan_namespace"]
 
@@ -42,6 +43,7 @@ def api_schema_inventory(api_schema: Path) -> ApiInventory:
     # TODO: make a class to help identify which aliases are in each schema,
     #       which would then be easier to indicate those 'completable' by substitutions
     # Second pass, resolve the referential matches
+    any_referential_properties = False
     for api_entity, api_schema_component in api_entity_schemas.items():
         if (asc_properties := api_schema_component.get("properties")):
             referential_properties = {
@@ -50,7 +52,13 @@ def api_schema_inventory(api_schema: Path) -> ApiInventory:
                 if "$ref" in asc_property_type_info
             }
             if referential_properties:
-                breakpoint()
+                print(f"{api_schema.stem}: {api_entity}")
+                pprint(referential_properties)
+                any_referential_properties = True # toggle flag for follow-up
+    # Print the API inventory and a newline if any referential properties printed
+    if any_referential_properties:
+        pprint({k: v for k,v in alias2entity.items() if "Response" not in k})
+        print()
     # {
     #     api_entity: unified_api_entity
     #     for api_entity in api_schema

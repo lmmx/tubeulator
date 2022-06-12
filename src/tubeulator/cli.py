@@ -21,7 +21,7 @@ def namespace():
     Make a namespace inventory
     """
     ns = scan_namespace()
-    pprint(ns)
+    # pprint(ns)
 
 def main():
     defopt.run({
