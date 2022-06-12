@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "stationIntervals": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.StationInterval.json"
+      }
+    },
+    "schedules": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.Schedule.json"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

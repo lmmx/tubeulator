@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "operator": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "statusLevel": {
+      "type": "integer",
+      "format": "int32"
+    }
+  },
+  "description": "Represent travel network status",
+  "$schema": "http://json-schema.org/schema#"
+}

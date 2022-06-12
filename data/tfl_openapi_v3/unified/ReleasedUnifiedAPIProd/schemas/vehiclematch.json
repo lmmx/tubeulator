@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "vrm": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "make": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "colour": {
+      "type": "string"
+    },
+    "compliance": {
+      "enum": [
+        "NotAvailable",
+        "NotCompliant",
+        "Compliant",
+        "Exempt"
+      ],
+      "type": "string"
+    }
+  },
+  "description": "",
+  "$schema": "http://json-schema.org/schema#"
+}

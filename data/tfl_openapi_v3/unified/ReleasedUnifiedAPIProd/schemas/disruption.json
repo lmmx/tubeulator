@@ -1,0 +1,68 @@
+{
+  "type": "object",
+  "properties": {
+    "category": {
+      "enum": [
+        "Undefined",
+        "RealTime",
+        "PlannedWork",
+        "Information",
+        "Event",
+        "Crowding",
+        "StatusAlert"
+      ],
+      "type": "string",
+      "description": "Gets or sets the category of this dispruption."
+    },
+    "type": {
+      "type": "string",
+      "description": "Gets or sets the disruption type of this dispruption."
+    },
+    "categoryDescription": {
+      "type": "string",
+      "description": "Gets or sets the description of the category."
+    },
+    "description": {
+      "type": "string",
+      "description": "Gets or sets the description of this disruption."
+    },
+    "summary": {
+      "type": "string",
+      "description": "Gets or sets the summary of this disruption."
+    },
+    "additionalInfo": {
+      "type": "string",
+      "description": "Gets or sets the additionaInfo of this disruption."
+    },
+    "created": {
+      "type": "string",
+      "description": "Gets or sets the date/time when this disruption was created.",
+      "format": "date-time"
+    },
+    "lastUpdate": {
+      "type": "string",
+      "description": "Gets or sets the date/time when this disruption was last updated.",
+      "format": "date-time"
+    },
+    "affectedRoutes": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.RouteSection.json"
+      },
+      "description": "Gets or sets the routes affected by this disruption"
+    },
+    "affectedStops": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.StopPoint.json"
+      },
+      "description": "Gets or sets the stops affected by this disruption"
+    },
+    "closureText": {
+      "type": "string",
+      "description": "Text describing the closure type"
+    }
+  },
+  "description": "Represents a disruption to a route within the transport network.",
+  "$schema": "http://json-schema.org/schema#"
+}

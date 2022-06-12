@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "types": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "The type of the place e.g. \"street_address\""
+    },
+    "address": {
+      "type": "string",
+      "description": "A string describing the formatted address of the place. Adds additional context to the place's Name."
+    },
+    "id": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "lat": {
+      "type": "number",
+      "format": "double"
+    },
+    "lon": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The Id of the route"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name such as \"72\""
+    },
+    "directions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lineIdentifier": {
+      "$ref": "Tfl.Api.Presentation.Entities.Identifier.json"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

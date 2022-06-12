@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "viewableDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "isFuture": {
+      "type": "boolean"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

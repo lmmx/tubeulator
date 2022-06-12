@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "knownJourneys": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.KnownJourney.json"
+      }
+    },
+    "firstJourney": {
+      "$ref": "Tfl.Api.Presentation.Entities.KnownJourney.json"
+    },
+    "lastJourney": {
+      "$ref": "Tfl.Api.Presentation.Entities.KnownJourney.json"
+    },
+    "periods": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.Period.json"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

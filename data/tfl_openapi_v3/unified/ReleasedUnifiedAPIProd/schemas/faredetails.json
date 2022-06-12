@@ -1,0 +1,82 @@
+{
+  "type": "object",
+  "properties": {
+    "boundsId": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "passengerType": {
+      "type": "string"
+    },
+    "contactlessPAYGOnlyFare": {
+      "type": "boolean"
+    },
+    "from": {
+      "type": "string"
+    },
+    "to": {
+      "type": "string"
+    },
+    "fromStation": {
+      "type": "string"
+    },
+    "toStation": {
+      "type": "string"
+    },
+    "via": {
+      "type": "string"
+    },
+    "routeCode": {
+      "type": "string"
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "displayOrder": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "routeDescription": {
+      "type": "string"
+    },
+    "validatorInformation": {
+      "type": "string"
+    },
+    "operator": {
+      "type": "string"
+    },
+    "specialFare": {
+      "type": "boolean"
+    },
+    "throughFare": {
+      "type": "boolean"
+    },
+    "isTour": {
+      "type": "boolean"
+    },
+    "ticketsAvailable": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.Fares.Ticket.json"
+      }
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.Message.json"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "summary": {
+      "type": "string"
+    },
+    "detailed": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.InstructionStep.json"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

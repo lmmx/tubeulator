@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "passengerFlows": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.PassengerFlow.json"
+      },
+      "description": "Busiest times at a station (static information)"
+    },
+    "trainLoadings": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.TrainLoading.json"
+      },
+      "description": "Train Loading on a scale 1-6, 1 being \"Very quiet\" and 6 being \"Exceptionally busy\" (static information)"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

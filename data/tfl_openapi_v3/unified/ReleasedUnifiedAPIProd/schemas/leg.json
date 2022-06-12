@@ -1,0 +1,72 @@
+{
+  "type": "object",
+  "properties": {
+    "duration": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "speed": {
+      "type": "string"
+    },
+    "instruction": {
+      "$ref": "Tfl.Api.Presentation.Entities.Instruction.json"
+    },
+    "obstacles": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.Obstacle.json"
+      }
+    },
+    "departureTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "arrivalTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "departurePoint": {
+      "$ref": "Tfl.Api.Presentation.Entities.Point.json"
+    },
+    "arrivalPoint": {
+      "$ref": "Tfl.Api.Presentation.Entities.Point.json"
+    },
+    "path": {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.Path.json"
+    },
+    "routeOptions": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.RouteOption.json"
+      }
+    },
+    "mode": {
+      "$ref": "Tfl.Api.Presentation.Entities.Identifier.json"
+    },
+    "disruptions": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.Disruption.json"
+      }
+    },
+    "plannedWorks": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.PlannedWork.json"
+      }
+    },
+    "distance": {
+      "type": "number",
+      "format": "double"
+    },
+    "isDisrupted": {
+      "type": "boolean",
+      "readOnly": true
+    },
+    "hasFixedLocations": {
+      "type": "boolean",
+      "readOnly": true
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

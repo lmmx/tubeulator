@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The Id"
+    },
+    "label": {
+      "type": "string",
+      "description": "The long label to show on maps when zoomed in"
+    },
+    "labelShort": {
+      "type": "string",
+      "description": "The short label to show on maps"
+    },
+    "geography": {
+      "$ref": "System.Data.Spatial.DbGeography.json"
+    },
+    "segmented": {
+      "type": "boolean",
+      "description": "True if the route is split into segments"
+    },
+    "modified": {
+      "type": "string",
+      "description": "When the data was last updated",
+      "format": "date-time"
+    },
+    "status": {
+      "enum": [
+        "Unknown",
+        "All",
+        "Open",
+        "In Progress",
+        "Planned",
+        "Planned - Subject to feasibility and consultation.",
+        "Not Open"
+      ],
+      "type": "string",
+      "description": "Cycle route status i.e Proposed, Existing etc"
+    },
+    "routeType": {
+      "enum": [
+        "Unknown",
+        "All",
+        "Cycle Superhighways",
+        "Quietways",
+        "Cycleways",
+        "Mini-Hollands",
+        "Central London Grid"
+      ],
+      "type": "string",
+      "description": "Type of cycle route e.g CycleSuperhighways, Quietways, MiniHollands etc"
+    }
+  },
+  "description": "",
+  "$schema": "http://json-schema.org/schema#"
+}

@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "journeys": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.Journey.json"
+      }
+    },
+    "lines": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.Line.json"
+      }
+    },
+    "cycleHireDockingStationData": {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.JourneyPlannerCycleHireDockingStationData.json"
+    },
+    "stopMessages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recommendedMaxAgeMinutes": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "searchCriteria": {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.SearchCriteria.json"
+    },
+    "journeyVector": {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.JourneyVector.json"
+    }
+  },
+  "description": "A DTO representing a list of possible journeys.",
+  "$schema": "http://json-schema.org/schema#"
+}

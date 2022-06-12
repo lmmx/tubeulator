@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "category": {
+      "type": "string"
+    },
+    "key": {
+      "type": "string"
+    },
+    "sourceSystemKey": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    },
+    "modified": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

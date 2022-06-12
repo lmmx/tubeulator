@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "lineId": {
+      "type": "string"
+    },
+    "lineName": {
+      "type": "string"
+    },
+    "direction": {
+      "type": "string"
+    },
+    "pdfUrl": {
+      "type": "string"
+    },
+    "stations": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.MatchedStop.json"
+      }
+    },
+    "stops": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.MatchedStop.json"
+      }
+    },
+    "timetable": {
+      "$ref": "Tfl.Api.Presentation.Entities.Timetable.json"
+    },
+    "disambiguation": {
+      "$ref": "Tfl.Api.Presentation.Entities.Timetables.Disambiguation.json"
+    },
+    "statusErrorMessage": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

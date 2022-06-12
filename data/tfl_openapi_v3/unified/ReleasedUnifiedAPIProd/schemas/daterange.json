@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "startDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

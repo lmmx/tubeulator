@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "countdownServerAdjustment": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "insert": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "read": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sent": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "received": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

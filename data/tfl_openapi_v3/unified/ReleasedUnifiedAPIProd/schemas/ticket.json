@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "passengerType": {
+      "type": "string"
+    },
+    "ticketType": {
+      "$ref": "Tfl.Api.Presentation.Entities.Fares.TicketType.json"
+    },
+    "ticketTime": {
+      "$ref": "Tfl.Api.Presentation.Entities.Fares.TicketTime.json"
+    },
+    "cost": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "displayOrder": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.Message.json"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

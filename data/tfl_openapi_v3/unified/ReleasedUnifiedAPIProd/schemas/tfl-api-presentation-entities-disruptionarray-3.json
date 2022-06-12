@@ -1,0 +1,7 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "Tfl.Api.Presentation.Entities.Disruption.json"
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

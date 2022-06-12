@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "modeType": {
+      "type": "string"
+    },
+    "validationType": {
+      "type": "string"
+    },
+    "hostDeviceType": {
+      "type": "string"
+    },
+    "busRouteId": {
+      "type": "string"
+    },
+    "nationalLocationCode": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "tapTimestamp": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

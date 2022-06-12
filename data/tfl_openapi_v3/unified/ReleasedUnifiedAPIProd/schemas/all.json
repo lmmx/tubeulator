@@ -1,0 +1,1102 @@
+{
+  "oneOf": [
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.AccidentStats.AccidentDetail.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.AccidentStats.Casualty.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.AccidentStats.Vehicle.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.AccidentStats.AccidentStatsOrderedSummary.json"
+    },
+    {
+      "$ref": "System.Object.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Place.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.AdditionalProperties.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.CycleSuperhighway.json"
+    },
+    {
+      "$ref": "System.Data.Spatial.DbGeography.json"
+    },
+    {
+      "$ref": "System.Data.Spatial.DbGeographyWellKnownValue.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Fares.Fare.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Fares.FaresSection.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Fares.Journey.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Fares.FareDetails.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Message.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Fares.FareStation.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Fares.Ticket.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Fares.TicketType.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Fares.TicketTime.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Fares.FareBounds.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Fares.FaresPeriod.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Fares.FaresMode.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Fares.PassengerType.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Coordinate.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.GeoCodeSearchMatch.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Mode.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.ItineraryResult.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.Journey.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Line.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.JourneyPlannerCycleHireDockingStationData.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.SearchCriteria.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.JourneyVector.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.Leg.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.JourneyFare.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Disruption.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.LineStatus.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.MatchedRoute.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Crowding.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.TimeAdjustments.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Instruction.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.Obstacle.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Point.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.Path.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.RouteOption.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Identifier.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.PlannedWork.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.Fare.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.FareCaveat.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.RouteSection.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.StopPoint.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.ValidityPeriod.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.PassengerFlow.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.TrainLoading.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.TimeAdjustment.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.InstructionStep.json"
+    },
+    {
+      "$ref": "Tfl.Api.Common.JourneyPlanner.JpElevation.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.FareTap.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.RouteSectionNaptanEntrySequence.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.LineGroup.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.LineModeGroup.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.PathAttribute.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.FareTapDetails.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.StatusSeverity.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.RouteSequence.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.MatchedStop.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.StopPointSequence.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.OrderedRoute.json"
+    },
+    {
+      "$ref": "Tfl.Api.Common.DateRange.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.RouteSearchResponse.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.RouteSearchMatch.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.LineRouteSection.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.MatchedRouteSections.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.TimetableResponse.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Timetable.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Timetables.Disambiguation.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.TimetableRoute.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Timetables.DisambiguationOption.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.StationInterval.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Schedule.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Interval.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.KnownJourney.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Period.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.TwentyFourHourClockTime.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.ServiceFrequency.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Prediction.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.PredictionTiming.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.ActiveServiceType.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.NetworkStatus.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.CarParkOccupancy.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Bay.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.ChargeConnectorOccupancy.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.BikePointOccupancy.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.PlaceCategory.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.SearchResponse.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.SearchMatch.json"
+    },
+    {
+      "$ref": "Tfl.Api.Common.PostcodeInput.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.PlacePolygon.json"
+    },
+    {
+      "$ref": "Tfl.Api.Common.GeoPoint.json"
+    },
+    {
+      "$ref": "Tfl.Api.Common.PlaceGeo.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.RoadCorridor.json"
+    },
+    {
+      "$ref": "Tfl.Api.Common.DateRangeNullable.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.RoadDisruption.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Street.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.RoadProject.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.RoadDisruptionLine.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.RoadDisruptionImpactArea.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.RoadDisruptionSchedule.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.StreetSegment.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Redirect.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.StopPointCategory.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.LineServiceType.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.LineSpecificServiceType.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.ArrivalDeparture.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.StopPointRouteSection.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.DisruptedPoint.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.StopPointsResponse.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Fares.RecommendationResponse.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Fares.Recommendation.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.VehicleMatch.json"
+    },
+    {
+      "$ref": "Tfl.Api.Common.ApiVersionInfo.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-AccidentStats-AccidentDetailArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-AccidentStats-AccidentDetailArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-AccidentStats-AccidentDetailArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-AccidentStats-AccidentDetailArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-4.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-5.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-6.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-7.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ModeArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ModeArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ModeArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ModeArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ModeArray-4.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ModeArray-5.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ModeArray-6.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ModeArray-7.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StatusSeverityArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StatusSeverityArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StatusSeverityArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StatusSeverityArray-3.json"
+    },
+    {
+      "$ref": "LineMetaDisruptionCategoriesGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "LineMetaDisruptionCategoriesGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "LineMetaDisruptionCategoriesGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "LineMetaDisruptionCategoriesGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "LineMetaServiceTypesGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "LineMetaServiceTypesGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "LineMetaServiceTypesGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "LineMetaServiceTypesGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-4.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-5.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-6.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-7.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-8.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-9.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-10.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-11.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-12.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-13.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-14.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-15.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-16.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-17.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-18.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-19.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-20.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-21.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-22.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-23.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-24.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-25.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-26.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-27.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-28.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-29.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-30.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-31.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-32.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-33.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-34.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineArray-35.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-DisruptionArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-DisruptionArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-DisruptionArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-DisruptionArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-DisruptionArray-4.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-DisruptionArray-5.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-DisruptionArray-6.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-DisruptionArray-7.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ActiveServiceTypeArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ActiveServiceTypeArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ActiveServiceTypeArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ActiveServiceTypeArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray-4.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray-5.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray-6.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray-7.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-CarParkOccupancyArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-CarParkOccupancyArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-CarParkOccupancyArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-CarParkOccupancyArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ChargeConnectorOccupancyArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ChargeConnectorOccupancyArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ChargeConnectorOccupancyArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ChargeConnectorOccupancyArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ChargeConnectorOccupancyArray-4.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ChargeConnectorOccupancyArray-5.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ChargeConnectorOccupancyArray-6.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ChargeConnectorOccupancyArray-7.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-BikePointOccupancyArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-BikePointOccupancyArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-BikePointOccupancyArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-BikePointOccupancyArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceCategoryArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceCategoryArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceCategoryArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceCategoryArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceCategoryArray-4.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceCategoryArray-5.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceCategoryArray-6.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceCategoryArray-7.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-8.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-9.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-10.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-11.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-12.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-13.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-14.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-15.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-4.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-5.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-6.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-7.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-16.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-17.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-18.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-19.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-RoadCorridorArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-RoadCorridorArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-RoadCorridorArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-RoadCorridorArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-RoadCorridorArray-4.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-RoadCorridorArray-5.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-RoadCorridorArray-6.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-RoadCorridorArray-7.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-RoadCorridorArray-8.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-RoadCorridorArray-9.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-RoadCorridorArray-10.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-RoadCorridorArray-11.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-RoadDisruptionArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-RoadDisruptionArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-RoadDisruptionArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-RoadDisruptionArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-RoadDisruptionArray-4.json"
+    },
+    {
+      "$ref": "RoadMetaCategoriesGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "RoadMetaCategoriesGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "RoadMetaCategoriesGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "RoadMetaCategoriesGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StatusSeverityArray-4.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StatusSeverityArray-5.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StatusSeverityArray-6.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StatusSeverityArray-7.json"
+    },
+    {
+      "$ref": "SearchMetaSearchProvidersGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "SearchMetaSearchProvidersGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "SearchMetaSearchProvidersGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "SearchMetaSearchProvidersGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "SearchMetaCategoriesGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "SearchMetaCategoriesGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "SearchMetaCategoriesGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "SearchMetaCategoriesGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "SearchMetaSortsGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "SearchMetaSortsGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "SearchMetaSortsGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "SearchMetaSortsGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointCategoryArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointCategoryArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointCategoryArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointCategoryArray-3.json"
+    },
+    {
+      "$ref": "StopPointMetaStopTypesGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "StopPointMetaStopTypesGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "StopPointMetaStopTypesGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "StopPointMetaStopTypesGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ModeArray-8.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ModeArray-9.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ModeArray-10.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ModeArray-11.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-8.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-9.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-10.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-11.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-20.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-21.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-22.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-23.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-12.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-13.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-14.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-15.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-16.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-17.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-18.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-19.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-20.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-21.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-22.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-23.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineServiceTypeArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineServiceTypeArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineServiceTypeArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-LineServiceTypeArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray-8.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray-9.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray-10.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray-11.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ArrivalDepartureArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ArrivalDepartureArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ArrivalDepartureArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ArrivalDepartureArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-24.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-25.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-26.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointArray-27.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointRouteSectionArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointRouteSectionArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointRouteSectionArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-StopPointRouteSectionArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-DisruptedPointArray.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-DisruptedPointArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-DisruptedPointArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-DisruptedPointArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-DisruptedPointArray-4.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-DisruptedPointArray-5.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-DisruptedPointArray-6.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-DisruptedPointArray-7.json"
+    },
+    {
+      "$ref": "StopPointIdDirectionToToStopPointIdGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "StopPointIdDirectionToToStopPointIdGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "StopPointIdDirectionToToStopPointIdGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "StopPointIdDirectionToToStopPointIdGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-24.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-25.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-26.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-27.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-28.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-29.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-30.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-31.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray-12.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray-13.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray-14.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray-15.json"
+    }
+  ]
+}

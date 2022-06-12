@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "line": {
+      "type": "string",
+      "description": "The Line Name e.g. \"Victoria\""
+    },
+    "lineDirection": {
+      "type": "string",
+      "description": "Direction of the Line e.g. NB, SB, WB etc."
+    },
+    "platformDirection": {
+      "type": "string",
+      "description": "Direction displayed on the platform e.g. NB, SB, WB etc."
+    },
+    "direction": {
+      "type": "string",
+      "description": "Direction in regards to Journey Planner i.e. inbound or outbound"
+    },
+    "naptanTo": {
+      "type": "string",
+      "description": "Naptan of the adjacent station"
+    },
+    "timeSlice": {
+      "type": "string",
+      "description": "Time in 24hr format with 15 minute intervals e.g. 0500-0515, 0515-0530 etc."
+    },
+    "value": {
+      "type": "integer",
+      "description": "Scale between 1-6, \r\n             1 = Very quiet, 2 = Quiet, 3 = Fairly busy, 4 = Busy, 5 = Very busy, 6 = Exceptionally busy",
+      "format": "int32"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

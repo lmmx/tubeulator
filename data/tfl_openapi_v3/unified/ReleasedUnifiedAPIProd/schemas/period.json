@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "enum": [
+        "Normal",
+        "FrequencyHours",
+        "FrequencyMinutes",
+        "Unknown"
+      ],
+      "type": "string"
+    },
+    "fromTime": {
+      "$ref": "Tfl.Api.Presentation.Entities.TwentyFourHourClockTime.json"
+    },
+    "toTime": {
+      "$ref": "Tfl.Api.Presentation.Entities.TwentyFourHourClockTime.json"
+    },
+    "frequency": {
+      "$ref": "Tfl.Api.Presentation.Entities.ServiceFrequency.json"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

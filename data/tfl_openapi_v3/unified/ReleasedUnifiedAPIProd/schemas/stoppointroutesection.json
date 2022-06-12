@@ -1,0 +1,44 @@
+{
+  "type": "object",
+  "properties": {
+    "naptanId": {
+      "type": "string"
+    },
+    "lineId": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "validFrom": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "validTo": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "direction": {
+      "type": "string"
+    },
+    "routeSectionName": {
+      "type": "string"
+    },
+    "lineString": {
+      "type": "string"
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "serviceType": {
+      "type": "string"
+    },
+    "vehicleDestinationText": {
+      "type": "string"
+    },
+    "destinationName": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "properties": {
+    "centrePoint": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "format": "double"
+      },
+      "description": "The centre latitude/longitude of this list of StopPoints"
+    },
+    "stopPoints": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.StopPoint.json"
+      },
+      "description": "Collection of stop points"
+    },
+    "pageSize": {
+      "type": "integer",
+      "description": "The maximum size of the page in this response i.e. the maximum number of StopPoints",
+      "format": "int32"
+    },
+    "total": {
+      "type": "integer",
+      "description": "The total number of StopPoints available across all pages",
+      "format": "int32"
+    },
+    "page": {
+      "type": "integer",
+      "description": "The index of this page",
+      "format": "int32"
+    }
+  },
+  "description": "A paged response containing StopPoints",
+  "$schema": "http://json-schema.org/schema#"
+}

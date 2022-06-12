@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "disambiguationOptions": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.Timetables.DisambiguationOption.json"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

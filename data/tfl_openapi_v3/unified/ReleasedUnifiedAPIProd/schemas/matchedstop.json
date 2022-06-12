@@ -1,0 +1,75 @@
+{
+  "type": "object",
+  "properties": {
+    "routeId": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "parentId": {
+      "type": "string"
+    },
+    "stationId": {
+      "type": "string"
+    },
+    "icsId": {
+      "type": "string"
+    },
+    "topMostParentId": {
+      "type": "string"
+    },
+    "direction": {
+      "type": "string"
+    },
+    "towards": {
+      "type": "string"
+    },
+    "modes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stopType": {
+      "type": "string"
+    },
+    "stopLetter": {
+      "type": "string"
+    },
+    "zone": {
+      "type": "string"
+    },
+    "accessibilitySummary": {
+      "type": "string"
+    },
+    "hasDisruption": {
+      "type": "boolean"
+    },
+    "lines": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.Identifier.json"
+      }
+    },
+    "status": {
+      "type": "boolean"
+    },
+    "id": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "lat": {
+      "type": "number",
+      "format": "double"
+    },
+    "lon": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

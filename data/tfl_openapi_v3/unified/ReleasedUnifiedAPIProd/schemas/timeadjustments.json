@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "earliest": {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.TimeAdjustment.json"
+    },
+    "earlier": {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.TimeAdjustment.json"
+    },
+    "later": {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.TimeAdjustment.json"
+    },
+    "latest": {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.TimeAdjustment.json"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "createdDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastUpdateDateTime": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

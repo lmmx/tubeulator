@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "longitude": {
+      "type": "number",
+      "format": "double"
+    },
+    "latitude": {
+      "type": "number",
+      "format": "double"
+    },
+    "easting": {
+      "type": "number",
+      "format": "double"
+    },
+    "northing": {
+      "type": "number",
+      "format": "double"
+    },
+    "xCoord": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "yCoord": {
+      "type": "integer",
+      "format": "int32"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    },
+    "assemblies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

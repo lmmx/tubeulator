@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.Fares.Recommendation.json"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

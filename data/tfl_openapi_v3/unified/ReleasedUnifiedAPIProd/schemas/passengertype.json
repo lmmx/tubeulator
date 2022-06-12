@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "displayOrder": {
+      "type": "integer",
+      "format": "int32"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

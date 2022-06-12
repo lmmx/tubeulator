@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "properties": {
+    "lineId": {
+      "type": "string"
+    },
+    "lineName": {
+      "type": "string"
+    },
+    "direction": {
+      "type": "string"
+    },
+    "branchId": {
+      "type": "integer",
+      "description": "The id of this branch.",
+      "format": "int32"
+    },
+    "nextBranchIds": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "description": "The ids of the next branch(es) in the sequence. Note that the next and previous branch id can be\r\n            identical in the case of a looped route e.g. the Circle line."
+    },
+    "prevBranchIds": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "description": "The ids of the previous branch(es) in the sequence. Note that the next and previous branch id can be\r\n            identical in the case of a looped route e.g. the Circle line."
+    },
+    "stopPoint": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.MatchedStop.json"
+      }
+    },
+    "serviceType": {
+      "enum": [
+        "Regular",
+        "Night"
+      ],
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

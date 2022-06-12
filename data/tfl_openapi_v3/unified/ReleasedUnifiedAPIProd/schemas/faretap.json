@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "atcoCode": {
+      "type": "string"
+    },
+    "tapDetails": {
+      "$ref": "Tfl.Api.Presentation.Entities.JourneyPlanner.FareTapDetails.json"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

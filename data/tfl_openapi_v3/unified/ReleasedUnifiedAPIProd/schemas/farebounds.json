@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "from": {
+      "type": "string"
+    },
+    "to": {
+      "type": "string"
+    },
+    "via": {
+      "type": "string"
+    },
+    "routeCode": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "operator": {
+      "type": "string"
+    },
+    "displayOrder": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "isPopularFare": {
+      "type": "boolean"
+    },
+    "isPopularTravelCard": {
+      "type": "boolean"
+    },
+    "isTour": {
+      "type": "boolean"
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.Message.json"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

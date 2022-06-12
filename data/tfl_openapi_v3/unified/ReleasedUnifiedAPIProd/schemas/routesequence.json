@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "properties": {
+    "lineId": {
+      "type": "string"
+    },
+    "lineName": {
+      "type": "string"
+    },
+    "direction": {
+      "type": "string"
+    },
+    "isOutboundOnly": {
+      "type": "boolean"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "lineStrings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stations": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.MatchedStop.json"
+      }
+    },
+    "stopPointSequences": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.StopPointSequence.json"
+      }
+    },
+    "orderedLineRoutes": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.OrderedRoute.json"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

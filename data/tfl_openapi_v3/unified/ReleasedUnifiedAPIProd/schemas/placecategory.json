@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "category": {
+      "type": "string"
+    },
+    "availableKeys": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

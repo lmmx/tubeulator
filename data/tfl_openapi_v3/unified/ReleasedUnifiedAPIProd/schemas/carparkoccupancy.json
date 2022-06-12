@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "bays": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.Bay.json"
+      }
+    },
+    "name": {
+      "type": "string"
+    },
+    "carParkDetailsUrl": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

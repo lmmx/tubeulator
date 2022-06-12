@@ -1,0 +1,7 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "Tfl.Api.Presentation.Entities.ActiveServiceType.json"
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

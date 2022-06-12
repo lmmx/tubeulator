@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The Id of the route"
+    },
+    "lineId": {
+      "type": "string",
+      "description": "The Id of the Line"
+    },
+    "routeCode": {
+      "type": "string",
+      "description": "The route code"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name such as \"72\""
+    },
+    "lineString": {
+      "type": "string",
+      "description": "The co-ordinates of the route's path as a geoJSON lineString"
+    },
+    "direction": {
+      "type": "string",
+      "description": "Inbound or Outbound"
+    },
+    "originationName": {
+      "type": "string",
+      "description": "The name of the Origin StopPoint"
+    },
+    "destinationName": {
+      "type": "string",
+      "description": "The name of the Destination StopPoint"
+    },
+    "validTo": {
+      "type": "string",
+      "description": "The DateTime that the Service containing this Route is valid until.",
+      "format": "date-time"
+    },
+    "validFrom": {
+      "type": "string",
+      "description": "The DateTime that the Service containing this Route is valid from.",
+      "format": "date-time"
+    },
+    "routeSectionNaptanEntrySequence": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.RouteSectionNaptanEntrySequence.json"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

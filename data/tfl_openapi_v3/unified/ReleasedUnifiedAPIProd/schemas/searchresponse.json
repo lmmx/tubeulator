@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "query": {
+      "type": "string"
+    },
+    "from": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "page": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "pageSize": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "total": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "matches": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.SearchMatch.json"
+      }
+    },
+    "maxScore": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

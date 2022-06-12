@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "intervals": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.Interval.json"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "swLat": {
+      "type": "number",
+      "format": "double"
+    },
+    "swLon": {
+      "type": "number",
+      "format": "double"
+    },
+    "neLat": {
+      "type": "number",
+      "format": "double"
+    },
+    "neLon": {
+      "type": "number",
+      "format": "double"
+    },
+    "lat": {
+      "type": "number",
+      "format": "double"
+    },
+    "lon": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}
