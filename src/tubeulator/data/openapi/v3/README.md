@@ -4,6 +4,9 @@ Files for all of the APIs except
 the Unified API (which was legacy)
 and the separate API listed for v1 of the Lifts API.
 
+**Edit**: the unified API has been included in a subdirectory so as to distinguish it simply when
+iterating over the APIs. It can be used to determine names for the entities in each API.
+
 Obtained manually (download on each API page by clicking the _API definition_ dropdown menu).
 Notably these differ from the v1 Swagger JSON file, containing fewer errors.
 These errors are accounted for in the file [error_inventory.md](error_inventory.md).
