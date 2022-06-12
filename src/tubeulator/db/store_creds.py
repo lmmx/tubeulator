@@ -1,6 +1,7 @@
 from pymongo import MongoClient
 
-def check_creds(client: MongoClient, interactive: bool) -> dict[str,str]:
+
+def check_creds(client: MongoClient, interactive: bool) -> dict[str, str]:
     """
     Store the API credentials in a simple singleton collection "tfl_cred" in the "creds"
     database if none has been stored there before.

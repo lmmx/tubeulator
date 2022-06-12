@@ -1,0 +1,115 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Crowding",
+        "description": "",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.tfl.gov.uk/crowding"
+        }
+    ],
+    "paths": {
+        "/{Naptan}": {
+            "get": {
+                "summary": "Naptan",
+                "description": "Returns crowding information for Naptan",
+                "operationId": "naptan",
+                "parameters": [
+                    {
+                        "name": "Naptan",
+                        "in": "path",
+                        "description": "Naptan code",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": null
+                    }
+                }
+            }
+        },
+        "/{Naptan}/{DayOfWeek}": {
+            "get": {
+                "summary": "Day of Week",
+                "description": "Returns crowding information for Naptan for Day of Week",
+                "operationId": "dayofweek",
+                "parameters": [
+                    {
+                        "name": "Naptan",
+                        "in": "path",
+                        "description": "Naptan code",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "DayOfWeek",
+                        "in": "path",
+                        "description": "Day of week",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": null
+                    }
+                }
+            }
+        },
+        "/{Naptan}/Live": {
+            "get": {
+                "summary": "Live",
+                "description": "Returns live crowding information for Naptan",
+                "operationId": "live",
+                "parameters": [
+                    {
+                        "name": "Naptan",
+                        "in": "path",
+                        "description": "Naptan code",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": null
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "apiKeyHeader": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "header"
+            },
+            "apiKeyQuery": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "query"
+            }
+        }
+    },
+    "security": [
+        {
+            "apiKeyHeader": []
+        },
+        {
+            "apiKeyQuery": []
+        }
+    ]
+}

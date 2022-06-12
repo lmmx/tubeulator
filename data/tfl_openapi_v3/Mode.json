@@ -1,0 +1,387 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Mode",
+        "description": "APIs relating to Mode and similar services",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.tfl.gov.uk/Mode"
+        }
+    ],
+    "paths": {
+        "/ActiveServiceTypes": {
+            "get": {
+                "tags": [
+                    "Mode"
+                ],
+                "summary": "Returns the service type active for a mode.\r\n            Currently only supports tube",
+                "description": "Returns the service type active for a mode.\r\n            Currently only supports tube",
+                "operationId": "Mode_GetActiveServiceTypes",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-Api-Presentation-Entities-ActiveServiceTypeArray"
+                                },
+                                "example": [
+                                    {
+                                        "mode": "string",
+                                        "serviceType": "string"
+                                    }
+                                ]
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-Api-Presentation-Entities-ActiveServiceTypeArray-1"
+                                },
+                                "example": [
+                                    {
+                                        "mode": "string",
+                                        "serviceType": "string"
+                                    }
+                                ]
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-Api-Presentation-Entities-ActiveServiceTypeArray-2"
+                                },
+                                "example": "<Tfl-Api-Presentation-Entities-ActiveServiceTypeArray-2> <mode>string</mode> <serviceType>string</serviceType> </Tfl-Api-Presentation-Entities-ActiveServiceTypeArray-2>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-Api-Presentation-Entities-ActiveServiceTypeArray-3"
+                                },
+                                "example": "<Tfl-Api-Presentation-Entities-ActiveServiceTypeArray-3> <mode>string</mode> <serviceType>string</serviceType> </Tfl-Api-Presentation-Entities-ActiveServiceTypeArray-3>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/{mode}/Arrivals": {
+            "get": {
+                "tags": [
+                    "Mode"
+                ],
+                "summary": "Gets the next arrival predictions for all stops of a given mode",
+                "description": "Gets the next arrival predictions for all stops of a given mode",
+                "operationId": "Mode_Arrivals",
+                "parameters": [
+                    {
+                        "name": "mode",
+                        "in": "path",
+                        "description": "A mode name e.g. tube, dlr",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "description": "Format - int32. A number of arrivals to return for each stop, -1 to return all available.",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-Api-Presentation-Entities-PredictionArray-4"
+                                },
+                                "example": [
+                                    {
+                                        "id": "string",
+                                        "operationType": 0,
+                                        "vehicleId": "string",
+                                        "naptanId": "string",
+                                        "stationName": "string",
+                                        "lineId": "string",
+                                        "lineName": "string",
+                                        "platformName": "string",
+                                        "direction": "string",
+                                        "bearing": "string",
+                                        "destinationNaptanId": "string",
+                                        "destinationName": "string",
+                                        "timestamp": "string",
+                                        "timeToStation": 0,
+                                        "currentLocation": "string",
+                                        "towards": "string",
+                                        "expectedArrival": "string",
+                                        "timeToLive": "string",
+                                        "modeName": "string",
+                                        "timing": {
+                                            "countdownServerAdjustment": "string",
+                                            "source": "string",
+                                            "insert": "string",
+                                            "read": "string",
+                                            "sent": "string",
+                                            "received": "string"
+                                        }
+                                    }
+                                ]
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-Api-Presentation-Entities-PredictionArray-5"
+                                },
+                                "example": [
+                                    {
+                                        "id": "string",
+                                        "operationType": 0,
+                                        "vehicleId": "string",
+                                        "naptanId": "string",
+                                        "stationName": "string",
+                                        "lineId": "string",
+                                        "lineName": "string",
+                                        "platformName": "string",
+                                        "direction": "string",
+                                        "bearing": "string",
+                                        "destinationNaptanId": "string",
+                                        "destinationName": "string",
+                                        "timestamp": "string",
+                                        "timeToStation": 0,
+                                        "currentLocation": "string",
+                                        "towards": "string",
+                                        "expectedArrival": "string",
+                                        "timeToLive": "string",
+                                        "modeName": "string",
+                                        "timing": {
+                                            "countdownServerAdjustment": "string",
+                                            "source": "string",
+                                            "insert": "string",
+                                            "read": "string",
+                                            "sent": "string",
+                                            "received": "string"
+                                        }
+                                    }
+                                ]
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-Api-Presentation-Entities-PredictionArray-6"
+                                },
+                                "example": "<Tfl-Api-Presentation-Entities-PredictionArray-6> <id>string</id> <operationType>0</operationType> <vehicleId>string</vehicleId> <naptanId>string</naptanId> <stationName>string</stationName> <lineId>string</lineId> <lineName>string</lineName> <platformName>string</platformName> <direction>string</direction> <bearing>string</bearing> <destinationNaptanId>string</destinationNaptanId> <destinationName>string</destinationName> <timestamp>string</timestamp> <timeToStation>0</timeToStation> <currentLocation>string</currentLocation> <towards>string</towards> <expectedArrival>string</expectedArrival> <timeToLive>string</timeToLive> <modeName>string</modeName> <timing> <countdownServerAdjustment>string</countdownServerAdjustment> <source>string</source> <insert>string</insert> <read>string</read> <sent>string</sent> <received>string</received> </timing> </Tfl-Api-Presentation-Entities-PredictionArray-6>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-Api-Presentation-Entities-PredictionArray-7"
+                                },
+                                "example": "<Tfl-Api-Presentation-Entities-PredictionArray-7> <id>string</id> <operationType>0</operationType> <vehicleId>string</vehicleId> <naptanId>string</naptanId> <stationName>string</stationName> <lineId>string</lineId> <lineName>string</lineName> <platformName>string</platformName> <direction>string</direction> <bearing>string</bearing> <destinationNaptanId>string</destinationNaptanId> <destinationName>string</destinationName> <timestamp>string</timestamp> <timeToStation>0</timeToStation> <currentLocation>string</currentLocation> <towards>string</towards> <expectedArrival>string</expectedArrival> <timeToLive>string</timeToLive> <modeName>string</modeName> <timing> <countdownServerAdjustment>string</countdownServerAdjustment> <source>string</source> <insert>string</insert> <read>string</read> <sent>string</sent> <received>string</received> </timing> </Tfl-Api-Presentation-Entities-PredictionArray-7>"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Tfl-Api-Presentation-Entities-ActiveServiceTypeArray": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.ActiveServiceType"
+                }
+            },
+            "Tfl.Api.Presentation.Entities.ActiveServiceType": {
+                "type": "object",
+                "properties": {
+                    "mode": {
+                        "type": "string"
+                    },
+                    "serviceType": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Tfl-Api-Presentation-Entities-ActiveServiceTypeArray-1": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.ActiveServiceType"
+                }
+            },
+            "Tfl-Api-Presentation-Entities-ActiveServiceTypeArray-2": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.ActiveServiceType"
+                }
+            },
+            "Tfl-Api-Presentation-Entities-ActiveServiceTypeArray-3": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.ActiveServiceType"
+                }
+            },
+            "Tfl-Api-Presentation-Entities-PredictionArray-4": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.Prediction"
+                }
+            },
+            "Tfl.Api.Presentation.Entities.Prediction": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The identitier for the prediction"
+                    },
+                    "operationType": {
+                        "type": "integer",
+                        "description": "The type of the operation (1: is new or has been updated, 2: should be deleted from any client cache)",
+                        "format": "int32"
+                    },
+                    "vehicleId": {
+                        "type": "string",
+                        "description": "The actual vehicle in transit (for train modes, the leading car of the rolling set)"
+                    },
+                    "naptanId": {
+                        "type": "string",
+                        "description": "Identifier for the prediction"
+                    },
+                    "stationName": {
+                        "type": "string",
+                        "description": "Station name"
+                    },
+                    "lineId": {
+                        "type": "string",
+                        "description": "Unique identifier for the Line"
+                    },
+                    "lineName": {
+                        "type": "string",
+                        "description": "Line Name"
+                    },
+                    "platformName": {
+                        "type": "string",
+                        "description": "Platform name (for bus, this is the stop letter)"
+                    },
+                    "direction": {
+                        "type": "string",
+                        "description": "Direction (unified to inbound/outbound)"
+                    },
+                    "bearing": {
+                        "type": "string",
+                        "description": "Bearing (between 0 to 359)"
+                    },
+                    "destinationNaptanId": {
+                        "type": "string",
+                        "description": "Naptan Identifier for the prediction's destination"
+                    },
+                    "destinationName": {
+                        "type": "string",
+                        "description": "Name of the destination"
+                    },
+                    "timestamp": {
+                        "type": "string",
+                        "description": "Timestamp for when the prediction was inserted/modified (source column drives what objects are broadcast on each iteration)",
+                        "format": "date-time"
+                    },
+                    "timeToStation": {
+                        "type": "integer",
+                        "description": "Prediction of the Time to station in seconds",
+                        "format": "int32"
+                    },
+                    "currentLocation": {
+                        "type": "string",
+                        "description": "The current location of the vehicle."
+                    },
+                    "towards": {
+                        "type": "string",
+                        "description": "Routing information or other descriptive text about the path of the vehicle towards the destination"
+                    },
+                    "expectedArrival": {
+                        "type": "string",
+                        "description": "The expected arrival time of the vehicle at the stop/station",
+                        "format": "date-time"
+                    },
+                    "timeToLive": {
+                        "type": "string",
+                        "description": "The expiry time for the prediction",
+                        "format": "date-time"
+                    },
+                    "modeName": {
+                        "type": "string",
+                        "description": "The mode name of the station/line the prediction relates to"
+                    },
+                    "timing": {
+                        "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.PredictionTiming"
+                    }
+                },
+                "description": "DTO to capture the prediction details"
+            },
+            "Tfl.Api.Presentation.Entities.PredictionTiming": {
+                "type": "object",
+                "properties": {
+                    "countdownServerAdjustment": {
+                        "type": "string"
+                    },
+                    "source": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "insert": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "read": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "sent": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "received": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "Tfl-Api-Presentation-Entities-PredictionArray-5": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.Prediction"
+                }
+            },
+            "Tfl-Api-Presentation-Entities-PredictionArray-6": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.Prediction"
+                }
+            },
+            "Tfl-Api-Presentation-Entities-PredictionArray-7": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.Prediction"
+                }
+            }
+        },
+        "securitySchemes": {
+            "apiKeyHeader": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "header"
+            },
+            "apiKeyQuery": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "query"
+            }
+        }
+    },
+    "security": [
+        {
+            "apiKeyHeader": []
+        },
+        {
+            "apiKeyQuery": []
+        }
+    ]
+}

@@ -1,0 +1,1018 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Place",
+        "description": "APIs relating to Place and similar services",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.tfl.gov.uk/Place"
+        }
+    ],
+    "paths": {
+        "/Meta/Categories": {
+            "get": {
+                "tags": [
+                    "Place"
+                ],
+                "summary": "Gets a list of all of the available place property categories and keys.",
+                "description": "Gets a list of all of the available place property categories and keys.",
+                "operationId": "Place_MetaCategories",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaCategoriesGet200ApplicationJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "category": "string",
+                                        "availableKeys": [
+                                            "string"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaCategoriesGet200TextJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "category": "string",
+                                        "availableKeys": [
+                                            "string"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaCategoriesGet200ApplicationXmlResponse"
+                                },
+                                "example": "<MetaCategoriesGet200ApplicationXmlResponse> <category>string</category> <availableKeys>string</availableKeys> </MetaCategoriesGet200ApplicationXmlResponse>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaCategoriesGet200TextXmlResponse"
+                                },
+                                "example": "<MetaCategoriesGet200TextXmlResponse> <category>string</category> <availableKeys>string</availableKeys> </MetaCategoriesGet200TextXmlResponse>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Meta/PlaceTypes": {
+            "get": {
+                "tags": [
+                    "Place"
+                ],
+                "summary": "Gets a list of the available types of Place.",
+                "description": "Gets a list of the available types of Place.",
+                "operationId": "Place_MetaPlaceTypes",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaPlaceTypesGet200ApplicationJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "category": "string",
+                                        "availableKeys": [
+                                            "string"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaPlaceTypesGet200TextJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "category": "string",
+                                        "availableKeys": [
+                                            "string"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaPlaceTypesGet200ApplicationXmlResponse"
+                                },
+                                "example": "<MetaPlaceTypesGet200ApplicationXmlResponse> <category>string</category> <availableKeys>string</availableKeys> </MetaPlaceTypesGet200ApplicationXmlResponse>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaPlaceTypesGet200TextXmlResponse"
+                                },
+                                "example": "<MetaPlaceTypesGet200TextXmlResponse> <category>string</category> <availableKeys>string</availableKeys> </MetaPlaceTypesGet200TextXmlResponse>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Type/{types}": {
+            "get": {
+                "tags": [
+                    "Place"
+                ],
+                "summary": "Gets all places of a given type",
+                "description": "Gets all places of a given type",
+                "operationId": "Place_GetByTypeByPathTypesQueryActiveOnly",
+                "parameters": [
+                    {
+                        "name": "types",
+                        "in": "path",
+                        "description": "A comma-separated list of the types to return. Max. approx 12 types.\r\n            A valid list of place types can be obtained from the /Place/Meta/placeTypes endpoint.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "activeOnly",
+                        "in": "query",
+                        "description": "An optional parameter to limit the results to active records only (Currently only the 'VariableMessageSign' place type is supported)",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Type-types-Get200ApplicationJsonResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Type-types-Get200TextJsonResponse"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Type-types-Get200ApplicationXmlResponse"
+                                }
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Type-types-Get200TextXmlResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/{id}": {
+            "get": {
+                "tags": [
+                    "Place"
+                ],
+                "summary": "Gets the place with the given id.",
+                "description": "Gets the place with the given id.",
+                "operationId": "Place_GetByPathIdQueryIncludeChildren",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The id of the place, you can use the /Place/Types/{types} endpoint to get a list of places for a given type including their ids",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "includeChildren",
+                        "in": "query",
+                        "description": "Defaults to false. If true child places e.g. individual charging stations at a charge point while be included, otherwise just the URLs of any child places will be returned",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/id-Get200ApplicationJsonResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/id-Get200TextJsonResponse"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/id-Get200ApplicationXmlResponse"
+                                }
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/id-Get200TextXmlResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/": {
+            "get": {
+                "tags": [
+                    "Place"
+                ],
+                "summary": "Gets the places that lie within a geographic region. The geographic region of interest can either be specified by using a lat/lon geo-point and a radius in metres to return places within the locus defined by the lat/lon of its centre or alternatively, by the use of a bounding box defined by the lat/",
+                "description": "Gets the places that lie within a geographic region. The geographic region of interest can either be specified by using a lat/lon geo-point and a radius in metres to return places within the locus defined by the lat/lon of its centre or alternatively, by the use of a bounding box defined by the lat/lon of its north-west and south-east corners. Optionally filters on type and can strip properties for a smaller payload.",
+                "operationId": "Place_GetByGeoPointByQueryLatQueryLonQueryRadiusQueryCategoriesQueryIncludeC",
+                "parameters": [
+                    {
+                        "name": "Lat",
+                        "in": "query",
+                        "description": "Format - double. lat is latitude of the centre of the bounding circle.",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "Lon",
+                        "in": "query",
+                        "description": "Format - double. lon is longitude of the centre of the bounding circle.",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "radius",
+                        "in": "query",
+                        "description": "Format - double. The radius of the bounding circle in metres when only lat/lon are specified.",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "categories",
+                        "in": "query",
+                        "description": "An optional list of comma separated property categories to return in the Place's property bag. If null or empty, all categories of property are returned. Pass the keyword \"none\" to return no properties (a valid list of categories can be obtained from the /Place/Meta/categories endpoint)",
+                        "schema": {
+                            "type": "array"
+                        }
+                    },
+                    {
+                        "name": "includeChildren",
+                        "in": "query",
+                        "description": "Defaults to false. If true child places e.g. individual charging stations at a charge point while be included, otherwise just the URLs of any child places will be returned",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Place types to filter on, or null to return all types",
+                        "schema": {
+                            "type": "array"
+                        }
+                    },
+                    {
+                        "name": "activeOnly",
+                        "in": "query",
+                        "description": "An optional parameter to limit the results to active records only (Currently only the 'VariableMessageSign' place type is supported)",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "numberOfPlacesToReturn",
+                        "in": "query",
+                        "description": "Format - int32. If specified, limits the number of returned places equal to the given value",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get200ApplicationJsonResponse-1"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get200TextJsonResponse"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get200ApplicationXmlResponse"
+                                }
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get200TextXmlResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/{type}/At/{lat}/{lon}": {
+            "get": {
+                "tags": [
+                    "Place"
+                ],
+                "summary": "Gets any places of the given type whose geography intersects the given latitude and longitude. In practice this means the Place must be polygonal e.g. a BoroughBoundary.",
+                "description": "Gets any places of the given type whose geography intersects the given latitude and longitude. In practice this means the Place must be polygonal e.g. a BoroughBoundary.",
+                "operationId": "Place_GetAtByPathTypePathLatPathLon",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "path",
+                        "description": "The place type (a valid list of place types can be obtained from the /Place/Meta/placeTypes endpoint)",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "lat",
+                        "in": "path",
+                        "description": "Format - double. lat is latitude of the centre of the bounding circle.",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "lon",
+                        "in": "path",
+                        "description": "Format - double. lon is longitude of the centre of the bounding circle",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/System"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/System"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/System"
+                                },
+                                "example": "<System />"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/System"
+                                },
+                                "example": "<System />"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Search": {
+            "get": {
+                "tags": [
+                    "Place"
+                ],
+                "summary": "Gets all places that matches the given query",
+                "description": "Gets all places that matches the given query",
+                "operationId": "Place_SearchByQueryNameQueryTypes",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "The name of the place, you can use the /Place/Types/{types} endpoint to get a list of places for a given type including their names.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "types",
+                        "in": "query",
+                        "description": "A comma-separated list of the types to return. Max. approx 12 types.",
+                        "schema": {
+                            "type": "array"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SearchGet200ApplicationJsonResponse"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SearchGet200TextJsonResponse"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SearchGet200ApplicationXmlResponse"
+                                }
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SearchGet200TextXmlResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/*": {
+            "get": {
+                "tags": [
+                    "StopPoint"
+                ],
+                "summary": "Forwards any remaining requests to the back-end",
+                "description": "Forwards any remaining requests to the back-end",
+                "operationId": "Forward_Proxy",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get200ApplicationJsonResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Tfl": {
+                "type": "object",
+                "properties": {
+                    "category": {
+                        "type": "string"
+                    },
+                    "availableKeys": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "Tfl-2": {
+                "type": "object",
+                "properties": {
+                    "category": {
+                        "type": "string"
+                    },
+                    "key": {
+                        "type": "string"
+                    },
+                    "sourceSystemKey": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    },
+                    "modified": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "Tfl-3": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "A unique identifier."
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "The unique location of this resource."
+                    },
+                    "commonName": {
+                        "type": "string",
+                        "description": "A human readable name."
+                    },
+                    "distance": {
+                        "type": "number",
+                        "description": "The distance of the place from its search point, if this is the result\r\n            of a geographical search, otherwise zero.",
+                        "format": "double"
+                    },
+                    "placeType": {
+                        "type": "string",
+                        "description": "The type of Place. See /Place/Meta/placeTypes for possible values."
+                    },
+                    "additionalProperties": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-2"
+                        },
+                        "description": "A bag of additional key/value pairs with extra information about this place."
+                    },
+                    "children": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-3"
+                        }
+                    },
+                    "childrenUrls": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "lat": {
+                        "type": "number",
+                        "description": "WGS84 latitude of the location.",
+                        "format": "double"
+                    },
+                    "lon": {
+                        "type": "number",
+                        "description": "WGS84 longitude of the location.",
+                        "format": "double"
+                    }
+                }
+            },
+            "Tfl-4": {
+                "type": "object",
+                "properties": {
+                    "timeSlice": {
+                        "type": "string",
+                        "description": "Time in 24hr format with 15 minute intervals e.g. 0500-0515, 0515-0530 etc."
+                    },
+                    "value": {
+                        "type": "integer",
+                        "description": "Count of passenger flow towards a platform",
+                        "format": "int32"
+                    }
+                }
+            },
+            "Tfl-5": {
+                "type": "object",
+                "properties": {
+                    "line": {
+                        "type": "string",
+                        "description": "The Line Name e.g. \"Victoria\""
+                    },
+                    "lineDirection": {
+                        "type": "string",
+                        "description": "Direction of the Line e.g. NB, SB, WB etc."
+                    },
+                    "platformDirection": {
+                        "type": "string",
+                        "description": "Direction displayed on the platform e.g. NB, SB, WB etc."
+                    },
+                    "direction": {
+                        "type": "string",
+                        "description": "Direction in regards to Journey Planner i.e. inbound or outbound"
+                    },
+                    "naptanTo": {
+                        "type": "string",
+                        "description": "Naptan of the adjacent station"
+                    },
+                    "timeSlice": {
+                        "type": "string",
+                        "description": "Time in 24hr format with 15 minute intervals e.g. 0500-0515, 0515-0530 etc."
+                    },
+                    "value": {
+                        "type": "integer",
+                        "description": "Scale between 1-6, \r\n             1 = Very quiet, 2 = Quiet, 3 = Fairly busy, 4 = Busy, 5 = Very busy, 6 = Exceptionally busy",
+                        "format": "int32"
+                    }
+                }
+            },
+            "Tfl-6": {
+                "type": "object",
+                "properties": {
+                    "passengerFlows": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-4"
+                        },
+                        "description": "Busiest times at a station (static information)"
+                    },
+                    "trainLoadings": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-5"
+                        },
+                        "description": "Train Loading on a scale 1-6, 1 being \"Very quiet\" and 6 being \"Exceptionally busy\" (static information)"
+                    }
+                }
+            },
+            "Tfl-7": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "uri": {
+                        "type": "string"
+                    },
+                    "fullName": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "crowding": {
+                        "$ref": "#/components/schemas/Tfl-6"
+                    },
+                    "routeType": {
+                        "enum": [
+                            "Unknown",
+                            "All",
+                            "Cycle Superhighways",
+                            "Quietways",
+                            "Cycleways",
+                            "Mini-Hollands",
+                            "Central London Grid",
+                            "Streetspace Route"
+                        ],
+                        "type": "string"
+                    },
+                    "status": {
+                        "enum": [
+                            "Unknown",
+                            "All",
+                            "Open",
+                            "In Progress",
+                            "Planned",
+                            "Planned - Subject to feasibility and consultation.",
+                            "Not Open"
+                        ],
+                        "type": "string"
+                    }
+                }
+            },
+            "Tfl-8": {
+                "type": "object",
+                "properties": {
+                    "naptanIdReference": {
+                        "type": "string"
+                    },
+                    "stationAtcoCode": {
+                        "type": "string"
+                    },
+                    "lineIdentifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "Tfl-9": {
+                "type": "object",
+                "properties": {
+                    "modeName": {
+                        "type": "string"
+                    },
+                    "lineIdentifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "Tfl-10": {
+                "type": "object",
+                "properties": {
+                    "naptanId": {
+                        "type": "string"
+                    },
+                    "platformName": {
+                        "type": "string"
+                    },
+                    "indicator": {
+                        "type": "string",
+                        "description": "The indicator of the stop point e.g. \"Stop K\""
+                    },
+                    "stopLetter": {
+                        "type": "string",
+                        "description": "The stop letter, if it could be cleansed from the Indicator e.g. \"K\""
+                    },
+                    "modes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "icsCode": {
+                        "type": "string"
+                    },
+                    "smsCode": {
+                        "type": "string"
+                    },
+                    "stopType": {
+                        "type": "string"
+                    },
+                    "stationNaptan": {
+                        "type": "string"
+                    },
+                    "accessibilitySummary": {
+                        "type": "string"
+                    },
+                    "hubNaptanCode": {
+                        "type": "string"
+                    },
+                    "lines": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-7"
+                        }
+                    },
+                    "lineGroup": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-8"
+                        }
+                    },
+                    "lineModeGroups": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-9"
+                        }
+                    },
+                    "fullName": {
+                        "type": "string"
+                    },
+                    "naptanMode": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "boolean"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "A unique identifier."
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "The unique location of this resource."
+                    },
+                    "commonName": {
+                        "type": "string",
+                        "description": "A human readable name."
+                    },
+                    "distance": {
+                        "type": "number",
+                        "description": "The distance of the place from its search point, if this is the result\r\n            of a geographical search, otherwise zero.",
+                        "format": "double"
+                    },
+                    "placeType": {
+                        "type": "string",
+                        "description": "The type of Place. See /Place/Meta/placeTypes for possible values."
+                    },
+                    "additionalProperties": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-2"
+                        },
+                        "description": "A bag of additional key/value pairs with extra information about this place."
+                    },
+                    "children": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-3"
+                        }
+                    },
+                    "childrenUrls": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "lat": {
+                        "type": "number",
+                        "description": "WGS84 latitude of the location.",
+                        "format": "double"
+                    },
+                    "lon": {
+                        "type": "number",
+                        "description": "WGS84 longitude of the location.",
+                        "format": "double"
+                    }
+                }
+            },
+            "System": {
+                "type": "object"
+            },
+            "MetaCategoriesGet200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "MetaCategoriesGet200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "MetaCategoriesGet200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "MetaCategoriesGet200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "Get200ApplicationJsonResponse": {
+                "type": "object"
+            },
+            "MetaPlaceTypesGet200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "MetaPlaceTypesGet200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "MetaPlaceTypesGet200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "MetaPlaceTypesGet200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "Type-types-Get200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            },
+            "Type-types-Get200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            },
+            "Type-types-Get200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            },
+            "Type-types-Get200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            },
+            "id-Get200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            },
+            "id-Get200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            },
+            "id-Get200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            },
+            "id-Get200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            },
+            "Get200ApplicationJsonResponse-1": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-10"
+                }
+            },
+            "Get200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-10"
+                }
+            },
+            "Get200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-10"
+                }
+            },
+            "Get200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-10"
+                }
+            },
+            "SearchGet200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            },
+            "SearchGet200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            },
+            "SearchGet200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            },
+            "SearchGet200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            }
+        },
+        "securitySchemes": {
+            "apiKeyHeader": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "header"
+            },
+            "apiKeyQuery": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "query"
+            }
+        }
+    },
+    "security": [
+        {
+            "apiKeyHeader": []
+        },
+        {
+            "apiKeyQuery": []
+        }
+    ]
+}

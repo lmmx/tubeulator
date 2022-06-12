@@ -1,0 +1,552 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Occupancy",
+        "description": "APIs relating to Occupancy and similar services",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.tfl.gov.uk/Occupancy"
+        }
+    ],
+    "paths": {
+        "/CarPark": {
+            "get": {
+                "tags": [
+                    "Occupancy"
+                ],
+                "summary": "Gets the occupancy for all car parks that have occupancy data",
+                "description": "Gets the occupancy for all car parks that have occupancy data",
+                "operationId": "Occupancy_Get",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CarParkGet200ApplicationJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "id": "string",
+                                        "bays": [
+                                            {
+                                                "bayType": "string",
+                                                "bayCount": 0,
+                                                "free": 0,
+                                                "occupied": 0
+                                            }
+                                        ],
+                                        "name": "string",
+                                        "carParkDetailsUrl": "string"
+                                    }
+                                ]
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CarParkGet200TextJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "id": "string",
+                                        "bays": [
+                                            {
+                                                "bayType": "string",
+                                                "bayCount": 0,
+                                                "free": 0,
+                                                "occupied": 0
+                                            }
+                                        ],
+                                        "name": "string",
+                                        "carParkDetailsUrl": "string"
+                                    }
+                                ]
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CarParkGet200ApplicationXmlResponse"
+                                },
+                                "example": "<CarParkGet200ApplicationXmlResponse> <id>string</id> <bays> <bayType>string</bayType> <bayCount>0</bayCount> <free>0</free> <occupied>0</occupied> </bays> <name>string</name> <carParkDetailsUrl>string</carParkDetailsUrl> </CarParkGet200ApplicationXmlResponse>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CarParkGet200TextXmlResponse"
+                                },
+                                "example": "<CarParkGet200TextXmlResponse> <id>string</id> <bays> <bayType>string</bayType> <bayCount>0</bayCount> <free>0</free> <occupied>0</occupied> </bays> <name>string</name> <carParkDetailsUrl>string</carParkDetailsUrl> </CarParkGet200TextXmlResponse>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ChargeConnector": {
+            "get": {
+                "tags": [
+                    "Occupancy"
+                ],
+                "summary": "Gets the occupancy for all charge connectors",
+                "description": "Gets the occupancy for all charge connectors",
+                "operationId": "Occupancy_GetAllChargeConnectorStatus",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ChargeConnectorGet200ApplicationJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "id": 0,
+                                        "sourceSystemPlaceId": "string",
+                                        "status": "string"
+                                    }
+                                ]
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ChargeConnectorGet200TextJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "id": 0,
+                                        "sourceSystemPlaceId": "string",
+                                        "status": "string"
+                                    }
+                                ]
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ChargeConnectorGet200ApplicationXmlResponse"
+                                },
+                                "example": "<ChargeConnectorGet200ApplicationXmlResponse> <id>0</id> <sourceSystemPlaceId>string</sourceSystemPlaceId> <status>string</status> </ChargeConnectorGet200ApplicationXmlResponse>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ChargeConnectorGet200TextXmlResponse"
+                                },
+                                "example": "<ChargeConnectorGet200TextXmlResponse> <id>0</id> <sourceSystemPlaceId>string</sourceSystemPlaceId> <status>string</status> </ChargeConnectorGet200TextXmlResponse>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/CarPark/{id}": {
+            "get": {
+                "tags": [
+                    "Occupancy"
+                ],
+                "summary": "Gets the occupancy for a car park with a given id",
+                "description": "Gets the occupancy for a car park with a given id",
+                "operationId": "Occupancy_GetByPathId",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-2"
+                                },
+                                "example": {
+                                    "id": "string",
+                                    "bays": [
+                                        {
+                                            "bayType": "string",
+                                            "bayCount": 0,
+                                            "free": 0,
+                                            "occupied": 0
+                                        }
+                                    ],
+                                    "name": "string",
+                                    "carParkDetailsUrl": "string"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-2"
+                                },
+                                "example": {
+                                    "id": "string",
+                                    "bays": [
+                                        {
+                                            "bayType": "string",
+                                            "bayCount": 0,
+                                            "free": 0,
+                                            "occupied": 0
+                                        }
+                                    ],
+                                    "name": "string",
+                                    "carParkDetailsUrl": "string"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-2"
+                                },
+                                "example": "<Tfl-2> <id>string</id> <bays> <bayType>string</bayType> <bayCount>0</bayCount> <free>0</free> <occupied>0</occupied> </bays> <name>string</name> <carParkDetailsUrl>string</carParkDetailsUrl> </Tfl-2>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-2"
+                                },
+                                "example": "<Tfl-2> <id>string</id> <bays> <bayType>string</bayType> <bayCount>0</bayCount> <free>0</free> <occupied>0</occupied> </bays> <name>string</name> <carParkDetailsUrl>string</carParkDetailsUrl> </Tfl-2>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ChargeConnector/{ids}": {
+            "get": {
+                "tags": [
+                    "Occupancy"
+                ],
+                "summary": "Gets the occupancy for a charge connectors with a given id (sourceSystemPlaceId)",
+                "description": "Gets the occupancy for a charge connectors with a given id (sourceSystemPlaceId)",
+                "operationId": "Occupancy_GetChargeConnectorStatusByPathIds",
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ChargeConnector-ids-Get200ApplicationJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "id": 0,
+                                        "sourceSystemPlaceId": "string",
+                                        "status": "string"
+                                    }
+                                ]
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ChargeConnector-ids-Get200TextJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "id": 0,
+                                        "sourceSystemPlaceId": "string",
+                                        "status": "string"
+                                    }
+                                ]
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ChargeConnector-ids-Get200ApplicationXmlResponse"
+                                },
+                                "example": "<ChargeConnector-ids-Get200ApplicationXmlResponse> <id>0</id> <sourceSystemPlaceId>string</sourceSystemPlaceId> <status>string</status> </ChargeConnector-ids-Get200ApplicationXmlResponse>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ChargeConnector-ids-Get200TextXmlResponse"
+                                },
+                                "example": "<ChargeConnector-ids-Get200TextXmlResponse> <id>0</id> <sourceSystemPlaceId>string</sourceSystemPlaceId> <status>string</status> </ChargeConnector-ids-Get200TextXmlResponse>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/BikePoints/{ids}": {
+            "get": {
+                "tags": [
+                    "Occupancy"
+                ],
+                "summary": "Get the occupancy for bike points.",
+                "description": "Get the occupancy for bike points.",
+                "operationId": "Occupancy_GetBikePointsOccupanciesByPathIds",
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BikePoints-ids-Get200ApplicationJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "id": "string",
+                                        "name": "string",
+                                        "bikesCount": 0,
+                                        "emptyDocks": 0,
+                                        "totalDocks": 0
+                                    }
+                                ]
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BikePoints-ids-Get200TextJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "id": "string",
+                                        "name": "string",
+                                        "bikesCount": 0,
+                                        "emptyDocks": 0,
+                                        "totalDocks": 0
+                                    }
+                                ]
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BikePoints-ids-Get200ApplicationXmlResponse"
+                                },
+                                "example": "<BikePoints-ids-Get200ApplicationXmlResponse> <id>string</id> <name>string</name> <bikesCount>0</bikesCount> <emptyDocks>0</emptyDocks> <totalDocks>0</totalDocks> </BikePoints-ids-Get200ApplicationXmlResponse>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BikePoints-ids-Get200TextXmlResponse"
+                                },
+                                "example": "<BikePoints-ids-Get200TextXmlResponse> <id>string</id> <name>string</name> <bikesCount>0</bikesCount> <emptyDocks>0</emptyDocks> <totalDocks>0</totalDocks> </BikePoints-ids-Get200TextXmlResponse>"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Tfl": {
+                "type": "object",
+                "properties": {
+                    "bayType": {
+                        "type": "string"
+                    },
+                    "bayCount": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "free": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "occupied": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                }
+            },
+            "Tfl-2": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "bays": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl"
+                        }
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "carParkDetailsUrl": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Tfl-3": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "",
+                        "format": "int32"
+                    },
+                    "sourceSystemPlaceId": {
+                        "type": "string",
+                        "description": ""
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": ""
+                    }
+                },
+                "description": ""
+            },
+            "Tfl-4": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Id of the bike point such as BikePoints_1"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name / Common name of the bike point"
+                    },
+                    "bikesCount": {
+                        "type": "integer",
+                        "description": "Total bike counts",
+                        "format": "int32"
+                    },
+                    "emptyDocks": {
+                        "type": "integer",
+                        "description": "Empty docks",
+                        "format": "int32"
+                    },
+                    "totalDocks": {
+                        "type": "integer",
+                        "description": "Total docks available",
+                        "format": "int32"
+                    }
+                },
+                "description": "Bike point occupancy"
+            },
+            "CarParkGet200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-2"
+                }
+            },
+            "CarParkGet200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-2"
+                }
+            },
+            "CarParkGet200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-2"
+                }
+            },
+            "CarParkGet200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-2"
+                }
+            },
+            "ChargeConnector-ids-Get200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            },
+            "ChargeConnector-ids-Get200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            },
+            "ChargeConnector-ids-Get200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            },
+            "ChargeConnector-ids-Get200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            },
+            "ChargeConnectorGet200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            },
+            "ChargeConnectorGet200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            },
+            "ChargeConnectorGet200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            },
+            "ChargeConnectorGet200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-3"
+                }
+            },
+            "BikePoints-ids-Get200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-4"
+                }
+            },
+            "BikePoints-ids-Get200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-4"
+                }
+            },
+            "BikePoints-ids-Get200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-4"
+                }
+            },
+            "BikePoints-ids-Get200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-4"
+                }
+            }
+        },
+        "securitySchemes": {
+            "apiKeyHeader": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "header"
+            },
+            "apiKeyQuery": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "query"
+            }
+        }
+    },
+    "security": [
+        {
+            "apiKeyHeader": []
+        },
+        {
+            "apiKeyQuery": []
+        }
+    ]
+}

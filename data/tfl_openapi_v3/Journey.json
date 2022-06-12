@@ -1,0 +1,1650 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Journey",
+        "description": "APIs relating to Journey and similar services",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.tfl.gov.uk/Journey"
+        }
+    ],
+    "paths": {
+        "/Meta/Modes": {
+            "get": {
+                "tags": [
+                    "Journey"
+                ],
+                "summary": "Gets a list of all of the available journey planner modes",
+                "description": "Gets a list of all of the available journey planner modes",
+                "operationId": "Journey_Meta",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaModesGet200ApplicationJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "isTflService": true,
+                                        "isFarePaying": true,
+                                        "isScheduledService": true,
+                                        "modeName": "string"
+                                    }
+                                ]
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaModesGet200TextJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "isTflService": true,
+                                        "isFarePaying": true,
+                                        "isScheduledService": true,
+                                        "modeName": "string"
+                                    }
+                                ]
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaModesGet200ApplicationXmlResponse"
+                                },
+                                "example": "<MetaModesGet200ApplicationXmlResponse> <isTflService>true</isTflService> <isFarePaying>true</isFarePaying> <isScheduledService>true</isScheduledService> <modeName>string</modeName> </MetaModesGet200ApplicationXmlResponse>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaModesGet200TextXmlResponse"
+                                },
+                                "example": "<MetaModesGet200TextXmlResponse> <isTflService>true</isTflService> <isFarePaying>true</isFarePaying> <isScheduledService>true</isScheduledService> <modeName>string</modeName> </MetaModesGet200TextXmlResponse>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/JourneyResults/{from}/to/{to}": {
+            "get": {
+                "tags": [
+                    "Journey"
+                ],
+                "summary": "Perform a Journey Planner search from the parameters specified in simple types",
+                "description": "Perform a Journey Planner search from the parameters specified in simple types",
+                "operationId": "Journey_JourneyResultsByPathFromPathToQueryViaQueryNationalSearchQueryDateQu",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "path",
+                        "description": "Origin of the journey. Can be WGS84 coordinates expressed as \"lat,long\", a UK postcode, a Naptan (StopPoint) id, an ICS StopId, or a free-text string (will cause disambiguation unless it exactly matches a point of interest name).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "path",
+                        "description": "Destination of the journey. Can be WGS84 coordinates expressed as \"lat,long\", a UK postcode, a Naptan (StopPoint) id, an ICS StopId, or a free-text string (will cause disambiguation unless it exactly matches a point of interest name).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "via",
+                        "in": "query",
+                        "description": "Travel through point on the journey. Can be WGS84 coordinates expressed as \"lat,long\", a UK postcode, a Naptan (StopPoint) id, an ICS StopId, or a free-text string (will cause disambiguation unless it exactly matches a point of interest name).",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "nationalSearch",
+                        "in": "query",
+                        "description": "Does the journey cover stops outside London? eg. \"nationalSearch=true\"",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "description": "The date must be in yyyyMMdd format",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "time",
+                        "in": "query",
+                        "description": "The time must be in HHmm format",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "timeIs",
+                        "in": "query",
+                        "description": "Does the time given relate to arrival or leaving time? Possible options: \"departing\" | \"arriving\"",
+                        "schema": {
+                            "enum": [
+                                "Arriving",
+                                "Departing"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "journeyPreference",
+                        "in": "query",
+                        "description": "The journey preference eg possible options: \"leastinterchange\" | \"leasttime\" | \"leastwalking\"",
+                        "schema": {
+                            "enum": [
+                                "LeastInterchange",
+                                "LeastTime",
+                                "LeastWalking"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "mode",
+                        "in": "query",
+                        "description": "The mode must be a comma separated list of modes. eg possible options: \"public-bus,overground,train,tube,coach,dlr,cablecar,tram,river,walking,cycle\"",
+                        "schema": {
+                            "type": "array"
+                        }
+                    },
+                    {
+                        "name": "accessibilityPreference",
+                        "in": "query",
+                        "description": "The accessibility preference must be a comma separated list eg. \"noSolidStairs,noEscalators,noElevators,stepFreeToVehicle,stepFreeToPlatform\"",
+                        "schema": {
+                            "enum": [
+                                "NoRequirements",
+                                "NoSolidStairs",
+                                "NoEscalators",
+                                "NoElevators",
+                                "StepFreeToVehicle",
+                                "StepFreeToPlatform"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "fromName",
+                        "in": "query",
+                        "description": "An optional name to associate with the origin of the journey in the results.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "toName",
+                        "in": "query",
+                        "description": "An optional name to associate with the destination of the journey in the results.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "viaName",
+                        "in": "query",
+                        "description": "An optional name to associate with the via point of the journey in the results.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "maxTransferMinutes",
+                        "in": "query",
+                        "description": "The max walking time in minutes for transfer eg. \"120\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "maxWalkingMinutes",
+                        "in": "query",
+                        "description": "The max walking time in minutes for journeys eg. \"120\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "walkingSpeed",
+                        "in": "query",
+                        "description": "The walking speed. eg possible options: \"slow\" | \"average\" | \"fast\".",
+                        "schema": {
+                            "enum": [
+                                "Slow",
+                                "Average",
+                                "Fast"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cyclePreference",
+                        "in": "query",
+                        "description": "The cycle preference. eg possible options: \"allTheWay\" | \"leaveAtStation\" | \"takeOnTransport\" | \"cycleHire\"",
+                        "schema": {
+                            "enum": [
+                                "None",
+                                "LeaveAtStation",
+                                "TakeOnTransport",
+                                "AllTheWay",
+                                "CycleHire"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "adjustment",
+                        "in": "query",
+                        "description": "Time adjustment command. eg possible options: \"TripFirst\" | \"TripLast\"",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "bikeProficiency",
+                        "in": "query",
+                        "description": "A comma separated list of cycling proficiency levels. eg possible options: \"easy,moderate,fast\"",
+                        "schema": {
+                            "enum": [
+                                "Easy",
+                                "Moderate",
+                                "Fast"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "alternativeCycle",
+                        "in": "query",
+                        "description": "Option to determine whether to return alternative cycling journey",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "alternativeWalking",
+                        "in": "query",
+                        "description": "Option to determine whether to return alternative walking journey",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "applyHtmlMarkup",
+                        "in": "query",
+                        "description": "Flag to determine whether certain text (e.g. walking instructions) should be output with HTML tags or not.",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "useMultiModalCall",
+                        "in": "query",
+                        "description": "A boolean to indicate whether or not to return 3 public transport journeys, a bus journey, a cycle hire journey, a personal cycle journey and a walking journey",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "walkingOptimization",
+                        "in": "query",
+                        "description": "A boolean to indicate whether to optimize journeys using walking",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "taxiOnlyTrip",
+                        "in": "query",
+                        "description": "A boolean to indicate whether to return one or more taxi journeys. Note, setting this to true will override \"useMultiModalCall\".",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "routeBetweenEntrances",
+                        "in": "query",
+                        "description": "A boolean to indicate whether public transport routes should include directions between platforms and station entrances.",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-40"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-40"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-40"
+                                }
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-40"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/*": {
+            "get": {
+                "tags": [
+                    "StopPoint"
+                ],
+                "summary": "Forwards any remaining requests to the back-end",
+                "description": "Forwards any remaining requests to the back-end",
+                "operationId": "Forward_Proxy",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get200ApplicationJsonResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Tfl": {
+                "type": "object",
+                "properties": {
+                    "isTflService": {
+                        "type": "boolean"
+                    },
+                    "isFarePaying": {
+                        "type": "boolean"
+                    },
+                    "isScheduledService": {
+                        "type": "boolean"
+                    },
+                    "modeName": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Tfl-2": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Tfl-3": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "type": "string"
+                    },
+                    "turnDirection": {
+                        "type": "string"
+                    },
+                    "streetName": {
+                        "type": "string"
+                    },
+                    "distance": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "cumulativeDistance": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "skyDirection": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "skyDirectionDescription": {
+                        "enum": [
+                            "North",
+                            "NorthEast",
+                            "East",
+                            "SouthEast",
+                            "South",
+                            "SouthWest",
+                            "West",
+                            "NorthWest"
+                        ],
+                        "type": "string"
+                    },
+                    "cumulativeTravelTime": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "latitude": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "longitude": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "pathAttribute": {
+                        "$ref": "#/components/schemas/Tfl-2"
+                    },
+                    "descriptionHeading": {
+                        "type": "string"
+                    },
+                    "trackType": {
+                        "enum": [
+                            "CycleSuperHighway",
+                            "CanalTowpath",
+                            "QuietRoad",
+                            "ProvisionForCyclists",
+                            "BusyRoads",
+                            "None",
+                            "PushBike",
+                            "Quietway"
+                        ],
+                        "type": "string"
+                    }
+                }
+            },
+            "Tfl-4": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string"
+                    },
+                    "detailed": {
+                        "type": "string"
+                    },
+                    "steps": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-3"
+                        }
+                    }
+                }
+            },
+            "Tfl-5": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string"
+                    },
+                    "incline": {
+                        "type": "string"
+                    },
+                    "stopId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "position": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Tfl-6": {
+                "type": "object",
+                "properties": {
+                    "lat": {
+                        "type": "number",
+                        "description": "WGS84 latitude of the location.",
+                        "format": "double"
+                    },
+                    "lon": {
+                        "type": "number",
+                        "description": "WGS84 longitude of the location.",
+                        "format": "double"
+                    }
+                },
+                "description": "Represents a point located at a latitude and longitude using the WGS84 co-ordinate system."
+            },
+            "Tfl-7": {
+                "type": "object",
+                "properties": {
+                    "timeSlice": {
+                        "type": "string",
+                        "description": "Time in 24hr format with 15 minute intervals e.g. 0500-0515, 0515-0530 etc."
+                    },
+                    "value": {
+                        "type": "integer",
+                        "description": "Count of passenger flow towards a platform",
+                        "format": "int32"
+                    }
+                }
+            },
+            "Tfl-8": {
+                "type": "object",
+                "properties": {
+                    "line": {
+                        "type": "string",
+                        "description": "The Line Name e.g. \"Victoria\""
+                    },
+                    "lineDirection": {
+                        "type": "string",
+                        "description": "Direction of the Line e.g. NB, SB, WB etc."
+                    },
+                    "platformDirection": {
+                        "type": "string",
+                        "description": "Direction displayed on the platform e.g. NB, SB, WB etc."
+                    },
+                    "direction": {
+                        "type": "string",
+                        "description": "Direction in regards to Journey Planner i.e. inbound or outbound"
+                    },
+                    "naptanTo": {
+                        "type": "string",
+                        "description": "Naptan of the adjacent station"
+                    },
+                    "timeSlice": {
+                        "type": "string",
+                        "description": "Time in 24hr format with 15 minute intervals e.g. 0500-0515, 0515-0530 etc."
+                    },
+                    "value": {
+                        "type": "integer",
+                        "description": "Scale between 1-6, \r\n             1 = Very quiet, 2 = Quiet, 3 = Fairly busy, 4 = Busy, 5 = Very busy, 6 = Exceptionally busy",
+                        "format": "int32"
+                    }
+                }
+            },
+            "Tfl-9": {
+                "type": "object",
+                "properties": {
+                    "passengerFlows": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-7"
+                        },
+                        "description": "Busiest times at a station (static information)"
+                    },
+                    "trainLoadings": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-8"
+                        },
+                        "description": "Train Loading on a scale 1-6, 1 being \"Very quiet\" and 6 being \"Exceptionally busy\" (static information)"
+                    }
+                }
+            },
+            "Tfl-10": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "uri": {
+                        "type": "string"
+                    },
+                    "fullName": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "crowding": {
+                        "$ref": "#/components/schemas/Tfl-9"
+                    },
+                    "routeType": {
+                        "enum": [
+                            "Unknown",
+                            "All",
+                            "Cycle Superhighways",
+                            "Quietways",
+                            "Cycleways",
+                            "Mini-Hollands",
+                            "Central London Grid",
+                            "Streetspace Route"
+                        ],
+                        "type": "string"
+                    },
+                    "status": {
+                        "enum": [
+                            "Unknown",
+                            "All",
+                            "Open",
+                            "In Progress",
+                            "Planned",
+                            "Planned - Subject to feasibility and consultation.",
+                            "Not Open"
+                        ],
+                        "type": "string"
+                    }
+                }
+            },
+            "Tfl-11": {
+                "type": "object",
+                "properties": {
+                    "distance": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "startLat": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "startLon": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "endLat": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "endLon": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "heightFromPreviousPoint": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "gradient": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                }
+            },
+            "Tfl-12": {
+                "type": "object",
+                "properties": {
+                    "lineString": {
+                        "type": "string"
+                    },
+                    "stopPoints": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-10"
+                        }
+                    },
+                    "elevation": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-11"
+                        }
+                    }
+                }
+            },
+            "Tfl-13": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The Id of the route"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name such as \"72\""
+                    },
+                    "directions": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "lineIdentifier": {
+                        "$ref": "#/components/schemas/Tfl-10"
+                    }
+                }
+            },
+            "Tfl-14": {
+                "type": "object",
+                "properties": {
+                    "naptanIdReference": {
+                        "type": "string"
+                    },
+                    "stationAtcoCode": {
+                        "type": "string"
+                    },
+                    "lineIdentifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "Tfl-15": {
+                "type": "object",
+                "properties": {
+                    "modeName": {
+                        "type": "string"
+                    },
+                    "lineIdentifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "Tfl-16": {
+                "type": "object",
+                "properties": {
+                    "category": {
+                        "type": "string"
+                    },
+                    "key": {
+                        "type": "string"
+                    },
+                    "sourceSystemKey": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    },
+                    "modified": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "Tfl-17": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "A unique identifier."
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "The unique location of this resource."
+                    },
+                    "commonName": {
+                        "type": "string",
+                        "description": "A human readable name."
+                    },
+                    "distance": {
+                        "type": "number",
+                        "description": "The distance of the place from its search point, if this is the result\r\n            of a geographical search, otherwise zero.",
+                        "format": "double"
+                    },
+                    "placeType": {
+                        "type": "string",
+                        "description": "The type of Place. See /Place/Meta/placeTypes for possible values."
+                    },
+                    "additionalProperties": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-16"
+                        },
+                        "description": "A bag of additional key/value pairs with extra information about this place."
+                    },
+                    "children": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-17"
+                        }
+                    },
+                    "childrenUrls": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "lat": {
+                        "type": "number",
+                        "description": "WGS84 latitude of the location.",
+                        "format": "double"
+                    },
+                    "lon": {
+                        "type": "number",
+                        "description": "WGS84 longitude of the location.",
+                        "format": "double"
+                    }
+                }
+            },
+            "Tfl-18": {
+                "type": "object",
+                "properties": {
+                    "naptanId": {
+                        "type": "string"
+                    },
+                    "platformName": {
+                        "type": "string"
+                    },
+                    "indicator": {
+                        "type": "string",
+                        "description": "The indicator of the stop point e.g. \"Stop K\""
+                    },
+                    "stopLetter": {
+                        "type": "string",
+                        "description": "The stop letter, if it could be cleansed from the Indicator e.g. \"K\""
+                    },
+                    "modes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "icsCode": {
+                        "type": "string"
+                    },
+                    "smsCode": {
+                        "type": "string"
+                    },
+                    "stopType": {
+                        "type": "string"
+                    },
+                    "stationNaptan": {
+                        "type": "string"
+                    },
+                    "accessibilitySummary": {
+                        "type": "string"
+                    },
+                    "hubNaptanCode": {
+                        "type": "string"
+                    },
+                    "lines": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-10"
+                        }
+                    },
+                    "lineGroup": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-14"
+                        }
+                    },
+                    "lineModeGroups": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-15"
+                        }
+                    },
+                    "fullName": {
+                        "type": "string"
+                    },
+                    "naptanMode": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "boolean"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "A unique identifier."
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "The unique location of this resource."
+                    },
+                    "commonName": {
+                        "type": "string",
+                        "description": "A human readable name."
+                    },
+                    "distance": {
+                        "type": "number",
+                        "description": "The distance of the place from its search point, if this is the result\r\n            of a geographical search, otherwise zero.",
+                        "format": "double"
+                    },
+                    "placeType": {
+                        "type": "string",
+                        "description": "The type of Place. See /Place/Meta/placeTypes for possible values."
+                    },
+                    "additionalProperties": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-16"
+                        },
+                        "description": "A bag of additional key/value pairs with extra information about this place."
+                    },
+                    "children": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-17"
+                        }
+                    },
+                    "childrenUrls": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "lat": {
+                        "type": "number",
+                        "description": "WGS84 latitude of the location.",
+                        "format": "double"
+                    },
+                    "lon": {
+                        "type": "number",
+                        "description": "WGS84 longitude of the location.",
+                        "format": "double"
+                    }
+                }
+            },
+            "Tfl-19": {
+                "type": "object",
+                "properties": {
+                    "ordinal": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "stopPoint": {
+                        "$ref": "#/components/schemas/Tfl-18"
+                    }
+                }
+            },
+            "Tfl-20": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The Id of the route"
+                    },
+                    "lineId": {
+                        "type": "string",
+                        "description": "The Id of the Line"
+                    },
+                    "routeCode": {
+                        "type": "string",
+                        "description": "The route code"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name such as \"72\""
+                    },
+                    "lineString": {
+                        "type": "string",
+                        "description": "The co-ordinates of the route's path as a geoJSON lineString"
+                    },
+                    "direction": {
+                        "type": "string",
+                        "description": "Inbound or Outbound"
+                    },
+                    "originationName": {
+                        "type": "string",
+                        "description": "The name of the Origin StopPoint"
+                    },
+                    "destinationName": {
+                        "type": "string",
+                        "description": "The name of the Destination StopPoint"
+                    },
+                    "validTo": {
+                        "type": "string",
+                        "description": "The DateTime that the Service containing this Route is valid until.",
+                        "format": "date-time"
+                    },
+                    "validFrom": {
+                        "type": "string",
+                        "description": "The DateTime that the Service containing this Route is valid from.",
+                        "format": "date-time"
+                    },
+                    "routeSectionNaptanEntrySequence": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-19"
+                        }
+                    }
+                }
+            },
+            "Tfl-21": {
+                "type": "object",
+                "properties": {
+                    "category": {
+                        "enum": [
+                            "Undefined",
+                            "RealTime",
+                            "PlannedWork",
+                            "Information",
+                            "Event",
+                            "Crowding",
+                            "StatusAlert"
+                        ],
+                        "type": "string",
+                        "description": "Gets or sets the category of this dispruption."
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Gets or sets the disruption type of this dispruption."
+                    },
+                    "categoryDescription": {
+                        "type": "string",
+                        "description": "Gets or sets the description of the category."
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Gets or sets the description of this disruption."
+                    },
+                    "summary": {
+                        "type": "string",
+                        "description": "Gets or sets the summary of this disruption."
+                    },
+                    "additionalInfo": {
+                        "type": "string",
+                        "description": "Gets or sets the additionaInfo of this disruption."
+                    },
+                    "created": {
+                        "type": "string",
+                        "description": "Gets or sets the date/time when this disruption was created.",
+                        "format": "date-time"
+                    },
+                    "lastUpdate": {
+                        "type": "string",
+                        "description": "Gets or sets the date/time when this disruption was last updated.",
+                        "format": "date-time"
+                    },
+                    "affectedRoutes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-20"
+                        },
+                        "description": "Gets or sets the routes affected by this disruption"
+                    },
+                    "affectedStops": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-18"
+                        },
+                        "description": "Gets or sets the stops affected by this disruption"
+                    },
+                    "closureText": {
+                        "type": "string",
+                        "description": "Text describing the closure type"
+                    }
+                },
+                "description": "Represents a disruption to a route within the transport network."
+            },
+            "Tfl-22": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "createdDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "lastUpdateDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "Tfl-23": {
+                "type": "object",
+                "properties": {
+                    "duration": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "speed": {
+                        "type": "string"
+                    },
+                    "instruction": {
+                        "$ref": "#/components/schemas/Tfl-4"
+                    },
+                    "obstacles": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-5"
+                        }
+                    },
+                    "departureTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "arrivalTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "departurePoint": {
+                        "$ref": "#/components/schemas/Tfl-6"
+                    },
+                    "arrivalPoint": {
+                        "$ref": "#/components/schemas/Tfl-6"
+                    },
+                    "path": {
+                        "$ref": "#/components/schemas/Tfl-12"
+                    },
+                    "routeOptions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-13"
+                        }
+                    },
+                    "mode": {
+                        "$ref": "#/components/schemas/Tfl-10"
+                    },
+                    "disruptions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-21"
+                        }
+                    },
+                    "plannedWorks": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-22"
+                        }
+                    },
+                    "distance": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "isDisrupted": {
+                        "type": "boolean",
+                        "readOnly": true
+                    },
+                    "hasFixedLocations": {
+                        "type": "boolean",
+                        "readOnly": true
+                    }
+                }
+            },
+            "Tfl-24": {
+                "type": "object",
+                "properties": {
+                    "modeType": {
+                        "type": "string"
+                    },
+                    "validationType": {
+                        "type": "string"
+                    },
+                    "hostDeviceType": {
+                        "type": "string"
+                    },
+                    "busRouteId": {
+                        "type": "string"
+                    },
+                    "nationalLocationCode": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "tapTimestamp": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "Tfl-25": {
+                "type": "object",
+                "properties": {
+                    "atcoCode": {
+                        "type": "string"
+                    },
+                    "tapDetails": {
+                        "$ref": "#/components/schemas/Tfl-24"
+                    }
+                }
+            },
+            "Tfl-26": {
+                "type": "object",
+                "properties": {
+                    "lowZone": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "highZone": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "cost": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "chargeProfileName": {
+                        "type": "string"
+                    },
+                    "isHopperFare": {
+                        "type": "boolean"
+                    },
+                    "chargeLevel": {
+                        "type": "string"
+                    },
+                    "peak": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "offPeak": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "taps": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-25"
+                        }
+                    }
+                }
+            },
+            "Tfl-27": {
+                "type": "object",
+                "properties": {
+                    "text": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Tfl-28": {
+                "type": "object",
+                "properties": {
+                    "totalCost": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "fares": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-26"
+                        }
+                    },
+                    "caveats": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-27"
+                        }
+                    }
+                }
+            },
+            "Tfl-29": {
+                "type": "object",
+                "properties": {
+                    "startDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "duration": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "arrivalDateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "legs": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-23"
+                        }
+                    },
+                    "fare": {
+                        "$ref": "#/components/schemas/Tfl-28"
+                    }
+                },
+                "description": "Object that represents an end to end journey (see schematic)."
+            },
+            "Tfl-30": {
+                "type": "object",
+                "properties": {
+                    "fromDate": {
+                        "type": "string",
+                        "description": "Gets or sets the start date.",
+                        "format": "date-time"
+                    },
+                    "toDate": {
+                        "type": "string",
+                        "description": "Gets or sets the end date.",
+                        "format": "date-time"
+                    },
+                    "isNow": {
+                        "type": "boolean",
+                        "description": "If true is a realtime status rather than planned or info"
+                    }
+                },
+                "description": "Represents a period for which a planned works is valid."
+            },
+            "Tfl-31": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "lineId": {
+                        "type": "string"
+                    },
+                    "statusSeverity": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "statusSeverityDescription": {
+                        "type": "string"
+                    },
+                    "reason": {
+                        "type": "string"
+                    },
+                    "created": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "modified": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "validityPeriods": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-30"
+                        }
+                    },
+                    "disruption": {
+                        "$ref": "#/components/schemas/Tfl-21"
+                    }
+                }
+            },
+            "Tfl-32": {
+                "type": "object",
+                "properties": {
+                    "routeCode": {
+                        "type": "string",
+                        "description": "The route code"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name such as \"72\""
+                    },
+                    "direction": {
+                        "type": "string",
+                        "description": "Inbound or Outbound"
+                    },
+                    "originationName": {
+                        "type": "string",
+                        "description": "The name of the Origin StopPoint"
+                    },
+                    "destinationName": {
+                        "type": "string",
+                        "description": "The name of the Destination StopPoint"
+                    },
+                    "originator": {
+                        "type": "string",
+                        "description": "The Id (NaPTAN code) of the Origin StopPoint"
+                    },
+                    "destination": {
+                        "type": "string",
+                        "description": "The Id (NaPTAN code) or the Destination StopPoint"
+                    },
+                    "serviceType": {
+                        "type": "string",
+                        "description": "Regular or Night"
+                    },
+                    "validTo": {
+                        "type": "string",
+                        "description": "The DateTime that the Service containing this Route is valid until.",
+                        "format": "date-time"
+                    },
+                    "validFrom": {
+                        "type": "string",
+                        "description": "The DateTime that the Service containing this Route is valid from.",
+                        "format": "date-time"
+                    }
+                },
+                "description": "Description of a Route used in Route search results."
+            },
+            "Tfl-33": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "uri": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Tfl-34": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "modeName": {
+                        "type": "string"
+                    },
+                    "disruptions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-21"
+                        }
+                    },
+                    "created": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "modified": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "lineStatuses": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-31"
+                        }
+                    },
+                    "routeSections": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-32"
+                        }
+                    },
+                    "serviceTypes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-33"
+                        }
+                    },
+                    "crowding": {
+                        "$ref": "#/components/schemas/Tfl-9"
+                    }
+                }
+            },
+            "Tfl-35": {
+                "type": "object",
+                "properties": {
+                    "originNumberOfBikes": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "destinationNumberOfBikes": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "originNumberOfEmptySlots": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "destinationNumberOfEmptySlots": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "originId": {
+                        "type": "string"
+                    },
+                    "destinationId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Tfl-36": {
+                "type": "object",
+                "properties": {
+                    "date": {
+                        "type": "string"
+                    },
+                    "time": {
+                        "type": "string"
+                    },
+                    "timeIs": {
+                        "type": "string"
+                    },
+                    "uri": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Tfl-37": {
+                "type": "object",
+                "properties": {
+                    "earliest": {
+                        "$ref": "#/components/schemas/Tfl-36"
+                    },
+                    "earlier": {
+                        "$ref": "#/components/schemas/Tfl-36"
+                    },
+                    "later": {
+                        "$ref": "#/components/schemas/Tfl-36"
+                    },
+                    "latest": {
+                        "$ref": "#/components/schemas/Tfl-36"
+                    }
+                }
+            },
+            "Tfl-38": {
+                "type": "object",
+                "properties": {
+                    "dateTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "dateTimeType": {
+                        "enum": [
+                            "Arriving",
+                            "Departing"
+                        ],
+                        "type": "string"
+                    },
+                    "timeAdjustments": {
+                        "$ref": "#/components/schemas/Tfl-37"
+                    }
+                }
+            },
+            "Tfl-39": {
+                "type": "object",
+                "properties": {
+                    "from": {
+                        "type": "string"
+                    },
+                    "to": {
+                        "type": "string"
+                    },
+                    "via": {
+                        "type": "string"
+                    },
+                    "uri": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Tfl-40": {
+                "type": "object",
+                "properties": {
+                    "journeys": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-29"
+                        }
+                    },
+                    "lines": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-34"
+                        }
+                    },
+                    "cycleHireDockingStationData": {
+                        "$ref": "#/components/schemas/Tfl-35"
+                    },
+                    "stopMessages": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "recommendedMaxAgeMinutes": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "searchCriteria": {
+                        "$ref": "#/components/schemas/Tfl-38"
+                    },
+                    "journeyVector": {
+                        "$ref": "#/components/schemas/Tfl-39"
+                    }
+                },
+                "description": "A DTO representing a list of possible journeys."
+            },
+            "MetaModesGet200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "MetaModesGet200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "MetaModesGet200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "MetaModesGet200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "Get200ApplicationJsonResponse": {
+                "type": "object"
+            }
+        },
+        "securitySchemes": {
+            "apiKeyHeader": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "header"
+            },
+            "apiKeyQuery": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "query"
+            }
+        }
+    },
+    "security": [
+        {
+            "apiKeyHeader": []
+        },
+        {
+            "apiKeyQuery": []
+        }
+    ]
+}

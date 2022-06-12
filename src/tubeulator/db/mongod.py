@@ -7,9 +7,15 @@ import subprocess
 from ..utils.logging import set_up_logging
 from ..utils.paths import db_path
 
-__all__ = ["start_mongod", "MongodProcess", "get_mongod_process", "MongodExceptionGuard"]
+__all__ = [
+    "start_mongod",
+    "MongodProcess",
+    "get_mongod_process",
+    "MongodExceptionGuard",
+]
 
 logger = set_up_logging(__name__)
+
 
 def start_mongod() -> None:
     db_path.mkdir(parents=True, exist_ok=True)
@@ -17,9 +23,10 @@ def start_mongod() -> None:
     subprocess.Popen(["mongod", "--dbpath", db_path], stdout=subprocess.DEVNULL)
     logger.debug(f"Created a mongod process at {db_path}")
 
+
 @dataclass
 class MongodProcess:
-    pid: str # Numeric but still string
+    pid: str  # Numeric but still string
     fresh: bool
 
     def kill(self):
@@ -49,7 +56,7 @@ def get_mongod_process() -> MongodProcess:
 
 # Idea via https://stackoverflow.com/a/60367619/
 class MongodExceptionGuard(AbstractContextManager):
-    def __init__(self, mongod_proc = get_mongod_process()):
+    def __init__(self, mongod_proc=get_mongod_process()):
         """
         Set up the Mongod daemon if a process is not found.
         """

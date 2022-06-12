@@ -1,0 +1,1897 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Road",
+        "description": "APIs relating to Road and similar services",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.tfl.gov.uk/Road"
+        }
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "tags": [
+                    "Road"
+                ],
+                "summary": "Gets all roads managed by TfL",
+                "description": "Gets all roads managed by TfL",
+                "operationId": "Road_Get",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get200ApplicationJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "id": "string",
+                                        "displayName": "string",
+                                        "group": "string",
+                                        "statusSeverity": "string",
+                                        "statusSeverityDescription": "string",
+                                        "bounds": "string",
+                                        "envelope": "string",
+                                        "statusAggregationStartDate": "string",
+                                        "statusAggregationEndDate": "string",
+                                        "url": "string"
+                                    }
+                                ]
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get200TextJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "id": "string",
+                                        "displayName": "string",
+                                        "group": "string",
+                                        "statusSeverity": "string",
+                                        "statusSeverityDescription": "string",
+                                        "bounds": "string",
+                                        "envelope": "string",
+                                        "statusAggregationStartDate": "string",
+                                        "statusAggregationEndDate": "string",
+                                        "url": "string"
+                                    }
+                                ]
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get200ApplicationXmlResponse"
+                                },
+                                "example": "<Get200ApplicationXmlResponse> <id>string</id> <displayName>string</displayName> <group>string</group> <statusSeverity>string</statusSeverity> <statusSeverityDescription>string</statusSeverityDescription> <bounds>string</bounds> <envelope>string</envelope> <statusAggregationStartDate>string</statusAggregationStartDate> <statusAggregationEndDate>string</statusAggregationEndDate> <url>string</url> </Get200ApplicationXmlResponse>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get200TextXmlResponse"
+                                },
+                                "example": "<Get200TextXmlResponse> <id>string</id> <displayName>string</displayName> <group>string</group> <statusSeverity>string</statusSeverity> <statusSeverityDescription>string</statusSeverityDescription> <bounds>string</bounds> <envelope>string</envelope> <statusAggregationStartDate>string</statusAggregationStartDate> <statusAggregationEndDate>string</statusAggregationEndDate> <url>string</url> </Get200TextXmlResponse>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/{ids}": {
+            "get": {
+                "tags": [
+                    "Road"
+                ],
+                "summary": "Gets the road with the specified id (e.g. A1)",
+                "description": "Gets the road with the specified id (e.g. A1)",
+                "operationId": "Road_GetByPathIds",
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "description": "Comma-separated list of road identifiers e.g. \"A406, A2\" (a full list of supported road identifiers can be found at the /Road/ endpoint)",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ids-Get200ApplicationJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "id": "string",
+                                        "displayName": "string",
+                                        "group": "string",
+                                        "statusSeverity": "string",
+                                        "statusSeverityDescription": "string",
+                                        "bounds": "string",
+                                        "envelope": "string",
+                                        "statusAggregationStartDate": "string",
+                                        "statusAggregationEndDate": "string",
+                                        "url": "string"
+                                    }
+                                ]
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ids-Get200TextJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "id": "string",
+                                        "displayName": "string",
+                                        "group": "string",
+                                        "statusSeverity": "string",
+                                        "statusSeverityDescription": "string",
+                                        "bounds": "string",
+                                        "envelope": "string",
+                                        "statusAggregationStartDate": "string",
+                                        "statusAggregationEndDate": "string",
+                                        "url": "string"
+                                    }
+                                ]
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ids-Get200ApplicationXmlResponse"
+                                },
+                                "example": "<ids-Get200ApplicationXmlResponse> <id>string</id> <displayName>string</displayName> <group>string</group> <statusSeverity>string</statusSeverity> <statusSeverityDescription>string</statusSeverityDescription> <bounds>string</bounds> <envelope>string</envelope> <statusAggregationStartDate>string</statusAggregationStartDate> <statusAggregationEndDate>string</statusAggregationEndDate> <url>string</url> </ids-Get200ApplicationXmlResponse>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ids-Get200TextXmlResponse"
+                                },
+                                "example": "<ids-Get200TextXmlResponse> <id>string</id> <displayName>string</displayName> <group>string</group> <statusSeverity>string</statusSeverity> <statusSeverityDescription>string</statusSeverityDescription> <bounds>string</bounds> <envelope>string</envelope> <statusAggregationStartDate>string</statusAggregationStartDate> <statusAggregationEndDate>string</statusAggregationEndDate> <url>string</url> </ids-Get200TextXmlResponse>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/{ids}/Status": {
+            "get": {
+                "tags": [
+                    "Road"
+                ],
+                "summary": "Gets the specified roads with the status aggregated over the date range specified, or now until the end of today if no dates are passed.",
+                "description": "Gets the specified roads with the status aggregated over the date range specified, or now until the end of today if no dates are passed.",
+                "operationId": "Road_StatusByPathIdsQueryStartDateQueryEndDate",
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "description": "Comma-separated list of road identifiers e.g. \"A406, A2\" or use \"all\" to ignore id filter (a full list of supported road identifiers can be found at the /Road/ endpoint)",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": "Format - date-time (as date-time in RFC3339). The start date to aggregate status from",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": "Format - date-time (as date-time in RFC3339). The end date to aggregate status up to",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ids-StatusGet200ApplicationJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "id": "string",
+                                        "displayName": "string",
+                                        "group": "string",
+                                        "statusSeverity": "string",
+                                        "statusSeverityDescription": "string",
+                                        "bounds": "string",
+                                        "envelope": "string",
+                                        "statusAggregationStartDate": "string",
+                                        "statusAggregationEndDate": "string",
+                                        "url": "string"
+                                    }
+                                ]
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ids-StatusGet200TextJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "id": "string",
+                                        "displayName": "string",
+                                        "group": "string",
+                                        "statusSeverity": "string",
+                                        "statusSeverityDescription": "string",
+                                        "bounds": "string",
+                                        "envelope": "string",
+                                        "statusAggregationStartDate": "string",
+                                        "statusAggregationEndDate": "string",
+                                        "url": "string"
+                                    }
+                                ]
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ids-StatusGet200ApplicationXmlResponse"
+                                },
+                                "example": "<ids-StatusGet200ApplicationXmlResponse> <id>string</id> <displayName>string</displayName> <group>string</group> <statusSeverity>string</statusSeverity> <statusSeverityDescription>string</statusSeverityDescription> <bounds>string</bounds> <envelope>string</envelope> <statusAggregationStartDate>string</statusAggregationStartDate> <statusAggregationEndDate>string</statusAggregationEndDate> <url>string</url> </ids-StatusGet200ApplicationXmlResponse>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ids-StatusGet200TextXmlResponse"
+                                },
+                                "example": "<ids-StatusGet200TextXmlResponse> <id>string</id> <displayName>string</displayName> <group>string</group> <statusSeverity>string</statusSeverity> <statusSeverityDescription>string</statusSeverityDescription> <bounds>string</bounds> <envelope>string</envelope> <statusAggregationStartDate>string</statusAggregationStartDate> <statusAggregationEndDate>string</statusAggregationEndDate> <url>string</url> </ids-StatusGet200TextXmlResponse>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/{ids}/Disruption": {
+            "get": {
+                "tags": [
+                    "Road"
+                ],
+                "summary": "Get active disruptions, filtered by road ids",
+                "description": "Get active disruptions, filtered by road ids",
+                "operationId": "Road_DisruptionByPathIdsQueryStripContentQuerySeveritiesQueryCategoriesQuery",
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "description": "Comma-separated list of road identifiers e.g. \"A406, A2\" use all for all to ignore id filter (a full list of supported road identifiers can be found at the /Road/ endpoint)",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "stripContent",
+                        "in": "query",
+                        "description": "Optional, defaults to false. When true, removes every property/node except for id, point, severity, severityDescription, startDate, endDate, corridor details, location, comments and streets",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "severities",
+                        "in": "query",
+                        "description": "an optional list of Severity names to filter on (a valid list of severities can be obtained from the /Road/Meta/severities endpoint)",
+                        "schema": {
+                            "type": "array"
+                        }
+                    },
+                    {
+                        "name": "categories",
+                        "in": "query",
+                        "description": "an optional list of category names to filter on (a valid list of categories can be obtained from the /Road/Meta/categories endpoint)",
+                        "schema": {
+                            "type": "array"
+                        }
+                    },
+                    {
+                        "name": "closures",
+                        "in": "query",
+                        "description": "Optional, defaults to true. When true, always includes disruptions that have road closures, regardless of the severity filter. When false, the severity filter works as normal.",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ids-DisruptionGet200ApplicationJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "id": "string",
+                                        "url": "string",
+                                        "point": "string",
+                                        "severity": "string",
+                                        "ordinal": 0,
+                                        "category": "string",
+                                        "subCategory": "string",
+                                        "comments": "string",
+                                        "currentUpdate": "string",
+                                        "currentUpdateDateTime": "string",
+                                        "corridorIds": [
+                                            "string"
+                                        ],
+                                        "startDateTime": "string",
+                                        "endDateTime": "string",
+                                        "lastModifiedTime": "string",
+                                        "levelOfInterest": "string",
+                                        "location": "string",
+                                        "status": "string",
+                                        "geography": {
+                                            "geography": {
+                                                "coordinateSystemId": 0,
+                                                "wellKnownText": "string",
+                                                "wellKnownBinary": "string"
+                                            }
+                                        },
+                                        "geometry": {
+                                            "geography": {
+                                                "coordinateSystemId": 0,
+                                                "wellKnownText": "string",
+                                                "wellKnownBinary": "string"
+                                            }
+                                        },
+                                        "streets": [
+                                            {
+                                                "name": "string",
+                                                "closure": "string",
+                                                "directions": "string",
+                                                "segments": [
+                                                    {
+                                                        "toid": "string",
+                                                        "lineString": "string",
+                                                        "sourceSystemId": 0,
+                                                        "sourceSystemKey": "string"
+                                                    }
+                                                ],
+                                                "sourceSystemId": 0,
+                                                "sourceSystemKey": "string"
+                                            }
+                                        ],
+                                        "isProvisional": true,
+                                        "hasClosures": true,
+                                        "linkText": "string",
+                                        "linkUrl": "string",
+                                        "roadProject": {
+                                            "projectId": "string",
+                                            "schemeName": "string",
+                                            "projectName": "string",
+                                            "projectDescription": "string",
+                                            "projectPageUrl": "string",
+                                            "consultationPageUrl": "string",
+                                            "consultationStartDate": "string",
+                                            "consultationEndDate": "string",
+                                            "constructionStartDate": "string",
+                                            "constructionEndDate": "string",
+                                            "boroughsBenefited": [
+                                                "string"
+                                            ],
+                                            "cycleSuperhighwayId": "string",
+                                            "phase": "Unscoped",
+                                            "contactName": "string",
+                                            "contactEmail": "string",
+                                            "externalPageUrl": "string",
+                                            "projectSummaryPageUrl": "string"
+                                        },
+                                        "publishStartDate": "string",
+                                        "publishEndDate": "string",
+                                        "timeFrame": "string",
+                                        "roadDisruptionLines": [
+                                            {
+                                                "id": 0,
+                                                "roadDisruptionId": "string",
+                                                "isDiversion": true,
+                                                "multiLineString": {
+                                                    "geography": {
+                                                        "coordinateSystemId": 0,
+                                                        "wellKnownText": "string",
+                                                        "wellKnownBinary": "string"
+                                                    }
+                                                },
+                                                "startDate": "string",
+                                                "endDate": "string",
+                                                "startTime": "string",
+                                                "endTime": "string"
+                                            }
+                                        ],
+                                        "roadDisruptionImpactAreas": [
+                                            {
+                                                "id": 0,
+                                                "roadDisruptionId": "string",
+                                                "polygon": {
+                                                    "geography": {
+                                                        "coordinateSystemId": 0,
+                                                        "wellKnownText": "string",
+                                                        "wellKnownBinary": "string"
+                                                    }
+                                                },
+                                                "startDate": "string",
+                                                "endDate": "string",
+                                                "startTime": "string",
+                                                "endTime": "string"
+                                            }
+                                        ],
+                                        "recurringSchedules": [
+                                            {
+                                                "startTime": "string",
+                                                "endTime": "string"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ids-DisruptionGet200TextJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "id": "string",
+                                        "url": "string",
+                                        "point": "string",
+                                        "severity": "string",
+                                        "ordinal": 0,
+                                        "category": "string",
+                                        "subCategory": "string",
+                                        "comments": "string",
+                                        "currentUpdate": "string",
+                                        "currentUpdateDateTime": "string",
+                                        "corridorIds": [
+                                            "string"
+                                        ],
+                                        "startDateTime": "string",
+                                        "endDateTime": "string",
+                                        "lastModifiedTime": "string",
+                                        "levelOfInterest": "string",
+                                        "location": "string",
+                                        "status": "string",
+                                        "geography": {
+                                            "geography": {
+                                                "coordinateSystemId": 0,
+                                                "wellKnownText": "string",
+                                                "wellKnownBinary": "string"
+                                            }
+                                        },
+                                        "geometry": {
+                                            "geography": {
+                                                "coordinateSystemId": 0,
+                                                "wellKnownText": "string",
+                                                "wellKnownBinary": "string"
+                                            }
+                                        },
+                                        "streets": [
+                                            {
+                                                "name": "string",
+                                                "closure": "string",
+                                                "directions": "string",
+                                                "segments": [
+                                                    {
+                                                        "toid": "string",
+                                                        "lineString": "string",
+                                                        "sourceSystemId": 0,
+                                                        "sourceSystemKey": "string"
+                                                    }
+                                                ],
+                                                "sourceSystemId": 0,
+                                                "sourceSystemKey": "string"
+                                            }
+                                        ],
+                                        "isProvisional": true,
+                                        "hasClosures": true,
+                                        "linkText": "string",
+                                        "linkUrl": "string",
+                                        "roadProject": {
+                                            "projectId": "string",
+                                            "schemeName": "string",
+                                            "projectName": "string",
+                                            "projectDescription": "string",
+                                            "projectPageUrl": "string",
+                                            "consultationPageUrl": "string",
+                                            "consultationStartDate": "string",
+                                            "consultationEndDate": "string",
+                                            "constructionStartDate": "string",
+                                            "constructionEndDate": "string",
+                                            "boroughsBenefited": [
+                                                "string"
+                                            ],
+                                            "cycleSuperhighwayId": "string",
+                                            "phase": "Unscoped",
+                                            "contactName": "string",
+                                            "contactEmail": "string",
+                                            "externalPageUrl": "string",
+                                            "projectSummaryPageUrl": "string"
+                                        },
+                                        "publishStartDate": "string",
+                                        "publishEndDate": "string",
+                                        "timeFrame": "string",
+                                        "roadDisruptionLines": [
+                                            {
+                                                "id": 0,
+                                                "roadDisruptionId": "string",
+                                                "isDiversion": true,
+                                                "multiLineString": {
+                                                    "geography": {
+                                                        "coordinateSystemId": 0,
+                                                        "wellKnownText": "string",
+                                                        "wellKnownBinary": "string"
+                                                    }
+                                                },
+                                                "startDate": "string",
+                                                "endDate": "string",
+                                                "startTime": "string",
+                                                "endTime": "string"
+                                            }
+                                        ],
+                                        "roadDisruptionImpactAreas": [
+                                            {
+                                                "id": 0,
+                                                "roadDisruptionId": "string",
+                                                "polygon": {
+                                                    "geography": {
+                                                        "coordinateSystemId": 0,
+                                                        "wellKnownText": "string",
+                                                        "wellKnownBinary": "string"
+                                                    }
+                                                },
+                                                "startDate": "string",
+                                                "endDate": "string",
+                                                "startTime": "string",
+                                                "endTime": "string"
+                                            }
+                                        ],
+                                        "recurringSchedules": [
+                                            {
+                                                "startTime": "string",
+                                                "endTime": "string"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ids-DisruptionGet200ApplicationXmlResponse"
+                                },
+                                "example": "<ids-DisruptionGet200ApplicationXmlResponse> <id>string</id> <url>string</url> <point>string</point> <severity>string</severity> <ordinal>0</ordinal> <category>string</category> <subCategory>string</subCategory> <comments>string</comments> <currentUpdate>string</currentUpdate> <currentUpdateDateTime>string</currentUpdateDateTime> <corridorIds>string</corridorIds> <startDateTime>string</startDateTime> <endDateTime>string</endDateTime> <lastModifiedTime>string</lastModifiedTime> <levelOfInterest>string</levelOfInterest> <location>string</location> <status>string</status> <geography> <geography> <coordinateSystemId>0</coordinateSystemId> <wellKnownText>string</wellKnownText> <wellKnownBinary>string</wellKnownBinary> </geography> </geography> <geometry> <geography> <coordinateSystemId>0</coordinateSystemId> <wellKnownText>string</wellKnownText> <wellKnownBinary>string</wellKnownBinary> </geography> </geometry> <streets> <name>string</name> <closure>string</closure> <directions>string</directions> <segments> <toid>string</toid> <lineString>string</lineString> <sourceSystemId>0</sourceSystemId> <sourceSystemKey>string</sourceSystemKey> </segments> <sourceSystemId>0</sourceSystemId> <sourceSystemKey>string</sourceSystemKey> </streets> <isProvisional>true</isProvisional> <hasClosures>true</hasClosures> <linkText>string</linkText> <linkUrl>string</linkUrl> <roadProject> <projectId>string</projectId> <schemeName>string</schemeName> <projectName>string</projectName> <projectDescription>string</projectDescription> <projectPageUrl>string</projectPageUrl> <consultationPageUrl>string</consultationPageUrl> <consultationStartDate>string</consultationStartDate> <consultationEndDate>string</consultationEndDate> <constructionStartDate>string</constructionStartDate> <constructionEndDate>string</constructionEndDate> <boroughsBenefited>string</boroughsBenefited> <cycleSuperhighwayId>string</cycleSuperhighwayId> <phase>Unscoped</phase> <contactName>string</contactName> <contactEmail>string</contactEmail> <externalPageUrl>string</externalPageUrl> <projectSummaryPageUrl>string</projectSummaryPageUrl> </roadProject> <publishStartDate>string</publishStartDate> <publishEndDate>string</publishEndDate> <timeFrame>string</timeFrame> <roadDisruptionLines> <id>0</id> <roadDisruptionId>string</roadDisruptionId> <isDiversion>true</isDiversion> <multiLineString> <geography> <coordinateSystemId>0</coordinateSystemId> <wellKnownText>string</wellKnownText> <wellKnownBinary>string</wellKnownBinary> </geography> </multiLineString> <startDate>string</startDate> <endDate>string</endDate> <startTime>string</startTime> <endTime>string</endTime> </roadDisruptionLines> <roadDisruptionImpactAreas> <id>0</id> <roadDisruptionId>string</roadDisruptionId> <polygon> <geography> <coordinateSystemId>0</coordinateSystemId> <wellKnownText>string</wellKnownText> <wellKnownBinary>string</wellKnownBinary> </geography> </polygon> <startDate>string</startDate> <endDate>string</endDate> <startTime>string</startTime> <endTime>string</endTime> </roadDisruptionImpactAreas> <recurringSchedules> <startTime>string</startTime> <endTime>string</endTime> </recurringSchedules> </ids-DisruptionGet200ApplicationXmlResponse>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ids-DisruptionGet200TextXmlResponse"
+                                },
+                                "example": "<ids-DisruptionGet200TextXmlResponse> <id>string</id> <url>string</url> <point>string</point> <severity>string</severity> <ordinal>0</ordinal> <category>string</category> <subCategory>string</subCategory> <comments>string</comments> <currentUpdate>string</currentUpdate> <currentUpdateDateTime>string</currentUpdateDateTime> <corridorIds>string</corridorIds> <startDateTime>string</startDateTime> <endDateTime>string</endDateTime> <lastModifiedTime>string</lastModifiedTime> <levelOfInterest>string</levelOfInterest> <location>string</location> <status>string</status> <geography> <geography> <coordinateSystemId>0</coordinateSystemId> <wellKnownText>string</wellKnownText> <wellKnownBinary>string</wellKnownBinary> </geography> </geography> <geometry> <geography> <coordinateSystemId>0</coordinateSystemId> <wellKnownText>string</wellKnownText> <wellKnownBinary>string</wellKnownBinary> </geography> </geometry> <streets> <name>string</name> <closure>string</closure> <directions>string</directions> <segments> <toid>string</toid> <lineString>string</lineString> <sourceSystemId>0</sourceSystemId> <sourceSystemKey>string</sourceSystemKey> </segments> <sourceSystemId>0</sourceSystemId> <sourceSystemKey>string</sourceSystemKey> </streets> <isProvisional>true</isProvisional> <hasClosures>true</hasClosures> <linkText>string</linkText> <linkUrl>string</linkUrl> <roadProject> <projectId>string</projectId> <schemeName>string</schemeName> <projectName>string</projectName> <projectDescription>string</projectDescription> <projectPageUrl>string</projectPageUrl> <consultationPageUrl>string</consultationPageUrl> <consultationStartDate>string</consultationStartDate> <consultationEndDate>string</consultationEndDate> <constructionStartDate>string</constructionStartDate> <constructionEndDate>string</constructionEndDate> <boroughsBenefited>string</boroughsBenefited> <cycleSuperhighwayId>string</cycleSuperhighwayId> <phase>Unscoped</phase> <contactName>string</contactName> <contactEmail>string</contactEmail> <externalPageUrl>string</externalPageUrl> <projectSummaryPageUrl>string</projectSummaryPageUrl> </roadProject> <publishStartDate>string</publishStartDate> <publishEndDate>string</publishEndDate> <timeFrame>string</timeFrame> <roadDisruptionLines> <id>0</id> <roadDisruptionId>string</roadDisruptionId> <isDiversion>true</isDiversion> <multiLineString> <geography> <coordinateSystemId>0</coordinateSystemId> <wellKnownText>string</wellKnownText> <wellKnownBinary>string</wellKnownBinary> </geography> </multiLineString> <startDate>string</startDate> <endDate>string</endDate> <startTime>string</startTime> <endTime>string</endTime> </roadDisruptionLines> <roadDisruptionImpactAreas> <id>0</id> <roadDisruptionId>string</roadDisruptionId> <polygon> <geography> <coordinateSystemId>0</coordinateSystemId> <wellKnownText>string</wellKnownText> <wellKnownBinary>string</wellKnownBinary> </geography> </polygon> <startDate>string</startDate> <endDate>string</endDate> <startTime>string</startTime> <endTime>string</endTime> </roadDisruptionImpactAreas> <recurringSchedules> <startTime>string</startTime> <endTime>string</endTime> </recurringSchedules> </ids-DisruptionGet200TextXmlResponse>"
+                            },
+                            "application/geo+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ids-DisruptionGet200ApplicationGeo-jsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "id": "string",
+                                        "url": "string",
+                                        "point": "string",
+                                        "severity": "string",
+                                        "ordinal": 0,
+                                        "category": "string",
+                                        "subCategory": "string",
+                                        "comments": "string",
+                                        "currentUpdate": "string",
+                                        "currentUpdateDateTime": "string",
+                                        "corridorIds": [
+                                            "string"
+                                        ],
+                                        "startDateTime": "string",
+                                        "endDateTime": "string",
+                                        "lastModifiedTime": "string",
+                                        "levelOfInterest": "string",
+                                        "location": "string",
+                                        "status": "string",
+                                        "geography": {
+                                            "geography": {
+                                                "coordinateSystemId": 0,
+                                                "wellKnownText": "string",
+                                                "wellKnownBinary": "string"
+                                            }
+                                        },
+                                        "geometry": {
+                                            "geography": {
+                                                "coordinateSystemId": 0,
+                                                "wellKnownText": "string",
+                                                "wellKnownBinary": "string"
+                                            }
+                                        },
+                                        "streets": [
+                                            {
+                                                "name": "string",
+                                                "closure": "string",
+                                                "directions": "string",
+                                                "segments": [
+                                                    {
+                                                        "toid": "string",
+                                                        "lineString": "string",
+                                                        "sourceSystemId": 0,
+                                                        "sourceSystemKey": "string"
+                                                    }
+                                                ],
+                                                "sourceSystemId": 0,
+                                                "sourceSystemKey": "string"
+                                            }
+                                        ],
+                                        "isProvisional": true,
+                                        "hasClosures": true,
+                                        "linkText": "string",
+                                        "linkUrl": "string",
+                                        "roadProject": {
+                                            "projectId": "string",
+                                            "schemeName": "string",
+                                            "projectName": "string",
+                                            "projectDescription": "string",
+                                            "projectPageUrl": "string",
+                                            "consultationPageUrl": "string",
+                                            "consultationStartDate": "string",
+                                            "consultationEndDate": "string",
+                                            "constructionStartDate": "string",
+                                            "constructionEndDate": "string",
+                                            "boroughsBenefited": [
+                                                "string"
+                                            ],
+                                            "cycleSuperhighwayId": "string",
+                                            "phase": "Unscoped",
+                                            "contactName": "string",
+                                            "contactEmail": "string",
+                                            "externalPageUrl": "string",
+                                            "projectSummaryPageUrl": "string"
+                                        },
+                                        "publishStartDate": "string",
+                                        "publishEndDate": "string",
+                                        "timeFrame": "string",
+                                        "roadDisruptionLines": [
+                                            {
+                                                "id": 0,
+                                                "roadDisruptionId": "string",
+                                                "isDiversion": true,
+                                                "multiLineString": {
+                                                    "geography": {
+                                                        "coordinateSystemId": 0,
+                                                        "wellKnownText": "string",
+                                                        "wellKnownBinary": "string"
+                                                    }
+                                                },
+                                                "startDate": "string",
+                                                "endDate": "string",
+                                                "startTime": "string",
+                                                "endTime": "string"
+                                            }
+                                        ],
+                                        "roadDisruptionImpactAreas": [
+                                            {
+                                                "id": 0,
+                                                "roadDisruptionId": "string",
+                                                "polygon": {
+                                                    "geography": {
+                                                        "coordinateSystemId": 0,
+                                                        "wellKnownText": "string",
+                                                        "wellKnownBinary": "string"
+                                                    }
+                                                },
+                                                "startDate": "string",
+                                                "endDate": "string",
+                                                "startTime": "string",
+                                                "endTime": "string"
+                                            }
+                                        ],
+                                        "recurringSchedules": [
+                                            {
+                                                "startTime": "string",
+                                                "endTime": "string"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/all/Street/Disruption": {
+            "get": {
+                "tags": [
+                    "Road"
+                ],
+                "summary": "Gets a list of disrupted streets. If no date filters are provided, current disruptions are returned.",
+                "description": "Gets a list of disrupted streets. If no date filters are provided, current disruptions are returned.",
+                "operationId": "Road_DisruptedStreetsByQueryStartDateQueryEndDate",
+                "parameters": [
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": "Format - date-time (as date-time in RFC3339). Optional, the start time to filter on.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": "Format - date-time (as date-time in RFC3339). Optional, The end time to filter on.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/System-3"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/System-3"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/System-3"
+                                },
+                                "example": "<System-3 />"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/System-3"
+                                },
+                                "example": "<System-3 />"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/all/Disruption/{disruptionIds}": {
+            "get": {
+                "tags": [
+                    "Road"
+                ],
+                "summary": "Gets a list of active disruptions filtered by disruption Ids.",
+                "description": "Gets a list of active disruptions filtered by disruption Ids.",
+                "operationId": "Road_DisruptionByIdByPathDisruptionIdsQueryStripContent",
+                "parameters": [
+                    {
+                        "name": "disruptionIds",
+                        "in": "path",
+                        "description": "Comma-separated list of disruption identifiers to filter by.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "stripContent",
+                        "in": "query",
+                        "description": "Optional, defaults to false. When true, removes every property/node except for id, point, severity, severityDescription, startDate, endDate, corridor details, location and comments.",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-8"
+                                },
+                                "example": {
+                                    "id": "string",
+                                    "url": "string",
+                                    "point": "string",
+                                    "severity": "string",
+                                    "ordinal": 0,
+                                    "category": "string",
+                                    "subCategory": "string",
+                                    "comments": "string",
+                                    "currentUpdate": "string",
+                                    "currentUpdateDateTime": "string",
+                                    "corridorIds": [
+                                        "string"
+                                    ],
+                                    "startDateTime": "string",
+                                    "endDateTime": "string",
+                                    "lastModifiedTime": "string",
+                                    "levelOfInterest": "string",
+                                    "location": "string",
+                                    "status": "string",
+                                    "geography": {
+                                        "geography": {
+                                            "coordinateSystemId": 0,
+                                            "wellKnownText": "string",
+                                            "wellKnownBinary": "string"
+                                        }
+                                    },
+                                    "geometry": {
+                                        "geography": {
+                                            "coordinateSystemId": 0,
+                                            "wellKnownText": "string",
+                                            "wellKnownBinary": "string"
+                                        }
+                                    },
+                                    "streets": [
+                                        {
+                                            "name": "string",
+                                            "closure": "string",
+                                            "directions": "string",
+                                            "segments": [
+                                                {
+                                                    "toid": "string",
+                                                    "lineString": "string",
+                                                    "sourceSystemId": 0,
+                                                    "sourceSystemKey": "string"
+                                                }
+                                            ],
+                                            "sourceSystemId": 0,
+                                            "sourceSystemKey": "string"
+                                        }
+                                    ],
+                                    "isProvisional": true,
+                                    "hasClosures": true,
+                                    "linkText": "string",
+                                    "linkUrl": "string",
+                                    "roadProject": {
+                                        "projectId": "string",
+                                        "schemeName": "string",
+                                        "projectName": "string",
+                                        "projectDescription": "string",
+                                        "projectPageUrl": "string",
+                                        "consultationPageUrl": "string",
+                                        "consultationStartDate": "string",
+                                        "consultationEndDate": "string",
+                                        "constructionStartDate": "string",
+                                        "constructionEndDate": "string",
+                                        "boroughsBenefited": [
+                                            "string"
+                                        ],
+                                        "cycleSuperhighwayId": "string",
+                                        "phase": "Unscoped",
+                                        "contactName": "string",
+                                        "contactEmail": "string",
+                                        "externalPageUrl": "string",
+                                        "projectSummaryPageUrl": "string"
+                                    },
+                                    "publishStartDate": "string",
+                                    "publishEndDate": "string",
+                                    "timeFrame": "string",
+                                    "roadDisruptionLines": [
+                                        {
+                                            "id": 0,
+                                            "roadDisruptionId": "string",
+                                            "isDiversion": true,
+                                            "multiLineString": {
+                                                "geography": {
+                                                    "coordinateSystemId": 0,
+                                                    "wellKnownText": "string",
+                                                    "wellKnownBinary": "string"
+                                                }
+                                            },
+                                            "startDate": "string",
+                                            "endDate": "string",
+                                            "startTime": "string",
+                                            "endTime": "string"
+                                        }
+                                    ],
+                                    "roadDisruptionImpactAreas": [
+                                        {
+                                            "id": 0,
+                                            "roadDisruptionId": "string",
+                                            "polygon": {
+                                                "geography": {
+                                                    "coordinateSystemId": 0,
+                                                    "wellKnownText": "string",
+                                                    "wellKnownBinary": "string"
+                                                }
+                                            },
+                                            "startDate": "string",
+                                            "endDate": "string",
+                                            "startTime": "string",
+                                            "endTime": "string"
+                                        }
+                                    ],
+                                    "recurringSchedules": [
+                                        {
+                                            "startTime": "string",
+                                            "endTime": "string"
+                                        }
+                                    ]
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-8"
+                                },
+                                "example": {
+                                    "id": "string",
+                                    "url": "string",
+                                    "point": "string",
+                                    "severity": "string",
+                                    "ordinal": 0,
+                                    "category": "string",
+                                    "subCategory": "string",
+                                    "comments": "string",
+                                    "currentUpdate": "string",
+                                    "currentUpdateDateTime": "string",
+                                    "corridorIds": [
+                                        "string"
+                                    ],
+                                    "startDateTime": "string",
+                                    "endDateTime": "string",
+                                    "lastModifiedTime": "string",
+                                    "levelOfInterest": "string",
+                                    "location": "string",
+                                    "status": "string",
+                                    "geography": {
+                                        "geography": {
+                                            "coordinateSystemId": 0,
+                                            "wellKnownText": "string",
+                                            "wellKnownBinary": "string"
+                                        }
+                                    },
+                                    "geometry": {
+                                        "geography": {
+                                            "coordinateSystemId": 0,
+                                            "wellKnownText": "string",
+                                            "wellKnownBinary": "string"
+                                        }
+                                    },
+                                    "streets": [
+                                        {
+                                            "name": "string",
+                                            "closure": "string",
+                                            "directions": "string",
+                                            "segments": [
+                                                {
+                                                    "toid": "string",
+                                                    "lineString": "string",
+                                                    "sourceSystemId": 0,
+                                                    "sourceSystemKey": "string"
+                                                }
+                                            ],
+                                            "sourceSystemId": 0,
+                                            "sourceSystemKey": "string"
+                                        }
+                                    ],
+                                    "isProvisional": true,
+                                    "hasClosures": true,
+                                    "linkText": "string",
+                                    "linkUrl": "string",
+                                    "roadProject": {
+                                        "projectId": "string",
+                                        "schemeName": "string",
+                                        "projectName": "string",
+                                        "projectDescription": "string",
+                                        "projectPageUrl": "string",
+                                        "consultationPageUrl": "string",
+                                        "consultationStartDate": "string",
+                                        "consultationEndDate": "string",
+                                        "constructionStartDate": "string",
+                                        "constructionEndDate": "string",
+                                        "boroughsBenefited": [
+                                            "string"
+                                        ],
+                                        "cycleSuperhighwayId": "string",
+                                        "phase": "Unscoped",
+                                        "contactName": "string",
+                                        "contactEmail": "string",
+                                        "externalPageUrl": "string",
+                                        "projectSummaryPageUrl": "string"
+                                    },
+                                    "publishStartDate": "string",
+                                    "publishEndDate": "string",
+                                    "timeFrame": "string",
+                                    "roadDisruptionLines": [
+                                        {
+                                            "id": 0,
+                                            "roadDisruptionId": "string",
+                                            "isDiversion": true,
+                                            "multiLineString": {
+                                                "geography": {
+                                                    "coordinateSystemId": 0,
+                                                    "wellKnownText": "string",
+                                                    "wellKnownBinary": "string"
+                                                }
+                                            },
+                                            "startDate": "string",
+                                            "endDate": "string",
+                                            "startTime": "string",
+                                            "endTime": "string"
+                                        }
+                                    ],
+                                    "roadDisruptionImpactAreas": [
+                                        {
+                                            "id": 0,
+                                            "roadDisruptionId": "string",
+                                            "polygon": {
+                                                "geography": {
+                                                    "coordinateSystemId": 0,
+                                                    "wellKnownText": "string",
+                                                    "wellKnownBinary": "string"
+                                                }
+                                            },
+                                            "startDate": "string",
+                                            "endDate": "string",
+                                            "startTime": "string",
+                                            "endTime": "string"
+                                        }
+                                    ],
+                                    "recurringSchedules": [
+                                        {
+                                            "startTime": "string",
+                                            "endTime": "string"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-8"
+                                },
+                                "example": "<Tfl-8> <id>string</id> <url>string</url> <point>string</point> <severity>string</severity> <ordinal>0</ordinal> <category>string</category> <subCategory>string</subCategory> <comments>string</comments> <currentUpdate>string</currentUpdate> <currentUpdateDateTime>string</currentUpdateDateTime> <corridorIds>string</corridorIds> <startDateTime>string</startDateTime> <endDateTime>string</endDateTime> <lastModifiedTime>string</lastModifiedTime> <levelOfInterest>string</levelOfInterest> <location>string</location> <status>string</status> <geography> <geography> <coordinateSystemId>0</coordinateSystemId> <wellKnownText>string</wellKnownText> <wellKnownBinary>string</wellKnownBinary> </geography> </geography> <geometry> <geography> <coordinateSystemId>0</coordinateSystemId> <wellKnownText>string</wellKnownText> <wellKnownBinary>string</wellKnownBinary> </geography> </geometry> <streets> <name>string</name> <closure>string</closure> <directions>string</directions> <segments> <toid>string</toid> <lineString>string</lineString> <sourceSystemId>0</sourceSystemId> <sourceSystemKey>string</sourceSystemKey> </segments> <sourceSystemId>0</sourceSystemId> <sourceSystemKey>string</sourceSystemKey> </streets> <isProvisional>true</isProvisional> <hasClosures>true</hasClosures> <linkText>string</linkText> <linkUrl>string</linkUrl> <roadProject> <projectId>string</projectId> <schemeName>string</schemeName> <projectName>string</projectName> <projectDescription>string</projectDescription> <projectPageUrl>string</projectPageUrl> <consultationPageUrl>string</consultationPageUrl> <consultationStartDate>string</consultationStartDate> <consultationEndDate>string</consultationEndDate> <constructionStartDate>string</constructionStartDate> <constructionEndDate>string</constructionEndDate> <boroughsBenefited>string</boroughsBenefited> <cycleSuperhighwayId>string</cycleSuperhighwayId> <phase>Unscoped</phase> <contactName>string</contactName> <contactEmail>string</contactEmail> <externalPageUrl>string</externalPageUrl> <projectSummaryPageUrl>string</projectSummaryPageUrl> </roadProject> <publishStartDate>string</publishStartDate> <publishEndDate>string</publishEndDate> <timeFrame>string</timeFrame> <roadDisruptionLines> <id>0</id> <roadDisruptionId>string</roadDisruptionId> <isDiversion>true</isDiversion> <multiLineString> <geography> <coordinateSystemId>0</coordinateSystemId> <wellKnownText>string</wellKnownText> <wellKnownBinary>string</wellKnownBinary> </geography> </multiLineString> <startDate>string</startDate> <endDate>string</endDate> <startTime>string</startTime> <endTime>string</endTime> </roadDisruptionLines> <roadDisruptionImpactAreas> <id>0</id> <roadDisruptionId>string</roadDisruptionId> <polygon> <geography> <coordinateSystemId>0</coordinateSystemId> <wellKnownText>string</wellKnownText> <wellKnownBinary>string</wellKnownBinary> </geography> </polygon> <startDate>string</startDate> <endDate>string</endDate> <startTime>string</startTime> <endTime>string</endTime> </roadDisruptionImpactAreas> <recurringSchedules> <startTime>string</startTime> <endTime>string</endTime> </recurringSchedules> </Tfl-8>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-8"
+                                },
+                                "example": "<Tfl-8> <id>string</id> <url>string</url> <point>string</point> <severity>string</severity> <ordinal>0</ordinal> <category>string</category> <subCategory>string</subCategory> <comments>string</comments> <currentUpdate>string</currentUpdate> <currentUpdateDateTime>string</currentUpdateDateTime> <corridorIds>string</corridorIds> <startDateTime>string</startDateTime> <endDateTime>string</endDateTime> <lastModifiedTime>string</lastModifiedTime> <levelOfInterest>string</levelOfInterest> <location>string</location> <status>string</status> <geography> <geography> <coordinateSystemId>0</coordinateSystemId> <wellKnownText>string</wellKnownText> <wellKnownBinary>string</wellKnownBinary> </geography> </geography> <geometry> <geography> <coordinateSystemId>0</coordinateSystemId> <wellKnownText>string</wellKnownText> <wellKnownBinary>string</wellKnownBinary> </geography> </geometry> <streets> <name>string</name> <closure>string</closure> <directions>string</directions> <segments> <toid>string</toid> <lineString>string</lineString> <sourceSystemId>0</sourceSystemId> <sourceSystemKey>string</sourceSystemKey> </segments> <sourceSystemId>0</sourceSystemId> <sourceSystemKey>string</sourceSystemKey> </streets> <isProvisional>true</isProvisional> <hasClosures>true</hasClosures> <linkText>string</linkText> <linkUrl>string</linkUrl> <roadProject> <projectId>string</projectId> <schemeName>string</schemeName> <projectName>string</projectName> <projectDescription>string</projectDescription> <projectPageUrl>string</projectPageUrl> <consultationPageUrl>string</consultationPageUrl> <consultationStartDate>string</consultationStartDate> <consultationEndDate>string</consultationEndDate> <constructionStartDate>string</constructionStartDate> <constructionEndDate>string</constructionEndDate> <boroughsBenefited>string</boroughsBenefited> <cycleSuperhighwayId>string</cycleSuperhighwayId> <phase>Unscoped</phase> <contactName>string</contactName> <contactEmail>string</contactEmail> <externalPageUrl>string</externalPageUrl> <projectSummaryPageUrl>string</projectSummaryPageUrl> </roadProject> <publishStartDate>string</publishStartDate> <publishEndDate>string</publishEndDate> <timeFrame>string</timeFrame> <roadDisruptionLines> <id>0</id> <roadDisruptionId>string</roadDisruptionId> <isDiversion>true</isDiversion> <multiLineString> <geography> <coordinateSystemId>0</coordinateSystemId> <wellKnownText>string</wellKnownText> <wellKnownBinary>string</wellKnownBinary> </geography> </multiLineString> <startDate>string</startDate> <endDate>string</endDate> <startTime>string</startTime> <endTime>string</endTime> </roadDisruptionLines> <roadDisruptionImpactAreas> <id>0</id> <roadDisruptionId>string</roadDisruptionId> <polygon> <geography> <coordinateSystemId>0</coordinateSystemId> <wellKnownText>string</wellKnownText> <wellKnownBinary>string</wellKnownBinary> </geography> </polygon> <startDate>string</startDate> <endDate>string</endDate> <startTime>string</startTime> <endTime>string</endTime> </roadDisruptionImpactAreas> <recurringSchedules> <startTime>string</startTime> <endTime>string</endTime> </recurringSchedules> </Tfl-8>"
+                            },
+                            "application/geo+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-8"
+                                },
+                                "example": {
+                                    "id": "string",
+                                    "url": "string",
+                                    "point": "string",
+                                    "severity": "string",
+                                    "ordinal": 0,
+                                    "category": "string",
+                                    "subCategory": "string",
+                                    "comments": "string",
+                                    "currentUpdate": "string",
+                                    "currentUpdateDateTime": "string",
+                                    "corridorIds": [
+                                        "string"
+                                    ],
+                                    "startDateTime": "string",
+                                    "endDateTime": "string",
+                                    "lastModifiedTime": "string",
+                                    "levelOfInterest": "string",
+                                    "location": "string",
+                                    "status": "string",
+                                    "geography": {
+                                        "geography": {
+                                            "coordinateSystemId": 0,
+                                            "wellKnownText": "string",
+                                            "wellKnownBinary": "string"
+                                        }
+                                    },
+                                    "geometry": {
+                                        "geography": {
+                                            "coordinateSystemId": 0,
+                                            "wellKnownText": "string",
+                                            "wellKnownBinary": "string"
+                                        }
+                                    },
+                                    "streets": [
+                                        {
+                                            "name": "string",
+                                            "closure": "string",
+                                            "directions": "string",
+                                            "segments": [
+                                                {
+                                                    "toid": "string",
+                                                    "lineString": "string",
+                                                    "sourceSystemId": 0,
+                                                    "sourceSystemKey": "string"
+                                                }
+                                            ],
+                                            "sourceSystemId": 0,
+                                            "sourceSystemKey": "string"
+                                        }
+                                    ],
+                                    "isProvisional": true,
+                                    "hasClosures": true,
+                                    "linkText": "string",
+                                    "linkUrl": "string",
+                                    "roadProject": {
+                                        "projectId": "string",
+                                        "schemeName": "string",
+                                        "projectName": "string",
+                                        "projectDescription": "string",
+                                        "projectPageUrl": "string",
+                                        "consultationPageUrl": "string",
+                                        "consultationStartDate": "string",
+                                        "consultationEndDate": "string",
+                                        "constructionStartDate": "string",
+                                        "constructionEndDate": "string",
+                                        "boroughsBenefited": [
+                                            "string"
+                                        ],
+                                        "cycleSuperhighwayId": "string",
+                                        "phase": "Unscoped",
+                                        "contactName": "string",
+                                        "contactEmail": "string",
+                                        "externalPageUrl": "string",
+                                        "projectSummaryPageUrl": "string"
+                                    },
+                                    "publishStartDate": "string",
+                                    "publishEndDate": "string",
+                                    "timeFrame": "string",
+                                    "roadDisruptionLines": [
+                                        {
+                                            "id": 0,
+                                            "roadDisruptionId": "string",
+                                            "isDiversion": true,
+                                            "multiLineString": {
+                                                "geography": {
+                                                    "coordinateSystemId": 0,
+                                                    "wellKnownText": "string",
+                                                    "wellKnownBinary": "string"
+                                                }
+                                            },
+                                            "startDate": "string",
+                                            "endDate": "string",
+                                            "startTime": "string",
+                                            "endTime": "string"
+                                        }
+                                    ],
+                                    "roadDisruptionImpactAreas": [
+                                        {
+                                            "id": 0,
+                                            "roadDisruptionId": "string",
+                                            "polygon": {
+                                                "geography": {
+                                                    "coordinateSystemId": 0,
+                                                    "wellKnownText": "string",
+                                                    "wellKnownBinary": "string"
+                                                }
+                                            },
+                                            "startDate": "string",
+                                            "endDate": "string",
+                                            "startTime": "string",
+                                            "endTime": "string"
+                                        }
+                                    ],
+                                    "recurringSchedules": [
+                                        {
+                                            "startTime": "string",
+                                            "endTime": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Meta/Categories": {
+            "get": {
+                "tags": [
+                    "Road"
+                ],
+                "summary": "Gets a list of valid RoadDisruption categories",
+                "description": "Gets a list of valid RoadDisruption categories",
+                "operationId": "Road_MetaCategories",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaCategoriesGet200ApplicationJsonResponse"
+                                },
+                                "example": [
+                                    "string"
+                                ]
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaCategoriesGet200TextJsonResponse"
+                                },
+                                "example": [
+                                    "string"
+                                ]
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaCategoriesGet200ApplicationXmlResponse"
+                                },
+                                "example": "<MetaCategoriesGet200ApplicationXmlResponse>string</MetaCategoriesGet200ApplicationXmlResponse>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaCategoriesGet200TextXmlResponse"
+                                },
+                                "example": "<MetaCategoriesGet200TextXmlResponse>string</MetaCategoriesGet200TextXmlResponse>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Meta/Severities": {
+            "get": {
+                "tags": [
+                    "Road"
+                ],
+                "summary": "Gets a list of valid RoadDisruption severity codes",
+                "description": "Gets a list of valid RoadDisruption severity codes",
+                "operationId": "Road_MetaSeverities",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaSeveritiesGet200ApplicationJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "modeName": "string",
+                                        "severityLevel": 0,
+                                        "description": "string"
+                                    }
+                                ]
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaSeveritiesGet200TextJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "modeName": "string",
+                                        "severityLevel": 0,
+                                        "description": "string"
+                                    }
+                                ]
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaSeveritiesGet200ApplicationXmlResponse"
+                                },
+                                "example": "<MetaSeveritiesGet200ApplicationXmlResponse> <modeName>string</modeName> <severityLevel>0</severityLevel> <description>string</description> </MetaSeveritiesGet200ApplicationXmlResponse>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaSeveritiesGet200TextXmlResponse"
+                                },
+                                "example": "<MetaSeveritiesGet200TextXmlResponse> <modeName>string</modeName> <severityLevel>0</severityLevel> <description>string</description> </MetaSeveritiesGet200TextXmlResponse>"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Tfl": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The Id of the Corridor e.g. \"A406\""
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "description": "The display name of the Corridor e.g. \"North Circular (A406)\". This\r\n            may be identical to the Id."
+                    },
+                    "group": {
+                        "type": "string",
+                        "description": "The group name of the Corridor e.g. \"Central London\". Most corridors are not grouped, in which case this field can be null."
+                    },
+                    "statusSeverity": {
+                        "type": "string",
+                        "description": "Standard multi-mode status severity code"
+                    },
+                    "statusSeverityDescription": {
+                        "type": "string",
+                        "description": "Description of the status severity as applied to RoadCorridors"
+                    },
+                    "bounds": {
+                        "type": "string",
+                        "description": "The Bounds of the Corridor, given by the south-east followed by the north-west co-ordinate\r\n            pair in geoJSON format e.g. \"[[-1.241531,51.242151],[1.641223,53.765721]]\""
+                    },
+                    "envelope": {
+                        "type": "string",
+                        "description": "The Envelope of the Corridor, given by the corner co-ordinates of a rectangular (four-point) polygon\r\n            in geoJSON format e.g. \"[[-1.241531,51.242151],[-1.241531,53.765721],[1.641223,53.765721],[1.641223,51.242151]]\""
+                    },
+                    "statusAggregationStartDate": {
+                        "type": "string",
+                        "description": "The start of the period over which status has been aggregated, or null if this is the current corridor status.",
+                        "format": "date-time"
+                    },
+                    "statusAggregationEndDate": {
+                        "type": "string",
+                        "description": "The end of the period over which status has been aggregated, or null if this is the current corridor status.",
+                        "format": "date-time"
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "URL to retrieve this Corridor."
+                    }
+                }
+            },
+            "System": {
+                "type": "object",
+                "properties": {
+                    "coordinateSystemId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "wellKnownText": {
+                        "type": "string"
+                    },
+                    "wellKnownBinary": {
+                        "type": "string",
+                        "format": "byte"
+                    }
+                }
+            },
+            "System-2": {
+                "type": "object",
+                "properties": {
+                    "geography": {
+                        "$ref": "#/components/schemas/System"
+                    }
+                }
+            },
+            "Tfl-2": {
+                "type": "object",
+                "properties": {
+                    "toid": {
+                        "type": "string",
+                        "description": "A 16 digit unique integer identifying a OS ITN (Ordnance Survey Integrated Transport Network) road link."
+                    },
+                    "lineString": {
+                        "type": "string",
+                        "description": "geoJSON formatted LineString containing two latitude/longitude (WGS84) pairs that identify the start and end points of the street segment."
+                    },
+                    "sourceSystemId": {
+                        "type": "integer",
+                        "description": "The ID from the source system of the disruption that this street belongs to.",
+                        "format": "int64"
+                    },
+                    "sourceSystemKey": {
+                        "type": "string",
+                        "description": "The key of the source system of the disruption that this street belongs to."
+                    }
+                }
+            },
+            "Tfl-3": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Street name"
+                    },
+                    "closure": {
+                        "type": "string",
+                        "description": "Type of road closure. Some example values:\r\n            Open = road is open, not blocked, not closed, not restricted. It maybe that the disruption has been moved out of the carriageway.\r\n            Partial Closure = road is partially blocked, closed or restricted. \r\n            Full Closure = road is fully blocked or closed."
+                    },
+                    "directions": {
+                        "type": "string",
+                        "description": "The direction of the disruption on the street. Some example values:\r\n            All Directions\r\n            All Approaches\r\n            Clockwise\r\n            Anti-Clockwise\r\n            Northbound\r\n            Eastbound\r\n            Southbound\r\n            Westbound\r\n            Both Directions"
+                    },
+                    "segments": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-2"
+                        },
+                        "description": "Geographic description of the sections of this street that are affected."
+                    },
+                    "sourceSystemId": {
+                        "type": "integer",
+                        "description": "The ID from the source system of the disruption that this street belongs to.",
+                        "format": "int64"
+                    },
+                    "sourceSystemKey": {
+                        "type": "string",
+                        "description": "The key of the source system of the disruption that this street belongs to."
+                    }
+                }
+            },
+            "Tfl-4": {
+                "type": "object",
+                "properties": {
+                    "projectId": {
+                        "type": "string"
+                    },
+                    "schemeName": {
+                        "type": "string"
+                    },
+                    "projectName": {
+                        "type": "string"
+                    },
+                    "projectDescription": {
+                        "type": "string"
+                    },
+                    "projectPageUrl": {
+                        "type": "string"
+                    },
+                    "consultationPageUrl": {
+                        "type": "string"
+                    },
+                    "consultationStartDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "consultationEndDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "constructionStartDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "constructionEndDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "boroughsBenefited": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "cycleSuperhighwayId": {
+                        "type": "string"
+                    },
+                    "phase": {
+                        "enum": [
+                            "Unscoped",
+                            "Concept",
+                            "ConsultationEnded",
+                            "Consultation",
+                            "Construction",
+                            "Complete"
+                        ],
+                        "type": "string"
+                    },
+                    "contactName": {
+                        "type": "string"
+                    },
+                    "contactEmail": {
+                        "type": "string"
+                    },
+                    "externalPageUrl": {
+                        "type": "string"
+                    },
+                    "projectSummaryPageUrl": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Tfl-5": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "roadDisruptionId": {
+                        "type": "string"
+                    },
+                    "isDiversion": {
+                        "type": "boolean"
+                    },
+                    "multiLineString": {
+                        "$ref": "#/components/schemas/System-2"
+                    },
+                    "startDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "endDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "startTime": {
+                        "type": "string"
+                    },
+                    "endTime": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Tfl-6": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "roadDisruptionId": {
+                        "type": "string"
+                    },
+                    "polygon": {
+                        "$ref": "#/components/schemas/System-2"
+                    },
+                    "startDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "endDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "startTime": {
+                        "type": "string"
+                    },
+                    "endTime": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Tfl-7": {
+                "type": "object",
+                "properties": {
+                    "startTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "endTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "Tfl-8": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Unique identifier for the road disruption"
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "URL to retrieve this road disruption"
+                    },
+                    "point": {
+                        "type": "string",
+                        "description": "Latitude and longitude (WGS84) of the centroid of the disruption, stored in a geoJSON-formatted string."
+                    },
+                    "severity": {
+                        "type": "string",
+                        "description": "A description of the severity of the disruption."
+                    },
+                    "ordinal": {
+                        "type": "integer",
+                        "description": "An ordinal of the disruption based on severity, level of interest and corridor.",
+                        "format": "int32"
+                    },
+                    "category": {
+                        "type": "string",
+                        "description": "Describes the nature of disruption e.g. Traffic Incidents, Works"
+                    },
+                    "subCategory": {
+                        "type": "string",
+                        "description": "Describes the sub-category of disruption e.g. Collapsed Manhole, Abnormal Load"
+                    },
+                    "comments": {
+                        "type": "string",
+                        "description": "Full text of comments describing the disruption, including details of any road closures and diversions, where appropriate."
+                    },
+                    "currentUpdate": {
+                        "type": "string",
+                        "description": "Text of the most recent update from the LSTCC on the state of the\r\n             disruption, including the current traffic impact and any advice to\r\n             road users."
+                    },
+                    "currentUpdateDateTime": {
+                        "type": "string",
+                        "description": "The time when the last CurrentUpdate description was recorded, \r\n            or null if no CurrentUpdate has been applied.",
+                        "format": "date-time"
+                    },
+                    "corridorIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "The Ids of affected corridors, if any."
+                    },
+                    "startDateTime": {
+                        "type": "string",
+                        "description": "The date and time which the disruption started. For a planned disruption (i.e. planned road works) this date will be in the future.\r\n            For unplanned disruptions, this will default to the date on which the disruption was first recorded, but may be adjusted by the operator.",
+                        "format": "date-time"
+                    },
+                    "endDateTime": {
+                        "type": "string",
+                        "description": "The date and time on which the disruption ended. For planned disruptions, this date will have a valid value. For unplanned \r\n            disruptions in progress, this field will be omitted.",
+                        "format": "date-time"
+                    },
+                    "lastModifiedTime": {
+                        "type": "string",
+                        "description": "The date and time on which the disruption was last modified in the system. This information can reliably be used by a developer to quickly\r\n            compare two instances of the same disruption to determine if it has been changed.",
+                        "format": "date-time"
+                    },
+                    "levelOfInterest": {
+                        "type": "string",
+                        "description": "This describes the level of potential impact on traffic operations of the disruption. \r\n            High = e.g. a one-off disruption on a major or high profile route which will require a high level of operational attention \r\n            Medium = This is the default value \r\n            Low = e.g. a frequently occurring disruption which is well known"
+                    },
+                    "location": {
+                        "type": "string",
+                        "description": "Main road name / number (borough) or preset area name where the disruption is located. This might be useful for a map popup where space is limited."
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "This describes the status of the disruption.  \r\n            Active = currently in progress \r\n            Active Long Term = currently in progress and long term\r\n            Scheduled = scheduled to start within the next 180 days\r\n            Recurring Works = planned maintenance works that follow a regular routine or pattern and whose next occurrence is to start within the next 180 days.\r\n            Recently Cleared = recently cleared in the last 24 hours\r\n            Note that the status of Scheduled or Recurring Works disruptions will change to Active when they start, and will change status again when they end."
+                    },
+                    "geography": {
+                        "$ref": "#/components/schemas/System-2"
+                    },
+                    "geometry": {
+                        "$ref": "#/components/schemas/System-2"
+                    },
+                    "streets": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-3"
+                        },
+                        "description": "A collection of zero or more streets affected by the disruption."
+                    },
+                    "isProvisional": {
+                        "type": "boolean",
+                        "description": "True if the disruption is planned on a future date that is open to change"
+                    },
+                    "hasClosures": {
+                        "type": "boolean",
+                        "description": "True if any of the affected Streets have a \"Full Closure\" status, false otherwise. A RoadDisruption that has HasClosures is considered a \r\n            Severe or Serious disruption for severity filtering purposes."
+                    },
+                    "linkText": {
+                        "type": "string",
+                        "description": "The text of any associated link"
+                    },
+                    "linkUrl": {
+                        "type": "string",
+                        "description": "The url of any associated link"
+                    },
+                    "roadProject": {
+                        "$ref": "#/components/schemas/Tfl-4"
+                    },
+                    "publishStartDate": {
+                        "type": "string",
+                        "description": "TDM Additional properties",
+                        "format": "date-time"
+                    },
+                    "publishEndDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "timeFrame": {
+                        "type": "string"
+                    },
+                    "roadDisruptionLines": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-5"
+                        }
+                    },
+                    "roadDisruptionImpactAreas": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-6"
+                        }
+                    },
+                    "recurringSchedules": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl-7"
+                        }
+                    }
+                }
+            },
+            "System-3": {
+                "type": "object"
+            },
+            "Tfl-9": {
+                "type": "object",
+                "properties": {
+                    "modeName": {
+                        "type": "string"
+                    },
+                    "severityLevel": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Get200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "Get200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "Get200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "Get200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "ids-Get200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "ids-Get200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "ids-Get200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "ids-Get200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "ids-StatusGet200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "ids-StatusGet200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "ids-StatusGet200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "ids-StatusGet200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl"
+                }
+            },
+            "ids-DisruptionGet200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-8"
+                }
+            },
+            "ids-DisruptionGet200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-8"
+                }
+            },
+            "ids-DisruptionGet200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-8"
+                }
+            },
+            "ids-DisruptionGet200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-8"
+                }
+            },
+            "ids-DisruptionGet200ApplicationGeo-jsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-8"
+                }
+            },
+            "MetaCategoriesGet200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "MetaCategoriesGet200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "MetaCategoriesGet200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "MetaCategoriesGet200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "MetaSeveritiesGet200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-9"
+                }
+            },
+            "MetaSeveritiesGet200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-9"
+                }
+            },
+            "MetaSeveritiesGet200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-9"
+                }
+            },
+            "MetaSeveritiesGet200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-9"
+                }
+            }
+        },
+        "securitySchemes": {
+            "apiKeyHeader": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "header"
+            },
+            "apiKeyQuery": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "query"
+            }
+        }
+    },
+    "security": [
+        {
+            "apiKeyHeader": []
+        },
+        {
+            "apiKeyQuery": []
+        }
+    ]
+}

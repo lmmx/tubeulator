@@ -1,0 +1,103 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Lift Disruptions",
+        "description": "APIs relating to Lift disruptions at Transport for London Stations",
+        "version": "v2"
+    },
+    "servers": [
+        {
+            "url": "https://api.tfl.gov.uk/Disruptions/Lifts/v2"
+        }
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "summary": "Lift Disruptions",
+                "description": "List of all currently disrupted lift routes",
+                "operationId": "get",
+                "responses": {
+                    "200": {
+                        "description": "Expected response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Get200ApplicationJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "icsCode": "string",
+                                        "naptanCode": "string",
+                                        "stopPointName": "string",
+                                        "outageStartArea": "string",
+                                        "outageEndArea": "string",
+                                        "message": "string"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "LiftDisruption": {
+                "type": "object",
+                "properties": {
+                    "icsCode": {
+                        "type": "string",
+                        "description": "Ics code for the disrupted lift route"
+                    },
+                    "naptanCode": {
+                        "type": "string",
+                        "description": "Naptan code for the stop area of the disrupted lift route"
+                    },
+                    "stopPointName": {
+                        "type": "string",
+                        "description": "Name of the stop point of the disrupted lift route"
+                    },
+                    "outageStartArea": {
+                        "type": "string",
+                        "description": "Id for the start of the disrupted lift route"
+                    },
+                    "outageEndArea": {
+                        "type": "string",
+                        "description": "Id for the end of the disrupted lift route"
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "Customer facing message for the disrupted lift route"
+                    }
+                }
+            },
+            "Get200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/LiftDisruption"
+                }
+            }
+        },
+        "securitySchemes": {
+            "apiKeyHeader": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "header"
+            },
+            "apiKeyQuery": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "query"
+            }
+        }
+    },
+    "security": [
+        {
+            "apiKeyHeader": []
+        },
+        {
+            "apiKeyQuery": []
+        }
+    ]
+}

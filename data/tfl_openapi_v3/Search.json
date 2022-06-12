@@ -1,0 +1,477 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Search",
+        "description": "APIs relating to Search and similar services",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.tfl.gov.uk/Search"
+        }
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "tags": [
+                    "Search"
+                ],
+                "summary": "Search the site for occurrences of the query string. The maximum number of results returned is equal to the maximum page size of 100. To return subsequent pages, use the paginated overload.",
+                "description": "Search the site for occurrences of the query string. The maximum number of results returned is equal to the maximum page size of 100. To return subsequent pages, use the paginated overload.",
+                "operationId": "Search_GetByQueryQuery",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "The search query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-2"
+                                },
+                                "example": {
+                                    "query": "string",
+                                    "from": 0,
+                                    "page": 0,
+                                    "pageSize": 0,
+                                    "provider": "string",
+                                    "total": 0,
+                                    "matches": [
+                                        {
+                                            "id": "string",
+                                            "url": "string",
+                                            "name": "string",
+                                            "lat": 0,
+                                            "lon": 0
+                                        }
+                                    ],
+                                    "maxScore": 0
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-2"
+                                },
+                                "example": {
+                                    "query": "string",
+                                    "from": 0,
+                                    "page": 0,
+                                    "pageSize": 0,
+                                    "provider": "string",
+                                    "total": 0,
+                                    "matches": [
+                                        {
+                                            "id": "string",
+                                            "url": "string",
+                                            "name": "string",
+                                            "lat": 0,
+                                            "lon": 0
+                                        }
+                                    ],
+                                    "maxScore": 0
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-2"
+                                },
+                                "example": "<Tfl-2> <query>string</query> <from>0</from> <page>0</page> <pageSize>0</pageSize> <provider>string</provider> <total>0</total> <matches> <id>string</id> <url>string</url> <name>string</name> <lat>0</lat> <lon>0</lon> </matches> <maxScore>0</maxScore> </Tfl-2>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-2"
+                                },
+                                "example": "<Tfl-2> <query>string</query> <from>0</from> <page>0</page> <pageSize>0</pageSize> <provider>string</provider> <total>0</total> <matches> <id>string</id> <url>string</url> <name>string</name> <lat>0</lat> <lon>0</lon> </matches> <maxScore>0</maxScore> </Tfl-2>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/BusSchedules": {
+            "get": {
+                "tags": [
+                    "Search"
+                ],
+                "summary": "Searches the bus schedules folder on S3 for a given bus number.",
+                "description": "Searches the bus schedules folder on S3 for a given bus number.",
+                "operationId": "Search_BusSchedulesByQueryQuery",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "The search query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-2"
+                                },
+                                "example": {
+                                    "query": "string",
+                                    "from": 0,
+                                    "page": 0,
+                                    "pageSize": 0,
+                                    "provider": "string",
+                                    "total": 0,
+                                    "matches": [
+                                        {
+                                            "id": "string",
+                                            "url": "string",
+                                            "name": "string",
+                                            "lat": 0,
+                                            "lon": 0
+                                        }
+                                    ],
+                                    "maxScore": 0
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-2"
+                                },
+                                "example": {
+                                    "query": "string",
+                                    "from": 0,
+                                    "page": 0,
+                                    "pageSize": 0,
+                                    "provider": "string",
+                                    "total": 0,
+                                    "matches": [
+                                        {
+                                            "id": "string",
+                                            "url": "string",
+                                            "name": "string",
+                                            "lat": 0,
+                                            "lon": 0
+                                        }
+                                    ],
+                                    "maxScore": 0
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-2"
+                                },
+                                "example": "<Tfl-2> <query>string</query> <from>0</from> <page>0</page> <pageSize>0</pageSize> <provider>string</provider> <total>0</total> <matches> <id>string</id> <url>string</url> <name>string</name> <lat>0</lat> <lon>0</lon> </matches> <maxScore>0</maxScore> </Tfl-2>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-2"
+                                },
+                                "example": "<Tfl-2> <query>string</query> <from>0</from> <page>0</page> <pageSize>0</pageSize> <provider>string</provider> <total>0</total> <matches> <id>string</id> <url>string</url> <name>string</name> <lat>0</lat> <lon>0</lon> </matches> <maxScore>0</maxScore> </Tfl-2>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Meta/SearchProviders": {
+            "get": {
+                "tags": [
+                    "Search"
+                ],
+                "summary": "Gets the available searchProvider names.",
+                "description": "Gets the available searchProvider names.",
+                "operationId": "Search_MetaSearchProviders",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaSearchProvidersGet200ApplicationJsonResponse"
+                                },
+                                "example": [
+                                    "string"
+                                ]
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaSearchProvidersGet200TextJsonResponse"
+                                },
+                                "example": [
+                                    "string"
+                                ]
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaSearchProvidersGet200ApplicationXmlResponse"
+                                },
+                                "example": "<MetaSearchProvidersGet200ApplicationXmlResponse>string</MetaSearchProvidersGet200ApplicationXmlResponse>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaSearchProvidersGet200TextXmlResponse"
+                                },
+                                "example": "<MetaSearchProvidersGet200TextXmlResponse>string</MetaSearchProvidersGet200TextXmlResponse>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Meta/Categories": {
+            "get": {
+                "tags": [
+                    "Search"
+                ],
+                "summary": "Gets the available search categories.",
+                "description": "Gets the available search categories.",
+                "operationId": "Search_MetaCategories",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaCategoriesGet200ApplicationJsonResponse"
+                                },
+                                "example": [
+                                    "string"
+                                ]
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaCategoriesGet200TextJsonResponse"
+                                },
+                                "example": [
+                                    "string"
+                                ]
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaCategoriesGet200ApplicationXmlResponse"
+                                },
+                                "example": "<MetaCategoriesGet200ApplicationXmlResponse>string</MetaCategoriesGet200ApplicationXmlResponse>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaCategoriesGet200TextXmlResponse"
+                                },
+                                "example": "<MetaCategoriesGet200TextXmlResponse>string</MetaCategoriesGet200TextXmlResponse>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Meta/Sorts": {
+            "get": {
+                "tags": [
+                    "Search"
+                ],
+                "summary": "Gets the available sorting options.",
+                "description": "Gets the available sorting options.",
+                "operationId": "Search_MetaSorts",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaSortsGet200ApplicationJsonResponse"
+                                },
+                                "example": [
+                                    "string"
+                                ]
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaSortsGet200TextJsonResponse"
+                                },
+                                "example": [
+                                    "string"
+                                ]
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaSortsGet200ApplicationXmlResponse"
+                                },
+                                "example": "<MetaSortsGet200ApplicationXmlResponse>string</MetaSortsGet200ApplicationXmlResponse>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MetaSortsGet200TextXmlResponse"
+                                },
+                                "example": "<MetaSortsGet200TextXmlResponse>string</MetaSortsGet200TextXmlResponse>"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Tfl": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "lat": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "lon": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                }
+            },
+            "Tfl-2": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "string"
+                    },
+                    "from": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "page": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "pageSize": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "provider": {
+                        "type": "string"
+                    },
+                    "total": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "matches": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl"
+                        }
+                    },
+                    "maxScore": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                }
+            },
+            "MetaSearchProvidersGet200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "MetaSearchProvidersGet200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "MetaSearchProvidersGet200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "MetaSearchProvidersGet200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "MetaCategoriesGet200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "MetaCategoriesGet200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "MetaCategoriesGet200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "MetaCategoriesGet200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "MetaSortsGet200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "MetaSortsGet200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "MetaSortsGet200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "MetaSortsGet200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        },
+        "securitySchemes": {
+            "apiKeyHeader": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "header"
+            },
+            "apiKeyQuery": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "query"
+            }
+        }
+    },
+    "security": [
+        {
+            "apiKeyHeader": []
+        },
+        {
+            "apiKeyQuery": []
+        }
+    ]
+}

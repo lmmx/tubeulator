@@ -1,0 +1,296 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "BikePoint",
+        "description": "APIs relating to BikePoint and similar services",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.tfl.gov.uk/BikePoint"
+        }
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "tags": [
+                    "BikePoint"
+                ],
+                "summary": "Gets all bike point locations. The Place object has an addtionalProperties array which contains the nbBikes, nbDocks and nbSpaces\r\n            numbers which give the status of the BikePoint. A mismatch in these numbers i.e. nbDocks - (nbBikes + nbSpaces) != 0 indicates broken docks.",
+                "description": "Gets all bike point locations. The Place object has an addtionalProperties array which contains the nbBikes, nbDocks and nbSpaces\r\n            numbers which give the status of the BikePoint. A mismatch in these numbers i.e. nbDocks - (nbBikes + nbSpaces) != 0 indicates broken docks.",
+                "operationId": "BikePoint_GetAll",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-Api-Presentation-Entities-PlaceArray"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-Api-Presentation-Entities-PlaceArray-1"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-Api-Presentation-Entities-PlaceArray-2"
+                                }
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-Api-Presentation-Entities-PlaceArray-3"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/{id}": {
+            "get": {
+                "tags": [
+                    "BikePoint"
+                ],
+                "summary": "Gets the bike point with the given id.",
+                "description": "Gets the bike point with the given id.",
+                "operationId": "BikePoint_Get",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "A bike point id (a list of ids can be obtained from the above BikePoint call)",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.Place"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.Place"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.Place"
+                                }
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.Place"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Search": {
+            "get": {
+                "tags": [
+                    "BikePoint"
+                ],
+                "summary": "Search for bike stations by their name, a bike point's name often contains information about the name of the street\r\n            or nearby landmarks, for example. Note that the search result does not contain the PlaceProperties i.e. the status\r\n            or occupancy of the BikePoint, to get that ",
+                "description": "Search for bike stations by their name, a bike point's name often contains information about the name of the street\r\n            or nearby landmarks, for example. Note that the search result does not contain the PlaceProperties i.e. the status\r\n            or occupancy of the BikePoint, to get that information you should retrieve the BikePoint by its id on /BikePoint/id.",
+                "operationId": "BikePoint_Search",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "The search term e.g. \"St. James\"",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-Api-Presentation-Entities-PlaceArray-4"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-Api-Presentation-Entities-PlaceArray-5"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-Api-Presentation-Entities-PlaceArray-6"
+                                }
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-Api-Presentation-Entities-PlaceArray-7"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Tfl-Api-Presentation-Entities-PlaceArray": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.Place"
+                }
+            },
+            "Tfl.Api.Presentation.Entities.Place": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "A unique identifier."
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "The unique location of this resource."
+                    },
+                    "commonName": {
+                        "type": "string",
+                        "description": "A human readable name."
+                    },
+                    "distance": {
+                        "type": "number",
+                        "description": "The distance of the place from its search point, if this is the result\r\n            of a geographical search, otherwise zero.",
+                        "format": "double"
+                    },
+                    "placeType": {
+                        "type": "string",
+                        "description": "The type of Place. See /Place/Meta/placeTypes for possible values."
+                    },
+                    "additionalProperties": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.AdditionalProperties"
+                        },
+                        "description": "A bag of additional key/value pairs with extra information about this place."
+                    },
+                    "children": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.Place"
+                        }
+                    },
+                    "childrenUrls": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "lat": {
+                        "type": "number",
+                        "description": "WGS84 latitude of the location.",
+                        "format": "double"
+                    },
+                    "lon": {
+                        "type": "number",
+                        "description": "WGS84 longitude of the location.",
+                        "format": "double"
+                    }
+                }
+            },
+            "Tfl.Api.Presentation.Entities.AdditionalProperties": {
+                "type": "object",
+                "properties": {
+                    "category": {
+                        "type": "string"
+                    },
+                    "key": {
+                        "type": "string"
+                    },
+                    "sourceSystemKey": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    },
+                    "modified": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "Tfl-Api-Presentation-Entities-PlaceArray-1": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.Place"
+                }
+            },
+            "Tfl-Api-Presentation-Entities-PlaceArray-2": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.Place"
+                }
+            },
+            "Tfl-Api-Presentation-Entities-PlaceArray-3": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.Place"
+                }
+            },
+            "Tfl-Api-Presentation-Entities-PlaceArray-4": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.Place"
+                }
+            },
+            "Tfl-Api-Presentation-Entities-PlaceArray-5": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.Place"
+                }
+            },
+            "Tfl-Api-Presentation-Entities-PlaceArray-6": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.Place"
+                }
+            },
+            "Tfl-Api-Presentation-Entities-PlaceArray-7": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl.Api.Presentation.Entities.Place"
+                }
+            }
+        },
+        "securitySchemes": {
+            "apiKeyHeader": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "header"
+            },
+            "apiKeyQuery": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "query"
+            }
+        }
+    },
+    "security": [
+        {
+            "apiKeyHeader": []
+        },
+        {
+            "apiKeyQuery": []
+        }
+    ]
+}

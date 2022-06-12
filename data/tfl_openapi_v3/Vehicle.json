@@ -1,0 +1,455 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Vehicle",
+        "description": "APIs relating to Vehicle and similar services",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.tfl.gov.uk/Vehicle"
+        }
+    ],
+    "paths": {
+        "/{ids}/Arrivals": {
+            "get": {
+                "tags": [
+                    "Vehicle"
+                ],
+                "summary": "Gets the predictions for a given list of vehicle Id's.",
+                "description": "Gets the predictions for a given list of vehicle Id's.",
+                "operationId": "Vehicle_GetByPathIds",
+                "parameters": [
+                    {
+                        "name": "ids",
+                        "in": "path",
+                        "description": "A comma-separated list of vehicle ids e.g. LX58CFV,LX11AZB,LX58CFE. Max approx. 25 ids.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ids-ArrivalsGet200ApplicationJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "id": "string",
+                                        "operationType": 0,
+                                        "vehicleId": "string",
+                                        "naptanId": "string",
+                                        "stationName": "string",
+                                        "lineId": "string",
+                                        "lineName": "string",
+                                        "platformName": "string",
+                                        "direction": "string",
+                                        "bearing": "string",
+                                        "destinationNaptanId": "string",
+                                        "destinationName": "string",
+                                        "timestamp": "string",
+                                        "timeToStation": 0,
+                                        "currentLocation": "string",
+                                        "towards": "string",
+                                        "expectedArrival": "string",
+                                        "timeToLive": "string",
+                                        "modeName": "string",
+                                        "timing": {
+                                            "countdownServerAdjustment": "string",
+                                            "source": "string",
+                                            "insert": "string",
+                                            "read": "string",
+                                            "sent": "string",
+                                            "received": "string"
+                                        }
+                                    }
+                                ]
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ids-ArrivalsGet200TextJsonResponse"
+                                },
+                                "example": [
+                                    {
+                                        "id": "string",
+                                        "operationType": 0,
+                                        "vehicleId": "string",
+                                        "naptanId": "string",
+                                        "stationName": "string",
+                                        "lineId": "string",
+                                        "lineName": "string",
+                                        "platformName": "string",
+                                        "direction": "string",
+                                        "bearing": "string",
+                                        "destinationNaptanId": "string",
+                                        "destinationName": "string",
+                                        "timestamp": "string",
+                                        "timeToStation": 0,
+                                        "currentLocation": "string",
+                                        "towards": "string",
+                                        "expectedArrival": "string",
+                                        "timeToLive": "string",
+                                        "modeName": "string",
+                                        "timing": {
+                                            "countdownServerAdjustment": "string",
+                                            "source": "string",
+                                            "insert": "string",
+                                            "read": "string",
+                                            "sent": "string",
+                                            "received": "string"
+                                        }
+                                    }
+                                ]
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ids-ArrivalsGet200ApplicationXmlResponse"
+                                },
+                                "example": "<ids-ArrivalsGet200ApplicationXmlResponse> <id>string</id> <operationType>0</operationType> <vehicleId>string</vehicleId> <naptanId>string</naptanId> <stationName>string</stationName> <lineId>string</lineId> <lineName>string</lineName> <platformName>string</platformName> <direction>string</direction> <bearing>string</bearing> <destinationNaptanId>string</destinationNaptanId> <destinationName>string</destinationName> <timestamp>string</timestamp> <timeToStation>0</timeToStation> <currentLocation>string</currentLocation> <towards>string</towards> <expectedArrival>string</expectedArrival> <timeToLive>string</timeToLive> <modeName>string</modeName> <timing> <countdownServerAdjustment>string</countdownServerAdjustment> <source>string</source> <insert>string</insert> <read>string</read> <sent>string</sent> <received>string</received> </timing> </ids-ArrivalsGet200ApplicationXmlResponse>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ids-ArrivalsGet200TextXmlResponse"
+                                },
+                                "example": "<ids-ArrivalsGet200TextXmlResponse> <id>string</id> <operationType>0</operationType> <vehicleId>string</vehicleId> <naptanId>string</naptanId> <stationName>string</stationName> <lineId>string</lineId> <lineName>string</lineName> <platformName>string</platformName> <direction>string</direction> <bearing>string</bearing> <destinationNaptanId>string</destinationNaptanId> <destinationName>string</destinationName> <timestamp>string</timestamp> <timeToStation>0</timeToStation> <currentLocation>string</currentLocation> <towards>string</towards> <expectedArrival>string</expectedArrival> <timeToLive>string</timeToLive> <modeName>string</modeName> <timing> <countdownServerAdjustment>string</countdownServerAdjustment> <source>string</source> <insert>string</insert> <read>string</read> <sent>string</sent> <received>string</received> </timing> </ids-ArrivalsGet200TextXmlResponse>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/EmissionSurcharge": {
+            "get": {
+                "tags": [
+                    "Vehicle"
+                ],
+                "summary": "Gets the Emissions Surcharge compliance for the Vehicle",
+                "description": "Gets the Emissions Surcharge compliance for the Vehicle",
+                "operationId": "Vehicle_GetEmissionsSurchargeComplianceByQueryVrm",
+                "parameters": [
+                    {
+                        "name": "vrm",
+                        "in": "query",
+                        "description": "The Vehicle Registration Mark",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-3"
+                                },
+                                "example": {
+                                    "vrm": "string",
+                                    "type": "string",
+                                    "make": "string",
+                                    "model": "string",
+                                    "colour": "string",
+                                    "compliance": "NotAvailable"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-3"
+                                },
+                                "example": {
+                                    "vrm": "string",
+                                    "type": "string",
+                                    "make": "string",
+                                    "model": "string",
+                                    "colour": "string",
+                                    "compliance": "NotAvailable"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-3"
+                                },
+                                "example": "<Tfl-3> <vrm>string</vrm> <type>string</type> <make>string</make> <model>string</model> <colour>string</colour> <compliance>NotAvailable</compliance> </Tfl-3>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-3"
+                                },
+                                "example": "<Tfl-3> <vrm>string</vrm> <type>string</type> <make>string</make> <model>string</model> <colour>string</colour> <compliance>NotAvailable</compliance> </Tfl-3>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/UlezCompliance": {
+            "get": {
+                "tags": [
+                    "Vehicle"
+                ],
+                "summary": "Gets the Ulez Surcharge compliance for the Vehicle",
+                "description": "Gets the Ulez Surcharge compliance for the Vehicle",
+                "operationId": "Vehicle_GetUlezComplianceByQueryVrm",
+                "parameters": [
+                    {
+                        "name": "vrm",
+                        "in": "query",
+                        "description": "The Vehicle Registration Mark",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-3"
+                                },
+                                "example": {
+                                    "vrm": "string",
+                                    "type": "string",
+                                    "make": "string",
+                                    "model": "string",
+                                    "colour": "string",
+                                    "compliance": "NotAvailable"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-3"
+                                },
+                                "example": {
+                                    "vrm": "string",
+                                    "type": "string",
+                                    "make": "string",
+                                    "model": "string",
+                                    "colour": "string",
+                                    "compliance": "NotAvailable"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-3"
+                                },
+                                "example": "<Tfl-3> <vrm>string</vrm> <type>string</type> <make>string</make> <model>string</model> <colour>string</colour> <compliance>NotAvailable</compliance> </Tfl-3>"
+                            },
+                            "text/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tfl-3"
+                                },
+                                "example": "<Tfl-3> <vrm>string</vrm> <type>string</type> <make>string</make> <model>string</model> <colour>string</colour> <compliance>NotAvailable</compliance> </Tfl-3>"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Tfl": {
+                "type": "object",
+                "properties": {
+                    "countdownServerAdjustment": {
+                        "type": "string"
+                    },
+                    "source": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "insert": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "read": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "sent": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "received": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "Tfl-2": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The identitier for the prediction"
+                    },
+                    "operationType": {
+                        "type": "integer",
+                        "description": "The type of the operation (1: is new or has been updated, 2: should be deleted from any client cache)",
+                        "format": "int32"
+                    },
+                    "vehicleId": {
+                        "type": "string",
+                        "description": "The actual vehicle in transit (for train modes, the leading car of the rolling set)"
+                    },
+                    "naptanId": {
+                        "type": "string",
+                        "description": "Identifier for the prediction"
+                    },
+                    "stationName": {
+                        "type": "string",
+                        "description": "Station name"
+                    },
+                    "lineId": {
+                        "type": "string",
+                        "description": "Unique identifier for the Line"
+                    },
+                    "lineName": {
+                        "type": "string",
+                        "description": "Line Name"
+                    },
+                    "platformName": {
+                        "type": "string",
+                        "description": "Platform name (for bus, this is the stop letter)"
+                    },
+                    "direction": {
+                        "type": "string",
+                        "description": "Direction (unified to inbound/outbound)"
+                    },
+                    "bearing": {
+                        "type": "string",
+                        "description": "Bearing (between 0 to 359)"
+                    },
+                    "destinationNaptanId": {
+                        "type": "string",
+                        "description": "Naptan Identifier for the prediction's destination"
+                    },
+                    "destinationName": {
+                        "type": "string",
+                        "description": "Name of the destination"
+                    },
+                    "timestamp": {
+                        "type": "string",
+                        "description": "Timestamp for when the prediction was inserted/modified (source column drives what objects are broadcast on each iteration)",
+                        "format": "date-time"
+                    },
+                    "timeToStation": {
+                        "type": "integer",
+                        "description": "Prediction of the Time to station in seconds",
+                        "format": "int32"
+                    },
+                    "currentLocation": {
+                        "type": "string",
+                        "description": "The current location of the vehicle."
+                    },
+                    "towards": {
+                        "type": "string",
+                        "description": "Routing information or other descriptive text about the path of the vehicle towards the destination"
+                    },
+                    "expectedArrival": {
+                        "type": "string",
+                        "description": "The expected arrival time of the vehicle at the stop/station",
+                        "format": "date-time"
+                    },
+                    "timeToLive": {
+                        "type": "string",
+                        "description": "The expiry time for the prediction",
+                        "format": "date-time"
+                    },
+                    "modeName": {
+                        "type": "string",
+                        "description": "The mode name of the station/line the prediction relates to"
+                    },
+                    "timing": {
+                        "$ref": "#/components/schemas/Tfl"
+                    }
+                },
+                "description": "DTO to capture the prediction details"
+            },
+            "Tfl-3": {
+                "type": "object",
+                "properties": {
+                    "vrm": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "make": {
+                        "type": "string"
+                    },
+                    "model": {
+                        "type": "string"
+                    },
+                    "colour": {
+                        "type": "string"
+                    },
+                    "compliance": {
+                        "enum": [
+                            "NotAvailable",
+                            "NotCompliant",
+                            "Compliant",
+                            "Exempt"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "description": ""
+            },
+            "ids-ArrivalsGet200ApplicationJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-2"
+                }
+            },
+            "ids-ArrivalsGet200TextJsonResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-2"
+                }
+            },
+            "ids-ArrivalsGet200ApplicationXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-2"
+                }
+            },
+            "ids-ArrivalsGet200TextXmlResponse": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Tfl-2"
+                }
+            }
+        },
+        "securitySchemes": {
+            "apiKeyHeader": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "header"
+            },
+            "apiKeyQuery": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "query"
+            }
+        }
+    },
+    "security": [
+        {
+            "apiKeyHeader": []
+        },
+        {
+            "apiKeyQuery": []
+        }
+    ]
+}
