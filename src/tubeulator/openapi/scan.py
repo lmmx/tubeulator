@@ -18,7 +18,13 @@ def api_schema_inventory(api_schema: Path) -> ApiInventory:
     if api_schema.suffix != ".json":
         raise ValueError(f"{api_schema=} is not a JSON file")
     api_schema_obj = ujson.loads(api_schema.read_text())
-    api_entity_schemas = api_schema_obj["components"]["schemas"]
+    api_entity_schemas = api_schema_obj["components"].get("schemas", {})
+    # Drop any of the entities with 'Array' in, they're not useful
+    api_entity_schemas = {
+        name: schema
+        for name, schema in api_entity_schemas.items()
+        if "Array" not in name
+    }
     unified_api_schema_obj = ujson.loads(unified_api_schema.read_text())
     unified_api_entity_schemas = unified_api_schema_obj["components"]["schemas"]
     alias2entity: ApiInventory = {

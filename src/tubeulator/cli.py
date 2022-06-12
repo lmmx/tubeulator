@@ -7,6 +7,8 @@ from .db.mongod import MongodExceptionGuard
 from .api.line import line_data
 from .openapi.scan import scan_namespace
 
+from pprint import pprint
+
 
 def lines():
     with MongodExceptionGuard():
@@ -18,7 +20,8 @@ def namespace():
     """
     Make a namespace inventory
     """
-    scan_namespace()
+    ns = scan_namespace()
+    pprint(ns)
 
 def main():
     defopt.run({

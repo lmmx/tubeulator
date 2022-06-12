@@ -12,9 +12,10 @@ __all__ = [
 ]
 
 pkg_path = Path(*__path__)
-db_path = pkg_path / "data" / "db"
-openapi_schemas_path = pkg_path / "openapi"
-openapi_unified_path = pkg_path / "openapi_unified"
+data_path = pkg_path / "data"
+db_path = data_path / "db"
+openapi_schemas_path = data_path / "openapi"
+openapi_unified_path = data_path / "openapi_unified"
 
 
 def find_schema(schema_dir: Path, match: str = "*", levels: int = 0) -> Path:
