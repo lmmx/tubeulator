@@ -32,13 +32,25 @@ def api_schema_inventory(api_schema: Path) -> ApiInventory:
         for api_entity in api_entity_schemas
     }
     # First pass, get the exact matches
-    for api_entity, api_schema in api_entity_schemas.items():
+    for api_entity, api_schema_component in api_entity_schemas.items():
+        # if api_schema.stem == "occupancy" and api_entity == "Tfl-2":
+        #     breakpoint()
         for unified_entity, unified_schema in unified_api_entity_schemas.items():
-            if api_schema == unified_schema:
+            if api_schema_component == unified_schema:
                 alias2entity[api_entity].append(unified_entity)
     # TODO: second pass, with substitution of known values
     # TODO: make a class to help identify which aliases are in each schema,
     #       which would then be easier to indicate those 'completable' by substitutions
+    # Second pass, resolve the referential matches
+    for api_entity, api_schema_component in api_entity_schemas.items():
+        if (asc_properties := api_schema_component.get("properties")):
+            referential_properties = {
+                asc_property: asc_property_type_info
+                for asc_property, asc_property_type_info in asc_properties.items()
+                if "$ref" in asc_property_type_info
+            }
+            if referential_properties:
+                breakpoint()
     # {
     #     api_entity: unified_api_entity
     #     for api_entity in api_schema
