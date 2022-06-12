@@ -5,6 +5,7 @@ from pymongo import MongoClient
 from .db.store_creds import check_creds
 from .db.mongod import MongodExceptionGuard
 from .api.line import line_data
+from .openapi.scan import scan_namespace
 
 
 def lines():
@@ -17,7 +18,7 @@ def namespace():
     """
     Make a namespace inventory
     """
-    ... # TODO
+    scan_namespace()
 
 def main():
     defopt.run({

@@ -30,7 +30,7 @@ for s in */schemas; do
   pushd $s >/dev/null
   echo $s
     for jj in tfl*.json; do
-      for j in ../../unified/ReleasedUnifiedAPIProd/schemas/*.json; do
+      for j in ../../../openapi_unified/ReleasedUnifiedAPIProd/schemas/*.json; do
         diff $j $jj >/dev/null 2>&1
         if [ $? -eq 0 ]; then
           echo "$jj = $(basename $j)" | grep -v "tfl-api-presentation-entities"
@@ -224,7 +224,7 @@ Its keys include `carParkDetailsUrl`, which matches a key in
 `Tfl.Api.Presentation.Entities.CarParkOccupancy`. The diff between these files is:
 
 ```sh
-diff occupancy/schemas/tfl-2.json unified/ReleasedUnifiedAPIProd/schemas/carparkoccupancy.json 
+diff occupancy/schemas/tfl-2.json ../openapi_unified/ReleasedUnifiedAPIProd/schemas/carparkoccupancy.json 
 ```
 ⇣
 ```
