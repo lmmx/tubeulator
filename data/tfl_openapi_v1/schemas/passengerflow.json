@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "timeSlice": {
+      "description": "Time in 24hr format with 15 minute intervals e.g. 0500-0515, 0515-0530 etc.",
+      "type": "string"
+    },
+    "value": {
+      "format": "int32",
+      "description": "Count of passenger flow towards a platform",
+      "type": "integer"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

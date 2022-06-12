@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "geography": {
+      "$ref": "_definitions.json#/definitions/System.Data.Spatial.DbGeographyWellKnownValue"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

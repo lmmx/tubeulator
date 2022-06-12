@@ -1,0 +1,34 @@
+{
+  "oneOf": [
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Place.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.AdditionalProperties.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-4.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-5.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-6.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PlaceArray-7.json"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "type": "object",
+  "properties": {
+    "platformName": {
+      "type": "string",
+      "description": "Platform name (for bus, this is the stop letter)"
+    },
+    "destinationNaptanId": {
+      "type": "string",
+      "description": "Naptan Identifier for the prediction's destination"
+    },
+    "destinationName": {
+      "type": "string",
+      "description": "Name of the destination"
+    },
+    "naptanId": {
+      "type": "string",
+      "description": "Identifier for the prediction"
+    },
+    "stationName": {
+      "type": "string",
+      "description": "Station name"
+    },
+    "estimatedTimeOfArrival": {
+      "type": "string",
+      "description": "Estimated time of arrival",
+      "format": "date-time"
+    },
+    "scheduledTimeOfArrival": {
+      "type": "string",
+      "description": "Estimated time of arrival",
+      "format": "date-time"
+    },
+    "estimatedTimeOfDeparture": {
+      "type": "string",
+      "description": "Estimated time of arrival",
+      "format": "date-time"
+    },
+    "scheduledTimeOfDeparture": {
+      "type": "string",
+      "description": "Estimated time of arrival",
+      "format": "date-time"
+    },
+    "minutesAndSecondsToArrival": {
+      "type": "string",
+      "description": "Estimated time of arrival"
+    },
+    "minutesAndSecondsToDeparture": {
+      "type": "string",
+      "description": "Estimated time of arrival"
+    },
+    "cause": {
+      "type": "string",
+      "description": "Reason for cancellation or delay"
+    },
+    "departureStatus": {
+      "enum": [
+        "OnTime",
+        "Delayed",
+        "Cancelled",
+        "NotStoppingAtStation"
+      ],
+      "type": "string",
+      "description": "Status of departure"
+    },
+    "timing": {
+      "$ref": "Tfl-15.json"
+    }
+  },
+  "description": "DTO to capture the prediction details",
+  "$schema": "http://json-schema.org/schema#"
+}

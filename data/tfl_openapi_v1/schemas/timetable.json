@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "departureStopId": {
+      "type": "string"
+    },
+    "routes": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.TimetableRoute"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

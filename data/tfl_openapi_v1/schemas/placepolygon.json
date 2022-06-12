@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "geoPoints": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Common.GeoPoint"
+      }
+    },
+    "commonName": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

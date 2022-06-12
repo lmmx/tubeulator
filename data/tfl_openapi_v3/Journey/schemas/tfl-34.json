@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "modeName": {
+      "type": "string"
+    },
+    "disruptions": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-21.json"
+      }
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "modified": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lineStatuses": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-31.json"
+      }
+    },
+    "routeSections": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-32.json"
+      }
+    },
+    "serviceTypes": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-33.json"
+      }
+    },
+    "crowding": {
+      "$ref": "Tfl-9.json"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

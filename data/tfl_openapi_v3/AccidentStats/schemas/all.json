@@ -1,0 +1,25 @@
+{
+  "oneOf": [
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-AccidentStats-AccidentDetailArray.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.AccidentStats.AccidentDetail.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.AccidentStats.Casualty.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.AccidentStats.Vehicle.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-AccidentStats-AccidentDetailArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-AccidentStats-AccidentDetailArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-AccidentStats-AccidentDetailArray-3.json"
+    }
+  ]
+}

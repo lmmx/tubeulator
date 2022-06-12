@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "totalCost": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "fares": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-26.json"
+      }
+    },
+    "caveats": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-27.json"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

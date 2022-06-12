@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "dateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dateTimeType": {
+      "enum": [
+        "Arriving",
+        "Departing"
+      ],
+      "type": "string"
+    },
+    "timeAdjustments": {
+      "$ref": "Tfl-37.json"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

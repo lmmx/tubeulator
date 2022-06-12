@@ -1,0 +1,46 @@
+{
+  "oneOf": [
+    {
+      "$ref": "Tfl.json"
+    },
+    {
+      "$ref": "Tfl-2.json"
+    },
+    {
+      "$ref": "MetaSearchProvidersGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "MetaSearchProvidersGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "MetaSearchProvidersGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "MetaSearchProvidersGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "MetaCategoriesGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "MetaCategoriesGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "MetaCategoriesGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "MetaCategoriesGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "MetaSortsGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "MetaSortsGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "MetaSortsGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "MetaSortsGet200TextXmlResponse.json"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "properties": {
+    "lineId": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "lineName": {
+      "type": "string"
+    },
+    "lineRouteSection": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-24.json"
+      }
+    },
+    "matchedRouteSections": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-25.json"
+      }
+    },
+    "matchedStops": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-20.json"
+      }
+    },
+    "id": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "lat": {
+      "type": "number",
+      "format": "double"
+    },
+    "lon": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

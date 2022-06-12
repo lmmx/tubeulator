@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "modeName": {
+      "type": "string"
+    },
+    "lineIdentifier": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

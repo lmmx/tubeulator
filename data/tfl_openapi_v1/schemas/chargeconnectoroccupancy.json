@@ -1,0 +1,20 @@
+{
+  "description": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "format": "int32",
+      "description": "",
+      "type": "integer"
+    },
+    "sourceSystemPlaceId": {
+      "description": "",
+      "type": "string"
+    },
+    "status": {
+      "description": "",
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

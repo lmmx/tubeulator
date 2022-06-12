@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "knownJourneys": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-30.json"
+      }
+    },
+    "firstJourney": {
+      "$ref": "Tfl-30.json"
+    },
+    "lastJourney": {
+      "$ref": "Tfl-30.json"
+    },
+    "periods": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-33.json"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

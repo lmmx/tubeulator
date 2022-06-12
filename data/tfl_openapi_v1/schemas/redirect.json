@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "shortUrl": {
+      "type": "string"
+    },
+    "longUrl": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

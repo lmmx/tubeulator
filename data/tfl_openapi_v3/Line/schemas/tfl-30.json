@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "hour": {
+      "type": "string"
+    },
+    "minute": {
+      "type": "string"
+    },
+    "intervalId": {
+      "type": "integer",
+      "format": "int32"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

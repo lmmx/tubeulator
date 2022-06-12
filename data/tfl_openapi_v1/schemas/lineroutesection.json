@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "routeId": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "direction": {
+      "type": "string"
+    },
+    "destination": {
+      "type": "string"
+    },
+    "fromStation": {
+      "type": "string"
+    },
+    "toStation": {
+      "type": "string"
+    },
+    "serviceType": {
+      "type": "string"
+    },
+    "vehicleDestinationText": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

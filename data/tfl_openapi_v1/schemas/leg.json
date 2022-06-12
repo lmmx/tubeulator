@@ -1,0 +1,73 @@
+{
+  "type": "object",
+  "properties": {
+    "duration": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "speed": {
+      "type": "string"
+    },
+    "instruction": {
+      "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.Instruction",
+      "description": "Describes the action the user need to take for this section, E.g. \"walk to the\r\n            district line\""
+    },
+    "obstacles": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.JourneyPlanner.Obstacle"
+      }
+    },
+    "departureTime": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "arrivalTime": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "departurePoint": {
+      "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.Point"
+    },
+    "arrivalPoint": {
+      "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.Point"
+    },
+    "path": {
+      "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.JourneyPlanner.Path"
+    },
+    "routeOptions": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.JourneyPlanner.RouteOption"
+      }
+    },
+    "mode": {
+      "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.Identifier"
+    },
+    "disruptions": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.Disruption"
+      }
+    },
+    "plannedWorks": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.JourneyPlanner.PlannedWork"
+      }
+    },
+    "distance": {
+      "format": "double",
+      "type": "number"
+    },
+    "isDisrupted": {
+      "type": "boolean",
+      "readOnly": true
+    },
+    "hasFixedLocations": {
+      "type": "boolean",
+      "readOnly": true
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

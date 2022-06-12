@@ -1,0 +1,10 @@
+{
+  "oneOf": [
+    {
+      "$ref": "LiftDisruption.json"
+    },
+    {
+      "$ref": "Get200ApplicationJsonResponse.json"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "type": "object",
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "turnDirection": {
+      "type": "string"
+    },
+    "streetName": {
+      "type": "string"
+    },
+    "distance": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "cumulativeDistance": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "skyDirection": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "skyDirectionDescription": {
+      "enum": [
+        "North",
+        "NorthEast",
+        "East",
+        "SouthEast",
+        "South",
+        "SouthWest",
+        "West",
+        "NorthWest"
+      ],
+      "type": "string"
+    },
+    "cumulativeTravelTime": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "latitude": {
+      "format": "double",
+      "type": "number"
+    },
+    "longitude": {
+      "format": "double",
+      "type": "number"
+    },
+    "pathAttribute": {
+      "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.PathAttribute"
+    },
+    "descriptionHeading": {
+      "type": "string"
+    },
+    "trackType": {
+      "enum": [
+        "CycleSuperHighway",
+        "CanalTowpath",
+        "QuietRoad",
+        "ProvisionForCyclists",
+        "BusyRoads",
+        "None",
+        "PushBike",
+        "Quietway"
+      ],
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

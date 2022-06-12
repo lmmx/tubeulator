@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "startDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "duration": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "arrivalDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "legs": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-23.json"
+      }
+    },
+    "fare": {
+      "$ref": "Tfl-28.json"
+    }
+  },
+  "description": "Object that represents an end to end journey (see schematic).",
+  "$schema": "http://json-schema.org/schema#"
+}

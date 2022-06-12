@@ -1,0 +1,121 @@
+{
+  "type": "object",
+  "properties": {
+    "naptanId": {
+      "type": "string"
+    },
+    "platformName": {
+      "type": "string"
+    },
+    "indicator": {
+      "type": "string",
+      "description": "The indicator of the stop point e.g. \"Stop K\""
+    },
+    "stopLetter": {
+      "type": "string",
+      "description": "The stop letter, if it could be cleansed from the Indicator e.g. \"K\""
+    },
+    "modes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "icsCode": {
+      "type": "string"
+    },
+    "smsCode": {
+      "type": "string"
+    },
+    "stopType": {
+      "type": "string"
+    },
+    "stationNaptan": {
+      "type": "string"
+    },
+    "accessibilitySummary": {
+      "type": "string"
+    },
+    "hubNaptanCode": {
+      "type": "string"
+    },
+    "lines": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-7.json"
+      }
+    },
+    "lineGroup": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-8.json"
+      }
+    },
+    "lineModeGroups": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-9.json"
+      }
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "naptanMode": {
+      "type": "string"
+    },
+    "status": {
+      "type": "boolean"
+    },
+    "id": {
+      "type": "string",
+      "description": "A unique identifier."
+    },
+    "url": {
+      "type": "string",
+      "description": "The unique location of this resource."
+    },
+    "commonName": {
+      "type": "string",
+      "description": "A human readable name."
+    },
+    "distance": {
+      "type": "number",
+      "description": "The distance of the place from its search point, if this is the result\r\n            of a geographical search, otherwise zero.",
+      "format": "double"
+    },
+    "placeType": {
+      "type": "string",
+      "description": "The type of Place. See /Place/Meta/placeTypes for possible values."
+    },
+    "additionalProperties": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-2.json"
+      },
+      "description": "A bag of additional key/value pairs with extra information about this place."
+    },
+    "children": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-3.json"
+      }
+    },
+    "childrenUrls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lat": {
+      "type": "number",
+      "description": "WGS84 latitude of the location.",
+      "format": "double"
+    },
+    "lon": {
+      "type": "number",
+      "description": "WGS84 longitude of the location.",
+      "format": "double"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

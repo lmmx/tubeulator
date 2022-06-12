@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "lineString": {
+      "type": "string"
+    },
+    "stopPoints": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-10.json"
+      }
+    },
+    "elevation": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-11.json"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

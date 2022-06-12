@@ -1,0 +1,112 @@
+{
+  "oneOf": [
+    {
+      "$ref": "Tfl.json"
+    },
+    {
+      "$ref": "Tfl-2.json"
+    },
+    {
+      "$ref": "Tfl-3.json"
+    },
+    {
+      "$ref": "Tfl-4.json"
+    },
+    {
+      "$ref": "Tfl-5.json"
+    },
+    {
+      "$ref": "Tfl-6.json"
+    },
+    {
+      "$ref": "Tfl-7.json"
+    },
+    {
+      "$ref": "Tfl-8.json"
+    },
+    {
+      "$ref": "Tfl-9.json"
+    },
+    {
+      "$ref": "Tfl-10.json"
+    },
+    {
+      "$ref": "System.json"
+    },
+    {
+      "$ref": "MetaCategoriesGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "MetaCategoriesGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "MetaCategoriesGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "MetaCategoriesGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "Get200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "MetaPlaceTypesGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "MetaPlaceTypesGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "MetaPlaceTypesGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "MetaPlaceTypesGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "Type-types-Get200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "Type-types-Get200TextJsonResponse.json"
+    },
+    {
+      "$ref": "Type-types-Get200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "Type-types-Get200TextXmlResponse.json"
+    },
+    {
+      "$ref": "id-Get200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "id-Get200TextJsonResponse.json"
+    },
+    {
+      "$ref": "id-Get200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "id-Get200TextXmlResponse.json"
+    },
+    {
+      "$ref": "Get200ApplicationJsonResponse-1.json"
+    },
+    {
+      "$ref": "Get200TextJsonResponse.json"
+    },
+    {
+      "$ref": "Get200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "Get200TextXmlResponse.json"
+    },
+    {
+      "$ref": "SearchGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "SearchGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "SearchGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "SearchGet200TextXmlResponse.json"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "properties": {
+    "routeCode": {
+      "type": "string",
+      "description": "The route code"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name such as \"72\""
+    },
+    "direction": {
+      "type": "string",
+      "description": "Inbound or Outbound"
+    },
+    "originationName": {
+      "type": "string",
+      "description": "The name of the Origin StopPoint"
+    },
+    "destinationName": {
+      "type": "string",
+      "description": "The name of the Destination StopPoint"
+    },
+    "originator": {
+      "type": "string",
+      "description": "The Id (NaPTAN code) of the Origin StopPoint"
+    },
+    "destination": {
+      "type": "string",
+      "description": "The Id (NaPTAN code) or the Destination StopPoint"
+    },
+    "serviceType": {
+      "type": "string",
+      "description": "Regular or Night"
+    },
+    "validTo": {
+      "type": "string",
+      "description": "The DateTime that the Service containing this Route is valid until.",
+      "format": "date-time"
+    },
+    "validFrom": {
+      "type": "string",
+      "description": "The DateTime that the Service containing this Route is valid from.",
+      "format": "date-time"
+    }
+  },
+  "description": "Description of a Route used in Route search results.",
+  "$schema": "http://json-schema.org/schema#"
+}

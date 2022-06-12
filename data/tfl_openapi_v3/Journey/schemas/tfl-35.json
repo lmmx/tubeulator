@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "originNumberOfBikes": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "destinationNumberOfBikes": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "originNumberOfEmptySlots": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "destinationNumberOfEmptySlots": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "originId": {
+      "type": "string"
+    },
+    "destinationId": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

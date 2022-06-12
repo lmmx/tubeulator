@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "input": {
+      "type": "string"
+    },
+    "searchMatches": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.RouteSearchMatch"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

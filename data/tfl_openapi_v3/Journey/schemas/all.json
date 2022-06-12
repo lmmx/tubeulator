@@ -1,0 +1,139 @@
+{
+  "oneOf": [
+    {
+      "$ref": "Tfl.json"
+    },
+    {
+      "$ref": "Tfl-2.json"
+    },
+    {
+      "$ref": "Tfl-3.json"
+    },
+    {
+      "$ref": "Tfl-4.json"
+    },
+    {
+      "$ref": "Tfl-5.json"
+    },
+    {
+      "$ref": "Tfl-6.json"
+    },
+    {
+      "$ref": "Tfl-7.json"
+    },
+    {
+      "$ref": "Tfl-8.json"
+    },
+    {
+      "$ref": "Tfl-9.json"
+    },
+    {
+      "$ref": "Tfl-10.json"
+    },
+    {
+      "$ref": "Tfl-11.json"
+    },
+    {
+      "$ref": "Tfl-12.json"
+    },
+    {
+      "$ref": "Tfl-13.json"
+    },
+    {
+      "$ref": "Tfl-14.json"
+    },
+    {
+      "$ref": "Tfl-15.json"
+    },
+    {
+      "$ref": "Tfl-16.json"
+    },
+    {
+      "$ref": "Tfl-17.json"
+    },
+    {
+      "$ref": "Tfl-18.json"
+    },
+    {
+      "$ref": "Tfl-19.json"
+    },
+    {
+      "$ref": "Tfl-20.json"
+    },
+    {
+      "$ref": "Tfl-21.json"
+    },
+    {
+      "$ref": "Tfl-22.json"
+    },
+    {
+      "$ref": "Tfl-23.json"
+    },
+    {
+      "$ref": "Tfl-24.json"
+    },
+    {
+      "$ref": "Tfl-25.json"
+    },
+    {
+      "$ref": "Tfl-26.json"
+    },
+    {
+      "$ref": "Tfl-27.json"
+    },
+    {
+      "$ref": "Tfl-28.json"
+    },
+    {
+      "$ref": "Tfl-29.json"
+    },
+    {
+      "$ref": "Tfl-30.json"
+    },
+    {
+      "$ref": "Tfl-31.json"
+    },
+    {
+      "$ref": "Tfl-32.json"
+    },
+    {
+      "$ref": "Tfl-33.json"
+    },
+    {
+      "$ref": "Tfl-34.json"
+    },
+    {
+      "$ref": "Tfl-35.json"
+    },
+    {
+      "$ref": "Tfl-36.json"
+    },
+    {
+      "$ref": "Tfl-37.json"
+    },
+    {
+      "$ref": "Tfl-38.json"
+    },
+    {
+      "$ref": "Tfl-39.json"
+    },
+    {
+      "$ref": "Tfl-40.json"
+    },
+    {
+      "$ref": "MetaModesGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "MetaModesGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "MetaModesGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "MetaModesGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "Get200ApplicationJsonResponse.json"
+    }
+  ]
+}

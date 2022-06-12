@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "geography": {
+      "$ref": "System.json"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

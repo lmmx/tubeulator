@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "modeName": {
+      "type": "string"
+    },
+    "severityLevel": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

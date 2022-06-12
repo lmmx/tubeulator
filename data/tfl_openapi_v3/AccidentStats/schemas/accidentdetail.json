@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "lat": {
+      "type": "number",
+      "format": "double"
+    },
+    "lon": {
+      "type": "number",
+      "format": "double"
+    },
+    "location": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "severity": {
+      "type": "string"
+    },
+    "borough": {
+      "type": "string"
+    },
+    "casualties": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.AccidentStats.Casualty.json"
+      }
+    },
+    "vehicles": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl.Api.Presentation.Entities.AccidentStats.Vehicle.json"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

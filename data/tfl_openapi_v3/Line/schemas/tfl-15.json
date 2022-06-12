@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "fromDate": {
+      "type": "string",
+      "description": "Gets or sets the start date.",
+      "format": "date-time"
+    },
+    "toDate": {
+      "type": "string",
+      "description": "Gets or sets the end date.",
+      "format": "date-time"
+    },
+    "isNow": {
+      "type": "boolean",
+      "description": "If true is a realtime status rather than planned or info"
+    }
+  },
+  "description": "Represents a period for which a planned works is valid.",
+  "$schema": "http://json-schema.org/schema#"
+}

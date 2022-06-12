@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "bulletOrder": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "header": {
+      "type": "boolean"
+    },
+    "messageText": {
+      "type": "string"
+    },
+    "linkText": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

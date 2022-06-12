@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "modeName": {
+      "type": "string"
+    },
+    "disruptions": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.Disruption"
+      }
+    },
+    "created": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "modified": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "lineStatuses": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.LineStatus"
+      }
+    },
+    "routeSections": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.MatchedRoute"
+      }
+    },
+    "serviceTypes": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.LineServiceTypeInfo"
+      }
+    },
+    "crowding": {
+      "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.Crowding"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "lineId": {
+      "type": "string"
+    },
+    "statusSeverity": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "statusSeverityDescription": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "created": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "modified": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "validityPeriods": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.ValidityPeriod"
+      }
+    },
+    "disruption": {
+      "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.Disruption"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

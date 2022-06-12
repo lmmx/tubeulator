@@ -1,0 +1,115 @@
+{
+  "oneOf": [
+    {
+      "$ref": "Tfl.json"
+    },
+    {
+      "$ref": "System.json"
+    },
+    {
+      "$ref": "System-2.json"
+    },
+    {
+      "$ref": "Tfl-2.json"
+    },
+    {
+      "$ref": "Tfl-3.json"
+    },
+    {
+      "$ref": "Tfl-4.json"
+    },
+    {
+      "$ref": "Tfl-5.json"
+    },
+    {
+      "$ref": "Tfl-6.json"
+    },
+    {
+      "$ref": "Tfl-7.json"
+    },
+    {
+      "$ref": "Tfl-8.json"
+    },
+    {
+      "$ref": "System-3.json"
+    },
+    {
+      "$ref": "Tfl-9.json"
+    },
+    {
+      "$ref": "Get200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "Get200TextJsonResponse.json"
+    },
+    {
+      "$ref": "Get200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "Get200TextXmlResponse.json"
+    },
+    {
+      "$ref": "ids-Get200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "ids-Get200TextJsonResponse.json"
+    },
+    {
+      "$ref": "ids-Get200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "ids-Get200TextXmlResponse.json"
+    },
+    {
+      "$ref": "ids-StatusGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "ids-StatusGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "ids-StatusGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "ids-StatusGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "ids-DisruptionGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "ids-DisruptionGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "ids-DisruptionGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "ids-DisruptionGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "ids-DisruptionGet200ApplicationGeo-jsonResponse.json"
+    },
+    {
+      "$ref": "MetaCategoriesGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "MetaCategoriesGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "MetaCategoriesGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "MetaCategoriesGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "MetaSeveritiesGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "MetaSeveritiesGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "MetaSeveritiesGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "MetaSeveritiesGet200TextXmlResponse.json"
+    }
+  ]
+}

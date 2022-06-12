@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "ordinal": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "stopPoint": {
+      "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.StopPoint"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

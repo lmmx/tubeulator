@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "uri": {
+      "type": "string"
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "crowding": {
+      "$ref": "Tfl-5.json"
+    },
+    "routeType": {
+      "enum": [
+        "Unknown",
+        "All",
+        "Cycle Superhighways",
+        "Quietways",
+        "Cycleways",
+        "Mini-Hollands",
+        "Central London Grid",
+        "Streetspace Route"
+      ],
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "Unknown",
+        "All",
+        "Open",
+        "In Progress",
+        "Planned",
+        "Planned - Subject to feasibility and consultation.",
+        "Not Open"
+      ],
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

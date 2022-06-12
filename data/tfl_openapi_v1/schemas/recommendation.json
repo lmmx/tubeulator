@@ -1,0 +1,73 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "rule": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "rank": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "fareType": {
+      "type": "string"
+    },
+    "product": {
+      "type": "string"
+    },
+    "ticketType": {
+      "type": "string"
+    },
+    "ticketTime": {
+      "type": "string"
+    },
+    "productType": {
+      "type": "string"
+    },
+    "discountCard": {
+      "type": "string"
+    },
+    "zones": {
+      "type": "string"
+    },
+    "cost": {
+      "type": "string"
+    },
+    "priceDescription": {
+      "type": "string"
+    },
+    "priceComparison": {
+      "type": "string"
+    },
+    "recommendedTopUp": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.Message"
+      }
+    },
+    "keyFeatures": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.Message"
+      }
+    },
+    "gettingYourTicket": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.Message"
+      }
+    },
+    "singleFare": {
+      "format": "double",
+      "type": "number"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

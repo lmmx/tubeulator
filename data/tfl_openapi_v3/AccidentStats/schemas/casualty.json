@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "age": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "class": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "ageBand": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

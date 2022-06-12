@@ -1,0 +1,7 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "LiftDisruption.json"
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

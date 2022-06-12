@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "properties": {
+    "lineId": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "lineName": {
+      "type": "string"
+    },
+    "lineRouteSection": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.LineRouteSection"
+      }
+    },
+    "matchedRouteSections": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.MatchedRouteSections"
+      }
+    },
+    "matchedStops": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.MatchedStop"
+      }
+    },
+    "id": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "lat": {
+      "format": "double",
+      "type": "number"
+    },
+    "lon": {
+      "format": "double",
+      "type": "number"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

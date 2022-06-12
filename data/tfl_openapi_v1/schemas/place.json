@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "A unique identifier.",
+      "type": "string"
+    },
+    "url": {
+      "description": "The unique location of this resource.",
+      "type": "string"
+    },
+    "commonName": {
+      "description": "A human readable name.",
+      "type": "string"
+    },
+    "distance": {
+      "format": "double",
+      "description": "The distance of the place from its search point, if this is the result\r\n            of a geographical search, otherwise zero.",
+      "type": "number"
+    },
+    "placeType": {
+      "description": "The type of Place. See /Place/Meta/placeTypes for possible values.",
+      "type": "string"
+    },
+    "additionalProperties": {
+      "description": "A bag of additional key/value pairs with extra information about this place.",
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.AdditionalProperties"
+      }
+    },
+    "children": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.Place"
+      }
+    },
+    "childrenUrls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lat": {
+      "format": "double",
+      "description": "WGS84 latitude of the location.",
+      "type": "number"
+    },
+    "lon": {
+      "format": "double",
+      "description": "WGS84 longitude of the location.",
+      "type": "number"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

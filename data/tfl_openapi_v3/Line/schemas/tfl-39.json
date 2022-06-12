@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "lineId": {
+      "type": "string"
+    },
+    "lineName": {
+      "type": "string"
+    },
+    "direction": {
+      "type": "string"
+    },
+    "pdfUrl": {
+      "type": "string"
+    },
+    "stations": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-20.json"
+      }
+    },
+    "stops": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-20.json"
+      }
+    },
+    "timetable": {
+      "$ref": "Tfl-36.json"
+    },
+    "disambiguation": {
+      "$ref": "Tfl-38.json"
+    },
+    "statusErrorMessage": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

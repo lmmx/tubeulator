@@ -1,0 +1,25 @@
+{
+  "oneOf": [
+    {
+      "$ref": "Tfl.json"
+    },
+    {
+      "$ref": "Tfl-2.json"
+    },
+    {
+      "$ref": "Tfl-3.json"
+    },
+    {
+      "$ref": "ids-ArrivalsGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "ids-ArrivalsGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "ids-ArrivalsGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "ids-ArrivalsGet200TextXmlResponse.json"
+    }
+  ]
+}

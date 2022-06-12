@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "earliest": {
+      "$ref": "Tfl-36.json"
+    },
+    "earlier": {
+      "$ref": "Tfl-36.json"
+    },
+    "later": {
+      "$ref": "Tfl-36.json"
+    },
+    "latest": {
+      "$ref": "Tfl-36.json"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

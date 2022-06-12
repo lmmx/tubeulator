@@ -1,0 +1,144 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the road disruption"
+    },
+    "url": {
+      "type": "string",
+      "description": "URL to retrieve this road disruption"
+    },
+    "point": {
+      "type": "string",
+      "description": "Latitude and longitude (WGS84) of the centroid of the disruption, stored in a geoJSON-formatted string."
+    },
+    "severity": {
+      "type": "string",
+      "description": "A description of the severity of the disruption."
+    },
+    "ordinal": {
+      "type": "integer",
+      "description": "An ordinal of the disruption based on severity, level of interest and corridor.",
+      "format": "int32"
+    },
+    "category": {
+      "type": "string",
+      "description": "Describes the nature of disruption e.g. Traffic Incidents, Works"
+    },
+    "subCategory": {
+      "type": "string",
+      "description": "Describes the sub-category of disruption e.g. Collapsed Manhole, Abnormal Load"
+    },
+    "comments": {
+      "type": "string",
+      "description": "Full text of comments describing the disruption, including details of any road closures and diversions, where appropriate."
+    },
+    "currentUpdate": {
+      "type": "string",
+      "description": "Text of the most recent update from the LSTCC on the state of the\r\n             disruption, including the current traffic impact and any advice to\r\n             road users."
+    },
+    "currentUpdateDateTime": {
+      "type": "string",
+      "description": "The time when the last CurrentUpdate description was recorded, \r\n            or null if no CurrentUpdate has been applied.",
+      "format": "date-time"
+    },
+    "corridorIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "The Ids of affected corridors, if any."
+    },
+    "startDateTime": {
+      "type": "string",
+      "description": "The date and time which the disruption started. For a planned disruption (i.e. planned road works) this date will be in the future.\r\n            For unplanned disruptions, this will default to the date on which the disruption was first recorded, but may be adjusted by the operator.",
+      "format": "date-time"
+    },
+    "endDateTime": {
+      "type": "string",
+      "description": "The date and time on which the disruption ended. For planned disruptions, this date will have a valid value. For unplanned \r\n            disruptions in progress, this field will be omitted.",
+      "format": "date-time"
+    },
+    "lastModifiedTime": {
+      "type": "string",
+      "description": "The date and time on which the disruption was last modified in the system. This information can reliably be used by a developer to quickly\r\n            compare two instances of the same disruption to determine if it has been changed.",
+      "format": "date-time"
+    },
+    "levelOfInterest": {
+      "type": "string",
+      "description": "This describes the level of potential impact on traffic operations of the disruption. \r\n            High = e.g. a one-off disruption on a major or high profile route which will require a high level of operational attention \r\n            Medium = This is the default value \r\n            Low = e.g. a frequently occurring disruption which is well known"
+    },
+    "location": {
+      "type": "string",
+      "description": "Main road name / number (borough) or preset area name where the disruption is located. This might be useful for a map popup where space is limited."
+    },
+    "status": {
+      "type": "string",
+      "description": "This describes the status of the disruption.  \r\n            Active = currently in progress \r\n            Active Long Term = currently in progress and long term\r\n            Scheduled = scheduled to start within the next 180 days\r\n            Recurring Works = planned maintenance works that follow a regular routine or pattern and whose next occurrence is to start within the next 180 days.\r\n            Recently Cleared = recently cleared in the last 24 hours\r\n            Note that the status of Scheduled or Recurring Works disruptions will change to Active when they start, and will change status again when they end."
+    },
+    "geography": {
+      "$ref": "System-2.json"
+    },
+    "geometry": {
+      "$ref": "System-2.json"
+    },
+    "streets": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-3.json"
+      },
+      "description": "A collection of zero or more streets affected by the disruption."
+    },
+    "isProvisional": {
+      "type": "boolean",
+      "description": "True if the disruption is planned on a future date that is open to change"
+    },
+    "hasClosures": {
+      "type": "boolean",
+      "description": "True if any of the affected Streets have a \"Full Closure\" status, false otherwise. A RoadDisruption that has HasClosures is considered a \r\n            Severe or Serious disruption for severity filtering purposes."
+    },
+    "linkText": {
+      "type": "string",
+      "description": "The text of any associated link"
+    },
+    "linkUrl": {
+      "type": "string",
+      "description": "The url of any associated link"
+    },
+    "roadProject": {
+      "$ref": "Tfl-4.json"
+    },
+    "publishStartDate": {
+      "type": "string",
+      "description": "TDM Additional properties",
+      "format": "date-time"
+    },
+    "publishEndDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "timeFrame": {
+      "type": "string"
+    },
+    "roadDisruptionLines": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-5.json"
+      }
+    },
+    "roadDisruptionImpactAreas": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-6.json"
+      }
+    },
+    "recurringSchedules": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-7.json"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

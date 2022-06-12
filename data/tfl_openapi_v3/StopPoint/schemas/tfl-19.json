@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "atcoCode": {
+      "type": "string"
+    },
+    "fromDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "toDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "description": {
+      "type": "string"
+    },
+    "commonName": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "stationAtcoCode": {
+      "type": "string"
+    },
+    "appearance": {
+      "type": "string"
+    },
+    "additionalInformation": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

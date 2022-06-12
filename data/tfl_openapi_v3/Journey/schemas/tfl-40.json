@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "journeys": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-29.json"
+      }
+    },
+    "lines": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-34.json"
+      }
+    },
+    "cycleHireDockingStationData": {
+      "$ref": "Tfl-35.json"
+    },
+    "stopMessages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recommendedMaxAgeMinutes": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "searchCriteria": {
+      "$ref": "Tfl-38.json"
+    },
+    "journeyVector": {
+      "$ref": "Tfl-39.json"
+    }
+  },
+  "description": "A DTO representing a list of possible journeys.",
+  "$schema": "http://json-schema.org/schema#"
+}

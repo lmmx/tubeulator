@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "roadDisruptionId": {
+      "type": "string"
+    },
+    "polygon": {
+      "$ref": "_definitions.json#/definitions/System.Data.Spatial.DbGeography"
+    },
+    "startDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "endDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "startTime": {
+      "type": "string"
+    },
+    "endTime": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

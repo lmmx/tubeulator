@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "properties": {
+    "lowZone": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "highZone": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "cost": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "chargeProfileName": {
+      "type": "string"
+    },
+    "isHopperFare": {
+      "type": "boolean"
+    },
+    "chargeLevel": {
+      "type": "string"
+    },
+    "peak": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "offPeak": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "taps": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-25.json"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

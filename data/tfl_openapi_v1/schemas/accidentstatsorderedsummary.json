@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "year": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "borough": {
+      "type": "string"
+    },
+    "accidents": {
+      "format": "int32",
+      "type": "integer"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "icsCode": {
+      "type": "string",
+      "description": "Ics code for the disrupted lift route"
+    },
+    "naptanCode": {
+      "type": "string",
+      "description": "Naptan code for the stop area of the disrupted lift route"
+    },
+    "stopPointName": {
+      "type": "string",
+      "description": "Name of the stop point of the disrupted lift route"
+    },
+    "outageStartArea": {
+      "type": "string",
+      "description": "Id for the start of the disrupted lift route"
+    },
+    "outageEndArea": {
+      "type": "string",
+      "description": "Id for the end of the disrupted lift route"
+    },
+    "message": {
+      "type": "string",
+      "description": "Customer facing message for the disrupted lift route"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "totalCost": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "fares": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.JourneyPlanner.Fare"
+      }
+    },
+    "caveats": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Tfl.Api.Presentation.Entities.JourneyPlanner.FareCaveat"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

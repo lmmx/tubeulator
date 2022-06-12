@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "lat": {
+      "type": "number",
+      "description": "WGS84 latitude of the location.",
+      "format": "double"
+    },
+    "lon": {
+      "type": "number",
+      "description": "WGS84 longitude of the location.",
+      "format": "double"
+    }
+  },
+  "description": "Represents a point located at a latitude and longitude using the WGS84 co-ordinate system.",
+  "$schema": "http://json-schema.org/schema#"
+}

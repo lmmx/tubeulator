@@ -1,0 +1,72 @@
+{
+  "type": "object",
+  "properties": {
+    "duration": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "speed": {
+      "type": "string"
+    },
+    "instruction": {
+      "$ref": "Tfl-4.json"
+    },
+    "obstacles": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-5.json"
+      }
+    },
+    "departureTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "arrivalTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "departurePoint": {
+      "$ref": "Tfl-6.json"
+    },
+    "arrivalPoint": {
+      "$ref": "Tfl-6.json"
+    },
+    "path": {
+      "$ref": "Tfl-12.json"
+    },
+    "routeOptions": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-13.json"
+      }
+    },
+    "mode": {
+      "$ref": "Tfl-10.json"
+    },
+    "disruptions": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-21.json"
+      }
+    },
+    "plannedWorks": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-22.json"
+      }
+    },
+    "distance": {
+      "type": "number",
+      "format": "double"
+    },
+    "isDisrupted": {
+      "type": "boolean",
+      "readOnly": true
+    },
+    "hasFixedLocations": {
+      "type": "boolean",
+      "readOnly": true
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "lineName": {
+      "type": "string"
+    },
+    "lineSpecificServiceTypes": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-13.json"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

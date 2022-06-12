@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "atcoCode": {
+      "type": "string"
+    },
+    "commonName": {
+      "type": "string"
+    },
+    "fareCategory": {
+      "enum": [
+        "Cash",
+        "Oyster",
+        "Contactless",
+        "ContactlessOnly",
+        "All"
+      ],
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

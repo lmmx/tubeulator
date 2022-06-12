@@ -1,0 +1,7 @@
+{
+  "oneOf": [
+    {
+      "$ref": "System.Object.json"
+    }
+  ]
+}

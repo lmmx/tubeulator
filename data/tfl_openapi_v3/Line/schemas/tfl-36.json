@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "departureStopId": {
+      "type": "string"
+    },
+    "routes": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-35.json"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

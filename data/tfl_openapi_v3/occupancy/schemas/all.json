@@ -1,0 +1,64 @@
+{
+  "oneOf": [
+    {
+      "$ref": "Tfl.json"
+    },
+    {
+      "$ref": "Tfl-2.json"
+    },
+    {
+      "$ref": "Tfl-3.json"
+    },
+    {
+      "$ref": "Tfl-4.json"
+    },
+    {
+      "$ref": "CarParkGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "CarParkGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "CarParkGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "CarParkGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "ChargeConnector-ids-Get200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "ChargeConnector-ids-Get200TextJsonResponse.json"
+    },
+    {
+      "$ref": "ChargeConnector-ids-Get200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "ChargeConnector-ids-Get200TextXmlResponse.json"
+    },
+    {
+      "$ref": "ChargeConnectorGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "ChargeConnectorGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "ChargeConnectorGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "ChargeConnectorGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "BikePoints-ids-Get200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "BikePoints-ids-Get200TextJsonResponse.json"
+    },
+    {
+      "$ref": "BikePoints-ids-Get200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "BikePoints-ids-Get200TextXmlResponse.json"
+    }
+  ]
+}

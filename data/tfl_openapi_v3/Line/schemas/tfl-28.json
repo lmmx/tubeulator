@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "stopId": {
+      "type": "string"
+    },
+    "timeToArrival": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

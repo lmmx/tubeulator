@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "naptanIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "serviceType": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "hour": {
+      "type": "string"
+    },
+    "minute": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

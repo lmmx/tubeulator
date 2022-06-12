@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "bayType": {
+      "type": "string"
+    },
+    "bayCount": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "free": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "occupied": {
+      "format": "int32",
+      "type": "integer"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

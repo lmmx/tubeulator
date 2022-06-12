@@ -1,0 +1,91 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The identitier for the prediction"
+    },
+    "operationType": {
+      "type": "integer",
+      "description": "The type of the operation (1: is new or has been updated, 2: should be deleted from any client cache)",
+      "format": "int32"
+    },
+    "vehicleId": {
+      "type": "string",
+      "description": "The actual vehicle in transit (for train modes, the leading car of the rolling set)"
+    },
+    "naptanId": {
+      "type": "string",
+      "description": "Identifier for the prediction"
+    },
+    "stationName": {
+      "type": "string",
+      "description": "Station name"
+    },
+    "lineId": {
+      "type": "string",
+      "description": "Unique identifier for the Line"
+    },
+    "lineName": {
+      "type": "string",
+      "description": "Line Name"
+    },
+    "platformName": {
+      "type": "string",
+      "description": "Platform name (for bus, this is the stop letter)"
+    },
+    "direction": {
+      "type": "string",
+      "description": "Direction (unified to inbound/outbound)"
+    },
+    "bearing": {
+      "type": "string",
+      "description": "Bearing (between 0 to 359)"
+    },
+    "destinationNaptanId": {
+      "type": "string",
+      "description": "Naptan Identifier for the prediction's destination"
+    },
+    "destinationName": {
+      "type": "string",
+      "description": "Name of the destination"
+    },
+    "timestamp": {
+      "type": "string",
+      "description": "Timestamp for when the prediction was inserted/modified (source column drives what objects are broadcast on each iteration)",
+      "format": "date-time"
+    },
+    "timeToStation": {
+      "type": "integer",
+      "description": "Prediction of the Time to station in seconds",
+      "format": "int32"
+    },
+    "currentLocation": {
+      "type": "string",
+      "description": "The current location of the vehicle."
+    },
+    "towards": {
+      "type": "string",
+      "description": "Routing information or other descriptive text about the path of the vehicle towards the destination"
+    },
+    "expectedArrival": {
+      "type": "string",
+      "description": "The expected arrival time of the vehicle at the stop/station",
+      "format": "date-time"
+    },
+    "timeToLive": {
+      "type": "string",
+      "description": "The expiry time for the prediction",
+      "format": "date-time"
+    },
+    "modeName": {
+      "type": "string",
+      "description": "The mode name of the station/line the prediction relates to"
+    },
+    "timing": {
+      "$ref": "Tfl.Api.Presentation.Entities.PredictionTiming.json"
+    }
+  },
+  "description": "DTO to capture the prediction details",
+  "$schema": "http://json-schema.org/schema#"
+}

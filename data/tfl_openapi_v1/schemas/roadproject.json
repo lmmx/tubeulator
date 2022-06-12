@@ -1,0 +1,72 @@
+{
+  "type": "object",
+  "properties": {
+    "projectId": {
+      "type": "string"
+    },
+    "schemeName": {
+      "type": "string"
+    },
+    "projectName": {
+      "type": "string"
+    },
+    "projectDescription": {
+      "type": "string"
+    },
+    "projectPageUrl": {
+      "type": "string"
+    },
+    "consultationPageUrl": {
+      "type": "string"
+    },
+    "consultationStartDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "consultationEndDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "constructionStartDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "constructionEndDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "boroughsBenefited": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cycleSuperhighwayId": {
+      "type": "string"
+    },
+    "phase": {
+      "enum": [
+        "Unscoped",
+        "Concept",
+        "ConsultationEnded",
+        "Consultation",
+        "Construction",
+        "Complete"
+      ],
+      "type": "string"
+    },
+    "contactName": {
+      "type": "string"
+    },
+    "contactEmail": {
+      "type": "string"
+    },
+    "externalPageUrl": {
+      "type": "string"
+    },
+    "projectSummaryPageUrl": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

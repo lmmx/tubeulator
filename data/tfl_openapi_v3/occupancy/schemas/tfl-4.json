@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Id of the bike point such as BikePoints_1"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name / Common name of the bike point"
+    },
+    "bikesCount": {
+      "type": "integer",
+      "description": "Total bike counts",
+      "format": "int32"
+    },
+    "emptyDocks": {
+      "type": "integer",
+      "description": "Empty docks",
+      "format": "int32"
+    },
+    "totalDocks": {
+      "type": "integer",
+      "description": "Total docks available",
+      "format": "int32"
+    }
+  },
+  "description": "Bike point occupancy",
+  "$schema": "http://json-schema.org/schema#"
+}

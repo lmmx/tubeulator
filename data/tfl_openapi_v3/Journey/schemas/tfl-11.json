@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "distance": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "startLat": {
+      "type": "number",
+      "format": "double"
+    },
+    "startLon": {
+      "type": "number",
+      "format": "double"
+    },
+    "endLat": {
+      "type": "number",
+      "format": "double"
+    },
+    "endLon": {
+      "type": "number",
+      "format": "double"
+    },
+    "heightFromPreviousPoint": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "gradient": {
+      "type": "number",
+      "format": "double"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

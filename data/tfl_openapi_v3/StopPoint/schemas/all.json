@@ -1,0 +1,292 @@
+{
+  "oneOf": [
+    {
+      "$ref": "Tfl.json"
+    },
+    {
+      "$ref": "Tfl-2.json"
+    },
+    {
+      "$ref": "Tfl-3.json"
+    },
+    {
+      "$ref": "Tfl-4.json"
+    },
+    {
+      "$ref": "Tfl-5.json"
+    },
+    {
+      "$ref": "Tfl-6.json"
+    },
+    {
+      "$ref": "Tfl-7.json"
+    },
+    {
+      "$ref": "Tfl-8.json"
+    },
+    {
+      "$ref": "Tfl-9.json"
+    },
+    {
+      "$ref": "Tfl-10.json"
+    },
+    {
+      "$ref": "Tfl-11.json"
+    },
+    {
+      "$ref": "Tfl-12.json"
+    },
+    {
+      "$ref": "Tfl-13.json"
+    },
+    {
+      "$ref": "Tfl-14.json"
+    },
+    {
+      "$ref": "Tfl-15.json"
+    },
+    {
+      "$ref": "Tfl-16.json"
+    },
+    {
+      "$ref": "Tfl-17.json"
+    },
+    {
+      "$ref": "Tfl-18.json"
+    },
+    {
+      "$ref": "Tfl-19.json"
+    },
+    {
+      "$ref": "Tfl-20.json"
+    },
+    {
+      "$ref": "Tfl-21.json"
+    },
+    {
+      "$ref": "Tfl-22.json"
+    },
+    {
+      "$ref": "System.json"
+    },
+    {
+      "$ref": "Get200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "MetaCategoriesGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "MetaCategoriesGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "MetaCategoriesGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "MetaCategoriesGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "MetaStopTypesGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "MetaStopTypesGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "MetaStopTypesGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "MetaStopTypesGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "MetaModesGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "MetaModesGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "MetaModesGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "MetaModesGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "ids-Get200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "ids-Get200TextJsonResponse.json"
+    },
+    {
+      "$ref": "ids-Get200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "ids-Get200TextXmlResponse.json"
+    },
+    {
+      "$ref": "id-PlaceTypesGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "id-PlaceTypesGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "id-PlaceTypesGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "id-PlaceTypesGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "id-Crowding-line-Get200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "id-Crowding-line-Get200TextJsonResponse.json"
+    },
+    {
+      "$ref": "id-Crowding-line-Get200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "id-Crowding-line-Get200TextXmlResponse.json"
+    },
+    {
+      "$ref": "Type-types-Get200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "Type-types-Get200TextJsonResponse.json"
+    },
+    {
+      "$ref": "Type-types-Get200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "Type-types-Get200TextXmlResponse.json"
+    },
+    {
+      "$ref": "Type-types-Page-page-Get200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "Type-types-Page-page-Get200TextJsonResponse.json"
+    },
+    {
+      "$ref": "Type-types-Page-page-Get200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "Type-types-Page-page-Get200TextXmlResponse.json"
+    },
+    {
+      "$ref": "ServiceTypesGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "ServiceTypesGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "ServiceTypesGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "ServiceTypesGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "id-ArrivalsGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "id-ArrivalsGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "id-ArrivalsGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "id-ArrivalsGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "id-ArrivalDeparturesGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "id-ArrivalDeparturesGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "id-ArrivalDeparturesGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "id-ArrivalDeparturesGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "id-CanReachOnLine-lineId-Get200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "id-CanReachOnLine-lineId-Get200TextJsonResponse.json"
+    },
+    {
+      "$ref": "id-CanReachOnLine-lineId-Get200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "id-CanReachOnLine-lineId-Get200TextXmlResponse.json"
+    },
+    {
+      "$ref": "id-RouteGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "id-RouteGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "id-RouteGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "id-RouteGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "Mode-modes-DisruptionGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "Mode-modes-DisruptionGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "Mode-modes-DisruptionGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "Mode-modes-DisruptionGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "ids-DisruptionGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "ids-DisruptionGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "ids-DisruptionGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "ids-DisruptionGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "id-DirectionTo-toStopPointId-Get200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "id-DirectionTo-toStopPointId-Get200TextJsonResponse.json"
+    },
+    {
+      "$ref": "id-DirectionTo-toStopPointId-Get200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "id-DirectionTo-toStopPointId-Get200TextXmlResponse.json"
+    },
+    {
+      "$ref": "stopPointId-TaxiRanksGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "stopPointId-TaxiRanksGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "stopPointId-TaxiRanksGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "stopPointId-TaxiRanksGet200TextXmlResponse.json"
+    },
+    {
+      "$ref": "stopPointId-CarParksGet200ApplicationJsonResponse.json"
+    },
+    {
+      "$ref": "stopPointId-CarParksGet200TextJsonResponse.json"
+    },
+    {
+      "$ref": "stopPointId-CarParksGet200ApplicationXmlResponse.json"
+    },
+    {
+      "$ref": "stopPointId-CarParksGet200TextXmlResponse.json"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Street name"
+    },
+    "closure": {
+      "type": "string",
+      "description": "Type of road closure. Some example values:\r\n            Open = road is open, not blocked, not closed, not restricted. It maybe that the disruption has been moved out of the carriageway.\r\n            Partial Closure = road is partially blocked, closed or restricted. \r\n            Full Closure = road is fully blocked or closed."
+    },
+    "directions": {
+      "type": "string",
+      "description": "The direction of the disruption on the street. Some example values:\r\n            All Directions\r\n            All Approaches\r\n            Clockwise\r\n            Anti-Clockwise\r\n            Northbound\r\n            Eastbound\r\n            Southbound\r\n            Westbound\r\n            Both Directions"
+    },
+    "segments": {
+      "type": "array",
+      "items": {
+        "$ref": "Tfl-2.json"
+      },
+      "description": "Geographic description of the sections of this street that are affected."
+    },
+    "sourceSystemId": {
+      "type": "integer",
+      "description": "The ID from the source system of the disruption that this street belongs to.",
+      "format": "int64"
+    },
+    "sourceSystemKey": {
+      "type": "string",
+      "description": "The key of the source system of the disruption that this street belongs to."
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}

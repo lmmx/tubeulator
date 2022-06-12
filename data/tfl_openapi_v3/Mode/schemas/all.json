@@ -1,0 +1,37 @@
+{
+  "oneOf": [
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ActiveServiceTypeArray.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.ActiveServiceType.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ActiveServiceTypeArray-1.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ActiveServiceTypeArray-2.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-ActiveServiceTypeArray-3.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray-4.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.Prediction.json"
+    },
+    {
+      "$ref": "Tfl.Api.Presentation.Entities.PredictionTiming.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray-5.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray-6.json"
+    },
+    {
+      "$ref": "Tfl-Api-Presentation-Entities-PredictionArray-7.json"
+    }
+  ]
+}
