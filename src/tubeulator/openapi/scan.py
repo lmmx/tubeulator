@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from ._types import ApiInventory, NamespaceInventory
-from ..utils.paths import openapi_schemas_path, unified_api_schema
+from ..utils.paths import openapi_schemas_path, unified_api_schema, find_schema
 
 import ujson
 from pathlib import Path
@@ -17,14 +17,16 @@ def api_schema_inventory(api_schema: Path) -> ApiInventory:
     """
     if api_schema.suffix != ".json":
         raise ValueError(f"{api_schema=} is not a JSON file")
-    alias2entity = {}
     api_schema_obj = ujson.loads(api_schema.read_text())
     api_entity_schemas = api_schema_obj["components"]["schemas"]
     unified_api_schema_obj = ujson.loads(unified_api_schema.read_text())
     unified_api_entity_schemas = unified_api_schema_obj["components"]["schemas"]
+    alias2entity: ApiInventory = {
+        api_entity: []
+        for api_entity in api_entity_schemas
+    }
     # First pass, get the exact matches
-    for api_entity, api_schema in api_schemas.items():
-        alias2entity.setdefault(api_entity, [])
+    for api_entity, api_schema in api_entity_schemas.items():
         for unified_entity, unified_schema in unified_api_entity_schemas.items():
             if api_schema == unified_schema:
                 alias2entity[api_entity].append(unified_entity)
