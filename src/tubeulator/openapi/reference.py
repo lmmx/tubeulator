@@ -3,10 +3,11 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
-from ._types import ApiAliasToUnifiedEntities, EntityURI
+from ._types import ApiAliasToUnifiedEntities, ApiEntityAlias, EntityURI
 
 __all__ = [
     "Reference",
+    "ApiAliasToReferenceList",
 ]
 
 
@@ -38,3 +39,9 @@ class Reference:
             return api_inventory[self.substituted_ref] != []
         else:
             raise ValueError(f"{self.substituted_ref=} not found in {api_inventory=}")
+
+
+ApiAliasToReferenceList = dict[ApiEntityAlias, list[Reference]]
+"""
+An inventory of API entity aliases and the references they contain.
+"""

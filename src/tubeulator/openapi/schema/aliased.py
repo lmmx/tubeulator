@@ -3,7 +3,7 @@ from __future__ import annotations
 from pprint import pprint
 
 from .._types import ApiAliasToUnifiedEntities
-from ..reference import Reference
+from ..reference import ApiAliasToReferenceList, Reference
 from .base import ApiSchema
 from .unified import single_unified_api_schema
 
@@ -24,9 +24,10 @@ class AliasedApiSchema(ApiSchema):
             entity_alias: [] for entity_alias in self.entity_schemas  # (i.e. its keys)
         }
         self.match_entities()
+        self.prepare_property_ref_inventories()
         self.resolve_entity_references()
 
-    def match_entities(self):
+    def match_entities(self) -> None:
         """
         First pass, get the exact matches. Iterate over the aliases (the entity names in
         the API schema "broken out" from the unified schema) and where the schema
@@ -38,27 +39,33 @@ class AliasedApiSchema(ApiSchema):
                 if schema_component == unif_schema:
                     self.alias2ents[entity_alias].append(entity)
 
-    def resolve_entity_references(self):
+    def prepare_property_ref_inventories(self) -> None:
         """
-        Second pass, resolve the referential matches with substitution of known values.
-        Again iterate over the aliases, but now try to find where the schema component
-        can be substituted if the reference is 'completable' to consequently make an
-        exact match for one of the schema components in the unified schema. As for the
-        previous pass, store the entity name or names alongside the alias if successful.
+        Set up empty inventories of the entity aliases to lists of the references
+        (initial and resolved).
         """
-        self.asc_property_refs = {
+        self.asc_property_refs: ApiAliasToReferenceList = {
             entity_alias: [] for entity_alias in self.entity_schemas  # (i.e. its keys)
         }
         """
         ``asc_property_refs`` will store the API schema components' property references
         alongside the entity alias they come from.
         """
-        self.resolved_asc_property_refs = {
+        self.resolved_asc_property_refs: ApiAliasToReferenceList = {
             entity_alias: [] for entity_alias in self.entity_schemas  # (i.e. its keys)
         }
         """
         ``resolved_asc_property_refs`` will store the 'resolved' or 'dealiased' API
         schema components' property references alongside the entity alias they come from
+        """
+
+    def resolve_entity_references(self) -> None:
+        """
+        Second pass, resolve the referential matches with substitution of known values.
+        Again iterate over the aliases, but now try to find where the schema component
+        can be substituted if the reference is 'completable' to consequently make an
+        exact match for one of the schema components in the unified schema. As for the
+        previous pass, store the entity name or names alongside the alias if successful.
         """
         for entity_alias, schema_component in self.entity_schemas.items():
             if asc_properties := schema_component.get("properties"):
@@ -122,7 +129,8 @@ class AliasedApiSchema(ApiSchema):
                     resolved_property_refs.append(completed)
             print(f"Resolved property refs: {len(resolved_property_refs)}")
             self.resolved_asc_property_refs[alias].extend(resolved_property_refs)
-        breakpoint()
+        if len(resolved_property_refs):
+            breakpoint()
         return len(resolved_property_refs)
 
     def pprint_api_inventory(self) -> None:
