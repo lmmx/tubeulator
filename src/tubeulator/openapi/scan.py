@@ -47,9 +47,16 @@ def api_schema_inventory(api_schema: Path) -> ApiInventory:
     for api_entity, api_schema_component in api_entity_schemas.items():
         if (asc_properties := api_schema_component.get("properties")):
             referential_properties = {
-                asc_property: asc_property_type_info
+                asc_property: {
+                    k: v
+                    for k,v in asc_property_type_info.items()
+                    if k in ["$ref", "items"]
+                }
                 for asc_property, asc_property_type_info in asc_properties.items()
-                if "$ref" in asc_property_type_info
+                if (
+                    "$ref" in asc_property_type_info
+                    or "$ref" in asc_property_type_info.get("items", {})
+                )
             }
             if referential_properties:
                 print(f"{api_schema.stem}: {api_entity}")
