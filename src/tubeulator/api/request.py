@@ -8,6 +8,8 @@ __all__ = ["handle_request"]
 
 
 def handle_request(url: str, credentials: dict[str, str]) -> httpx.Response:
-    params = urlencode({"app_id": creds["app_id"], "app_key": creds["primary_key"]})
+    params = urlencode(
+        {"app_id": credentials["app_id"], "app_key": credentials["primary_key"]}
+    )
     response = httpx.get(url, params=params)
     return response

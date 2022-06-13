@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 from dataclass_wizard import JSONWizard
 
@@ -18,3 +18,4 @@ def line_data(creds: dict[str, str]):
     endpoint = "http://api.tfl.gov.uk/Line/"
     url = endpoint + "..."
     response = handle_request(url, creds)
+    return response

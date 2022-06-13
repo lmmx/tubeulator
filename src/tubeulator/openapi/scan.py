@@ -1,15 +1,18 @@
 from __future__ import annotations
 
-from ._types import ApiAliasToUnifiedEntities, NamespaceInventory
-from ..utils.paths import openapi_schemas_path, unified_api_schema as unified_api_schema_path, find_schema
-
-import ujson
 from dataclasses import dataclass
 from pathlib import Path
 from pprint import pprint
 from typing import Literal
 
+import ujson
+
+from ..utils.paths import find_schema, openapi_schemas_path
+from ..utils.paths import unified_api_schema as unified_api_schema_path
+from ._types import ApiAliasToUnifiedEntities, NamespaceInventory
+
 __all__ = ["api_schema_inventory", "scan_namespace"]
+
 
 @dataclass
 class Reference:
@@ -21,7 +24,7 @@ class Reference:
     entity: str
 
     @property
-    def path(self) -> tuple[Literal["items","$ref"]]:
+    def path(self) -> tuple[Literal["items", "$ref"]]:
         return tuple([*(["items"] if self.is_array else []), "$ref"])
 
     @property
@@ -40,6 +43,7 @@ class Reference:
         else:
             raise ValueError(f"{self.substituted_ref=} not found in {api_inventory=}")
 
+
 @dataclass
 class ApiSchema:
     path: Path
@@ -55,16 +59,19 @@ class ApiSchema:
             for name, schema in self.obj["components"].get("schemas", {}).items()
             if "Array" not in name
         }
-    
+
     @property
     def name(self) -> str:
         return self.path.stem
+
 
 class UnifiedApiSchema(ApiSchema):
     """
     A unified API schema.
     """
+
     unified: bool = True
+
 
 single_unified_api_schema = UnifiedApiSchema(path=unified_api_schema_path, unified=True)
 """
@@ -72,18 +79,19 @@ A singleton instance to avoid re-reading the unified API schema JSON once per
 non-unified API schema instantiation.
 """
 
+
 class AliasedApiSchema(ApiSchema):
     """
     A non-unified API schema.
     """
+
     unified: bool = False
 
     def __post_init__(self):
         super().__post_init__()
         self.unified_schema = single_unified_api_schema
         self.alias2ents: ApiAliasToUnifiedEntities = {
-            entity_alias: []
-            for entity_alias in self.entity_schemas # (i.e. its keys)
+            entity_alias: [] for entity_alias in self.entity_schemas  # (i.e. its keys)
         }
         self.match_entities()
         self.resolve_entity_references()
@@ -110,11 +118,11 @@ class AliasedApiSchema(ApiSchema):
         """
         self.any_referential_properties = False
         for entity_alias, schema_component in self.entity_schemas.items():
-            if (asc_properties := schema_component.get("properties")):
+            if asc_properties := schema_component.get("properties"):
                 referential_properties = {
                     asc_property: {
                         k: v
-                        for k,v in asc_property_type_info.items()
+                        for k, v in asc_property_type_info.items()
                         if k in ["$ref", "items"]
                     }
                     for asc_property, asc_property_type_info in asc_properties.items()
@@ -134,7 +142,9 @@ class AliasedApiSchema(ApiSchema):
                             referential_property=asc_prop,
                             # path=tuple([*(["items"] if (is_nested_ref := isinstance(v, dict)) else []), "$ref"]),
                             is_array=isinstance(v, dict),
-                            entity=v["$ref"] if (is_nested_ref := isinstance(v, dict)) else v,
+                            entity=v["$ref"]
+                            if (is_nested_ref := isinstance(v, dict))
+                            else v,
                         )
                         for v in asc_prop_type_info.values()
                     )
@@ -142,16 +152,19 @@ class AliasedApiSchema(ApiSchema):
                 ]
                 if referential_properties:
                     pprint(asc_property_refs)
-                    self.any_referential_properties = True # toggle flag for follow-up
+                    self.any_referential_properties = True  # toggle flag for follow-up
                     completability = [
                         asc_property_ref.is_completable(api_inventory=self.alias2ents)
                         for asc_property_ref in asc_property_refs
                     ]
-                    print(f"Completable: {completability.count(True)}, incomplete: {completability.count(False)}")
+                    print(
+                        f"Completable: {completability.count(True)}, incomplete: {completability.count(False)}"
+                    )
         # Print the API inventory and a newline if any referential properties printed
         if self.any_referential_properties:
-            pprint({k: v for k,v in self.alias2ents.items() if "Response" not in k})
+            pprint({k: v for k, v in self.alias2ents.items() if "Response" not in k})
             print()
+
 
 # TODO: duplication here suggests need for an API schema class (from JSON to entities)
 def api_schema_inventory(api_schema: Path) -> ApiAliasToUnifiedEntities:

@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+import subprocess
 from contextlib import AbstractContextManager
 from dataclasses import dataclass
-import subprocess
 
 from ..utils.logging import set_up_logging
 from ..utils.paths import db_path

@@ -1,11 +1,18 @@
 from __future__ import annotations
 
-__all__ = ["ApiName", "ApiEntityAlias", "UnifiedApiEntity", "ApiAliasToUnifiedEntities", "NamespaceInventory"]
+__all__ = [
+    "ApiName",
+    "ApiEntityAlias",
+    "UnifiedApiEntity",
+    "ApiAliasToUnifiedEntities",
+    "NamespaceInventory",
+]
 
 ApiName = str
 """
 The name of an API (which is also the stem of the API schema file itself).
 """
+
 
 class ApiEntityAlias(str):
     """
@@ -13,10 +20,12 @@ class ApiEntityAlias(str):
     non-unified API.
     """
 
+
 class UnifiedApiEntity(str):
     """
     An API entity from the unified API
     """
+
 
 ApiAliasToUnifiedEntities = dict[ApiEntityAlias, list[UnifiedApiEntity]]
 """
