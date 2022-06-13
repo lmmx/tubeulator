@@ -50,8 +50,15 @@ class AliasedApiSchema(ApiSchema):
             entity_alias: [] for entity_alias in self.entity_schemas  # (i.e. its keys)
         }
         """
-        asc_property_refs will store the API schema components' property references
+        ``asc_property_refs`` will store the API schema components' property references
         alongside the entity alias they come from.
+        """
+        self.resolved_asc_property_refs = {
+            entity_alias: [] for entity_alias in self.entity_schemas  # (i.e. its keys)
+        }
+        """
+        ``resolved_asc_property_refs`` will store the 'resolved' or 'dealiased' API
+        schema components' property references alongside the entity alias they come from
         """
         for entity_alias, schema_component in self.entity_schemas.items():
             if asc_properties := schema_component.get("properties"):
@@ -80,7 +87,7 @@ class AliasedApiSchema(ApiSchema):
                 assert self.asc_property_refs[entity_alias] == [], "Expected fresh list"
                 self.asc_property_refs[entity_alias].extend(asc_property_refs)
                 self.pprint_asc_property_refs(alias=entity_alias)
-                # self.resolve_asc_property_refs(alias=entity_alias)
+                self.resolve_asc_property_refs(alias=entity_alias)
 
     @property
     def any_referential_properties(self) -> bool:
@@ -102,12 +109,21 @@ class AliasedApiSchema(ApiSchema):
                 f"Completable: {completability.count(True)}, incomplete: {completability.count(False)}"
             )
 
-    def resolve_asc_property_refs(self, alias: str) -> None:
+    def resolve_asc_property_refs(self, alias: str) -> int:
+        """
+        Resolve any 'completable' references, and return the number that were resolved,
+        making it possible to ``while`` loop over this method to resolve all references.
+        """
+        resolved_property_refs = []
         if asc_property_refs := self.asc_property_refs[alias]:
-            pprint(asc_property_refs)
             for asc_property_ref in asc_property_refs:
                 if asc_property_ref.is_completable(api_inventory=self.alias2ents):
                     completed = self.dealias_property_reference(ref=asc_property_ref)
+                    resolved_property_refs.append(completed)
+            print(f"Resolved property refs: {len(resolved_property_refs)}")
+            self.resolved_asc_property_refs[alias].extend(resolved_property_refs)
+        breakpoint()
+        return len(resolved_property_refs)
 
     def pprint_api_inventory(self) -> None:
         """
@@ -116,7 +132,7 @@ class AliasedApiSchema(ApiSchema):
         if self.any_referential_properties:
             pprint({k: v for k, v in self.alias2ents.items() if "Response" not in k})
             print()
-            breakpoint()
+            # breakpoint()
 
     def dealias_property_reference(self, ref: Reference) -> Reference:
         """
@@ -129,9 +145,10 @@ class AliasedApiSchema(ApiSchema):
         dictionary so as to make it identical to one in the unified API, and thereby
         facilitate matching, and thus resolving the alias to its proper name.
         """
-        asc_property_refs = self.asc_property_refs[ref.alias]
-        TODO = ref.substituted_ref  # TODO
-        new_entity = ref.entity[...]
+        # Take the first item in the list: no way to distinguish b/w multiple options
+        # (if this doesn't work then consider iterating over possible multiple options)
+        dealiased_ref_entity = self.alias2ents[ref.substituted_ref][0]
+        new_entity = ref.entity[: -len(ref.substituted_ref)] + dealiased_ref_entity
         dealiased_ref = Reference(
             schema=ref.schema,
             alias=ref.alias,
