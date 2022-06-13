@@ -6,6 +6,7 @@ __all__ = [
     "UnifiedApiEntity",
     "ApiAliasToUnifiedEntities",
     "NamespaceInventory",
+    "EntityURI",
 ]
 
 ApiName = str
@@ -40,3 +41,5 @@ NamespaceInventory = dict[ApiName, ApiAliasToUnifiedEntities]
 The namespace of all APIs and their inventories mapping each of their API entities
 (aliases) to the properly named entities they correspond to from the unified API.
 """
+
+EntityURI = str
