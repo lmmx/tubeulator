@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from copy import deepcopy
+from functools import reduce
 from pathlib import Path
 
 from ._types import ApiAliasToUnifiedEntities, ApiEntityAlias, EntityURI
@@ -8,6 +10,7 @@ from ._types import ApiAliasToUnifiedEntities, ApiEntityAlias, EntityURI
 __all__ = [
     "Reference",
     "ApiAliasToReferenceList",
+    "dealias_schema",
 ]
 
 
@@ -45,3 +48,18 @@ ApiAliasToReferenceList = dict[ApiEntityAlias, list[Reference]]
 """
 An inventory of API entity aliases and the references they contain.
 """
+
+def dealias_schema(refs: list[Reference], component: dict, copy: bool = True) -> dict:
+    """
+    Modify the schema component of an API schema to overwrite the reference with
+    the entity name in the :obj:`Reference` instead of the alias there.
+    """
+    if copy:
+        component = deepcopy(component)
+    for ref in refs:
+        target_property = component["properties"][ref.referential_property]
+        target_subpath = ref.path[:-1]
+        target_leaf = ref.path[-1]
+        target = reduce(dict.get, target_subpath, target_property)
+        target[target_leaf] = ref.entity
+    return component

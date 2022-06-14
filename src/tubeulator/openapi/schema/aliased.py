@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from pprint import pprint
 
-from .._types import ApiAliasToUnifiedEntities
-from ..reference import ApiAliasToReferenceList, Reference
+from .._types import ApiAliasToUnifiedEntities, ApiEntityAlias
+from ..reference import ApiAliasToReferenceList, Reference, dealias_schema
 from .base import ApiSchema
 from .unified import single_unified_api_schema
 
@@ -26,6 +26,9 @@ class AliasedApiSchema(ApiSchema):
         self.match_entities()
         self.prepare_property_ref_inventories()
         self.resolve_entity_references()
+        for alias, refs in self.resolved_asc_property_refs.items():
+            if refs:
+                self.match_entities_with_modification(alias=alias, property_refs=refs)
 
     def match_entities(self) -> None:
         """
@@ -38,6 +41,23 @@ class AliasedApiSchema(ApiSchema):
             for entity, unif_schema in self.unified_schema.entity_schemas.items():
                 if schema_component == unif_schema:
                     self.alias2ents[entity_alias].append(entity)
+
+    def match_entities_with_modification(self, alias: ApiEntityAlias, property_refs: list[Reference]) -> None:
+        """
+        Second pass, get the exact matches after substituting a reference.  Iterate over
+        the aliases (the entity names in the API schema "broken out" from the unified
+        schema) and where the schema component is an exact match for one in the unified
+        schema, store the entity name (or names: there is no guarantee only a single
+        entity will match the alias).
+        """
+        schema_component = self.entity_schemas[alias]
+        # Modify the schema dict by replacing the reference (in a copy not the original)
+        mod_schema_component = dealias_schema(
+            refs=property_refs, component=schema_component
+        )
+        for entity, unif_schema in self.unified_schema.entity_schemas.items():
+            if mod_schema_component == unif_schema:
+                self.alias2ents[alias].append(entity)
 
     def prepare_property_ref_inventories(self) -> None:
         """
@@ -96,6 +116,7 @@ class AliasedApiSchema(ApiSchema):
                 self.pprint_asc_property_refs(alias=entity_alias)
                 self.resolve_asc_property_refs(alias=entity_alias)
 
+
     @property
     def any_referential_properties(self) -> bool:
         """
@@ -129,8 +150,6 @@ class AliasedApiSchema(ApiSchema):
                     resolved_property_refs.append(completed)
             print(f"Resolved property refs: {len(resolved_property_refs)}")
             self.resolved_asc_property_refs[alias].extend(resolved_property_refs)
-        if len(resolved_property_refs):
-            breakpoint()
         return len(resolved_property_refs)
 
     def pprint_api_inventory(self) -> None:
