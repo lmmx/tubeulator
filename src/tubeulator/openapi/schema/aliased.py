@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 from copy import deepcopy
 from pprint import pprint
 
@@ -10,6 +11,8 @@ from .unified import single_unified_api_schema
 
 __all__ = ["AliasedApiSchema"]
 
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 class AliasedApiSchema(ApiSchema):
     """
@@ -22,7 +25,7 @@ class AliasedApiSchema(ApiSchema):
         super().__post_init__()
         self.prepare_inventories()
         self.match_entities()
-        self.pprint_api_inventory(nonreferential_ok=True)
+        # self.pprint_api_inventory(nonreferential_ok=True)
         self.chase_entity_references()
 
     def match_entities(self) -> None:
@@ -74,7 +77,7 @@ class AliasedApiSchema(ApiSchema):
             for alias in self.resolution_counts:
                 self.resolution_counts[alias] += resolution_counts[alias]
         else:
-            print(
+            logger.info(
                 f"-----RESOLUTION COMPLETE FOR {self.name}: "
                 f" ROUNDS: {iteration_count}, "
                 f" REFERENTIAL: {self.any_referential_properties}----------"
@@ -117,9 +120,9 @@ class AliasedApiSchema(ApiSchema):
                     )
                     if prop not in [ref.referential_property for ref in skip_refs]
                 ]
-                print(f"[{entity_alias}] Adding {property_refs}")
+                logger.debug(f"[{entity_alias}] Adding {property_refs}")
                 self.property_refs[entity_alias].extend(property_refs)
-                self.pprint_property_refs(alias=entity_alias)
+                # self.pprint_property_refs(alias=entity_alias)
                 n_resolved = self.resolve_refs(alias=entity_alias, skip=skip_refs)
                 resolution_counts[entity_alias] += n_resolved
         return resolution_counts
@@ -148,7 +151,7 @@ class AliasedApiSchema(ApiSchema):
                 elif property_ref.is_completable(api_inventory=self.alias2ents):
                     completed = self.dealias_property_reference(ref=property_ref)
                     resolved_property_refs.append(completed)
-            print(f"Resolved property refs: {len(resolved_property_refs)}")
+            logger.debug(f"Resolved property refs: {len(resolved_property_refs)}")
             self.resolved_property_refs[alias].extend(resolved_property_refs)
         return len(resolved_property_refs)
 

@@ -1,4 +1,4 @@
-# from pprint import pprint
+from pprint import pprint
 
 import defopt
 from pymongo import MongoClient
@@ -20,9 +20,8 @@ def namespace():
     """
     Make a namespace inventory
     """
-    scan_namespace()
-    # ns = scan_namespace()
-    # pprint(ns)
+    ns = scan_namespace(ignore_responses=True)
+    pprint(ns)
 
 
 def main():

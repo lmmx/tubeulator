@@ -16,17 +16,22 @@ def api_schema_inventory(api_schema: Path) -> ApiAliasToUnifiedEntities:
     named) unified entity names.
     """
     aliased_api_schema = AliasedApiSchema(path=api_schema, unified=False)
-    aliased_api_schema.pprint_api_inventory()
-    # breakpoint()
+    # aliased_api_schema.pprint_api_inventory()
     return aliased_api_schema.alias2ents
 
 
-def scan_namespace() -> NamespaceInventory:
+def scan_namespace(ignore_responses: bool = False) -> NamespaceInventory:
     api_dirs = [d for d in openapi_schemas_path.iterdir() if d.is_dir()]
     api_schemas = [
         find_schema(schema_dir=api_dir, match=api_dir.stem) for api_dir in api_dirs
     ]
     namespace_inventory = {
-        api_schema.stem: api_schema_inventory(api_schema) for api_schema in api_schemas
+        api_schema.stem: {
+            alias: entity
+            for alias, entity in api_schema_inventory(api_schema).items()
+            if "Response" not in alias
+            # Responses are v degenerate and make the output unreadable
+        }
+        for api_schema in api_schemas
     }
     return namespace_inventory
