@@ -1,9 +1,10 @@
 from __future__ import annotations
 
+from copy import deepcopy
 from pprint import pprint
 
 from .._types import ApiAliasToUnifiedEntities, ApiEntityAlias
-from ..reference import ApiAliasToReferenceList, Reference, dealias_schema
+from ..reference import AliasToRefs, Reference, dealias_schema
 from .base import ApiSchema
 from .unified import single_unified_api_schema
 
@@ -19,16 +20,10 @@ class AliasedApiSchema(ApiSchema):
 
     def __post_init__(self):
         super().__post_init__()
-        self.unified_schema = single_unified_api_schema
-        self.alias2ents: ApiAliasToUnifiedEntities = {
-            entity_alias: [] for entity_alias in self.entity_schemas  # (i.e. its keys)
-        }
+        self.prepare_inventories()
         self.match_entities()
-        self.prepare_property_ref_inventories()
-        self.resolve_entity_references()
-        for alias, refs in self.resolved_asc_property_refs.items():
-            if refs:
-                self.match_entities_with_modification(alias=alias, property_refs=refs)
+        self.pprint_api_inventory(nonreferential_ok=True)
+        self.chase_entity_references()
 
     def match_entities(self) -> None:
         """
@@ -42,7 +37,9 @@ class AliasedApiSchema(ApiSchema):
                 if schema_component == unif_schema:
                     self.alias2ents[entity_alias].append(entity)
 
-    def match_entities_with_modification(self, alias: ApiEntityAlias, property_refs: list[Reference]) -> None:
+    def match_entities_with_modification(
+        self, alias: ApiEntityAlias, property_refs: list[Reference]
+    ) -> None:
         """
         Second pass, get the exact matches after substituting a reference.  Iterate over
         the aliases (the entity names in the API schema "broken out" from the unified
@@ -59,27 +56,31 @@ class AliasedApiSchema(ApiSchema):
             if mod_schema_component == unif_schema:
                 self.alias2ents[alias].append(entity)
 
-    def prepare_property_ref_inventories(self) -> None:
+    def chase_entity_references(self) -> None:
         """
-        Set up empty inventories of the entity aliases to lists of the references
-        (initial and resolved).
+        Run the entity dealiasing/cross-reference in a loop until no more are resolved.
         """
-        self.asc_property_refs: ApiAliasToReferenceList = {
-            entity_alias: [] for entity_alias in self.entity_schemas  # (i.e. its keys)
-        }
-        """
-        ``asc_property_refs`` will store the API schema components' property references
-        alongside the entity alias they come from.
-        """
-        self.resolved_asc_property_refs: ApiAliasToReferenceList = {
-            entity_alias: [] for entity_alias in self.entity_schemas  # (i.e. its keys)
-        }
-        """
-        ``resolved_asc_property_refs`` will store the 'resolved' or 'dealiased' API
-        schema components' property references alongside the entity alias they come from
-        """
+        iteration_count = 0
+        while any((resolution_counts := self.resolve_entity_references()).values()):
+            iteration_count += 1
+            if iteration_count > 10:
+                raise ValueError("Looped too much, something's up")
+            for alias, refs in self.resolved_property_refs.items():
+                if refs:
+                    self.match_entities_with_modification(
+                        alias=alias, property_refs=refs
+                    )
+            # Keep the running tally of resolved references for each alias up to date
+            for alias in self.resolution_counts:
+                self.resolution_counts[alias] += resolution_counts[alias]
+        else:
+            print(
+                f"-----RESOLUTION COMPLETE FOR {self.name}: "
+                f" ROUNDS: {iteration_count}, "
+                f" REFERENTIAL: {self.any_referential_properties}----------"
+            )
 
-    def resolve_entity_references(self) -> None:
+    def resolve_entity_references(self) -> dict[ApiEntityAlias, int]:
         """
         Second pass, resolve the referential matches with substitution of known values.
         Again iterate over the aliases, but now try to find where the schema component
@@ -87,79 +88,77 @@ class AliasedApiSchema(ApiSchema):
         exact match for one of the schema components in the unified schema. As for the
         previous pass, store the entity name or names alongside the alias if successful.
         """
+        resolution_counts = dict.fromkeys(self.entity_schemas, 0)
         for entity_alias, schema_component in self.entity_schemas.items():
-            if asc_properties := schema_component.get("properties"):
+            if properties := schema_component.get("properties"):
+                # assert self.property_refs[entity_alias] == [], "Expected fresh list"
+                # IMPORTANT: listcomp is used here so list is fixed at this point
+                skip_refs = [ref for ref in self.property_refs[entity_alias]]
+                """Skip any properties whose references have been resolved already"""
                 # Either a top-level $ref or as the items in an array.
                 # (Valid) arrays have items with a specified $ref
-                asc_property_refs = [
+                property_refs = [
                     # Use next as can rely on only 1 reference per property
                     next(
                         Reference(
                             schema=self.name,
                             alias=entity_alias,
-                            referential_property=asc_prop,
-                            # path=tuple([*(["items"] if (is_nested_ref := isinstance(v, dict)) else []), "$ref"]),
+                            referential_property=prop,
                             is_array=(is_nested_ref := isinstance(v, dict)),
                             entity=v["$ref"] if is_nested_ref else v,
                         )
-                        for k, v in asc_prop_type_info.items()
+                        for k, v in prop_type_info.items()
                         if k in ["$ref", "items"]
                     )
-                    for asc_prop, asc_prop_type_info in asc_properties.items()
+                    for prop, prop_type_info in properties.items()
                     if (
-                        "$ref" in asc_prop_type_info
-                        or "$ref" in asc_prop_type_info.get("items", {})
+                        "$ref" in prop_type_info
+                        or "$ref" in prop_type_info.get("items", {})
                     )
+                    if prop not in [ref.referential_property for ref in skip_refs]
                 ]
-                assert self.asc_property_refs[entity_alias] == [], "Expected fresh list"
-                self.asc_property_refs[entity_alias].extend(asc_property_refs)
-                self.pprint_asc_property_refs(alias=entity_alias)
-                self.resolve_asc_property_refs(alias=entity_alias)
+                print(f"[{entity_alias}] Adding {property_refs}")
+                self.property_refs[entity_alias].extend(property_refs)
+                self.pprint_property_refs(alias=entity_alias)
+                n_resolved = self.resolve_refs(alias=entity_alias, skip=skip_refs)
+                resolution_counts[entity_alias] += n_resolved
+        return resolution_counts
 
-
-    @property
-    def any_referential_properties(self) -> bool:
-        """
-        If any of the API schema component properties included a reference to another
-        entity, then the values of the ``asc_property_refs`` attribute dictionary will
-        be non-empty.
-        """
-        return any(v for v in self.asc_property_refs.values())
-
-    def pprint_asc_property_refs(self, alias: str) -> None:
-        if asc_property_refs := self.asc_property_refs[alias]:
-            pprint(asc_property_refs)
+    def pprint_property_refs(self, alias: str) -> None:
+        if property_refs := self.property_refs[alias]:
+            pprint(property_refs)
             completability = [
-                asc_property_ref.is_completable(api_inventory=self.alias2ents)
-                for asc_property_ref in asc_property_refs
+                property_ref.is_completable(api_inventory=self.alias2ents)
+                for property_ref in property_refs
             ]
             print(
                 f"Completable: {completability.count(True)}, incomplete: {completability.count(False)}"
             )
 
-    def resolve_asc_property_refs(self, alias: str) -> int:
+    def resolve_refs(self, alias: str, skip: list[Reference]) -> int:
         """
         Resolve any 'completable' references, and return the number that were resolved,
         making it possible to ``while`` loop over this method to resolve all references.
         """
         resolved_property_refs = []
-        if asc_property_refs := self.asc_property_refs[alias]:
-            for asc_property_ref in asc_property_refs:
-                if asc_property_ref.is_completable(api_inventory=self.alias2ents):
-                    completed = self.dealias_property_reference(ref=asc_property_ref)
+        if property_refs := self.property_refs[alias]:
+            for property_ref in property_refs:
+                if property_ref in skip:
+                    continue
+                elif property_ref.is_completable(api_inventory=self.alias2ents):
+                    completed = self.dealias_property_reference(ref=property_ref)
                     resolved_property_refs.append(completed)
             print(f"Resolved property refs: {len(resolved_property_refs)}")
-            self.resolved_asc_property_refs[alias].extend(resolved_property_refs)
+            self.resolved_property_refs[alias].extend(resolved_property_refs)
         return len(resolved_property_refs)
 
-    def pprint_api_inventory(self) -> None:
+    def pprint_api_inventory(self, nonreferential_ok: bool = False) -> None:
         """
         Print the API inventory and a newline if any referential properties printed.
         """
-        if self.any_referential_properties:
+        if self.any_referential_properties or nonreferential_ok:
             pprint({k: v for k, v in self.alias2ents.items() if "Response" not in k})
             print()
-            # breakpoint()
 
     def dealias_property_reference(self, ref: Reference) -> Reference:
         """
@@ -184,3 +183,37 @@ class AliasedApiSchema(ApiSchema):
             entity=new_entity,
         )
         return dealiased_ref
+
+    def prepare_inventories(self) -> None:
+        """
+        Set the ``unified_schema`` as the unified API schema.
+
+        Set up empty inventories keyed by the source entity alias:
+        - to lists of the 'proper' entity names in the unified schema
+        - to lists of the schema property references (initial)
+        - to lists of the schema property references ('resolved' or 'dealiased')
+        """
+        self.unified_schema = single_unified_api_schema
+        self.alias2ents: ApiAliasToUnifiedEntities = {
+            alias: [] for alias in self.entity_schemas
+        }
+        self.property_refs: AliasToRefs = {
+            alias: [] for alias in self.entity_schemas
+        }
+        self.resolved_property_refs: AliasToRefs = deepcopy(self.property_refs)
+        self.resolution_counts = dict.fromkeys(self.entity_schemas, 0)
+        """
+        Extends the property refs lists for each alias in ``property_refs`` dict,
+        then when ``resolve_refs`` is called for the alias which dealiases
+        the property reference for any that are completable, stores the
+        ``resolved_property_refs`` in a separate dict similar to
+        ``property_refs``, then returns the number of refs 'completed'/resolved.
+        """
+
+    @property
+    def any_referential_properties(self) -> bool:
+        """
+        If any of the API schema component properties included a reference to another
+        entity, then the values of the ``property_refs`` dict will be non-empty.
+        """
+        return any(v for v in self.property_refs.values())

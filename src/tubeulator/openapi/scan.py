@@ -17,6 +17,7 @@ def api_schema_inventory(api_schema: Path) -> ApiAliasToUnifiedEntities:
     """
     aliased_api_schema = AliasedApiSchema(path=api_schema, unified=False)
     aliased_api_schema.pprint_api_inventory()
+    # breakpoint()
     return aliased_api_schema.alias2ents
 
 

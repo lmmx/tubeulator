@@ -9,7 +9,7 @@ from ._types import ApiAliasToUnifiedEntities, ApiEntityAlias, EntityURI
 
 __all__ = [
     "Reference",
-    "ApiAliasToReferenceList",
+    "AliasToRefs",
     "dealias_schema",
 ]
 
@@ -44,7 +44,7 @@ class Reference:
             raise ValueError(f"{self.substituted_ref=} not found in {api_inventory=}")
 
 
-ApiAliasToReferenceList = dict[ApiEntityAlias, list[Reference]]
+AliasToRefs = dict[ApiEntityAlias, list[Reference]]
 """
 An inventory of API entity aliases and the references they contain.
 """
