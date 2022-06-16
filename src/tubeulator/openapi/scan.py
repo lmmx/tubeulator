@@ -35,3 +35,18 @@ def scan_namespace(ignore_responses: bool = False) -> NamespaceInventory:
         for api_schema in api_schemas
     }
     return namespace_inventory
+
+def count_namespace(ignore_responses: bool = False) -> NamespaceInventory:
+    ns_inventory = scan_namespace(ignore_responses=ignore_responses)
+    ns_counts = {
+        schema: {
+            "pass": len([v for v in ns_inventory[schema].values() if v]),
+            "fail": len([v for v in ns_inventory[schema].values() if not v]),
+        }
+        for schema in ns_inventory
+    }
+    ns_summaries = {
+        schema: f"{ns_counts[schema]['pass']} of {len(ns_inventory[schema])}"
+        for schema in ns_inventory
+    }
+    return ns_summaries

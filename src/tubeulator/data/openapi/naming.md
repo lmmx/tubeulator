@@ -241,3 +241,35 @@ which is the lowercased leaf of `Tfl.Api.Presentation.Entities.Bay` as a JSON fi
 
 This means a program could be written to substitute the names and (presumably) achieve the full
 correspondence for every entity in each API.
+
+## Reference chasing
+
+To get the following output, run:
+
+```
+tubeulator count
+```
+
+**Update**: after 'reference chasing', the figures are:
+
+```py
+{#'AccidentStats': '3 of 3',
+ #'AirQuality': '1 of 1',
+ #'BikePoint': '2 of 2',
+ #'Disruptions-Lifts-v2': '0 of 1',
+ 'Journey': '23 of 40',
+ 'Line': '24 of 41',
+ #'Mode': '3 of 3',
+ 'Place': '8 of 11',
+ 'Road': '9 of 12',
+ 'Search': '2 of 2',
+ 'StopPoint': '18 of 23',
+ 'Vehicle': '3 of 3',
+ #'crowding': '0 of 0',
+ 'occupancy': '4 of 4'}
+```
+
+- Ignore those we ruled out above: AccidentStats, AirQuality, BikePoint, crowding, Disruptions-Lifts-v2, Mode
+- Journey: +4, Line: +5, Place: +2 (?), Road: +4 (?), Search: +1, StopPoint: +6 (?), Vehicle: +1,
+  occupancy: +1
+  - Those where the underlying total changed are marked "(?)"
