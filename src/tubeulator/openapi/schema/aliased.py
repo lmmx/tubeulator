@@ -14,6 +14,7 @@ __all__ = ["AliasedApiSchema"]
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
+
 class AliasedApiSchema(ApiSchema):
     """
     A non-unified API schema.
@@ -27,6 +28,21 @@ class AliasedApiSchema(ApiSchema):
         self.match_entities()
         # self.pprint_api_inventory(nonreferential_ok=True)
         self.chase_entity_references()
+        if not self.is_resolved:
+            self.property_match()
+
+    @property
+    def is_resolved(self) -> bool:
+        """
+        If there is no alias in the schema with empty entity list (i.e. unresolved).
+        """
+        return all(
+            {
+                name: entities
+                for name, entities in self.alias2ents.items()
+                # if not self.is_skipped_name(name=name)
+            }.values()
+        )
 
     def match_entities(self) -> None:
         """
@@ -38,7 +54,11 @@ class AliasedApiSchema(ApiSchema):
         for entity_alias, schema_component in self.entity_schemas.items():
             for entity, unif_schema in self.unified_schema.entity_schemas.items():
                 if schema_component == unif_schema:
-                    self.alias2ents[entity_alias].append(entity)
+                    self.resolve_alias(alias=entity_alias, entity=entity)
+
+    def resolve_alias(self, alias: ApiEntityAlias, entity: str) -> None:
+        if entity not in (entity_list := self.alias2ents[alias]):
+            entity_list.append(entity)
 
     def match_entities_with_modification(
         self, alias: ApiEntityAlias, property_refs: list[Reference]
@@ -57,7 +77,7 @@ class AliasedApiSchema(ApiSchema):
         )
         for entity, unif_schema in self.unified_schema.entity_schemas.items():
             if mod_schema_component == unif_schema:
-                self.alias2ents[alias].append(entity)
+                self.resolve_alias(alias=alias, entity=entity)
 
     def chase_entity_references(self) -> None:
         """
@@ -187,6 +207,44 @@ class AliasedApiSchema(ApiSchema):
         )
         return dealiased_ref
 
+    def property_match(self) -> None:
+        """
+        After the reference-based alias-to-entity resolution, resolve remaining aliases
+        by matching the properties of each alias to those of unified API definitions.
+
+        Can match via total number of properties/property names/property descriptions.
+        """
+        for entity_alias in self.entity_schemas:
+            if self.alias2ents[entity_alias] != []:
+                continue
+            property_count = next(
+                count
+                for count, entities in self.ents_by_property_count.items()
+                if entity_alias in entities
+            )
+            candidates = self.unified_schema.ents_by_property_count[property_count]
+            if len(candidates) > 1:
+                if property_count > 0:
+                    properties_to_match = list(
+                        self.entity_schemas[entity_alias]["properties"]
+                    )
+                    property_lookup = {
+                        entity: self.unified_schema.entity_schemas[entity]["properties"]
+                        for entity in candidates
+                    }
+                    matched = {
+                        entity: properties
+                        for entity, properties in property_lookup.items()
+                        if list(properties) == properties_to_match
+                    }
+                    if len(matched) > 0:
+                        candidates = matched
+            # else IDK
+            if len(candidates) == 1:
+                entity_name = next(iter(candidates))
+                logger.debug(f"[PM] Established {entity_alias} == {entity_name}")
+                self.resolve_alias(alias=entity_alias, entity=entity_name)
+
     def prepare_inventories(self) -> None:
         """
         Set the ``unified_schema`` as the unified API schema.
@@ -200,9 +258,7 @@ class AliasedApiSchema(ApiSchema):
         self.alias2ents: ApiAliasToUnifiedEntities = {
             alias: [] for alias in self.entity_schemas
         }
-        self.property_refs: AliasToRefs = {
-            alias: [] for alias in self.entity_schemas
-        }
+        self.property_refs: AliasToRefs = {alias: [] for alias in self.entity_schemas}
         self.resolved_property_refs: AliasToRefs = deepcopy(self.property_refs)
         self.resolution_counts = dict.fromkeys(self.entity_schemas, 0)
         """

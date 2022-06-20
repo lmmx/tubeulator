@@ -36,6 +36,7 @@ def scan_namespace(ignore_responses: bool = False) -> NamespaceInventory:
     }
     return namespace_inventory
 
+
 def count_namespace(ignore_responses: bool = False) -> NamespaceInventory:
     ns_inventory = scan_namespace(ignore_responses=ignore_responses)
     ns_counts = {

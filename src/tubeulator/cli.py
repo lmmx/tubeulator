@@ -6,7 +6,7 @@ from pymongo import MongoClient
 from .api.line import line_data
 from .db.mongod import MongodExceptionGuard
 from .db.store_creds import check_creds
-from .openapi.scan import scan_namespace, count_namespace
+from .openapi.scan import count_namespace, scan_namespace
 
 
 def lines():

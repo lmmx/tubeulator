@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 from copy import deepcopy
+from dataclasses import dataclass
 from functools import reduce
 from pathlib import Path
 
@@ -48,6 +48,7 @@ AliasToRefs = dict[ApiEntityAlias, list[Reference]]
 """
 An inventory of API entity aliases and the references they contain.
 """
+
 
 def dealias_schema(refs: list[Reference], component: dict, copy: bool = True) -> dict:
     """
