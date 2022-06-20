@@ -52,9 +52,16 @@ class AliasedApiSchema(ApiSchema):
         (or names: there is no guarantee only a single entity will match the alias).
         """
         for entity_alias, schema_component in self.entity_schemas.items():
+            resolved_ents = []
             for entity, unif_schema in self.unified_schema.entity_schemas.items():
                 if schema_component == unif_schema:
-                    self.resolve_alias(alias=entity_alias, entity=entity)
+                    resolved_ents.append(entity)
+            if self.alias2ents[entity_alias] == [] and entity_alias in resolved_ents:
+                # The entities with Array in their name will match any other Array,
+                # but it's trivially always just going to be the one with same name
+                resolved_ents = [entity_alias]
+            for entity in resolved_ents:
+                self.resolve_alias(alias=entity_alias, entity=entity)
 
     def resolve_alias(self, alias: ApiEntityAlias, entity: str) -> None:
         if entity not in (entity_list := self.alias2ents[alias]):
