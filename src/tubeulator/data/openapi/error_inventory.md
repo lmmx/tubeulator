@@ -88,3 +88,43 @@ namespace, as documented in the [naming.md](naming.md) document, and issue
 [1](https://github.com/lmmx/tubeulator/issues/1). The resulting mapping is obtainable by running
 `tubeulator names`, and the output has been saved within the library as 
 [`src/tubeulator/data/openapi/namespace.json`](namespace.json).
+
+The way you can solve for instance `Line`'s semantic error, is to find any other `Array` property with name
+`"modes"` and get the type of the fields of that array, and presume that sharing a name elsewhere in
+the API is sufficient to assign the same type.
+
+- **Q:** Where else has Array properties named `"modes"` and how can we find them?
+- **A:** We just figured out the namespace for all the individual APIs, and some of those have
+  properties, and some of those properties are arrays, and we can check if there are one or more
+  such properties which share the same name.
+
+```py
+import json
+from pathlib import Path
+
+from tubeulator.data.openapi import __path__ as openapi_data_dir
+namespace_json = Path(next(iter(openapi_data_dir))) / "namespace.json"
+ns = json.loads(namespace_json.read_text())
+```
+
+This is equivalent to recalculating it:
+
+```py
+from tubeulator.openapi.scan import scan_namespace
+ns_calculated = scan_namespace()
+```
+
+The result is identical:
+
+```py
+>>> ns == ns_calculated
+True
+```
+
+We can then find the Array properties named `modes` and their types like so:
+
+```py
+
+```
+
+TODO
