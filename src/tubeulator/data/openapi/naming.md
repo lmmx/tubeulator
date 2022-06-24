@@ -273,3 +273,7 @@ tubeulator count
 - Journey: +4, Line: +5, Place: +2 (?), Road: +4 (?), Search: +1, StopPoint: +6 (?), Vehicle: +1,
   occupancy: +1
   - Those where the underlying total changed are marked "(?)"
+
+**Update**: all references chased, the properties were then sufficient to match the remaining and
+make a full inventory, which can be output by the `names` subcommand. See the issue
+[#1](https://github.com/lmmx/tubeulator/issues/1) for further details.
