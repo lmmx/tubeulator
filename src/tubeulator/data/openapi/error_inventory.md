@@ -80,3 +80,11 @@ The `crowding` API was the only one with "structural" errors
   - Line 32: Structural error at `paths./{Naptan}.get.responses.200.description`
   - Line 64: Structural error at `paths./{Naptan}/{DayOfWeek}.get.responses.200.description`
   - Line 87: Structural error at `paths./{Naptan}/Live.get.responses.200.description` 
+
+## Solving the errors
+
+The errors should be soluble once the names have been mapped back to the legacy ("unified") API
+namespace, as documented in the [naming.md](naming.md) document, and issue
+[1](https://github.com/lmmx/tubeulator/issues/1). The resulting mapping is obtainable by running
+`tubeulator names`, and the output has been saved within the library as 
+[`src/tubeulator/data/openapi/namespace.json`](namespace.json).
