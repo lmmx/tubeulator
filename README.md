@@ -28,7 +28,7 @@ pip install tubeulator
 The suggested local environment installation is stored in `CONDA_SETUP.md`:
 
 ```
-conda create -n tubeulator "python=3.9"
+conda create -n tubeulator "python=3.11"
 conda activate tubeulator
 pip install -r requirements.txt
 ```

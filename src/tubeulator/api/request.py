@@ -4,10 +4,11 @@ from urllib.parse import urlencode
 
 import httpx
 
-__all__ = ["handle_request"]
+__all__ = ["tfl_request"]
 
 
-def handle_request(url: str, credentials: dict[str, str]) -> httpx.Response:
+def tfl_request(endpoint: str, credentials: dict[str, str]) -> httpx.Response:
+    url = f"https://api.tfl.gov.uk/{endpoint}"
     params = urlencode(
         {"app_id": credentials["app_id"], "app_key": credentials["primary_key"]}
     )

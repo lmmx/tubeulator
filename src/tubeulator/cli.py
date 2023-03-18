@@ -4,6 +4,7 @@ import defopt
 from pymongo import MongoClient
 
 from .api.line import line_data
+from .api.mode import mode_data
 from .db.mongod import MongodExceptionGuard
 from .db.store_creds import check_creds
 from .openapi.scan import count_namespace, scan_namespace
@@ -13,7 +14,16 @@ def lines():
     with MongodExceptionGuard():
         client = MongoClient()
         creds = check_creds(client=client, interactive=True)
-        line_data(creds)
+        raise NotImplementedError()
+
+
+def modes():
+    with MongodExceptionGuard():
+        client = MongoClient()
+        creds = check_creds(client=client, interactive=True)
+        mode_info = mode_data(creds)
+        breakpoint()
+        return mode_info
 
 
 def namespace():

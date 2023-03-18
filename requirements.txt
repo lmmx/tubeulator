@@ -1,3 +1,5 @@
 dataclass_wizard
 defopt
+httpx
 pymongo
+ujson
