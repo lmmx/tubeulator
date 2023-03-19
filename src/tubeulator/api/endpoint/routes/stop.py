@@ -4,7 +4,7 @@ from enum import Enum
 class StopPointEndpointRoutes(Enum):
     WITHIN_RADIUS = "/"
     """Gets a list of StopPoints within {radius} by the specified criteria"""
-    FORWARD = "/*"
+    FORWARD_REQUESTS = "/*"
     """Forwards any remaining requests to the back-end"""
     META_CATEGORIES = "/Meta/Categories"
     """Gets the list of available StopPoint additional information categories"""

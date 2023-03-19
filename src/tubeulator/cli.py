@@ -3,7 +3,7 @@ from pprint import pprint
 import defopt
 from pymongo import MongoClient
 
-from .api.endpoint.access import ApiEndpoints
+# from .api.endpoint.access import ApiEndpoint
 from .db.mongod import MongodExceptionGuard
 from .db.store_creds import check_creds
 from .openapi.scan import count_namespace, scan_namespace
