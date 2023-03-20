@@ -1,7 +1,7 @@
-from enum import Enum
+from .types import RouteEnum
 
 
-class BikePointEndpointRoutes(Enum):
+class BikePointEndpointRoutes(RouteEnum):
     ALL_LOCATIONS = "/"
     """Gets all bike point locations. The Place object has an addtionalProperties array
     which contains the nbBikes, nbDocks and nbSpaces numbers which give the status of

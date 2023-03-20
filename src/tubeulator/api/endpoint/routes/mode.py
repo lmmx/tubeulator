@@ -1,7 +1,7 @@
-from enum import Enum
+from .types import RouteEnum
 
 
-class ModeEndpointRoutes(Enum):
+class ModeEndpointRoutes(RouteEnum):
     ACTIVE_SERVICE_TYPES = "/ActiveServiceTypes"
     """Returns the service type active for a mode. Currently only supports tube"""
     MODE_ARRIVALS = "/{mode}/Arrivals"

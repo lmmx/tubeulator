@@ -1,7 +1,7 @@
-from enum import Enum
+from .types import RouteEnum
 
 
-class OccupancyEndpointRoutes(Enum):
+class OccupancyEndpointRoutes(RouteEnum):
     BIKE_POINTS = "/BikePoints/{ids}"
     """Get the occupancy for bike points."""
     CAR_PARK = "/CarPark"

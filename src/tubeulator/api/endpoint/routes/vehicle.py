@@ -1,7 +1,7 @@
-from enum import Enum
+from .types import RouteEnum
 
 
-class VehicleEndpointRoutes(Enum):
+class VehicleEndpointRoutes(RouteEnum):
     EMISSION_SURCHARGE = "/EmissionSurcharge"
     """Gets the Emissions Surcharge compliance for the Vehicle"""
     ULEZ_COMPLIANCE = "/UlezCompliance"

@@ -1,7 +1,7 @@
-from enum import Enum
+from .types import RouteEnum
 
 
-class RoadEndpointRoutes(Enum):
+class RoadEndpointRoutes(RouteEnum):
     ALL_ROADS = "/"
     """Gets all roads managed by TfL"""
     META_CATEGORIES = "/Meta/Categories"

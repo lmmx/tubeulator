@@ -1,7 +1,7 @@
-from enum import Enum
+from .types import RouteEnum
 
 
-class JourneyEndpointRoutes(Enum):
+class JourneyEndpointRoutes(RouteEnum):
     FORWARD_REQUESTS = "/*"
     """Forwards any remaining requests to the back-end"""
     JOURNEY_RESULTS = "/JourneyResults/{from}/to/{to}"

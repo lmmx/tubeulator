@@ -1,7 +1,7 @@
-from enum import Enum
+from .types import RouteEnum
 
 
-class StopPointEndpointRoutes(Enum):
+class StopPointEndpointRoutes(RouteEnum):
     WITHIN_RADIUS = "/"
     """Gets a list of StopPoints within {radius} by the specified criteria"""
     FORWARD_REQUESTS = "/*"

@@ -1,7 +1,7 @@
-from enum import Enum
+from .types import RouteEnum
 
 
-class PlaceEndpointRoutes(Enum):
+class PlaceEndpointRoutes(RouteEnum):
     PLACES_BY_GEO_REGION = "/"
     """Gets the places that lie within a geographic region. The geographic region of interest can either
     be specified by using a lat/lon geo-point and a radius in metres to return places within the locus

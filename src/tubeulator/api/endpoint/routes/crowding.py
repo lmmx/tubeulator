@@ -1,7 +1,7 @@
-from enum import Enum
+from .types import RouteEnum
 
 
-class CrowdingEndpointRoutes(Enum):
+class CrowdingEndpointRoutes(RouteEnum):
     NAPTAN_CROWDING = "/{Naptan}"
     """Returns crowding information for Naptan"""
     LIVE_CROWDING = "/{Naptan}/Live"

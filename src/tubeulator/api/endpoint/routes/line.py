@@ -1,7 +1,7 @@
-from enum import Enum
+from .types import RouteEnum
 
 
-class LineEndpointRoutes(Enum):
+class LineEndpointRoutes(RouteEnum):
     FORWARD_REQUESTS = "/*"
     """Forwards any remaining requests to the back-end"""
     META_DISRUPTION_CATEGORIES = "/Meta/DisruptionCategories"

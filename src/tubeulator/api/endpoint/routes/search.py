@@ -1,7 +1,7 @@
-from enum import Enum
+from .types import RouteEnum
 
 
-class SearchEndpointRoutes(Enum):
+class SearchEndpointRoutes(RouteEnum):
     SEARCH = "/"
     """Search the site for occurrences of the query string. The maximum number of
     results returned is equal to the maximum page size of 100. To return subsequent

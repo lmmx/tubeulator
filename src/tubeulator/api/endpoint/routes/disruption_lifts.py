@@ -1,6 +1,6 @@
-from enum import Enum
+from .types import RouteEnum
 
 
-class DisruptionsLiftsEndpointRoutes(Enum):
+class DisruptionsLiftsEndpointRoutes(RouteEnum):
     ALL = "/"
     """List of all currently disrupted lift routes"""
