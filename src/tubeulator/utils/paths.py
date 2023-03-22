@@ -8,6 +8,7 @@ __all__ = [
     "openapi_schemas_path",
     "openapi_unified_path",
     "find_schema",
+    "find_schema_by_name",
     "unified_api_schema",
 ]
 
@@ -29,6 +30,10 @@ def find_schema(schema_dir: Path, match: str = "*", levels: int = 0) -> Path:
         return next(schema_dir.glob(glob_pattern))
     except StopIteration:
         raise ValueError(f"No JSON file {levels=} below {schema_dir}")
+
+
+def find_schema_by_name(schema_name: str) -> Path:
+    return find_schema(schema_dir=openapi_schemas_path, match=schema_name, levels=1)
 
 
 unified_api_schema = find_schema(schema_dir=openapi_unified_path, levels=1)
