@@ -12,4 +12,4 @@ __url__ = "https://github.com/lmmx/tubeulator"
 __uri__ = __url__
 __email__ = "louismmx@gmail.com"
 
-import api
+from .api import fetch

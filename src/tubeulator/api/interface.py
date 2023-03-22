@@ -3,7 +3,7 @@ from .endpoint.routes import EndpointRoute
 from .endpoint.routes.types import AnyEndpointRouteEnum
 from .request import Path, Request
 
-__all__ = ["EndpointInfo", "AllEndpointInterface", "get_info"]
+__all__ = ["EndpointInfo", "AllEndpointInterface", "fetch"]
 
 
 class EndpointInfo:
@@ -21,4 +21,4 @@ class AllEndpointInterface:
             setattr(self, endpoint.name.lower(), interface)
 
 
-get_info = AllEndpointInterface()
+fetch = AllEndpointInterface()

@@ -6,6 +6,7 @@ from urllib.parse import urlencode
 
 import httpx
 
+from ..db.store_creds import check_creds
 from .endpoint.names import EndpointNames
 from .endpoint.routes.types import AnyEndpointRouteEnum
 
@@ -73,7 +74,7 @@ class Path(TflApiPath):
             )
         elif self.vars and not (args or kwargs):
             self.invalidate("No vars supplied.", rcvd={"args": args, "kwargs": kwargs})
-        if args and len(args) < len(self.path.vars):
+        if args and len(args) < len(self.vars):
             self.invalidate("Missing arguments", rcvd=args)
         elif kwargs and set(self.vars_to_fill) != set(kwargs):
             self.invalidate("Missing parameters", rcvd=kwargs)
@@ -96,12 +97,13 @@ class Request:
 
     def send(self, *args, **kwargs):
         url = self.path.build_url(*args, **kwargs)
-        # TODO: make GET request here
-        return {"source": url, "response": {"content": "example"}}
+        response = GET(url=url)
+        response.raise_for_status()
+        return response.json()
 
 
-def GET(url: str, credentials: dict[str, str]) -> httpx.Response:
-    # TODO: get credentials here if not supplied
+def GET(url: str) -> httpx.Response:
+    credentials = check_creds()
     params = urlencode(
         {"app_id": credentials["app_id"], "app_key": credentials["primary_key"]}
     )
