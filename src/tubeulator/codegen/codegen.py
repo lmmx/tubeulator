@@ -84,16 +84,16 @@ def generate_dataclass(
     # Chase the references if needed
     if len(chased) > 1:
         # Multiple map to the node: they will be different response types
-        backref_trie = Trie.from_strings(chased).walk()
-        response_types = len(backref_trie)
         app_infix = "Application"
-        application_types = next(iter(backref_trie.values()), {}).get(app_infix)
         json_suffix = "JsonResponse"
-        err_msg = f"Did not find {json_suffix} in {app_infix} type"
-        assert response_types == 1 and json_suffix in application_types, err_msg
-        chased_backref = chased[0]
+        backref_trie = Trie.from_strings(chased).walk()
+        assert len(backref_trie) == 1, f"Multiple response types in {chased}"
+        top_backref = next(iter(backref_trie))
+        application_types = backref_trie.get(top_backref, {}).get(app_infix, [])
+        assert application_types, f"No {app_infix} response types for {top_backref=}"
+        chased_backref = f"{top_backref}{app_infix}{json_suffix}"
     else:
-        chased_backref = chased[0]
+        chased_backref = chased[0] if chased else None
     if dealiased_name is not None:
         stem = dealiased_name.rsplit(".", 1)[-1]
         class_name = f"{stem}Deserialiser"
