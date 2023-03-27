@@ -3,7 +3,7 @@ from pprint import pprint
 
 import defopt
 
-from .codegen import emit_deserialisers
+from .codegen.codegen import emit_deserialisers
 from .openapi.scan import count_namespace, scan_namespace
 
 

@@ -5,8 +5,9 @@ from dataclasses import dataclass, field
 from itertools import starmap
 from pathlib import Path
 
-from .openapi.scan import scan_namespace
-from .utils.paths import find_schema_by_name
+from ..openapi.scan import scan_namespace
+from ..utils.lcp_trie import Trie
+from ..utils.paths import find_schema_by_name
 
 __all__ = ["emit_deserialisers"]
 
@@ -83,7 +84,14 @@ def generate_dataclass(
     # Chase the references if needed
     if len(chased) > 1:
         # Multiple map to the node: they will be different response types
-        breakpoint()
+        backref_trie = Trie.from_strings(chased).walk()
+        response_types = len(backref_trie)
+        app_infix = "Application"
+        application_types = next(iter(backref_trie.values()), {}).get(app_infix)
+        json_suffix = "JsonResponse"
+        err_msg = f"Did not find {json_suffix} in {app_infix} type"
+        assert response_types == 1 and json_suffix in application_types, err_msg
+        chased_backref = chased[0]
     else:
         chased_backref = chased[0]
     if dealiased_name is not None:
