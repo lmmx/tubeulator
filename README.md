@@ -33,6 +33,8 @@ conda activate tubeulator
 pip install -r requirements.txt
 ```
 
+You can install MongoDB globally or just in the environment (`conda install mongodb`)
+
 ## Usage
 
 Outline of expected usage:
