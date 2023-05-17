@@ -12,7 +12,7 @@ def deserialise(schema_name: str) -> None:
     Map each API schema to a corresponding dataclass which deserialises its JSON.
     """
     deserialised = emit_deserialisers(schema_name=schema_name)
-    # print(deserialised)
+    print(deserialised)
     return
 
 

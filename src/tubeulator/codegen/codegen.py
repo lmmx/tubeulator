@@ -137,8 +137,8 @@ def generate_dataclass(
             class_name = f'{dealiased_ref.rsplit(".", 1)[-1]}ResponseDeserialiser'
             gen_source = ref_name
         else:
-            breakpoint()
-            pass
+            class_name = "UnknownResponseDeserialiser"
+            gen_source = "Unknown"
     else:
         gen_source = f"{schema_name}:{idx}"
         class_name = f"{schema_name}Deserialiser{idx if idx is not None else ''}"
