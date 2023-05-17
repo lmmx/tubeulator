@@ -75,6 +75,26 @@ class SchemaPath:
         self.ref = RefPath(ref)
 
 
+def find_backrefs(monoschema: dict) -> dict[str, SchemaPath]:
+    """
+    Map names of all schemas in the lookup to their referent (i.e. their array type)
+    """
+    return {
+        k: SchemaPath(v)
+        for k, v in monoschema.items()
+        if "items" in v
+        if "$ref" in v["items"]
+    }
+
+
+def find_chased(backrefs: dict[str, SchemaPath], name: str) -> list[str]:
+    return [
+        backref
+        for backref, schema_path in backrefs.items()
+        if schema_path.ref.name == name
+    ]
+
+
 def generate_dataclass(
     schema: dict,
     idx: int = None,
@@ -91,18 +111,8 @@ def generate_dataclass(
     schema_name = next(iter(schema_for_ref_lookup))
     monoschema = schema_for_ref_lookup[schema_name]
     ref = schema.get("items", {}).get("$ref")
-    # Map names of all schemas in the lookup to their referent (i.e. their array type)
-    backrefs = {
-        k: SchemaPath(v)
-        for k, v in monoschema.items()
-        if "items" in v
-        if "$ref" in v["items"]
-    }
-    chased = [
-        backref
-        for backref, schema_path in backrefs.items()
-        if schema_path.ref.name == name
-    ]
+    backrefs = find_backrefs(monoschema)
+    chased = find_chased(backrefs, name)
     # Chase the references if needed
     if len(chased) > 1:
         # Multiple map to the node: they will be different response types
@@ -110,28 +120,50 @@ def generate_dataclass(
         json_suffix = "JsonResponse"
         aj_suffix = f"{app_infix}{json_suffix}"
         chase_prefixes = [p[: -len(aj_suffix)] for p in chased if p.endswith(aj_suffix)]
-        backref_class_name = f"{chase_prefix}{aj_suffix}Deserialiser"
-        # ...Wait is this not important?
+        chase_prefix = "_or_".join(chase_prefixes)  # Hotfix
+        backref_class_name = f"{chase_prefix}{aj_suffix}Deserialiser"  # What's it for?
     if dealiased_name is not None:
         stem = dealiased_name.rsplit(".", 1)[-1]
         class_name = f"{stem}Deserialiser"
         gen_source = dealiased_name
     elif (name, ref) != (None, None):
         # If they have a name but it's not in namespace, they're a response (targeting $ref)
-        try:
-            ref_name = ref.name
-        except:
-            pass  # breakpoint()
+        # ref may be None indicating schema may be {'type': 'object'}
+        ref_name = None if ref is None else Path(ref).name
         ns = scan_namespace(ignore_responses=True)
-        dealiased_ref = (ns[schema_name][ref_name] or [None])[0] or schema_name
-        # referent_class_name = f'{dealiased_ref.rsplit(".", 1)[-1]}Deserialiser'
-        class_name = f'{dealiased_ref.rsplit(".", 1)[-1]}ResponseDeserialiser'
-        gen_source = ref_name
+        if ref_name:
+            dealiased_ref = (ns[schema_name].get(ref_name, [None]))[0] or schema_name
+            # referent_class_name = f'{dealiased_ref.rsplit(".", 1)[-1]}Deserialiser'
+            class_name = f'{dealiased_ref.rsplit(".", 1)[-1]}ResponseDeserialiser'
+            gen_source = ref_name
+        else:
+            breakpoint()
+            pass
     else:
         gen_source = f"{schema_name}:{idx}"
         class_name = f"{schema_name}Deserialiser{idx if idx is not None else ''}"
         # class_name = schema_name.replace(" ", "") + "Deserialiser"
-    class_name = class_name.replace("-", "")
+    output = generate_source(
+        class_name=class_name.replace("-", ""),
+        schema_name=schema_name,
+        gen_source=gen_source,
+        schema=schema,
+        monoschema=monoschema,
+        indent_level=indent_level,
+        idx=idx,
+    )
+    return output
+
+
+def generate_source(
+    class_name: str,
+    schema_name: str,
+    gen_source: str,
+    schema: dict,
+    monoschema: dict,
+    indent_level: int,
+    idx: int,
+):
     properties = schema.get("properties", {})
     required = schema.get("required", [])
     contains_list = False
@@ -193,8 +225,7 @@ def generate_dataclass(
     meta_binding = f"\nLoadMeta(raise_on_unknown_json_key=True).bind_to({class_name})"
     # Add imports here if generating multiple dataclasses [indicated by idx=0] (since we
     # can't see ahead), or if only making 1 [indicated by idx=None]
-    output = "\n\n".join([(imports if not idx else ""), dc_source, meta_binding])
-    return output
+    return "\n\n".join([(imports if not idx else ""), dc_source, meta_binding])
 
 
 example_schema = {
