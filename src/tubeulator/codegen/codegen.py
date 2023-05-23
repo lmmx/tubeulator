@@ -87,12 +87,33 @@ def find_backrefs(monoschema: dict) -> dict[str, SchemaPath]:
     }
 
 
-def find_chased(backrefs: dict[str, SchemaPath], name: str) -> list[str]:
+def find_chased(backrefs: dict[str, SchemaPath], name: str, ref_name: str) -> list[str]:
     return [
         backref
         for backref, schema_path in backrefs.items()
-        if schema_path.ref.name == name
+        if schema_path.ref.name == ref_name
     ]
+
+
+def find_arrays(chased: list[str]) -> list[str]:
+    """
+    Can't simply choose the one(s) ending in 'Array': in Mode it ends in "Array-4"
+    """
+    if not any("Array" in c for c in chased):
+        return []
+    t = Trie()
+    for c in chased:
+        t.insert(c)
+    # array_shortlist = [c for c in chased if c.endswith("Array")]
+    array_shortlist = []
+    for stem, stem_node in t.root.data.items():
+        if stem_node.is_word:
+            array_shortlist.append(stem)
+        else:
+            substem, substem_node = next(iter(stem_node.data.items()))
+            assert substem_node.is_word, "Descended 2 trie levels and didn't get a word"
+            array_shortlist.append(f"{stem}{substem}")
+    return array_shortlist
 
 
 def generate_dataclass(
@@ -102,7 +123,7 @@ def generate_dataclass(
     schema_for_ref_lookup: dict | None = None,
     dealiased_name: str | None = None,
     indent_level: int = 1,
-) -> str:
+) -> str | None:
     """
     Generate a dataclass from a schema, importing the `field` function if there are any
     array properties requiring it. Use the `idx` to indicate if we're generating
@@ -110,26 +131,48 @@ def generate_dataclass(
     """
     schema_name = next(iter(schema_for_ref_lookup))
     monoschema = schema_for_ref_lookup[schema_name]
+    # ref may be None indicating schema may be {'type': 'object'}
     ref = schema.get("items", {}).get("$ref")
+    ref_name = None if ref is None else SchemaPath(schema).ref.name
     backrefs = find_backrefs(monoschema)
-    chased = find_chased(backrefs, name)
+    chased = find_chased(backrefs, name=name, ref_name=ref_name)
     # Chase the references if needed
     if len(chased) > 1:
         # Multiple map to the node: they will be different response types
         app_infix = "Application"
         json_suffix = "JsonResponse"
         aj_suffix = f"{app_infix}{json_suffix}"
-        chase_prefixes = [p[: -len(aj_suffix)] for p in chased if p.endswith(aj_suffix)]
-        chase_prefix = "_or_".join(chase_prefixes)  # Hotfix
-        backref_class_name = f"{chase_prefix}{aj_suffix}Deserialiser"  # What's it for?
-    if dealiased_name is not None:
+        response_shortlist = [c for c in chased if aj_suffix in c]
+        array_shortlist = find_arrays(chased)
+        assert not (
+            response_shortlist and array_shortlist
+        ), "Got both Response and Array"
+        assert response_shortlist or array_shortlist, "Neither Response nor Array found"
+        if response_shortlist:
+            if name not in response_shortlist:
+                return None
+            chase_prefixes = [
+                p[: -len(aj_suffix)] for p in chased if p.endswith(aj_suffix)
+            ]
+            chase_prefix = "_or_".join(chase_prefixes)  # Hotfix
+            class_name = f"{chase_prefix}{aj_suffix}Deserialiser"
+            gen_source = name  # ref_name
+        else:
+            if name not in array_shortlist:
+                return None
+            ar_suffix = "Array"
+            chase_prefixes = [
+                p[: p.index(ar_suffix)] for p in chased if p in array_shortlist
+            ]
+            chase_prefix = "_or_".join(chase_prefixes)  # Hotfix
+            class_name = f"{chase_prefix}{ar_suffix}Deserialiser"
+            gen_source = name  # ref_name
+    elif dealiased_name is not None:
         stem = dealiased_name.rsplit(".", 1)[-1]
         class_name = f"{stem}Deserialiser"
         gen_source = dealiased_name
     elif (name, ref) != (None, None):
         # If they have a name but it's not in namespace, they're a response (targeting $ref)
-        # ref may be None indicating schema may be {'type': 'object'}
-        ref_name = None if ref is None else Path(ref).name
         ns = scan_namespace(ignore_responses=True)
         if ref_name:
             dealiased_ref = (ns[schema_name].get(ref_name, [None]))[0] or schema_name
@@ -143,8 +186,15 @@ def generate_dataclass(
         gen_source = f"{schema_name}:{idx}"
         class_name = f"{schema_name}Deserialiser{idx if idx is not None else ''}"
         # class_name = schema_name.replace(" ", "") + "Deserialiser"
+    ent_prefix = "TflApiPresentationEntities"
+    # Unslug the class name
+    preproc_class_name = class_name.replace("-", "")
+    # Remove the long-winded entity prefix from the class name
+    preproc_class_name = preproc_class_name[
+        len(ent_prefix) if preproc_class_name.startswith(ent_prefix) else 0 :
+    ]
     output = generate_source(
-        class_name=class_name.replace("-", ""),
+        class_name=preproc_class_name,
         schema_name=schema_name,
         gen_source=gen_source,
         schema=schema,
@@ -228,19 +278,6 @@ def generate_source(
     return "\n\n".join([(imports if not idx else ""), dc_source, meta_binding])
 
 
-example_schema = {
-    "title": "Example Schema",
-    "type": "object",
-    "properties": {
-        "name": {"type": "string"},
-        "age": {"type": "integer"},
-        "email": {"type": "string", "format": "email"},
-        "friends": {"type": "array", "items": {"type": "string"}},
-    },
-    "required": ["name", "age"],
-}
-
-
 def emit_deserialisers(schema_name: str) -> str:
     endpoint_schema = json.loads(Path(find_schema_by_name(schema_name)).read_text())
     component_schemas = endpoint_schema["components"].get("schemas", {})
@@ -264,4 +301,17 @@ def emit_deserialisers(schema_name: str) -> str:
                 f"{component_name} (dealiased: {true_name}) -- {e}",
                 exc_info=True,
             )
-    return "\n".join(output)
+    return "\n".join(filter(None, output))
+
+
+example_schema = {
+    "title": "Example Schema",
+    "type": "object",
+    "properties": {
+        "name": {"type": "string"},
+        "age": {"type": "integer"},
+        "email": {"type": "string", "format": "email"},
+        "friends": {"type": "array", "items": {"type": "string"}},
+    },
+    "required": ["name", "age"],
+}
