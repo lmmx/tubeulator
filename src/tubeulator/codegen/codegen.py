@@ -175,7 +175,11 @@ def generate_dataclass(
         # If they have a name but it's not in namespace, they're a response (targeting $ref)
         ns = scan_namespace(ignore_responses=True)
         if ref_name:
-            dealiased_ref = (ns[schema_name].get(ref_name, [None]))[0] or schema_name
+            if ref_lookup := ns[schema_name].get(ref_name, [None]):
+                dealiased_ref = (ref_lookup)[0] or schema_name
+            else:
+                # The list of namespace lookups is empty
+                dealiased_ref = schema_name
             # referent_class_name = f'{dealiased_ref.rsplit(".", 1)[-1]}Deserialiser'
             class_name = f'{dealiased_ref.rsplit(".", 1)[-1]}ResponseDeserialiser'
             gen_source = ref_name
