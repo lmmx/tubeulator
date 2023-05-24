@@ -87,6 +87,17 @@ def find_backrefs(monoschema: dict) -> dict[str, SchemaPath]:
     }
 
 
+def find_array_literals(monoschema: dict) -> dict[str, SchemaPath]:
+    """
+    Map names of all schemas in the lookup with a common literal array.
+    """
+    return {
+        k: v["items"]["type"]
+        for k, v in monoschema.items()
+        if "type" in v.get("items", {})
+    }
+
+
 def find_chased(backrefs: dict[str, SchemaPath], name: str, ref_name: str) -> list[str]:
     return [
         backref
@@ -99,20 +110,24 @@ def find_arrays(chased: list[str]) -> list[str]:
     """
     Can't simply choose the one(s) ending in 'Array': in Mode it ends in "Array-4"
     """
-    if not any("Array" in c for c in chased):
-        return []
     t = Trie()
     for c in chased:
         t.insert(c)
     # array_shortlist = [c for c in chased if c.endswith("Array")]
     array_shortlist = []
-    for stem, stem_node in t.root.data.items():
-        if stem_node.is_word:
-            array_shortlist.append(stem)
-        else:
-            substem, substem_node = next(iter(stem_node.data.items()))
-            assert substem_node.is_word, "Descended 2 trie levels and didn't get a word"
-            array_shortlist.append(f"{stem}{substem}")
+    try:
+        for stem, stem_node in t.root.data.items():
+            if stem_node.is_word:
+                array_shortlist.append(stem)
+            else:
+                substem, substem_node = next(iter(stem_node.data.items()))
+                assert (
+                    substem_node.is_word
+                ), "Descended 2 trie levels and didn't get a word"
+                array_shortlist.append(f"{stem}{substem}")
+    except AssertionError:
+        # It's an assortment of responses, just pull out the ones we want
+        array_shortlist = [c for c in chased if "ApplicationJson" in c]
     return array_shortlist
 
 
@@ -135,18 +150,23 @@ def generate_dataclass(
     ref = schema.get("items", {}).get("$ref")
     ref_name = None if ref is None else SchemaPath(schema).ref.name
     backrefs = find_backrefs(monoschema)
-    chased = find_chased(backrefs, name=name, ref_name=ref_name)
+    schema_arrays = find_array_literals(monoschema)
+    schema_array_shortlist = find_arrays(list(schema_arrays))
+    # For Search, we also need to match Response DTOs without refs
+    # For this we need to look for any arrays, not just $ref items
     # Chase the references if needed
+    chased = find_chased(backrefs, name=name, ref_name=ref_name)
+    app_infix = "Application"
+    json_suffix = "JsonResponse"
+    aj_suffix = f"{app_infix}{json_suffix}"
+    response_shortlist = [c for c in chased if aj_suffix in c]
+    if any("Array" in c for c in chased):
+        array_shortlist = find_arrays(chased)
+    else:
+        array_shortlist = []
+    assert not (response_shortlist and array_shortlist), "Got both Response and Array"
     if len(chased) > 1:
         # Multiple map to the node: they will be different response types
-        app_infix = "Application"
-        json_suffix = "JsonResponse"
-        aj_suffix = f"{app_infix}{json_suffix}"
-        response_shortlist = [c for c in chased if aj_suffix in c]
-        array_shortlist = find_arrays(chased)
-        assert not (
-            response_shortlist and array_shortlist
-        ), "Got both Response and Array"
         assert response_shortlist or array_shortlist, "Neither Response nor Array found"
         if response_shortlist:
             if name not in response_shortlist:
@@ -159,6 +179,8 @@ def generate_dataclass(
             gen_source = name  # ref_name
         else:
             if name not in array_shortlist:
+                # Don't bother generating source for non-shortlisted array literals
+                # it would only give None anyway
                 return None
             ar_suffix = "Array"
             chase_prefixes = [
@@ -183,6 +205,13 @@ def generate_dataclass(
             # referent_class_name = f'{dealiased_ref.rsplit(".", 1)[-1]}Deserialiser'
             class_name = f'{dealiased_ref.rsplit(".", 1)[-1]}ResponseDeserialiser'
             gen_source = ref_name
+        elif name in schema_arrays:
+            if name not in schema_array_shortlist:
+                return None
+            short_delim = "Get200"
+            shortname = name[: name.find(short_delim)] if short_delim in name else name
+            class_name = f"{shortname}Deserialiser"
+            gen_source = name
         else:
             class_name = "UnknownResponseDeserialiser"
             gen_source = "Unknown"
