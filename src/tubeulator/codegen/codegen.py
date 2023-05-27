@@ -222,10 +222,10 @@ def generate_dataclass(
             class_name = f"{shortname}Deserialiser"
             gen_source = name
         else:
-            # Don't just say 'Unknown', but essentially that
             if name in schema_strings and not name in schema_string_shortlist:
                 return None
-            class_name = f"UNK_{name}Deserialiser"
+            # Essentially 'Unknown' f"UNK_{name}Deserialiser"
+            class_name = f"{name}Deserialiser"
             gen_source = name
     else:
         gen_source = f"{schema_name}:{idx}"
