@@ -7,6 +7,8 @@ from itertools import starmap
 from pathlib import Path
 from textwrap import indent
 
+from dataclass_wizard.utils.string_conv import to_pascal_case
+
 from ..openapi.scan import scan_namespace
 from ..utils.lcp_trie import Trie
 from ..utils.paths import find_schema_by_name
@@ -301,7 +303,7 @@ def generate_source(
                 default = " = field(default_factory=list)"
             else:
                 default = " = None"
-        dc_source += f"    {prop_name}: {prop_type}{default}\n"
+        dc_source += f"    {to_pascal_case(prop_name)}: {prop_type}{default}\n"
     dc_source += """    \n    @classmethod
     def from_dict(cls, o):
         jsonschema.validate(o, schema)
