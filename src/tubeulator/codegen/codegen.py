@@ -87,6 +87,13 @@ def find_backrefs(monoschema: dict) -> dict[str, SchemaPath]:
     }
 
 
+def find_string_literals(monoschema: dict) -> dict[str, str]:
+    """
+    Map names of all schemas in the lookup with a common literal string.
+    """
+    return {k: v["type"] for k, v in monoschema.items() if v.get("type") == "string"}
+
+
 def find_array_literals(monoschema: dict) -> dict[str, SchemaPath]:
     """
     Map names of all schemas in the lookup with a common literal array.
@@ -152,6 +159,8 @@ def generate_dataclass(
     backrefs = find_backrefs(monoschema)
     schema_arrays = find_array_literals(monoschema)
     schema_array_shortlist = find_arrays(list(schema_arrays))
+    schema_strings = find_string_literals(monoschema)
+    schema_string_shortlist = find_arrays(list(schema_strings))
     # For Search, we also need to match Response DTOs without refs
     # For this we need to look for any arrays, not just $ref items
     # Chase the references if needed
@@ -213,8 +222,11 @@ def generate_dataclass(
             class_name = f"{shortname}Deserialiser"
             gen_source = name
         else:
-            class_name = "UnknownResponseDeserialiser"
-            gen_source = "Unknown"
+            # Don't just say 'Unknown', but essentially that
+            if name in schema_strings and not name in schema_string_shortlist:
+                return None
+            class_name = f"UNK_{name}Deserialiser"
+            gen_source = name
     else:
         gen_source = f"{schema_name}:{idx}"
         class_name = f"{schema_name}Deserialiser{idx if idx is not None else ''}"
