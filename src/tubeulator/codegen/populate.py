@@ -13,7 +13,7 @@ schema_module_names = [f"{schema}.py".replace("-", "") for schema in schema_name
 
 
 def generate_schema_coverage():
-    for schema_module, schema_name, module in zip(schema_module_names, schema_names):
+    for schema_module, schema_name in zip(schema_module_names, schema_names):
         module_code = emit_deserialisers(schema_name=schema_name)
         module_filepath = codegen_dir / schema_module
         module_filepath.write_text(module_code)

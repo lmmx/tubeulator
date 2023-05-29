@@ -327,7 +327,7 @@ def generate_source(
     imports = "\n".join(map(ast.unparse, starmap(import_node, import_list.items())))
     # Add imports here if generating multiple dataclasses [indicated by idx=0] (since we
     # can't see ahead), or if only making 1 [indicated by idx=None]
-    return "\n\n".join([(imports if not idx else ""), dc_source, meta_binding])
+    return "\n\n".join([(imports if not idx else ""), dc_source])
 
 
 def emit_deserialisers(schema_name: str) -> str:
