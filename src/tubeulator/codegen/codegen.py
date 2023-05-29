@@ -11,7 +11,7 @@ from dataclass_wizard.utils.string_conv import to_pascal_case
 
 from ..openapi.scan import scan_namespace
 from ..utils.lcp_trie import Trie
-from ..utils.paths import find_schema_by_name
+from ..utils.paths import find_schema_by_name, load_endpoint_component_schemas
 
 __all__ = ["emit_deserialisers"]
 
@@ -142,9 +142,9 @@ def find_arrays(chased: list[str]) -> list[str]:
 
 def generate_dataclass(
     schema: dict,
+    source_schema_name: str,
     idx: int = None,
     name: str | None = None,
-    schema_for_ref_lookup: dict | None = None,
     dealiased_name: str | None = None,
     indent_level: int = 1,
 ) -> str | None:
@@ -153,15 +153,14 @@ def generate_dataclass(
     array properties requiring it. Use the `idx` to indicate if we're generating
     multiple dataclasses in a loop. (TODO: replace with `schema: dict or list[dict]`)
     """
-    schema_name = next(iter(schema_for_ref_lookup))
-    monoschema = schema_for_ref_lookup[schema_name]
+    parent_schema = load_endpoint_component_schemas(source_schema_name)
     # ref may be None indicating schema may be {'type': 'object'}
     ref = schema.get("items", {}).get("$ref")
     ref_name = None if ref is None else SchemaPath(schema).ref.name
-    backrefs = find_backrefs(monoschema)
-    schema_arrays = find_array_literals(monoschema)
+    backrefs = find_backrefs(parent_schema)
+    schema_arrays = find_array_literals(parent_schema)
     schema_array_shortlist = find_arrays(list(schema_arrays))
-    schema_strings = find_string_literals(monoschema)
+    schema_strings = find_string_literals(parent_schema)
     schema_string_shortlist = find_arrays(list(schema_strings))
     # For Search, we also need to match Response DTOs without refs
     # For this we need to look for any arrays, not just $ref items
@@ -208,11 +207,11 @@ def generate_dataclass(
         # If they have a name but it's not in namespace, they're a response (targeting $ref)
         ns = scan_namespace(ignore_responses=True)
         if ref_name:
-            if ref_lookup := ns[schema_name].get(ref_name, [None]):
-                dealiased_ref = (ref_lookup)[0] or schema_name
+            if ref_lookup := ns[source_schema_name].get(ref_name, [None]):
+                dealiased_ref = (ref_lookup)[0] or source_schema_name
             else:
                 # The list of namespace lookups is empty
-                dealiased_ref = schema_name
+                dealiased_ref = source_schema_name
             # referent_class_name = f'{dealiased_ref.rsplit(".", 1)[-1]}Deserialiser'
             class_name = f'{dealiased_ref.rsplit(".", 1)[-1]}ResponseDeserialiser'
             gen_source = ref_name
@@ -230,9 +229,9 @@ def generate_dataclass(
             class_name = f"{name}Deserialiser"
             gen_source = name
     else:
-        gen_source = f"{schema_name}:{idx}"
-        class_name = f"{schema_name}Deserialiser{idx if idx is not None else ''}"
-        # class_name = schema_name.replace(" ", "") + "Deserialiser"
+        gen_source = f"{source_schema_name}:{idx}"
+        class_name = f"{source_schema_name}Deserialiser{idx if idx is not None else ''}"
+        # class_name = source_schema_name.replace(" ", "") + "Deserialiser"
     ent_prefix = "TflApiPresentationEntities"
     # Unslug the class name
     preproc_class_name = class_name.replace("-", "")
@@ -242,10 +241,10 @@ def generate_dataclass(
     ]
     output = generate_source(
         class_name=preproc_class_name,
-        schema_name=schema_name,
+        schema_name=source_schema_name,
         gen_source=gen_source,
         schema=schema,
-        monoschema=monoschema,
+        parent_schema=parent_schema,
         indent_level=indent_level,
         idx=idx,
     )
@@ -257,7 +256,7 @@ def generate_source(
     schema_name: str,
     gen_source: str,
     schema: dict,
-    monoschema: dict,
+    parent_schema: dict,
     indent_level: int,
     idx: int,
 ):
@@ -271,7 +270,7 @@ def generate_source(
         if "type" not in prop_schema:
             if prop_schema and "$ref" in prop_schema:
                 referent = prop_schema["$ref"].replace("#/components/schemas/", "")
-                replacement = monoschema[referent]
+                replacement = parent_schema[referent]
                 # Substitute the reference before accessing the item type
                 # prop_schema["items"] = replacement
                 # I don't think it handles nested dataclass arrays!
@@ -286,7 +285,7 @@ def generate_source(
             if "type" not in prop_array:
                 if prop_array and "$ref" in prop_array:
                     referent = prop_array["$ref"].replace("#/components/schemas/", "")
-                    replacement = monoschema[referent]
+                    replacement = parent_schema[referent]
                     # Substitute the reference before accessing the item type
                     # prop_schema["items"] = replacement
                     # I don't think it handles nested dataclass arrays!
@@ -331,9 +330,7 @@ def generate_source(
 
 
 def emit_deserialisers(schema_name: str) -> str:
-    endpoint_schema = json.loads(Path(find_schema_by_name(schema_name)).read_text())
-    component_schemas = endpoint_schema["components"].get("schemas", {})
-    named_monoschema = {schema_name: component_schemas}
+    component_schemas = load_endpoint_component_schemas(schema_name)
     ns = scan_namespace(ignore_responses=True)
     output = []
     for idx, (component_name, component_schema) in enumerate(component_schemas.items()):
@@ -341,9 +338,9 @@ def emit_deserialisers(schema_name: str) -> str:
         try:
             generated_code = generate_dataclass(
                 component_schema,
+                source_schema_name=schema_name,
                 idx=idx,
                 name=component_name,
-                schema_for_ref_lookup=named_monoschema,
                 dealiased_name=true_name,
             )
             output.append(generated_code)
