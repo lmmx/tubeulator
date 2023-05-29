@@ -175,7 +175,7 @@ def generate_dataclass(
     else:
         array_shortlist = []
     assert not (response_shortlist and array_shortlist), "Got both Response and Array"
-    if len(chased) > 1:
+    if chased:
         # Multiple map to the node: they will be different response types
         assert response_shortlist or array_shortlist, "Neither Response nor Array found"
         if response_shortlist:
