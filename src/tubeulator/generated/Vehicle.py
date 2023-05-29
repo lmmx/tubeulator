@@ -1,4 +1,5 @@
 import json
+from typing import Any
 from dataclasses import dataclass, field
 from pathlib import Path
 from dataclass_wizard import JSONWizard
@@ -27,8 +28,7 @@ class PredictionTimingDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -68,8 +68,7 @@ class PredictionDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -95,8 +94,7 @@ class VehicleMatchDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -116,7 +114,6 @@ class idsArrivalsGet200ApplicationJsonResponseDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True

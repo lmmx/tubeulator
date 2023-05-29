@@ -315,12 +315,12 @@ def generate_source(
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True"""
     import_list = {
         "json": [],
+        "typing": ["Any"],
         "dataclasses": ["dataclass"],
         "pathlib": ["Path"],
         "dataclass_wizard": ["JSONWizard"],

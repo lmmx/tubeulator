@@ -1,4 +1,5 @@
 import json
+from typing import Any
 from dataclasses import dataclass, field
 from pathlib import Path
 from dataclass_wizard import JSONWizard
@@ -23,8 +24,7 @@ class PlaceCategoryDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -48,8 +48,7 @@ class ModeDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -71,8 +70,7 @@ class PassengerFlowDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -99,8 +97,7 @@ class TrainLoadingDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -122,8 +119,7 @@ class CrowdingDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -151,8 +147,7 @@ class IdentifierDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -175,8 +170,7 @@ class LineGroupDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -198,8 +192,7 @@ class LineModeGroupDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -224,8 +217,7 @@ class AdditionalPropertiesDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -255,8 +247,7 @@ class PlaceDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -303,8 +294,7 @@ class StopPointDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -326,8 +316,7 @@ class LineServiceTypeInfoDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -349,8 +338,7 @@ class LineSpecificServiceTypeDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -372,8 +360,7 @@ class LineServiceTypeDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -399,8 +386,7 @@ class PredictionTimingDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -440,8 +426,7 @@ class PredictionDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -475,8 +460,7 @@ class ArrivalDepartureDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -508,8 +492,7 @@ class StopPointRouteSectionDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -539,8 +522,7 @@ class DisruptedPointDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -565,8 +547,7 @@ class StopPointsResponseDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -591,8 +572,7 @@ class SearchMatchDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -620,8 +600,7 @@ class SearchResponseDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -641,8 +620,7 @@ class ObjectDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -662,8 +640,7 @@ class Get200ApplicationJsonResponseDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -683,8 +660,7 @@ class MetaCategoriesGet200ApplicationJsonResponseDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -704,8 +680,7 @@ class MetaStopTypesDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -725,8 +700,7 @@ class MetaModesGet200ApplicationJsonResponseDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -746,8 +720,7 @@ class idsGet200_or_idCrowdinglineGet200_or_TypetypesGet200_or_TypetypesPagepageG
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -767,8 +740,7 @@ class idPlaceTypesGet200_or_stopPointIdTaxiRanksGet200_or_stopPointIdCarParksGet
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -788,8 +760,7 @@ class idsGet200_or_idCrowdinglineGet200_or_TypetypesGet200_or_TypetypesPagepageG
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -809,8 +780,7 @@ class idsGet200_or_idCrowdinglineGet200_or_TypetypesGet200_or_TypetypesPagepageG
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -830,8 +800,7 @@ class idsGet200_or_idCrowdinglineGet200_or_TypetypesGet200_or_TypetypesPagepageG
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -851,8 +820,7 @@ class ServiceTypesGet200ApplicationJsonResponseDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -872,8 +840,7 @@ class idArrivalsGet200ApplicationJsonResponseDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -893,8 +860,7 @@ class idArrivalDeparturesGet200ApplicationJsonResponseDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -914,8 +880,7 @@ class idsGet200_or_idCrowdinglineGet200_or_TypetypesGet200_or_TypetypesPagepageG
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -935,8 +900,7 @@ class idRouteGet200ApplicationJsonResponseDeserialiser(JSONWizard):
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -956,8 +920,7 @@ class ModemodesDisruptionGet200_or_idsDisruptionGet200ApplicationJsonResponseDes
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -977,8 +940,7 @@ class ModemodesDisruptionGet200_or_idsDisruptionGet200ApplicationJsonResponseDes
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -998,8 +960,7 @@ class idDirectionTotoStopPointIdGet200ApplicationJsonResponseDeserialiser(JSONWi
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -1019,8 +980,7 @@ class idPlaceTypesGet200_or_stopPointIdTaxiRanksGet200_or_stopPointIdCarParksGet
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
 
@@ -1040,7 +1000,6 @@ class idPlaceTypesGet200_or_stopPointIdTaxiRanksGet200_or_stopPointIdCarParksGet
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
-    @classmethod
-    def Meta(JSONWizard.Meta):
+    class Meta(JSONWizard.Meta):
         key_transform_with_load = "PASCAL"
         raise_on_unknown_json_key = True
