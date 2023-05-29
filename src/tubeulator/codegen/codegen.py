@@ -14,6 +14,7 @@ from ..utils.paths import (
     SchemaPath,
     find_schema_by_name,
     load_endpoint_component_schemas,
+    to_enum_friendly_str,
 )
 
 __all__ = ["emit_deserialisers"]
@@ -295,13 +296,13 @@ def generate_source(
             else:
                 default = " = None"
         dc_source += f"    {to_pascal_case(prop_name)}: {prop_type}{default}\n"
-    dc_source += f"    __source_schema_name: str = {schema_name!r}\n"
-    dc_source += f"    __component_schema_name: str = {component_name!r}\n"
+    dc_source += f"    _source_schema_name: str = {schema_name!r}\n"
+    dc_source += f"    _component_schema_name: str = {component_name!r}\n"
     dc_source += """    
     @classmethod
     def from_dict(cls, o):
-        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
-        schema = parent_schema[cls.__component_schema_name]
+        parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
+        schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -316,7 +317,7 @@ def generate_source(
         "dataclass_wizard": ["JSONWizard"],
         "dataclass_wizard.loaders": ["fromdict"],
         "jsonschema": [],
-        "..utils.paths": ["load_endpoint_component_schemas"],
+        "..utils.paths": ["load_endpoint_component_schemas", "DtoEnum"],
     }
     if contains_list or idx == 0:
         import_list["dataclasses"].append("field")
@@ -352,9 +353,9 @@ def emit_deserialisers(schema_name: str) -> str:
             )
     deserialiser_code = "\n".join(filter(None, output))
     if deserialiser_code:
-        schema_mapping_source = "\nclass Deserialisers(Enum):\n" + "\n".join(
+        schema_mapping_source = "\n\n\nclass Deserialisers(DtoEnum):\n" + "\n".join(
             [
-                f'    {component_name.replace("-", "_")} = {cls_name}'
+                f"    {to_enum_friendly_str(component_name)} = {cls_name}"
                 for component_name, cls_name in schema_mapping.items()
             ]
         )

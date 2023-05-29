@@ -1,5 +1,6 @@
 import json
 from dataclasses import dataclass, field
+from enum import Enum
 from functools import cache
 from pathlib import Path
 
@@ -16,6 +17,7 @@ __all__ = [
     "load_endpoint_component_schemas",
     "RefPath",
     "SchemaPath",
+    "DtoEnum",
     "unified_api_schema",
 ]
 
@@ -80,6 +82,20 @@ class SchemaPath:
     def __post_init__(self):
         ref = self.source.get("items", {}).get("$ref")
         self.ref = RefPath(ref)
+
+
+def to_enum_friendly_str(name: str) -> str:
+    return name.replace("-", "_").replace(".", "__")
+
+
+def from_enum_friendly_str(name: str) -> str:
+    return name.replace("_", "-").replace("__", ".")
+
+
+class DtoEnum(Enum):
+    @classmethod
+    def select_component(cls, component_name: str):
+        return cls[to_enum_friendly_str(component_name)]
 
 
 unified_api_schema = find_schema(schema_dir=openapi_unified_path, levels=1)
