@@ -131,11 +131,13 @@ def generate_dataclass(
     idx: int = None,
     dealiased_name: str | None = None,
     indent_level: int = 1,
-) -> str | None:
+) -> tuple[str, str] | tuple[None, None]:
     """
     Generate a dataclass from a schema, importing the `field` function if there are any
     array properties requiring it. Use the `idx` to indicate if we're generating
-    multiple dataclasses in a loop. (TODO: replace with `schema: dict or list[dict]`)
+    multiple dataclasses in a loop. (TODO: replace with `schema: dict or list[dict]`).
+
+    Either returns the name and the source, or None twice.
     """
     parent_schema = load_endpoint_component_schemas(source_schema_name)
     # ref may be None indicating schema may be {'type': 'object'}
@@ -164,7 +166,7 @@ def generate_dataclass(
         assert response_shortlist or array_shortlist, "Neither Response nor Array found"
         if response_shortlist:
             if name not in response_shortlist:
-                return None
+                return None, None
             chase_prefixes = [
                 p[: -len(aj_suffix)] for p in chased if p.endswith(aj_suffix)
             ]
@@ -173,23 +175,23 @@ def generate_dataclass(
                 chase_prefix = chase_prefixes[response_shortlist.index(name)]
             else:
                 chase_prefix = chase_prefixes[0] if chase_prefixes else ""
-            class_name = f"{chase_prefix}{aj_suffix}Deserialiser"
+            class_name = f"{chase_prefix}{aj_suffix}"
             gen_source = name  # ref_name
         else:
             if name not in array_shortlist:
                 # Don't bother generating source for non-shortlisted array literals
                 # it would only give None anyway
-                return None
+                return None, None
             ar_suffix = "Array"
             chase_prefixes = [
                 p[: p.index(ar_suffix)] for p in chased if p in array_shortlist
             ]
             chase_prefix = "_or_".join(chase_prefixes)  # Hotfix: never used
-            class_name = f"{chase_prefix}{ar_suffix}Deserialiser"
+            class_name = f"{chase_prefix}{ar_suffix}"
             gen_source = name  # ref_name
     elif dealiased_name is not None:
         stem = dealiased_name.rsplit(".", 1)[-1]
-        class_name = f"{stem}Deserialiser"
+        class_name = f"{stem}"
         gen_source = dealiased_name
     elif (name, ref) != (None, None):
         # If they have a name but it's not in namespace, they're a response (targeting $ref)
@@ -200,26 +202,26 @@ def generate_dataclass(
             else:
                 # The list of namespace lookups is empty
                 dealiased_ref = source_schema_name
-            # referent_class_name = f'{dealiased_ref.rsplit(".", 1)[-1]}Deserialiser'
-            class_name = f'{dealiased_ref.rsplit(".", 1)[-1]}ResponseDeserialiser'
+            # referent_class_name = f'{dealiased_ref.rsplit(".", 1)[-1]}'
+            class_name = f'{dealiased_ref.rsplit(".", 1)[-1]}Response'
             gen_source = ref_name
         elif name in schema_arrays:
             if name not in schema_array_shortlist:
-                return None
+                return None, None
             short_delim = "Get200"
             shortname = name[: name.find(short_delim)] if short_delim in name else name
-            class_name = f"{shortname}Deserialiser"
+            class_name = f"{shortname}"
             gen_source = name
         else:
             if name in schema_strings and not name in schema_string_shortlist:
-                return None
-            # Essentially 'Unknown' f"UNK_{name}Deserialiser"
-            class_name = f"{name}Deserialiser"
+                return None, None
+            # Essentially 'Unknown' f"UNK_{name}"
+            class_name = f"{name}"
             gen_source = name
     else:
         gen_source = f"{source_schema_name}:{idx}"
-        class_name = f"{source_schema_name}Deserialiser{idx if idx is not None else ''}"
-        # class_name = source_schema_name.replace(" ", "") + "Deserialiser"
+        class_name = f"{source_schema_name}{idx if idx is not None else ''}"
+        # class_name = source_schema_name.replace(" ", "")
     ent_prefix = "TflApiPresentationEntities"
     # Unslug the class name
     preproc_class_name = class_name.replace("-", "")
@@ -237,7 +239,7 @@ def generate_dataclass(
         indent_level=indent_level,
         idx=idx,
     )
-    return output
+    return preproc_class_name, output
 
 
 def generate_source(
@@ -249,7 +251,7 @@ def generate_source(
     parent_schema: dict,
     indent_level: int,
     idx: int,
-):
+) -> str:
     properties = schema.get("properties", {})
     required = schema.get("required", [])
     contains_list = False
@@ -328,21 +330,33 @@ def emit_deserialisers(schema_name: str) -> str:
     component_schemas = load_endpoint_component_schemas(schema_name)
     ns = scan_namespace(ignore_responses=True)
     output = []
+    schema_mapping = {}
     for idx, (component_name, component_schema) in enumerate(component_schemas.items()):
         true_name = (ns.get(schema_name, {}).get(component_name) or [None])[0]
         try:
-            generated_code = generate_dataclass(
+            generated_class_name, generated_code = generate_dataclass(
                 component_schema,
                 name=component_name,
                 source_schema_name=schema_name,
                 idx=idx,
                 dealiased_name=true_name,
             )
-            output.append(generated_code)
+            if generated_class_name is not None:
+                schema_mapping.setdefault(component_name, generated_class_name)
+            output.append(generated_code)  # Append even if None, for debugging purposes
         except Exception as e:
             logger.error(
                 f"Failed to generate {schema_name} dataclass {idx}: "
                 f"{component_name} (dealiased: {true_name}) -- {e}",
                 exc_info=True,
             )
-    return "\n".join(filter(None, output))
+    deserialiser_code = "\n".join(filter(None, output))
+    if deserialiser_code:
+        schema_mapping_source = "\nclass Deserialisers(Enum):\n" + "\n".join(
+            [
+                f'    {component_name.replace("-", "_")} = {cls_name}'
+                for component_name, cls_name in schema_mapping.items()
+            ]
+        )
+        deserialiser_code += schema_mapping_source
+    return deserialiser_code
