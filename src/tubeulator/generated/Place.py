@@ -1,5 +1,4 @@
 import json
-from typing import Any
 from dataclasses import dataclass, field
 from pathlib import Path
 from dataclass_wizard import JSONWizard
@@ -60,13 +59,13 @@ class Place(JSONWizard):
     Id: str = None
     Url: str = None
     CommonName: str = None
-    Distance: Any = None
+    Distance: float = None
     PlaceType: str = None
     AdditionalProperties: list[dict] = field(default_factory=list)
     Children: list[dict] = field(default_factory=list)
     ChildrenUrls: list[str] = field(default_factory=list)
-    Lat: Any = None
-    Lon: Any = None
+    Lat: float = None
+    Lon: float = None
     _source_schema_name: str = 'Place'
     _component_schema_name: str = 'Tfl-3'
     
@@ -244,13 +243,13 @@ class StopPoint(JSONWizard):
     Id: str = None
     Url: str = None
     CommonName: str = None
-    Distance: Any = None
+    Distance: float = None
     PlaceType: str = None
     AdditionalProperties: list[dict] = field(default_factory=list)
     Children: list[dict] = field(default_factory=list)
     ChildrenUrls: list[str] = field(default_factory=list)
-    Lat: Any = None
-    Lon: Any = None
+    Lat: float = None
+    Lon: float = None
     _source_schema_name: str = 'Place'
     _component_schema_name: str = 'Tfl-10'
     

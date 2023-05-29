@@ -1,5 +1,4 @@
 import json
-from typing import Any
 from dataclasses import dataclass, field
 from pathlib import Path
 from dataclass_wizard import JSONWizard

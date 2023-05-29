@@ -136,7 +136,10 @@ class Request:
             ref_type = SchemaPath(response_component_schema)
             marshals = getattr(load_test, self.ep_name(dehyphenate=True)).Deserialisers
             dto = marshals.select_component(ref_type.ref.name).value
-            parsed = dto.from_json(response.content)
+            try:
+                parsed = dto.from_json(response.content)
+            except:
+                breakpoint()
         return parsed
 
 

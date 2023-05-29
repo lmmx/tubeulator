@@ -1,5 +1,4 @@
 import json
-from typing import Any
 from dataclasses import dataclass, field
 from pathlib import Path
 from dataclass_wizard import JSONWizard
@@ -15,8 +14,8 @@ class SearchMatch(JSONWizard):
     Id: str = None
     Url: str = None
     Name: str = None
-    Lat: Any = None
-    Lon: Any = None
+    Lat: float = None
+    Lon: float = None
     _source_schema_name: str = 'Search'
     _component_schema_name: str = 'Tfl'
     
@@ -43,7 +42,7 @@ class SearchResponse(JSONWizard):
     Provider: str = None
     Total: int = None
     Matches: list[dict] = field(default_factory=list)
-    MaxScore: Any = None
+    MaxScore: float = None
     _source_schema_name: str = 'Search'
     _component_schema_name: str = 'Tfl-2'
     

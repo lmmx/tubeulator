@@ -52,7 +52,11 @@ def python_type(json_type: str, format: str = None) -> str:
         "array": "list",
         "object": "dict",
     }
-    return type_lookup.get(json_type, "Any")
+    if json_type == "number" and format == "double":
+        python_type = "float"
+    else:
+        python_type = type_lookup[json_type]
+    return python_type
 
 
 def import_node(module: str, names: list[str]) -> ast.Import:
@@ -285,7 +289,7 @@ def generate_source(
                     # Don't in fact even need to replace in the schema, just the var
                     prop_array = replacement
                     # (We could dealias the entity at this point so as to title it?)
-            item_type = python_type(prop_array["type"])
+            item_type = python_type(prop_array["type"], prop_array.get("format"))
             prop_type = f"{prop_type}[{item_type}]"
         if prop_name in required:
             default = ""
@@ -310,7 +314,6 @@ def generate_source(
         key_transform_with_load = 'PASCAL'"""
     import_list = {
         "json": [],
-        "typing": ["Any"],
         "dataclasses": ["dataclass"],
         "pathlib": ["Path"],
         "dataclass_wizard": ["JSONWizard"],
