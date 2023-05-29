@@ -188,7 +188,7 @@ def generate_dataclass(
             if len(chase_prefixes) > 1:
                 chase_prefix = chase_prefixes[response_shortlist.index(name)]
             else:
-                chase_prefix = chase_prefixes[0]
+                chase_prefix = chase_prefixes[0] if chase_prefixes else ""
             class_name = f"{chase_prefix}{aj_suffix}Deserialiser"
             gen_source = name  # ref_name
         else:
