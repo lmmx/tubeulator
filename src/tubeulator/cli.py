@@ -4,6 +4,7 @@ from pprint import pprint
 import defopt
 
 from .codegen.codegen import emit_deserialisers
+from .codegen.populate import generate_schema_coverage
 from .openapi.scan import count_namespace, scan_namespace
 
 
@@ -13,6 +14,15 @@ def deserialise(schema_name: str) -> None:
     """
     deserialised = emit_deserialisers(schema_name=schema_name)
     print(deserialised)
+    return
+
+
+def populate() -> None:
+    """
+    Map all API schemas to corresponding dataclasses that deserialise their JSON.
+    Write all generated Python to module files in the `tubeulator.generated` directory.
+    """
+    generate_schema_coverage()
     return
 
 
@@ -49,6 +59,7 @@ def main():
             "names": namespace,
             "count": ns_count,
             "deserialise": deserialise,
+            "populate": populate,
             "schemas": list_schemas,
         },
         no_negated_flags=True,
