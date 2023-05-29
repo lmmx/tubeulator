@@ -4,6 +4,7 @@ from pathlib import Path
 from dataclass_wizard import JSONWizard
 from dataclass_wizard.loaders import fromdict
 import jsonschema
+from ..utils.paths import load_endpoint_component_schemas
 
 @dataclass
 class ModeDeserialiser(JSONWizard):
@@ -14,9 +15,13 @@ class ModeDeserialiser(JSONWizard):
     IsFarePaying: bool = None
     IsScheduledService: bool = None
     ModeName: str = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -34,9 +39,13 @@ class StatusSeverityDeserialiser(JSONWizard):
     ModeName: str = None
     SeverityLevel: int = None
     Description: str = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-2'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -53,9 +62,13 @@ class PassengerFlowDeserialiser(JSONWizard):
     """
     TimeSlice: str = None
     Value: int = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-3'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -77,9 +90,13 @@ class TrainLoadingDeserialiser(JSONWizard):
     NaptanTo: str = None
     TimeSlice: str = None
     Value: int = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-4'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -96,9 +113,13 @@ class CrowdingDeserialiser(JSONWizard):
     """
     PassengerFlows: list[dict] = field(default_factory=list)
     TrainLoadings: list[dict] = field(default_factory=list)
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-5'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -121,9 +142,13 @@ class IdentifierDeserialiser(JSONWizard):
     Crowding: dict = None
     RouteType: str = None
     Status: str = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-6'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -141,9 +166,13 @@ class LineGroupDeserialiser(JSONWizard):
     NaptanIdReference: str = None
     StationAtcoCode: str = None
     LineIdentifier: list[str] = field(default_factory=list)
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-7'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -160,9 +189,13 @@ class LineModeGroupDeserialiser(JSONWizard):
     """
     ModeName: str = None
     LineIdentifier: list[str] = field(default_factory=list)
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-8'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -182,9 +215,13 @@ class AdditionalPropertiesDeserialiser(JSONWizard):
     SourceSystemKey: str = None
     Value: str = None
     Modified: str = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-9'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -209,9 +246,13 @@ class PlaceDeserialiser(JSONWizard):
     ChildrenUrls: list[str] = field(default_factory=list)
     Lat: Any = None
     Lon: Any = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-10'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -253,9 +294,13 @@ class StopPointDeserialiser(JSONWizard):
     ChildrenUrls: list[str] = field(default_factory=list)
     Lat: Any = None
     Lon: Any = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-11'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -272,9 +317,13 @@ class RouteSectionNaptanEntrySequenceDeserialiser(JSONWizard):
     """
     Ordinal: int = None
     StopPoint: dict = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-12'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -300,9 +349,13 @@ class RouteSectionDeserialiser(JSONWizard):
     ValidTo: str = None
     ValidFrom: str = None
     RouteSectionNaptanEntrySequence: list[dict] = field(default_factory=list)
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-13'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -328,9 +381,13 @@ class DisruptionDeserialiser(JSONWizard):
     AffectedRoutes: list[dict] = field(default_factory=list)
     AffectedStops: list[dict] = field(default_factory=list)
     ClosureText: str = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-14'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -348,9 +405,13 @@ class ValidityPeriodDeserialiser(JSONWizard):
     FromDate: str = None
     ToDate: str = None
     IsNow: bool = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-15'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -374,9 +435,13 @@ class LineStatusDeserialiser(JSONWizard):
     Modified: str = None
     ValidityPeriods: list[dict] = field(default_factory=list)
     Disruption: dict = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-16'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -401,9 +466,13 @@ class MatchedRouteDeserialiser(JSONWizard):
     ServiceType: str = None
     ValidTo: str = None
     ValidFrom: str = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-17'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -420,9 +489,13 @@ class LineServiceTypeInfoDeserialiser(JSONWizard):
     """
     Name: str = None
     Uri: str = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-18'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -447,9 +520,13 @@ class LineDeserialiser(JSONWizard):
     RouteSections: list[dict] = field(default_factory=list)
     ServiceTypes: list[dict] = field(default_factory=list)
     Crowding: dict = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-19'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -484,9 +561,13 @@ class MatchedStopDeserialiser(JSONWizard):
     Name: str = None
     Lat: Any = None
     Lon: Any = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-20'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -509,9 +590,13 @@ class StopPointSequenceDeserialiser(JSONWizard):
     PrevBranchIds: list[int] = field(default_factory=list)
     StopPoint: list[dict] = field(default_factory=list)
     ServiceType: str = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-21'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -529,9 +614,13 @@ class OrderedRouteDeserialiser(JSONWizard):
     Name: str = None
     NaptanIds: list[str] = field(default_factory=list)
     ServiceType: str = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-22'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -555,9 +644,13 @@ class RouteSequenceDeserialiser(JSONWizard):
     Stations: list[dict] = field(default_factory=list)
     StopPointSequences: list[dict] = field(default_factory=list)
     OrderedLineRoutes: list[dict] = field(default_factory=list)
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-23'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -579,9 +672,13 @@ class LineRouteSectionDeserialiser(JSONWizard):
     ToStation: str = None
     ServiceType: str = None
     VehicleDestinationText: str = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-24'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -597,9 +694,13 @@ class MatchedRouteSectionsDeserialiser(JSONWizard):
     Autogenerated from Line::Tfl.Api.Presentation.Entities.MatchedRouteSections
     """
     Id: int = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-25'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -625,9 +726,13 @@ class RouteSearchMatchDeserialiser(JSONWizard):
     Name: str = None
     Lat: Any = None
     Lon: Any = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-26'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -644,9 +749,13 @@ class RouteSearchResponseDeserialiser(JSONWizard):
     """
     Input: str = None
     SearchMatches: list[dict] = field(default_factory=list)
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-27'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -663,9 +772,13 @@ class IntervalDeserialiser(JSONWizard):
     """
     StopId: str = None
     TimeToArrival: Any = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-28'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -682,9 +795,13 @@ class StationIntervalDeserialiser(JSONWizard):
     """
     Id: str = None
     Intervals: list[dict] = field(default_factory=list)
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-29'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -702,9 +819,13 @@ class KnownJourneyDeserialiser(JSONWizard):
     Hour: str = None
     Minute: str = None
     IntervalId: int = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-30'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -721,9 +842,13 @@ class TwentyFourHourClockTimeDeserialiser(JSONWizard):
     """
     Hour: str = None
     Minute: str = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-31'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -740,9 +865,13 @@ class ServiceFrequencyDeserialiser(JSONWizard):
     """
     LowestFrequency: Any = None
     HighestFrequency: Any = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-32'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -761,9 +890,13 @@ class PeriodDeserialiser(JSONWizard):
     FromTime: dict = None
     ToTime: dict = None
     Frequency: dict = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-33'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -783,9 +916,13 @@ class ScheduleDeserialiser(JSONWizard):
     FirstJourney: dict = None
     LastJourney: dict = None
     Periods: list[dict] = field(default_factory=list)
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-34'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -802,9 +939,13 @@ class TimetableRouteDeserialiser(JSONWizard):
     """
     StationIntervals: list[dict] = field(default_factory=list)
     Schedules: list[dict] = field(default_factory=list)
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-35'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -821,9 +962,13 @@ class TimetableDeserialiser(JSONWizard):
     """
     DepartureStopId: str = None
     Routes: list[dict] = field(default_factory=list)
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-36'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -840,9 +985,13 @@ class DisambiguationOptionDeserialiser(JSONWizard):
     """
     Description: str = None
     Uri: str = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-37'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -858,9 +1007,13 @@ class DisambiguationDeserialiser(JSONWizard):
     Autogenerated from Line::Tfl.Api.Presentation.Entities.Timetables.Disambiguation
     """
     DisambiguationOptions: list[dict] = field(default_factory=list)
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-38'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -884,9 +1037,13 @@ class TimetableResponseDeserialiser(JSONWizard):
     Timetable: dict = None
     Disambiguation: dict = None
     StatusErrorMessage: str = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-39'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -907,9 +1064,13 @@ class PredictionTimingDeserialiser(JSONWizard):
     Read: str = None
     Sent: str = None
     Received: str = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-40'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -944,9 +1105,13 @@ class PredictionDeserialiser(JSONWizard):
     TimeToLive: str = None
     ModeName: str = None
     Timing: dict = None
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Tfl-41'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -961,9 +1126,13 @@ class MetaModesGet200ApplicationJsonResponseDeserialiser(JSONWizard):
     """
     Autogenerated from Line::MetaModesGet200ApplicationJsonResponse
     """
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'MetaModesGet200ApplicationJsonResponse'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -978,9 +1147,13 @@ class Get200ApplicationJsonResponseDeserialiser(JSONWizard):
     """
     Autogenerated from Line::Get200ApplicationJsonResponse
     """
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Get200ApplicationJsonResponse'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -995,9 +1168,13 @@ class MetaSeverityGet200ApplicationJsonResponseDeserialiser(JSONWizard):
     """
     Autogenerated from Line::MetaSeverityGet200ApplicationJsonResponse
     """
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'MetaSeverityGet200ApplicationJsonResponse'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -1012,9 +1189,13 @@ class MetaDisruptionCategoriesDeserialiser(JSONWizard):
     """
     Autogenerated from Line::MetaDisruptionCategoriesGet200ApplicationJsonResponse
     """
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'MetaDisruptionCategoriesGet200ApplicationJsonResponse'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -1029,9 +1210,13 @@ class MetaServiceTypesDeserialiser(JSONWizard):
     """
     Autogenerated from Line::MetaServiceTypesGet200ApplicationJsonResponse
     """
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'MetaServiceTypesGet200ApplicationJsonResponse'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -1046,9 +1231,13 @@ class idsGet200_or_ModemodesGet200_or_RouteGet200_or_idsRouteGet200_or_Modemodes
     """
     Autogenerated from Line::ids-Get200ApplicationJsonResponse
     """
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'ids-Get200ApplicationJsonResponse'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -1063,9 +1252,13 @@ class idsGet200_or_ModemodesGet200_or_RouteGet200_or_idsRouteGet200_or_Modemodes
     """
     Autogenerated from Line::Mode-modes-Get200ApplicationJsonResponse
     """
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Mode-modes-Get200ApplicationJsonResponse'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -1080,9 +1273,13 @@ class idsGet200_or_ModemodesGet200_or_RouteGet200_or_idsRouteGet200_or_Modemodes
     """
     Autogenerated from Line::RouteGet200ApplicationJsonResponse
     """
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'RouteGet200ApplicationJsonResponse'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -1097,9 +1294,13 @@ class idsGet200_or_ModemodesGet200_or_RouteGet200_or_idsRouteGet200_or_Modemodes
     """
     Autogenerated from Line::ids-RouteGet200ApplicationJsonResponse
     """
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'ids-RouteGet200ApplicationJsonResponse'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -1114,9 +1315,13 @@ class idsGet200_or_ModemodesGet200_or_RouteGet200_or_idsRouteGet200_or_Modemodes
     """
     Autogenerated from Line::Mode-modes-RouteGet200ApplicationJsonResponse
     """
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Mode-modes-RouteGet200ApplicationJsonResponse'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -1131,9 +1336,13 @@ class idsGet200_or_ModemodesGet200_or_RouteGet200_or_idsRouteGet200_or_Modemodes
     """
     Autogenerated from Line::ids-Status-startDate-To-endDate-Get200ApplicationJsonResponse
     """
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'ids-Status-startDate-To-endDate-Get200ApplicationJsonResponse'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -1148,9 +1357,13 @@ class idsGet200_or_ModemodesGet200_or_RouteGet200_or_idsRouteGet200_or_Modemodes
     """
     Autogenerated from Line::ids-StatusGet200ApplicationJsonResponse
     """
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'ids-StatusGet200ApplicationJsonResponse'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -1165,9 +1378,13 @@ class idsGet200_or_ModemodesGet200_or_RouteGet200_or_idsRouteGet200_or_Modemodes
     """
     Autogenerated from Line::Status-severity-Get200ApplicationJsonResponse
     """
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Status-severity-Get200ApplicationJsonResponse'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -1182,9 +1399,13 @@ class idsGet200_or_ModemodesGet200_or_RouteGet200_or_idsRouteGet200_or_Modemodes
     """
     Autogenerated from Line::Mode-modes-StatusGet200ApplicationJsonResponse
     """
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Mode-modes-StatusGet200ApplicationJsonResponse'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -1199,9 +1420,13 @@ class idStopPointsGet200ApplicationJsonResponseDeserialiser(JSONWizard):
     """
     Autogenerated from Line::id-StopPointsGet200ApplicationJsonResponse
     """
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'id-StopPointsGet200ApplicationJsonResponse'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -1216,9 +1441,13 @@ class idsDisruptionGet200_or_ModemodesDisruptionGet200ApplicationJsonResponseDes
     """
     Autogenerated from Line::ids-DisruptionGet200ApplicationJsonResponse
     """
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'ids-DisruptionGet200ApplicationJsonResponse'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -1233,9 +1462,13 @@ class idsDisruptionGet200_or_ModemodesDisruptionGet200ApplicationJsonResponseDes
     """
     Autogenerated from Line::Mode-modes-DisruptionGet200ApplicationJsonResponse
     """
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'Mode-modes-DisruptionGet200ApplicationJsonResponse'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -1250,9 +1483,13 @@ class idsArrivalsstopPointIdGet200_or_idsArrivalsGet200ApplicationJsonResponseDe
     """
     Autogenerated from Line::ids-Arrivals-stopPointId-Get200ApplicationJsonResponse
     """
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'ids-Arrivals-stopPointId-Get200ApplicationJsonResponse'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -1267,9 +1504,13 @@ class idsArrivalsstopPointIdGet200_or_idsArrivalsGet200ApplicationJsonResponseDe
     """
     Autogenerated from Line::ids-ArrivalsGet200ApplicationJsonResponse
     """
+    __source_schema_name: str = 'Line'
+    __component_schema_name: str = 'ids-ArrivalsGet200ApplicationJsonResponse'
     
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     

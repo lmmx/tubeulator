@@ -305,8 +305,8 @@ def generate_source(
             else:
                 default = " = None"
         dc_source += f"    {to_pascal_case(prop_name)}: {prop_type}{default}\n"
-    dc_source += f"    __source_schema_name: {schema_name}\n"
-    dc_source += f"    __component_schema_name: {component_name}\n"
+    dc_source += f"    __source_schema_name: str = {schema_name!r}\n"
+    dc_source += f"    __component_schema_name: str = {component_name!r}\n"
     dc_source += """    
     @classmethod
     def from_dict(cls, o):
@@ -326,7 +326,7 @@ def generate_source(
         "dataclass_wizard": ["JSONWizard"],
         "dataclass_wizard.loaders": ["fromdict"],
         "jsonschema": [],
-        "tubeulator.utils.paths": ["load_endpoint_component_schemas"],
+        "..utils.paths": ["load_endpoint_component_schemas"],
     }
     if contains_list or idx == 0:
         import_list["dataclasses"].append("field")
