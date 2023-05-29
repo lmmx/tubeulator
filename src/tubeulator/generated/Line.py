@@ -27,8 +27,7 @@ class Mode(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -50,8 +49,7 @@ class StatusSeverity(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -72,8 +70,7 @@ class PassengerFlow(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -99,8 +96,7 @@ class TrainLoading(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -121,8 +117,7 @@ class Crowding(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -149,8 +144,7 @@ class Identifier(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -172,8 +166,7 @@ class LineGroup(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -194,8 +187,7 @@ class LineModeGroup(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -219,8 +211,7 @@ class AdditionalProperties(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -249,8 +240,7 @@ class Place(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -296,8 +286,7 @@ class StopPoint(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -318,8 +307,7 @@ class RouteSectionNaptanEntrySequence(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -349,8 +337,7 @@ class RouteSection(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -380,8 +367,7 @@ class Disruption(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -403,8 +389,7 @@ class ValidityPeriod(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -432,8 +417,7 @@ class LineStatus(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -462,8 +446,7 @@ class MatchedRoute(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -484,8 +467,7 @@ class LineServiceTypeInfo(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -514,8 +496,7 @@ class Line(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -554,8 +535,7 @@ class MatchedStop(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -582,8 +562,7 @@ class StopPointSequence(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -605,8 +584,7 @@ class OrderedRoute(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -634,8 +612,7 @@ class RouteSequence(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -661,8 +638,7 @@ class LineRouteSection(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -682,8 +658,7 @@ class MatchedRouteSections(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -713,8 +688,7 @@ class RouteSearchMatch(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -735,8 +709,7 @@ class RouteSearchResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -757,8 +730,7 @@ class Interval(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -779,8 +751,7 @@ class StationInterval(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -802,8 +773,7 @@ class KnownJourney(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -824,8 +794,7 @@ class TwentyFourHourClockTime(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -846,8 +815,7 @@ class ServiceFrequency(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -870,8 +838,7 @@ class Period(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -895,8 +862,7 @@ class Schedule(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -917,8 +883,7 @@ class TimetableRoute(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -939,8 +904,7 @@ class Timetable(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -961,8 +925,7 @@ class DisambiguationOption(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -982,8 +945,7 @@ class Disambiguation(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1011,8 +973,7 @@ class TimetableResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1037,8 +998,7 @@ class PredictionTiming(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1077,8 +1037,7 @@ class Prediction(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1097,8 +1056,7 @@ class MetaModesGet200ApplicationJsonResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1117,8 +1075,7 @@ class Get200ApplicationJsonResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1137,8 +1094,7 @@ class MetaSeverityGet200ApplicationJsonResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1157,8 +1113,7 @@ class MetaDisruptionCategories(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1177,8 +1132,7 @@ class MetaServiceTypes(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1197,8 +1151,7 @@ class idsGet200ApplicationJsonResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1217,8 +1170,7 @@ class ModemodesGet200ApplicationJsonResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1237,8 +1189,7 @@ class RouteGet200ApplicationJsonResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1257,8 +1208,7 @@ class idsRouteGet200ApplicationJsonResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1277,8 +1227,7 @@ class ModemodesRouteGet200ApplicationJsonResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1297,8 +1246,7 @@ class idsStatusstartDateToendDateGet200ApplicationJsonResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1317,8 +1265,7 @@ class idsStatusGet200ApplicationJsonResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1337,8 +1284,7 @@ class StatusseverityGet200ApplicationJsonResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1357,8 +1303,7 @@ class ModemodesStatusGet200ApplicationJsonResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1377,8 +1322,7 @@ class idStopPointsGet200ApplicationJsonResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1397,8 +1341,7 @@ class idsDisruptionGet200ApplicationJsonResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1417,8 +1360,7 @@ class ModemodesDisruptionGet200ApplicationJsonResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1437,8 +1379,7 @@ class idsArrivalsstopPointIdGet200ApplicationJsonResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -1457,8 +1398,7 @@ class idsArrivalsGet200ApplicationJsonResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 class Deserialisers(DtoEnum):

@@ -23,8 +23,7 @@ class ActiveServiceTypeArray(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -45,8 +44,7 @@ class ActiveServiceType(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -65,8 +63,7 @@ class PredictionArray(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -105,8 +102,7 @@ class Prediction(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 @dataclass
@@ -131,8 +127,7 @@ class PredictionTiming(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
 
 
 class Deserialisers(DtoEnum):

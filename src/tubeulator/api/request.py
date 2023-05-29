@@ -6,7 +6,14 @@ from urllib.parse import urlencode
 
 import httpx
 
+from ..codegen import load_test
 from ..db.store_creds import check_creds
+from ..utils.paths import (
+    RefPath,
+    SchemaPath,
+    load_endpoint_component_schemas,
+    load_endpoint_schema,
+)
 from .endpoint.names import EndpointNames
 from .endpoint.routes.types import AnyEndpointRouteEnum
 
@@ -93,13 +100,41 @@ class Request:
     path: Path
 
     def __call__(self, *args, **kwargs):
-        return self.send(*args, **kwargs)
+        result = self.send(*args, **kwargs)
+        parsed = self.parse(result.content)
+        return parsed
 
     def send(self, *args, **kwargs):
         url = self.path.build_url(*args, **kwargs)
         response = GET(url=url)
         response.raise_for_status()
-        return response.json()
+        return response
+
+    def ep_name(self, dehyphenate: bool = False) -> str:
+        endpoint_name = self.path.endpoint.value
+        return endpoint_name.replace("-", "") if dehyphenate else endpoint_name
+
+    def response_refpath(self) -> RefPath:
+        """
+        Go from the endpoint route info to the response type (its reference type).
+        """
+        endpoint_schema = load_endpoint_schema(self.ep_name())
+        route_info = endpoint_schema["paths"][self.path.route.value]
+        response_schema = route_info["get"]["responses"]["200"]["content"][
+            "application/json"
+        ]["schema"]
+        response_ref = response_schema["$ref"]
+        return RefPath(response_ref)
+
+    def parse(self, json: str):
+        response_refpath = self.response_refpath()
+        component_schemas = load_endpoint_component_schemas(self.ep_name())
+        response_component_schema = component_schemas[response_refpath.name]
+        ref_type = SchemaPath(response_component_schema)
+        marshals = getattr(load_test, self.ep_name(dehyphenate=True)).Deserialisers
+        dto = marshals.select_component(ref_type.ref.name).value
+        parsed = dto.from_json(json)
+        return parsed
 
 
 def GET(url: str) -> httpx.Response:

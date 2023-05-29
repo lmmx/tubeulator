@@ -307,8 +307,7 @@ def generate_source(
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True"""
+        key_transform_with_load = 'PASCAL'"""
     import_list = {
         "json": [],
         "typing": ["Any"],
