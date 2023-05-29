@@ -2,7 +2,6 @@ import ast
 import json
 import logging
 import textwrap
-from dataclasses import dataclass, field
 from itertools import starmap
 from pathlib import Path
 from textwrap import indent
@@ -11,7 +10,11 @@ from dataclass_wizard.utils.string_conv import to_pascal_case
 
 from ..openapi.scan import scan_namespace
 from ..utils.lcp_trie import Trie
-from ..utils.paths import find_schema_by_name, load_endpoint_component_schemas
+from ..utils.paths import (
+    SchemaPath,
+    find_schema_by_name,
+    load_endpoint_component_schemas,
+)
 
 __all__ = ["emit_deserialisers"]
 
@@ -56,25 +59,6 @@ def import_node(module: str, names: list[str]) -> ast.Import:
         return ast.ImportFrom(module=module, names=[*map(ast.alias, names)], level=0)
     else:
         return ast.Import(names=[ast.alias(name=module)])
-
-
-@dataclass
-class RefPath:
-    path: str = field(repr=False)
-    name: str = field(init=False)
-
-    def __post_init__(self):
-        self.name = Path(self.path).name
-
-
-@dataclass
-class SchemaPath:
-    source: dict[str, str] = field(repr=False)
-    ref: RefPath = field(init=False)
-
-    def __post_init__(self):
-        ref = self.source.get("items", {}).get("$ref")
-        self.ref = RefPath(ref)
 
 
 def find_backrefs(monoschema: dict) -> dict[str, SchemaPath]:

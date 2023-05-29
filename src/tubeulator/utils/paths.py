@@ -1,4 +1,5 @@
 import json
+from dataclasses import dataclass, field
 from functools import cache
 from pathlib import Path
 
@@ -13,6 +14,8 @@ __all__ = [
     "find_schema_by_name",
     "load_endpoint_schema",
     "load_endpoint_component_schemas",
+    "RefPath",
+    "SchemaPath",
     "unified_api_schema",
 ]
 
@@ -58,6 +61,25 @@ def load_endpoint_component_schemas(schema_name: str) -> dict[str, dict]:
     endpoint_schema = load_endpoint_schema(schema_name)
     component_schemas = endpoint_schema["components"].get("schemas", {})
     return component_schemas
+
+
+@dataclass
+class RefPath:
+    path: str = field(repr=False)
+    name: str = field(init=False)
+
+    def __post_init__(self):
+        self.name = Path(self.path).name
+
+
+@dataclass
+class SchemaPath:
+    source: dict[str, str] = field(repr=False)
+    ref: RefPath = field(init=False)
+
+    def __post_init__(self):
+        ref = self.source.get("items", {}).get("$ref")
+        self.ref = RefPath(ref)
 
 
 unified_api_schema = find_schema(schema_dir=openapi_unified_path, levels=1)
