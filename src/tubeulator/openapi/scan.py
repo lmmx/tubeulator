@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from functools import lru_cache
 from pathlib import Path
 
 from ..utils.paths import find_schema, openapi_schemas_path
@@ -20,6 +21,7 @@ def api_schema_inventory(api_schema: Path) -> ApiAliasToUnifiedEntities:
     return aliased_api_schema.alias2ents
 
 
+@lru_cache
 def scan_namespace(ignore_responses: bool = False) -> NamespaceInventory:
     api_dirs = [d for d in openapi_schemas_path.iterdir() if d.is_dir()]
     api_schemas = [
