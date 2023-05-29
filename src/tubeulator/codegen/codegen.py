@@ -142,9 +142,9 @@ def find_arrays(chased: list[str]) -> list[str]:
 
 def generate_dataclass(
     schema: dict,
+    name: str,
     source_schema_name: str,
     idx: int = None,
-    name: str | None = None,
     dealiased_name: str | None = None,
     indent_level: int = 1,
 ) -> str | None:
@@ -338,9 +338,9 @@ def emit_deserialisers(schema_name: str) -> str:
         try:
             generated_code = generate_dataclass(
                 component_schema,
+                name=component_name,
                 source_schema_name=schema_name,
                 idx=idx,
-                name=component_name,
                 dealiased_name=true_name,
             )
             output.append(generated_code)
