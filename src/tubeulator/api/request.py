@@ -101,10 +101,10 @@ class Request:
 
     def __call__(self, *args, **kwargs):
         result = self.send(*args, **kwargs)
-        parsed = self.parse(result.content)
+        parsed = self.parse(result)
         return parsed
 
-    def send(self, *args, **kwargs):
+    def send(self, *args, **kwargs) -> httpx.Response:
         url = self.path.build_url(*args, **kwargs)
         response = GET(url=url)
         response.raise_for_status()
@@ -126,14 +126,17 @@ class Request:
         response_ref = response_schema["$ref"]
         return RefPath(response_ref)
 
-    def parse(self, json: str):
+    def parse(self, response: httpx.Response):
         response_refpath = self.response_refpath()
         component_schemas = load_endpoint_component_schemas(self.ep_name())
         response_component_schema = component_schemas[response_refpath.name]
-        ref_type = SchemaPath(response_component_schema)
-        marshals = getattr(load_test, self.ep_name(dehyphenate=True)).Deserialisers
-        dto = marshals.select_component(ref_type.ref.name).value
-        parsed = dto.from_json(json)
+        if response_component_schema.get("items", {}).get("type") == "string":
+            parsed = response.json()
+        else:
+            ref_type = SchemaPath(response_component_schema)
+            marshals = getattr(load_test, self.ep_name(dehyphenate=True)).Deserialisers
+            dto = marshals.select_component(ref_type.ref.name).value
+            parsed = dto.from_json(json)
         return parsed
 
 
