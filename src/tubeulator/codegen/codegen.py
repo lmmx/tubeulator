@@ -304,22 +304,27 @@ def generate_source(
             else:
                 default = " = None"
         dc_source += f"    {to_pascal_case(prop_name)}: {prop_type}{default}\n"
-    dc_source += """    \n    @classmethod
+    dc_source += """    
+    @classmethod
     def from_dict(cls, o):
         jsonschema.validate(o, schema)
-        return fromdict(cls, o)"""
+        return fromdict(cls, o)
+    
+    @classmethod
+    def Meta(JSONWizard.Meta):
+        key_transform_with_load = "PASCAL"
+        raise_on_unknown_json_key = True"""
     import_list = {
         "json": [],
         "dataclasses": ["dataclass"],
         "pathlib": ["Path"],
-        "dataclass_wizard": ["JSONWizard", "LoadMeta"],
+        "dataclass_wizard": ["JSONWizard"],
         "dataclass_wizard.loaders": ["fromdict"],
         "jsonschema": [],
     }
     if contains_list or idx == 0:
         import_list["dataclasses"].append("field")
     imports = "\n".join(map(ast.unparse, starmap(import_node, import_list.items())))
-    meta_binding = f"\nLoadMeta(raise_on_unknown_json_key=True).bind_to({class_name})"
     # Add imports here if generating multiple dataclasses [indicated by idx=0] (since we
     # can't see ahead), or if only making 1 [indicated by idx=None]
     return "\n\n".join([(imports if not idx else ""), dc_source, meta_binding])
