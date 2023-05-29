@@ -241,6 +241,7 @@ def generate_dataclass(
     ]
     output = generate_source(
         class_name=preproc_class_name,
+        component_name=name,
         schema_name=source_schema_name,
         gen_source=gen_source,
         schema=schema,
@@ -253,6 +254,7 @@ def generate_dataclass(
 
 def generate_source(
     class_name: str,
+    component_name: str,
     schema_name: str,
     gen_source: str,
     schema: dict,
@@ -303,9 +305,13 @@ def generate_source(
             else:
                 default = " = None"
         dc_source += f"    {to_pascal_case(prop_name)}: {prop_type}{default}\n"
+    dc_source += f"    __source_schema_name: {schema_name}\n"
+    dc_source += f"    __component_schema_name: {component_name}\n"
     dc_source += """    
     @classmethod
     def from_dict(cls, o):
+        parent_schema = load_endpoint_component_schemas(cls.__source_schema_name)
+        schema = parent_schema[cls.__component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
     
@@ -320,6 +326,7 @@ def generate_source(
         "dataclass_wizard": ["JSONWizard"],
         "dataclass_wizard.loaders": ["fromdict"],
         "jsonschema": [],
+        "tubeulator.utils.paths": ["load_endpoint_component_schemas"],
     }
     if contains_list or idx == 0:
         import_list["dataclasses"].append("field")
