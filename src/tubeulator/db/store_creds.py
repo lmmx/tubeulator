@@ -14,9 +14,13 @@ def check_creds() -> dict[str, str]:
     with MongodExceptionGuard():
         client = MongoClient()
         creds_collection = client.creds.tfl_cred
-        n_docs = creds_collection.count()
+        n_docs = creds_collection.estimated_document_count()
         if n_docs == 0:
-            app_id = input("Enter your app ID (suggestion: 'tubeulator'): ")
+            default_app_id = "tubeulator"
+            app_id = (
+                input(f"Enter your app ID (default: {default_app_id!r}): ")
+                or default_app_id
+            )
             primary_key = input("Enter your primary key: ")
             secondary_key = input("Enter your secondary key: ")
             stored_credential = {
