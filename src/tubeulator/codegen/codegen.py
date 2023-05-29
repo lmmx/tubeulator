@@ -362,16 +362,3 @@ def emit_deserialisers(schema_name: str) -> str:
                 exc_info=True,
             )
     return "\n".join(filter(None, output))
-
-
-example_schema = {
-    "title": "Example Schema",
-    "type": "object",
-    "properties": {
-        "name": {"type": "string"},
-        "age": {"type": "integer"},
-        "email": {"type": "string", "format": "email"},
-        "friends": {"type": "array", "items": {"type": "string"}},
-    },
-    "required": ["name", "age"],
-}
