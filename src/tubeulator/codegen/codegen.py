@@ -184,7 +184,11 @@ def generate_dataclass(
             chase_prefixes = [
                 p[: -len(aj_suffix)] for p in chased if p.endswith(aj_suffix)
             ]
-            chase_prefix = "_or_".join(chase_prefixes)  # Hotfix
+            old_chase_prefix = "_or_".join(chase_prefixes)  # Hotfix
+            if len(chase_prefixes) > 1:
+                chase_prefix = chase_prefixes[response_shortlist.index(name)]
+            else:
+                chase_prefix = chase_prefixes[0]
             class_name = f"{chase_prefix}{aj_suffix}Deserialiser"
             gen_source = name  # ref_name
         else:
@@ -196,7 +200,7 @@ def generate_dataclass(
             chase_prefixes = [
                 p[: p.index(ar_suffix)] for p in chased if p in array_shortlist
             ]
-            chase_prefix = "_or_".join(chase_prefixes)  # Hotfix
+            chase_prefix = "_or_".join(chase_prefixes)  # Hotfix: never used
             class_name = f"{chase_prefix}{ar_suffix}Deserialiser"
             gen_source = name  # ref_name
     elif dealiased_name is not None:
