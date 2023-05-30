@@ -61,9 +61,7 @@ free-text query):
 Instruction(Summary='Hammersmith & City line to Mile End',
             Detailed='Hammersmith & City line towards Hammersmith (H&C and '
                      'Circle Lines)',
-            Steps=[],
-            _source_schema_name='Journey',
-            _component_schema_name='Tfl-4')
+            Steps=[])
 >>> pprint([l.Instruction.Summary for l in j.Journeys[0].Legs])
 ['Hammersmith & City line to Mile End',
  'Central line to Bank',
@@ -87,25 +85,17 @@ Journey(StartDateTime=datetime.datetime(2023, 5, 30, 22, 28),
                                           Detailed='Hammersmith & City line '
                                                    'towards Hammersmith (H&C '
                                                    'and Circle Lines)',
-                                          Steps=[],
-                                          _source_schema_name='Journey',
-                                          _component_schema_name='Tfl-4'),
+                                          Steps=[]),
                   Obstacles=[Obstacle(Type='WALKWAY',
                                       Incline='LEVEL',
                                       StopId=1000146,
-                                      Position='AFTER',
-                                      _source_schema_name='Journey',
-                                      _component_schema_name='Tfl-5')],
+                                      Position='AFTER')],
                   DepartureTime=datetime.datetime(2023, 5, 30, 22, 28),
                   ArrivalTime=datetime.datetime(2023, 5, 30, 22, 29),
                   DeparturePoint=Point(Lat=51.526934656609995,
-                                       Lon=-0.02494089054,
-                                       _source_schema_name='Journey',
-                                       _component_schema_name='Tfl-6'),
+                                       Lon=-0.02494089054),
                   ArrivalPoint=Point(Lat=51.52536768912,
-                                     Lon=-0.033370024490000004,
-                                     _source_schema_name='Journey',
-                                     _component_schema_name='Tfl-6'),
+                                     Lon=-0.033370024490000004),
                   Path=Path(LineString='[[51.52694645478, '
                                        '-0.02493847399],[51.52696258512, '
 ...
