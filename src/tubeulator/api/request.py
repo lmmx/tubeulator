@@ -139,7 +139,6 @@ class Request:
             try:
                 parsed = dto.from_json(response.content)
             except:
-                breakpoint()
                 raise
         return parsed
 

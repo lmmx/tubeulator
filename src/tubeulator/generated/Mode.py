@@ -90,7 +90,7 @@ class Prediction(JSONWizard):
     ExpectedArrival: str = None
     TimeToLive: str = None
     ModeName: str = None
-    Timing: dict = None
+    Timing: PredictionTiming = None
     _source_schema_name: str = 'Mode'
     _component_schema_name: str = 'Tfl.Api.Presentation.Entities.Prediction'
     

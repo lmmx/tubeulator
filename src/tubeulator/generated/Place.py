@@ -159,7 +159,7 @@ class Identifier(JSONWizard):
     Uri: str = None
     FullName: str = None
     Type: str = None
-    Crowding: dict = None
+    Crowding: Crowding = None
     RouteType: str = None
     Status: str = None
     _source_schema_name: str = 'Place'
