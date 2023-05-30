@@ -4,7 +4,7 @@ import subprocess
 from contextlib import AbstractContextManager
 from dataclasses import dataclass
 
-from ..utils.logging import set_up_logging
+from ..utils.logs import set_up_logging
 from ..utils.paths import db_path
 
 __all__ = [

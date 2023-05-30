@@ -54,6 +54,8 @@ def python_type(json_type: str, format: str = None) -> str:
     }
     if json_type == "number" and format == "double":
         python_type = "float"
+    elif json_type == "string" and format == "date-time":
+        python_type = "datetime"
     else:
         python_type = type_lookup[json_type]
     return python_type
@@ -354,6 +356,7 @@ def generate_source(
     import_list = {
         "__future__": ["annotations"],
         "json": [],
+        "datetime": ["datetime"],
         "dataclasses": ["dataclass"],
         "pathlib": ["Path"],
         "dataclass_wizard": ["JSONWizard"],

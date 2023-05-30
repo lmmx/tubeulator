@@ -1,5 +1,6 @@
 from __future__ import annotations
 import json
+from datetime import datetime
 from dataclasses import dataclass, field
 from pathlib import Path
 from dataclass_wizard import JSONWizard
@@ -36,7 +37,7 @@ class AccidentDetail(JSONWizard):
     Lat: float = None
     Lon: float = None
     Location: str = None
-    Date: str = None
+    Date: datetime = None
     Severity: str = None
     Borough: str = None
     Casualties: list[Casualty] = field(default_factory=list)
