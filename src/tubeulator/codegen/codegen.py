@@ -52,8 +52,6 @@ def python_type(json_type: str, format: str = None) -> str:
         "array": "list",
         "object": "dict",
     }
-    # if json_type == "object":
-    #     breakpoint()
     if json_type == "number" and format == "double":
         python_type = "float"
     else:
@@ -326,8 +324,6 @@ def generate_source(
                 # (We could dealias the entity at this point so as to title it?)
             else:
                 item_type = python_type(prop_array["type"], prop_array.get("format"))
-                if item_type == "dict":
-                    breakpoint()
             prop_type = f"{prop_type}[{item_type}]"
         if prop_name in required:
             default = ""
@@ -351,6 +347,7 @@ def generate_source(
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'"""
     import_list = {
+        "__future__": ["annotations"],
         "json": [],
         "dataclasses": ["dataclass"],
         "pathlib": ["Path"],
