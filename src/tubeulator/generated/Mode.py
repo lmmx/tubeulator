@@ -1,5 +1,5 @@
+from __future__ import annotations
 import json
-from typing import Any
 from dataclasses import dataclass, field
 from pathlib import Path
 from dataclass_wizard import JSONWizard
@@ -23,8 +23,8 @@ class ActiveServiceTypeArray(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -45,8 +45,8 @@ class ActiveServiceType(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -65,8 +65,8 @@ class PredictionArray(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -93,7 +93,7 @@ class Prediction(JSONWizard):
     ExpectedArrival: str = None
     TimeToLive: str = None
     ModeName: str = None
-    Timing: dict = None
+    Timing: PredictionTiming = None
     _source_schema_name: str = 'Mode'
     _component_schema_name: str = 'Tfl.Api.Presentation.Entities.Prediction'
     
@@ -105,8 +105,8 @@ class Prediction(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -131,8 +131,8 @@ class PredictionTiming(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 class Deserialisers(DtoEnum):

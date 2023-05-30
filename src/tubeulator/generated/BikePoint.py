@@ -1,5 +1,5 @@
+from __future__ import annotations
 import json
-from typing import Any
 from dataclasses import dataclass, field
 from pathlib import Path
 from dataclass_wizard import JSONWizard
@@ -23,8 +23,8 @@ class PlaceArray(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -35,13 +35,13 @@ class Place(JSONWizard):
     Id: str = None
     Url: str = None
     CommonName: str = None
-    Distance: Any = None
+    Distance: float = None
     PlaceType: str = None
-    AdditionalProperties: list[dict] = field(default_factory=list)
-    Children: list[dict] = field(default_factory=list)
+    AdditionalProperties: list[AdditionalProperties] = field(default_factory=list)
+    Children: list[Place] = field(default_factory=list)
     ChildrenUrls: list[str] = field(default_factory=list)
-    Lat: Any = None
-    Lon: Any = None
+    Lat: float = None
+    Lon: float = None
     _source_schema_name: str = 'BikePoint'
     _component_schema_name: str = 'Tfl.Api.Presentation.Entities.Place'
     
@@ -53,8 +53,8 @@ class Place(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -78,8 +78,8 @@ class AdditionalProperties(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 class Deserialisers(DtoEnum):

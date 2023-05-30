@@ -1,5 +1,5 @@
+from __future__ import annotations
 import json
-from typing import Any
 from dataclasses import dataclass, field
 from pathlib import Path
 from dataclass_wizard import JSONWizard
@@ -15,8 +15,8 @@ class SearchMatch(JSONWizard):
     Id: str = None
     Url: str = None
     Name: str = None
-    Lat: Any = None
-    Lon: Any = None
+    Lat: float = None
+    Lon: float = None
     _source_schema_name: str = 'Search'
     _component_schema_name: str = 'Tfl'
     
@@ -28,8 +28,8 @@ class SearchMatch(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -43,8 +43,8 @@ class SearchResponse(JSONWizard):
     PageSize: int = None
     Provider: str = None
     Total: int = None
-    Matches: list[dict] = field(default_factory=list)
-    MaxScore: Any = None
+    Matches: list[SearchMatch] = field(default_factory=list)
+    MaxScore: float = None
     _source_schema_name: str = 'Search'
     _component_schema_name: str = 'Tfl-2'
     
@@ -56,8 +56,8 @@ class SearchResponse(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -76,8 +76,8 @@ class MetaSearchProviders(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -96,8 +96,8 @@ class MetaCategories(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -116,8 +116,8 @@ class MetaSorts(JSONWizard):
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = "PASCAL"
-        raise_on_unknown_json_key = True
+        key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 class Deserialisers(DtoEnum):
