@@ -133,9 +133,15 @@ class Request:
         if response_component_schema.get("items", {}).get("type") == "string":
             parsed = response.json()
         else:
-            ref_type = SchemaPath(response_component_schema)
+            try:
+                # Take a 2nd order reference
+                ref_type = SchemaPath(response_component_schema)
+                ref_name = ref_type.ref.name
+            except:
+                # Not a 2nd order reference
+                ref_name = response_refpath.name
             marshals = getattr(load_test, self.ep_name(dehyphenate=True)).Deserialisers
-            dto = marshals.select_component(ref_type.ref.name).value
+            dto = marshals.select_component(ref_name).value
             try:
                 parsed = dto.from_json(response.content)
             except:
