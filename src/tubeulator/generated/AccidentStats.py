@@ -24,6 +24,7 @@ class AccidentStatsAccidentDetailArray(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -52,6 +53,7 @@ class AccidentDetail(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -76,6 +78,7 @@ class Casualty(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -96,6 +99,7 @@ class Vehicle(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 class Deserialisers(DtoEnum):

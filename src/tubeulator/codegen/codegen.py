@@ -349,7 +349,8 @@ def generate_source(
         return fromdict(cls, o)
     
     class Meta(JSONWizard.Meta):
-        key_transform_with_load = 'PASCAL'"""
+        key_transform_with_load = 'PASCAL'
+        recursive_classes = True"""
     import_list = {
         "__future__": ["annotations"],
         "json": [],

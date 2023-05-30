@@ -29,6 +29,7 @@ class SearchMatch(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -56,6 +57,7 @@ class SearchResponse(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -75,6 +77,7 @@ class MetaSearchProviders(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -94,6 +97,7 @@ class MetaCategories(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -113,6 +117,7 @@ class MetaSorts(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 class Deserialisers(DtoEnum):

@@ -34,6 +34,7 @@ class RoadCorridor(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -56,6 +57,7 @@ class DbGeographyWellKnownValue(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -76,6 +78,7 @@ class DbGeography(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -99,6 +102,7 @@ class StreetSegment(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -124,6 +128,7 @@ class Street(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -160,6 +165,7 @@ class RoadProject(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -187,6 +193,7 @@ class RoadDisruptionLine(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -213,6 +220,7 @@ class RoadDisruptionImpactArea(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -234,6 +242,7 @@ class RoadDisruptionSchedule(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -284,6 +293,7 @@ class RoadDisruption(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -303,6 +313,7 @@ class Object(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -325,6 +336,7 @@ class StatusSeverity(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -344,6 +356,7 @@ class Get200ApplicationJsonResponse(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -363,6 +376,7 @@ class idsGet200ApplicationJsonResponse(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -382,6 +396,7 @@ class idsStatusGet200ApplicationJsonResponse(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -401,6 +416,7 @@ class idsDisruptionGet200ApplicationJsonResponse(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -420,6 +436,7 @@ class MetaCategories(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 @dataclass
@@ -439,6 +456,7 @@ class MetaSeveritiesGet200ApplicationJsonResponse(JSONWizard):
     
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
+        recursive_classes = True
 
 
 class Deserialisers(DtoEnum):
