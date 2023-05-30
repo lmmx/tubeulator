@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from .utils.logging import set_up_logging
+from .utils.logs import set_up_logging
 
 __all__ = ["Journey", "Place", "Destination", "Departure"]
 

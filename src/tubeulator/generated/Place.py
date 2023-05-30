@@ -1,5 +1,6 @@
 from __future__ import annotations
 import json
+from datetime import datetime
 from dataclasses import dataclass, field
 from pathlib import Path
 from dataclass_wizard import JSONWizard
@@ -38,7 +39,7 @@ class AdditionalProperties(JSONWizard):
     Key: str = None
     SourceSystemKey: str = None
     Value: str = None
-    Modified: str = None
+    Modified: datetime = None
     _source_schema_name: str = 'Place'
     _component_schema_name: str = 'Tfl-2'
     
