@@ -52,6 +52,8 @@ def python_type(json_type: str, format: str = None) -> str:
         "array": "list",
         "object": "dict",
     }
+    # if json_type == "object":
+    #     breakpoint()
     if json_type == "number" and format == "double":
         python_type = "float"
     else:
@@ -129,6 +131,27 @@ def find_arrays(chased: list[str]) -> list[str]:
     return array_shortlist
 
 
+def generate_dataclass_name(
+    schema: dict,
+    name: str,
+    source_schema_name: str,
+    idx: int = None,
+    dealiased_name: str | None = None,
+    indent_level: int = 1,
+) -> str | None:
+    name, _ = generate_dataclass(
+        schema=schema,
+        name=name,
+        source_schema_name=source_schema_name,
+        idx=idx,
+        dealiased_name=dealiased_name,
+        indent_level=indent_level,
+        schema_mapping=None,
+        name_only=True,
+    )
+    return name
+
+
 def generate_dataclass(
     schema: dict,
     name: str,
@@ -136,6 +159,8 @@ def generate_dataclass(
     idx: int = None,
     dealiased_name: str | None = None,
     indent_level: int = 1,
+    schema_mapping: dict[str, str] | None = None,
+    name_only: bool = False,
 ) -> tuple[str, str] | tuple[None, None]:
     """
     Generate a dataclass from a schema, importing the `field` function if there are any
@@ -234,16 +259,20 @@ def generate_dataclass(
     preproc_class_name = preproc_class_name[
         len(ent_prefix) if preproc_class_name.startswith(ent_prefix) else 0 :
     ]
-    output = generate_source(
-        class_name=preproc_class_name,
-        component_name=name,
-        schema_name=source_schema_name,
-        gen_source=gen_source,
-        schema=schema,
-        parent_schema=parent_schema,
-        indent_level=indent_level,
-        idx=idx,
-    )
+    if name_only:
+        output = None
+    else:
+        output = generate_source(
+            class_name=preproc_class_name,
+            component_name=name,
+            schema_name=source_schema_name,
+            gen_source=gen_source,
+            schema=schema,
+            parent_schema=parent_schema,
+            indent_level=indent_level,
+            idx=idx,
+            schema_mapping=schema_mapping,
+        )
     return preproc_class_name, output
 
 
@@ -256,6 +285,7 @@ def generate_source(
     parent_schema: dict,
     indent_level: int,
     idx: int,
+    schema_mapping: dict[str, str] | None,
 ) -> str:
     properties = schema.get("properties", {})
     required = schema.get("required", [])
@@ -279,17 +309,25 @@ def generate_source(
         if is_array_prop and "items" in prop_schema:
             prop_array = prop_schema["items"]
             # TODO: I think arrays should be handled at level above, check this sooner?
-            if "type" not in prop_array:
-                if prop_array and "$ref" in prop_array:
-                    referent = prop_array["$ref"].replace("#/components/schemas/", "")
-                    replacement = parent_schema[referent]
-                    # Substitute the reference before accessing the item type
-                    # prop_schema["items"] = replacement
-                    # I don't think it handles nested dataclass arrays!
-                    # Don't in fact even need to replace in the schema, just the var
-                    prop_array = replacement
-                    # (We could dealias the entity at this point so as to title it?)
-            item_type = python_type(prop_array["type"], prop_array.get("format"))
+            if "type" not in prop_array and prop_array and "$ref" in prop_array:
+                referent = prop_array["$ref"].replace("#/components/schemas/", "")
+                # TODO: Don't substitute: look up using Deserialisers Enum
+                # replacement = parent_schema[referent]
+                dto_enum_lookup = f"Deserialisers[{referent}].value"
+                if schema_mapping is None:
+                    item_type = dto_enum_lookup
+                else:
+                    item_type = schema_mapping.get(referent, dto_enum_lookup)
+                # Substitute the reference before accessing the item type
+                # prop_schema["items"] = replacement
+                # I don't think it handles nested dataclass arrays!
+                # Don't in fact even need to replace in the schema, just the var
+                # prop_array = replacement
+                # (We could dealias the entity at this point so as to title it?)
+            else:
+                item_type = python_type(prop_array["type"], prop_array.get("format"))
+                if item_type == "dict":
+                    breakpoint()
             prop_type = f"{prop_type}[{item_type}]"
         if prop_name in required:
             default = ""
@@ -334,6 +372,26 @@ def emit_deserialisers(schema_name: str) -> str:
     ns = scan_namespace(ignore_responses=True)
     output = []
     schema_mapping = {}
+    # 1st pass for the generated dataclass names (populating the schema mapping)
+    for idx, (component_name, component_schema) in enumerate(component_schemas.items()):
+        true_name = (ns.get(schema_name, {}).get(component_name) or [None])[0]
+        try:
+            generated_class_name = generate_dataclass_name(
+                component_schema,
+                name=component_name,
+                source_schema_name=schema_name,
+                idx=idx,
+                dealiased_name=true_name,
+            )
+            if generated_class_name is not None:
+                schema_mapping.setdefault(component_name, generated_class_name)
+        except Exception as e:
+            logger.error(
+                f"Failed to generate name for {schema_name} dataclass {idx}: "
+                f"{component_name} (dealiased: {true_name}) -- {e}",
+                exc_info=True,
+            )
+    # 2nd pass for the source code (using the schema mapping)
     for idx, (component_name, component_schema) in enumerate(component_schemas.items()):
         true_name = (ns.get(schema_name, {}).get(component_name) or [None])[0]
         try:
@@ -343,9 +401,8 @@ def emit_deserialisers(schema_name: str) -> str:
                 source_schema_name=schema_name,
                 idx=idx,
                 dealiased_name=true_name,
+                schema_mapping=schema_mapping,
             )
-            if generated_class_name is not None:
-                schema_mapping.setdefault(component_name, generated_class_name)
             output.append(generated_code)  # Append even if None, for debugging purposes
         except Exception as e:
             logger.error(

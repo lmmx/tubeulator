@@ -35,8 +35,8 @@ class Place(JSONWizard):
     CommonName: str = None
     Distance: float = None
     PlaceType: str = None
-    AdditionalProperties: list[dict] = field(default_factory=list)
-    Children: list[dict] = field(default_factory=list)
+    AdditionalProperties: list[AdditionalProperties] = field(default_factory=list)
+    Children: list[Place] = field(default_factory=list)
     ChildrenUrls: list[str] = field(default_factory=list)
     Lat: float = None
     Lon: float = None

@@ -37,8 +37,8 @@ class AccidentDetail(JSONWizard):
     Date: str = None
     Severity: str = None
     Borough: str = None
-    Casualties: list[dict] = field(default_factory=list)
-    Vehicles: list[dict] = field(default_factory=list)
+    Casualties: list[Casualty] = field(default_factory=list)
+    Vehicles: list[Vehicle] = field(default_factory=list)
     _source_schema_name: str = 'AccidentStats'
     _component_schema_name: str = 'Tfl.Api.Presentation.Entities.AccidentStats.AccidentDetail'
     

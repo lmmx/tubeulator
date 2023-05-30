@@ -108,7 +108,7 @@ class Street(JSONWizard):
     Name: str = None
     Closure: str = None
     Directions: str = None
-    Segments: list[dict] = field(default_factory=list)
+    Segments: list[StreetSegment] = field(default_factory=list)
     SourceSystemId: int = None
     SourceSystemKey: str = None
     _source_schema_name: str = 'Road'
@@ -259,7 +259,7 @@ class RoadDisruption(JSONWizard):
     Status: str = None
     Geography: dict = None
     Geometry: dict = None
-    Streets: list[dict] = field(default_factory=list)
+    Streets: list[Street] = field(default_factory=list)
     IsProvisional: bool = None
     HasClosures: bool = None
     LinkText: str = None
@@ -268,9 +268,9 @@ class RoadDisruption(JSONWizard):
     PublishStartDate: str = None
     PublishEndDate: str = None
     TimeFrame: str = None
-    RoadDisruptionLines: list[dict] = field(default_factory=list)
-    RoadDisruptionImpactAreas: list[dict] = field(default_factory=list)
-    RecurringSchedules: list[dict] = field(default_factory=list)
+    RoadDisruptionLines: list[RoadDisruptionLine] = field(default_factory=list)
+    RoadDisruptionImpactAreas: list[RoadDisruptionImpactArea] = field(default_factory=list)
+    RecurringSchedules: list[RoadDisruptionSchedule] = field(default_factory=list)
     _source_schema_name: str = 'Road'
     _component_schema_name: str = 'Tfl-8'
     

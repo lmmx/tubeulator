@@ -41,7 +41,7 @@ class SearchResponse(JSONWizard):
     PageSize: int = None
     Provider: str = None
     Total: int = None
-    Matches: list[dict] = field(default_factory=list)
+    Matches: list[SearchMatch] = field(default_factory=list)
     MaxScore: float = None
     _source_schema_name: str = 'Search'
     _component_schema_name: str = 'Tfl-2'
