@@ -17,8 +17,8 @@ class Mode(JSONWizard):
     IsFarePaying: bool = None
     IsScheduledService: bool = None
     ModeName: str = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -39,8 +39,8 @@ class PathAttribute(JSONWizard):
     """
     Name: str = None
     Value: str = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-2'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-2', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -72,8 +72,8 @@ class InstructionStep(JSONWizard):
     PathAttribute: PathAttribute = None
     DescriptionHeading: str = None
     TrackType: str = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-3'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-3', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -95,8 +95,8 @@ class Instruction(JSONWizard):
     Summary: str = None
     Detailed: str = None
     Steps: list[InstructionStep] = field(default_factory=list)
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-4'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-4', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -119,8 +119,8 @@ class Obstacle(JSONWizard):
     Incline: str = None
     StopId: int = None
     Position: str = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-5'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-5', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -141,8 +141,8 @@ class Point(JSONWizard):
     """
     Lat: float = None
     Lon: float = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-6'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-6', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -163,8 +163,8 @@ class PassengerFlow(JSONWizard):
     """
     TimeSlice: str = None
     Value: int = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-7'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-7', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -190,8 +190,8 @@ class TrainLoading(JSONWizard):
     NaptanTo: str = None
     TimeSlice: str = None
     Value: int = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-8'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-8', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -212,8 +212,8 @@ class Crowding(JSONWizard):
     """
     PassengerFlows: list[PassengerFlow] = field(default_factory=list)
     TrainLoadings: list[TrainLoading] = field(default_factory=list)
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-9'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-9', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -240,8 +240,8 @@ class Identifier(JSONWizard):
     Crowding: Crowding = None
     RouteType: str = None
     Status: str = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-10'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-10', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -267,8 +267,8 @@ class JpElevation(JSONWizard):
     EndLon: float = None
     HeightFromPreviousPoint: int = None
     Gradient: float = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-11'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-11', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -290,8 +290,8 @@ class Path(JSONWizard):
     LineString: str = None
     StopPoints: list[Identifier] = field(default_factory=list)
     Elevation: list[JpElevation] = field(default_factory=list)
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-12'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-12', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -314,8 +314,8 @@ class RouteOption(JSONWizard):
     Name: str = None
     Directions: list[str] = field(default_factory=list)
     LineIdentifier: Identifier = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-13'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-13', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -337,8 +337,8 @@ class LineGroup(JSONWizard):
     NaptanIdReference: str = None
     StationAtcoCode: str = None
     LineIdentifier: list[str] = field(default_factory=list)
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-14'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-14', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -359,8 +359,8 @@ class LineModeGroup(JSONWizard):
     """
     ModeName: str = None
     LineIdentifier: list[str] = field(default_factory=list)
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-15'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-15', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -384,8 +384,8 @@ class AdditionalProperties(JSONWizard):
     SourceSystemKey: str = None
     Value: str = None
     Modified: datetime = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-16'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-16', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -414,8 +414,8 @@ class Place(JSONWizard):
     ChildrenUrls: list[str] = field(default_factory=list)
     Lat: float = None
     Lon: float = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-17'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-17', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -461,8 +461,8 @@ class StopPoint(JSONWizard):
     ChildrenUrls: list[str] = field(default_factory=list)
     Lat: float = None
     Lon: float = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-18'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-18', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -483,8 +483,8 @@ class RouteSectionNaptanEntrySequence(JSONWizard):
     """
     Ordinal: int = None
     StopPoint: StopPoint = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-19'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-19', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -514,8 +514,8 @@ class RouteSection(JSONWizard):
     ValidTo: datetime = None
     ValidFrom: datetime = None
     RouteSectionNaptanEntrySequence: list[RouteSectionNaptanEntrySequence] = field(default_factory=list)
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-20'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-20', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -545,8 +545,8 @@ class Disruption(JSONWizard):
     AffectedRoutes: list[RouteSection] = field(default_factory=list)
     AffectedStops: list[StopPoint] = field(default_factory=list)
     ClosureText: str = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-21'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-21', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -569,8 +569,8 @@ class PlannedWork(JSONWizard):
     Description: str = None
     CreatedDateTime: datetime = None
     LastUpdateDateTime: datetime = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-22'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-22', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -605,8 +605,8 @@ class Leg(JSONWizard):
     Distance: float = None
     IsDisrupted: bool = None
     HasFixedLocations: bool = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-23'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-23', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -631,8 +631,8 @@ class FareTapDetails(JSONWizard):
     BusRouteId: str = None
     NationalLocationCode: int = None
     TapTimestamp: datetime = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-24'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-24', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -653,8 +653,8 @@ class FareTap(JSONWizard):
     """
     AtcoCode: str = None
     TapDetails: FareTapDetails = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-25'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-25', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -682,8 +682,8 @@ class Fare(JSONWizard):
     Peak: int = None
     OffPeak: int = None
     Taps: list[FareTap] = field(default_factory=list)
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-26'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-26', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -704,8 +704,8 @@ class FareCaveat(JSONWizard):
     """
     Text: str = None
     Type: str = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-27'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-27', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -727,8 +727,8 @@ class JourneyFare(JSONWizard):
     TotalCost: int = None
     Fares: list[Fare] = field(default_factory=list)
     Caveats: list[FareCaveat] = field(default_factory=list)
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-28'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-28', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -752,8 +752,8 @@ class Journey(JSONWizard):
     ArrivalDateTime: datetime = None
     Legs: list[Leg] = field(default_factory=list)
     Fare: JourneyFare = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-29'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-29', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -775,8 +775,8 @@ class ValidityPeriod(JSONWizard):
     FromDate: datetime = None
     ToDate: datetime = None
     IsNow: bool = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-30'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-30', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -804,8 +804,8 @@ class LineStatus(JSONWizard):
     Modified: datetime = None
     ValidityPeriods: list[ValidityPeriod] = field(default_factory=list)
     Disruption: Disruption = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-31'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-31', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -834,8 +834,8 @@ class MatchedRoute(JSONWizard):
     ServiceType: str = None
     ValidTo: datetime = None
     ValidFrom: datetime = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-32'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-32', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -856,8 +856,8 @@ class LineServiceTypeInfo(JSONWizard):
     """
     Name: str = None
     Uri: str = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-33'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-33', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -886,8 +886,8 @@ class Line(JSONWizard):
     RouteSections: list[MatchedRoute] = field(default_factory=list)
     ServiceTypes: list[LineServiceTypeInfo] = field(default_factory=list)
     Crowding: Crowding = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-34'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-34', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -912,8 +912,8 @@ class JourneyPlannerCycleHireDockingStationData(JSONWizard):
     DestinationNumberOfEmptySlots: int = None
     OriginId: str = None
     DestinationId: str = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-35'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-35', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -936,8 +936,8 @@ class TimeAdjustment(JSONWizard):
     Time: str = None
     TimeIs: str = None
     Uri: str = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-36'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-36', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -960,8 +960,8 @@ class TimeAdjustments(JSONWizard):
     Earlier: TimeAdjustment = None
     Later: TimeAdjustment = None
     Latest: TimeAdjustment = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-37'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-37', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -983,8 +983,8 @@ class SearchCriteria(JSONWizard):
     DateTime: datetime = None
     DateTimeType: str = None
     TimeAdjustments: TimeAdjustments = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-38'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-38', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -1007,8 +1007,8 @@ class JourneyVector(JSONWizard):
     To: str = None
     Via: str = None
     Uri: str = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-39'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-39', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -1034,8 +1034,8 @@ class ItineraryResult(JSONWizard):
     RecommendedMaxAgeMinutes: int = None
     SearchCriteria: SearchCriteria = None
     JourneyVector: JourneyVector = None
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Tfl-40'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Tfl-40', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -1054,8 +1054,8 @@ class MetaModesGet200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from Journey::MetaModesGet200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'MetaModesGet200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='MetaModesGet200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -1074,8 +1074,8 @@ class Get200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from Journey::Get200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'Journey'
-    _component_schema_name: str = 'Get200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='Journey', repr=False)
+    _component_schema_name: str = field(default='Get200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):

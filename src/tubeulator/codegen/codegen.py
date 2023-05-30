@@ -276,6 +276,10 @@ def generate_dataclass(
     return preproc_class_name, output
 
 
+def hidden_field(default_value: str) -> str:
+    return f"field(default={default_value!r}, repr=False)"
+
+
 def generate_source(
     class_name: str,
     component_name: str,
@@ -340,8 +344,8 @@ def generate_source(
             else:
                 default = " = None"
         dc_source += f"    {to_pascal_case(prop_name)}: {prop_type}{default}\n"
-    dc_source += f"    _source_schema_name: str = {schema_name!r}\n"
-    dc_source += f"    _component_schema_name: str = {component_name!r}\n"
+    dc_source += f"    _source_schema_name: str = {hidden_field(schema_name)}\n"
+    dc_source += f"    _component_schema_name: str = {hidden_field(component_name)}\n"
     dc_source += """    
     @classmethod
     def from_dict(cls, o):

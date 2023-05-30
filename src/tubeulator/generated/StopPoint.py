@@ -15,8 +15,8 @@ class PlaceCategory(JSONWizard):
     """
     Category: str = None
     AvailableKeys: list[str] = field(default_factory=list)
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -39,8 +39,8 @@ class Mode(JSONWizard):
     IsFarePaying: bool = None
     IsScheduledService: bool = None
     ModeName: str = None
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-2'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-2', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -61,8 +61,8 @@ class PassengerFlow(JSONWizard):
     """
     TimeSlice: str = None
     Value: int = None
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-3'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-3', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -88,8 +88,8 @@ class TrainLoading(JSONWizard):
     NaptanTo: str = None
     TimeSlice: str = None
     Value: int = None
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-4'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-4', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -110,8 +110,8 @@ class Crowding(JSONWizard):
     """
     PassengerFlows: list[PassengerFlow] = field(default_factory=list)
     TrainLoadings: list[TrainLoading] = field(default_factory=list)
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-5'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-5', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -138,8 +138,8 @@ class Identifier(JSONWizard):
     Crowding: Crowding = None
     RouteType: str = None
     Status: str = None
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-6'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-6', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -161,8 +161,8 @@ class LineGroup(JSONWizard):
     NaptanIdReference: str = None
     StationAtcoCode: str = None
     LineIdentifier: list[str] = field(default_factory=list)
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-7'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-7', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -183,8 +183,8 @@ class LineModeGroup(JSONWizard):
     """
     ModeName: str = None
     LineIdentifier: list[str] = field(default_factory=list)
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-8'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-8', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -208,8 +208,8 @@ class AdditionalProperties(JSONWizard):
     SourceSystemKey: str = None
     Value: str = None
     Modified: datetime = None
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-9'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-9', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -238,8 +238,8 @@ class Place(JSONWizard):
     ChildrenUrls: list[str] = field(default_factory=list)
     Lat: float = None
     Lon: float = None
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-10'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-10', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -285,8 +285,8 @@ class StopPoint(JSONWizard):
     ChildrenUrls: list[str] = field(default_factory=list)
     Lat: float = None
     Lon: float = None
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-11'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-11', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -307,8 +307,8 @@ class LineServiceTypeInfo(JSONWizard):
     """
     Name: str = None
     Uri: str = None
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-12'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-12', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -329,8 +329,8 @@ class LineSpecificServiceType(JSONWizard):
     """
     ServiceType: LineServiceTypeInfo = None
     StopServesServiceType: bool = None
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-13'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-13', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -351,8 +351,8 @@ class LineServiceType(JSONWizard):
     """
     LineName: str = None
     LineSpecificServiceTypes: list[LineSpecificServiceType] = field(default_factory=list)
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-14'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-14', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -377,8 +377,8 @@ class PredictionTiming(JSONWizard):
     Read: datetime = None
     Sent: datetime = None
     Received: datetime = None
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-15'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-15', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -417,8 +417,8 @@ class Prediction(JSONWizard):
     TimeToLive: datetime = None
     ModeName: str = None
     Timing: PredictionTiming = None
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-16'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-16', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -451,8 +451,8 @@ class ArrivalDeparture(JSONWizard):
     Cause: str = None
     DepartureStatus: str = None
     Timing: PredictionTiming = None
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-17'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-17', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -483,8 +483,8 @@ class StopPointRouteSection(JSONWizard):
     ServiceType: str = None
     VehicleDestinationText: str = None
     DestinationName: str = None
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-18'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-18', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -513,8 +513,8 @@ class DisruptedPoint(JSONWizard):
     StationAtcoCode: str = None
     Appearance: str = None
     AdditionalInformation: str = None
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-19'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-19', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -538,8 +538,8 @@ class StopPointsResponse(JSONWizard):
     PageSize: int = None
     Total: int = None
     Page: int = None
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-20'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-20', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -563,8 +563,8 @@ class SearchMatch(JSONWizard):
     Name: str = None
     Lat: float = None
     Lon: float = None
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-21'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-21', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -591,8 +591,8 @@ class SearchResponse(JSONWizard):
     Total: int = None
     Matches: list[SearchMatch] = field(default_factory=list)
     MaxScore: float = None
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Tfl-22'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Tfl-22', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -611,8 +611,8 @@ class Object(JSONWizard):
     """
     Autogenerated from StopPoint::System.Object
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'System'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='System', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -631,8 +631,8 @@ class Get200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from StopPoint::Get200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Get200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Get200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -651,8 +651,8 @@ class MetaCategoriesGet200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from StopPoint::MetaCategoriesGet200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'MetaCategoriesGet200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='MetaCategoriesGet200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -671,8 +671,8 @@ class MetaStopTypes(JSONWizard):
     """
     Autogenerated from StopPoint::MetaStopTypesGet200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'MetaStopTypesGet200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='MetaStopTypesGet200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -691,8 +691,8 @@ class MetaModesGet200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from StopPoint::MetaModesGet200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'MetaModesGet200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='MetaModesGet200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -711,8 +711,8 @@ class idsGet200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from StopPoint::ids-Get200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'ids-Get200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='ids-Get200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -731,8 +731,8 @@ class idPlaceTypesGet200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from StopPoint::id-PlaceTypesGet200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'id-PlaceTypesGet200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='id-PlaceTypesGet200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -751,8 +751,8 @@ class idCrowdinglineGet200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from StopPoint::id-Crowding-line-Get200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'id-Crowding-line-Get200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='id-Crowding-line-Get200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -771,8 +771,8 @@ class TypetypesGet200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from StopPoint::Type-types-Get200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Type-types-Get200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Type-types-Get200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -791,8 +791,8 @@ class TypetypesPagepageGet200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from StopPoint::Type-types-Page-page-Get200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Type-types-Page-page-Get200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Type-types-Page-page-Get200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -811,8 +811,8 @@ class ServiceTypesGet200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from StopPoint::ServiceTypesGet200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'ServiceTypesGet200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='ServiceTypesGet200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -831,8 +831,8 @@ class idArrivalsGet200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from StopPoint::id-ArrivalsGet200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'id-ArrivalsGet200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='id-ArrivalsGet200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -851,8 +851,8 @@ class idArrivalDeparturesGet200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from StopPoint::id-ArrivalDeparturesGet200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'id-ArrivalDeparturesGet200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='id-ArrivalDeparturesGet200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -871,8 +871,8 @@ class idCanReachOnLinelineIdGet200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from StopPoint::id-CanReachOnLine-lineId-Get200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'id-CanReachOnLine-lineId-Get200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='id-CanReachOnLine-lineId-Get200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -891,8 +891,8 @@ class idRouteGet200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from StopPoint::id-RouteGet200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'id-RouteGet200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='id-RouteGet200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -911,8 +911,8 @@ class ModemodesDisruptionGet200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from StopPoint::Mode-modes-DisruptionGet200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'Mode-modes-DisruptionGet200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='Mode-modes-DisruptionGet200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -931,8 +931,8 @@ class idsDisruptionGet200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from StopPoint::ids-DisruptionGet200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'ids-DisruptionGet200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='ids-DisruptionGet200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -951,8 +951,8 @@ class idDirectionTotoStopPointIdGet200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from StopPoint::id-DirectionTo-toStopPointId-Get200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'id-DirectionTo-toStopPointId-Get200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='id-DirectionTo-toStopPointId-Get200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -971,8 +971,8 @@ class stopPointIdTaxiRanksGet200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from StopPoint::stopPointId-TaxiRanksGet200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'stopPointId-TaxiRanksGet200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='stopPointId-TaxiRanksGet200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
@@ -991,8 +991,8 @@ class stopPointIdCarParksGet200ApplicationJsonResponse(JSONWizard):
     """
     Autogenerated from StopPoint::stopPointId-CarParksGet200ApplicationJsonResponse
     """
-    _source_schema_name: str = 'StopPoint'
-    _component_schema_name: str = 'stopPointId-CarParksGet200ApplicationJsonResponse'
+    _source_schema_name: str = field(default='StopPoint', repr=False)
+    _component_schema_name: str = field(default='stopPointId-CarParksGet200ApplicationJsonResponse', repr=False)
     
     @classmethod
     def from_dict(cls, o):
