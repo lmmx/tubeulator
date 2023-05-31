@@ -375,7 +375,7 @@ class Request:
     Gets the available sorting options.
 
     STOP_POINT
-    =========
+    ==========
 
     WITHIN_RADIUS = "/"
     Gets a list of StopPoints within {radius} by the specified criteria
