@@ -475,7 +475,9 @@ class Request:
             result = self.send(*args, **kwargs)
         except httpx.HTTPError as exc:
             resp = exc.response
-            raise RequestError(response=resp, path=self.path, *args, **kwargs) from None
+            raise RequestError(
+                response=resp, path=self.path, _args=args, _kwargs=kwargs
+            ) from None
         parsed = self.parse(result)
         return parsed
 
