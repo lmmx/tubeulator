@@ -8,6 +8,7 @@ import httpx
 
 from ..codegen import load_test
 from ..db.store_creds import check_creds
+from ..exc import RequestError
 from ..utils.paths import (
     RefPath,
     SchemaPath,
@@ -470,7 +471,11 @@ class Request:
     path: Path
 
     def __call__(self, *args, **kwargs):
-        result = self.send(*args, **kwargs)
+        try:
+            result = self.send(*args, **kwargs)
+        except httpx.HTTPError as exc:
+            resp = exc.response
+            raise RequestError(response=resp, path=self.path, *args, **kwargs) from None
         parsed = self.parse(result)
         return parsed
 
