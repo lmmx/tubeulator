@@ -26,7 +26,7 @@ class Reference:
 
     @property
     def path(self) -> tuple[str, ...]:
-        return tuple([*(["items"] if self.is_array else []), "$ref"])
+        return (*(["items"] if self.is_array else []), "$ref")
 
     @property
     def substituted_ref(self) -> str:

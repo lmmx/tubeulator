@@ -188,7 +188,7 @@ def generate_dataclass(
             chase_prefixes = [
                 p[: -len(aj_suffix)] for p in chased if p.endswith(aj_suffix)
             ]
-            old_chase_prefix = "_or_".join(chase_prefixes)  # Hotfix
+            # old_chase_prefix = "_or_".join(chase_prefixes)  # Hotfix
             if len(chase_prefixes) > 1:
                 chase_prefix = chase_prefixes[response_shortlist.index(name)]
             else:

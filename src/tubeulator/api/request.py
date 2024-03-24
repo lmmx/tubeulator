@@ -19,7 +19,7 @@ from .endpoint.names import EndpointNames
 from .endpoint.routes.types import AnyEndpointRouteEnum
 
 
-__all__ = ["tfl_request"]
+__all__ = ["TflApiPath", "Path", "Request", "GET"]
 
 
 class TflApiPath:
@@ -515,7 +515,7 @@ class Request:
                 # Take a 2nd order reference
                 ref_type = SchemaPath(response_component_schema)
                 ref_name = ref_type.ref.name
-            except:
+            except Exception:
                 # Not a 2nd order reference
                 ref_name = response_refpath.name
             marshals = getattr(load_test, self.ep_name(dehyphenate=True)).Deserialisers

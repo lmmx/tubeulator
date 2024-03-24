@@ -33,13 +33,14 @@ class AliasedApiSchema(ApiSchema):
     @property
     def is_resolved(self) -> bool:
         """If there is no alias in the schema with empty entity list (i.e. unresolved)."""
-        return all(
-            {
-                name: entities
-                for name, entities in self.alias2ents.items()
-                # if not self.is_skipped_name(name=name)
-            }.values(),
-        )
+        return all(self.alias2ents.values())
+        # return all(
+        #     {
+        #         name: entities
+        #         for name, entities in self.alias2ents.items()
+        #         if not self.is_skipped_name(name=name)
+        #     }.values(),
+        # )
 
     def match_entities(self) -> None:
         """First pass, get the exact matches. Iterate over the aliases (the entity names in
@@ -119,7 +120,7 @@ class AliasedApiSchema(ApiSchema):
             if properties := schema_component.get("properties"):
                 # assert self.property_refs[entity_alias] == [], "Expected fresh list"
                 # IMPORTANT: listcomp is used here so list is fixed at this point
-                skip_refs = [ref for ref in self.property_refs[entity_alias]]
+                skip_refs = list(self.property_refs[entity_alias])
                 """Skip any properties whose references have been resolved already"""
                 # Either a top-level $ref or as the items in an array.
                 # (Valid) arrays have items with a specified $ref

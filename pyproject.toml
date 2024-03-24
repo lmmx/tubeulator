@@ -69,7 +69,7 @@ ignore = [
 ignore-init-module-imports = true
 select = [
     "C",
-    "D",
+    # "D",
     "E",
     "F",
     "I",
