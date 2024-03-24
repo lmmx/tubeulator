@@ -1,4 +1,4 @@
-r""":mod:`tubeulator` is an interface to TfL open data."""
+"""`tubeulator` is an interface to TfL open data."""
 
 # from .journey import Journey
 
