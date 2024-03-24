@@ -9,6 +9,7 @@ from ...utils.lcp_trie import Trie
 from ...utils.paths import SchemaPath, load_endpoint_component_schemas
 from .jsonschema import python_type
 
+
 __all__ = [
     "import_node",
     "find_backrefs",
