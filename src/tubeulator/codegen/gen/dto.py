@@ -1,56 +1,26 @@
 import ast
-import logging
 import textwrap
 from itertools import starmap
-from textwrap import indent
 
 from dataclass_wizard.utils.string_conv import to_pascal_case
 
 from ...openapi.scan import scan_namespace
 from ...utils.lcp_trie import Trie
 from ...utils.paths import SchemaPath, load_endpoint_component_schemas
+from .jsonschema import python_type
 
-__all__ = ["generate_dataclass_name", "logger", "generate_dataclass"]
-
-logger = logging.getLogger(__name__)
-
-
-class CustomFormatter(logging.Formatter):
-    def formatException(self, exc_info):
-        result = super().formatException(exc_info)
-        return indent(
-            f"\n{result}\n",
-            prefix=" " * 8,
-        )
-
-
-formatter = CustomFormatter("[%(levelname)s] - %(message)s")
-
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.INFO)
-console_handler.setFormatter(formatter)
-
-logger.addHandler(console_handler)
-
-
-def python_type(json_type: str, format: str = None) -> str:
-    """Map property types in the JSON schema to Python types for type annotation.
-    The `format` can be "email" if it's a string but it doesn't change the result.
-    """
-    type_lookup = {
-        "string": "str",
-        "integer": "int",
-        "boolean": "bool",
-        "array": "list",
-        "object": "dict",
-    }
-    if json_type == "number" and format == "double":
-        python_type = "float"
-    elif json_type == "string" and format == "date-time":
-        python_type = "datetime"
-    else:
-        python_type = type_lookup[json_type]
-    return python_type
+__all__ = [
+    "import_node",
+    "find_backrefs",
+    "find_string_literals",
+    "find_array_literals",
+    "find_chased",
+    "find_arrays",
+    "generate_dataclass_name",
+    "generate_dataclass",
+    "hidden_field",
+    "generate_source",
+]
 
 
 def import_node(module: str, names: list[str]) -> ast.Import:

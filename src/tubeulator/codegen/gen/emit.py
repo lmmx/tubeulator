@@ -1,14 +1,14 @@
+"""Emit DTO code generated for TfL APIs (detected from their loaded Swagger schemas)."""
 from ...openapi.scan import scan_namespace
-from ...utils.paths import (
-    load_endpoint_component_schemas,
-    to_enum_friendly_str,
-)
-from .main import generate_dataclass_name, logger, generate_dataclass
+from ...utils.paths import load_endpoint_component_schemas, to_enum_friendly_str
+from .dto import generate_dataclass, generate_dataclass_name
+from .helpers import logger
 
 __all__ = ["emit_deserialisers"]
 
 
 def emit_deserialisers(schema_name: str) -> str:
+    """Generate the source code for a module with DTOs for an entire TfL schema."""
     component_schemas = load_endpoint_component_schemas(schema_name)
     ns = scan_namespace(ignore_responses=True)
     output = []
