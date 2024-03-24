@@ -9,6 +9,7 @@ from ..reference import AliasToRefs, Reference, dealias_schema
 from .base import ApiSchema
 from .unified import single_unified_api_schema
 
+
 __all__ = ["AliasedApiSchema"]
 
 logger = logging.getLogger(__name__)
@@ -16,9 +17,7 @@ logger.setLevel(logging.INFO)
 
 
 class AliasedApiSchema(ApiSchema):
-    """
-    A non-unified API schema.
-    """
+    """A non-unified API schema."""
 
     unified: bool = False
 
@@ -33,20 +32,18 @@ class AliasedApiSchema(ApiSchema):
 
     @property
     def is_resolved(self) -> bool:
-        """
-        If there is no alias in the schema with empty entity list (i.e. unresolved).
-        """
-        return all(
-            {
-                name: entities
-                for name, entities in self.alias2ents.items()
-                # if not self.is_skipped_name(name=name)
-            }.values()
-        )
+        """If there is no alias in the schema with empty entity list (i.e. unresolved)."""
+        return all(self.alias2ents.values())
+        # return all(
+        #     {
+        #         name: entities
+        #         for name, entities in self.alias2ents.items()
+        #         if not self.is_skipped_name(name=name)
+        #     }.values(),
+        # )
 
     def match_entities(self) -> None:
-        """
-        First pass, get the exact matches. Iterate over the aliases (the entity names in
+        """First pass, get the exact matches. Iterate over the aliases (the entity names in
         the API schema "broken out" from the unified schema) and where the schema
         component is an exact match for one in the unified schema, store the entity name
         (or names: there is no guarantee only a single entity will match the alias).
@@ -68,10 +65,11 @@ class AliasedApiSchema(ApiSchema):
             entity_list.append(entity)
 
     def match_entities_with_modification(
-        self, alias: ApiEntityAlias, property_refs: list[Reference]
+        self,
+        alias: ApiEntityAlias,
+        property_refs: list[Reference],
     ) -> None:
-        """
-        Second pass, get the exact matches after substituting a reference.  Iterate over
+        """Second pass, get the exact matches after substituting a reference.  Iterate over
         the aliases (the entity names in the API schema "broken out" from the unified
         schema) and where the schema component is an exact match for one in the unified
         schema, store the entity name (or names: there is no guarantee only a single
@@ -80,16 +78,15 @@ class AliasedApiSchema(ApiSchema):
         schema_component = self.entity_schemas[alias]
         # Modify the schema dict by replacing the reference (in a copy not the original)
         mod_schema_component = dealias_schema(
-            refs=property_refs, component=schema_component
+            refs=property_refs,
+            component=schema_component,
         )
         for entity, unif_schema in self.unified_schema.entity_schemas.items():
             if mod_schema_component == unif_schema:
                 self.resolve_alias(alias=alias, entity=entity)
 
     def chase_entity_references(self) -> None:
-        """
-        Run the entity dealiasing/cross-reference in a loop until no more are resolved.
-        """
+        """Run the entity dealiasing/cross-reference in a loop until no more are resolved."""
         iteration_count = 0
         while any((resolution_counts := self.resolve_entity_references()).values()):
             iteration_count += 1
@@ -98,7 +95,8 @@ class AliasedApiSchema(ApiSchema):
             for alias, refs in self.resolved_property_refs.items():
                 if refs:
                     self.match_entities_with_modification(
-                        alias=alias, property_refs=refs
+                        alias=alias,
+                        property_refs=refs,
                     )
             # Keep the running tally of resolved references for each alias up to date
             for alias in self.resolution_counts:
@@ -107,12 +105,11 @@ class AliasedApiSchema(ApiSchema):
             logger.info(
                 f"-----RESOLUTION COMPLETE FOR {self.name}: "
                 f" ROUNDS: {iteration_count}, "
-                f" REFERENTIAL: {self.any_referential_properties}----------"
+                f" REFERENTIAL: {self.any_referential_properties}----------",
             )
 
     def resolve_entity_references(self) -> dict[ApiEntityAlias, int]:
-        """
-        Second pass, resolve the referential matches with substitution of known values.
+        """Second pass, resolve the referential matches with substitution of known values.
         Again iterate over the aliases, but now try to find where the schema component
         can be substituted if the reference is 'completable' to consequently make an
         exact match for one of the schema components in the unified schema. As for the
@@ -123,7 +120,7 @@ class AliasedApiSchema(ApiSchema):
             if properties := schema_component.get("properties"):
                 # assert self.property_refs[entity_alias] == [], "Expected fresh list"
                 # IMPORTANT: listcomp is used here so list is fixed at this point
-                skip_refs = [ref for ref in self.property_refs[entity_alias]]
+                skip_refs = list(self.property_refs[entity_alias])
                 """Skip any properties whose references have been resolved already"""
                 # Either a top-level $ref or as the items in an array.
                 # (Valid) arrays have items with a specified $ref
@@ -162,12 +159,11 @@ class AliasedApiSchema(ApiSchema):
                 for property_ref in property_refs
             ]
             print(
-                f"Completable: {completability.count(True)}, incomplete: {completability.count(False)}"
+                f"Completable: {completability.count(True)}, incomplete: {completability.count(False)}",
             )
 
     def resolve_refs(self, alias: str, skip: list[Reference]) -> int:
-        """
-        Resolve any 'completable' references, and return the number that were resolved,
+        """Resolve any 'completable' references, and return the number that were resolved,
         making it possible to ``while`` loop over this method to resolve all references.
         """
         resolved_property_refs = []
@@ -183,16 +179,13 @@ class AliasedApiSchema(ApiSchema):
         return len(resolved_property_refs)
 
     def pprint_api_inventory(self, nonreferential_ok: bool = False) -> None:
-        """
-        Print the API inventory and a newline if any referential properties printed.
-        """
+        """Print the API inventory and a newline if any referential properties printed."""
         if self.any_referential_properties or nonreferential_ok:
             pprint({k: v for k, v in self.alias2ents.items() if "Response" not in k})
             print()
 
     def dealias_property_reference(self, ref: Reference) -> Reference:
-        """
-        Substitute the aliased entity, which has the format
+        """Substitute the aliased entity, which has the format
         ``"#/components/schemas/{ref.alias}"``, with the proper entity name from the
         unified API, which must be 'completable' i.e. exist in the ``self.alias2ents``
         dictionary.
@@ -215,8 +208,7 @@ class AliasedApiSchema(ApiSchema):
         return dealiased_ref
 
     def property_match(self) -> None:
-        """
-        After the reference-based alias-to-entity resolution, resolve remaining aliases
+        """After the reference-based alias-to-entity resolution, resolve remaining aliases
         by matching the properties of each alias to those of unified API definitions.
 
         Can match via total number of properties/property names/property descriptions.
@@ -233,7 +225,7 @@ class AliasedApiSchema(ApiSchema):
             if len(candidates) > 1:
                 if property_count > 0:
                     properties_to_match = list(
-                        self.entity_schemas[entity_alias]["properties"]
+                        self.entity_schemas[entity_alias]["properties"],
                     )
                     property_lookup = {
                         entity: self.unified_schema.entity_schemas[entity]["properties"]
@@ -253,8 +245,7 @@ class AliasedApiSchema(ApiSchema):
                 self.resolve_alias(alias=entity_alias, entity=entity_name)
 
     def prepare_inventories(self) -> None:
-        """
-        Set the ``unified_schema`` as the unified API schema.
+        """Set the ``unified_schema`` as the unified API schema.
 
         Set up empty inventories keyed by the source entity alias:
         - to lists of the 'proper' entity names in the unified schema
@@ -278,8 +269,7 @@ class AliasedApiSchema(ApiSchema):
 
     @property
     def any_referential_properties(self) -> bool:
-        """
-        If any of the API schema component properties included a reference to another
+        """If any of the API schema component properties included a reference to another
         entity, then the values of the ``property_refs`` dict will be non-empty.
         """
         return any(v for v in self.property_refs.values())

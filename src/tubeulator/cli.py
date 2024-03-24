@@ -1,4 +1,3 @@
-from pathlib import Path
 from pprint import pprint
 
 import defopt
@@ -9,17 +8,14 @@ from .openapi.scan import count_namespace, scan_namespace
 
 
 def deserialise(schema_name: str) -> None:
-    """
-    Map each API schema to a corresponding dataclass which deserialises its JSON.
-    """
+    """Map each API schema to a corresponding dataclass which deserialises its JSON."""
     deserialised = emit_deserialisers(schema_name=schema_name)
     print(deserialised)
     return
 
 
 def populate() -> None:
-    """
-    Map all API schemas to corresponding dataclasses that deserialise their JSON.
+    """Map all API schemas to corresponding dataclasses that deserialise their JSON.
     Write all generated Python to module files in the `tubeulator.generated` directory.
     """
     generate_schema_coverage()
@@ -27,27 +23,21 @@ def populate() -> None:
 
 
 def list_schemas() -> None:
-    """
-    Print each schema name on a line (for processing in scripts etc over STDIN).
-    """
+    """Print each schema name on a line (for processing in scripts etc over STDIN)."""
     for schema in sorted(count_namespace(ignore_responses=True), key=str.lower):
         print(schema)
     return
 
 
 def namespace() -> None:
-    """
-    Make a namespace inventory
-    """
+    """Make a namespace inventory"""
     ns = scan_namespace(ignore_responses=True)
     pprint(ns)
     return
 
 
 def ns_count() -> None:
-    """
-    Count empty/non-empty in namespace inventory
-    """
+    """Count empty/non-empty in namespace inventory"""
     ns = count_namespace(ignore_responses=True)
     pprint(ns)
     return

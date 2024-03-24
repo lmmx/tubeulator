@@ -3,6 +3,7 @@ from .endpoint.routes import EndpointRoute
 from .endpoint.routes.types import AnyEndpointRouteEnum
 from .request import Path, Request
 
+
 __all__ = ["EndpointInfo", "AllEndpointInterface", "fetch"]
 
 

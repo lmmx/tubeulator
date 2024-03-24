@@ -2,12 +2,12 @@ from __future__ import annotations
 
 import logging
 
+
 __all__ = ["set_up_logging"]
 
 
 def set_up_logging(name: str, quiet: bool = True):
-    """
-    Initialise the log
+    """Initialise the log
 
     Args:
       name  : To be set as ``__name__`` from the calling module

@@ -6,6 +6,7 @@ from pathlib import Path
 
 from .. import __path__
 
+
 __all__ = [
     "pkg_path",
     "db_path",
@@ -29,8 +30,7 @@ openapi_unified_path = data_path / "openapi_unified"
 
 
 def find_schema(schema_dir: Path, match: str = "*", levels: int = 0) -> Path:
-    """
-    Get the next schema after traversing the given number of levels (default: no levels,
+    """Get the next schema after traversing the given number of levels (default: no levels,
     i.e. directly in the given directory). The schema must have a ``.json`` suffix.
     """
     try:
@@ -48,18 +48,14 @@ def find_schema_by_name(schema_name: str) -> Path:
 
 @cache
 def load_endpoint_schema(schema_name: str):
-    """
-    Load an entire JSON schema for an API endpoint by its name, e.g. "Line" or "Mode".
-    """
+    """Load an entire JSON schema for an API endpoint by its name, e.g. "Line" or "Mode"."""
     endpoint_schema = json.loads(Path(find_schema_by_name(schema_name)).read_text())
     return endpoint_schema
 
 
 @cache
 def load_endpoint_component_schemas(schema_name: str) -> dict[str, dict]:
-    """
-    Load all component schemas of a JSON schema for an API endpoint by endpoint name.
-    """
+    """Load all component schemas of a JSON schema for an API endpoint by endpoint name."""
     endpoint_schema = load_endpoint_schema(schema_name)
     component_schemas = endpoint_schema["components"].get("schemas", {})
     return component_schemas

@@ -4,6 +4,7 @@ from dataclasses import dataclass, field
 
 from .utils.logs import set_up_logging
 
+
 __all__ = ["Journey", "Place", "Destination", "Departure"]
 
 logger = set_up_logging(name=__name__)

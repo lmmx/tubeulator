@@ -1,9 +1,7 @@
 import ast
-import json
 import logging
 import textwrap
 from itertools import starmap
-from pathlib import Path
 from textwrap import indent
 
 from dataclass_wizard.utils.string_conv import to_pascal_case
@@ -12,10 +10,10 @@ from ..openapi.scan import scan_namespace
 from ..utils.lcp_trie import Trie
 from ..utils.paths import (
     SchemaPath,
-    find_schema_by_name,
     load_endpoint_component_schemas,
     to_enum_friendly_str,
 )
+
 
 __all__ = ["emit_deserialisers"]
 
@@ -41,8 +39,7 @@ logger.addHandler(console_handler)
 
 
 def python_type(json_type: str, format: str = None) -> str:
-    """
-    Map property types in the JSON schema to Python types for type annotation.
+    """Map property types in the JSON schema to Python types for type annotation.
     The `format` can be "email" if it's a string but it doesn't change the result.
     """
     type_lookup = {
@@ -69,9 +66,7 @@ def import_node(module: str, names: list[str]) -> ast.Import:
 
 
 def find_backrefs(monoschema: dict) -> dict[str, SchemaPath]:
-    """
-    Map names of all schemas in the lookup to their referent (i.e. their array type)
-    """
+    """Map names of all schemas in the lookup to their referent (i.e. their array type)"""
     return {
         k: SchemaPath(v)
         for k, v in monoschema.items()
@@ -81,16 +76,12 @@ def find_backrefs(monoschema: dict) -> dict[str, SchemaPath]:
 
 
 def find_string_literals(monoschema: dict) -> dict[str, str]:
-    """
-    Map names of all schemas in the lookup with a common literal string.
-    """
+    """Map names of all schemas in the lookup with a common literal string."""
     return {k: v["type"] for k, v in monoschema.items() if v.get("type") == "string"}
 
 
 def find_array_literals(monoschema: dict) -> dict[str, SchemaPath]:
-    """
-    Map names of all schemas in the lookup with a common literal array.
-    """
+    """Map names of all schemas in the lookup with a common literal array."""
     return {
         k: v["items"]["type"]
         for k, v in monoschema.items()
@@ -107,9 +98,7 @@ def find_chased(backrefs: dict[str, SchemaPath], name: str, ref_name: str) -> li
 
 
 def find_arrays(chased: list[str]) -> list[str]:
-    """
-    Can't simply choose the one(s) ending in 'Array': in Mode it ends in "Array-4"
-    """
+    """Can't simply choose the one(s) ending in 'Array': in Mode it ends in "Array-4" """
     t = Trie()
     for c in chased:
         t.insert(c)
@@ -162,8 +151,7 @@ def generate_dataclass(
     schema_mapping: dict[str, str] | None = None,
     name_only: bool = False,
 ) -> tuple[str, str] | tuple[None, None]:
-    """
-    Generate a dataclass from a schema, importing the `field` function if there are any
+    """Generate a dataclass from a schema, importing the `field` function if there are any
     array properties requiring it. Use the `idx` to indicate if we're generating
     multiple dataclasses in a loop. (TODO: replace with `schema: dict or list[dict]`).
 
@@ -200,7 +188,7 @@ def generate_dataclass(
             chase_prefixes = [
                 p[: -len(aj_suffix)] for p in chased if p.endswith(aj_suffix)
             ]
-            old_chase_prefix = "_or_".join(chase_prefixes)  # Hotfix
+            # old_chase_prefix = "_or_".join(chase_prefixes)  # Hotfix
             if len(chase_prefixes) > 1:
                 chase_prefix = chase_prefixes[response_shortlist.index(name)]
             else:
@@ -243,7 +231,7 @@ def generate_dataclass(
             class_name = f"{shortname}"
             gen_source = name
         else:
-            if name in schema_strings and not name in schema_string_shortlist:
+            if name in schema_strings and name not in schema_string_shortlist:
                 return None, None
             # Essentially 'Unknown' f"UNK_{name}"
             class_name = f"{name}"
@@ -346,14 +334,14 @@ def generate_source(
         dc_source += f"    {to_pascal_case(prop_name)}: {prop_type}{default}\n"
     dc_source += f"    _source_schema_name: str = {hidden_field(schema_name)}\n"
     dc_source += f"    _component_schema_name: str = {hidden_field(component_name)}\n"
-    dc_source += """    
+    dc_source += """
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True"""
@@ -425,7 +413,7 @@ def emit_deserialisers(schema_name: str) -> str:
             [
                 f"    {to_enum_friendly_str(component_name)} = {cls_name}"
                 for component_name, cls_name in schema_mapping.items()
-            ]
+            ],
         )
         deserialiser_code += schema_mapping_source
     return deserialiser_code

@@ -1,5 +1,4 @@
-"""
-Functions for the Line API endpoints
+"""Functions for the Line API endpoints
 """
 from __future__ import annotations
 
@@ -8,6 +7,7 @@ from dataclasses import dataclass
 from dataclass_wizard import JSONWizard
 
 from .request import tfl_request
+
 
 __all__ = ["line_data"]
 

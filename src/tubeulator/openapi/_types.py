@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+
 __all__ = [
     "ApiName",
     "ApiEntityAlias",
@@ -16,16 +17,13 @@ The name of an API (which is also the stem of the API schema file itself).
 
 
 class ApiEntityAlias(str):
-    """
-    An API entity (typically an alias of the form "Tfl", "Tfl-1", "Tfl-2", etc.) from a
+    """An API entity (typically an alias of the form "Tfl", "Tfl-1", "Tfl-2", etc.) from a
     non-unified API.
     """
 
 
 class UnifiedApiEntity(str):
-    """
-    An API entity from the unified API
-    """
+    """An API entity from the unified API"""
 
 
 ApiAliasToUnifiedEntities = dict[ApiEntityAlias, list[UnifiedApiEntity]]

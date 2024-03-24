@@ -1,12 +1,11 @@
 from enum import Enum
 
+
 __all__ = ["EndpointNames"]
 
 
 class EndpointNames(Enum):
-    """
-    Standardised enum of names used in JSON schema filenames for each endpoint.
-    """
+    """Standardised enum of names used in JSON schema filenames for each endpoint."""
 
     ACCIDENT_STATS = "AccidentStats"
     AIR_QUALITY = "AirQuality"

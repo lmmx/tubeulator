@@ -7,13 +7,13 @@ from ..utils.paths import find_schema, openapi_schemas_path
 from ._types import ApiAliasToUnifiedEntities, NamespaceInventory
 from .schema.aliased import AliasedApiSchema
 
+
 __all__ = ["api_schema_inventory", "scan_namespace"]
 
 
 # TODO: duplication here suggests need for an API schema class (from JSON to entities)
 def api_schema_inventory(api_schema: Path) -> ApiAliasToUnifiedEntities:
-    """
-    Make a mapping of all aliases (the arbitrarily named entities) to their (properly
+    """Make a mapping of all aliases (the arbitrarily named entities) to their (properly
     named) unified entity names.
     """
     aliased_api_schema = AliasedApiSchema(path=api_schema, unified=False)
