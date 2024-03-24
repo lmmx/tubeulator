@@ -1,5 +1,5 @@
 """Give access to the DTO emission function."""
-from .main import emit_deserialisers
+from .emit import emit_deserialisers
 
 
 __all__ = ["emit_deserialisers"]
