@@ -1,7 +1,6 @@
 from enum import Enum
 from typing import TypeVar
 
-
 __all__ = ["RouteEnum", "AnyEndpointRouteEnum"]
 
 

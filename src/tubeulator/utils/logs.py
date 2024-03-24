@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import logging
 
-
 __all__ = ["set_up_logging"]
 
 

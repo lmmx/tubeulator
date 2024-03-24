@@ -3,7 +3,6 @@ https://ychai.uk/notes/2019/03/03/Programming/Tricks-of-Python/
 """
 from __future__ import annotations
 
-
 __all__ = ["TrieNode", "Trie"]
 
 

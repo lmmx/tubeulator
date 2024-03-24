@@ -15,7 +15,6 @@ from .resolution import (
     find_string_literals,
 )
 
-
 __all__ = [
     "import_node",
     "generate_dataclass_name",

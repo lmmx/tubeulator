@@ -2,7 +2,6 @@
 from ...utils.lcp_trie import Trie
 from ...utils.paths import SchemaPath
 
-
 __all__ = [
     "find_backrefs",
     "find_string_literals",

@@ -6,7 +6,6 @@ from pathlib import Path
 
 from .. import __path__
 
-
 __all__ = [
     "pkg_path",
     "db_path",

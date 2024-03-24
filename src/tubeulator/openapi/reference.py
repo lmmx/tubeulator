@@ -7,7 +7,6 @@ from pathlib import Path
 
 from ._types import ApiAliasToUnifiedEntities, ApiEntityAlias, EntityURI
 
-
 __all__ = [
     "Reference",
     "AliasToRefs",

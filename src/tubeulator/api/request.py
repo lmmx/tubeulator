@@ -18,7 +18,6 @@ from ..utils.paths import (
 from .endpoint.names import EndpointNames
 from .endpoint.routes.types import AnyEndpointRouteEnum
 
-
 __all__ = ["TflApiPath", "Path", "Request", "GET"]
 
 

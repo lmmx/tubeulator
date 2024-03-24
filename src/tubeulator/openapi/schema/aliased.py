@@ -9,7 +9,6 @@ from ..reference import AliasToRefs, Reference, dealias_schema
 from .base import ApiSchema
 from .unified import single_unified_api_schema
 
-
 __all__ = ["AliasedApiSchema"]
 
 logger = logging.getLogger(__name__)

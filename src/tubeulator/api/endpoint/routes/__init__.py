@@ -15,7 +15,6 @@ from .search import SearchEndpointRoutes
 from .stop import StopPointEndpointRoutes
 from .vehicle import VehicleEndpointRoutes
 
-
 __all__ = ["EndpointRoute"]
 
 

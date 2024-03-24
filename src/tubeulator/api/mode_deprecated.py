@@ -6,7 +6,6 @@ from dataclass_wizard import JSONWizard
 
 from .request import tfl_request
 
-
 __all__ = ["mode_data"]
 
 
