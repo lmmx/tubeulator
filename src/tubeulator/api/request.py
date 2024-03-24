@@ -523,8 +523,10 @@ class Request:
                     load_test,
                     self.ep_name(dehyphenate=True),
                 ).Deserialisers
-            except:
-                pass
+            except Exception as exc:
+                hint = "(did the import from `generated` get removed by a linter?)"
+                fail_msg = f"The API endpoint wasn't attached to `load_test` ({hint})"
+                raise RuntimeError(f"{fail_msg} -- {exc}")
             dto = marshals.select_component(ref_name).value
             try:
                 parsed = dto.from_json(response.content)
