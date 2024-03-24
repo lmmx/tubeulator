@@ -15,14 +15,14 @@ class ActiveServiceTypeArray(JSONWizard):
     """
     _source_schema_name: str = field(default='Mode', repr=False)
     _component_schema_name: str = field(default='Tfl-Api-Presentation-Entities-ActiveServiceTypeArray', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -37,14 +37,14 @@ class ActiveServiceType(JSONWizard):
     ServiceType: str = None
     _source_schema_name: str = field(default='Mode', repr=False)
     _component_schema_name: str = field(default='Tfl.Api.Presentation.Entities.ActiveServiceType', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -57,14 +57,14 @@ class PredictionArray(JSONWizard):
     """
     _source_schema_name: str = field(default='Mode', repr=False)
     _component_schema_name: str = field(default='Tfl-Api-Presentation-Entities-PredictionArray-4', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -97,14 +97,14 @@ class Prediction(JSONWizard):
     Timing: PredictionTiming = None
     _source_schema_name: str = field(default='Mode', repr=False)
     _component_schema_name: str = field(default='Tfl.Api.Presentation.Entities.Prediction', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -123,14 +123,14 @@ class PredictionTiming(JSONWizard):
     Received: datetime = None
     _source_schema_name: str = field(default='Mode', repr=False)
     _component_schema_name: str = field(default='Tfl.Api.Presentation.Entities.PredictionTiming', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True

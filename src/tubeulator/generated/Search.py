@@ -20,14 +20,14 @@ class SearchMatch(JSONWizard):
     Lon: float = None
     _source_schema_name: str = field(default='Search', repr=False)
     _component_schema_name: str = field(default='Tfl', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -48,14 +48,14 @@ class SearchResponse(JSONWizard):
     MaxScore: float = None
     _source_schema_name: str = field(default='Search', repr=False)
     _component_schema_name: str = field(default='Tfl-2', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -68,14 +68,14 @@ class MetaSearchProviders(JSONWizard):
     """
     _source_schema_name: str = field(default='Search', repr=False)
     _component_schema_name: str = field(default='MetaSearchProvidersGet200ApplicationJsonResponse', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -88,14 +88,14 @@ class MetaCategories(JSONWizard):
     """
     _source_schema_name: str = field(default='Search', repr=False)
     _component_schema_name: str = field(default='MetaCategoriesGet200ApplicationJsonResponse', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -108,14 +108,14 @@ class MetaSorts(JSONWizard):
     """
     _source_schema_name: str = field(default='Search', repr=False)
     _component_schema_name: str = field(default='MetaSortsGet200ApplicationJsonResponse', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True

@@ -25,14 +25,14 @@ class RoadCorridor(JSONWizard):
     Url: str = None
     _source_schema_name: str = field(default='Road', repr=False)
     _component_schema_name: str = field(default='Tfl', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -48,14 +48,14 @@ class DbGeographyWellKnownValue(JSONWizard):
     WellKnownBinary: str = None
     _source_schema_name: str = field(default='Road', repr=False)
     _component_schema_name: str = field(default='System', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -69,14 +69,14 @@ class DbGeography(JSONWizard):
     Geography: DbGeographyWellKnownValue = None
     _source_schema_name: str = field(default='Road', repr=False)
     _component_schema_name: str = field(default='System-2', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -93,14 +93,14 @@ class StreetSegment(JSONWizard):
     SourceSystemKey: str = None
     _source_schema_name: str = field(default='Road', repr=False)
     _component_schema_name: str = field(default='Tfl-2', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -119,14 +119,14 @@ class Street(JSONWizard):
     SourceSystemKey: str = None
     _source_schema_name: str = field(default='Road', repr=False)
     _component_schema_name: str = field(default='Tfl-3', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -156,14 +156,14 @@ class RoadProject(JSONWizard):
     ProjectSummaryPageUrl: str = None
     _source_schema_name: str = field(default='Road', repr=False)
     _component_schema_name: str = field(default='Tfl-4', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -184,14 +184,14 @@ class RoadDisruptionLine(JSONWizard):
     EndTime: str = None
     _source_schema_name: str = field(default='Road', repr=False)
     _component_schema_name: str = field(default='Tfl-5', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -211,14 +211,14 @@ class RoadDisruptionImpactArea(JSONWizard):
     EndTime: str = None
     _source_schema_name: str = field(default='Road', repr=False)
     _component_schema_name: str = field(default='Tfl-6', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -233,14 +233,14 @@ class RoadDisruptionSchedule(JSONWizard):
     EndTime: datetime = None
     _source_schema_name: str = field(default='Road', repr=False)
     _component_schema_name: str = field(default='Tfl-7', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -284,14 +284,14 @@ class RoadDisruption(JSONWizard):
     RecurringSchedules: list[RoadDisruptionSchedule] = field(default_factory=list)
     _source_schema_name: str = field(default='Road', repr=False)
     _component_schema_name: str = field(default='Tfl-8', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -304,14 +304,14 @@ class Object(JSONWizard):
     """
     _source_schema_name: str = field(default='Road', repr=False)
     _component_schema_name: str = field(default='System-3', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -327,14 +327,14 @@ class StatusSeverity(JSONWizard):
     Description: str = None
     _source_schema_name: str = field(default='Road', repr=False)
     _component_schema_name: str = field(default='Tfl-9', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -347,14 +347,14 @@ class Get200ApplicationJsonResponse(JSONWizard):
     """
     _source_schema_name: str = field(default='Road', repr=False)
     _component_schema_name: str = field(default='Get200ApplicationJsonResponse', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -367,14 +367,14 @@ class idsGet200ApplicationJsonResponse(JSONWizard):
     """
     _source_schema_name: str = field(default='Road', repr=False)
     _component_schema_name: str = field(default='ids-Get200ApplicationJsonResponse', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -387,14 +387,14 @@ class idsStatusGet200ApplicationJsonResponse(JSONWizard):
     """
     _source_schema_name: str = field(default='Road', repr=False)
     _component_schema_name: str = field(default='ids-StatusGet200ApplicationJsonResponse', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -407,14 +407,14 @@ class idsDisruptionGet200ApplicationJsonResponse(JSONWizard):
     """
     _source_schema_name: str = field(default='Road', repr=False)
     _component_schema_name: str = field(default='ids-DisruptionGet200ApplicationJsonResponse', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -427,14 +427,14 @@ class MetaCategories(JSONWizard):
     """
     _source_schema_name: str = field(default='Road', repr=False)
     _component_schema_name: str = field(default='MetaCategoriesGet200ApplicationJsonResponse', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -447,14 +447,14 @@ class MetaSeveritiesGet200ApplicationJsonResponse(JSONWizard):
     """
     _source_schema_name: str = field(default='Road', repr=False)
     _component_schema_name: str = field(default='MetaSeveritiesGet200ApplicationJsonResponse', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True

@@ -518,7 +518,14 @@ class Request:
             except Exception:
                 # Not a 2nd order reference
                 ref_name = response_refpath.name
-            marshals = getattr(load_test, self.ep_name(dehyphenate=True)).Deserialisers
+            try:
+                marshals = getattr(
+                    load_test,
+                    self.ep_name(dehyphenate=True),
+                ).Deserialisers
+            except:
+                breakpoint()
+                pass
             dto = marshals.select_component(ref_name).value
             try:
                 parsed = dto.from_json(response.content)

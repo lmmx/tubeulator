@@ -15,14 +15,14 @@ class PlaceArray(JSONWizard):
     """
     _source_schema_name: str = field(default='BikePoint', repr=False)
     _component_schema_name: str = field(default='Tfl-Api-Presentation-Entities-PlaceArray', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -45,14 +45,14 @@ class Place(JSONWizard):
     Lon: float = None
     _source_schema_name: str = field(default='BikePoint', repr=False)
     _component_schema_name: str = field(default='Tfl.Api.Presentation.Entities.Place', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -70,14 +70,14 @@ class AdditionalProperties(JSONWizard):
     Modified: datetime = None
     _source_schema_name: str = field(default='BikePoint', repr=False)
     _component_schema_name: str = field(default='Tfl.Api.Presentation.Entities.AdditionalProperties', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
