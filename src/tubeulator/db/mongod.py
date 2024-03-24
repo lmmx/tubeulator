@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from ..utils.logs import set_up_logging
 from ..utils.paths import db_path
 
+
 __all__ = [
     "start_mongod",
     "MongodProcess",
@@ -38,8 +39,7 @@ class MongodProcess:
 
 
 def get_mongod_process() -> MongodProcess:
-    """
-    Create new ``mongod`` process if one is not found. Either way, return the pid of the
+    """Create new ``mongod`` process if one is not found. Either way, return the pid of the
     running process. Also return a bool to indicate whether this was created afresh,
     so that the caller can decide whether to kill the process when finished.
     """
@@ -57,14 +57,11 @@ def get_mongod_process() -> MongodProcess:
 # Idea via https://stackoverflow.com/a/60367619/
 class MongodExceptionGuard(AbstractContextManager):
     def __init__(self, mongod_proc=get_mongod_process()):
-        """
-        Set up the Mongod daemon if a process is not found.
-        """
+        """Set up the Mongod daemon if a process is not found."""
         self.mongod_proc = mongod_proc
 
     def __exit__(self, exc_type, exc_value, traceback):
-        """
-        If the Mongod daemon was started 'fresh' upon initialisation, kill the process
+        """If the Mongod daemon was started 'fresh' upon initialisation, kill the process
         upon exitting the context manager (before raising any errors if present).
         """
         if exc_type:

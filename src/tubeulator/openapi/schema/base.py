@@ -5,6 +5,7 @@ from pathlib import Path
 
 import ujson
 
+
 __all__ = ["ApiSchema"]
 
 

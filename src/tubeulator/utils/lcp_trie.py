@@ -1,25 +1,24 @@
-"""
-LCP trie adapted from dict (char) trie at:
+"""LCP trie adapted from dict (char) trie at:
 https://ychai.uk/notes/2019/03/03/Programming/Tricks-of-Python/
 """
 from __future__ import annotations
 
+
 __all__ = ["TrieNode", "Trie"]
 
 
-class TrieNode(object):
+class TrieNode:
     def __init__(self):
         self.data = {}
         self.is_word = False
 
 
-class Trie(object):
+class Trie:
     def __init__(self):
         self.root = TrieNode()
 
     def insert(self, word: str) -> None:
-        """
-        Inserts a word into the trie and aggregates it with existing nodes (longest
+        """Inserts a word into the trie and aggregates it with existing nodes (longest
         common prefix nodes).
         """
         node = self.root
@@ -69,9 +68,7 @@ class Trie(object):
                 return
 
     def search(self, word: str) -> None:
-        """
-        Returns if the word is in the trie.
-        """
+        """Returns if the word is in the trie."""
         node = self.root
         for letter in word:
             node = node.data.get(letter)
@@ -80,8 +77,7 @@ class Trie(object):
         return node.is_word
 
     def starts_with(self, prefix: str) -> bool:
-        """
-        Returns if there is any word in the trie
+        """Returns if there is any word in the trie
         that starts with the given prefix.
         """
         node = self.root
@@ -92,9 +88,7 @@ class Trie(object):
         return True
 
     def get_start(self, prefix: str) -> list[str]:
-        """
-        Returns words started with prefix
-        """
+        """Returns words started with prefix"""
 
         def _get_key(pre, pre_node):
             words_list = []

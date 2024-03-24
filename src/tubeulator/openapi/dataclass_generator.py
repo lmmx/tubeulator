@@ -1,13 +1,9 @@
 import ast
-from dataclasses import dataclass
 from itertools import starmap
-from typing import Any
 
 
 def python_type(json_type: str, format: str = None) -> str:
-    """
-    Map property types in the JSON schema to Python types for type annotation.
-    """
+    """Map property types in the JSON schema to Python types for type annotation."""
     if json_type == "string":
         if format == "email":
             return "str"
@@ -27,15 +23,16 @@ def python_type(json_type: str, format: str = None) -> str:
 def import_node(module: str, names: list[str]) -> ast.Import:
     if names:
         return ast.ImportFrom(
-            module=module, names=[ast.alias(name=name) for name in names], level=0
+            module=module,
+            names=[ast.alias(name=name) for name in names],
+            level=0,
         )
     else:
         return ast.Import(names=[ast.alias(name=module)])
 
 
 def generate_dataclass(schema: dict) -> str:
-    """
-    Generate a dataclass from a schema, importing the `field` function if there are any
+    """Generate a dataclass from a schema, importing the `field` function if there are any
     array properties requiring it.
     """
     import_list = {

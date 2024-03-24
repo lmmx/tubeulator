@@ -4,6 +4,7 @@ from .. import generated
 from ..openapi.scan import count_namespace
 from .codegen import emit_deserialisers
 
+
 __all__ = ["generate_schema_coverage"]
 
 codegen_dir = Path(generated.__file__).parent

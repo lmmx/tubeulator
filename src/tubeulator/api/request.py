@@ -18,6 +18,7 @@ from ..utils.paths import (
 from .endpoint.names import EndpointNames
 from .endpoint.routes.types import AnyEndpointRouteEnum
 
+
 __all__ = ["tfl_request"]
 
 
@@ -98,8 +99,7 @@ class Path(TflApiPath):
 
 @dataclass
 class Request:
-    """
-    `tubeulator` uses :cls:`Request` objects to handle the various Transport for London
+    """`tubeulator` uses :cls:`Request` objects to handle the various Transport for London
     APIs. They all follow the same structure and are therefore handled by one class.
 
     For the documentation on each particular API, look up the capitalised method name
@@ -476,7 +476,10 @@ class Request:
         except httpx.HTTPError as exc:
             resp = exc.response
             raise RequestError(
-                response=resp, path=self.path, _args=args, _kwargs=kwargs
+                response=resp,
+                path=self.path,
+                _args=args,
+                _kwargs=kwargs,
             ) from None
         parsed = self.parse(result)
         return parsed
@@ -492,9 +495,7 @@ class Request:
         return endpoint_name.replace("-", "") if dehyphenate else endpoint_name
 
     def response_refpath(self) -> RefPath:
-        """
-        Go from the endpoint route info to the response type (its reference type).
-        """
+        """Go from the endpoint route info to the response type (its reference type)."""
         endpoint_schema = load_endpoint_schema(self.ep_name())
         route_info = endpoint_schema["paths"][self.path.route.value]
         response_schema = route_info["get"]["responses"]["200"]["content"][
@@ -529,6 +530,6 @@ class Request:
 def GET(url: str) -> httpx.Response:
     credentials = check_creds()
     params = urlencode(
-        {"app_id": credentials["app_id"], "app_key": credentials["primary_key"]}
+        {"app_id": credentials["app_id"], "app_key": credentials["primary_key"]},
     )
     return httpx.get(url, params=params)

@@ -7,6 +7,7 @@ from pathlib import Path
 
 from ._types import ApiAliasToUnifiedEntities, ApiEntityAlias, EntityURI
 
+
 __all__ = [
     "Reference",
     "AliasToRefs",
@@ -32,8 +33,7 @@ class Reference:
         return Path(self.entity).name
 
     def is_completable(self, api_inventory: ApiAliasToUnifiedEntities):
-        """
-        If the API inventory has a resolved value (or values) for the alias referenced
+        """If the API inventory has a resolved value (or values) for the alias referenced
         in the current referential property's ``$ref`` key, then the reference can be
         resolved immediately (i.e. "completed"). If not, we have to wait for the next
         round of substitutions, or chase references.
@@ -51,8 +51,7 @@ An inventory of API entity aliases and the references they contain.
 
 
 def dealias_schema(refs: list[Reference], component: dict, copy: bool = True) -> dict:
-    """
-    Modify the schema component of an API schema to overwrite the reference with
+    """Modify the schema component of an API schema to overwrite the reference with
     the entity name in the :obj:`Reference` instead of the alias there.
     """
     if copy:
