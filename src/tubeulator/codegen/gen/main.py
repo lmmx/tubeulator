@@ -6,14 +6,13 @@ from textwrap import indent
 
 from dataclass_wizard.utils.string_conv import to_pascal_case
 
-from ..openapi.scan import scan_namespace
-from ..utils.lcp_trie import Trie
-from ..utils.paths import (
+from ...openapi.scan import scan_namespace
+from ...utils.lcp_trie import Trie
+from ...utils.paths import (
     SchemaPath,
     load_endpoint_component_schemas,
     to_enum_friendly_str,
 )
-
 
 __all__ = ["emit_deserialisers"]
 

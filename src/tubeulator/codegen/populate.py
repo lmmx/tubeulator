@@ -2,7 +2,7 @@ from pathlib import Path
 
 from .. import generated
 from ..openapi.scan import count_namespace
-from .codegen import emit_deserialisers
+from .gen import emit_deserialisers
 
 
 __all__ = ["generate_schema_coverage"]
