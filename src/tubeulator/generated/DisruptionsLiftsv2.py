@@ -21,14 +21,14 @@ class LiftDisruption(JSONWizard):
     Message: str = None
     _source_schema_name: str = field(default='Disruptions-Lifts-v2', repr=False)
     _component_schema_name: str = field(default='LiftDisruption', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True
@@ -41,14 +41,14 @@ class Get200ApplicationJsonResponse(JSONWizard):
     """
     _source_schema_name: str = field(default='Disruptions-Lifts-v2', repr=False)
     _component_schema_name: str = field(default='Get200ApplicationJsonResponse', repr=False)
-    
+
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
         schema = parent_schema[cls._component_schema_name]
         jsonschema.validate(o, schema)
         return fromdict(cls, o)
-    
+
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True

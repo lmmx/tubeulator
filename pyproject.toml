@@ -88,6 +88,9 @@ lines-after-imports = 2
 "__init__.py" = [
     "E401",
 ]
+"src/tubeulator/codegen/load_test.py" = [
+    "F401",
+]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
