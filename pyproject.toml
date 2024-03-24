@@ -1,3 +1,7 @@
+[build-system]
+build-backend = "pdm.backend"
+requires = ["pdm-backend"]
+
 [project]
 authors = [
     {email = "louismmx@gmail.com", name = "Louis Maddox"},
