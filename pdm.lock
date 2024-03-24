@@ -5,7 +5,7 @@
 groups = ["default", "docs", "test", "vercel"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.1"
-content_hash = "sha256:8233dcb6f886ba1d66e53422e66b18c335e28e31b49555c39bca2add2b553fbc"
+content_hash = "sha256:39481202112fa52dad5f3073a179538bc57f1de5ccf0ea65931f45f61b7303e9"
 
 [[package]]
 name = "anyio"
