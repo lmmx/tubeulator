@@ -204,3 +204,13 @@ Most of these can be found by looking for `Meta` API names in
   - Note that the child nodes do not have populated `modes` (`[]`), `lat` or `lon` (`0.0`).
 
 (TBC)
+
+## Dataclass Wizard
+
+This project used to depend on:
+
+```
+"dataclass_wizard @ git+https://github.com/rnag/dataclass-wizard.git@WIP-support-cyclic-references",
+```
+
+but this was removed for portability after switching the DTOs to Pydantic (for distribution to PyPI).

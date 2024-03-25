@@ -7,19 +7,12 @@ authors = [
     {email = "louismmx@gmail.com", name = "Louis Maddox"},
 ]
 classifiers = [
-    "Development Status :: 1 - Planning",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
-    "Natural Language :: English",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python",
-    "Topic :: Internet :: WWW/HTTP",
+    "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
-    # "dataclass_wizard @ git+https://github.com/rnag/dataclass-wizard.git@WIP-support-cyclic-references",
     "defopt",
     "httpx",
     "jsonschema",
@@ -29,10 +22,10 @@ dependencies = [
     "urllib3<2",
 ]
 description = "TfL open data interface library."
-dynamic = ["version"]
 name = "tubeulator"
 readme = "README.md"
 requires-python = ">=3.10,<=3.12"
+version = "0.0.4"
 
 [project.license]
 text = "MIT"
@@ -41,13 +34,11 @@ text = "MIT"
 tubeulator = "tubeulator.cli:main"
 
 [project.urls]
-Documentation = "https://tubeulator.vercel.app/"
 Homepage = "https://github.com/lmmx/tubeulator"
 Repository = "https://github.com/lmmx/tubeulator.git"
 
 [tool.pdm]
 distribution = true
-version = {path = "src/tubeulator/__init__.py", source = "file"}
 
 [tool.pdm.dev-dependencies]
 docs = [
