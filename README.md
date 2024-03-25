@@ -37,6 +37,36 @@ You can install MongoDB globally or just in the environment (`conda install mong
 
 ## Usage
 
+There are currently generated API methods for all of the APIs!
+
+Outline of current usage:
+
+```py
+>>> import tubeulator
+>>> modes = tubeulator.fetch.line.meta_modes()
+>>> modes
+[Mode(IsTflService=True, IsFarePaying=True, IsScheduledService=True, ModeName='bus'),
+ Mode(IsTflService=True, IsFarePaying=True, IsScheduledService=True, ModeName='cable-car'),
+ Mode(IsTflService=False, IsFarePaying=True, IsScheduledService=True, ModeName='coach'),
+ Mode(IsTflService=False, IsFarePaying=False, IsScheduledService=False, ModeName='cycle'),
+ Mode(IsTflService=True, IsFarePaying=True, IsScheduledService=False, ModeName='cycle-hire'),
+ Mode(IsTflService=True, IsFarePaying=True, IsScheduledService=True, ModeName='dlr'),
+ Mode(IsTflService=True, IsFarePaying=True, IsScheduledService=True, ModeName='elizabeth-line'),
+ Mode(IsTflService=False, IsFarePaying=False, IsScheduledService=False, ModeName='interchange-keep-sitting'),
+ Mode(IsTflService=False, IsFarePaying=False, IsScheduledService=False, ModeName='interchange-secure'),
+ Mode(IsTflService=False, IsFarePaying=True, IsScheduledService=True, ModeName='national-rail'),
+ Mode(IsTflService=True, IsFarePaying=True, IsScheduledService=True, ModeName='overground'),
+ Mode(IsTflService=True, IsFarePaying=True, IsScheduledService=True, ModeName='replacement-bus'),
+ Mode(IsTflService=True, IsFarePaying=True, IsScheduledService=True, ModeName='river-bus'),
+ Mode(IsTflService=True, IsFarePaying=True, IsScheduledService=True, ModeName='river-tour'),
+ Mode(IsTflService=False, IsFarePaying=False, IsScheduledService=False, ModeName='taxi'),
+ Mode(IsTflService=True, IsFarePaying=True, IsScheduledService=True, ModeName='tram'),
+ Mode(IsTflService=True, IsFarePaying=True, IsScheduledService=True, ModeName='tube'),
+ Mode(IsTflService=False, IsFarePaying=False, IsScheduledService=False, ModeName='walking')]
+```
+
+### Planned
+
 Outline of expected usage:
 
 ```py
@@ -214,3 +244,8 @@ This project used to depend on:
 ```
 
 but this was removed for portability after switching the DTOs to Pydantic (for distribution to PyPI).
+
+## Distributing
+
+Note: to distribute you must clone a fresh copy or delete the data/db as this seems to be detected
+and will prevent upload (perhaps as it detects secrets)
