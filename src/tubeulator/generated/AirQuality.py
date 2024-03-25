@@ -12,7 +12,7 @@ class Object(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     _source_schema_name: str = PrivateAttr(default='AirQuality')

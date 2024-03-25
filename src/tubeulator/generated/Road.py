@@ -12,7 +12,7 @@ class RoadCorridor(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Id: str = None
@@ -36,7 +36,7 @@ class DbGeographyWellKnownValue(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     CoordinateSystemId: int = None
@@ -53,7 +53,7 @@ class DbGeography(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Geography: DbGeographyWellKnownValue = None
@@ -68,7 +68,7 @@ class StreetSegment(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Toid: str = None
@@ -86,7 +86,7 @@ class Street(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Name: str = None
@@ -106,7 +106,7 @@ class RoadProject(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     ProjectId: str = None
@@ -137,7 +137,7 @@ class RoadDisruptionLine(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Id: int = None
@@ -159,7 +159,7 @@ class RoadDisruptionImpactArea(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Id: int = None
@@ -180,7 +180,7 @@ class RoadDisruptionSchedule(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     StartTime: datetime = None
@@ -196,7 +196,7 @@ class RoadDisruption(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Id: str = None
@@ -241,7 +241,7 @@ class Object(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     _source_schema_name: str = PrivateAttr(default='Road')
@@ -255,7 +255,7 @@ class StatusSeverity(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     ModeName: str = None
@@ -272,7 +272,7 @@ class Get200ApplicationJsonResponse(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     _source_schema_name: str = PrivateAttr(default='Road')
@@ -286,7 +286,7 @@ class idsGet200ApplicationJsonResponse(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     _source_schema_name: str = PrivateAttr(default='Road')
@@ -300,7 +300,7 @@ class idsStatusGet200ApplicationJsonResponse(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     _source_schema_name: str = PrivateAttr(default='Road')
@@ -314,7 +314,7 @@ class idsDisruptionGet200ApplicationJsonResponse(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     _source_schema_name: str = PrivateAttr(default='Road')
@@ -328,7 +328,7 @@ class MetaCategories(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     _source_schema_name: str = PrivateAttr(default='Road')
@@ -342,7 +342,7 @@ class MetaSeveritiesGet200ApplicationJsonResponse(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     _source_schema_name: str = PrivateAttr(default='Road')

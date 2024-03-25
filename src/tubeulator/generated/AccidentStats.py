@@ -12,7 +12,7 @@ class AccidentStatsAccidentDetailArray(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     _source_schema_name: str = PrivateAttr(default='AccidentStats')
@@ -26,7 +26,7 @@ class AccidentDetail(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Id: int = None
@@ -49,7 +49,7 @@ class Casualty(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Age: int = None
@@ -68,7 +68,7 @@ class Vehicle(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Type: str = None

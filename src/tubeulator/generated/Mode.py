@@ -12,7 +12,7 @@ class ActiveServiceTypeArray(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     _source_schema_name: str = PrivateAttr(default='Mode')
@@ -26,7 +26,7 @@ class ActiveServiceType(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Mode: str = None
@@ -42,7 +42,7 @@ class PredictionArray(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     _source_schema_name: str = PrivateAttr(default='Mode')
@@ -56,7 +56,7 @@ class Prediction(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Id: str = None
@@ -90,7 +90,7 @@ class PredictionTiming(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     CountdownServerAdjustment: str = None

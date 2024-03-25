@@ -12,7 +12,7 @@ class Mode(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     IsTflService: bool = None
@@ -30,7 +30,7 @@ class PathAttribute(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Name: str = None
@@ -46,7 +46,7 @@ class InstructionStep(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Description: str = None
@@ -73,7 +73,7 @@ class Instruction(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Summary: str = None
@@ -90,7 +90,7 @@ class Obstacle(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Type: str = None
@@ -108,7 +108,7 @@ class Point(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Lat: float = None
@@ -124,7 +124,7 @@ class PassengerFlow(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     TimeSlice: str = None
@@ -140,7 +140,7 @@ class TrainLoading(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Line: str = None
@@ -161,7 +161,7 @@ class Crowding(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     PassengerFlows: list["PassengerFlow"] = field(default_factory=list)
@@ -177,7 +177,7 @@ class Identifier(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Id: str = None
@@ -199,7 +199,7 @@ class JpElevation(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Distance: int = None
@@ -220,7 +220,7 @@ class Path(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     LineString: str = None
@@ -237,7 +237,7 @@ class RouteOption(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Id: str = None
@@ -255,7 +255,7 @@ class LineGroup(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     NaptanIdReference: str = None
@@ -272,7 +272,7 @@ class LineModeGroup(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     ModeName: str = None
@@ -288,7 +288,7 @@ class AdditionalProperties(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Category: str = None
@@ -307,7 +307,7 @@ class Place(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Id: str = None
@@ -331,7 +331,7 @@ class StopPoint(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     NaptanId: str = None
@@ -372,7 +372,7 @@ class RouteSectionNaptanEntrySequence(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Ordinal: int = None
@@ -388,7 +388,7 @@ class RouteSection(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Id: str = None
@@ -413,7 +413,7 @@ class Disruption(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Category: str = None
@@ -438,7 +438,7 @@ class PlannedWork(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Id: str = None
@@ -456,7 +456,7 @@ class Leg(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Duration: int = None
@@ -486,7 +486,7 @@ class FareTapDetails(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     ModeType: str = None
@@ -506,7 +506,7 @@ class FareTap(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     AtcoCode: str = None
@@ -522,7 +522,7 @@ class Fare(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     LowZone: int = None
@@ -545,7 +545,7 @@ class FareCaveat(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Text: str = None
@@ -561,7 +561,7 @@ class JourneyFare(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     TotalCost: int = None
@@ -578,7 +578,7 @@ class Journey(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     StartDateTime: datetime = None
@@ -597,7 +597,7 @@ class ValidityPeriod(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     FromDate: datetime = None
@@ -614,7 +614,7 @@ class LineStatus(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Id: int = None
@@ -637,7 +637,7 @@ class MatchedRoute(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     RouteCode: str = None
@@ -661,7 +661,7 @@ class LineServiceTypeInfo(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Name: str = None
@@ -677,7 +677,7 @@ class Line(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Id: str = None
@@ -701,7 +701,7 @@ class JourneyPlannerCycleHireDockingStationData(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     OriginNumberOfBikes: int = None
@@ -721,7 +721,7 @@ class TimeAdjustment(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Date: str = None
@@ -739,7 +739,7 @@ class TimeAdjustments(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Earliest: TimeAdjustment = None
@@ -757,7 +757,7 @@ class SearchCriteria(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     DateTime: datetime = None
@@ -774,7 +774,7 @@ class JourneyVector(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     From: str = None
@@ -792,7 +792,7 @@ class ItineraryResult(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     Journeys: list["Journey"] = field(default_factory=list)
@@ -813,7 +813,7 @@ class MetaModesGet200ApplicationJsonResponse(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     _source_schema_name: str = PrivateAttr(default='Journey')
@@ -827,7 +827,7 @@ class Get200ApplicationJsonResponse(BaseModel):
     """
 
     model_config = ConfigDict(
-        alias_generator=AliasGenerator(validation_alias=to_camel_case)
+        alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
     _source_schema_name: str = PrivateAttr(default='Journey')
