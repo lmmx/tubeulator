@@ -1,6 +1,0 @@
-dataclass_wizard @ git+https://github.com/rnag/dataclass-wizard.git@WIP-support-cyclic-references
-defopt
-jsonschema
-httpx
-pymongo
-ujson

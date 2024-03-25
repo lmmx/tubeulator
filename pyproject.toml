@@ -24,9 +24,9 @@ dependencies = [
     "defopt",
     "httpx",
     "jsonschema",
+    "orjson",
     "pydantic>=2.6.4",
     "pymongo",
-    "ujson",
     "urllib3<2",
 ]
 description = "TfL open data interface library."
