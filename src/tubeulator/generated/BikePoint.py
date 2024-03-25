@@ -2,7 +2,7 @@ from __future__ import annotations
 import json
 from datetime import datetime
 from dataclasses import dataclass, field
-from dataclass_wizard.utils.string_conv import to_camel_case
+from tubeulator.utils.string_conv import to_camel_case
 from pydantic import AliasGenerator, BaseModel, ConfigDict, PrivateAttr
 from ..utils.paths import DtoEnum
 
@@ -34,9 +34,9 @@ class Place(BaseModel):
     CommonName: str = None
     Distance: float = None
     PlaceType: str = None
-    AdditionalProperties: list["AdditionalProperties"] = field(default_factory=list)
-    Children: list["Place"] = field(default_factory=list)
-    ChildrenUrls: list[str] = field(default_factory=list)
+    AdditionalProperties: list["AdditionalProperties"]
+    Children: list["Place"]
+    ChildrenUrls: list[str]
     Lat: float = None
     Lon: float = None
     _source_schema_name: str = PrivateAttr(default='BikePoint')

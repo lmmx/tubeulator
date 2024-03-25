@@ -2,7 +2,7 @@ from __future__ import annotations
 import json
 from datetime import datetime
 from dataclasses import dataclass, field
-from dataclass_wizard.utils.string_conv import to_camel_case
+from tubeulator.utils.string_conv import to_camel_case
 from pydantic import AliasGenerator, BaseModel, ConfigDict, PrivateAttr
 from ..utils.paths import DtoEnum
 
@@ -36,8 +36,8 @@ class AccidentDetail(BaseModel):
     Date: datetime = None
     Severity: str = None
     Borough: str = None
-    Casualties: list["Casualty"] = field(default_factory=list)
-    Vehicles: list["Vehicle"] = field(default_factory=list)
+    Casualties: list["Casualty"]
+    Vehicles: list["Vehicle"]
     _source_schema_name: str = PrivateAttr(default='AccidentStats')
     _component_schema_name: str = PrivateAttr(default='Tfl.Api.Presentation.Entities.AccidentStats.AccidentDetail')
 

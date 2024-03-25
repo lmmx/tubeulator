@@ -2,7 +2,7 @@ from __future__ import annotations
 import json
 from datetime import datetime
 from dataclasses import dataclass, field
-from dataclass_wizard.utils.string_conv import to_camel_case
+from tubeulator.utils.string_conv import to_camel_case
 from pydantic import AliasGenerator, BaseModel, ConfigDict, PrivateAttr
 from ..utils.paths import DtoEnum
 
@@ -92,7 +92,7 @@ class Street(BaseModel):
     Name: str = None
     Closure: str = None
     Directions: str = None
-    Segments: list["StreetSegment"] = field(default_factory=list)
+    Segments: list["StreetSegment"]
     SourceSystemId: int = None
     SourceSystemKey: str = None
     _source_schema_name: str = PrivateAttr(default='Road')
@@ -119,7 +119,7 @@ class RoadProject(BaseModel):
     ConsultationEndDate: datetime = None
     ConstructionStartDate: datetime = None
     ConstructionEndDate: datetime = None
-    BoroughsBenefited: list[str] = field(default_factory=list)
+    BoroughsBenefited: list[str]
     CycleSuperhighwayId: str = None
     Phase: str = None
     ContactName: str = None
@@ -209,7 +209,7 @@ class RoadDisruption(BaseModel):
     Comments: str = None
     CurrentUpdate: str = None
     CurrentUpdateDateTime: datetime = None
-    CorridorIds: list[str] = field(default_factory=list)
+    CorridorIds: list[str]
     StartDateTime: datetime = None
     EndDateTime: datetime = None
     LastModifiedTime: datetime = None
@@ -218,7 +218,7 @@ class RoadDisruption(BaseModel):
     Status: str = None
     Geography: DbGeography = None
     Geometry: DbGeography = None
-    Streets: list["Street"] = field(default_factory=list)
+    Streets: list["Street"]
     IsProvisional: bool = None
     HasClosures: bool = None
     LinkText: str = None
@@ -227,9 +227,9 @@ class RoadDisruption(BaseModel):
     PublishStartDate: datetime = None
     PublishEndDate: datetime = None
     TimeFrame: str = None
-    RoadDisruptionLines: list["RoadDisruptionLine"] = field(default_factory=list)
-    RoadDisruptionImpactAreas: list["RoadDisruptionImpactArea"] = field(default_factory=list)
-    RecurringSchedules: list["RoadDisruptionSchedule"] = field(default_factory=list)
+    RoadDisruptionLines: list["RoadDisruptionLine"]
+    RoadDisruptionImpactAreas: list["RoadDisruptionImpactArea"]
+    RecurringSchedules: list["RoadDisruptionSchedule"]
     _source_schema_name: str = PrivateAttr(default='Road')
     _component_schema_name: str = PrivateAttr(default='Tfl-8')
 

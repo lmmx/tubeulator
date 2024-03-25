@@ -2,7 +2,7 @@ from __future__ import annotations
 import json
 from datetime import datetime
 from dataclasses import dataclass, field
-from dataclass_wizard.utils.string_conv import to_camel_case
+from tubeulator.utils.string_conv import to_camel_case
 from pydantic import AliasGenerator, BaseModel, ConfigDict, PrivateAttr
 from ..utils.paths import DtoEnum
 

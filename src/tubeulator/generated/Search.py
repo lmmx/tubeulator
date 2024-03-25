@@ -2,7 +2,7 @@ from __future__ import annotations
 import json
 from datetime import datetime
 from dataclasses import dataclass, field
-from dataclass_wizard.utils.string_conv import to_camel_case
+from tubeulator.utils.string_conv import to_camel_case
 from pydantic import AliasGenerator, BaseModel, ConfigDict, PrivateAttr
 from ..utils.paths import DtoEnum
 
@@ -40,7 +40,7 @@ class SearchResponse(BaseModel):
     PageSize: int = None
     Provider: str = None
     Total: int = None
-    Matches: list["SearchMatch"] = field(default_factory=list)
+    Matches: list["SearchMatch"]
     MaxScore: float = None
     _source_schema_name: str = PrivateAttr(default='Search')
     _component_schema_name: str = PrivateAttr(default='Tfl-2')

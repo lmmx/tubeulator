@@ -3,10 +3,9 @@ import textwrap
 from itertools import starmap
 from typing import Literal
 
-from dataclass_wizard.utils.string_conv import to_pascal_case
-
 from ...openapi.scan import scan_namespace
 from ...utils.paths import SchemaPath, load_endpoint_component_schemas
+from ...utils.string_conv import to_pascal_case
 from .jsonschema import python_type
 from .resolution import (
     find_array_literals,
@@ -263,7 +262,10 @@ def generate_source(
         else:
             if is_array_prop:
                 contains_list = True
-                default = " = field(default_factory=list)"
+                if is_pydantic:
+                    default = ""
+                else:
+                    default = " = field(default_factory=list)"
             else:
                 default = " = None"
         dc_source += f"    {to_pascal_case(prop_name)}: {prop_type}{default}\n"
@@ -290,7 +292,7 @@ def generate_source(
         "jsonschema": [],
     }
     pydantic_imports = {
-        "dataclass_wizard.utils.string_conv": ["to_camel_case"],
+        "tubeulator.utils.string_conv": ["to_camel_case"],
         "pydantic": ["AliasGenerator", "BaseModel", "ConfigDict", "PrivateAttr"],
     }
     jsonw_utils = ["load_endpoint_component_schemas"]

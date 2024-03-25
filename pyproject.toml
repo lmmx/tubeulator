@@ -20,7 +20,7 @@ classifiers = [
     "Topic :: Internet :: WWW/HTTP",
 ]
 dependencies = [
-    "dataclass_wizard @ git+https://github.com/rnag/dataclass-wizard.git@WIP-support-cyclic-references",
+    # "dataclass_wizard @ git+https://github.com/rnag/dataclass-wizard.git@WIP-support-cyclic-references",
     "defopt",
     "httpx",
     "jsonschema",

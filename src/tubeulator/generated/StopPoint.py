@@ -2,7 +2,7 @@ from __future__ import annotations
 import json
 from datetime import datetime
 from dataclasses import dataclass, field
-from dataclass_wizard.utils.string_conv import to_camel_case
+from tubeulator.utils.string_conv import to_camel_case
 from pydantic import AliasGenerator, BaseModel, ConfigDict, PrivateAttr
 from ..utils.paths import DtoEnum
 
@@ -16,7 +16,7 @@ class PlaceCategory(BaseModel):
     )
 
     Category: str = None
-    AvailableKeys: list[str] = field(default_factory=list)
+    AvailableKeys: list[str]
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl')
 
@@ -86,8 +86,8 @@ class Crowding(BaseModel):
         alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
-    PassengerFlows: list["PassengerFlow"] = field(default_factory=list)
-    TrainLoadings: list["TrainLoading"] = field(default_factory=list)
+    PassengerFlows: list["PassengerFlow"]
+    TrainLoadings: list["TrainLoading"]
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl-5')
 
@@ -126,7 +126,7 @@ class LineGroup(BaseModel):
 
     NaptanIdReference: str = None
     StationAtcoCode: str = None
-    LineIdentifier: list[str] = field(default_factory=list)
+    LineIdentifier: list[str]
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl-7')
 
@@ -142,7 +142,7 @@ class LineModeGroup(BaseModel):
     )
 
     ModeName: str = None
-    LineIdentifier: list[str] = field(default_factory=list)
+    LineIdentifier: list[str]
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl-8')
 
@@ -181,9 +181,9 @@ class Place(BaseModel):
     CommonName: str = None
     Distance: float = None
     PlaceType: str = None
-    AdditionalProperties: list["AdditionalProperties"] = field(default_factory=list)
-    Children: list["Place"] = field(default_factory=list)
-    ChildrenUrls: list[str] = field(default_factory=list)
+    AdditionalProperties: list["AdditionalProperties"]
+    Children: list["Place"]
+    ChildrenUrls: list[str]
     Lat: float = None
     Lon: float = None
     _source_schema_name: str = PrivateAttr(default='StopPoint')
@@ -204,16 +204,16 @@ class StopPoint(BaseModel):
     PlatformName: str = None
     Indicator: str = None
     StopLetter: str = None
-    Modes: list[str] = field(default_factory=list)
+    Modes: list[str]
     IcsCode: str = None
     SmsCode: str = None
     StopType: str = None
     StationNaptan: str = None
     AccessibilitySummary: str = None
     HubNaptanCode: str = None
-    Lines: list["Identifier"] = field(default_factory=list)
-    LineGroup: list["LineGroup"] = field(default_factory=list)
-    LineModeGroups: list["LineModeGroup"] = field(default_factory=list)
+    Lines: list["Identifier"]
+    LineGroup: list["LineGroup"]
+    LineModeGroups: list["LineModeGroup"]
     FullName: str = None
     NaptanMode: str = None
     Status: bool = None
@@ -222,9 +222,9 @@ class StopPoint(BaseModel):
     CommonName: str = None
     Distance: float = None
     PlaceType: str = None
-    AdditionalProperties: list["AdditionalProperties"] = field(default_factory=list)
-    Children: list["Place"] = field(default_factory=list)
-    ChildrenUrls: list[str] = field(default_factory=list)
+    AdditionalProperties: list["AdditionalProperties"]
+    Children: list["Place"]
+    ChildrenUrls: list[str]
     Lat: float = None
     Lon: float = None
     _source_schema_name: str = PrivateAttr(default='StopPoint')
@@ -274,7 +274,7 @@ class LineServiceType(BaseModel):
     )
 
     LineName: str = None
-    LineSpecificServiceTypes: list["LineSpecificServiceType"] = field(default_factory=list)
+    LineSpecificServiceTypes: list["LineSpecificServiceType"]
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl-14')
 
@@ -421,8 +421,8 @@ class StopPointsResponse(BaseModel):
         alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
-    CentrePoint: list[float] = field(default_factory=list)
-    StopPoints: list["StopPoint"] = field(default_factory=list)
+    CentrePoint: list[float]
+    StopPoints: list["StopPoint"]
     PageSize: int = None
     Total: int = None
     Page: int = None
@@ -465,7 +465,7 @@ class SearchResponse(BaseModel):
     PageSize: int = None
     Provider: str = None
     Total: int = None
-    Matches: list["SearchMatch"] = field(default_factory=list)
+    Matches: list["SearchMatch"]
     MaxScore: float = None
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl-22')

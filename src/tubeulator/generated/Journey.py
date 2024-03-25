@@ -2,7 +2,7 @@ from __future__ import annotations
 import json
 from datetime import datetime
 from dataclasses import dataclass, field
-from dataclass_wizard.utils.string_conv import to_camel_case
+from tubeulator.utils.string_conv import to_camel_case
 from pydantic import AliasGenerator, BaseModel, ConfigDict, PrivateAttr
 from ..utils.paths import DtoEnum
 
@@ -78,7 +78,7 @@ class Instruction(BaseModel):
 
     Summary: str = None
     Detailed: str = None
-    Steps: list["InstructionStep"] = field(default_factory=list)
+    Steps: list["InstructionStep"]
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-4')
 
@@ -164,8 +164,8 @@ class Crowding(BaseModel):
         alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
-    PassengerFlows: list["PassengerFlow"] = field(default_factory=list)
-    TrainLoadings: list["TrainLoading"] = field(default_factory=list)
+    PassengerFlows: list["PassengerFlow"]
+    TrainLoadings: list["TrainLoading"]
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-9')
 
@@ -224,8 +224,8 @@ class Path(BaseModel):
     )
 
     LineString: str = None
-    StopPoints: list["Identifier"] = field(default_factory=list)
-    Elevation: list["JpElevation"] = field(default_factory=list)
+    StopPoints: list["Identifier"]
+    Elevation: list["JpElevation"]
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-12')
 
@@ -242,7 +242,7 @@ class RouteOption(BaseModel):
 
     Id: str = None
     Name: str = None
-    Directions: list[str] = field(default_factory=list)
+    Directions: list[str]
     LineIdentifier: Identifier = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-13')
@@ -260,7 +260,7 @@ class LineGroup(BaseModel):
 
     NaptanIdReference: str = None
     StationAtcoCode: str = None
-    LineIdentifier: list[str] = field(default_factory=list)
+    LineIdentifier: list[str]
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-14')
 
@@ -276,7 +276,7 @@ class LineModeGroup(BaseModel):
     )
 
     ModeName: str = None
-    LineIdentifier: list[str] = field(default_factory=list)
+    LineIdentifier: list[str]
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-15')
 
@@ -315,9 +315,9 @@ class Place(BaseModel):
     CommonName: str = None
     Distance: float = None
     PlaceType: str = None
-    AdditionalProperties: list["AdditionalProperties"] = field(default_factory=list)
-    Children: list["Place"] = field(default_factory=list)
-    ChildrenUrls: list[str] = field(default_factory=list)
+    AdditionalProperties: list["AdditionalProperties"]
+    Children: list["Place"]
+    ChildrenUrls: list[str]
     Lat: float = None
     Lon: float = None
     _source_schema_name: str = PrivateAttr(default='Journey')
@@ -338,16 +338,16 @@ class StopPoint(BaseModel):
     PlatformName: str = None
     Indicator: str = None
     StopLetter: str = None
-    Modes: list[str] = field(default_factory=list)
+    Modes: list[str]
     IcsCode: str = None
     SmsCode: str = None
     StopType: str = None
     StationNaptan: str = None
     AccessibilitySummary: str = None
     HubNaptanCode: str = None
-    Lines: list["Identifier"] = field(default_factory=list)
-    LineGroup: list["LineGroup"] = field(default_factory=list)
-    LineModeGroups: list["LineModeGroup"] = field(default_factory=list)
+    Lines: list["Identifier"]
+    LineGroup: list["LineGroup"]
+    LineModeGroups: list["LineModeGroup"]
     FullName: str = None
     NaptanMode: str = None
     Status: bool = None
@@ -356,9 +356,9 @@ class StopPoint(BaseModel):
     CommonName: str = None
     Distance: float = None
     PlaceType: str = None
-    AdditionalProperties: list["AdditionalProperties"] = field(default_factory=list)
-    Children: list["Place"] = field(default_factory=list)
-    ChildrenUrls: list[str] = field(default_factory=list)
+    AdditionalProperties: list["AdditionalProperties"]
+    Children: list["Place"]
+    ChildrenUrls: list[str]
     Lat: float = None
     Lon: float = None
     _source_schema_name: str = PrivateAttr(default='Journey')
@@ -401,7 +401,7 @@ class RouteSection(BaseModel):
     DestinationName: str = None
     ValidTo: datetime = None
     ValidFrom: datetime = None
-    RouteSectionNaptanEntrySequence: list["RouteSectionNaptanEntrySequence"] = field(default_factory=list)
+    RouteSectionNaptanEntrySequence: list["RouteSectionNaptanEntrySequence"]
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-20')
 
@@ -424,8 +424,8 @@ class Disruption(BaseModel):
     AdditionalInfo: str = None
     Created: datetime = None
     LastUpdate: datetime = None
-    AffectedRoutes: list["RouteSection"] = field(default_factory=list)
-    AffectedStops: list["StopPoint"] = field(default_factory=list)
+    AffectedRoutes: list["RouteSection"]
+    AffectedStops: list["StopPoint"]
     ClosureText: str = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-21')
@@ -462,16 +462,16 @@ class Leg(BaseModel):
     Duration: int = None
     Speed: str = None
     Instruction: Instruction = None
-    Obstacles: list["Obstacle"] = field(default_factory=list)
+    Obstacles: list["Obstacle"]
     DepartureTime: datetime = None
     ArrivalTime: datetime = None
     DeparturePoint: Point = None
     ArrivalPoint: Point = None
     Path: Path = None
-    RouteOptions: list["RouteOption"] = field(default_factory=list)
+    RouteOptions: list["RouteOption"]
     Mode: Identifier = None
-    Disruptions: list["Disruption"] = field(default_factory=list)
-    PlannedWorks: list["PlannedWork"] = field(default_factory=list)
+    Disruptions: list["Disruption"]
+    PlannedWorks: list["PlannedWork"]
     Distance: float = None
     IsDisrupted: bool = None
     HasFixedLocations: bool = None
@@ -533,7 +533,7 @@ class Fare(BaseModel):
     ChargeLevel: str = None
     Peak: int = None
     OffPeak: int = None
-    Taps: list["FareTap"] = field(default_factory=list)
+    Taps: list["FareTap"]
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-26')
 
@@ -565,8 +565,8 @@ class JourneyFare(BaseModel):
     )
 
     TotalCost: int = None
-    Fares: list["Fare"] = field(default_factory=list)
-    Caveats: list["FareCaveat"] = field(default_factory=list)
+    Fares: list["Fare"]
+    Caveats: list["FareCaveat"]
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-28')
 
@@ -584,7 +584,7 @@ class Journey(BaseModel):
     StartDateTime: datetime = None
     Duration: int = None
     ArrivalDateTime: datetime = None
-    Legs: list["Leg"] = field(default_factory=list)
+    Legs: list["Leg"]
     Fare: JourneyFare = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-29')
@@ -624,7 +624,7 @@ class LineStatus(BaseModel):
     Reason: str = None
     Created: datetime = None
     Modified: datetime = None
-    ValidityPeriods: list["ValidityPeriod"] = field(default_factory=list)
+    ValidityPeriods: list["ValidityPeriod"]
     Disruption: Disruption = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-31')
@@ -683,12 +683,12 @@ class Line(BaseModel):
     Id: str = None
     Name: str = None
     ModeName: str = None
-    Disruptions: list["Disruption"] = field(default_factory=list)
+    Disruptions: list["Disruption"]
     Created: datetime = None
     Modified: datetime = None
-    LineStatuses: list["LineStatus"] = field(default_factory=list)
-    RouteSections: list["MatchedRoute"] = field(default_factory=list)
-    ServiceTypes: list["LineServiceTypeInfo"] = field(default_factory=list)
+    LineStatuses: list["LineStatus"]
+    RouteSections: list["MatchedRoute"]
+    ServiceTypes: list["LineServiceTypeInfo"]
     Crowding: Crowding = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-34')
@@ -795,10 +795,10 @@ class ItineraryResult(BaseModel):
         alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
-    Journeys: list["Journey"] = field(default_factory=list)
-    Lines: list["Line"] = field(default_factory=list)
+    Journeys: list["Journey"]
+    Lines: list["Line"]
     CycleHireDockingStationData: JourneyPlannerCycleHireDockingStationData = None
-    StopMessages: list[str] = field(default_factory=list)
+    StopMessages: list[str]
     RecommendedMaxAgeMinutes: int = None
     SearchCriteria: SearchCriteria = None
     JourneyVector: JourneyVector = None
