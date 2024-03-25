@@ -27,6 +27,7 @@ dependencies = [
     "pymongo",
     "ujson",
     "urllib3<2",
+    "pydantic>=2.6.4",
 ]
 description = "TfL open data interface library."
 dynamic = ["version"]
