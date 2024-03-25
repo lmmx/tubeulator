@@ -23,6 +23,8 @@ class Bay(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl')
 
 
+BayModel = Bay
+
 
 class CarParkOccupancy(BaseModel):
     """
@@ -34,12 +36,14 @@ class CarParkOccupancy(BaseModel):
     )
 
     Id: str = None
-    Bays: list["Bay"]
+    Bays: list["BayModel"]
     Name: str = None
     CarParkDetailsUrl: str = None
     _source_schema_name: str = PrivateAttr(default='occupancy')
     _component_schema_name: str = PrivateAttr(default='Tfl-2')
 
+
+CarParkOccupancyModel = CarParkOccupancy
 
 
 class ChargeConnectorOccupancy(BaseModel):
@@ -57,6 +61,8 @@ class ChargeConnectorOccupancy(BaseModel):
     _source_schema_name: str = PrivateAttr(default='occupancy')
     _component_schema_name: str = PrivateAttr(default='Tfl-3')
 
+
+ChargeConnectorOccupancyModel = ChargeConnectorOccupancy
 
 
 class BikePointOccupancy(BaseModel):
@@ -77,6 +83,8 @@ class BikePointOccupancy(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-4')
 
 
+BikePointOccupancyModel = BikePointOccupancy
+
 
 class CarParkGet200ApplicationJsonResponse(BaseModel):
     """
@@ -90,6 +98,8 @@ class CarParkGet200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='occupancy')
     _component_schema_name: str = PrivateAttr(default='CarParkGet200ApplicationJsonResponse')
 
+
+CarParkGet200ApplicationJsonResponseModel = CarParkGet200ApplicationJsonResponse
 
 
 class ChargeConnectoridsGet200ApplicationJsonResponse(BaseModel):
@@ -105,6 +115,8 @@ class ChargeConnectoridsGet200ApplicationJsonResponse(BaseModel):
     _component_schema_name: str = PrivateAttr(default='ChargeConnector-ids-Get200ApplicationJsonResponse')
 
 
+ChargeConnectoridsGet200ApplicationJsonResponseModel = ChargeConnectoridsGet200ApplicationJsonResponse
+
 
 class ChargeConnectorGet200ApplicationJsonResponse(BaseModel):
     """
@@ -119,6 +131,8 @@ class ChargeConnectorGet200ApplicationJsonResponse(BaseModel):
     _component_schema_name: str = PrivateAttr(default='ChargeConnectorGet200ApplicationJsonResponse')
 
 
+ChargeConnectorGet200ApplicationJsonResponseModel = ChargeConnectorGet200ApplicationJsonResponse
+
 
 class BikePointsidsGet200ApplicationJsonResponse(BaseModel):
     """
@@ -132,6 +146,8 @@ class BikePointsidsGet200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='occupancy')
     _component_schema_name: str = PrivateAttr(default='BikePoints-ids-Get200ApplicationJsonResponse')
 
+
+BikePointsidsGet200ApplicationJsonResponseModel = BikePointsidsGet200ApplicationJsonResponse
 
 
 class Deserialisers(DtoEnum):

@@ -25,6 +25,8 @@ class PredictionTiming(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl')
 
 
+PredictionTimingModel = PredictionTiming
+
 
 class Prediction(BaseModel):
     """
@@ -54,10 +56,12 @@ class Prediction(BaseModel):
     ExpectedArrival: datetime = None
     TimeToLive: datetime = None
     ModeName: str = None
-    Timing: PredictionTiming = None
+    Timing: PredictionTimingModel = None
     _source_schema_name: str = PrivateAttr(default='Vehicle')
     _component_schema_name: str = PrivateAttr(default='Tfl-2')
 
+
+PredictionModel = Prediction
 
 
 class VehicleMatch(BaseModel):
@@ -79,6 +83,8 @@ class VehicleMatch(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-3')
 
 
+VehicleMatchModel = VehicleMatch
+
 
 class idsArrivalsGet200ApplicationJsonResponse(BaseModel):
     """
@@ -92,6 +98,8 @@ class idsArrivalsGet200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Vehicle')
     _component_schema_name: str = PrivateAttr(default='ids-ArrivalsGet200ApplicationJsonResponse')
 
+
+idsArrivalsGet200ApplicationJsonResponseModel = idsArrivalsGet200ApplicationJsonResponse
 
 
 class Deserialisers(DtoEnum):

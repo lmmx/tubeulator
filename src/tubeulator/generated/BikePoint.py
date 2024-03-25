@@ -19,6 +19,8 @@ class PlaceArray(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-Api-Presentation-Entities-PlaceArray')
 
 
+PlaceArrayModel = PlaceArray
+
 
 class Place(BaseModel):
     """
@@ -34,14 +36,16 @@ class Place(BaseModel):
     CommonName: str = None
     Distance: float = None
     PlaceType: str = None
-    AdditionalProperties: list["AdditionalProperties"]
-    Children: list["Place"]
+    AdditionalProperties: list["AdditionalPropertiesModel"]
+    Children: list["PlaceModel"]
     ChildrenUrls: list[str]
     Lat: float = None
     Lon: float = None
     _source_schema_name: str = PrivateAttr(default='BikePoint')
     _component_schema_name: str = PrivateAttr(default='Tfl.Api.Presentation.Entities.Place')
 
+
+PlaceModel = Place
 
 
 class AdditionalProperties(BaseModel):
@@ -61,6 +65,8 @@ class AdditionalProperties(BaseModel):
     _source_schema_name: str = PrivateAttr(default='BikePoint')
     _component_schema_name: str = PrivateAttr(default='Tfl.Api.Presentation.Entities.AdditionalProperties')
 
+
+AdditionalPropertiesModel = AdditionalProperties
 
 
 class Deserialisers(DtoEnum):

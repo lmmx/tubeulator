@@ -23,6 +23,8 @@ class Mode(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl')
 
 
+ModeModel = Mode
+
 
 class PathAttribute(BaseModel):
     """
@@ -38,6 +40,8 @@ class PathAttribute(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-2')
 
+
+PathAttributeModel = PathAttribute
 
 
 class InstructionStep(BaseModel):
@@ -59,12 +63,14 @@ class InstructionStep(BaseModel):
     CumulativeTravelTime: int = None
     Latitude: float = None
     Longitude: float = None
-    PathAttribute: PathAttribute = None
+    PathAttribute: PathAttributeModel = None
     DescriptionHeading: str = None
     TrackType: str = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-3')
 
+
+InstructionStepModel = InstructionStep
 
 
 class Instruction(BaseModel):
@@ -78,10 +84,12 @@ class Instruction(BaseModel):
 
     Summary: str = None
     Detailed: str = None
-    Steps: list["InstructionStep"]
+    Steps: list["InstructionStepModel"]
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-4')
 
+
+InstructionModel = Instruction
 
 
 class Obstacle(BaseModel):
@@ -101,6 +109,8 @@ class Obstacle(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-5')
 
 
+ObstacleModel = Obstacle
+
 
 class Point(BaseModel):
     """
@@ -117,6 +127,8 @@ class Point(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-6')
 
 
+PointModel = Point
+
 
 class PassengerFlow(BaseModel):
     """
@@ -132,6 +144,8 @@ class PassengerFlow(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-7')
 
+
+PassengerFlowModel = PassengerFlow
 
 
 class TrainLoading(BaseModel):
@@ -154,6 +168,8 @@ class TrainLoading(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-8')
 
 
+TrainLoadingModel = TrainLoading
+
 
 class Crowding(BaseModel):
     """
@@ -164,11 +180,13 @@ class Crowding(BaseModel):
         alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
-    PassengerFlows: list["PassengerFlow"]
-    TrainLoadings: list["TrainLoading"]
+    PassengerFlows: list["PassengerFlowModel"]
+    TrainLoadings: list["TrainLoadingModel"]
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-9')
 
+
+CrowdingModel = Crowding
 
 
 class Identifier(BaseModel):
@@ -185,12 +203,14 @@ class Identifier(BaseModel):
     Uri: str = None
     FullName: str = None
     Type: str = None
-    Crowding: Crowding = None
+    Crowding: CrowdingModel = None
     RouteType: str = None
     Status: str = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-10')
 
+
+IdentifierModel = Identifier
 
 
 class JpElevation(BaseModel):
@@ -213,6 +233,8 @@ class JpElevation(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-11')
 
 
+JpElevationModel = JpElevation
+
 
 class Path(BaseModel):
     """
@@ -224,11 +246,13 @@ class Path(BaseModel):
     )
 
     LineString: str = None
-    StopPoints: list["Identifier"]
-    Elevation: list["JpElevation"]
+    StopPoints: list["IdentifierModel"]
+    Elevation: list["JpElevationModel"]
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-12')
 
+
+PathModel = Path
 
 
 class RouteOption(BaseModel):
@@ -243,10 +267,12 @@ class RouteOption(BaseModel):
     Id: str = None
     Name: str = None
     Directions: list[str]
-    LineIdentifier: Identifier = None
+    LineIdentifier: IdentifierModel = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-13')
 
+
+RouteOptionModel = RouteOption
 
 
 class LineGroup(BaseModel):
@@ -265,6 +291,8 @@ class LineGroup(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-14')
 
 
+LineGroupModel = LineGroup
+
 
 class LineModeGroup(BaseModel):
     """
@@ -280,6 +308,8 @@ class LineModeGroup(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-15')
 
+
+LineModeGroupModel = LineModeGroup
 
 
 class AdditionalProperties(BaseModel):
@@ -300,6 +330,8 @@ class AdditionalProperties(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-16')
 
 
+AdditionalPropertiesModel = AdditionalProperties
+
 
 class Place(BaseModel):
     """
@@ -315,14 +347,16 @@ class Place(BaseModel):
     CommonName: str = None
     Distance: float = None
     PlaceType: str = None
-    AdditionalProperties: list["AdditionalProperties"]
-    Children: list["Place"]
+    AdditionalProperties: list["AdditionalPropertiesModel"]
+    Children: list["PlaceModel"]
     ChildrenUrls: list[str]
     Lat: float = None
     Lon: float = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-17')
 
+
+PlaceModel = Place
 
 
 class StopPoint(BaseModel):
@@ -345,9 +379,9 @@ class StopPoint(BaseModel):
     StationNaptan: str = None
     AccessibilitySummary: str = None
     HubNaptanCode: str = None
-    Lines: list["Identifier"]
-    LineGroup: list["LineGroup"]
-    LineModeGroups: list["LineModeGroup"]
+    Lines: list["IdentifierModel"]
+    LineGroup: list["LineGroupModel"]
+    LineModeGroups: list["LineModeGroupModel"]
     FullName: str = None
     NaptanMode: str = None
     Status: bool = None
@@ -356,14 +390,16 @@ class StopPoint(BaseModel):
     CommonName: str = None
     Distance: float = None
     PlaceType: str = None
-    AdditionalProperties: list["AdditionalProperties"]
-    Children: list["Place"]
+    AdditionalProperties: list["AdditionalPropertiesModel"]
+    Children: list["PlaceModel"]
     ChildrenUrls: list[str]
     Lat: float = None
     Lon: float = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-18')
 
+
+StopPointModel = StopPoint
 
 
 class RouteSectionNaptanEntrySequence(BaseModel):
@@ -376,10 +412,12 @@ class RouteSectionNaptanEntrySequence(BaseModel):
     )
 
     Ordinal: int = None
-    StopPoint: StopPoint = None
+    StopPoint: StopPointModel = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-19')
 
+
+RouteSectionNaptanEntrySequenceModel = RouteSectionNaptanEntrySequence
 
 
 class RouteSection(BaseModel):
@@ -401,10 +439,12 @@ class RouteSection(BaseModel):
     DestinationName: str = None
     ValidTo: datetime = None
     ValidFrom: datetime = None
-    RouteSectionNaptanEntrySequence: list["RouteSectionNaptanEntrySequence"]
+    RouteSectionNaptanEntrySequence: list["RouteSectionNaptanEntrySequenceModel"]
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-20')
 
+
+RouteSectionModel = RouteSection
 
 
 class Disruption(BaseModel):
@@ -424,12 +464,14 @@ class Disruption(BaseModel):
     AdditionalInfo: str = None
     Created: datetime = None
     LastUpdate: datetime = None
-    AffectedRoutes: list["RouteSection"]
-    AffectedStops: list["StopPoint"]
+    AffectedRoutes: list["RouteSectionModel"]
+    AffectedStops: list["StopPointModel"]
     ClosureText: str = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-21')
 
+
+DisruptionModel = Disruption
 
 
 class PlannedWork(BaseModel):
@@ -449,6 +491,8 @@ class PlannedWork(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-22')
 
 
+PlannedWorkModel = PlannedWork
+
 
 class Leg(BaseModel):
     """
@@ -461,23 +505,25 @@ class Leg(BaseModel):
 
     Duration: int = None
     Speed: str = None
-    Instruction: Instruction = None
-    Obstacles: list["Obstacle"]
+    Instruction: InstructionModel = None
+    Obstacles: list["ObstacleModel"]
     DepartureTime: datetime = None
     ArrivalTime: datetime = None
-    DeparturePoint: Point = None
-    ArrivalPoint: Point = None
-    Path: Path = None
-    RouteOptions: list["RouteOption"]
-    Mode: Identifier = None
-    Disruptions: list["Disruption"]
-    PlannedWorks: list["PlannedWork"]
+    DeparturePoint: PointModel = None
+    ArrivalPoint: PointModel = None
+    Path: PathModel = None
+    RouteOptions: list["RouteOptionModel"]
+    Mode: IdentifierModel = None
+    Disruptions: list["DisruptionModel"]
+    PlannedWorks: list["PlannedWorkModel"]
     Distance: float = None
     IsDisrupted: bool = None
     HasFixedLocations: bool = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-23')
 
+
+LegModel = Leg
 
 
 class FareTapDetails(BaseModel):
@@ -499,6 +545,8 @@ class FareTapDetails(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-24')
 
 
+FareTapDetailsModel = FareTapDetails
+
 
 class FareTap(BaseModel):
     """
@@ -510,10 +558,12 @@ class FareTap(BaseModel):
     )
 
     AtcoCode: str = None
-    TapDetails: FareTapDetails = None
+    TapDetails: FareTapDetailsModel = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-25')
 
+
+FareTapModel = FareTap
 
 
 class Fare(BaseModel):
@@ -533,10 +583,12 @@ class Fare(BaseModel):
     ChargeLevel: str = None
     Peak: int = None
     OffPeak: int = None
-    Taps: list["FareTap"]
+    Taps: list["FareTapModel"]
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-26')
 
+
+FareModel = Fare
 
 
 class FareCaveat(BaseModel):
@@ -554,6 +606,8 @@ class FareCaveat(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-27')
 
 
+FareCaveatModel = FareCaveat
+
 
 class JourneyFare(BaseModel):
     """
@@ -565,11 +619,13 @@ class JourneyFare(BaseModel):
     )
 
     TotalCost: int = None
-    Fares: list["Fare"]
-    Caveats: list["FareCaveat"]
+    Fares: list["FareModel"]
+    Caveats: list["FareCaveatModel"]
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-28')
 
+
+JourneyFareModel = JourneyFare
 
 
 class Journey(BaseModel):
@@ -584,11 +640,13 @@ class Journey(BaseModel):
     StartDateTime: datetime = None
     Duration: int = None
     ArrivalDateTime: datetime = None
-    Legs: list["Leg"]
-    Fare: JourneyFare = None
+    Legs: list["LegModel"]
+    Fare: JourneyFareModel = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-29')
 
+
+JourneyModel = Journey
 
 
 class ValidityPeriod(BaseModel):
@@ -607,6 +665,8 @@ class ValidityPeriod(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-30')
 
 
+ValidityPeriodModel = ValidityPeriod
+
 
 class LineStatus(BaseModel):
     """
@@ -624,11 +684,13 @@ class LineStatus(BaseModel):
     Reason: str = None
     Created: datetime = None
     Modified: datetime = None
-    ValidityPeriods: list["ValidityPeriod"]
-    Disruption: Disruption = None
+    ValidityPeriods: list["ValidityPeriodModel"]
+    Disruption: DisruptionModel = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-31')
 
+
+LineStatusModel = LineStatus
 
 
 class MatchedRoute(BaseModel):
@@ -654,6 +716,8 @@ class MatchedRoute(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-32')
 
 
+MatchedRouteModel = MatchedRoute
+
 
 class LineServiceTypeInfo(BaseModel):
     """
@@ -670,6 +734,8 @@ class LineServiceTypeInfo(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-33')
 
 
+LineServiceTypeInfoModel = LineServiceTypeInfo
+
 
 class Line(BaseModel):
     """
@@ -683,16 +749,18 @@ class Line(BaseModel):
     Id: str = None
     Name: str = None
     ModeName: str = None
-    Disruptions: list["Disruption"]
+    Disruptions: list["DisruptionModel"]
     Created: datetime = None
     Modified: datetime = None
-    LineStatuses: list["LineStatus"]
-    RouteSections: list["MatchedRoute"]
-    ServiceTypes: list["LineServiceTypeInfo"]
-    Crowding: Crowding = None
+    LineStatuses: list["LineStatusModel"]
+    RouteSections: list["MatchedRouteModel"]
+    ServiceTypes: list["LineServiceTypeInfoModel"]
+    Crowding: CrowdingModel = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-34')
 
+
+LineModel = Line
 
 
 class JourneyPlannerCycleHireDockingStationData(BaseModel):
@@ -714,6 +782,8 @@ class JourneyPlannerCycleHireDockingStationData(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-35')
 
 
+JourneyPlannerCycleHireDockingStationDataModel = JourneyPlannerCycleHireDockingStationData
+
 
 class TimeAdjustment(BaseModel):
     """
@@ -732,6 +802,8 @@ class TimeAdjustment(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-36')
 
 
+TimeAdjustmentModel = TimeAdjustment
+
 
 class TimeAdjustments(BaseModel):
     """
@@ -742,13 +814,15 @@ class TimeAdjustments(BaseModel):
         alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
-    Earliest: TimeAdjustment = None
-    Earlier: TimeAdjustment = None
-    Later: TimeAdjustment = None
-    Latest: TimeAdjustment = None
+    Earliest: TimeAdjustmentModel = None
+    Earlier: TimeAdjustmentModel = None
+    Later: TimeAdjustmentModel = None
+    Latest: TimeAdjustmentModel = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-37')
 
+
+TimeAdjustmentsModel = TimeAdjustments
 
 
 class SearchCriteria(BaseModel):
@@ -762,10 +836,12 @@ class SearchCriteria(BaseModel):
 
     DateTime: datetime = None
     DateTimeType: str = None
-    TimeAdjustments: TimeAdjustments = None
+    TimeAdjustments: TimeAdjustmentsModel = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-38')
 
+
+SearchCriteriaModel = SearchCriteria
 
 
 class JourneyVector(BaseModel):
@@ -785,6 +861,8 @@ class JourneyVector(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-39')
 
 
+JourneyVectorModel = JourneyVector
+
 
 class ItineraryResult(BaseModel):
     """
@@ -795,16 +873,18 @@ class ItineraryResult(BaseModel):
         alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
-    Journeys: list["Journey"]
-    Lines: list["Line"]
-    CycleHireDockingStationData: JourneyPlannerCycleHireDockingStationData = None
+    Journeys: list["JourneyModel"]
+    Lines: list["LineModel"]
+    CycleHireDockingStationData: JourneyPlannerCycleHireDockingStationDataModel = None
     StopMessages: list[str]
     RecommendedMaxAgeMinutes: int = None
-    SearchCriteria: SearchCriteria = None
-    JourneyVector: JourneyVector = None
+    SearchCriteria: SearchCriteriaModel = None
+    JourneyVector: JourneyVectorModel = None
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Tfl-40')
 
+
+ItineraryResultModel = ItineraryResult
 
 
 class MetaModesGet200ApplicationJsonResponse(BaseModel):
@@ -820,6 +900,8 @@ class MetaModesGet200ApplicationJsonResponse(BaseModel):
     _component_schema_name: str = PrivateAttr(default='MetaModesGet200ApplicationJsonResponse')
 
 
+MetaModesGet200ApplicationJsonResponseModel = MetaModesGet200ApplicationJsonResponse
+
 
 class Get200ApplicationJsonResponse(BaseModel):
     """
@@ -833,6 +915,8 @@ class Get200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Journey')
     _component_schema_name: str = PrivateAttr(default='Get200ApplicationJsonResponse')
 
+
+Get200ApplicationJsonResponseModel = Get200ApplicationJsonResponse
 
 
 class Deserialisers(DtoEnum):

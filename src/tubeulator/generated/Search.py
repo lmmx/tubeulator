@@ -24,6 +24,8 @@ class SearchMatch(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl')
 
 
+SearchMatchModel = SearchMatch
+
 
 class SearchResponse(BaseModel):
     """
@@ -40,11 +42,13 @@ class SearchResponse(BaseModel):
     PageSize: int = None
     Provider: str = None
     Total: int = None
-    Matches: list["SearchMatch"]
+    Matches: list["SearchMatchModel"]
     MaxScore: float = None
     _source_schema_name: str = PrivateAttr(default='Search')
     _component_schema_name: str = PrivateAttr(default='Tfl-2')
 
+
+SearchResponseModel = SearchResponse
 
 
 class MetaSearchProviders(BaseModel):
@@ -60,6 +64,8 @@ class MetaSearchProviders(BaseModel):
     _component_schema_name: str = PrivateAttr(default='MetaSearchProvidersGet200ApplicationJsonResponse')
 
 
+MetaSearchProvidersModel = MetaSearchProviders
+
 
 class MetaCategories(BaseModel):
     """
@@ -74,6 +80,8 @@ class MetaCategories(BaseModel):
     _component_schema_name: str = PrivateAttr(default='MetaCategoriesGet200ApplicationJsonResponse')
 
 
+MetaCategoriesModel = MetaCategories
+
 
 class MetaSorts(BaseModel):
     """
@@ -87,6 +95,8 @@ class MetaSorts(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Search')
     _component_schema_name: str = PrivateAttr(default='MetaSortsGet200ApplicationJsonResponse')
 
+
+MetaSortsModel = MetaSorts
 
 
 class Deserialisers(DtoEnum):

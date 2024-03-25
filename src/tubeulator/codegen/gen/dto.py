@@ -247,7 +247,7 @@ def generate_source(
                     if is_pydantic:
                         # Important: stringify to postpone field's schema resolution
                         # (premature access will lead to PydanticSchemaGenerationError)
-                        item_type = f'"{item_type}"'
+                        item_type = f'"{item_type}Model"'
                 # Substitute the reference before accessing the item type
                 # prop_schema["items"] = replacement
                 # I don't think it handles nested dataclass arrays!
@@ -257,6 +257,8 @@ def generate_source(
             else:
                 item_type = python_type(prop_array["type"], prop_array.get("format"))
             prop_type = f"{prop_type}[{item_type}]"
+        elif is_pydantic and is_substituted:
+            prop_type = f"{prop_type}Model"
         if prop_name in required:
             default = ""
         else:
@@ -286,6 +288,9 @@ def generate_source(
         recursive_classes = True"""
     if is_jsonw:
         dc_source += jsonw_methods
+    elif is_pydantic:
+        # Patch field annotation bug https://github.com/pydantic/pydantic/issues/9093
+        dc_source += f"\n\n{class_name}Model = {class_name}"
     jsonw_imports = {
         "dataclass_wizard": ["JSONWizard"],
         "dataclass_wizard.loaders": ["fromdict"],

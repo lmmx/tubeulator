@@ -19,6 +19,8 @@ class AccidentStatsAccidentDetailArray(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-Api-Presentation-Entities-AccidentStats-AccidentDetailArray')
 
 
+AccidentStatsAccidentDetailArrayModel = AccidentStatsAccidentDetailArray
+
 
 class AccidentDetail(BaseModel):
     """
@@ -36,11 +38,13 @@ class AccidentDetail(BaseModel):
     Date: datetime = None
     Severity: str = None
     Borough: str = None
-    Casualties: list["Casualty"]
-    Vehicles: list["Vehicle"]
+    Casualties: list["CasualtyModel"]
+    Vehicles: list["VehicleModel"]
     _source_schema_name: str = PrivateAttr(default='AccidentStats')
     _component_schema_name: str = PrivateAttr(default='Tfl.Api.Presentation.Entities.AccidentStats.AccidentDetail')
 
+
+AccidentDetailModel = AccidentDetail
 
 
 class Casualty(BaseModel):
@@ -61,6 +65,8 @@ class Casualty(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl.Api.Presentation.Entities.AccidentStats.Casualty')
 
 
+CasualtyModel = Casualty
+
 
 class Vehicle(BaseModel):
     """
@@ -75,6 +81,8 @@ class Vehicle(BaseModel):
     _source_schema_name: str = PrivateAttr(default='AccidentStats')
     _component_schema_name: str = PrivateAttr(default='Tfl.Api.Presentation.Entities.AccidentStats.Vehicle')
 
+
+VehicleModel = Vehicle
 
 
 class Deserialisers(DtoEnum):
