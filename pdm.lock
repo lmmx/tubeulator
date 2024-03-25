@@ -5,7 +5,7 @@
 groups = ["default", "docs", "test", "vercel"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.1"
-content_hash = "sha256:b5ce22ccecaeccd698ee6e554eb3aadcb23fc56793285b223feb7fb123cc41b3"
+content_hash = "sha256:c41df57cccabfbcc0fb6c7fad4baeabd3666e7f6fe63dc5f3ae045165bdf29c2"
 
 [[package]]
 name = "annotated-types"
@@ -249,15 +249,6 @@ files = [
     {file = "cssselect2-0.7.0-py3-none-any.whl", hash = "sha256:fd23a65bfd444595913f02fc71f6b286c29261e354c41d722ca7a261a49b5969"},
     {file = "cssselect2-0.7.0.tar.gz", hash = "sha256:1ccd984dab89fc68955043aca4e1b03e0cf29cad9880f6e28e3ba7a74b14aa5a"},
 ]
-
-[[package]]
-name = "dataclass-wizard"
-version = "0.22.1"
-git = "https://github.com/rnag/dataclass-wizard.git"
-ref = "WIP-support-cyclic-references"
-revision = "ffecc2d08a4b4488c2bd07a23c773e55a73141fc"
-summary = "Marshal dataclasses to/from JSON. Use field properties with initial values. Construct a dataclass schema with JSON input."
-groups = ["default"]
 
 [[package]]
 name = "defopt"
