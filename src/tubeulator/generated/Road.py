@@ -29,6 +29,8 @@ class RoadCorridor(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl')
 
 
+RoadCorridorModel = RoadCorridor
+
 
 class DbGeographyWellKnownValue(BaseModel):
     """
@@ -46,6 +48,8 @@ class DbGeographyWellKnownValue(BaseModel):
     _component_schema_name: str = PrivateAttr(default='System')
 
 
+DbGeographyWellKnownValueModel = DbGeographyWellKnownValue
+
 
 class DbGeography(BaseModel):
     """
@@ -56,10 +60,12 @@ class DbGeography(BaseModel):
         alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
-    Geography: DbGeographyWellKnownValue = None
+    Geography: DbGeographyWellKnownValueModel = None
     _source_schema_name: str = PrivateAttr(default='Road')
     _component_schema_name: str = PrivateAttr(default='System-2')
 
+
+DbGeographyModel = DbGeography
 
 
 class StreetSegment(BaseModel):
@@ -79,6 +85,8 @@ class StreetSegment(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-2')
 
 
+StreetSegmentModel = StreetSegment
+
 
 class Street(BaseModel):
     """
@@ -92,12 +100,14 @@ class Street(BaseModel):
     Name: str = None
     Closure: str = None
     Directions: str = None
-    Segments: list["StreetSegment"]
+    Segments: list["StreetSegmentModel"]
     SourceSystemId: int = None
     SourceSystemKey: str = None
     _source_schema_name: str = PrivateAttr(default='Road')
     _component_schema_name: str = PrivateAttr(default='Tfl-3')
 
+
+StreetModel = Street
 
 
 class RoadProject(BaseModel):
@@ -130,6 +140,8 @@ class RoadProject(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-4')
 
 
+RoadProjectModel = RoadProject
+
 
 class RoadDisruptionLine(BaseModel):
     """
@@ -143,7 +155,7 @@ class RoadDisruptionLine(BaseModel):
     Id: int = None
     RoadDisruptionId: str = None
     IsDiversion: bool = None
-    MultiLineString: DbGeography = None
+    MultiLineString: DbGeographyModel = None
     StartDate: datetime = None
     EndDate: datetime = None
     StartTime: str = None
@@ -151,6 +163,8 @@ class RoadDisruptionLine(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Road')
     _component_schema_name: str = PrivateAttr(default='Tfl-5')
 
+
+RoadDisruptionLineModel = RoadDisruptionLine
 
 
 class RoadDisruptionImpactArea(BaseModel):
@@ -164,7 +178,7 @@ class RoadDisruptionImpactArea(BaseModel):
 
     Id: int = None
     RoadDisruptionId: str = None
-    Polygon: DbGeography = None
+    Polygon: DbGeographyModel = None
     StartDate: datetime = None
     EndDate: datetime = None
     StartTime: str = None
@@ -172,6 +186,8 @@ class RoadDisruptionImpactArea(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Road')
     _component_schema_name: str = PrivateAttr(default='Tfl-6')
 
+
+RoadDisruptionImpactAreaModel = RoadDisruptionImpactArea
 
 
 class RoadDisruptionSchedule(BaseModel):
@@ -188,6 +204,8 @@ class RoadDisruptionSchedule(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Road')
     _component_schema_name: str = PrivateAttr(default='Tfl-7')
 
+
+RoadDisruptionScheduleModel = RoadDisruptionSchedule
 
 
 class RoadDisruption(BaseModel):
@@ -216,23 +234,25 @@ class RoadDisruption(BaseModel):
     LevelOfInterest: str = None
     Location: str = None
     Status: str = None
-    Geography: DbGeography = None
-    Geometry: DbGeography = None
-    Streets: list["Street"]
+    Geography: DbGeographyModel = None
+    Geometry: DbGeographyModel = None
+    Streets: list["StreetModel"]
     IsProvisional: bool = None
     HasClosures: bool = None
     LinkText: str = None
     LinkUrl: str = None
-    RoadProject: RoadProject = None
+    RoadProject: RoadProjectModel = None
     PublishStartDate: datetime = None
     PublishEndDate: datetime = None
     TimeFrame: str = None
-    RoadDisruptionLines: list["RoadDisruptionLine"]
-    RoadDisruptionImpactAreas: list["RoadDisruptionImpactArea"]
-    RecurringSchedules: list["RoadDisruptionSchedule"]
+    RoadDisruptionLines: list["RoadDisruptionLineModel"]
+    RoadDisruptionImpactAreas: list["RoadDisruptionImpactAreaModel"]
+    RecurringSchedules: list["RoadDisruptionScheduleModel"]
     _source_schema_name: str = PrivateAttr(default='Road')
     _component_schema_name: str = PrivateAttr(default='Tfl-8')
 
+
+RoadDisruptionModel = RoadDisruption
 
 
 class Object(BaseModel):
@@ -247,6 +267,8 @@ class Object(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Road')
     _component_schema_name: str = PrivateAttr(default='System-3')
 
+
+ObjectModel = Object
 
 
 class StatusSeverity(BaseModel):
@@ -265,6 +287,8 @@ class StatusSeverity(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-9')
 
 
+StatusSeverityModel = StatusSeverity
+
 
 class Get200ApplicationJsonResponse(BaseModel):
     """
@@ -278,6 +302,8 @@ class Get200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Road')
     _component_schema_name: str = PrivateAttr(default='Get200ApplicationJsonResponse')
 
+
+Get200ApplicationJsonResponseModel = Get200ApplicationJsonResponse
 
 
 class idsGet200ApplicationJsonResponse(BaseModel):
@@ -293,6 +319,8 @@ class idsGet200ApplicationJsonResponse(BaseModel):
     _component_schema_name: str = PrivateAttr(default='ids-Get200ApplicationJsonResponse')
 
 
+idsGet200ApplicationJsonResponseModel = idsGet200ApplicationJsonResponse
+
 
 class idsStatusGet200ApplicationJsonResponse(BaseModel):
     """
@@ -306,6 +334,8 @@ class idsStatusGet200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Road')
     _component_schema_name: str = PrivateAttr(default='ids-StatusGet200ApplicationJsonResponse')
 
+
+idsStatusGet200ApplicationJsonResponseModel = idsStatusGet200ApplicationJsonResponse
 
 
 class idsDisruptionGet200ApplicationJsonResponse(BaseModel):
@@ -321,6 +351,8 @@ class idsDisruptionGet200ApplicationJsonResponse(BaseModel):
     _component_schema_name: str = PrivateAttr(default='ids-DisruptionGet200ApplicationJsonResponse')
 
 
+idsDisruptionGet200ApplicationJsonResponseModel = idsDisruptionGet200ApplicationJsonResponse
+
 
 class MetaCategories(BaseModel):
     """
@@ -335,6 +367,8 @@ class MetaCategories(BaseModel):
     _component_schema_name: str = PrivateAttr(default='MetaCategoriesGet200ApplicationJsonResponse')
 
 
+MetaCategoriesModel = MetaCategories
+
 
 class MetaSeveritiesGet200ApplicationJsonResponse(BaseModel):
     """
@@ -348,6 +382,8 @@ class MetaSeveritiesGet200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Road')
     _component_schema_name: str = PrivateAttr(default='MetaSeveritiesGet200ApplicationJsonResponse')
 
+
+MetaSeveritiesGet200ApplicationJsonResponseModel = MetaSeveritiesGet200ApplicationJsonResponse
 
 
 class Deserialisers(DtoEnum):

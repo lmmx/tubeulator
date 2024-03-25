@@ -21,6 +21,8 @@ class PlaceCategory(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl')
 
 
+PlaceCategoryModel = PlaceCategory
+
 
 class Mode(BaseModel):
     """
@@ -39,6 +41,8 @@ class Mode(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-2')
 
 
+ModeModel = Mode
+
 
 class PassengerFlow(BaseModel):
     """
@@ -54,6 +58,8 @@ class PassengerFlow(BaseModel):
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl-3')
 
+
+PassengerFlowModel = PassengerFlow
 
 
 class TrainLoading(BaseModel):
@@ -76,6 +82,8 @@ class TrainLoading(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-4')
 
 
+TrainLoadingModel = TrainLoading
+
 
 class Crowding(BaseModel):
     """
@@ -86,11 +94,13 @@ class Crowding(BaseModel):
         alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
-    PassengerFlows: list["PassengerFlow"]
-    TrainLoadings: list["TrainLoading"]
+    PassengerFlows: list["PassengerFlowModel"]
+    TrainLoadings: list["TrainLoadingModel"]
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl-5')
 
+
+CrowdingModel = Crowding
 
 
 class Identifier(BaseModel):
@@ -107,12 +117,14 @@ class Identifier(BaseModel):
     Uri: str = None
     FullName: str = None
     Type: str = None
-    Crowding: Crowding = None
+    Crowding: CrowdingModel = None
     RouteType: str = None
     Status: str = None
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl-6')
 
+
+IdentifierModel = Identifier
 
 
 class LineGroup(BaseModel):
@@ -131,6 +143,8 @@ class LineGroup(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-7')
 
 
+LineGroupModel = LineGroup
+
 
 class LineModeGroup(BaseModel):
     """
@@ -146,6 +160,8 @@ class LineModeGroup(BaseModel):
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl-8')
 
+
+LineModeGroupModel = LineModeGroup
 
 
 class AdditionalProperties(BaseModel):
@@ -166,6 +182,8 @@ class AdditionalProperties(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-9')
 
 
+AdditionalPropertiesModel = AdditionalProperties
+
 
 class Place(BaseModel):
     """
@@ -181,14 +199,16 @@ class Place(BaseModel):
     CommonName: str = None
     Distance: float = None
     PlaceType: str = None
-    AdditionalProperties: list["AdditionalProperties"]
-    Children: list["Place"]
+    AdditionalProperties: list["AdditionalPropertiesModel"]
+    Children: list["PlaceModel"]
     ChildrenUrls: list[str]
     Lat: float = None
     Lon: float = None
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl-10')
 
+
+PlaceModel = Place
 
 
 class StopPoint(BaseModel):
@@ -211,9 +231,9 @@ class StopPoint(BaseModel):
     StationNaptan: str = None
     AccessibilitySummary: str = None
     HubNaptanCode: str = None
-    Lines: list["Identifier"]
-    LineGroup: list["LineGroup"]
-    LineModeGroups: list["LineModeGroup"]
+    Lines: list["IdentifierModel"]
+    LineGroup: list["LineGroupModel"]
+    LineModeGroups: list["LineModeGroupModel"]
     FullName: str = None
     NaptanMode: str = None
     Status: bool = None
@@ -222,14 +242,16 @@ class StopPoint(BaseModel):
     CommonName: str = None
     Distance: float = None
     PlaceType: str = None
-    AdditionalProperties: list["AdditionalProperties"]
-    Children: list["Place"]
+    AdditionalProperties: list["AdditionalPropertiesModel"]
+    Children: list["PlaceModel"]
     ChildrenUrls: list[str]
     Lat: float = None
     Lon: float = None
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl-11')
 
+
+StopPointModel = StopPoint
 
 
 class LineServiceTypeInfo(BaseModel):
@@ -247,6 +269,8 @@ class LineServiceTypeInfo(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-12')
 
 
+LineServiceTypeInfoModel = LineServiceTypeInfo
+
 
 class LineSpecificServiceType(BaseModel):
     """
@@ -257,11 +281,13 @@ class LineSpecificServiceType(BaseModel):
         alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
-    ServiceType: LineServiceTypeInfo = None
+    ServiceType: LineServiceTypeInfoModel = None
     StopServesServiceType: bool = None
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl-13')
 
+
+LineSpecificServiceTypeModel = LineSpecificServiceType
 
 
 class LineServiceType(BaseModel):
@@ -274,10 +300,12 @@ class LineServiceType(BaseModel):
     )
 
     LineName: str = None
-    LineSpecificServiceTypes: list["LineSpecificServiceType"]
+    LineSpecificServiceTypes: list["LineSpecificServiceTypeModel"]
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl-14')
 
+
+LineServiceTypeModel = LineServiceType
 
 
 class PredictionTiming(BaseModel):
@@ -298,6 +326,8 @@ class PredictionTiming(BaseModel):
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl-15')
 
+
+PredictionTimingModel = PredictionTiming
 
 
 class Prediction(BaseModel):
@@ -328,10 +358,12 @@ class Prediction(BaseModel):
     ExpectedArrival: datetime = None
     TimeToLive: datetime = None
     ModeName: str = None
-    Timing: PredictionTiming = None
+    Timing: PredictionTimingModel = None
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl-16')
 
+
+PredictionModel = Prediction
 
 
 class ArrivalDeparture(BaseModel):
@@ -356,10 +388,12 @@ class ArrivalDeparture(BaseModel):
     MinutesAndSecondsToDeparture: str = None
     Cause: str = None
     DepartureStatus: str = None
-    Timing: PredictionTiming = None
+    Timing: PredictionTimingModel = None
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl-17')
 
+
+ArrivalDepartureModel = ArrivalDeparture
 
 
 class StopPointRouteSection(BaseModel):
@@ -387,6 +421,8 @@ class StopPointRouteSection(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-18')
 
 
+StopPointRouteSectionModel = StopPointRouteSection
+
 
 class DisruptedPoint(BaseModel):
     """
@@ -411,6 +447,8 @@ class DisruptedPoint(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-19')
 
 
+DisruptedPointModel = DisruptedPoint
+
 
 class StopPointsResponse(BaseModel):
     """
@@ -422,13 +460,15 @@ class StopPointsResponse(BaseModel):
     )
 
     CentrePoint: list[float]
-    StopPoints: list["StopPoint"]
+    StopPoints: list["StopPointModel"]
     PageSize: int = None
     Total: int = None
     Page: int = None
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl-20')
 
+
+StopPointsResponseModel = StopPointsResponse
 
 
 class SearchMatch(BaseModel):
@@ -449,6 +489,8 @@ class SearchMatch(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-21')
 
 
+SearchMatchModel = SearchMatch
+
 
 class SearchResponse(BaseModel):
     """
@@ -465,11 +507,13 @@ class SearchResponse(BaseModel):
     PageSize: int = None
     Provider: str = None
     Total: int = None
-    Matches: list["SearchMatch"]
+    Matches: list["SearchMatchModel"]
     MaxScore: float = None
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl-22')
 
+
+SearchResponseModel = SearchResponse
 
 
 class Object(BaseModel):
@@ -485,6 +529,8 @@ class Object(BaseModel):
     _component_schema_name: str = PrivateAttr(default='System')
 
 
+ObjectModel = Object
+
 
 class Get200ApplicationJsonResponse(BaseModel):
     """
@@ -498,6 +544,8 @@ class Get200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Get200ApplicationJsonResponse')
 
+
+Get200ApplicationJsonResponseModel = Get200ApplicationJsonResponse
 
 
 class MetaCategoriesGet200ApplicationJsonResponse(BaseModel):
@@ -513,6 +561,8 @@ class MetaCategoriesGet200ApplicationJsonResponse(BaseModel):
     _component_schema_name: str = PrivateAttr(default='MetaCategoriesGet200ApplicationJsonResponse')
 
 
+MetaCategoriesGet200ApplicationJsonResponseModel = MetaCategoriesGet200ApplicationJsonResponse
+
 
 class MetaStopTypes(BaseModel):
     """
@@ -526,6 +576,8 @@ class MetaStopTypes(BaseModel):
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='MetaStopTypesGet200ApplicationJsonResponse')
 
+
+MetaStopTypesModel = MetaStopTypes
 
 
 class MetaModesGet200ApplicationJsonResponse(BaseModel):
@@ -541,6 +593,8 @@ class MetaModesGet200ApplicationJsonResponse(BaseModel):
     _component_schema_name: str = PrivateAttr(default='MetaModesGet200ApplicationJsonResponse')
 
 
+MetaModesGet200ApplicationJsonResponseModel = MetaModesGet200ApplicationJsonResponse
+
 
 class idsGet200ApplicationJsonResponse(BaseModel):
     """
@@ -554,6 +608,8 @@ class idsGet200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='ids-Get200ApplicationJsonResponse')
 
+
+idsGet200ApplicationJsonResponseModel = idsGet200ApplicationJsonResponse
 
 
 class idPlaceTypesGet200ApplicationJsonResponse(BaseModel):
@@ -569,6 +625,8 @@ class idPlaceTypesGet200ApplicationJsonResponse(BaseModel):
     _component_schema_name: str = PrivateAttr(default='id-PlaceTypesGet200ApplicationJsonResponse')
 
 
+idPlaceTypesGet200ApplicationJsonResponseModel = idPlaceTypesGet200ApplicationJsonResponse
+
 
 class idCrowdinglineGet200ApplicationJsonResponse(BaseModel):
     """
@@ -582,6 +640,8 @@ class idCrowdinglineGet200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='id-Crowding-line-Get200ApplicationJsonResponse')
 
+
+idCrowdinglineGet200ApplicationJsonResponseModel = idCrowdinglineGet200ApplicationJsonResponse
 
 
 class TypetypesGet200ApplicationJsonResponse(BaseModel):
@@ -597,6 +657,8 @@ class TypetypesGet200ApplicationJsonResponse(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Type-types-Get200ApplicationJsonResponse')
 
 
+TypetypesGet200ApplicationJsonResponseModel = TypetypesGet200ApplicationJsonResponse
+
 
 class TypetypesPagepageGet200ApplicationJsonResponse(BaseModel):
     """
@@ -610,6 +672,8 @@ class TypetypesPagepageGet200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Type-types-Page-page-Get200ApplicationJsonResponse')
 
+
+TypetypesPagepageGet200ApplicationJsonResponseModel = TypetypesPagepageGet200ApplicationJsonResponse
 
 
 class ServiceTypesGet200ApplicationJsonResponse(BaseModel):
@@ -625,6 +689,8 @@ class ServiceTypesGet200ApplicationJsonResponse(BaseModel):
     _component_schema_name: str = PrivateAttr(default='ServiceTypesGet200ApplicationJsonResponse')
 
 
+ServiceTypesGet200ApplicationJsonResponseModel = ServiceTypesGet200ApplicationJsonResponse
+
 
 class idArrivalsGet200ApplicationJsonResponse(BaseModel):
     """
@@ -638,6 +704,8 @@ class idArrivalsGet200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='id-ArrivalsGet200ApplicationJsonResponse')
 
+
+idArrivalsGet200ApplicationJsonResponseModel = idArrivalsGet200ApplicationJsonResponse
 
 
 class idArrivalDeparturesGet200ApplicationJsonResponse(BaseModel):
@@ -653,6 +721,8 @@ class idArrivalDeparturesGet200ApplicationJsonResponse(BaseModel):
     _component_schema_name: str = PrivateAttr(default='id-ArrivalDeparturesGet200ApplicationJsonResponse')
 
 
+idArrivalDeparturesGet200ApplicationJsonResponseModel = idArrivalDeparturesGet200ApplicationJsonResponse
+
 
 class idCanReachOnLinelineIdGet200ApplicationJsonResponse(BaseModel):
     """
@@ -666,6 +736,8 @@ class idCanReachOnLinelineIdGet200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='id-CanReachOnLine-lineId-Get200ApplicationJsonResponse')
 
+
+idCanReachOnLinelineIdGet200ApplicationJsonResponseModel = idCanReachOnLinelineIdGet200ApplicationJsonResponse
 
 
 class idRouteGet200ApplicationJsonResponse(BaseModel):
@@ -681,6 +753,8 @@ class idRouteGet200ApplicationJsonResponse(BaseModel):
     _component_schema_name: str = PrivateAttr(default='id-RouteGet200ApplicationJsonResponse')
 
 
+idRouteGet200ApplicationJsonResponseModel = idRouteGet200ApplicationJsonResponse
+
 
 class ModemodesDisruptionGet200ApplicationJsonResponse(BaseModel):
     """
@@ -694,6 +768,8 @@ class ModemodesDisruptionGet200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Mode-modes-DisruptionGet200ApplicationJsonResponse')
 
+
+ModemodesDisruptionGet200ApplicationJsonResponseModel = ModemodesDisruptionGet200ApplicationJsonResponse
 
 
 class idsDisruptionGet200ApplicationJsonResponse(BaseModel):
@@ -709,6 +785,8 @@ class idsDisruptionGet200ApplicationJsonResponse(BaseModel):
     _component_schema_name: str = PrivateAttr(default='ids-DisruptionGet200ApplicationJsonResponse')
 
 
+idsDisruptionGet200ApplicationJsonResponseModel = idsDisruptionGet200ApplicationJsonResponse
+
 
 class idDirectionTotoStopPointIdGet200ApplicationJsonResponse(BaseModel):
     """
@@ -722,6 +800,8 @@ class idDirectionTotoStopPointIdGet200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='id-DirectionTo-toStopPointId-Get200ApplicationJsonResponse')
 
+
+idDirectionTotoStopPointIdGet200ApplicationJsonResponseModel = idDirectionTotoStopPointIdGet200ApplicationJsonResponse
 
 
 class stopPointIdTaxiRanksGet200ApplicationJsonResponse(BaseModel):
@@ -737,6 +817,8 @@ class stopPointIdTaxiRanksGet200ApplicationJsonResponse(BaseModel):
     _component_schema_name: str = PrivateAttr(default='stopPointId-TaxiRanksGet200ApplicationJsonResponse')
 
 
+stopPointIdTaxiRanksGet200ApplicationJsonResponseModel = stopPointIdTaxiRanksGet200ApplicationJsonResponse
+
 
 class stopPointIdCarParksGet200ApplicationJsonResponse(BaseModel):
     """
@@ -750,6 +832,8 @@ class stopPointIdCarParksGet200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='stopPointId-CarParksGet200ApplicationJsonResponse')
 
+
+stopPointIdCarParksGet200ApplicationJsonResponseModel = stopPointIdCarParksGet200ApplicationJsonResponse
 
 
 class Deserialisers(DtoEnum):

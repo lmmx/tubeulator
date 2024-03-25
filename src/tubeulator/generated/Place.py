@@ -21,6 +21,8 @@ class PlaceCategory(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl')
 
 
+PlaceCategoryModel = PlaceCategory
+
 
 class AdditionalProperties(BaseModel):
     """
@@ -40,6 +42,8 @@ class AdditionalProperties(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-2')
 
 
+AdditionalPropertiesModel = AdditionalProperties
+
 
 class Place(BaseModel):
     """
@@ -55,14 +59,16 @@ class Place(BaseModel):
     CommonName: str = None
     Distance: float = None
     PlaceType: str = None
-    AdditionalProperties: list["AdditionalProperties"]
-    Children: list["Place"]
+    AdditionalProperties: list["AdditionalPropertiesModel"]
+    Children: list["PlaceModel"]
     ChildrenUrls: list[str]
     Lat: float = None
     Lon: float = None
     _source_schema_name: str = PrivateAttr(default='Place')
     _component_schema_name: str = PrivateAttr(default='Tfl-3')
 
+
+PlaceModel = Place
 
 
 class PassengerFlow(BaseModel):
@@ -79,6 +85,8 @@ class PassengerFlow(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Place')
     _component_schema_name: str = PrivateAttr(default='Tfl-4')
 
+
+PassengerFlowModel = PassengerFlow
 
 
 class TrainLoading(BaseModel):
@@ -101,6 +109,8 @@ class TrainLoading(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-5')
 
 
+TrainLoadingModel = TrainLoading
+
 
 class Crowding(BaseModel):
     """
@@ -111,11 +121,13 @@ class Crowding(BaseModel):
         alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
-    PassengerFlows: list["PassengerFlow"]
-    TrainLoadings: list["TrainLoading"]
+    PassengerFlows: list["PassengerFlowModel"]
+    TrainLoadings: list["TrainLoadingModel"]
     _source_schema_name: str = PrivateAttr(default='Place')
     _component_schema_name: str = PrivateAttr(default='Tfl-6')
 
+
+CrowdingModel = Crowding
 
 
 class Identifier(BaseModel):
@@ -132,12 +144,14 @@ class Identifier(BaseModel):
     Uri: str = None
     FullName: str = None
     Type: str = None
-    Crowding: Crowding = None
+    Crowding: CrowdingModel = None
     RouteType: str = None
     Status: str = None
     _source_schema_name: str = PrivateAttr(default='Place')
     _component_schema_name: str = PrivateAttr(default='Tfl-7')
 
+
+IdentifierModel = Identifier
 
 
 class LineGroup(BaseModel):
@@ -156,6 +170,8 @@ class LineGroup(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-8')
 
 
+LineGroupModel = LineGroup
+
 
 class LineModeGroup(BaseModel):
     """
@@ -171,6 +187,8 @@ class LineModeGroup(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Place')
     _component_schema_name: str = PrivateAttr(default='Tfl-9')
 
+
+LineModeGroupModel = LineModeGroup
 
 
 class StopPoint(BaseModel):
@@ -193,9 +211,9 @@ class StopPoint(BaseModel):
     StationNaptan: str = None
     AccessibilitySummary: str = None
     HubNaptanCode: str = None
-    Lines: list["Identifier"]
-    LineGroup: list["LineGroup"]
-    LineModeGroups: list["LineModeGroup"]
+    Lines: list["IdentifierModel"]
+    LineGroup: list["LineGroupModel"]
+    LineModeGroups: list["LineModeGroupModel"]
     FullName: str = None
     NaptanMode: str = None
     Status: bool = None
@@ -204,14 +222,16 @@ class StopPoint(BaseModel):
     CommonName: str = None
     Distance: float = None
     PlaceType: str = None
-    AdditionalProperties: list["AdditionalProperties"]
-    Children: list["Place"]
+    AdditionalProperties: list["AdditionalPropertiesModel"]
+    Children: list["PlaceModel"]
     ChildrenUrls: list[str]
     Lat: float = None
     Lon: float = None
     _source_schema_name: str = PrivateAttr(default='Place')
     _component_schema_name: str = PrivateAttr(default='Tfl-10')
 
+
+StopPointModel = StopPoint
 
 
 class Object(BaseModel):
@@ -227,6 +247,8 @@ class Object(BaseModel):
     _component_schema_name: str = PrivateAttr(default='System')
 
 
+ObjectModel = Object
+
 
 class MetaCategoriesGet200ApplicationJsonResponse(BaseModel):
     """
@@ -240,6 +262,8 @@ class MetaCategoriesGet200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Place')
     _component_schema_name: str = PrivateAttr(default='MetaCategoriesGet200ApplicationJsonResponse')
 
+
+MetaCategoriesGet200ApplicationJsonResponseModel = MetaCategoriesGet200ApplicationJsonResponse
 
 
 class Get200ApplicationJsonResponse(BaseModel):
@@ -255,6 +279,8 @@ class Get200ApplicationJsonResponse(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Get200ApplicationJsonResponse')
 
 
+Get200ApplicationJsonResponseModel = Get200ApplicationJsonResponse
+
 
 class MetaPlaceTypesGet200ApplicationJsonResponse(BaseModel):
     """
@@ -268,6 +294,8 @@ class MetaPlaceTypesGet200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Place')
     _component_schema_name: str = PrivateAttr(default='MetaPlaceTypesGet200ApplicationJsonResponse')
 
+
+MetaPlaceTypesGet200ApplicationJsonResponseModel = MetaPlaceTypesGet200ApplicationJsonResponse
 
 
 class TypetypesGet200ApplicationJsonResponse(BaseModel):
@@ -283,6 +311,8 @@ class TypetypesGet200ApplicationJsonResponse(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Type-types-Get200ApplicationJsonResponse')
 
 
+TypetypesGet200ApplicationJsonResponseModel = TypetypesGet200ApplicationJsonResponse
+
 
 class idGet200ApplicationJsonResponse(BaseModel):
     """
@@ -296,6 +326,8 @@ class idGet200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Place')
     _component_schema_name: str = PrivateAttr(default='id-Get200ApplicationJsonResponse')
 
+
+idGet200ApplicationJsonResponseModel = idGet200ApplicationJsonResponse
 
 
 class ApplicationJsonResponse(BaseModel):
@@ -311,6 +343,8 @@ class ApplicationJsonResponse(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Get200ApplicationJsonResponse-1')
 
 
+ApplicationJsonResponseModel = ApplicationJsonResponse
+
 
 class SearchGet200ApplicationJsonResponse(BaseModel):
     """
@@ -324,6 +358,8 @@ class SearchGet200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Place')
     _component_schema_name: str = PrivateAttr(default='SearchGet200ApplicationJsonResponse')
 
+
+SearchGet200ApplicationJsonResponseModel = SearchGet200ApplicationJsonResponse
 
 
 class Deserialisers(DtoEnum):

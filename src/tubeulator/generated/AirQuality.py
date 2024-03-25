@@ -19,6 +19,8 @@ class Object(BaseModel):
     _component_schema_name: str = PrivateAttr(default='System.Object')
 
 
+ObjectModel = Object
+
 
 class Deserialisers(DtoEnum):
     System__Object = Object

@@ -19,6 +19,8 @@ class ActiveServiceTypeArray(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl-Api-Presentation-Entities-ActiveServiceTypeArray')
 
 
+ActiveServiceTypeArrayModel = ActiveServiceTypeArray
+
 
 class ActiveServiceType(BaseModel):
     """
@@ -35,6 +37,8 @@ class ActiveServiceType(BaseModel):
     _component_schema_name: str = PrivateAttr(default='Tfl.Api.Presentation.Entities.ActiveServiceType')
 
 
+ActiveServiceTypeModel = ActiveServiceType
+
 
 class PredictionArray(BaseModel):
     """
@@ -48,6 +52,8 @@ class PredictionArray(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Mode')
     _component_schema_name: str = PrivateAttr(default='Tfl-Api-Presentation-Entities-PredictionArray-4')
 
+
+PredictionArrayModel = PredictionArray
 
 
 class Prediction(BaseModel):
@@ -78,10 +84,12 @@ class Prediction(BaseModel):
     ExpectedArrival: datetime = None
     TimeToLive: datetime = None
     ModeName: str = None
-    Timing: PredictionTiming = None
+    Timing: PredictionTimingModel = None
     _source_schema_name: str = PrivateAttr(default='Mode')
     _component_schema_name: str = PrivateAttr(default='Tfl.Api.Presentation.Entities.Prediction')
 
+
+PredictionModel = Prediction
 
 
 class PredictionTiming(BaseModel):
@@ -102,6 +110,8 @@ class PredictionTiming(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Mode')
     _component_schema_name: str = PrivateAttr(default='Tfl.Api.Presentation.Entities.PredictionTiming')
 
+
+PredictionTimingModel = PredictionTiming
 
 
 class Deserialisers(DtoEnum):

@@ -25,6 +25,8 @@ class LiftDisruption(BaseModel):
     _component_schema_name: str = PrivateAttr(default='LiftDisruption')
 
 
+LiftDisruptionModel = LiftDisruption
+
 
 class Get200ApplicationJsonResponse(BaseModel):
     """
@@ -38,6 +40,8 @@ class Get200ApplicationJsonResponse(BaseModel):
     _source_schema_name: str = PrivateAttr(default='Disruptions-Lifts-v2')
     _component_schema_name: str = PrivateAttr(default='Get200ApplicationJsonResponse')
 
+
+Get200ApplicationJsonResponseModel = Get200ApplicationJsonResponse
 
 
 class Deserialisers(DtoEnum):
