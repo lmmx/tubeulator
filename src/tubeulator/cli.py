@@ -2,7 +2,7 @@ from pprint import pprint
 
 import defopt
 
-from .codegen.codegen import emit_deserialisers
+from .codegen.gen import emit_deserialisers
 from .codegen.populate import generate_schema_coverage
 from .openapi.scan import count_namespace, scan_namespace
 

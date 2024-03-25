@@ -3,7 +3,6 @@ from pathlib import Path
 
 from httpx import Response
 
-
 __all__ = ["RequestError"]
 
 

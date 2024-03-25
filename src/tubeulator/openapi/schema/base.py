@@ -3,8 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
-import ujson
-
+import orjson
 
 __all__ = ["ApiSchema"]
 
@@ -17,7 +16,7 @@ class ApiSchema:
     def __post_init__(self):
         if self.path.suffix != ".json":
             raise ValueError(f"{self.path=} is not a JSON file")
-        obj = ujson.loads(self.path.read_text())
+        obj = orjson.loads(self.path.read_text())
         # Discard any of the entities with 'Array' in, they're not useful
         self.entity_schemas = {}
         self.ents_by_property_count = {}

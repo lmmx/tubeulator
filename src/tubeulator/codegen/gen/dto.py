@@ -1,61 +1,27 @@
 import ast
-import logging
 import textwrap
 from itertools import starmap
-from textwrap import indent
+from typing import Literal
 
-from dataclass_wizard.utils.string_conv import to_pascal_case
-
-from ..openapi.scan import scan_namespace
-from ..utils.lcp_trie import Trie
-from ..utils.paths import (
-    SchemaPath,
-    load_endpoint_component_schemas,
-    to_enum_friendly_str,
+from ...openapi.scan import scan_namespace
+from ...utils.paths import SchemaPath, load_endpoint_component_schemas
+from ...utils.string_conv import to_pascal_case
+from .jsonschema import python_type
+from .resolution import (
+    find_array_literals,
+    find_arrays,
+    find_backrefs,
+    find_chased,
+    find_string_literals,
 )
 
-
-__all__ = ["emit_deserialisers"]
-
-logger = logging.getLogger(__name__)
-
-
-class CustomFormatter(logging.Formatter):
-    def formatException(self, exc_info):
-        result = super().formatException(exc_info)
-        return indent(
-            f"\n{result}\n",
-            prefix=" " * 8,
-        )
-
-
-formatter = CustomFormatter("[%(levelname)s] - %(message)s")
-
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.INFO)
-console_handler.setFormatter(formatter)
-
-logger.addHandler(console_handler)
-
-
-def python_type(json_type: str, format: str = None) -> str:
-    """Map property types in the JSON schema to Python types for type annotation.
-    The `format` can be "email" if it's a string but it doesn't change the result.
-    """
-    type_lookup = {
-        "string": "str",
-        "integer": "int",
-        "boolean": "bool",
-        "array": "list",
-        "object": "dict",
-    }
-    if json_type == "number" and format == "double":
-        python_type = "float"
-    elif json_type == "string" and format == "date-time":
-        python_type = "datetime"
-    else:
-        python_type = type_lookup[json_type]
-    return python_type
+__all__ = [
+    "import_node",
+    "generate_dataclass_name",
+    "generate_dataclass",
+    "hidden_field",
+    "generate_source",
+]
 
 
 def import_node(module: str, names: list[str]) -> ast.Import:
@@ -63,61 +29,6 @@ def import_node(module: str, names: list[str]) -> ast.Import:
         return ast.ImportFrom(module=module, names=[*map(ast.alias, names)], level=0)
     else:
         return ast.Import(names=[ast.alias(name=module)])
-
-
-def find_backrefs(monoschema: dict) -> dict[str, SchemaPath]:
-    """Map names of all schemas in the lookup to their referent (i.e. their array type)"""
-    return {
-        k: SchemaPath(v)
-        for k, v in monoschema.items()
-        if "items" in v
-        if "$ref" in v["items"]
-    }
-
-
-def find_string_literals(monoschema: dict) -> dict[str, str]:
-    """Map names of all schemas in the lookup with a common literal string."""
-    return {k: v["type"] for k, v in monoschema.items() if v.get("type") == "string"}
-
-
-def find_array_literals(monoschema: dict) -> dict[str, SchemaPath]:
-    """Map names of all schemas in the lookup with a common literal array."""
-    return {
-        k: v["items"]["type"]
-        for k, v in monoschema.items()
-        if "type" in v.get("items", {})
-    }
-
-
-def find_chased(backrefs: dict[str, SchemaPath], name: str, ref_name: str) -> list[str]:
-    return [
-        backref
-        for backref, schema_path in backrefs.items()
-        if schema_path.ref.name == ref_name
-    ]
-
-
-def find_arrays(chased: list[str]) -> list[str]:
-    """Can't simply choose the one(s) ending in 'Array': in Mode it ends in "Array-4" """
-    t = Trie()
-    for c in chased:
-        t.insert(c)
-    # array_shortlist = [c for c in chased if c.endswith("Array")]
-    array_shortlist = []
-    try:
-        for stem, stem_node in t.root.data.items():
-            if stem_node.is_word:
-                array_shortlist.append(stem)
-            else:
-                substem, substem_node = next(iter(stem_node.data.items()))
-                assert (
-                    substem_node.is_word
-                ), "Descended 2 trie levels and didn't get a word"
-                array_shortlist.append(f"{stem}{substem}")
-    except AssertionError:
-        # It's an assortment of responses, just pull out the ones we want
-        array_shortlist = [c for c in chased if "ApplicationJson" in c]
-    return array_shortlist
 
 
 def generate_dataclass_name(
@@ -264,8 +175,20 @@ def generate_dataclass(
     return preproc_class_name, output
 
 
-def hidden_field(default_value: str) -> str:
-    return f"field(default={default_value!r}, repr=False)"
+def hidden_field(default_value: str, style: Literal["pydantic", "jsonw"]) -> str:
+    if style == "jsonw":
+        value = f"field(default={default_value!r}, repr=False)"
+    elif style == "pydantic":
+        value = f"PrivateAttr(default={default_value!r})"
+    return value
+
+
+def make_class_header(class_name: str, style: Literal["pydantic", "jsonw"]) -> str:
+    if style == "jsonw":
+        hed = f"@dataclass\nclass {class_name}(JSONWizard):\n"
+    elif style == "pydantic":
+        hed = f"class {class_name}(BaseModel):\n"
+    return hed
 
 
 def generate_source(
@@ -278,13 +201,20 @@ def generate_source(
     indent_level: int,
     idx: int,
     schema_mapping: dict[str, str] | None,
+    style: Literal["pydantic", "jsonw"] = "pydantic",
 ) -> str:
+    is_jsonw = style == "jsonw"
+    is_pydantic = style == "pydantic"
     properties = schema.get("properties", {})
     required = schema.get("required", [])
     contains_list = False
-    dc_source = f"@dataclass\nclass {class_name}(JSONWizard):\n"
+    dc_source = make_class_header(class_name=class_name, style=style)
     docstring = f"Autogenerated from {schema_name}::{gen_source}"
     dc_source += textwrap.indent(f'"""\n{docstring}\n"""\n', " " * indent_level * 4)
+    if is_pydantic:
+        alias_gen = "alias_generator=AliasGenerator(validation_alias=to_camel_case),"
+        model_config = f"model_config = ConfigDict(\n    {alias_gen}\n)"
+        dc_source += textwrap.indent(f"\n{model_config}\n\n", " " * indent_level * 4)
     for prop_name, prop_schema in properties.items():
         is_substituted = (
             "type" not in prop_schema and prop_schema and "$ref" in prop_schema
@@ -314,6 +244,10 @@ def generate_source(
                     item_type = dto_enum_lookup
                 else:
                     item_type = schema_mapping.get(referent, dto_enum_lookup)
+                    if is_pydantic:
+                        # Important: stringify to postpone field's schema resolution
+                        # (premature access will lead to PydanticSchemaGenerationError)
+                        item_type = f'"{item_type}"'
                 # Substitute the reference before accessing the item type
                 # prop_schema["items"] = replacement
                 # I don't think it handles nested dataclass arrays!
@@ -328,13 +262,18 @@ def generate_source(
         else:
             if is_array_prop:
                 contains_list = True
-                default = " = field(default_factory=list)"
+                if is_pydantic:
+                    default = ""
+                else:
+                    default = " = field(default_factory=list)"
             else:
                 default = " = None"
         dc_source += f"    {to_pascal_case(prop_name)}: {prop_type}{default}\n"
-    dc_source += f"    _source_schema_name: str = {hidden_field(schema_name)}\n"
-    dc_source += f"    _component_schema_name: str = {hidden_field(component_name)}\n"
-    dc_source += """
+    source_schema_default = hidden_field(schema_name, style=style)
+    component_default = hidden_field(component_name, style=style)
+    dc_source += f"    _source_schema_name: str = {source_schema_default}\n"
+    dc_source += f"    _component_schema_name: str = {component_default}\n"
+    jsonw_methods = """
     @classmethod
     def from_dict(cls, o):
         parent_schema = load_endpoint_component_schemas(cls._source_schema_name)
@@ -345,16 +284,30 @@ def generate_source(
     class Meta(JSONWizard.Meta):
         key_transform_with_load = 'PASCAL'
         recursive_classes = True"""
+    if is_jsonw:
+        dc_source += jsonw_methods
+    jsonw_imports = {
+        "dataclass_wizard": ["JSONWizard"],
+        "dataclass_wizard.loaders": ["fromdict"],
+        "jsonschema": [],
+    }
+    pydantic_imports = {
+        "tubeulator.utils.string_conv": ["to_camel_case"],
+        "pydantic": ["AliasGenerator", "BaseModel", "ConfigDict", "PrivateAttr"],
+    }
+    jsonw_utils = ["load_endpoint_component_schemas"]
     import_list = {
         "__future__": ["annotations"],
         "json": [],
         "datetime": ["datetime"],
         "dataclasses": ["dataclass"],
-        "pathlib": ["Path"],
-        "dataclass_wizard": ["JSONWizard"],
-        "dataclass_wizard.loaders": ["fromdict"],
-        "jsonschema": [],
-        "..utils.paths": ["load_endpoint_component_schemas", "DtoEnum"],
+        # "pathlib": ["Path"], # I think this was a mistake
+        **(jsonw_imports if is_jsonw else {}),
+        **(pydantic_imports if is_pydantic else {}),
+        "..utils.paths": [
+            *(jsonw_utils if is_jsonw else []),
+            "DtoEnum",
+        ],
     }
     if contains_list or idx == 0:
         import_list["dataclasses"].append("field")
@@ -362,58 +315,3 @@ def generate_source(
     # Add imports here if generating multiple dataclasses [indicated by idx=0] (since we
     # can't see ahead), or if only making 1 [indicated by idx=None]
     return "\n\n".join([(imports if not idx else ""), dc_source])
-
-
-def emit_deserialisers(schema_name: str) -> str:
-    component_schemas = load_endpoint_component_schemas(schema_name)
-    ns = scan_namespace(ignore_responses=True)
-    output = []
-    schema_mapping = {}
-    # 1st pass for the generated dataclass names (populating the schema mapping)
-    for idx, (component_name, component_schema) in enumerate(component_schemas.items()):
-        true_name = (ns.get(schema_name, {}).get(component_name) or [None])[0]
-        try:
-            generated_class_name = generate_dataclass_name(
-                component_schema,
-                name=component_name,
-                source_schema_name=schema_name,
-                idx=idx,
-                dealiased_name=true_name,
-            )
-            if generated_class_name is not None:
-                schema_mapping.setdefault(component_name, generated_class_name)
-        except Exception as e:
-            logger.error(
-                f"Failed to generate name for {schema_name} dataclass {idx}: "
-                f"{component_name} (dealiased: {true_name}) -- {e}",
-                exc_info=True,
-            )
-    # 2nd pass for the source code (using the schema mapping)
-    for idx, (component_name, component_schema) in enumerate(component_schemas.items()):
-        true_name = (ns.get(schema_name, {}).get(component_name) or [None])[0]
-        try:
-            generated_class_name, generated_code = generate_dataclass(
-                component_schema,
-                name=component_name,
-                source_schema_name=schema_name,
-                idx=idx,
-                dealiased_name=true_name,
-                schema_mapping=schema_mapping,
-            )
-            output.append(generated_code)  # Append even if None, for debugging purposes
-        except Exception as e:
-            logger.error(
-                f"Failed to generate {schema_name} dataclass {idx}: "
-                f"{component_name} (dealiased: {true_name}) -- {e}",
-                exc_info=True,
-            )
-    deserialiser_code = "\n".join(filter(None, output))
-    if deserialiser_code:
-        schema_mapping_source = "\n\n\nclass Deserialisers(DtoEnum):\n" + "\n".join(
-            [
-                f"    {to_enum_friendly_str(component_name)} = {cls_name}"
-                for component_name, cls_name in schema_mapping.items()
-            ],
-        )
-        deserialiser_code += schema_mapping_source
-    return deserialiser_code

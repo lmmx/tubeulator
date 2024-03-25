@@ -3,7 +3,6 @@ from __future__ import annotations
 from ...utils.paths import unified_api_schema as unified_api_schema_path
 from .base import ApiSchema
 
-
 __all__ = [
     "UnifiedApiSchema",
     "single_unified_api_schema",

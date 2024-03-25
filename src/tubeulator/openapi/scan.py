@@ -7,7 +7,6 @@ from ..utils.paths import find_schema, openapi_schemas_path
 from ._types import ApiAliasToUnifiedEntities, NamespaceInventory
 from .schema.aliased import AliasedApiSchema
 
-
 __all__ = ["api_schema_inventory", "scan_namespace"]
 
 

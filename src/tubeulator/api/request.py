@@ -5,6 +5,7 @@ from enum import Enum
 from urllib.parse import urlencode
 
 import httpx
+from pydantic import BaseModel, TypeAdapter
 
 from ..codegen import load_test
 from ..db.store_creds import check_creds
@@ -17,7 +18,6 @@ from ..utils.paths import (
 )
 from .endpoint.names import EndpointNames
 from .endpoint.routes.types import AnyEndpointRouteEnum
-
 
 __all__ = ["TflApiPath", "Path", "Request", "GET"]
 
@@ -528,8 +528,21 @@ class Request:
                 fail_msg = f"The API endpoint wasn't attached to `load_test` ({hint})"
                 raise RuntimeError(f"{fail_msg} -- {exc}")
             dto = marshals.select_component(ref_name).value
+            is_pydantic = issubclass(dto, BaseModel)
             try:
-                parsed = dto.from_json(response.content)
+                if is_pydantic:
+                    # Peek at the first character, let Pydantic deserialise the JSON
+                    is_array = response.text[0] == "["
+                    # data = response.json()
+                    # is_array = isinstance(data, list)
+                    if is_array:
+                        validate = TypeAdapter(list[dto]).validate_json
+                    else:
+                        validate = dto.model_validate_json
+                    parsed = validate(response.content)
+                else:
+                    # Assume JSONWizard
+                    parsed = dto.from_json(response.content)
             except:
                 raise
         return parsed
