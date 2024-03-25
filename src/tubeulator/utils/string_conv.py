@@ -39,7 +39,9 @@ def to_camel_case(string: str) -> str:
     string = replace_multi_with_single(string.replace("-", "_").replace(" ", "_"))
 
     return string[0].lower() + re.sub(
-        r"(?:_)(.)", lambda m: m.group(1).upper(), string[1:]
+        r"(?:_)(.)",
+        lambda m: m.group(1).upper(),
+        string[1:],
     )
 
 
@@ -56,5 +58,7 @@ def to_pascal_case(string):
     string = replace_multi_with_single(string.replace("-", "_").replace(" ", "_"))
 
     return string[0].upper() + re.sub(
-        r"(?:_)(.)", lambda m: m.group(1).upper(), string[1:]
+        r"(?:_)(.)",
+        lambda m: m.group(1).upper(),
+        string[1:],
     )
