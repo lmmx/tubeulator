@@ -531,9 +531,10 @@ class Request:
             is_pydantic = issubclass(dto, BaseModel)
             try:
                 if is_pydantic:
+                    # Peek at the first character, let Pydantic deserialise the JSON
+                    is_array = response.text[0] == "["
                     # data = response.json()
                     # is_array = isinstance(data, list)
-                    is_array = response.text[0] == "["
                     if is_array:
                         validate = TypeAdapter(list[dto]).validate_json
                     else:
