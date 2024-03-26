@@ -4,6 +4,7 @@ import defopt
 
 from .codegen.gen import emit_deserialisers
 from .codegen.populate import generate_schema_coverage
+from .openapi.fetch import refresh_schema
 from .openapi.scan import count_namespace, scan_namespace
 
 
@@ -29,6 +30,13 @@ def list_schemas() -> None:
     return
 
 
+def refresh_schemas(api_version: str = "2022-04-01-preview") -> None:
+    """Redownload each schema source JSON (in-place) at `data/openapi/*/*.json`."""
+    for schema in sorted(count_namespace(ignore_responses=True), key=str.lower):
+        refresh_schema(schema_name=schema, api_version=api_version)
+    return
+
+
 def namespace() -> None:
     """Make a namespace inventory"""
     ns = scan_namespace(ignore_responses=True)
@@ -51,6 +59,7 @@ def main():
             "deserialise": deserialise,
             "populate": populate,
             "schemas": list_schemas,
+            "refresh": refresh_schemas,
         },
         no_negated_flags=True,
         strict_kwonly=False,
