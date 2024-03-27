@@ -23,5 +23,18 @@ def refresh_schema(schema_name: str, api_version: str) -> None:
     schema_dir = openapi_schemas_path / schema_name
     schema_file = (schema_dir / schema_name).with_suffix(".json")
     schema_json = fetch_schema(schema_name=schema_name, api_version=api_version)
+    if schema_file.exists():
+        old_json = schema_file.read_text()
+        old_file_size = len(old_json.splitlines())
+        new_file_size = len(schema_json.splitlines())
+        diff = f"{old_file_size} lines -> {new_file_size} lines"
+        is_match = ""
+        if old_file_size == new_file_size:
+            if old_json.rstrip() == schema_json.rstrip():
+                is_match = " -- no change"
+        message = f"Writing {schema_file.name} ({diff}){is_match}"
+    else:
+        message = f"Writing {schema_file.name} (new file)"
+    print(message)
     schema_file.write_text(schema_json)
     return
