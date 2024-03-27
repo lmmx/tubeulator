@@ -153,7 +153,7 @@ def generate_dataclass(
         # class_name = source_schema_name.replace(" ", "")
     ent_prefix = "TflApiPresentationEntities"
     # Unslug the class name
-    preproc_class_name = class_name.replace("-", "")
+    preproc_class_name = class_name.replace("-", "").replace(".", "")
     # Remove the long-winded entity prefix from the class name
     preproc_class_name = preproc_class_name[
         len(ent_prefix) if preproc_class_name.startswith(ent_prefix) else 0 :
