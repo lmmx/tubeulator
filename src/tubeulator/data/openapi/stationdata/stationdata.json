@@ -1,0 +1,61 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Station Data",
+        "description": "",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.tfl.gov.uk/stationdata"
+        }
+    ],
+    "paths": {
+        "/tfl-stationdata-gtfs.zip": {
+            "get": {
+                "summary": "TfL station data gtfs",
+                "description": "TfL station data gtfs files",
+                "operationId": "gfts",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/tfl-stationdata-detailed.zip": {
+            "get": {
+                "summary": "TfL station data detailed",
+                "description": "TfL station data detailed",
+                "operationId": "detailed",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "apiKeyHeader": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "header"
+            },
+            "apiKeyQuery": {
+                "type": "apiKey",
+                "name": "app_key",
+                "in": "query"
+            }
+        }
+    },
+    "security": [
+        {
+            "apiKeyHeader": []
+        },
+        {
+            "apiKeyQuery": []
+        }
+    ]
+}
