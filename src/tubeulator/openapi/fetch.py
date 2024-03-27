@@ -1,6 +1,7 @@
 """Download and store (overwrite) the OpenAPI JSON schemas for TfL APIs."""
-import httpx
 import json
+
+import httpx
 
 from ..utils.paths import openapi_schemas_path
 
