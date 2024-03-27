@@ -1,0 +1,1444 @@
+UniqueId,StationUniqueId,PlatformNumber,CardinalDirection,PlatformNaptanCode,FriendlyName,IsCustomerFacing,HasServiceInterchange,AccessibleEntranceName,HasStepFreeRouteInformation
+HUBABW-Plat01-WB-national-rail,HUBABW,1,Westbound,,Westbound Platform 1 ,TRUE,FALSE,,TRUE
+HUBABW-Plat02-EB-national-rail,HUBABW,2,Eastbound,,Eastbound Platform 2 ,TRUE,FALSE,,TRUE
+HUBABW-Plat03-WB-elizabeth,HUBABW,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+HUBABW-Plat04-WB-elizabeth,HUBABW,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,TRUE
+910GACTNCTL-Plat01-WB-london-overground,910GACTNCTL,1,Westbound,,Westbound Platform 1,TRUE,FALSE,East Churchfield Road,TRUE
+910GACTNCTL-Plat02-EB-london-overground,910GACTNCTL,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,Churchfield Road,TRUE
+910GACTONML-Plat03-WB-elizabeth,910GACTONML,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GACTONML-Plat04-EB-elizabeth,910GACTONML,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GANERLEY-Plat01-NB-london-overground,910GANERLEY,1,Northbound,,Northbound Platform 1,TRUE,FALSE,Ridslade Road,TRUE
+910GANERLEY-Plat02-SB-london-overground,910GANERLEY,2,Southbound,,Southbound Platform 2,TRUE,FALSE,Anerley Station Road,TRUE
+910GBCKNHMH-Plat01-NB-thameslink,910GBCKNHMH,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+910GBCKNHMH-Plat02-SB-thameslink,910GBCKNHMH,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+910GBELNGHM-Plat01-NB-thameslink,910GBELNGHM,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+910GBELNGHM-Plat02-SB-thameslink,910GBELNGHM,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+910GBHILLPK-Plat01-SB-london-overground,910GBHILLPK,1,Southbound,,Southbound Platform 1,TRUE,FALSE,St Mark's Road,TRUE
+910GBHILLPK-Plat02-NB-london-overground,910GBHILLPK,2,Northbound,,Northbound Platform 2,TRUE,FALSE,Queen Anne's Place,TRUE
+910GBICKLEY-Plat01-NB-national-rail,910GBICKLEY,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+910GBICKLEY-Plat02-SB-national-rail,910GBICKLEY,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+910GBNHAM-Plat01-WB-elizabeth,910GBNHAM,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GBNHAM-Plat02-EB-elizabeth,910GBNHAM,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GBRBYPK-Plat01-WB-london-overground,910GBRBYPK,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GBRBYPK-Plat02-EB-london-overground,910GBRBYPK,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GBRBY-Plat01-WB-london-overground,910GBRBY,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GBRBY-Plat02-EB-london-overground,910GBRBY,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GBRENTX-Plat01-SB-thameslink,910GBRENTX,1,Southbound,,Southbound Platform 1 ,TRUE,FALSE,,TRUE
+910GBRENTX-Plat02-NB-thameslink,910GBRENTX,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GBRENTX-Plat03-SB-thameslink,910GBRENTX,3,Southbound,,Southbound Platform 3,TRUE,FALSE,,TRUE
+910GBRENTX-Plat04-NB-thameslink,910GBRENTX,4,Northbound,,Northbound Platform 4,TRUE,FALSE,,TRUE
+910GBROCKLY-Plat01-NB-london-overground,910GBROCKLY,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+910GBROCKLY-Plat02-SB-london-overground,910GBROCKLY,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+910GBROMLYS-Plat01-NB-thameslink,910GBROMLYS,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+910GBROMLYS-Plat02-SB-thameslink,910GBROMLYS,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+910GBROMLYS-Plat03-NB-thameslink,910GBROMLYS,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,TRUE
+910GBROMLYS-Plat04-SB-thameslink,910GBROMLYS,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,TRUE
+910GBRTWOOD-Plat01-WB-elizabeth,910GBRTWOOD,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GBRTWOOD-Plat02-EB-elizabeth,910GBRTWOOD,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GBRTWOOD-Plat03-WB-elizabeth,910GBRTWOOD,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GBRTWOOD-Plat04-EB-elizabeth,910GBRTWOOD,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GBRUCGRV-Plat01-SB-london-overground,910GBRUCGRV,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GBRUCGRV-Plat02-NB-london-overground,910GBRUCGRV,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GBTHNLGR-Plat01-WB-london-overground,910GBTHNLGR,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GBTHNLGR-Plat02-EB-london-overground,910GBTHNLGR,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,FALSE
+910GCAMHTH-Plat01-SB-london-overground,910GCAMHTH,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,FALSE
+910GCAMHTH-Plat02-NB-london-overground,910GCAMHTH,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GCATFORD-Plat01-NB-national-rail,910GCATFORD,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+910GCATFORD-Plat02-SB-national-rail,910GCATFORD,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+910GCFPK-Plat01-NB-thameslink,910GCFPK,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+910GCFPK-Plat02-SB-thameslink,910GCFPK,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+910GCHDWLHT-Plat01-WB-elizabeth,910GCHDWLHT,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GCHDWLHT-Plat02-EB-elizabeth,910GCHDWLHT,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GCHDWLHT-Plat03-WB-elizabeth,910GCHDWLHT,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GCHDWLHT-Plat04-EB-elizabeth,910GCHDWLHT,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GCHESHNT-Plat01-SB-national-rail,910GCHESHNT,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GCHESHNT-Plat02-NB-national-rail,910GCHESHNT,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GCHESHNT-Plat03-SB-london-overground,910GCHESHNT,3,Southbound,,Southbound Platform 3,TRUE,FALSE,,TRUE
+910GCHINGFD-Plat01-SB-london-overground,910GCHINGFD,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GCHINGFD-Plat02-SB-london-overground,910GCHINGFD,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+910GCHINGFD-Plat03-SB-london-overground,910GCHINGFD,3,Southbound,,Southbound Platform 3,TRUE,FALSE,,TRUE
+910GCTMSLNK-Plat01-NB-thameslink,910GCTMSLNK,1,Northbound,,Northbound Platform 1 ,TRUE,FALSE,Ludgate Hill,TRUE
+910GCTMSLNK-Plat02-SB-thameslink,910GCTMSLNK,2,Southbound,,Southbound Platform 2,TRUE,FALSE,Ludgate Hill,TRUE
+910GCLAPTON-Plat01-SB-london-overground,910GCLAPTON,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GCLAPTON-Plat02-NB-london-overground,910GCLAPTON,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GCLDNNRB-Plat02-WB-london-overground,910GCLDNNRB,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+910GCLDNNRB-Plat03-EB-london-overground,910GCLDNNRB,3,Eastbound,,Eastbound Platform 3,TRUE,FALSE,,TRUE
+910GCLPHHS-Plat01-WB-london-overground,910GCLPHHS,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GCLPHHS-Plat02-EB-london-overground,910GCLPHHS,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GCMDNRD-Plat01-WB-london-overground,910GCMDNRD,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GCMDNRD-Plat02-EB-london-overground,910GCMDNRD,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GCNNB-Plat01-NB-london-overground,910GCNNB,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+910GCNNB-Plat02-SB-london-overground,910GCNNB,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+910GCNNB-Plat03-WB-london-overground,910GCNNB,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GCNNB-Plat04-EB-london-overground,910GCNNB,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GCOLSDNS-Plat01-NB-thameslink,910GCOLSDNS,1,Northbound,,Northbound Platform 1,TRUE,FALSE,Brighton Road,TRUE
+910GCOLSDNS-Plat02-SB-thameslink,910GCOLSDNS,2,Southbound,,Southbound Platform 2,TRUE,FALSE,Brighton Road,TRUE
+910GCRKLWD-Plat01-SB-thameslink,910GCRKLWD,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,FALSE
+910GCRKLWD-Plat02-NB-thameslink,910GCRKLWD,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,FALSE
+910GCRLN-Plat01-WB-national-rail,910GCRLN,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+910GCRLN-Plat02-EB-national-rail,910GCRLN,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+910GCROUCHH-Plat01-WB-london-overground,910GCROUCHH,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GCROUCHH-Plat02-EB-london-overground,910GCROUCHH,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GCRPNDPK-Plat01-SB-london-overground,910GCRPNDPK,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GCRPNDPK-Plat02-NB-london-overground,910GCRPNDPK,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GCRSHLTN-Plat01-EB-thameslink,910GCRSHLTN,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+910GCRSHLTN-Plat02-WB-thameslink,910GCRSHLTN,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+910GDALSKLD-Plat01-WB-london-overground,910GDALSKLD,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GDALSKLD-Plat02-EB-london-overground,910GDALSKLD,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GDALS-Plat01-NB-london-overground,910GDALS,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+910GDALS-Plat02-SB-london-overground,910GDALS,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+910GDALS-Plat03-SB-london-overground,910GDALS,3,Southbound,,Southbound Platform 3,TRUE,FALSE,,TRUE
+910GDALS-Plat04-SB-london-overground,910GDALS,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,TRUE
+910GDARTFD-Plat01-WB-national-rail,910GDARTFD,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GDARTFD-Plat02-WB-national-rail,910GDARTFD,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+910GDARTFD-Plat03-WB-national-rail,910GDARTFD,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GDARTFD-Plat04-EB-national-rail,910GDARTFD,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GDENMRKH-Plat01-WB-london-overground|national-rail,910GDENMRKH,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GDENMRKH-Plat02-EB-london-overground|national-rail,910GDENMRKH,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GDENMRKH-Plat03-WB-national-rail,910GDENMRKH,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GDENMRKH-Plat04-EB-national-rail,910GDENMRKH,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GDEPTFD-Plat01-WB-thameslink,910GDEPTFD,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GDEPTFD-Plat02-EB-thameslink,910GDEPTFD,2,Eastbound,,Eastbound Platform 2 ,TRUE,FALSE,,TRUE
+910GEDMNGRN-Plat01-SB-london-overground|national-rail,910GEDMNGRN,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GEDMNGRN-Plat02-NB-london-overground|national-rail,910GEDMNGRN,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GELTR-Plat01-SB-thameslink,910GELTR,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GELTR-Plat02-NB-thameslink,910GELTR,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GELTR-Plat03-SB-thameslink,910GELTR,3,Southbound,,Southbound Platform 3,TRUE,FALSE,,TRUE
+910GELTR-Plat04-NB-thameslink,910GELTR,4,Northbound,,Northbound Platform 4,TRUE,FALSE,,TRUE
+910GEMRSPKH-Plat01-EB-london-overground,910GEMRSPKH,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+910GEMRSPKH-Plat01-WB-london-overground,910GEMRSPKH,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GENFLDTN-Plat02-SB-london-overground,910GENFLDTN,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+910GESTFLDS-Plat01-NB-national-rail,910GESTFLDS,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+910GESTFLDS-Plat02-SB-national-rail,910GESTFLDS,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+910GFNCHLYR-Plat01-WB-london-overground,910GFNCHLYR,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GFNCHLYR-Plat02-EB-london-overground,910GFNCHLYR,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GFORESTH-Plat01-NB-london-overground,910GFORESTH,1,Northbound,,Northbound Platform 1,TRUE,FALSE,Devonshire Road,TRUE
+910GFORESTH-Plat02-SB-london-overground,910GFORESTH,2,Southbound,,Southbound Platform 2,TRUE,FALSE,Devonshire Road,TRUE
+910GFRSTGT-Plat01-WB-elizabeth,910GFRSTGT,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GFRSTGT-Plat02-EB-elizabeth,910GFRSTGT,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GFRSTGT-Plat03-WB-elizabeth,910GFRSTGT,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GFRSTGT-Plat04-EB-elizabeth,910GFRSTGT,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GGIDEAPK-Plat01-WB-elizabeth,910GGIDEAPK,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GGIDEAPK-Plat02-EB-elizabeth,910GGIDEAPK,2,Eastbound,,Eastbound Platform 2 ,TRUE,FALSE,,TRUE
+910GGIDEAPK-Plat03-WB-elizabeth,910GGIDEAPK,3,Westbound,,Westbound Platform 3,TRUE,FALSE,Crossways,TRUE
+910GGIDEAPK-Plat04-EB-elizabeth,910GGIDEAPK,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,Crossways,TRUE
+910GGODMAYS-Plat01-WB-elizabeth,910GGODMAYS,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,FALSE
+910GGODMAYS-Plat02-EB-elizabeth,910GGODMAYS,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GGODMAYS-Plat03-WB-elizabeth,910GGODMAYS,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GGODMAYS-Plat04-EB-elizabeth,910GGODMAYS,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GGOSPLOK-Plat01-WB-london-overground,910GGOSPLOK,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GGOSPLOK-Plat02-EB-london-overground,910GGOSPLOK,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GGOSPLOK-Plat03-EB-london-overground,910GGOSPLOK,3,Eastbound,,Eastbound Platform 3,TRUE,FALSE,,TRUE
+910GHACKNYC-Plat01-WB-london-overground,910GHACKNYC,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GHACKNYC-Plat02-EB-london-overground,910GHACKNYC,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GHACKNYW-Plat01-WB-london-overground,910GHACKNYW,1,Westbound,,Westbound Platform 1,TRUE,FALSE,Hepscott Road,TRUE
+910GHACKNYW-Plat02-EB-london-overground,910GHACKNYW,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,Wallis Road,TRUE
+910GHAGGERS-Plat01-NB-london-overground,910GHAGGERS,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+910GHAGGERS-Plat02-SB-london-overground,910GHAGGERS,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+910GHAKNYNM-Plat01-SB-london-overground,910GHAKNYNM,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GHAKNYNM-Plat02-NB-london-overground,910GHAKNYNM,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GHAKNYNM-Plat03-SB-london-overground,910GHAKNYNM,3,Southbound,,Southbound Platform 3,TRUE,FALSE,,TRUE
+910GHAKNYNM-Plat04-NB-london-overground,910GHAKNYNM,4,Northbound,,Northbound Platform 4,TRUE,FALSE,,TRUE
+910GHANWELL-Plat02-WB-elizabeth,910GHANWELL,2,Westbound,,Westbound Platform 2,TRUE,FALSE,Station Approach Road,TRUE
+910GHANWELL-Plat03-EB-elizabeth,910GHANWELL,3,Eastbound,,Eastbound Platform 3,TRUE,FALSE,Station Approach Road,TRUE
+910GHAYESAH-Plat01-WB-elizabeth,910GHAYESAH,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GHAYESAH-Plat02-EB-elizabeth,910GHAYESAH,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GHAYESAH-Plat03-WB-elizabeth,910GHAYESAH,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GHAYESAH-Plat04-EB-elizabeth,910GHAYESAH,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GHAYESAH-Plat05-EB-elizabeth,910GHAYESAH,5,Eastbound,,Eastbound Platform 5,TRUE,FALSE,,TRUE
+910GHDON-Plat01-SB-thameslink,910GHDON,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,FALSE
+910GHDON-Plat02-NB-thameslink,910GHDON,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,FALSE
+910GHEDSTNL-Plat01-SB-london-overground,910GHEDSTNL,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GHEDSTNL-Plat02-NB-london-overground,910GHEDSTNL,2,Northbound,,Northbound Platform 2,TRUE,FALSE,Headstone Lane side,TRUE
+910GHERNEH-Plat01-NB-national-rail,910GHERNEH,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+910GHERNEH-Plat02-NB-national-rail,910GHERNEH,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GHERNEH-Plat03-SB-national-rail,910GHERNEH,3,Southbound,,Southbound Platform 3 ,TRUE,FALSE,,TRUE
+910GHERNEH-Plat04-SB-national-rail,910GHERNEH,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,TRUE
+910GHGHMSPK-Plat01-SB-london-overground,910GHGHMSPK,1,Southbound,,Southbound Platform 1,TRUE,FALSE,Station Approach,TRUE
+910GHGHMSPK-Plat02-NB-london-overground,910GHGHMSPK,2,Northbound,,Northbound Platform 2,TRUE,FALSE,Wilton Place,TRUE
+910GHKBG-Plat01-EB-thameslink,910GHKBG,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,FALSE
+910GHKBG-Plat02-WB-thameslink,910GHKBG,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,FALSE
+910GHMPSTDH-Plat01-WB-london-overground,910GHMPSTDH,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GHMPSTDH-Plat02-EB-london-overground,910GHMPSTDH,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GHOMRTON-Plat01-WB-london-overground,910GHOMRTON,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GHOMRTON-Plat02-EB-london-overground,910GHOMRTON,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GHONROPK-Plat01-NB-london-overground,910GHONROPK,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+910GHONROPK-Plat02-SB-london-overground,910GHONROPK,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+910GHOXTON-Plat01-NB-london-overground,910GHOXTON,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+910GHOXTON-Plat02-SB-london-overground,910GHOXTON,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+910GHRGYGL-Plat01-WB-london-overground,910GHRGYGL,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GHRGYGL-Plat02-EB-london-overground,910GHRGYGL,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GHRLDWOD-Plat01-WB-elizabeth,910GHRLDWOD,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GHRLDWOD-Plat02-EB-elizabeth,910GHRLDWOD,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GHRLDWOD-Plat03-WB-elizabeth,910GHRLDWOD,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GHRLDWOD-Plat04-EB-elizabeth,910GHRLDWOD,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GHTCHEND-Plat01-SB-london-overground,910GHTCHEND,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GHTCHEND-Plat02-NB-london-overground,910GHTCHEND,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GHYDNSRD-Plat01-NB-thameslink,910GHYDNSRD,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+910GHYDNSRD-Plat02-SB-thameslink,910GHYDNSRD,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+910GILFORD-Plat01-WB-elizabeth,910GILFORD,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GILFORD-Plat02-EB-elizabeth,910GILFORD,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GILFORD-Plat03-WB-elizabeth,910GILFORD,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GILFORD-Plat04-EB-elizabeth,910GILFORD,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GIVER-Plat01-WB-elizabeth,910GIVER,1,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GIVER-Plat02-EB-elizabeth,910GIVER,2,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GIVER-Plat03-WB-elizabeth,910GIVER,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GIVER-Plat04-EB-elizabeth,910GIVER,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GKENR-Plat01-WB-london-overground,910GKENR,1,Westbound,,Westbound Platform 1,TRUE,FALSE,Station Terrace,TRUE
+910GKENR-Plat02-EB-london-overground,910GKENR,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,Chamberlayne Road,TRUE
+910GKLBRNHR-Plat01-SB-london-overground,910GKLBRNHR,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GKLBRNHR-Plat02-NB-london-overground,910GKLBRNHR,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GKNTSHTW-Plat01-WB-london-overground,910GKNTSHTW,1,Westbound,,Westbound Platform 1 ,TRUE,FALSE,,TRUE
+910GKNTSHTW-Plat02-EB-london-overground,910GKNTSHTW,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GLANGLEY-Plat01-WB-elizabeth,910GLANGLEY,1,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GLANGLEY-Plat02-EB-elizabeth,910GLANGLEY,2,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GLANGLEY-Plat03-WB-elizabeth,910GLANGLEY,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GLANGLEY-Plat04-EB-elizabeth,910GLANGLEY,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GLBGHJN-Plat01-NB-thameslink,910GLBGHJN,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+910GLBGHJN-Plat02-SB-thameslink,910GLBGHJN,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+910GLEYTNMR-Plat01-WB-london-overground,910GLEYTNMR,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GLEYTNMR-Plat02-EB-london-overground,910GLEYTNMR,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GLONFLDS-Plat01-SB-london-overground,910GLONFLDS,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GLONFLDS-Plat02-NB-london-overground,910GLONFLDS,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GLYTNSHR-Plat01-WB-london-overground,910GLYTNSHR,1,Westbound,,Westbound Platform 1 ,TRUE,FALSE,,TRUE
+910GLYTNSHR-Plat02-EB-london-overground,910GLYTNSHR,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GMANRPK-Plat01-WB-elizabeth,910GMANRPK,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GMANRPK-Plat02-EB-elizabeth,910GMANRPK,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GMANRPK-Plat03-WB-elizabeth,910GMANRPK,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GMANRPK-Plat04-EB-elizabeth,910GMANRPK,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GMAZEH-Plat01-WB-thameslink,910GMAZEH,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,FALSE
+910GMAZEH-Plat02-EB-thameslink,910GMAZEH,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,FALSE
+910GMDNHEAD-Plat01-WB-elizabeth,910GMDNHEAD,1,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GMDNHEAD-Plat02-EB-elizabeth,910GMDNHEAD,2,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GMDNHEAD-Plat03-WB-elizabeth,910GMDNHEAD,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GMDNHEAD-Plat04-EB-elizabeth,910GMDNHEAD,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GMDNHEAD-Plat05-EB-elizabeth,910GMDNHEAD,5,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GMLHB-Plat01-SB-thameslink,910GMLHB,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,FALSE
+910GMLHB-Plat02-NB-thameslink,910GMLHB,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,FALSE
+910GMORDENS-Plat01-NB-thameslink,910GMORDENS,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+910GMORDENS-Plat02-SB-thameslink,910GMORDENS,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+910GMRYLAND-Plat01-WB-elizabeth,910GMRYLAND,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GMRYLAND-Plat02-EB-elizabeth,910GMRYLAND,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GMRYLAND-Plat03-WB-elizabeth,910GMRYLAND,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GMRYLAND-Plat04-EB-elizabeth,910GMRYLAND,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GNBARNET-Plat01-SB-thameslink,910GNBARNET,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,FALSE
+910GNBARNET-Plat04-NB-thameslink,910GNBARNET,4,Northbound,,Northbound Platform 4,TRUE,FALSE,,FALSE
+910GNEWSGAT-Plat01-SB-national-rail,910GNEWSGAT,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,FALSE
+910GNEWSGAT-Plat04-NB-national-rail,910GNEWSGAT,4,Northbound,,Northbound Platform 4,TRUE,FALSE,,FALSE
+910GNUNHEAD-Plat01-WB-national-rail,910GNUNHEAD,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,FALSE
+910GNUNHEAD-Plat02-EB-national-rail,910GNUNHEAD,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,FALSE
+910GOKLGHPK-Plat01-SB-thameslink,910GOKLGHPK,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,FALSE
+910GOKLGHPK-Plat04-NB-thameslink,910GOKLGHPK,4,Northbound,,Northbound Platform 4,TRUE,FALSE,,FALSE
+910GORPNGTN-Plat01-NB-national-rail,910GORPNGTN,1,Northbound,,Northbound Platform 1 ,TRUE,FALSE,,TRUE
+910GORPNGTN-Plat02-NB-national-rail,910GORPNGTN,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GORPNGTN-Plat03-SB-national-rail,910GORPNGTN,3,Southbound,,Southbound Platform 3,TRUE,FALSE,,TRUE
+910GORPNGTN-Plat04-NB-national-rail,910GORPNGTN,4,Northbound,,Northbound Platform 4,TRUE,FALSE,,TRUE
+910GORPNGTN-Plat05-SB-national-rail,910GORPNGTN,5,Southbound,,Southbound Platform 5,TRUE,FALSE,,TRUE
+910GORPNGTN-Plat06-NB-national-rail,910GORPNGTN,6,Northbound,,Northbound Platform 6,TRUE,FALSE,,TRUE
+910GORPNGTN-Plat07-NB-national-rail,910GORPNGTN,7,Northbound,,Northbound Platform 7,TRUE,FALSE,,TRUE
+910GORPNGTN-Plat08-NB-national-rail,910GORPNGTN,8,Northbound,,Northbound Platform 8,TRUE,FALSE,,TRUE
+910GPCKHMQD-Plat01-NB-london-overground,910GPCKHMQD,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+910GPCKHMQD-Plat02-SB-london-overground,910GPCKHMQD,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+910GPCKHMRY-Plat01-WB-london-overground,910GPCKHMRY,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GPCKHMRY-Plat02-EB-london-overground,910GPCKHMRY,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GPCKHMRY-Plat03-NB-thameslink,910GPCKHMRY,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,FALSE
+910GPCKHMRY-Plat04-SB-thameslink,910GPCKHMRY,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,FALSE
+910GPENEW-Plat01-NB-london-overground,910GPENEW,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+910GPENEW-Plat02-SB-london-overground,910GPENEW,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+910GPETSWD-Plat03-NB-thameslink,910GPETSWD,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,FALSE
+910GPETSWD-Plat04-SB-thameslink,910GPETSWD,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,FALSE
+910GPLMS-Plat01-EB-thameslink,910GPLMS,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,FALSE
+910GPLMS-Plat02-WB-thameslink,910GPLMS,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,FALSE
+910GPURLEY-Plat03-NB-thameslink,910GPURLEY,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,FALSE
+910GPURLEY-Plat04-SB-thameslink,910GPURLEY,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,FALSE
+910GRBRN-Plat01-NB-thameslink,910GRBRN,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+910GRBRN-Plat02-SB-thameslink,910GRBRN,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+910GRCTRYRD-Plat01-SB-london-overground,910GRCTRYRD,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GRCTRYRD-Plat02-NB-london-overground,910GRCTRYRD,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GRDNGSTN-Plat14-EB-elizabeth,910GRDNGSTN,14,Eastbound,,Eastbound Platform 14,TRUE,FALSE,,TRUE
+910GROMFORD-Plat01-EB-london-overground,910GROMFORD,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+910GROMFORD-Plat04-WB-elizabeth,910GROMFORD,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,TRUE
+910GROMFORD-Plat05-EB-elizabeth,910GROMFORD,5,Eastbound,,Eastbound Platform 5,TRUE,FALSE,,TRUE
+910GRTHERHI-Plat01-NB-london-overground,910GRTHERHI,1,Northbound,,Northbound Platform 1 ,TRUE,FALSE,,TRUE
+910GRTHERHI-Plat02-SB-london-overground,910GRTHERHI,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+910GSACTON-Plat01-WB-london-overground,910GSACTON,1,Westbound,,Westbound Platform 1,TRUE,FALSE,Kingswood Terrace,TRUE
+910GSACTON-Plat02-EB-london-overground,910GSACTON,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,Palmerston Road,TRUE
+910GSBURY-Plat01-SB-london-overground,910GSBURY,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GSBURY-Plat02-NB-london-overground,910GSBURY,2,Northbound,,Northbound Platform 2 ,TRUE,FALSE,,TRUE
+910GSCROYDN-Plat03-NB-thameslink,910GSCROYDN,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,FALSE
+910GSCROYDN-Plat05-SB-thameslink,910GSCROYDN,5,Southbound,,Southbound Platform 5,TRUE,FALSE,,FALSE
+910GSHENFLD-Plat05-WB-elizabeth,910GSHENFLD,5,Westbound,,Westbound Platform 5,TRUE,FALSE,,TRUE
+910GSHENFLD-Plat06-WB-elizabeth,910GSHENFLD,6,Westbound,,Westbound Platform 6,TRUE,FALSE,,TRUE
+910GSHLIER-Plat01-NB-thameslink,910GSHLIER,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+910GSHLIER-Plat02-SB-thameslink,910GSHLIER,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+910GSHMPSTD-Plat01-SB-london-overground,910GSHMPSTD,1,Southbound,,Southbound Platform 1 ,TRUE,FALSE,,TRUE
+910GSHMPSTD-Plat02-NB-london-overground,910GSHMPSTD,2,Northbound,,Northbound Platform 2 ,TRUE,FALSE,,TRUE
+910GSHRDHST-Plat01-NB-london-overground,910GSHRDHST,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+910GSHRDHST-Plat02-SB-london-overground,910GSHRDHST,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+910GSHRTLND-Plat01-NB-thameslink,910GSHRTLND,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+910GSHRTLND-Plat02-SB-thameslink,910GSHRTLND,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+910GSIVRST-Plat01-SB-london-overground,910GSIVRST,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GSIVRST-Plat02-NB-london-overground,910GSIVRST,2,Northbound,,Northbound Platform 2 ,TRUE,FALSE,,TRUE
+910GSLADEGN-Plat01-WB-thameslink,910GSLADEGN,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,FALSE
+910GSLADEGN-Plat02-EB-thameslink,910GSLADEGN,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,FALSE
+910GSLOUGH-Plat02-WB-elizabeth,910GSLOUGH,2,Westbound,,Westbound Platform 4,TRUE,FALSE,,TRUE
+910GSLOUGH-Plat03-EB-elizabeth,910GSLOUGH,3,Eastbound,,Eastbound Platform 5,TRUE,FALSE,,TRUE
+910GSLOUGH-Plat04-WB-elizabeth,910GSLOUGH,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,TRUE
+910GSLOUGH-Plat05-EB-elizabeth,910GSLOUGH,5,Eastbound,,Eastbound Platform 5,TRUE,FALSE,,TRUE
+910GSMERTON-Plat01-NB-thameslink,910GSMERTON,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+910GSMERTON-Plat02-SB-thameslink,910GSMERTON,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+910GSTHALL-Plat01-WB-elizabeth,910GSTHALL,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,FALSE
+910GSTHALL-Plat02-EB-elizabeth,910GSTHALL,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,FALSE
+910GSTHALL-Plat03-WB-elizabeth,910GSTHALL,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GSTHALL-Plat04-EB-elizabeth,910GSTHALL,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GSTJMSST-Plat01-SB-london-overground,910GSTJMSST,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GSTJMSST-Plat02-NB-london-overground,910GSTJMSST,2,Northbound,,Northbound Platform 2 ,TRUE,FALSE,,TRUE
+910GSTKNWNG-Plat01-SB-london-overground,910GSTKNWNG,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GSTKNWNG-Plat02-NB-london-overground,910GSTKNWNG,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GSTMFDHL-Plat01-SB-london-overground,910GSTMFDHL,1,Southbound,,Southbound Platform 1 ,TRUE,FALSE,,TRUE
+910GSTMFDHL-Plat02-NB-london-overground,910GSTMFDHL,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GSTMRYC-Plat01-WB-thameslink,910GSTMRYC,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GSTMRYC-Plat02-EB-thameslink,910GSTMRYC,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GSTOTNHM-Plat01-WB-london-overground,910GSTOTNHM,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GSTOTNHM-Plat02-EB-london-overground,910GSTOTNHM,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GSTPXBOX-PlatB-NB-national-rail,HUBKGX,B,Northbound,,Northbound Platform B,TRUE,FALSE,,TRUE
+910GSTPXBOX-PlatA-SB-national-rail,HUBKGX,A,Southbound,,Southbound Platform A,TRUE,FALSE,,TRUE
+910GSTPADOM-Plat01-NB-national-rail,HUBKGX,1,Northbound,,Northbound Platform 1 ,TRUE,FALSE,,TRUE
+910GSTPADOM-Plat02-NB-national-rail,HUBKGX,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GSTPADOM-Plat03-NB-national-rail,HUBKGX,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,TRUE
+910GSTPADOM-Plat04-NB-national-rail,HUBKGX,4,Northbound,,Northbound Platform 4,TRUE,FALSE,,TRUE
+910GSTPADOM-Plat11-EB-national-rail,HUBKGX,11,Eastbound,,Eastbound Platform 11,TRUE,FALSE,,TRUE
+910GSTPADOM-Plat12-EB-national-rail,HUBKGX,12,Eastbound,,Eastbound Platform 12,TRUE,FALSE,,TRUE
+910GSTPADOM-Plat13-EB-national-rail,HUBKGX,13,Eastbound,,Eastbound Platform 13,TRUE,FALSE,,TRUE
+910GSTRETHM-Plat01-SB-thameslink,910GSTRETHM,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GSTRETHM-Plat02-NB-thameslink,910GSTRETHM,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,FALSE
+910GSURREYQ-Plat01-NB-london-overground,910GSURREYQ,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+910GSURREYQ-Plat02-SB-london-overground,910GSURREYQ,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+910GSUTTONC-Plat01-NB-thameslink,910GSUTTONC,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+910GSUTTONC-Plat02-SB-thameslink,910GSUTTONC,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+910GSUTTON-Plat01-EB-thameslink,910GSUTTON,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,FALSE
+910GSUTTON-Plat02-WB-thameslink,910GSUTTON,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,FALSE
+910GSVNKNGS-Plat01-WB-elizabeth,910GSVNKNGS,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GSVNKNGS-Plat02-EB-elizabeth,910GSVNKNGS,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GSVNKNGS-Plat03-WB-elizabeth,910GSVNKNGS,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GSVNKNGS-Plat04-EB-elizabeth,910GSVNKNGS,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GSWLY-Plat01-NB-thameslink,910GSWLY,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+910GSWLY-Plat02-SB-thameslink,910GSWLY,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+910GSWLY-Plat03-NB-thameslink,910GSWLY,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,TRUE
+910GSWLY-Plat04-SB-thameslink,910GSWLY,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,TRUE
+910GTAPLOW-Plat01-WB-elizabeth,910GTAPLOW,1,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GTAPLOW-Plat02-EB-elizabeth,910GTAPLOW,2,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GTAPLOW-Plat03-WB-elizabeth,910GTAPLOW,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GTAPLOW-Plat04-EB-elizabeth,910GTAPLOW,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GTHBLDSG-Plat01-SB-london-overground,910GTHBLDSG,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GTHBLDSG-Plat02-NB-london-overground,910GTHBLDSG,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GTOOTING-Plat01-NB-thameslink,910GTOOTING,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+910GTOOTING-Plat02-SB-thameslink,910GTOOTING,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+910GTULSEH-Plat01-NB-thameslink,910GTULSEH,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+910GTULSEH-Plat02-SB-thameslink,910GTULSEH,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+910GTURKYST-Plat01-SB-london-overground,910GTURKYST,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GTURKYST-Plat02-NB-london-overground,910GTURKYST,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GTWYFORD-Plat01-WB-elizabeth,910GTWYFORD,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GTWYFORD-Plat02-EB-elizabeth,910GTWYFORD,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GTWYFORD-Plat03-WB-elizabeth,910GTWYFORD,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GTWYFORD-Plat04-EB-elizabeth,910GTWYFORD,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GUPRHLWY-Plat01-WB-london-overground,910GUPRHLWY,1,Westbound,,Westbound Platform 1,TRUE,FALSE,Holloway Road,TRUE
+910GUPRHLWY-Plat02-EB-london-overground,910GUPRHLWY,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GWAPPING-Plat01-NB-london-overground,910GWAPPING,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+910GWAPPING-Plat02-SB-london-overground,910GWAPPING,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+910GWATFDHS-Plat01-SB-london-overground,910GWATFDHS,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GWATFDHS-Plat02-NB-london-overground,910GWATFDHS,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GWCOMBEP-Plat01-WB-thameslink,910GWCOMBEP,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,FALSE
+910GWCOMBEP-Plat02-EB-thameslink,910GWCOMBEP,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,FALSE
+910GWDGRNPK-Plat01-WB-london-overground,910GWDGRNPK,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GWDGRNPK-Plat02-EB-london-overground,910GWDGRNPK,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GWDRYTON-Plat01-WB-elizabeth,910GWDRYTON,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GWDRYTON-Plat02-EB-elizabeth,910GWDRYTON,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GWDRYTON-Plat03-WB-elizabeth,910GWDRYTON,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GWDRYTON-Plat04-EB-elizabeth,910GWDRYTON,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GWDRYTON-Plat05-EB-elizabeth,910GWDRYTON,5,Eastbound,,Eastbound Platform 5,TRUE,FALSE,,TRUE
+910GWDST-Plat01-SB-london-overground,910GWDST,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GWDST-Plat02-NB-london-overground,910GWDST,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GWEALING-Plat03-WB-elizabeth,910GWEALING,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+910GWEALING-Plat04-EB-elizabeth,910GWEALING,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GWHHRTLA-Plat01-SB-london-overground,910GWHHRTLA,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GWHHRTLA-Plat02-NB-london-overground,910GWHHRTLA,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GWHMDSTD-Plat01-EB-london-overground,910GWHMDSTD,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+910GWHMDSTD-Plat02-WB-london-overground,910GWHMDSTD,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+910GWHMPSTM-Plat01-SB-thameslink,910GWHMPSTM,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,FALSE
+910GWHMPSTM-Plat02-NB-thameslink,910GWHMPSTM,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,FALSE
+910GWHMPSTM-Plat03-SB-thameslink,910GWHMPSTM,3,Southbound,,Southbound Platform 3,TRUE,FALSE,,FALSE
+910GWHMPSTM-Plat04-NB-thameslink,910GWHMPSTM,4,Northbound,,Northbound Platform 4,TRUE,FALSE,,FALSE
+910GWIMLCHS-Plat01-NB-thameslink,910GWIMLCHS,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+910GWIMLCHS-Plat02-SB-thameslink,910GWIMLCHS,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+910GWLTHQRD-Plat01-WB-london-overground,910GWLTHQRD,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GWLTHQRD-Plat02-EB-london-overground,910GWLTHQRD,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GWNDSWRD-Plat01-WB-london-overground,910GWNDSWRD,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GWNDSWRD-Plat02-EB-london-overground,910GWNDSWRD,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GWNSTDPK-Plat01-WB-london-overground,910GWNSTDPK,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GWNSTDPK-Plat02-EB-london-overground,910GWNSTDPK,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+910GWSUTTON-Plat01-NB-thameslink,910GWSUTTON,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+910GWSUTTON-Plat02-SB-thameslink,910GWSUTTON,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+910GWOLWXR-PlatA-EB-elizabeth,910GWOLWXR,A,Eastbound,,Eastbound Platform A,TRUE,FALSE,,TRUE
+910GWOLWXR-PlatB-WB-elizabeth,910GWOLWXR,B,Westbound,,Westbound Platform B,TRUE,FALSE,,TRUE
+940GZZALGWP-NB-london-cable-car,940GZZALGWP,,Northbound,,Northbound,TRUE,FALSE,,TRUE
+940GZZALRDK-SB-london-cable-car,940GZZALRDK,,Southbound,9400ZZALRDK1,Southbound,TRUE,FALSE,,TRUE
+940GZZCRADD-EB-tram,940GZZCRADD,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRADD-WB-tram,940GZZCRADD,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRADV-EB-tram,940GZZCRADV,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRADV-WB-tram,940GZZCRADV,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRAMP-EB-tram,940GZZCRAMP,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRAMP-WB-tram,940GZZCRAMP,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRARA-EB-tram,940GZZCRARA,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRARA-WB-tram,940GZZCRARA,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRAVE-EB-tram,940GZZCRAVE,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRAVE-WB-tram,940GZZCRAVE,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRBED-EB-tram,940GZZCRBED,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRBED-WB-tram,940GZZCRBED,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRBGV-EB-tram,940GZZCRBGV,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRBGV-WB-tram,940GZZCRBGV,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRBLA-EB-tram,940GZZCRBLA,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRBLA-WB-tram,940GZZCRBLA,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRBRD-EB-tram,940GZZCRBRD,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRBRD-WB-tram,940GZZCRBRD,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRCEN-WB-tram,940GZZCRCEN,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRCHR-WB-tram,940GZZCRCHR,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRCOO-EB-tram,940GZZCRCOO,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRCOO-WB-tram,940GZZCRCOO,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRCTR-EB-tram,940GZZCRCTR,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRDDR-EB-tram,940GZZCRDDR,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRDDR-WB-tram,940GZZCRDDR,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRFLD-EB-tram,940GZZCRFLD,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRFLD-WB-tram,940GZZCRFLD,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRGRA-EB-tram,940GZZCRGRA,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRGRA-WB-tram,940GZZCRGRA,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRHAR-EB-tram,940GZZCRHAR,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRHAR-WB-tram,940GZZCRHAR,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRKGH-EB-tram,940GZZCRKGH,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRKGH-WB-tram,940GZZCRKGH,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRLEB-EB-tram,940GZZCRLEB,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRLEB-WB-tram,940GZZCRLEB,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRLOY-EB-tram,940GZZCRLOY,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRLOY-WB-tram,940GZZCRLOY,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRMCH-EB-tram,940GZZCRMCH,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRMCH-WB-tram,940GZZCRMCH,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRMDN-EB-tram,940GZZCRMDN,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRMDN-WB-tram,940GZZCRMDN,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRMTP-EB-tram,940GZZCRMTP,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRMTP-WB-tram,940GZZCRMTP,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRNWA-WB-tram,940GZZCRNWA,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRPHI-EB-tram,940GZZCRPHI,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRPHI-WB-tram,940GZZCRPHI,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRRVC-EB-tram,940GZZCRRVC,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRSAN-EB-tram,940GZZCRSAN,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRSAN-WB-tram,940GZZCRSAN,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRTPA-EB-tram,940GZZCRTPA,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRTPA-WB-tram,940GZZCRTPA,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRWAD-EB-tram,940GZZCRWAD,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRWAD-WB-tram,940GZZCRWAD,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRWAN-EB-tram,940GZZCRWAN,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRWAN-WB-tram,940GZZCRWAN,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZCRWEL-EB-tram,940GZZCRWEL,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRWOD-EB-tram,940GZZCRWOD,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+940GZZCRWOD-WB-tram,940GZZCRWOD,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+940GZZDLABR-Plat01-SB-dlr,940GZZDLABR,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLABR-Plat02-NB-dlr,940GZZDLABR,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLALL-Plat01-NB-dlr,940GZZDLALL,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLALL-Plat02-SB-dlr,940GZZDLALL,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLBEC-Plat01-WB-dlr,940GZZDLBEC,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLBEC-Plat02-WB-dlr,940GZZDLBEC,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLBLA-Plat01-EB-dlr,940GZZDLBLA,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLBLA-Plat02-WB-dlr,940GZZDLBLA,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLBOW-Plat01-NB-dlr,940GZZDLBOW,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLBOW-Plat02-SB-dlr,940GZZDLBOW,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLBPK-Plat01-EB-dlr,940GZZDLBPK,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLBPK-Plat02-WB-dlr,940GZZDLBPK,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLCLA-Plat01-SB-dlr,940GZZDLCLA,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLCLA-Plat02-NB-dlr,940GZZDLCLA,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+HUBCUS-PlatA-EB-elizabeth,HUBCUS,A,Eastbound,,Eastbound Platform A,TRUE,FALSE,,TRUE
+HUBCUS-PlatB-WB-elizabeth,HUBCUS,B,Westbound,,Westbound Platform B,TRUE,FALSE,,TRUE
+HUBCUS-Plat03-EB-dlr,HUBCUS,3,Eastbound,,Eastbound Platform 3,TRUE,FALSE,,TRUE
+HUBCUS-Plat04-WB-dlr,HUBCUS,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,TRUE
+940GZZDLCYP-Plat01-EB-dlr,940GZZDLCYP,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLCYP-Plat02-WB-dlr,940GZZDLCYP,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLDEP-Plat01-SB-dlr,940GZZDLDEP,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLDEP-Plat02-NB-dlr,940GZZDLDEP,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLDEV-Plat01-NB-dlr,940GZZDLDEV,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLDEV-Plat02-SB-dlr,940GZZDLDEV,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLEIN-Plat01-EB-dlr,940GZZDLEIN,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLEIN-Plat02-WB-dlr,940GZZDLEIN,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLELV-Plat01-SB-dlr,940GZZDLELV,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLELV-Plat02-NB-dlr,940GZZDLELV,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLGAL-Plat01-EB-dlr,940GZZDLGAL,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLGAL-Plat02-WB-dlr,940GZZDLGAL,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLHEQ-Plat01-SB-dlr,940GZZDLHEQ,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLHEQ-Plat02-NB-dlr,940GZZDLHEQ,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLISL-Plat01-SB-dlr,940GZZDLISL,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLISL-Plat02-NB-dlr,940GZZDLISL,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLKGV-Plat01-SB-dlr,940GZZDLKGV,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLKGV-Plat02-NB-dlr,940GZZDLKGV,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLLDP-Plat01-NB-dlr,940GZZDLLDP,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLLDP-Plat02-SB-dlr,940GZZDLLDP,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLMUD-Plat01-SB-dlr,940GZZDLMUD,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLMUD-Plat02-NB-dlr,940GZZDLMUD,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLPDK-Plat01-SB-dlr,940GZZDLPDK,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLPDK-Plat02-NB-dlr,940GZZDLPDK,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLPOP-Plat01-EB-dlr,940GZZDLPOP,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLPOP-Plat02-NB-dlr,940GZZDLPOP,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLPOP-Plat03-SB-dlr,940GZZDLPOP,3,Southbound,,Southbound Platform 3,TRUE,FALSE,,TRUE
+940GZZDLPOP-Plat04-WB-dlr,940GZZDLPOP,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,TRUE
+940GZZDLPRE-Plat01-EB-dlr,940GZZDLPRE,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLPRE-Plat02-WB-dlr,940GZZDLPRE,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLPUD-Plat01-EB-dlr,940GZZDLPUD,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLPUD-Plat02-WB-dlr,940GZZDLPUD,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLRAL-Plat01-EB-dlr,940GZZDLRAL,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLRAL-Plat02-WB-dlr,940GZZDLRAL,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLRVC-Plat01-EB-dlr,940GZZDLRVC,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLRVC-Plat02-WB-dlr,940GZZDLRVC,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLSHS-Plat01-SB-dlr,940GZZDLSHS,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLSHS-Plat02-NB-dlr,940GZZDLSHS,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLSIT-Plat01-SB-dlr,940GZZDLSIT,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLSIT-Plat02-SB-dlr,940GZZDLSIT,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLSOQ-Plat01-SB-dlr,940GZZDLSOQ,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLSOQ-Plat02-NB-dlr,940GZZDLSOQ,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLSTL-Plat01-SB-dlr,940GZZDLSTL,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLSTL-Plat02-NB-dlr,940GZZDLSTL,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLWFE-Plat01-EB-dlr,940GZZDLWFE,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLWFE-Plat02-WB-dlr,940GZZDLWFE,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLWIQ-Plat02-SB-dlr,940GZZDLWIQ,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZDLWIQ-Plat03-NB-dlr,940GZZDLWIQ,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,TRUE
+940GZZDLWIQ-Plat04-WB-dlr,940GZZDLWIQ,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,TRUE
+940GZZDLWSV-Plat01-SB-dlr,940GZZDLWSV,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZDLWSV-Plat02-NB-dlr,940GZZDLWSV,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUACT-Plat01-WB-district|piccadilly,940GZZLUACT,1,Westbound,9400ZZLUACT1,Westbound Platform 1,TRUE,TRUE,,TRUE
+940GZZLUACT-Plat02-WB-piccadilly,940GZZLUACT,2,Westbound,9400ZZLUACT3,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUACT-Plat03-EB-piccadilly,940GZZLUACT,3,Eastbound,9400ZZLUACT4,Eastbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUACT-Plat04-EB-district|piccadilly,940GZZLUACT,4,Eastbound,9400ZZLUACT2,Eastbound Platform 4,TRUE,TRUE,,TRUE
+940GZZLUACY-Plat01-NB-northern,940GZZLUACY,1,Northbound,9400ZZLUACY1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUACY-Plat02-SB-northern,940GZZLUACY,2,Southbound,9400ZZLUACY1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUADE-Plat01-WB-district|hammersmith-city,940GZZLUADE,1,Westbound,9400ZZLUADE2,Westbound Platform 1,TRUE,TRUE,,TRUE
+940GZZLUADE-Plat02-EB-district|hammersmith-city,940GZZLUADE,2,Eastbound,9400ZZLUADE1,Eastbound Platform 2,TRUE,TRUE,,TRUE
+940GZZLUAGL-Plat01-SB-northern,940GZZLUAGL,1,Southbound,9400ZZLUAGL1,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUAGL-Plat02-NB-northern,940GZZLUAGL,2,Northbound,9400ZZLUAGL1,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUALD-Plat01-EB-circle,940GZZLUALD,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUALD-Plat02-NB-metropolitan,940GZZLUALD,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUALD-Plat03-NB-metropolitan,940GZZLUALD,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUALD-Plat04-WB-circle,940GZZLUALD,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUALP-Plat01-WB-piccadilly,940GZZLUALP,1,Westbound,9400ZZLUALP2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUALP-Plat02-EB-piccadilly,940GZZLUALP,2,Eastbound,9400ZZLUALP1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUASG-Plat01-EB-piccadilly,940GZZLUASG,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUASG-Plat02-EB-piccadilly,940GZZLUASG,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUASG-Plat03-WB-piccadilly,940GZZLUASG,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUASG-Plat04-WB-piccadilly,940GZZLUASG,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUASL-Plat01-EB-piccadilly,940GZZLUASL,1,Eastbound,9400ZZLUASL1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUASL-Plat02-WB-piccadilly,940GZZLUASL,2,Westbound,9400ZZLUASL2,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUBBB-Plat01-WB-district|hammersmith-city,940GZZLUBBB,1,Westbound,9400ZZLUBBB2,Westbound Platform 1,TRUE,TRUE,,TRUE
+940GZZLUBBB-Plat02-EB-district|hammersmith-city,940GZZLUBBB,2,Eastbound,9400ZZLUBBB1,Eastbound Platform 2,TRUE,TRUE,,TRUE
+940GZZLUBBN-Plat01-EB-circle|hammersmith-city|metropolitan,940GZZLUBBN,1,Eastbound,9400ZZLUBBN1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUBBN-Plat02-WB-circle|hammersmith-city|metropolitan,940GZZLUBBN,2,Westbound,9400ZZLUBBN2,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUBDS-Plat01-EB-piccadilly,940GZZLUBDS,1,Eastbound,9400ZZLUBDS1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUBDS-Plat02-WB-piccadilly,940GZZLUBDS,2,Westbound,9400ZZLUBDS1,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUBEC-Plat01-WB-district,940GZZLUBEC,1,Westbound,9400ZZLUBEC2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUBEC-Plat02-EB-district,940GZZLUBEC,2,Eastbound,9400ZZLUBEC1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUBKE-Plat01-WB-central,940GZZLUBKE,1,Westbound,9400ZZLUBKE2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUBKE-Plat02-EB-central,940GZZLUBKE,2,Eastbound,9400ZZLUBKE1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUBKH-Plat01-WB-central,940GZZLUBKH,1,Westbound,9400ZZLUBKH2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUBKH-Plat02-EB-central,940GZZLUBKH,2,Eastbound,9400ZZLUBKH1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUBLG-Plat01-WB-central,940GZZLUBLG,1,Westbound,9400ZZLUBLG1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUBLG-Plat02-EB-central,940GZZLUBLG,2,Eastbound,9400ZZLUBLG1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUBMY-Plat01-WB-jubilee,940GZZLUBMY,1,Westbound,9400ZZLUBMY2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUBMY-Plat02-EB-jubilee,940GZZLUBMY,2,Eastbound,9400ZZLUBMY1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+HUBBDS-Plat01-WB-central,HUBBDS,1,Westbound,9400ZZLUBND1,Westbound Platform 1,TRUE,FALSE,,TRUE
+HUBBDS-Plat02-EB-central,HUBBDS,2,Eastbound,9400ZZLUBND1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+HUBBDS-Plat03-NB-jubilee,HUBBDS,3,Northbound,9400ZZLUBND2,Northbound Platform 3,TRUE,FALSE,,TRUE
+HUBBDS-Plat04-SB-jubilee,HUBBDS,4,Southbound,9400ZZLUBND3,Southbound Platform 4,TRUE,FALSE,,TRUE
+HUBBDS-PlatA-EB-elizabeth,HUBBDS,A,Eastbound,,Eastbound Platform A,TRUE,FALSE,,TRUE
+HUBBDS-PlatB-WB-elizabeth,HUBBDS,B,Westbound,,Westbound Platform B,TRUE,FALSE,,TRUE
+940GZZLUBOR-Plat01-NB-northern,940GZZLUBOR,1,Northbound,9400ZZLUBOR1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUBOR-Plat02-SB-northern,940GZZLUBOR,2,Southbound,9400ZZLUBOR2,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUBOS-Plat01-WB-piccadilly,940GZZLUBOS,1,Westbound,9400ZZLUBOS2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUBOS-Plat02-EB-piccadilly,940GZZLUBOS,2,Eastbound,9400ZZLUBOS1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUBSC-Plat01-WB-district,940GZZLUBSC,1,Westbound,9400ZZLUBSC2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUBSC-Plat02-WB-piccadilly,940GZZLUBSC,2,Westbound,9400ZZLUBSC4,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUBSC-Plat03-EB-piccadilly,940GZZLUBSC,3,Eastbound,9400ZZLUBSC3,Eastbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUBSC-Plat04-EB-district,940GZZLUBSC,4,Eastbound,9400ZZLUBSC1,Eastbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUBST-Plat01-NB-metropolitan,940GZZLUBST,1,Northbound,9400ZZLUBST7,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUBST-Plat02-NB-metropolitan,940GZZLUBST,2,Northbound,9400ZZLUBST7,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUBST-Plat03-SB-metropolitan,940GZZLUBST,3,Southbound,9400ZZLUBST8,Southbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUBST-Plat04-NB-metropolitan,940GZZLUBST,4,Northbound,9400ZZLUBST7,Northbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUBST-Plat05-EB-circle|hammersmith-city,940GZZLUBST,5,Eastbound,9400ZZLUBST3,Eastbound Platform 5,TRUE,FALSE,,TRUE
+940GZZLUBST-Plat06-WB-circle|hammersmith-city,940GZZLUBST,6,Westbound,9400ZZLUBST4,Westbound Platform 6,TRUE,FALSE,,TRUE
+940GZZLUBST-Plat07-SB-jubilee,940GZZLUBST,7,Southbound,9400ZZLUBST5,Southbound Platform 7,TRUE,FALSE,,TRUE
+940GZZLUBST-Plat08-SB-bakerloo,940GZZLUBST,8,Southbound,9400ZZLUBST1,Southbound Platform 8,TRUE,FALSE,,TRUE
+940GZZLUBST-Plat09-NB-bakerloo,940GZZLUBST,9,Northbound,9400ZZLUBST2,Northbound Platform 9,TRUE,FALSE,,TRUE
+940GZZLUBST-Plat10-NB-jubilee,940GZZLUBST,10,Northbound,9400ZZLUBST6,Northbound Platform 10,TRUE,FALSE,,TRUE
+940GZZLUBTK-Plat01-NB-northern,940GZZLUBTK,1,Northbound,9400ZZLUBTK1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUBTK-Plat02-SB-northern,940GZZLUBTK,2,Southbound,9400ZZLUBTK1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUBTX-Plat01-NB-northern,940GZZLUBTX,1,Northbound,9400ZZLUBTX1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUBTX-Plat02-SB-northern,940GZZLUBTX,2,Southbound,9400ZZLUBTX1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUBWR-Plat01-WB-district|hammersmith-city,940GZZLUBWR,1,Westbound,9400ZZLUBWR2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUBWR-Plat02-EB-district|hammersmith-city,940GZZLUBWR,2,Eastbound,9400ZZLUBWR1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUBWT-Plat01-WB-circle|district,940GZZLUBWT,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUBWT-Plat02-EB-circle|district,940GZZLUBWT,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUBZP-Plat01-NB-northern,940GZZLUBZP,1,Northbound,9400ZZLUBZP1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUBZP-Plat02-SB-northern,940GZZLUBZP,2,Southbound,9400ZZLUBZP2,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUCAR-Plat01-EB-piccadilly,940GZZLUCAR,1,Eastbound,9400ZZLUCAR1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUCAR-Plat02-WB-piccadilly,940GZZLUCAR,2,Westbound,9400ZZLUCAR1,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUCFM-Plat01-NB-northern,940GZZLUCFM,1,Northbound,9400ZZLUCFM1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUCFM-Plat02-SB-northern,940GZZLUCFM,2,Southbound,9400ZZLUCFM1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUCGN-Plat01-WB-piccadilly,940GZZLUCGN,1,Westbound,9400ZZLUCGN2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUCGN-Plat02-EB-piccadilly,940GZZLUCGN,2,Eastbound,9400ZZLUCGN1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUCHL-Plat01-WB-central,940GZZLUCHL,1,Westbound,9400ZZLUCHL2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUCHL-Plat02-EB-central,940GZZLUCHL,2,Eastbound,9400ZZLUCHL1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUCKS-Plat01-WB-piccadilly,940GZZLUCKS,1,Westbound,9400ZZLUCKS1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUCKS-Plat02-WB-piccadilly,940GZZLUCKS,2,Westbound,9400ZZLUCKS1,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUCKS-Plat04-WB-piccadilly,940GZZLUCKS,4,Westbound,9400ZZLUCKS1,Westbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUCND-Plat01-NB-northern,940GZZLUCND,1,Northbound,9400ZZLUCND1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUCND-Plat02-SB-northern,940GZZLUCND,2,Southbound,9400ZZLUCND1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUCPC-Plat01-NB-northern,940GZZLUCPC,1,Northbound,9400ZZLUCPC1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUCPC-Plat02-SB-northern,940GZZLUCPC,2,Southbound,9400ZZLUCPC1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUCPK-Plat01-NB-jubilee,940GZZLUCPK,1,Northbound,9400ZZLUCPK1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUCPK-Plat02-SB-jubilee,940GZZLUCPK,2,Southbound,9400ZZLUCPK2,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUCPN-Plat01-NB-northern,940GZZLUCPN,1,Northbound,9400ZZLUCPN1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUCPN-Plat02-SB-northern,940GZZLUCPN,2,Southbound,9400ZZLUCPN1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUCPS-Plat01-NB-northern,940GZZLUCPS,1,Northbound,9400ZZLUCPS1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUCPS-Plat02-SB-northern,940GZZLUCPS,2,Southbound,9400ZZLUCPS1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUCSD-Plat01-NB-northern,940GZZLUCSD,1,Northbound,9400ZZLUCSD1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUCSD-Plat02-SB-northern,940GZZLUCSD,2,Southbound,9400ZZLUCSD1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUCSM-Plat01-SB-metropolitan,940GZZLUCSM,1,Southbound,9400ZZLUCSM1,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUCTN-Plat01-NB-northern,940GZZLUCTN,1,Northbound,9400ZZLUCTN2,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUCTN-Plat02-SB-northern,940GZZLUCTN,2,Southbound,9400ZZLUCTN4,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUCTN-Plat03-NB-northern,940GZZLUCTN,3,Northbound,9400ZZLUCTN1,Northbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUCTN-Plat04-SB-northern,940GZZLUCTN,4,Southbound,9400ZZLUCTN3,Southbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUCWL-Plat01-WB-central,940GZZLUCWL,1,Westbound,9400ZZLUCWL2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUCWL-Plat02-EB-central,940GZZLUCWL,2,Eastbound,9400ZZLUCWL1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUCWP-Plat01-WB-district,940GZZLUCWP,1,Westbound,9400ZZLUCWP2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUCWP-Plat02-EB-district,940GZZLUCWP,2,Eastbound,9400ZZLUCWP1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUCXY-Plat01-NB-metropolitan,940GZZLUCXY,1,Northbound,9400ZZLUCXY1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUCXY-Plat02-SB-metropolitan,940GZZLUCXY,2,Southbound,9400ZZLUCXY2,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUDBN-Plat01-WB-central,940GZZLUDBN,1,Westbound,9400ZZLUDBN2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUDBN-Plat02-EB-central,940GZZLUDBN,2,Eastbound,9400ZZLUDBN1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUDGE-Plat01-WB-district,940GZZLUDGE,1,Westbound,9400ZZLUDGE2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUDGE-Plat02-EB-district,940GZZLUDGE,2,Eastbound,9400ZZLUDGE1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUDGE-Plat03-WB-district,940GZZLUDGE,3,Westbound,9400ZZLUDGE2,Westbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUDGY-Plat01-WB-district,940GZZLUDGY,1,Westbound,9400ZZLUDGY1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUDGY-Plat02-EB-district,940GZZLUDGY,2,Eastbound,9400ZZLUDGY2,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUDOH-Plat01-NB-jubilee,940GZZLUDOH,1,Northbound,9400ZZLUDOH1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUDOH-Plat02-SB-jubilee,940GZZLUDOH,2,Southbound,9400ZZLUDOH1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUEAE-Plat01-WB-metropolitan|piccadilly,940GZZLUEAE,1,Westbound,9400ZZLUEAE2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUEAE-Plat02-EB-metropolitan|piccadilly,940GZZLUEAE,2,Eastbound,9400ZZLUEAE1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUEAN-Plat01-WB-central,940GZZLUEAN,1,Westbound,9400ZZLUEAN2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUEAN-Plat02-EB-central,940GZZLUEAN,2,Eastbound,9400ZZLUEAN1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUECM-Plat01-WB-district|piccadilly,940GZZLUECM,1,Westbound,9400ZZLUECM2,Westbound Platform 1,TRUE,TRUE,,TRUE
+940GZZLUECM-Plat02-EB-district|piccadilly,940GZZLUECM,2,Eastbound,9400ZZLUECM1,Eastbound Platform 2,TRUE,TRUE,,TRUE
+940GZZLUECT-Plat01-EB-district,940GZZLUECT,1,Eastbound,9400ZZLUECT1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUECT-Plat02-EB-district,940GZZLUECT,2,Eastbound,9400ZZLUECT1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUECT-Plat03-WB-district,940GZZLUECT,3,Westbound,9400ZZLUECT2,Westbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUECT-Plat04-WB-district,940GZZLUECT,4,Westbound,9400ZZLUECT2,Westbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUECT-Plat05-EB-piccadilly,940GZZLUECT,5,Eastbound,9400ZZLUECT3,Eastbound Platform 5,TRUE,FALSE,,TRUE
+940GZZLUECT-Plat06-WB-piccadilly,940GZZLUECT,6,Westbound,9400ZZLUECT4,Westbound Platform 6,TRUE,FALSE,,TRUE
+940GZZLUEFY-Plat01-NB-northern,940GZZLUEFY,1,Northbound,9400ZZLUEFY1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUEFY-Plat02-NB-northern,940GZZLUEFY,2,Northbound,9400ZZLUEFY1,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUEFY-Plat03-SB-northern,940GZZLUEFY,3,Southbound,9400ZZLUEFY2,Southbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUEFY-Plat04-SB-northern,940GZZLUEFY,4,Southbound,9400ZZLUEFY2,Southbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUEGW-Plat01-SB-northern,940GZZLUEGW,1,Southbound,9400ZZLUEDW2,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUEGW-Plat02-SB-northern,940GZZLUEGW,2,Southbound,9400ZZLUEGW1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUEGW-Plat03-SB-northern,940GZZLUEGW,3,Southbound,9400ZZLUEGW1,Southbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUEHM-Plat01-WB-district|hammersmith-city,940GZZLUEHM,1,Westbound,9400ZZLUEHM2,Westbound Platform 1,TRUE,TRUE,,TRUE
+940GZZLUEHM-Plat02-EB-district|hammersmith-city,940GZZLUEHM,2,Eastbound,9400ZZLUEHM1,Eastbound Platform 2,TRUE,TRUE,,TRUE
+940GZZLUEMB-Plat01-WB-circle|district,940GZZLUEMB,1,Westbound,9400ZZLUEMB4,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUEMB-Plat02-EB-circle|district,940GZZLUEMB,2,Eastbound,9400ZZLUEMB3,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUEMB-Plat03-NB-northern,940GZZLUEMB,3,Northbound,9400ZZLUEMB5,Northbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUEMB-Plat04-SB-northern,940GZZLUEMB,4,Southbound,9400ZZLUEMB6,Southbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUEMB-Plat05-NB-bakerloo,940GZZLUEMB,5,Northbound,9400ZZLUEMB1,Northbound Platform 5,TRUE,FALSE,,TRUE
+940GZZLUEMB-Plat06-SB-bakerloo,940GZZLUEMB,6,Southbound,9400ZZLUEMB2,Southbound Platform 6,TRUE,FALSE,,TRUE
+940GZZLUEPG-Plat01-WB-central,940GZZLUEPG,1,Westbound,,Westbound Platform 1,TRUE,FALSE,Hillcrest Way,TRUE
+940GZZLUEPG-Plat02-WB-central,940GZZLUEPG,2,Westbound,,Westbound Platform 2,TRUE,FALSE,Station Road,TRUE
+940GZZLUEPK-Plat01-WB-district,940GZZLUEPK,1,Westbound,9400ZZLUEPK1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUEPK-Plat02-EB-district,940GZZLUEPK,2,Eastbound,9400ZZLUEPK1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUEPY-Plat01-EB-district,940GZZLUEPY,1,Eastbound,9400ZZLUEPY1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUEPY-Plat02-WB-district,940GZZLUEPY,2,Westbound,9400ZZLUEPY2,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUERB-Plat01-NB-bakerloo,940GZZLUERB,1,Northbound,9400ZZLUERB1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUERB-Plat02-SB-bakerloo,940GZZLUERB,2,Southbound,9400ZZLUERB2,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUERC-Plat01-EB-circle|hammersmith-city,940GZZLUERC,1,Eastbound,9400ZZLUERC2,Eastbound Platform 1,TRUE,TRUE,,TRUE
+940GZZLUERC-Plat02-WB-circle|district,940GZZLUERC,2,Westbound,9400ZZLUERC2,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUERC-Plat03-WB-circle|district,940GZZLUERC,3,Westbound,9400ZZLUERC3,Westbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUERC-Plat04-WB-circle|hammersmith-city,940GZZLUERC,4,Westbound,9400ZZLUERC4,Westbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUESQ-Plat01-WB-circle|hammersmith-city|metropolitan,940GZZLUESQ,1,Westbound,9400ZZLUESQ2,Westbound Platform 1,TRUE,TRUE,,TRUE
+940GZZLUESQ-Plat02-EB-circle|hammersmith-city|metropolitan,940GZZLUESQ,2,Eastbound,9400ZZLUESQ1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUFBY-Plat01-WB-district,940GZZLUFBY,1,Westbound,9400ZZLUFBY2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUFBY-Plat02-EB-district,940GZZLUFBY,2,Eastbound,9400ZZLUFBY1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUFLP-Plat01-WB-central,940GZZLUFLP,1,Westbound,9400ZZLUFLP2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUFLP-Plat02-EB-central,940GZZLUFLP,2,Eastbound,9400ZZLUFLP1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUFYC-Plat01-NB-northern,940GZZLUFYC,1,Northbound,9400ZZLUFYC1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUFYC-Plat02-NB-northern,940GZZLUFYC,2,Northbound,9400ZZLUFYC1,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUFYC-Plat03-SB-northern,940GZZLUFYC,3,Southbound,9400ZZLUFYC2,Southbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUFYR-Plat01-NB-metropolitan,940GZZLUFYR,1,Northbound,9400ZZLUFYR3,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUFYR-Plat02-NB-jubilee,940GZZLUFYR,2,Northbound,9400ZZLUFYR1,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUFYR-Plat03-SB-jubilee,940GZZLUFYR,3,Southbound,9400ZZLUFYR2,Southbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUFYR-Plat04-SB-metropolitan,940GZZLUFYR,4,Southbound,9400ZZLUFYR4,Southbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUGDG-Plat01-NB-northern,940GZZLUGDG,1,Northbound,9400ZZLUGDG1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUGDG-Plat02-SB-northern,940GZZLUGDG,2,Southbound,9400ZZLUGDG1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUGGH-Plat01-WB-central,940GZZLUGGH,1,Westbound,9400ZZLUGGH2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUGGH-Plat02-EB-central,940GZZLUGGH,2,Eastbound,9400ZZLUGGH1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUGGN-Plat01-NB-northern,940GZZLUGGN,1,Northbound,9400ZZLUGGN1,Northbound Platform 1,FALSE,FALSE,,TRUE
+940GZZLUGGN-Plat02-NB-northern,940GZZLUGGN,2,Northbound,9400ZZLUGGN1,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUGGN-Plat03-NB-northern,940GZZLUGGN,3,Northbound,9400ZZLUGGN1,Northbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUGGN-Plat04-SB-northern,940GZZLUGGN,4,Southbound,9400ZZLUGGN2,Southbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUGGN-Plat05-SB-northern,940GZZLUGGN,5,Southbound,9400ZZLUGGN2,Southbound Platform 5,TRUE,FALSE,,TRUE
+940GZZLUGHK-Plat01-EB-circle|hammersmith-city,940GZZLUGHK,1,Eastbound,9400ZZLUGHK1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUGHK-Plat02-WB-circle|hammersmith-city,940GZZLUGHK,2,Westbound,9400ZZLUGHK2,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUGPK-Plat01-WB-piccadilly,940GZZLUGPK,1,Westbound,9400ZZLUGPK4,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUGPK-Plat02-EB-piccadilly,940GZZLUGPK,2,Eastbound,9400ZZLUGPK4,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUGPK-Plat03-NB-victoria,940GZZLUGPK,3,Northbound,9400ZZLUGPK1,Northbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUGPK-Plat04-SB-victoria,940GZZLUGPK,4,Southbound,9400ZZLUGPK5,Southbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUGPK-Plat05-NB-jubilee,940GZZLUGPK,5,Northbound,9400ZZLUGPK2,Northbound Platform 5,TRUE,FALSE,,TRUE
+940GZZLUGPK-Plat06-SB-jubilee,940GZZLUGPK,6,Southbound,9400ZZLUGPK3,Southbound Platform 6,TRUE,FALSE,,TRUE
+940GZZLUGPS-Plat01-WB-circle|hammersmith-city|metropolitan,940GZZLUGPS,1,Westbound,9400ZZLUGPS2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUGPS-Plat02-EB-circle|hammersmith-city|metropolitan,940GZZLUGPS,2,Eastbound,9400ZZLUGPS1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUGTH-Plat01-WB-central,940GZZLUGTH,1,Westbound,9400ZZLUGTH1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUGTH-Plat02-EB-central,940GZZLUGTH,2,Eastbound,9400ZZLUGTH1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUGTR-Plat01-WB-district,940GZZLUGTR,1,Westbound,9400ZZLUGTR3,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUGTR-Plat02-WB-circle,940GZZLUGTR,2,Westbound,9400ZZLUGTR1,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUGTR-Plat03-EB-circle|district,940GZZLUGTR,3,Eastbound,9400ZZLUGTR2,Eastbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUGTR-Plat04-WB-piccadilly,940GZZLUGTR,4,Westbound,9400ZZLUGTR5,Westbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUGTR-Plat05-EB-piccadilly,940GZZLUGTR,5,Eastbound,9400ZZLUGTR4,Eastbound Platform 5,TRUE,FALSE,,TRUE
+940GZZLUHBN-Plat01-WB-central,940GZZLUHBN,1,Westbound,9400ZZLUHBN2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUHBN-Plat02-EB-central,940GZZLUHBN,2,Eastbound,9400ZZLUHBN1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUHBN-Plat03-WB-piccadilly,940GZZLUHBN,3,Westbound,9400ZZLUHBN4,Westbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUHBN-Plat04-EB-piccadilly,940GZZLUHBN,4,Eastbound,9400ZZLUHBN3,Eastbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUHBT-Plat01-SB-northern,940GZZLUHBT,1,Southbound,9400ZZLUHBT1,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUHBT-Plat02-SB-northern,940GZZLUHBT,2,Southbound,9400ZZLUHBT1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUHBT-Plat03-SB-northern,940GZZLUHBT,3,Southbound,9400ZZLUHBT1,Southbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUHCH-Plat01-WB-district,940GZZLUHCH,1,Westbound,9400ZZLUHCH2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUHCH-Plat02-EB-district,940GZZLUHCH,2,Eastbound,9400ZZLUHCH1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUHCL-Plat01-NB-northern,940GZZLUHCL,1,Northbound,9400ZZLUHCL1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUHCL-Plat02-SB-northern,940GZZLUHCL,2,Southbound,9400ZZLUHCL1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUHGD-Plat01-WB-metropolitan|piccadilly,940GZZLUHGD,1,Westbound,9400ZZLUHGD2,Westbound Platform 1,TRUE,TRUE,,TRUE
+940GZZLUHGD-Plat02-EB-metropolitan|piccadilly,940GZZLUHGD,2,Eastbound,9400ZZLUHGD1,Eastbound Platform 2,TRUE,TRUE,,TRUE
+940GZZLUHGR-Plat01-WB-central,940GZZLUHGR,1,Westbound,9400ZZLUHGR1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUHGR-Plat02-EB-central,940GZZLUHGR,2,Eastbound,9400ZZLUHGR1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUHGT-Plat01-NB-northern,940GZZLUHGT,1,Northbound,9400ZZLUHGT1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUHGT-Plat02-SB-northern,940GZZLUHGT,2,Southbound,9400ZZLUHGT1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUHLT-Plat01-WB-central,940GZZLUHLT,1,Westbound,9400ZZLUHLT1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUHLT-Plat02-WB-central,940GZZLUHLT,2,Westbound,9400ZZLUHLT2,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUHLT-Plat03-WB-central,940GZZLUHLT,3,Westbound,9400ZZLUHLT2,Westbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUHNX-Plat01-WB-piccadilly,940GZZLUHNX,1,Westbound,9400ZZLUHNX1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUHNX-Plat02-EB-piccadilly,940GZZLUHNX,2,Eastbound,9400ZZLUHNX1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUHPC-Plat01-EB-piccadilly,940GZZLUHPC,1,Eastbound,9400ZZLUHPC2,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUHPC-Plat02-WB-piccadilly,940GZZLUHPC,2,Westbound,9400ZZLUHPC1,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUHPK-Plat01-WB-central,940GZZLUHPK,1,Westbound,9400ZZLUHPK2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUHPK-Plat02-EB-central,940GZZLUHPK,2,Eastbound,9400ZZLUHPK1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUHSK-Plat01-WB-circle|district,940GZZLUHSK,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUHSK-Plat02-EB-circle|district,940GZZLUHSK,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUHSK-Plat03-WB-circle|district,940GZZLUHSK,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUHSK-Plat04-WB-circle|district,940GZZLUHSK,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUHTD-Plat01-NB-northern,940GZZLUHTD,1,Northbound,9400ZZLUHTD1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUHTD-Plat02-SB-northern,940GZZLUHTD,2,Southbound,9400ZZLUHTD2,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUHWC-Plat01-WB-piccadilly,940GZZLUHWC,1,Westbound,9400ZZLUHWC1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUHWC-Plat02-EB-piccadilly,940GZZLUHWC,2,Eastbound,9400ZZLUHWC1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUHWE-Plat01-WB-piccadilly,940GZZLUHWE,1,Westbound,9400ZZLUHWE2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUHWE-Plat02-EB-piccadilly,940GZZLUHWE,2,Eastbound,9400ZZLUHWE1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUHWT-Plat01-WB-piccadilly,940GZZLUHWT,1,Westbound,9400ZZLUHWT1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUHWT-Plat02-EB-piccadilly,940GZZLUHWT,2,Eastbound,9400ZZLUHWT1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUHWY-Plat01-WB-piccadilly,940GZZLUHWY,1,Westbound,9400ZZLUHWY1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUHWY-Plat02-EB-piccadilly,940GZZLUHWY,2,Eastbound,9400ZZLUHWY1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUICK-Plat01-WB-metropolitan|piccadilly,940GZZLUICK,1,Westbound,9400ZZLUICK2,Westbound Platform 1,TRUE,TRUE,,TRUE
+940GZZLUICK-Plat02-EB-metropolitan|piccadilly,940GZZLUICK,2,Eastbound,9400ZZLUICK1,Eastbound Platform 2,TRUE,TRUE,,TRUE
+940GZZLUKBN-Plat01-NB-jubilee,940GZZLUKBN,1,Northbound,9400ZZLUKBN2,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUKBN-Plat02-SB-jubilee,940GZZLUKBN,2,Southbound,9400ZZLUKBN1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUKBY-Plat01-NB-jubilee,940GZZLUKBY,1,Northbound,9400ZZLUKBY1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUKBY-Plat02-SB-jubilee,940GZZLUKBY,2,Southbound,9400ZZLUKBY2,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUKNB-Plat01-EB-piccadilly,940GZZLUKNB,1,Eastbound,9400ZZLUKNB1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUKNB-Plat02-WB-piccadilly,940GZZLUKNB,2,Westbound,9400ZZLUKNB2,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUKNG-Plat01-NB-northern,940GZZLUKNG,1,Northbound,9400ZZLUKNG1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUKNG-Plat02-SB-northern,940GZZLUKNG,2,Southbound,9400ZZLUKNG2,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUKNG-Plat03-NB-northern,940GZZLUKNG,3,Northbound,9400ZZLUKNG1,Northbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUKNG-Plat04-SB-northern,940GZZLUKNG,4,Southbound,9400ZZLUKNG2,Southbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUKPK-Plat01-NB-bakerloo,940GZZLUKPK,1,Northbound,9400ZZLUKPK1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUKPK-Plat02-SB-bakerloo,940GZZLUKPK,2,Southbound,9400ZZLUKPK1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLULAD-Plat01-EB-circle|hammersmith-city,940GZZLULAD,1,Eastbound,9400ZZLULAD1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLULAD-Plat02-WB-circle|hammersmith-city,940GZZLULAD,2,Westbound,9400ZZLULAD2,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLULBN-Plat01-NB-bakerloo,940GZZLULBN,1,Northbound,9400ZZLULBN1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLULBN-Plat02-SB-bakerloo,940GZZLULBN,2,Southbound,9400ZZLULBN1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLULGN-Plat01-WB-central,940GZZLULGN,1,Westbound,9400ZZLULGN2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLULGN-Plat02-WB-central,940GZZLULGN,2,Westbound,9400ZZLULGN2,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLULGN-Plat03-WB-central,940GZZLULGN,3,Westbound,9400ZZLULGN1,Westbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLULGN-Plat04-EB-central,940GZZLULGN,4,Eastbound,9400ZZLULGN1,Eastbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLULGT-Plat01-WB-central,940GZZLULGT,1,Westbound,9400ZZLULGT1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLULGT-Plat02-EB-central,940GZZLULGT,2,Eastbound,9400ZZLULGT1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLULRD-Plat01-EB-circle|hammersmith-city,940GZZLULRD,1,Eastbound,9400ZZLULRD1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLULRD-Plat02-WB-circle|hammersmith-city,940GZZLULRD,2,Westbound,9400ZZLULRD2,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLULSQ-Plat01-WB-piccadilly,940GZZLULSQ,1,Westbound,9400ZZLULSQ4,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLULSQ-Plat02-EB-piccadilly,940GZZLULSQ,2,Eastbound,9400ZZLULSQ3,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLULSQ-Plat03-SB-northern,940GZZLULSQ,3,Southbound,9400ZZLULSQ2,Southbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLULSQ-Plat04-NB-northern,940GZZLULSQ,4,Northbound,9400ZZLULSQ1,Northbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLULYN-Plat01-WB-central,940GZZLULYN,1,Westbound,9400ZZLULYN2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLULYN-Plat02-EB-central,940GZZLULYN,2,Eastbound,9400ZZLULYN1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLULYS-Plat01-WB-central,940GZZLULYS,1,Westbound,9400ZZLULYS2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLULYS-Plat02-WB-central,940GZZLULYS,2,Westbound,9400ZZLULYS2,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLULYS-Plat03-EB-central,940GZZLULYS,3,Eastbound,9400ZZLULYS1,Eastbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUMBA-Plat01-WB-central,940GZZLUMBA,1,Westbound,9400ZZLUMBA1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUMBA-Plat02-EB-central,940GZZLUMBA,2,Eastbound,9400ZZLUMBA1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUMDN-Plat01-NB-northern,940GZZLUMDN,1,Northbound,Platform not in use,Northbound Platform 1,FALSE,FALSE,,TRUE
+940GZZLUMDN-Plat02-NB-northern,940GZZLUMDN,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUMDN-Plat03-NB-northern,940GZZLUMDN,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUMDN-Plat04-NB-northern,940GZZLUMDN,4,Northbound,,Northbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUMDN-Plat05-NB-northern,940GZZLUMDN,5,Northbound,,Northbound Platform 5,TRUE,FALSE,,TRUE
+940GZZLUMED-Plat01-WB-central,940GZZLUMED,1,Westbound,9400ZZLUMED1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUMED-Plat02-WB-district|hammersmith-city,940GZZLUMED,2,Westbound,9400ZZLUMED3,Westbound Platform 2,TRUE,TRUE,,TRUE
+940GZZLUMED-Plat03-EB-district|hammersmith-city,940GZZLUMED,3,Eastbound,9400ZZLUMED4,Eastbound Platform 3,TRUE,TRUE,,TRUE
+940GZZLUMED-Plat04-EB-central,940GZZLUMED,4,Eastbound,9400ZZLUMED2,Eastbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUMHL-Plat01-SB-northern,940GZZLUMHL,1,Southbound,9400ZZLUMHL1,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUMMT-Plat01-WB-circle|district,940GZZLUMMT,1,Westbound,9400ZZLUMMT2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUMMT-Plat02-EB-circle|district,940GZZLUMMT,2,Eastbound,9400ZZLUMMT1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUMPK-Plat01-NB-metropolitan,940GZZLUMPK,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUMPK-Plat02-SB-metropolitan,940GZZLUMPK,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUMPK-Plat03-NB-metropolitan,940GZZLUMPK,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUMPK-Plat04-SB-metropolitan,940GZZLUMPK,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUMRH-Plat01-EB-piccadilly,940GZZLUMRH,1,Eastbound,9400ZZLUMRH1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUMRH-Plat02-WB-piccadilly,940GZZLUMRH,2,Westbound,9400ZZLUMRH1,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUMSH-Plat01-WB-circle|district,940GZZLUMSH,1,Westbound,9400ZZLUMSH2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUMSH-Plat03-EB-circle|district,940GZZLUMSH,3,Eastbound,9400ZZLUMSH1,Eastbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUMTC-Plat01-NB-northern,940GZZLUMTC,1,Northbound,9400ZZLUMTC1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUMTC-Plat02-SB-northern,940GZZLUMTC,2,Southbound,9400ZZLUMTC1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUMVL-Plat01-NB-bakerloo,940GZZLUMVL,1,Northbound,9400ZZLUMVL1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUMVL-Plat02-SB-bakerloo,940GZZLUMVL,2,Southbound,9400ZZLUMVL1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUNAN-Plat01-WB-central,940GZZLUNAN,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUNAN-Plat02-EB-central,940GZZLUNAN,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUNAN-Plat03-EB-central,940GZZLUNAN,3,Eastbound,,Eastbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUNBP-Plat01-WB-central,940GZZLUNBP,1,Westbound,9400ZZLUNBP2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUNBP-Plat02-EB-central,940GZZLUNBP,2,Eastbound,9400ZZLUNBP1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUNDN-Plat02-NB-jubilee,940GZZLUNDN,2,Northbound,9400ZZLUNDN1,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUNDN-Plat03-SB-jubilee,940GZZLUNDN,3,Southbound,9400ZZLUNDN1,Southbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUNEN-Plat01-WB-piccadilly,940GZZLUNEN,1,Westbound,9400ZZLUNEN2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUNEN-Plat02-EB-piccadilly,940GZZLUNEN,2,Eastbound,9400ZZLUNEN1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUNFD-Plat01-WB-piccadilly,940GZZLUNFD,1,Westbound,9400ZZLUNFD2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUNFD-Plat02-WB-piccadilly,940GZZLUNFD,2,Westbound,9400ZZLUNFD2,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUNFD-Plat03-EB-piccadilly,940GZZLUNFD,3,Eastbound,9400ZZLUNFD1,Eastbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUNFD-Plat04-EB-piccadilly,940GZZLUNFD,4,Eastbound,9400ZZLUNFD1,Eastbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUNGW-Plat01-WB-jubilee,940GZZLUNGW,1,Westbound,9400ZZLUNGW2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUNGW-Plat02-WB-jubilee,940GZZLUNGW,2,Westbound,9400ZZLUNGW2,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUNGW-Plat03-EB-jubilee,940GZZLUNGW,3,Eastbound,9400ZZLUNGW1,Eastbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUNHA-Plat01-NB-metropolitan,940GZZLUNHA,1,Northbound,9400ZZLUNHA2,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUNHA-Plat02-SB-metropolitan,940GZZLUNHA,2,Southbound,9400ZZLUNHA1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUNHG-Plat01-WB-circle|district,940GZZLUNHG,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUNHG-Plat02-EB-circle|district,940GZZLUNHG,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUNHG-Plat03-EB-central,940GZZLUNHG,3,Eastbound,,Eastbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUNHG-Plat04-WB-central,940GZZLUNHG,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUNHT-Plat01-WB-central,940GZZLUNHT,1,Westbound,9400ZZLUNHT1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUNHT-Plat02-EB-central,940GZZLUNHT,2,Eastbound,9400ZZLUNHT1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUNKP-Plat01-NB-metropolitan,940GZZLUNKP,1,Northbound,9400ZZLUNKP1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUNKP-Plat02-SB-metropolitan,940GZZLUNKP,2,Southbound,9400ZZLUNKP1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUNOW-Plat01-NB-metropolitan,940GZZLUNOW,1,Northbound,9400ZZLUNOW2,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUNOW-Plat02-SB-metropolitan,940GZZLUNOW,2,Southbound,9400ZZLUNOW1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUNWH-Plat01-NB-metropolitan,940GZZLUNWH,1,Northbound,9400ZZLUNWH2,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUNWH-Plat02-SB-metropolitan,940GZZLUNWH,2,Southbound,9400ZZLUNWH1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUOAK-Plat01-WB-piccadilly,940GZZLUOAK,1,Westbound,9400ZZLUOAK1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUOAK-Plat02-EB-piccadilly,940GZZLUOAK,2,Eastbound,9400ZZLUOAK1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUOSY-Plat01-WB-piccadilly,940GZZLUOSY,1,Westbound,9400ZZLUOSY2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUOSY-Plat02-EB-piccadilly,940GZZLUOSY,2,Eastbound,9400ZZLUOSY1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUOVL-Plat01-NB-northern,940GZZLUOVL,1,Northbound,9400ZZLUOVL1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUOVL-Plat02-SB-northern,940GZZLUOVL,2,Southbound,9400ZZLUOVL2,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUOXC-Plat01-WB-central,940GZZLUOXC,1,Westbound,9400ZZLUOXC5,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUOXC-Plat02-EB-central,940GZZLUOXC,2,Eastbound,9400ZZLUOXC1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUOXC-Plat03-SB-bakerloo,940GZZLUOXC,3,Southbound,9400ZZLUOXC3,Southbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUOXC-Plat04-NB-bakerloo,940GZZLUOXC,4,Northbound,9400ZZLUOXC4,Northbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUOXC-Plat05-SB-victoria,940GZZLUOXC,5,Southbound,9400ZZLUOXC6,Southbound Platform 5,TRUE,FALSE,,TRUE
+940GZZLUOXC-Plat06-NB-victoria,940GZZLUOXC,6,Northbound,9400ZZLUOXC2,Northbound Platform 6,TRUE,FALSE,,TRUE
+940GZZLUPCC-Plat01-NB-bakerloo,940GZZLUPCC,1,Northbound,9400ZZLUPCC1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUPCC-Plat02-SB-bakerloo,940GZZLUPCC,2,Southbound,9400ZZLUPCC2,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUPCC-Plat03-EB-piccadilly,940GZZLUPCC,3,Eastbound,9400ZZLUPCC3,Eastbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUPCC-Plat04-WB-piccadilly,940GZZLUPCC,4,Westbound,9400ZZLUPCC4,Westbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUPCO-Plat01-NB-victoria,940GZZLUPCO,1,Northbound,9400ZZLUPCO1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUPCO-Plat02-SB-victoria,940GZZLUPCO,2,Southbound,9400ZZLUPCO1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUPKR-Plat01-WB-piccadilly,940GZZLUPKR,1,Westbound,9400ZZLUPKR2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUPKR-Plat02-EB-piccadilly,940GZZLUPKR,2,Eastbound,9400ZZLUPKR1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUPLW-Plat01-WB-district|hammersmith-city,940GZZLUPLW,1,Westbound,9400ZZLUPLW2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUPLW-Plat02-EB-district|hammersmith-city,940GZZLUPLW,2,Eastbound,9400ZZLUPLW1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUPLW-Plat03-WB-district|hammersmith-city,940GZZLUPLW,3,Westbound,9400ZZLUPLW2,Westbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUPNR-Plat01-NB-metropolitan,940GZZLUPNR,1,Northbound,9400ZZLUPNR1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUPNR-Plat02-SB-metropolitan,940GZZLUPNR,2,Southbound,9400ZZLUPNR2,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUPRD-Plat01-NB-metropolitan,940GZZLUPRD,1,Northbound,9400ZZLUPRD1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUPRD-Plat02-SB-metropolitan,940GZZLUPRD,2,Southbound,9400ZZLUPRD1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUPSG-Plat01-WB-district,940GZZLUPSG,1,Westbound,9400ZZLUPSG2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUPSG-Plat02-EB-district,940GZZLUPSG,2,Eastbound,9400ZZLUPSG1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUPVL-Plat01-WB-central,940GZZLUPVL,1,Westbound,9400ZZLUPVL1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUPVL-Plat02-EB-central,940GZZLUPVL,2,Eastbound,9400ZZLUPVL1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUPYB-Plat01-EB-district,940GZZLUPYB,1,Eastbound,9400ZZLUPYB1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUPYB-Plat02-WB-district,940GZZLUPYB,2,Westbound,9400ZZLUPYB2,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUQBY-Plat01-NB-jubilee,940GZZLUQBY,1,Northbound,9400ZZLUQBY1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUQBY-Plat02-SB-jubilee,940GZZLUQBY,2,Southbound,9400ZZLUQBY2,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUQWY-Plat01-WB-central,940GZZLUQWY,1,Westbound,9400ZZLUQWY1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUQWY-Plat02-EB-central,940GZZLUQWY,2,Eastbound,9400ZZLUQWY1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLURBG-Plat01-WB-central,940GZZLURBG,1,Westbound,9400ZZLURBG1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLURBG-Plat02-EB-central,940GZZLURBG,2,Eastbound,9400ZZLURBG1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLURGP-Plat01-NB-bakerloo,940GZZLURGP,1,Northbound,9400ZZLURGP1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLURGP-Plat02-SB-bakerloo,940GZZLURGP,2,Southbound,9400ZZLURGP2,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLURSG-Plat01-WB-central,940GZZLURSG,1,Westbound,9400ZZLURSG1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLURSG-Plat02-EB-central,940GZZLURSG,2,Eastbound,9400ZZLURSG1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLURSM-Plat01-WB-metropolitan|piccadilly,940GZZLURSM,1,Westbound,9400ZZLURSM2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLURSM-Plat02-EB-metropolitan|piccadilly,940GZZLURSM,2,Eastbound,9400ZZLURSM1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLURSP-Plat01-WB-metropolitan|piccadilly,940GZZLURSP,1,Westbound,9400ZZLURSP4,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLURSP-Plat02-EB-metropolitan|piccadilly,940GZZLURSP,2,Eastbound,9400ZZLURSP3,Eastbound Platform 2,TRUE,TRUE,,TRUE
+940GZZLURSQ-Plat01-EB-piccadilly,940GZZLURSQ,1,Eastbound,9400ZZLURSQ1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLURSQ-Plat02-WB-piccadilly,940GZZLURSQ,2,Westbound,9400ZZLURSQ2,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLURVP-Plat01-WB-district,940GZZLURVP,1,Westbound,9400ZZLURVP2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLURVP-Plat04-EB-district,940GZZLURVP,4,Eastbound,9400ZZLURVP1,Eastbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLURVY-Plat01-WB-central,940GZZLURVY,1,Westbound,9400ZZLURVY1,Westbound Platform 1,TRUE,FALSE,Station Approach & Cherry Tree,TRUE
+940GZZLURVY-Plat02-EB-central,940GZZLURVY,2,Eastbound,9400ZZLURVY2,Eastbound Platform 2,TRUE,FALSE,Station Way,TRUE
+940GZZLURYL-Plat01-WB-metropolitan|piccadilly,940GZZLURYL,1,Westbound,9400ZZLURYL1,Westbound Platform 1,TRUE,TRUE,,TRUE
+940GZZLURYL-Plat02-EB-metropolitan|piccadilly,940GZZLURYL,2,Eastbound,9400ZZLURYL2,Eastbound Platform 2,TRUE,TRUE,,TRUE
+940GZZLURYO-Plat01-WB-circle|hammersmith-city,940GZZLURYO,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLURYO-Plat02-EB-circle|hammersmith-city,940GZZLURYO,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUSBM-Plat01-EB-circle|hammersmith-city,940GZZLUSBM,1,Eastbound,9400ZZLUSBM1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUSBM-Plat02-WB-circle|hammersmith-city,940GZZLUSBM,2,Westbound,9400ZZLUSBM2,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUSEA-Plat01-EB-piccadilly,940GZZLUSEA,1,Eastbound,9400ZZLUSEA1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUSEA-Plat02-EB-piccadilly,940GZZLUSEA,2,Eastbound,9400ZZLUSEA1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUSEA-Plat03-WB-piccadilly,940GZZLUSEA,3,Westbound,9400ZZLUSEA2,Westbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUSEA-Plat04-WB-piccadilly,940GZZLUSEA,4,Westbound,9400ZZLUSEA2,Westbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUSFB-Plat01-WB-district,940GZZLUSFB,1,Westbound,9400ZZLUSFB2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUSFB-Plat03-EB-district,940GZZLUSFB,3,Eastbound,9400ZZLUSFB1,Eastbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUSFS-Plat01-EB-district,940GZZLUSFS,1,Eastbound,9400ZZLUSFS1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUSFS-Plat02-WB-district,940GZZLUSFS,2,Westbound,9400ZZLUSFS1,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUSGN-Plat01-WB-district|hammersmith-city,940GZZLUSGN,1,Westbound,9400ZZLUSGN2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUSGN-Plat02-EB-district|hammersmith-city,940GZZLUSGN,2,Eastbound,9400ZZLUSGN1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUSGT-Plat01-EB-piccadilly,940GZZLUSGT,1,Eastbound,9400ZZLUSGT1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUSGT-Plat02-WB-piccadilly,940GZZLUSGT,2,Westbound,9400ZZLUSGT1,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUSHH-Plat01-WB-piccadilly,940GZZLUSHH,1,Westbound,9400ZZLUSHH2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUSHH-Plat02-EB-piccadilly,940GZZLUSHH,2,Eastbound,9400ZZLUSHH1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUSJP-Plat01-WB-circle|district,940GZZLUSJP,1,Westbound,9400ZZLUSJP2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUSJP-Plat02-EB-circle|district,940GZZLUSJP,2,Eastbound,9400ZZLUSJP1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUSJW-Plat01-NB-jubilee,940GZZLUSJW,1,Northbound,9400ZZLUSJW1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUSJW-Plat02-SB-jubilee,940GZZLUSJW,2,Southbound,9400ZZLUSJW1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUSKS-Plat01-WB-circle|district,940GZZLUSKS,1,Westbound,9400ZZLUSKS4,Westbound Platform 1,TRUE,TRUE,,TRUE
+940GZZLUSKS-Plat02-EB-circle|district,940GZZLUSKS,2,Eastbound,9400ZZLUSKS1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUSKS-Plat03-WB-piccadilly,940GZZLUSKS,3,Westbound,9400ZZLUSKS3,Westbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUSKS-Plat04-EB-piccadilly,940GZZLUSKS,4,Eastbound,9400ZZLUSKS2,Eastbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUSKW-Plat01-NB-victoria,940GZZLUSKW,1,Northbound,9400ZZLUSKW3,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUSKW-Plat02-NB-northern,940GZZLUSKW,2,Northbound,9400ZZLUSKW1,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUSKW-Plat03-SB-northern,940GZZLUSKW,3,Southbound,9400ZZLUSKW2,Southbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUSKW-Plat04-SB-victoria,940GZZLUSKW,4,Southbound,9400ZZLUSKW4,Southbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUSNB-Plat01-WB-central,940GZZLUSNB,1,Westbound,9400ZZLUSNB2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUSNB-Plat02-EB-central,940GZZLUSNB,2,Eastbound,9400ZZLUSNB1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUSPU-Plat01-WB-central,940GZZLUSPU,1,Westbound,9400ZZLUSPU2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUSPU-Plat02-EB-central,940GZZLUSPU,2,Eastbound,9400ZZLUSPU1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUSSQ-Plat01-WB-circle|district,940GZZLUSSQ,1,Westbound,9400ZZLUSSQ2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUSSQ-Plat02-EB-circle|district,940GZZLUSSQ,2,Eastbound,9400ZZLUSSQ1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUSTM-Plat01-SB-jubilee,940GZZLUSTM,1,Southbound,9400ZZLUSTM1,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUSTM-Plat02-SB-jubilee,940GZZLUSTM,2,Southbound,9400ZZLUSTM1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUSTM-Plat03-SB-jubilee,940GZZLUSTM,3,Southbound,9400ZZLUSTM1,Southbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUSUH-Plat01-WB-piccadilly,940GZZLUSUH,1,Westbound,9400ZZLUSUH2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUSUH-Plat02-EB-piccadilly,940GZZLUSUH,2,Eastbound,9400ZZLUSUH1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUSUT-Plat01-WB-piccadilly,940GZZLUSUT,1,Westbound,9400ZZLUSUT1,Westbound Platform 1,TRUE,FALSE,Orchard Gate,TRUE
+940GZZLUSUT-Plat02-EB-piccadilly,940GZZLUSUT,2,Eastbound,9400ZZLUSUT2,Eastbound Platform 2,TRUE,FALSE,Station Approach,TRUE
+940GZZLUSWC-Plat01-NB-jubilee,940GZZLUSWC,1,Northbound,9400ZZLUSWC1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUSWC-Plat02-SB-jubilee,940GZZLUSWC,2,Southbound,9400ZZLUSWC1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUSWF-Plat01-WB-central,940GZZLUSWF,1,Westbound,9400ZZLUSWF2,Westbound Platform 1,TRUE,FALSE,George Lane (West),TRUE
+940GZZLUSWF-Plat02-EB-central,940GZZLUSWF,2,Eastbound,9400ZZLUSWF1,Eastbound Platform 2,TRUE,FALSE,Station Passage (East),TRUE
+940GZZLUSWK-Plat01-WB-jubilee,940GZZLUSWK,1,Westbound,9400ZZLUSWK2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUSWK-Plat02-EB-jubilee,940GZZLUSWK,2,Eastbound,9400ZZLUSWK1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUSWN-Plat01-NB-northern,940GZZLUSWN,1,Northbound,9400ZZLUSWN1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUSWN-Plat02-SB-northern,940GZZLUSWN,2,Southbound,9400ZZLUSWN1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUTAW-Plat01-NB-northern,940GZZLUTAW,1,Northbound,9400ZZLUTAW1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUTAW-Plat02-SB-northern,940GZZLUTAW,2,Southbound,9400ZZLUTAW2,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUTBC-Plat01-NB-northern,940GZZLUTBC,1,Northbound,9400ZZLUTBC1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUTBC-Plat02-SB-northern,940GZZLUTBC,2,Southbound,9400ZZLUTBC1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUTBY-Plat01-NB-northern,940GZZLUTBY,1,Northbound,9400ZZLUTBY1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUTBY-Plat02-SB-northern,940GZZLUTBY,2,Southbound,9400ZZLUTBY1,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBTCR-Plat01-WB-central,HUBTCR,1,Westbound,9400ZZLUTCR4,Westbound Platform 1,TRUE,FALSE,,TRUE
+HUBTCR-Plat02-EB-central,HUBTCR,2,Eastbound,9400ZZLUTCR1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+HUBTCR-Plat03-NB-northern,HUBTCR,3,Northbound,9400ZZLUTCR2,Northbound Platform 3,TRUE,FALSE,,TRUE
+HUBTCR-Plat04-SB-northern,HUBTCR,4,Southbound,9400ZZLUTCR3,Southbound Platform 4,TRUE,FALSE,,TRUE
+HUBTCR-PlatA-EB-elizabeth,HUBTCR,A,Eastbound,,Eastbound Platform A,TRUE,FALSE,,TRUE
+HUBTCR-PlatB-WB-elizabeth,HUBTCR,B,Westbound,,Westbound Platform B,TRUE,FALSE,,TRUE
+940GZZLUTFP-Plat01-NB-northern,940GZZLUTFP,1,Northbound,9400ZZLUTFP1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUTFP-Plat02-SB-northern,940GZZLUTFP,2,Southbound,9400ZZLUTFP2,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUTHB-Plat01-WB-central,940GZZLUTHB,1,Westbound,9400ZZLUTHB2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUTHB-Plat02-EB-central,940GZZLUTHB,2,Eastbound,9400ZZLUTHB1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUTMP-Plat01-WB-circle|district,940GZZLUTMP,1,Westbound,9400ZZLUTMP2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUTMP-Plat02-EB-circle|district,940GZZLUTMP,2,Eastbound,9400ZZLUTMP1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUTNG-Plat01-WB-district,940GZZLUTNG,1,Westbound,9400ZZLUTNG4,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUTNG-Plat02-WB-piccadilly,940GZZLUTNG,2,Westbound,9400ZZLUTNG2,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUTNG-Plat03-EB-piccadilly,940GZZLUTNG,3,Eastbound,9400ZZLUTNG1,Eastbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUTNG-Plat04-EB-district,940GZZLUTNG,4,Eastbound,9400ZZLUTNG3,Eastbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUTPN-Plat01-EB-piccadilly,940GZZLUTPN,1,Eastbound,9400ZZLUTNG1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUTPN-Plat02-WB-piccadilly,940GZZLUTPN,2,Westbound,9400ZZLUTNG2,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUTWH-Plat01-WB-circle|district,940GZZLUTWH,1,Westbound,9400ZZLUTWH2,Westbound Platform 1,TRUE,TRUE,,TRUE
+940GZZLUTWH-Plat02-WB-circle|district,940GZZLUTWH,2,Westbound,9400ZZLUTWH2,Westbound Platform 2,TRUE,TRUE,,TRUE
+940GZZLUTWH-Plat03-EB-circle|district,940GZZLUTWH,3,Eastbound,9400ZZLUTWH1,Eastbound Platform 3,TRUE,TRUE,,TRUE
+940GZZLUUPB-Plat01-WB-district,940GZZLUUPB,1,Westbound,9400ZZLUUPB1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUUPB-Plat02-EB-district,940GZZLUUPB,2,Eastbound,9400ZZLUUPB1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUUPK-Plat01-WB-district|hammersmith-city,940GZZLUUPK,1,Westbound,9400ZZLUUPK2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUUPK-Plat02-EB-district|hammersmith-city,940GZZLUUPK,2,Eastbound,9400ZZLUUPK1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUUPY-Plat01-WB-district,940GZZLUUPY,1,Westbound,9400ZZLUUPY1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUUPY-Plat02-EB-district,940GZZLUUPY,2,Eastbound,9400ZZLUUPY1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUUXB-Plat01-EB-metropolitan|piccadilly,940GZZLUUXB,1,Eastbound,,Eastbound Platform 1,TRUE,TRUE,,TRUE
+940GZZLUUXB-Plat02-EB-metropolitan|piccadilly,940GZZLUUXB,2,Eastbound,,Eastbound Platform 2,TRUE,TRUE,,TRUE
+940GZZLUUXB-Plat04-EB-metropolitan|piccadilly,940GZZLUUXB,4,Eastbound,,Eastbound Platform 4,TRUE,TRUE,,TRUE
+940GZZLUWAF-Plat01-SB-metropolitan,940GZZLUWAF,1,Southbound,9400ZZLUWAF1,Southbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUWAF-Plat02-SB-metropolitan,940GZZLUWAF,2,Southbound,9400ZZLUWAF1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUWCY-Plat01-WB-central,940GZZLUWCY,1,Westbound,9400ZZLUWCY2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUWCY-Plat02-central,940GZZLUWCY,2,,,Platform 2,TRUE,FALSE,,TRUE
+940GZZLUWCY-Plat03-central,940GZZLUWCY,3,,,Platform 3,TRUE,FALSE,,TRUE
+940GZZLUWCY-Plat04-EB-central,940GZZLUWCY,4,Eastbound,9400ZZLUWCY1,Eastbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUWFN-Plat01-NB-northern,940GZZLUWFN,1,Northbound,9400ZZLUWFN1,Northbound Platform 1,TRUE,FALSE,Nether Street,TRUE
+940GZZLUWFN-Plat02-SB-northern,940GZZLUWFN,2,Southbound,9400ZZLUWFN2,Southbound Platform 2,TRUE,FALSE,Wentworth Street,TRUE
+940GZZLUWHP-Plat01-NB-jubilee,940GZZLUWHP,1,Northbound,9400ZZLUWHP1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUWHP-Plat02-SB-jubilee,940GZZLUWHP,2,Southbound,9400ZZLUWHP1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUWHW-Plat01-NB-metropolitan,940GZZLUWHW,1,Northbound,9400ZZLUWHW2,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUWHW-Plat02-SB-metropolitan,940GZZLUWHW,2,Southbound,9400ZZLUWHW1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUWIG-Plat01-NB-metropolitan,940GZZLUWIG,1,Northbound,9400ZZLUWIG4,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUWIG-Plat02-NB-jubilee,940GZZLUWIG,2,Northbound,9400ZZLUWIG1,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUWIG-Plat03-SB-jubilee,940GZZLUWIG,3,Southbound,9400ZZLUWIG1,Southbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUWIG-Plat04-SB-metropolitan,940GZZLUWIG,4,Southbound,9400ZZLUWIG3,Southbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUWIP-Plat01-EB-district,940GZZLUWIP,1,Eastbound,9400ZZLUWIP1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUWIP-Plat02-WB-district,940GZZLUWIP,2,Westbound,9400ZZLUWIP1,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUWKA-Plat01-NB-bakerloo,940GZZLUWKA,1,Northbound,9400ZZLUWKA1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUWKA-Plat02-SB-bakerloo,940GZZLUWKA,2,Southbound,9400ZZLUWKA1,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUWKN-Plat01-WB-district,940GZZLUWKN,1,Westbound,9400ZZLUWKN2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUWKN-Plat02-EB-district,940GZZLUWKN,2,Eastbound,9400ZZLUWKN1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUWLA-Plat01-EB-circle|hammersmith-city,940GZZLUWLA,1,Eastbound,9400ZZLUWLA1,Eastbound Platform 1,TRUE,TRUE,,TRUE
+940GZZLUWLA-Plat02-WB-circle|hammersmith-city,940GZZLUWLA,2,Westbound,9400ZZLUWLA2,Westbound Platform 2,TRUE,TRUE,,TRUE
+940GZZLUWOF-Plat01-WB-central,940GZZLUWOF,1,Westbound,9400ZZLUWOF2,Westbound Platform 1,TRUE,FALSE,Snakes Lane/Madeira Grove,TRUE
+940GZZLUWOF-Plat02-WB-central,940GZZLUWOF,2,Westbound,9400ZZLUWOF2,Westbound Platform 2,TRUE,FALSE,Snakes Lane/Madeira Grove,TRUE
+940GZZLUWOF-Plat03-EB-central,940GZZLUWOF,3,Eastbound,9400ZZLUWOF1,Eastbound Platform 3,TRUE,FALSE,The Broadway,TRUE
+940GZZLUWOG-Plat01-EB-piccadilly,940GZZLUWOG,1,Eastbound,9400ZZLUWOG1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUWOG-Plat02-WB-piccadilly,940GZZLUWOG,2,Westbound,9400ZZLUWOG1,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUWOP-Plat01-NB-northern,940GZZLUWOP,1,Northbound,9400ZZLUWOP1,Northbound Platform 1,TRUE,FALSE,Holden Road,TRUE
+940GZZLUWOP-Plat02-SB-northern,940GZZLUWOP,2,Southbound,9400ZZLUWOP2,Southbound Platform 2,TRUE,FALSE,Woodside Park,TRUE
+940GZZLUWRR-Plat01-NB-northern,940GZZLUWRR,1,Northbound,9400ZZLUWRR1,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUWRR-Plat02-SB-northern,940GZZLUWRR,2,Southbound,9400ZZLUWRR2,Southbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUWRR-Plat03-NB-victoria,940GZZLUWRR,3,Northbound,9400ZZLUWRR3,Northbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUWRR-Plat04-SB-victoria,940GZZLUWRR,4,Southbound,9400ZZLUWRR4,Southbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUWSD-Plat01-WB-central,940GZZLUWSD,1,Westbound,9400ZZLUWSD1,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUWSD-Plat02-EB-central,940GZZLUWSD,2,Eastbound,9400ZZLUWSD1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUWSP-Plat01-WB-circle|hammersmith-city,940GZZLUWSP,1,Westbound,9400ZZLUWSP2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUWSP-Plat02-EB-circle|hammersmith-city,940GZZLUWSP,2,Eastbound,9400ZZLUWSP1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUWTA-Plat01-WB-central,940GZZLUWTA,1,Westbound,9400ZZLUWTA2,Westbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUWTA-Plat02-EB-central,940GZZLUWTA,2,Eastbound,9400ZZLUWTA1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUWYP-Plat01-NB-metropolitan,940GZZLUWYP,1,Northbound,9400ZZLUWYP5,Northbound Platform 1,TRUE,FALSE,,TRUE
+940GZZLUWYP-Plat02-NB-metropolitan,940GZZLUWYP,2,Northbound,9400ZZLUWYP3,Northbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUWYP-Plat03-NB-jubilee,940GZZLUWYP,3,Northbound,9400ZZLUWYP1,Northbound Platform 3,TRUE,FALSE,,TRUE
+940GZZLUWYP-Plat04-SB-jubilee,940GZZLUWYP,4,Southbound,9400ZZLUWYP2,Southbound Platform 4,TRUE,FALSE,,TRUE
+940GZZLUWYP-Plat05-SB-metropolitan,940GZZLUWYP,5,Southbound,9400ZZLUWYP4,Southbound Platform 5,TRUE,FALSE,,TRUE
+940GZZLUWYP-Plat06-SB-metropolitan,940GZZLUWYP,6,Southbound,9400ZZLUWYP6,Southbound Platform 6,TRUE,FALSE,,TRUE
+HUBAMR-Plat01-SB-metropolitan,HUBAMR,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBAMR-Plat02-SB-metropolitan,HUBAMR,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBAMR-Plat03-SB-metropolitan,HUBAMR,3,Southbound,,Southbound Platform 3,TRUE,FALSE,,TRUE
+HUBBAL-Plat01-NB-northern,HUBBAL,1,Northbound,9400ZZLUBLM1,Northbound Platform 1,TRUE,FALSE,,TRUE
+HUBBAL-Plat02-SB-northern,HUBBAL,2,Southbound,9400ZZLUBLM1,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBBAL-Plat01-SB-national-rail,HUBBAL,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBBAL-Plat02-NB-national-rail,HUBBAL,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+HUBBAN-Plat03-SB-northern,HUBBAN,3,Southbound,9400ZZLUBNK5,Southbound Platform 3,TRUE,FALSE,,TRUE
+HUBBAN-Plat04-NB-northern,HUBBAN,4,Northbound,9400ZZLUBNK4,Northbound Platform 4,TRUE,FALSE,,TRUE
+HUBBAN-Plat05-WB-central,HUBBAN,5,Westbound,9400ZZLUBNK2,Westbound Platform 5,TRUE,FALSE,,TRUE
+HUBBAN-Plat06-EB-central,HUBBAN,6,Eastbound,9400ZZLUBNK1,Eastbound Platform 6,TRUE,FALSE,,TRUE
+HUBBAN-Plat07-WB-waterloo-city,HUBBAN,7,Westbound,9400ZZLUBNK3,Westbound Platform 7,TRUE,FALSE,,TRUE
+HUBBAN-Plat08-WB-waterloo-city,HUBBAN,8,Westbound,9400ZZLUBNK8,Westbound Platform 8,TRUE,FALSE,,TRUE
+HUBBAN-Plat09-EB-dlr,HUBBAN,9,Eastbound,,Eastbound Platform 9,TRUE,FALSE,,TRUE
+HUBBAN-Plat10-EB-dlr,HUBBAN,10,Eastbound,,Eastbound Platform 10,TRUE,FALSE,,TRUE
+HUBBEK-WB-tram,HUBBEK,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+HUBBEK-Plat01-WB-national-rail,HUBBEK,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+HUBBEK-Plat02-WB-national-rail,HUBBEK,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+HUBBEK-Plat03-EB-national-rail,HUBBEK,3,Eastbound,,Eastbound Platform 3,TRUE,FALSE,,TRUE
+HUBBEK-Plat04-WB-national-rail,HUBBEK,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,TRUE
+HUBBFR-Plat01-SB-national-rail,HUBBFR,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBBFR-Plat01-WB-circle|district,HUBBFR,1,Westbound,9400ZZLUBKF1,Westbound Platform 1,TRUE,TRUE,,TRUE
+HUBBFR-Plat02-EB-circle|district,HUBBFR,2,Eastbound,9400ZZLUBKF2,Eastbound Platform 2,TRUE,TRUE,,TRUE
+HUBBFR-Plat02-NB-national-rail,HUBBFR,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+HUBBFR-Plat03-SB-national-rail,HUBBFR,3,Southbound,,Southbound Platform 3,TRUE,FALSE,,TRUE
+HUBBFR-Plat04-SB-national-rail,HUBBFR,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,TRUE
+HUBBHO-Plat01-NB-victoria,HUBBHO,1,Northbound,9400ZZLUBLR1,Northbound Platform 1,TRUE,FALSE,,TRUE
+HUBBHO-Plat01-WB-london-overground,HUBBHO,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+HUBBHO-Plat02-EB-london-overground,HUBBHO,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+HUBBHO-Plat02-SB-victoria,HUBBHO,2,Southbound,9400ZZLUBLR1,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBBIR-EB-tram,HUBBIR,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+HUBBIR-WB-tram,HUBBIR,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+HUBBIR-Plat01-national-rail,HUBBIR,,,,Platform 1 ,TRUE,FALSE,,FALSE
+HUBBKG-Plat01-WB-london-overground,HUBBKG,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+HUBBKG-Plat02-EB-district|hammersmith-city,HUBBKG,2,Eastbound,9400ZZLUBKG1,Eastbound Platform 2,TRUE,TRUE,,TRUE
+HUBBKG-Plat03-WB-district|hammersmith-city,HUBBKG,3,Westbound,9400ZZLUBKG2,Westbound Platform 3,TRUE,TRUE,,TRUE
+HUBBKG-Plat04-EB-national-rail,HUBBKG,4,Eastbound,,Eastbound Platform 4,TRUE,TRUE,,TRUE
+HUBBKG-Plat05-WB-national-rail,HUBBKG,5,Westbound,,Westbound Platform 5,TRUE,TRUE,,TRUE
+HUBBKG-Plat06-WB-district|hammersmith-city,HUBBKG,6,Westbound,9400ZZLUBKG3,Westbound Platform 6,TRUE,FALSE,,TRUE
+HUBBKG-Plat07-EB-london-overground|national-rail,HUBBKG,7,Eastbound,,Eastbound Platform 7,TRUE,FALSE,,TRUE
+HUBBKG-Plat08-WB-london-overground|national-rail,HUBBKG,8,Westbound,,Westbound Platform 8,TRUE,FALSE,,TRUE
+HUBBRX-Plat01-NB-victoria,HUBBRX,1,Northbound,9400ZZLUBXN1,Northbound Platform 1,TRUE,FALSE,,TRUE
+HUBBRX-Plat02-NB-victoria,HUBBRX,2,Northbound,9400ZZLUBXN1,Northbound Platform 2,TRUE,FALSE,,TRUE
+HUBBRX-Plat01-NB-national-rail,HUBBRX,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+HUBBRX-Plat02-SB-national-rail,HUBBRX,2,Southbound,,Southbound Platform 2 ,TRUE,FALSE,,TRUE
+HUBBSH-Plat01-NB-london-overground,HUBBSH,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+HUBBSH-Plat02-SB-london-overground,HUBBSH,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+HUBBSH-Plat06-SB-national-rail,HUBBSH,6,Southbound,,Southbound Platform 6,TRUE,FALSE,,FALSE
+HUBBSH-Plat05-NB-national-rail,HUBBSH,5,Southbound,,Northbound Platform 5,TRUE,FALSE,,FALSE
+HUBCAN-Plat01-SB-dlr,HUBCAN,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBCAN-Plat02-NB-dlr,HUBCAN,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+HUBCAN-Plat03-EB-dlr,HUBCAN,3,Eastbound,,Eastbound Platform 3,TRUE,FALSE,,TRUE
+HUBCAN-Plat04-WB-dlr,HUBCAN,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,TRUE
+HUBCAN-Plat05-WB-jubilee,HUBCAN,5,Westbound,9400ZZLUCGT1,Westbound Platform 5,TRUE,FALSE,,TRUE
+HUBCAN-Plat06-EB-jubilee,HUBCAN,6,Eastbound,9400ZZLUCGT2,Eastbound Platform 6,TRUE,FALSE,,TRUE
+HUBCAW-Plat01-SB-dlr,HUBCAW,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBCAW-Plat01-WB-jubilee,HUBCAW,1,Westbound,9400ZZLUCYF1,Westbound Platform 1,TRUE,FALSE,,TRUE
+HUBCAW-Plat02-EB-jubilee,HUBCAW,2,Eastbound,9400ZZLUCYF1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+HUBCAW-Plat02-SB-dlr,HUBCAW,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBCAW-Plat03-dlr,HUBCAW,3,,,Platform 3,TRUE,FALSE,,TRUE
+HUBCAW-Plat04-dlr,HUBCAW,4,,,Platform 4,TRUE,FALSE,,TRUE
+HUBCAW-Plat05-NB-dlr,HUBCAW,5,Northbound,,Northbound Platform 5,TRUE,FALSE,,TRUE
+HUBCAW-Plat06-NB-dlr,HUBCAW,6,Northbound,,Northbound Platform 6,TRUE,FALSE,,TRUE
+HUBCAW-PlatA-EB-elizabeth,HUBCAW,A,Eastbound,,Eastbound Platform A,TRUE,FALSE,,TRUE
+HUBCAW-PlatB-WB-elizabeth,HUBCAW,B,Westbound,,Westbound Platform B,TRUE,FALSE,,TRUE
+HUBCFO-Plat01-WB-metropolitan,HUBCFO,1,Westbound,9400ZZLUCAL2,Westbound Platform 1,TRUE,FALSE,Station Approach,TRUE
+HUBCFO-Plat02-EB-metropolitan,HUBCFO,2,Eastbound,9400ZZLUCAL1,Eastbound Platform 2,TRUE,FALSE,Bedford Avenue,TRUE
+HUBCFO-Plat03-WB-metropolitan,HUBCFO,3,Westbound,9400ZZLUCAL2,Westbound Platform 3,FALSE,FALSE,,TRUE
+HUBCHX-Plat01-NB-bakerloo,HUBCHX,1,Northbound,9400ZZLUCHX1,Northbound Platform 1,TRUE,FALSE,,TRUE
+HUBCHX-Plat02-SB-bakerloo,HUBCHX,2,Southbound,9400ZZLUCHX1,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBCHX-Plat05-NB-northern,HUBCHX,5,Northbound,9400ZZLUCHX4,Northbound Platform 5,TRUE,FALSE,,TRUE
+HUBCHX-Plat06-SB-northern,HUBCHX,6,Southbound,9400ZZLUCHX5,Southbound Platform 6,TRUE,FALSE,,TRUE
+HUBCHX-Plat01-SB-national-rail,HUBCHX,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBCHX-Plat02-SB-national-rail,HUBCHX,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBCHX-Plat03-SB-national-rail,HUBCHX,3,Southbound,,Southbound Platform 3,TRUE,FALSE,,TRUE
+HUBCHX-Plat04-SB-national-rail,HUBCHX,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,TRUE
+HUBCHX-Plat05-SB-national-rail,HUBCHX,5,Southbound,,Southbound Platform 5,TRUE,FALSE,,TRUE
+HUBCHX-Plat06-SB-national-rail,HUBCHX,6,Southbound,,Southbound Platform 6,TRUE,FALSE,,TRUE
+HUBCLJ-Plat01-EB-london-overground,HUBCLJ,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+HUBCLJ-Plat02-EB-london-overground,HUBCLJ,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+HUBCLW-Plat01-NB-metropolitan,HUBCLW,1,Northbound,9400ZZLUCYD2,Northbound Platform 1,TRUE,FALSE,,TRUE
+HUBCLW-Plat02-SB-metropolitan,HUBCLW,2,Southbound,9400ZZLUCYD1,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBCST-Plat01-WB-circle|district,HUBCST,1,Westbound,9400ZZLUCST2,Westbound Platform 1,TRUE,TRUE,,TRUE
+HUBCST-Plat02-EB-circle|district,HUBCST,2,Eastbound,9400ZZLUCST1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+HUBCST-Plat01-SB-national-rail,HUBCST,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBCST-Plat02-SB-national-rail,HUBCST,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBCST-Plat03-SB-national-rail,HUBCST,3,Southbound,,Southbound Platform 3,TRUE,FALSE,,TRUE
+HUBCST-Plat04-SB-national-rail,HUBCST,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,TRUE
+HUBCST-Plat05-SB-national-rail,HUBCST,5,Southbound,,Southbound Platform 5,TRUE,FALSE,,TRUE
+HUBCST-Plat06-SB-national-rail,HUBCST,6,Southbound,,Southbound Platform 6,TRUE,FALSE,,TRUE
+HUBCST-Plat07-SB-national-rail,HUBCST,7,Southbound,,Southbound Platform 7,TRUE,FALSE,,TRUE
+HUBCUT-Plat01-SB-dlr,HUBCUT,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBCUT-Plat02-NB-dlr,HUBCUT,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+HUBCYP-Plat03-NB-london-overground,HUBCYP,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,TRUE
+HUBCYP-Plat05-NB-london-overground,HUBCYP,5,Northbound,,Northbound Platform 5,TRUE,FALSE,,TRUE
+HUBEAL-Plat01-WB-elizabeth,HUBEAL,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+HUBEAL-Plat02-EB-elizabeth,HUBEAL,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+HUBEAL-Plat03-WB-elizabeth,HUBEAL,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
+HUBEAL-Plat04-EB-elizabeth,HUBEAL,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+HUBEAL-Plat05-EB-central,HUBEAL,5,Eastbound,,Eastbound Platform 5,TRUE,FALSE,,TRUE
+HUBEAL-Plat06-EB-central,HUBEAL,6,Eastbound,,Eastbound Platform 6,TRUE,FALSE,,TRUE
+HUBEAL-Plat07-EB-district,HUBEAL,7,Eastbound,9400ZZLUEBY3,Eastbound Platform 7,TRUE,FALSE,,TRUE
+HUBEAL-Plat08-EB-district,HUBEAL,8,Eastbound,9400ZZLUEBY3,Eastbound Platform 8,TRUE,FALSE,,TRUE
+HUBEAL-Plat09-EB-district,HUBEAL,9,Eastbound,9400ZZLUEBY3,Eastbound Platform 9,TRUE,FALSE,,TRUE
+HUBECY-EB-tram,HUBECY,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+HUBECY-Plat01-NB-thameslink,HUBECY,1,Northbound,,Northbound,TRUE,TRUE,,TRUE
+HUBECY-Plat02-NB-thameslink,HUBECY,2,Northbound,,Northbound,TRUE,TRUE,,TRUE
+HUBECY-Plat03-SB-thameslink,HUBECY,3,Southbound,,Southbound,TRUE,TRUE,,TRUE
+HUBECY-Plat04-NB-thameslink,HUBECY,4,Northbound,,Northbound,TRUE,TRUE,,TRUE
+HUBECY-Plat05-SB-thameslink,HUBECY,5,Southbound,,Southbound,TRUE,TRUE,,TRUE
+HUBECY-Plat06-SB-thameslink,HUBECY,6,Southbound,,Southbound,TRUE,TRUE,,TRUE
+HUBECY-WB-tram,HUBECY,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+HUBELM-WB-tram,HUBELM,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+HUBEPH-Plat01-NB-northern,HUBEPH,1,Northbound,9400ZZLUEAC3,Northbound Platform 1,TRUE,FALSE,,TRUE
+HUBEPH-Plat01-NB-thameslink,HUBEPH,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+HUBEPH-Plat02-SB-northern,HUBEPH,2,Southbound,9400ZZLUEAC4,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBEPH-Plat02-SB-thameslink,HUBEPH,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+HUBEPH-Plat03-NB-bakerloo,HUBEPH,3,Northbound,9400ZZLUEAC1,Northbound Platform 3,TRUE,FALSE,,TRUE
+HUBEPH-Plat03-NB-thameslink,HUBEPH,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,FALSE
+HUBEPH-Plat04-NB-bakerloo,HUBEPH,4,Northbound,9400ZZLUEAC2,Northbound Platform 4,TRUE,FALSE,,TRUE
+HUBEPH-Plat04-SB-thameslink,HUBEPH,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,FALSE
+HUBEUS-Plat01-NB-northern,HUBEUS,1,Northbound,9400ZZLUEUS4,Northbound Platform 1,TRUE,FALSE,,TRUE
+HUBEUS-Plat02-SB-northern,HUBEUS,2,Southbound,9400ZZLUEUS5,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBEUS-Plat03-NB-northern,HUBEUS,3,Northbound,9400ZZLUEUS2,Northbound Platform 3,TRUE,FALSE,,TRUE
+HUBEUS-Plat04-NB-victoria,HUBEUS,4,Northbound,9400ZZLUEUS1,Northbound Platform 4,TRUE,FALSE,,TRUE
+HUBEUS-Plat05-SB-victoria,HUBEUS,5,Southbound,9400ZZLUEUS6,Southbound Platform 5,TRUE,FALSE,,TRUE
+HUBEUS-Plat06-SB-northern,HUBEUS,6,Southbound,9400ZZLUEUS3,Southbound Platform 6,TRUE,FALSE,,TRUE
+HUBEUS-Plat09-NB-london-overground,HUBEUS,9,Northbound,,Northbound Platform 9,TRUE,FALSE,,TRUE
+HUBEUS-Plat10-NB-london-overground,HUBEUS,10,Northbound,,Northbound Platform 10,TRUE,FALSE,,TRUE
+HUBFPK-Plat01-EB-piccadilly,HUBFPK,1,Eastbound,9400ZZLUFPK1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+HUBFPK-Plat02-NB-victoria,HUBFPK,2,Northbound,9400ZZLUFPK3,Northbound Platform 2,TRUE,FALSE,,TRUE
+HUBFPK-Plat02-SB-thameslink,HUBFPK,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBFPK-Plat03-WB-piccadilly,HUBFPK,3,Westbound,9400ZZLUFPK2,Westbound Platform 3,TRUE,FALSE,,TRUE
+HUBFPK-Plat04-SB-victoria,HUBFPK,4,Southbound,9400ZZLUFPK4,Southbound Platform 4,TRUE,FALSE,,TRUE
+HUBFPK-Plat07-NB-thameslink,HUBFPK,7,Northbound,,Northbound Platform 7,TRUE,FALSE,,TRUE
+HUBGFD-Plat01-WB-central,HUBGFD,1,Westbound,9400ZZLUGFD2,Westbound Platform 1,TRUE,FALSE,,TRUE
+HUBGFD-Plat02-EB-national-rail,HUBGFD,2,Eastbound,,Eastbound Platform 2 ,TRUE,FALSE,,TRUE
+HUBGFD-Plat03-EB-central,HUBGFD,3,Eastbound,9400ZZLUGFD1,Eastbound Platform 3,TRUE,FALSE,,TRUE
+HUBGNW-Plat01-EB-national-rail,HUBGNW,1,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+HUBGNW-Plat02-WB-national-rail,HUBGNW,2,Westbound,,Westbound,TRUE,FALSE,,TRUE
+HUBGNW-Plat03-NB-dlr,HUBGNW,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,TRUE
+HUBGNW-Plat04-SB-dlr,HUBGNW,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,TRUE
+HUBGUN-Plat01-WB-district|london-overground,HUBGUN,1,Westbound,9400ZZLUGBY1,Westbound Platform 1,TRUE,TRUE,,TRUE
+HUBGUN-Plat02-EB-district|london-overground,HUBGUN,2,Eastbound,9400ZZLUGBY1,Eastbound Platform 2,TRUE,TRUE,,TRUE
+HUBH13-Plat01-WB-piccadilly,HUBH13,1,Westbound,???,Westbound Platform 1,TRUE,FALSE,,TRUE
+HUBH13-Plat01-WB-elizabeth,HUBH13,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+HUBH13-Plat02-EB-piccadilly,HUBH13,2,Eastbound,???,Eastbound Platform 2,TRUE,FALSE,,TRUE
+HUBH13-Plat02-EB-elizabeth,HUBH13,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+HUBHDN-Plat01-SB-bakerloo|london-overground,HUBHDN,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBHDN-Plat02-NB-bakerloo|london-overground,HUBHDN,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+HUBHHY-Plat01-SB-london-overground,HUBHHY,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBHHY-Plat02-SB-london-overground,HUBHHY,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBHHY-Plat03-NB-victoria,HUBHHY,3,Northbound,9400ZZLUHAI1,Northbound Platform 3,TRUE,FALSE,,TRUE
+HUBHHY-Plat05-SB-victoria,HUBHHY,5,Southbound,9400ZZLUHAI2,Southbound Platform 5,TRUE,FALSE,,TRUE
+HUBHHY-Plat07-WB-london-overground,HUBHHY,7,Westbound,,Westbound Platform 7,TRUE,FALSE,,TRUE
+HUBHHY-Plat08-EB-london-overground,HUBHHY,8,Eastbound,,Eastbound Platform 8,TRUE,FALSE,,TRUE
+HUBHMS-Plat01-EB-circle|hammersmith-city,HUBHMS,1,Eastbound,9400ZZLUHSC1,Eastbound Platform 1,TRUE,TRUE,,TRUE
+HUBHMS-Plat01-WB-district,HUBHMS,1,Westbound,9400ZZLUHSD1,Westbound Platform 1,TRUE,FALSE,,TRUE
+HUBHMS-Plat02-EB-circle|hammersmith-city,HUBHMS,2,Eastbound,9400ZZLUHSC1,Eastbound Platform 2,TRUE,TRUE,,TRUE
+HUBHMS-Plat02-WB-piccadilly,HUBHMS,2,Westbound,9400ZZLUHSD3,Westbound Platform 2,TRUE,FALSE,,TRUE
+HUBHMS-Plat03-EB-circle|hammersmith-city,HUBHMS,3,Eastbound,9400ZZLUHSC1,Eastbound Platform 3,TRUE,TRUE,,TRUE
+HUBHMS-Plat03-EB-piccadilly,HUBHMS,3,Eastbound,9400ZZLUHSD4,Eastbound Platform 3,TRUE,FALSE,,TRUE
+HUBHMS-Plat04-EB-district,HUBHMS,4,Eastbound,9400ZZLUHSD2,Eastbound Platform 4,TRUE,FALSE,,TRUE
+HUBHOH-Plat01-NB-metropolitan|national-rail,HUBHOH,1,Northbound,9400ZZLUHOH2,Northbound Platform 1,TRUE,TRUE,,TRUE
+HUBHOH-Plat02-SB-national-rail,HUBHOH,2,Southbound,,Southbound,TRUE,TRUE,,TRUE
+HUBHOH-Plat03-NB-metropolitan,HUBHOH,3,Northbound,9400ZZLUHOH2,Northbound Platform 3,TRUE,TRUE,,TRUE
+HUBHOH-Plat04-NB-metropolitan,HUBHOH,4,Northbound,9400ZZLUHOH2,Northbound Platform 4,TRUE,TRUE,,TRUE
+HUBHOH-Plat05-SB-metropolitan,HUBHOH,5,Southbound,9400ZZLUHOH1,Southbound Platform 5,TRUE,TRUE,,TRUE
+HUBHOH-Plat06-SB-metropolitan,HUBHOH,6,Southbound,9400ZZLUHOH1,Southbound Platform 6,TRUE,TRUE,,TRUE
+HUBHRW-Plat01-NB-bakerloo|london-overground,HUBHRW,1,Northbound,9400ZZLUHAW2,Northbound Platform 1,TRUE,TRUE,,TRUE
+HUBHRW-Plat02-SB-bakerloo|london-overground,HUBHRW,2,Southbound,9400ZZLUHAW1,Southbound Platform 2,TRUE,TRUE,,TRUE
+HUBHX4-Plat01-WB-elizabeth,HUBHX4,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+HUBHX4-Plat02-WB-elizabeth,HUBHX4,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+HUBHX4-Plat01-EB-piccadilly,HUBHX4,1,Eastbound,9400ZZLUHR41,Eastbound,TRUE,FALSE,,TRUE
+HUBHX5-Plat03-EB-elizabeth,HUBHX5,3,Eastbound,,Eastbound Platform 3,TRUE,FALSE,,TRUE
+HUBHX5-Plat04-EB-elizabeth,HUBHX5,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+HUBHX5-Plat05-EB-piccadilly,HUBHX5,5,Eastbound,9400ZZLUHR51,Eastbound Platform 5,TRUE,FALSE,,TRUE
+HUBHX5-Plat06-EB-piccadilly,HUBHX5,6,Eastbound,9400ZZLUHR51,Eastbound Platform 6,TRUE,FALSE,,TRUE
+HUBIMP-Plat01-SB-london-overground,HUBIMP,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBIMP-Plat02-NB-london-overground,HUBIMP,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GKNGX-Plat00-NB-national-rail,HUBKGX,0,Northbound,,Northbound Platform 0,TRUE,FALSE,,FALSE
+910GKNGX-Plat01-NB-national-rail,HUBKGX,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+HUBKGX-Plat01-WB-circle|hammersmith-city|metropolitan,HUBKGX,1,Westbound,9400ZZLUKSX3,Westbound Platform 1,TRUE,TRUE,,TRUE
+HUBKGX-Plat02-EB-circle|hammersmith-city|metropolitan,HUBKGX,2,Eastbound,9400ZZLUKSX3,Eastbound Platform 2,TRUE,TRUE,,TRUE
+910GKNGX-Plat02-NB-national-rail,HUBKGX,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GKNGX-Plat03-NB-national-rail,HUBKGX,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,TRUE
+HUBKGX-Plat03-NB-victoria,HUBKGX,3,Northbound,9400ZZLUKSX1,Northbound Platform 3,TRUE,FALSE,,TRUE
+910GKNGX-Plat04-NB-national-rail,HUBKGX,4,Northbound,,Northbound Platform 4,TRUE,FALSE,,TRUE
+HUBKGX-Plat04-SB-victoria,HUBKGX,4,Southbound,9400ZZLUKSX2,Southbound Platform 4,TRUE,FALSE,,TRUE
+910GKNGX-Plat05-NB-national-rail,HUBKGX,5,Northbound,,Northbound Platform 5,TRUE,FALSE,,TRUE
+HUBKGX-Plat05-WB-piccadilly,HUBKGX,5,Westbound,9400ZZLUKSX7,Westbound Platform 5,TRUE,FALSE,,TRUE
+HUBKGX-Plat06-EB-piccadilly,HUBKGX,6,Eastbound,9400ZZLUKSX6,Eastbound Platform 6,TRUE,FALSE,,TRUE
+910GKNGX-Plat06-NB-national-rail,HUBKGX,6,Northbound,,Northbound Platform 6,TRUE,FALSE,,TRUE
+HUBKGX-Plat07-NB-northern,HUBKGX,7,Northbound,9400ZZLUKSX4,Northbound Platform 7,TRUE,FALSE,,TRUE
+910GKNGX-Plat07-NB-national-rail,HUBKGX,7,Northbound,,Northbound Platform 7,TRUE,FALSE,,TRUE
+910GKNGX-Plat08-NB-national-rail,HUBKGX,8,Northbound,,Northbound Platform 8,TRUE,FALSE,,TRUE
+HUBKGX-Plat08-SB-northern,HUBKGX,8,Southbound,9400ZZLUKSX5,Southbound Platform 8,TRUE,FALSE,,TRUE
+910GKNGX-Plat09-NB-national-rail,HUBKGX,9,Northbound,,Northbound Platform 9,TRUE,FALSE,,TRUE
+910GKNGX-Plat10-NB-national-rail,HUBKGX,10,Northbound,,Northbound Platform 10,TRUE,FALSE,,TRUE
+910GKNGX-Plat11-NB-national-rail,HUBKGX,11,Northbound,,Northbound Platform 11,TRUE,FALSE,,TRUE
+HUBKNL-Plat01-SB-bakerloo|london-overground,HUBKNL,1,Southbound,9400ZZLUKSL1,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBKNL-Plat02-NB-bakerloo|london-overground,HUBKNL,2,Northbound,9400ZZLUKSL2,Northbound Platform 2,TRUE,FALSE,,TRUE
+HUBKNT-Plat01-SB-bakerloo|london-overground,HUBKNT,1,Southbound,9400ZZLUKEN2,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBKNT-Plat02-NB-bakerloo|london-overground,HUBKNT,2,Northbound,9400ZZLUKEN1,Northbound Platform 2,TRUE,FALSE,,TRUE
+HUBKPA-Plat01-EB-district,HUBKPA,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,Olympia Way,TRUE
+HUBKPA-Plat02-NB-london-overground|national-rail,HUBKPA,2,Northbound,,Northbound Platform 2,TRUE,FALSE,Olympia Way,TRUE
+HUBKPA-Plat03-SB-london-overground|national-rail,HUBKPA,3,Southbound,,Southbound Platform 3,TRUE,FALSE,Russell Road,TRUE
+HUBKTN-Plat01-NB-northern,HUBKTN,1,Northbound,9400ZZLUKSH1,Northbound Platform 1,TRUE,FALSE,,TRUE
+HUBKTN-Plat01-SB-thameslink,HUBKTN,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,FALSE
+HUBKTN-Plat02-NB-thameslink,HUBKTN,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,FALSE
+HUBKTN-Plat02-SB-northern,HUBKTN,2,Southbound,9400ZZLUKSH2,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBKWG-Plat01-EB-district|london-overground,HUBKWG,1,Eastbound,9400ZZLUKWG1,Eastbound Platform 1,TRUE,TRUE,Station Approach,TRUE
+HUBKWG-Plat02-WB-district|london-overground,HUBKWG,2,Westbound,9400ZZLUKWG2,Westbound Platform 2,TRUE,TRUE,North End,TRUE
+HUBLBG-Plat01-NB-northern,HUBLBG,1,Northbound,9400ZZLULNB1,Northbound Platform 1,TRUE,FALSE,,TRUE
+HUBLBG-Plat02-SB-northern,HUBLBG,2,Southbound,9400ZZLULNB1,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBLBG-Plat03-WB-jubilee,HUBLBG,3,Westbound,9400ZZLULNB2,Westbound Platform 3,TRUE,FALSE,,TRUE
+HUBLBG-Plat04-EB-jubilee,HUBLBG,4,Eastbound,9400ZZLULNB2,Eastbound Platform 4,TRUE,FALSE,,TRUE
+HUBLBG-Plat05-NB-thameslink,HUBLBG,5,Northbound,,Northbound Platform 4,TRUE,FALSE,,TRUE
+HUBLBG-Plat04-SB-thameslink,HUBLBG,4,Southbound,,Southbound Platform 5,TRUE,FALSE,,TRUE
+HUBLCY-Plat01-SB-dlr,HUBLCY,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBLCY-Plat02-NB-dlr,HUBLCY,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+HUBLEW-Plat05-NB-dlr,HUBLEW,5,Northbound,,Northbound Platform 5,TRUE,FALSE,,TRUE
+HUBLEW-Plat06-NB-dlr,HUBLEW,6,Northbound,,Northbound Platform 6,TRUE,FALSE,,TRUE
+HUBLHS-Plat03-EB-dlr,HUBLHS,3,Eastbound,,Eastbound Platform 3,TRUE,FALSE,,TRUE
+HUBLHS-Plat04-WB-dlr,HUBLHS,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,TRUE
+HUBLST-Plat01-EB-circle|hammersmith-city|metropolitan,HUBLST,1,Eastbound,9400ZZLULVT3,Eastbound Platform 1,TRUE,TRUE,,TRUE
+HUBLST-Plat01-EB-london-overground,HUBLST,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+HUBLST-Plat02-EB-london-overground,HUBLST,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+HUBLST-Plat02-WB-circle|hammersmith-city|metropolitan,HUBLST,2,Westbound,9400ZZLULVT4,Westbound Platform 2,TRUE,FALSE,,TRUE
+HUBLST-Plat03-EB-london-overground,HUBLST,3,Eastbound,,Eastbound Platform 3,TRUE,FALSE,,TRUE
+HUBLST-Plat04-EB-central,HUBLST,4,Eastbound,9400ZZLULVT1,Eastbound Platform 4,TRUE,FALSE,,TRUE
+HUBLST-Plat04-EB-london-overground,HUBLST,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+HUBLST-Plat05-EB-london-overground,HUBLST,5,Eastbound,,Eastbound Platform 5,TRUE,FALSE,,TRUE
+HUBLST-Plat05-WB-central,HUBLST,5,Westbound,9400ZZLULVT2,Westbound Platform 5,TRUE,FALSE,,TRUE
+HUBLST-Plat06-EB-london-overground,HUBLST,6,Eastbound,,Eastbound Platform 6,TRUE,FALSE,,TRUE
+HUBLST-Plat07-EB-london-overground,HUBLST,7,Eastbound,,Eastbound Platform 7,TRUE,FALSE,,TRUE
+HUBLST-Plat08-EB-london-overground,HUBLST,8,Eastbound,,Eastbound Platform 8,TRUE,FALSE,,TRUE
+HUBLST-Plat15-EB-elizabeth,HUBLST,15,Eastbound,,Eastbound Platform 15,TRUE,FALSE,,TRUE
+HUBLST-Plat16-EB-elizabeth,HUBLST,16,Eastbound,,Eastbound Platform 16,TRUE,FALSE,,TRUE
+HUBLST-Plat17-EB-elizabeth,HUBLST,17,Eastbound,,Eastbound Platform 17,TRUE,FALSE,,TRUE
+HUBLST-Plat18-EB-elizabeth,HUBLST,18,Eastbound,,Eastbound Platform 18,TRUE,FALSE,,TRUE
+HUBLST-PlatA-EB-elizabeth,HUBLST,A,Eastbound,,Eastbound Platform A,TRUE,FALSE,,TRUE
+HUBLST-PlatB-WB-elizabeth,HUBLST,B,Westbound,,Westbound Platform B,TRUE,FALSE,,TRUE
+HUBMJT-EB-tram,HUBMJT,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+HUBMJT-Plat01-NB-national-rail,HUBMJT,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
+HUBMJT-Plat02-SB-national-rail,HUBMJT,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+HUBMJT-WB-tram,HUBMJT,,Westbound,,Westbound,TRUE,FALSE,,TRUE
+HUBMYB-Plat01-NB-bakerloo,HUBMYB,1,Northbound,9400ZZLUMYB1,Northbound Platform 1,TRUE,FALSE,,TRUE
+HUBMYB-Plat02-SB-bakerloo,HUBMYB,2,Southbound,9400ZZLUMYB2,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBMYB-Plat01-NB-national-rail,HUBMYB,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+HUBMYB-Plat02-NB-national-rail,HUBMYB,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+HUBMYB-Plat03-NB-national-rail,HUBMYB,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,TRUE
+HUBMYB-Plat04-NB-national-rail,HUBMYB,4,Northbound,,Northbound Platform 4,TRUE,FALSE,,TRUE
+HUBMYB-Plat05-NB-national-rail,HUBMYB,5,Northbound,,Northbound Platform 5,TRUE,FALSE,,TRUE
+HUBMYB-Plat06-NB-national-rail,HUBMYB,6,Northbound,,Northbound Platform 6,TRUE,FALSE,,TRUE
+HUBNWB-Plat01-SB-bakerloo|london-overground,HUBNWB,1,Southbound,9400ZZLUNWY2,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBNWB-Plat02-NB-bakerloo|london-overground,HUBNWB,2,Northbound,9400ZZLUNWY1,Northbound Platform 2,TRUE,FALSE,,TRUE
+HUBNWD-Plat01-NB-london-overground,HUBNWD,1,Northbound,,Northbound Platform 1,TRUE,FALSE,Station Road,TRUE
+HUBNWD-Plat03-NB-london-overground|thameslink,HUBNWD,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,TRUE
+HUBNWD-Plat04-SB-thameslink,HUBNWD,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,FALSE
+HUBNWD-Plat05-SB-london-overground,HUBNWD,5,Southbound,,Southbound Platform 5,TRUE,FALSE,,TRUE
+HUBNWD-Plat06-SB-london-overground,HUBNWD,6,Southbound,,Southbound Platform 6,TRUE,FALSE,,TRUE
+HUBNWX-Plat0D-NB-london-overground,HUBNWX,D,Northbound,,Northbound Platform D,TRUE,FALSE,,TRUE
+HUBNXG-Plat01-SB-london-overground,HUBNXG,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBNXG-Plat05-NB-london-overground,HUBNXG,5,Northbound,,Northbound Platform 5,TRUE,FALSE,,TRUE
+HUBOLD-Plat01-NB-northern,HUBOLD,1,Northbound,9400ZZLUODS1,Northbound Platform 1,TRUE,FALSE,,TRUE
+HUBOLD-Plat02-SB-northern,HUBOLD,2,Southbound,9400ZZLUODS1,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBPAD-Plat01-WB-circle|district,HUBPAD,1,Westbound,9400ZZLUPAC4,Westbound Platform 1,TRUE,FALSE,,TRUE
+HUBPAD-Plat02-EB-circle|district,HUBPAD,2,Eastbound,9400ZZLUPAC3,Eastbound Platform 2,TRUE,FALSE,,TRUE
+HUBPAD-Plat03-NB-bakerloo,HUBPAD,3,Northbound,9400ZZLUPAC2,Northbound Platform 3,TRUE,FALSE,,TRUE
+HUBPAD-Plat04-SB-bakerloo,HUBPAD,4,Southbound,9400ZZLUPAC1,Southbound Platform 4,TRUE,FALSE,,TRUE
+HUBPAD-Plat11-WB-elizabeth,HUBPAD,11,Westbound,,Westbound Platform 11,TRUE,FALSE,,TRUE
+HUBPAD-Plat12-WB-elizabeth,HUBPAD,12,Westbound,,Westbound Platform 12,TRUE,FALSE,,TRUE
+HUBPAD-Plat15-WB-circle|hammersmith-city,HUBPAD,15,Westbound,9400ZZLUPAH1,Westbound Platform 15,TRUE,TRUE,,TRUE
+HUBPAD-Plat16-EB-circle|hammersmith-city,HUBPAD,16,Eastbound,9400ZZLUPAH2,Eastbound Platform 16,TRUE,TRUE,,TRUE
+HUBPAD-PlatA-EB-elizabeth,HUBPAD,A,Eastbound,,Eastbound Platform A,TRUE,FALSE,,TRUE
+HUBPAD-PlatB-WB-elizabeth,HUBPAD,B,Westbound,,Westbound Platform B,TRUE,FALSE,,TRUE
+HUBQPW-Plat01-SB-bakerloo|london-overground,HUBQPW,1,Southbound,9400ZZLUQPS2,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBQPW-Plat02-SB-bakerloo,HUBQPW,2,Southbound,9400ZZLUQPS2,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBQPW-Plat03-NB-bakerloo,HUBQPW,3,Northbound,9400ZZLUQPS1,Northbound Platform 3,TRUE,FALSE,,TRUE
+HUBQPW-Plat04-NB-bakerloo|london-overground,HUBQPW,4,Northbound,9400ZZLUQPS1,Northbound Platform 4,TRUE,FALSE,,TRUE
+HUBRIC-Plat01-NB-metropolitan,HUBRIC,1,Northbound,9400ZZLURKW2,Northbound Platform 1,TRUE,FALSE,,TRUE
+HUBRIC-Plat02-SB-metropolitan,HUBRIC,2,Southbound,9400ZZLURKW1,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBRMD-Plat03-EB-district|london-overground,HUBRMD,3,Eastbound,9400ZZLURMD1,Eastbound Platform 3,TRUE,TRUE,,TRUE
+HUBRMD-Plat04-EB-district|london-overground,HUBRMD,4,Eastbound,9400ZZLURMD1,Eastbound Platform 4,TRUE,TRUE,,TRUE
+HUBRMD-Plat05-EB-district|london-overground,HUBRMD,5,Eastbound,9400ZZLURMD1,Eastbound Platform 5,TRUE,TRUE,,TRUE
+HUBRMD-Plat06-EB-district,HUBRMD,6,Eastbound,9400ZZLURMD1,Eastbound Platform 6,TRUE,FALSE,,TRUE
+HUBRMD-Plat07-EB-district,HUBRMD,7,Eastbound,9400ZZLURMD1,Eastbound Platform 7,TRUE,FALSE,,TRUE
+HUBSBP-Plat01-SB-bakerloo|london-overground,HUBSBP,1,Southbound,9400ZZLUSGP1,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBSBP-Plat02-NB-bakerloo|london-overground,HUBSBP,2,Northbound,9400ZZLUSGP2,Northbound Platform 2,TRUE,FALSE,,TRUE
+HUBSDE-Plat01-EB-dlr,HUBSDE,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+HUBSDE-Plat01-NB-london-overground,HUBSDE,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+HUBSDE-Plat02-SB-london-overground,HUBSDE,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBSDE-Plat02-WB-dlr,HUBSDE,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+HUBSOK-Plat01-SB-bakerloo|london-overground,HUBSOK,1,Southbound,9400ZZLUSKT1,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBSOK-Plat02-NB-bakerloo|london-overground,HUBSOK,2,Northbound,9400ZZLUSKT1,Northbound Platform 2,TRUE,FALSE,,TRUE
+HUBSPB-Plat01-SB-london-overground,HUBSPB,1,Southbound,,Southbound Platform 1,TRUE,FALSE,Ticket hall,TRUE
+HUBSPB-Plat01-WB-central,HUBSPB,1,Westbound,9400ZZLUSBC1,Westbound Platform 1,TRUE,FALSE,,TRUE
+HUBSPB-Plat02-EB-central,HUBSPB,2,Eastbound,9400ZZLUSBC1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+HUBSPB-Plat02-NB-london-overground,HUBSPB,2,Northbound,,Northbound Platform 2,TRUE,FALSE,Ticket hall,TRUE
+HUBSRA-Plat01-WB-london-overground,HUBSRA,1,Westbound,9100STFD4,Westbound Platform 1,TRUE,FALSE,,TRUE
+HUBSRA-Plat02-WB-london-overground,HUBSRA,2,Westbound,9100STFD4,Westbound Platform 2,TRUE,FALSE,,TRUE
+HUBSRA-Plat03-WB-central,HUBSRA,3,Westbound,9400ZZLUSTD2,Westbound Platform 3,TRUE,FALSE,,TRUE
+HUBSRA-Plat05-WB-elizabeth,HUBSRA,5,Westbound,,Westbound Platform 5,TRUE,FALSE,,TRUE
+HUBSRA-Plat06-EB-central,HUBSRA,6,Eastbound,9400ZZLUSTD1,Eastbound Platform 6,TRUE,FALSE,,TRUE
+HUBSRA-Plat08-EB-elizabeth,HUBSRA,8,Eastbound,,Eastbound Platform 8,TRUE,FALSE,,TRUE
+HUBSRA-Plat13-WB-jubilee,HUBSRA,13,Westbound,9400ZZLUSTD3,Westbound Platform 13,TRUE,FALSE,,TRUE
+HUBSRA-Plat14-WB-jubilee,HUBSRA,14,Westbound,9400ZZLUSTD3,Westbound Platform 14,TRUE,FALSE,,TRUE
+HUBSRA-Plat15-WB-jubilee,HUBSRA,15,Westbound,9400ZZLUSTD3,Westbound Platform 15,TRUE,FALSE,,TRUE
+HUBSRA-Plat16-NB-dlr,HUBSRA,16,Northbound,9400ZZDLSTD3,Northbound Platform 16,TRUE,FALSE,,TRUE
+HUBSRA-Plat17-SB-dlr,HUBSRA,17,Southbound,9400ZZDLSTD4,Southbound Platform 17,TRUE,FALSE,,TRUE
+HUBSRA-Plat3A-WB-central,HUBSRA,3A,Westbound,9400ZZDLSTD2,Westbound Platform 3A,TRUE,FALSE,,TRUE
+HUBSRA-Plat4A-WB-dlr,HUBSRA,4A,Westbound,9400ZZDLSTD1,Westbound Platform 4A,TRUE,FALSE,,TRUE
+HUBSRA-Plat4B-WB-dlr,HUBSRA,4B,Westbound,9400ZZDLSTD1,Westbound Platform 4B,TRUE,FALSE,,TRUE
+HUBSRU-Plat01-WB-central,HUBSRU,1,Westbound,9400ZZLUSRP1,Westbound Platform 1,TRUE,FALSE,,TRUE
+HUBSRU-Plat02-EB-central,HUBSRU,2,Eastbound,9400ZZLUSRP1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+HUBSVS-Plat01-SB-london-overground,HUBSVS,1,Southbound,,Platform 1,TRUE,FALSE,,TRUE
+HUBSVS-Plat02-NB-london-overground,HUBSVS,2,Northbound,,Platform 2,TRUE,FALSE,,TRUE
+HUBSVS-Plat03-NB-victoria,HUBSVS,3,Northbound,9400ZZLUSVS1,Northbound Platform 3,TRUE,FALSE,,TRUE
+HUBSVS-Plat04-NB-victoria,HUBSVS,4,Northbound,9400ZZLUSVS1,Northbound Platform 4,TRUE,FALSE,,TRUE
+HUBSVS-Plat05-SB-victoria,HUBSVS,5,Southbound,9400ZZLUSVS2,Southbound Platform 5,TRUE,FALSE,,TRUE
+HUBSYD-Plat01-NB-london-overground,HUBSYD,1,Northbound,,Northbound Platform 1,TRUE,FALSE,Peak Hill Gardens,TRUE
+HUBSYD-Plat02-SB-london-overground,HUBSYD,2,Southbound,,Southbound Platform 2,TRUE,FALSE,Station Approach,TRUE
+HUBTOG-Plat01-EB-dlr,HUBTOG,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+HUBTOG-Plat02-EB-dlr,HUBTOG,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
+HUBTOM-Plat01-NB-victoria,HUBTOM,1,Northbound,9400ZZLUTMH1,Northbound Platform 1,TRUE,FALSE,,TRUE
+HUBTOM-Plat02-SB-victoria,HUBTOM,2,Southbound,9400ZZLUTMH1,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBUPM-Plat03-WB-district,HUBUPM,3,Westbound,9400ZZLUUPM1,Westbound Platform 3,TRUE,FALSE,,TRUE
+HUBUPM-Plat04-WB-district,HUBUPM,4,Westbound,9400ZZLUUPM2,Westbound Platform 4,TRUE,FALSE,,TRUE
+HUBUPM-Plat05-WB-district,HUBUPM,5,Westbound,9400ZZLUUPM2,Westbound Platform 5,TRUE,FALSE,,TRUE
+HUBUPM-Plat06-NB-london-overground,HUBUPM,6,Northbound,,Northbound Platform 6,TRUE,FALSE,,TRUE
+HUBVIC-Plat01-WB-circle|district,HUBVIC,1,Westbound,9400ZZLUVIC4,Westbound Platform 1,TRUE,TRUE,,TRUE
+HUBVIC-Plat02-EB-circle|district,HUBVIC,2,Eastbound,9400ZZLUVIC1,Eastbound Platform 2,TRUE,TRUE,,TRUE
+HUBVIC-Plat03-NB-victoria,HUBVIC,3,Northbound,9400ZZLUVIC2,Northbound Platform 3,TRUE,FALSE,,TRUE
+HUBVIC-Plat04-SB-victoria,HUBVIC,4,Southbound,9400ZZLUVIC3,Southbound Platform 4,TRUE,FALSE,,TRUE
+HUBVXH-Plat01-NB-victoria,HUBVXH,1,Northbound,9400ZZLUVXL1,Northbound Platform 1,TRUE,FALSE,,TRUE
+HUBVXH-Plat02-SB-victoria,HUBVXH,2,Southbound,9400ZZLUVXL1,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBWAT-Plat01-NB-northern,HUBWAT,1,Northbound,9400ZZLUWLO3,Northbound Platform 1,TRUE,FALSE,,TRUE
+HUBWAT-Plat02-SB-northern,HUBWAT,2,Southbound,9400ZZLUWLO3,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBWAT-Plat03-NB-bakerloo,HUBWAT,3,Northbound,9400ZZLUWLO1,Northbound Platform 3,TRUE,FALSE,,TRUE
+HUBWAT-Plat04-SB-bakerloo,HUBWAT,4,Southbound,9400ZZLUWLO2,Southbound Platform 4,TRUE,FALSE,,TRUE
+HUBWAT-Plat05-WB-jubilee,HUBWAT,5,Westbound,9400ZZLUWLO4,Westbound Platform 5,TRUE,FALSE,,TRUE
+HUBWAT-Plat06-EB-jubilee,HUBWAT,6,Eastbound,9400ZZLUWLO4,Eastbound Platform 6,TRUE,FALSE,,TRUE
+HUBWAT-Plat25-EB-waterloo-city,HUBWAT,25,Eastbound,9400ZZLUWLO5,Eastbound Platform 25,TRUE,FALSE,,TRUE
+HUBWAT-Plat26-WB-waterloo-city,HUBWAT,26,Westbound,9400ZZLUWLO6,Westbound Platform 26,TRUE,FALSE,,TRUE
+HUBWBP-Plat01-WB-district,HUBWBP,1,Westbound,9400ZZLUWBN2,Westbound Platform 1,TRUE,FALSE,,TRUE
+HUBWBP-Plat02-EB-district,HUBWBP,2,Eastbound,9400ZZLUWBN1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+HUBWBP-Plat03-SB-london-overground,HUBWBP,3,Southbound,,Southbound Platform 3,TRUE,FALSE,,TRUE
+HUBWBP-Plat04-NB-london-overground,HUBWBP,4,Northbound,,Northbound Platform 4,TRUE,FALSE,,TRUE
+HUBWCY-EB-tram,HUBWCY,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+HUBWCY-Plat01-NB-london-overground,HUBWCY,1,Northbound,,Northbound Platform 1,TRUE,FALSE,London Road car park,TRUE
+HUBWEH-Plat01-WB-district|hammersmith-city,HUBWEH,1,Westbound,940GZZLUWHM1,Westbound Platform 1,TRUE,TRUE,,TRUE
+HUBWEH-Plat02-EB-district|hammersmith-city,HUBWEH,2,Eastbound,940GZZLUWHM1,Eastbound Platform 2,TRUE,TRUE,,TRUE
+HUBWEH-Plat03-SB-dlr,HUBWEH,3,Southbound,9400ZZDLWHM1,Southbound Platform 3,TRUE,FALSE,,TRUE
+HUBWEH-Plat04-NB-dlr,HUBWEH,4,Northbound,9400ZZDLWHM1,Northbound Platform 4,TRUE,FALSE,,TRUE
+HUBWEH-Plat05-WB-jubilee,HUBWEH,5,Westbound,9400ZZLUWHM2,Westbound Platform 5,TRUE,FALSE,,TRUE
+HUBWEH-Plat06-EB-jubilee,HUBWEH,6,Eastbound,9400ZZLUWHM2,Eastbound Platform 6,TRUE,FALSE,,TRUE
+HUBWFJ-Plat01-SB-london-overground,HUBWFJ,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBWFJ-Plat02-SB-london-overground,HUBWFJ,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBWFJ-Plat03-SB-london-overground,HUBWFJ,3,Southbound,,Southbound Platform 3,TRUE,FALSE,,TRUE
+HUBWFJ-Plat04-SB-london-overground,HUBWFJ,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,TRUE
+HUBWHC-Plat01-SB-london-overground,HUBWHC,1,Southbound,,Southbound Platform 1,TRUE,FALSE,Station Approach,TRUE
+HUBWHC-Plat01-SB-victoria,HUBWHC,1,Southbound,9400ZZLUWWL1,Southbound Platform 1,TRUE,FALSE,,TRUE
+HUBWHC-Plat02-NB-london-overground,HUBWHC,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+HUBWHC-Plat02-SB-victoria,HUBWHC,2,Southbound,9400ZZLUWWL1,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBWIJ-Plat01-SB-bakerloo|london-overground,HUBWIJ,1,Southbound,9400ZZLUWJN1,Southbound Platform 1,TRUE,TRUE,,TRUE
+HUBWIJ-Plat02-SB-london-overground,HUBWIJ,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBWIJ-Plat03-NB-bakerloo|london-overground,HUBWIJ,3,Northbound,9400ZZLUWJN1,Northbound Platform 3,TRUE,TRUE,,TRUE
+HUBWIJ-Plat04-NB-london-overground,HUBWIJ,4,Northbound,,Northbound Platform 4,TRUE,FALSE,,TRUE
+HUBWIJ-Plat05-WB-london-overground,HUBWIJ,5,Westbound,,Westbound Platform 5,TRUE,FALSE,,TRUE
+HUBWIM-EB-tram,HUBWIM,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
+HUBWIM-Plat01-EB-district,HUBWIM,1,Eastbound,9400ZZLUWIM1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+HUBWIM-Plat02-EB-district,HUBWIM,2,Eastbound,9400ZZLUWIM1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+HUBWIM-Plat03-EB-district,HUBWIM,3,Eastbound,9400ZZLUWIM1,Eastbound Platform 3,TRUE,FALSE,,TRUE
+HUBWIM-Plat04-EB-district,HUBWIM,4,Eastbound,9400ZZLUWIM1,Eastbound Platform 4,TRUE,FALSE,,TRUE
+HUBWIM-Plat09-NB-thameslink,HUBWIM,9,Northbound,,Northbound Platform 9,TRUE,FALSE,,TRUE
+HUBWIM-Plat09-SB-thameslink,HUBWIM,9,Southbound,,Southbound Platform 9,TRUE,FALSE,,TRUE
+HUBWMB-Plat01-NB-bakerloo|london-overground,HUBWMB,1,Northbound,9400ZZLUWYC1,Northbound Platform 1,TRUE,TRUE,,TRUE
+HUBWMB-Plat02-SB-bakerloo|london-overground,HUBWMB,2,Southbound,9400ZZLUWYC2,Southbound Platform 2,TRUE,TRUE,,TRUE
+HUBWMB-Plat05-NB-national-rail,HUBWMB,5,Northbound,,Northbound Platform 5,TRUE,TRUE,,TRUE
+HUBWMB-Plat06-SB-national-rail,HUBWMB,6,Southbound,,Southbound Platform 6,TRUE,TRUE,,TRUE
+HUBWRU-Plat01-EB-central,HUBWRU,1,Eastbound,9400ZZLUWRP1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+HUBWRU-Plat02-EB-central,HUBWRU,2,Eastbound,9400ZZLUWRP1,Eastbound Platform 2,TRUE,FALSE,,TRUE
+HUBWSM-Plat01-WB-circle|district,HUBWSM,1,Westbound,9400ZZLUWSM2,Westbound Platform 1,TRUE,TRUE,,TRUE
+HUBWSM-Plat02-EB-circle|district,HUBWSM,2,Eastbound,9400ZZLUWSM1,Eastbound Platform 2,TRUE,TRUE,,TRUE
+HUBWSM-Plat03-EB-jubilee,HUBWSM,3,Eastbound,9400ZZLUWSM3,Eastbound Platform 3,TRUE,FALSE,,TRUE
+HUBWSM-Plat04-WB-jubilee,HUBWSM,4,Westbound,9400ZZLUWSM4,Westbound Platform 4,TRUE,FALSE,,TRUE
+HUBWWA-Plat01-WB-thameslink,HUBWWA,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,FALSE
+HUBWWA-Plat02-EB-thameslink,HUBWWA,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,FALSE
+HUBWWA-Plat03-NB-dlr,HUBWWA,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,TRUE
+HUBWWA-Plat04-NB-dlr,HUBWWA,4,Northbound,,Northbound Platform 4,TRUE,FALSE,,TRUE
+HUBZCW-Plat01-WB-jubilee,HUBZCW,1,Westbound,9400ZZLUCWR3,Westbound Platform 1,TRUE,FALSE,,TRUE
+HUBZCW-Plat02-EB-jubilee,HUBZCW,2,Eastbound,9400ZZLUCWR2,Eastbound Platform 2,TRUE,FALSE,,TRUE
+HUBZCW-Plat03-SB-london-overground,HUBZCW,3,Southbound,9100CNDAW2,Southbound Platform 3,TRUE,FALSE,,TRUE
+HUBZCW-Plat04-NB-london-overground,HUBZCW,4,Northbound,9100CNDAW1,Northbound Platform 4,TRUE,FALSE,,TRUE
+HUBZFD-Plat01-EB-circle|hammersmith-city|metropolitan,HUBZFD,1,Eastbound,9400ZZLUFCN1,Eastbound Platform 1,TRUE,TRUE,,TRUE
+HUBZFD-Plat02-WB-circle|hammersmith-city|metropolitan,HUBZFD,2,Westbound,9400ZZLUFCN2,Westbound Platform 2,TRUE,TRUE,,TRUE
+HUBZFD-Plat03-SB-thameslink,HUBZFD,3,Southbound,,Southbound Platform 3,TRUE,FALSE,,TRUE
+HUBZFD-Plat04-NB-thameslink,HUBZFD,4,Northbound,,Northbound Platform 4,TRUE,FALSE,,TRUE
+HUBZFD-PlatA-EB-elizabeth,HUBZFD,A,Eastbound,,Eastbound Platform A,TRUE,FALSE,,TRUE
+HUBZFD-PlatB-WB-elizabeth,HUBZFD,B,Westbound,,Westbound Platform B,TRUE,FALSE,,TRUE
+HUBZMG-Plat01-EB-circle|hammersmith-city|metropolitan,HUBZMG,1,Eastbound,9400ZZLUMGT1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+HUBZMG-Plat02-WB-circle|hammersmith-city|metropolitan,HUBZMG,2,Westbound,9400ZZLUMGT2,Westbound Platform 2,TRUE,FALSE,,TRUE
+HUBZMG-Plat03-WB-circle|hammersmith-city|metropolitan,HUBZMG,3,Westbound,9400ZZLUMGT2,Westbound Platform 3,TRUE,FALSE,,TRUE
+HUBZMG-Plat04-WB-circle|hammersmith-city|metropolitan,HUBZMG,4,Westbound,9400ZZLUMGT2,Westbound Platform 4,TRUE,FALSE,,TRUE
+HUBZMG-Plat07-NB-northern,HUBZMG,7,Northbound,9400ZZLUMGT3,Northbound Platform 7,TRUE,FALSE,,TRUE
+HUBZMG-Plat08-SB-northern,HUBZMG,8,Southbound,9400ZZLUMGT4,Southbound Platform 8,TRUE,FALSE,,TRUE
+HUBZWL-Plat01-EB-district|hammersmith-city,HUBZWL,1,Eastbound,9400ZZLUWPL1,Eastbound Platform 1,TRUE,FALSE,,TRUE
+HUBZWL-Plat02-WB-district|hammersmith-city,HUBZWL,2,Westbound,9400ZZLUWPL2,Westbound Platform 2,TRUE,FALSE,,TRUE
+HUBZWL-Plat05-NB-london-overground,HUBZWL,5,Northbound,,Northbound Platform 5,TRUE,FALSE,,TRUE
+HUBZWL-Plat06-SB-london-overground,HUBZWL,6,Southbound,,Southbound Platform 6,TRUE,FALSE,,TRUE
+HUBZWL-PlatA-EB-elizabeth,HUBZWL,A,Eastbound,,Eastbound Platform A,TRUE,FALSE,,TRUE
+HUBZWL-PlatB-WB-elizabeth,HUBZWL,B,Westbound,,Westbound Platform B,TRUE,FALSE,,TRUE
+940GZZBPSUST-Plat01-NB-northern,940GZZBPSUST,1,Northbound,9400ZZBPSUST1,Northbound,TRUE,FALSE,,TRUE
+940GZZBPSUST-Plat02-NB-northern,940GZZBPSUST,2,Northbound,9400ZZBPSUST2,Northbound,TRUE,FALSE,,TRUE
+940GZZNEUGST-Plat01-NB-northern,940GZZNEUGST,1,Northbound,9400ZZNEUGST1,Northbound,TRUE,FALSE,,TRUE
+940GZZNEUGST-Plat02-SB-northern,940GZZNEUGST,2,Southbound,9400ZZNEUGST2,Southbound,TRUE,FALSE,,TRUE
+910GBKRVS-Plat01-WB-london-overground,910GBKRVS,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GBKRVS-Plat02-WB-london-overground,910GBKRVS,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE

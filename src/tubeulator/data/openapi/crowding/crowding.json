@@ -2,7 +2,7 @@
     "openapi": "3.0.1",
     "info": {
         "title": "Crowding",
-        "description": "",
+        "description": "Information about crowding levels within Tfl Stations",
         "version": "1.0"
     },
     "servers": [
@@ -24,12 +24,13 @@
                         "required": true,
                         "schema": {
                             "type": "string"
-                        }
+                        },
+                        "example": "940GZZLUBND"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": null
+                        "description": "null"
                     }
                 }
             }
@@ -47,7 +48,8 @@
                         "required": true,
                         "schema": {
                             "type": "string"
-                        }
+                        },
+                        "example": "940GZZLUBND"
                     },
                     {
                         "name": "DayOfWeek",
@@ -56,12 +58,13 @@
                         "required": true,
                         "schema": {
                             "type": "string"
-                        }
+                        },
+                        "example": "Wed"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": null
+                        "description": "null"
                     }
                 }
             }
@@ -79,12 +82,13 @@
                         "required": true,
                         "schema": {
                             "type": "string"
-                        }
+                        },
+                        "example": "940GZZLUBND"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": null
+                        "description": "null"
                     }
                 }
             }
