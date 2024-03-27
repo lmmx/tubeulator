@@ -1,6 +1,6 @@
 """Download and store (overwrite) the OpenAPI JSON schemas for TfL APIs."""
 import httpx
-import orjson
+import json
 
 from ..utils.paths import openapi_schemas_path
 
@@ -14,7 +14,7 @@ def fetch_schema(schema_name: str, api_version: str) -> str:
     params = {"export": True, "api-version": api_version}
     download = httpx.get(export_url, headers=headers, params=params)
     download.raise_for_status()
-    pp_json = orjson.dumps(download.json(), indent=4)
+    pp_json = json.dumps(download.json(), indent=4)
     return pp_json
 
 
