@@ -2,6 +2,8 @@ import json
 from functools import cache
 from pathlib import Path
 
+from pydantic import BaseModel
+
 from .paths import openapi_schemas_path, openapi_unified_path
 
 __all__ = [
@@ -31,17 +33,28 @@ def find_schema_by_name(schema_name: str) -> Path:
 
 
 @cache
-def load_endpoint_schema(schema_name: str):
+def load_endpoint_schema(schema_name: str) -> dict:
     """Load an entire JSON schema for an API endpoint by its name, e.g. "Line" or "Mode"."""
-    endpoint_schema = json.loads(Path(find_schema_by_name(schema_name)).read_text())
+    schema_file = find_schema_by_name(schema_name)
+    endpoint_schema = json.loads(schema_file.read_text())
     return endpoint_schema
+
+
+class SchemaComponents(BaseModel):
+    schemas: dict = {}
+
+
+class Schema(BaseModel):
+    components: SchemaComponents
 
 
 @cache
 def load_endpoint_component_schemas(schema_name: str) -> dict[str, dict]:
     """Load all component schemas of a JSON schema for an API endpoint by endpoint name."""
-    endpoint_schema = load_endpoint_schema(schema_name)
-    component_schemas = endpoint_schema["components"].get("schemas", {})
+    schema_file = find_schema_by_name(schema_name)
+    schema_json = schema_file.read_text()
+    endpoint_schema = Schema.model_validate_json(schema_json)
+    component_schemas = endpoint_schema.components.schemas
     return component_schemas
 
 
