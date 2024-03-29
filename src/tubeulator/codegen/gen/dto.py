@@ -4,7 +4,8 @@ from itertools import starmap
 from typing import Literal
 
 from ...openapi.scan import scan_namespace
-from ...utils.paths import SchemaPath, load_endpoint_component_schemas
+from ...utils.paths import SchemaPath
+from ...utils.schemas import load_endpoint_component_schemas
 from ...utils.string_conv import to_pascal_case
 from .jsonschema import python_type
 from .resolution import (
