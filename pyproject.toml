@@ -22,6 +22,7 @@ dependencies = [
     "pydantic>=2.6.4",
     "pymongo",
     "urllib3<2",
+    "patito>=0.6.1",
 ]
 description = "TfL open data interface library."
 name = "tubeulator"
@@ -39,6 +40,13 @@ tubeulator = "tubeulator.cli:main"
 Homepage = "https://github.com/lmmx/tubeulator"
 Repository = "https://github.com/lmmx/tubeulator.git"
 
+[project.optional-dependencies]
+polars = [
+    "polars>=0.20.17",
+]
+polars-lts-cpu = [
+    "polars-lts-cpu>=0.20.17",
+]
 [tool.pdm]
 distribution = true
 
@@ -55,6 +63,9 @@ test = [
 vercel = [
     "urllib3<2",
 ]
+
+[tool.pdm.resolution]
+excludes = ["polars", "polars-lts-cpu"]
 
 [tool.ruff.lint]
 ignore = [
