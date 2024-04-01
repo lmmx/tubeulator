@@ -24,6 +24,7 @@ __all__ = [
     "generate_source",
 ]
 
+GenModes = Literal["patito", "pydantic", "jsonw"]
 
 def import_node(module: str, names: list[str]) -> ast.Import:
     if names:
@@ -176,19 +177,21 @@ def generate_dataclass(
     return preproc_class_name, output
 
 
-def hidden_field(default_value: str, style: Literal["pydantic", "jsonw"]) -> str:
+def hidden_field(default_value: str, style: GenModes) -> str:
     if style == "jsonw":
         value = f"field(default={default_value!r}, repr=False)"
-    elif style == "pydantic":
+    elif style in ["patito", "pydantic"]:
         value = f"PrivateAttr(default={default_value!r})"
     return value
 
 
-def make_class_header(class_name: str, style: Literal["pydantic", "jsonw"]) -> str:
+def make_class_header(class_name: str, style: GenModes) -> str:
     if style == "jsonw":
         hed = f"@dataclass\nclass {class_name}(JSONWizard):\n"
     elif style == "pydantic":
         hed = f"class {class_name}(BaseModel):\n"
+    elif style == "patito":
+        hed = f"class {class_name}(Model):\n"
     return hed
 
 
@@ -202,10 +205,11 @@ def generate_source(
     indent_level: int,
     idx: int,
     schema_mapping: dict[str, str] | None,
-    style: Literal["pydantic", "jsonw"] = "pydantic",
+    style: GenModes = "patito",
 ) -> str:
     is_jsonw = style == "jsonw"
-    is_pydantic = style == "pydantic"
+    is_patito = style == "patito"
+    is_pydantic = style in ["patito", "pydantic"]  # Careful: patito subclasses Pydantic
     properties = schema.get("properties", {})
     required = schema.get("required", [])
     contains_list = False
@@ -301,7 +305,13 @@ def generate_source(
         "tubeulator.utils.string_conv": ["to_camel_case"],
         "pydantic": ["AliasGenerator", "BaseModel", "ConfigDict", "PrivateAttr"],
     }
+    patito_imports = {
+        "tubeulator.utils.string_conv": ["to_camel_case"],
+        "patito": ["Model"],
+        "pydantic": ["AliasGenerator", "ConfigDict", "PrivateAttr"],
+    }
     jsonw_utils = ["load_endpoint_component_schemas"]
+    pydantic_imports = patito_imports if is_patito else pydantic_imports
     import_list = {
         "__future__": ["annotations"],
         "json": [],
