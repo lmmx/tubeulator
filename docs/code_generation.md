@@ -67,7 +67,7 @@ unparseable [ASTs](https://en.wikipedia.org/wiki/Abstract_syntax_tree) if used a
 names (the field names in Pydantic model classes).
 
 Also note: due to a current 'quirk' of Pydantic, all of the DTOs have a 'nickname' which is the
-class name with 'Model' on the end, and this is used in the nested definitions. So 
+class name with 'Model' on the end, and this is used in the nested definitions. So
 `list["LineStatusModel"]` in the `LineStatuses` field definition above would resolve to a list of
 the `LineStatus` class, and the `Line` class itself is given the nickname 'LineModel'.
 There were other workarounds but this was the simplest!
