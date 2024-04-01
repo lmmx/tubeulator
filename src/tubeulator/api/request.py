@@ -10,12 +10,8 @@ from pydantic import BaseModel, TypeAdapter
 from ..codegen import load_test
 from ..db.store_creds import check_creds
 from ..exc import RequestError
-from ..utils.paths import (
-    RefPath,
-    SchemaPath,
-    load_endpoint_component_schemas,
-    load_endpoint_schema,
-)
+from ..utils.paths import RefPath, SchemaPath
+from ..utils.schemas import load_endpoint_component_schemas, load_endpoint_schema
 from .endpoint.names import EndpointNames
 from .endpoint.routes.types import AnyEndpointRouteEnum
 

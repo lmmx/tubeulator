@@ -3,7 +3,8 @@ from __future__ import annotations
 from functools import lru_cache
 from pathlib import Path
 
-from ..utils.paths import find_schema, openapi_schemas_path
+from ..utils.paths import openapi_schemas_path
+from ..utils.schemas import find_schema
 from ._types import ApiAliasToUnifiedEntities, NamespaceInventory
 from .schema.aliased import AliasedApiSchema
 
