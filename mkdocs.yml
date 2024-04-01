@@ -1,10 +1,10 @@
-site_name: Minder
+site_name: Tubeulator
 site_author: Louis Maddox
 site_description: >-
-  Exception guard capture utility library
-site_url: https://minder-py.vercel.app/
-repo_name: lmmx/minder
-repo_url: https://github.com/lmmx/minder
+  TfL open data interface library
+site_url: https://tubeulator.vercel.app/
+repo_name: lmmx/tubeulator
+repo_url: https://github.com/lmmx/tubeulator
 watch: [src]
 strict: true
 
@@ -97,7 +97,7 @@ plugins:
 nav:
   - Home:
       - index.md
-      - motivation.md
+      - code_generation.md
   - Usage:
       - Usage Guide: usage/index.md
   - APIs:

@@ -1,3 +1,3 @@
-::: minder.minder
+::: tubeulator
     options:
       show_root_heading: false
