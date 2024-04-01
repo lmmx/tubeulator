@@ -38,7 +38,7 @@ polars = [
     "polars>=0.20.17",
 ]
 polars-lts-cpu = [
-    "patito>=0.6.1", # This will not work: https://github.com/JakobGM/patito/issues/50
+    "patito>=0.6.1",  # This will not work: https://github.com/JakobGM/patito/issues/50
     "polars-lts-cpu>=0.20.17",
 ]
 
