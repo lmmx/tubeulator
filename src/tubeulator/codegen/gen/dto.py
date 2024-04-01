@@ -205,7 +205,7 @@ def generate_source(
     indent_level: int,
     idx: int,
     schema_mapping: dict[str, str] | None,
-    style: GenModes = "patito",
+    style: GenModes = "pydantic",
 ) -> str:
     is_jsonw = style == "jsonw"
     is_patito = style == "patito"
