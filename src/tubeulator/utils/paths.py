@@ -10,6 +10,9 @@ __all__ = [
     "db_path",
     "openapi_schemas_path",
     "openapi_unified_path",
+    "stationdata_path",
+    "stationdata_gtfs_path",
+    "stationdata_detailed_path",
     "RefPath",
     "SchemaPath",
     "to_enum_friendly_str",
@@ -22,6 +25,9 @@ data_path = pkg_path / "data"
 db_path = data_path / "db"
 openapi_schemas_path = data_path / "openapi"
 openapi_unified_path = data_path / "openapi_unified"
+stationdata_path = data_path / "stationdata"
+stationdata_gtfs_path = stationdata_path / "gtfs"
+stationdata_detailed_path = stationdata_path / "detailed"
 
 
 @dataclass

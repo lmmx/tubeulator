@@ -10,7 +10,7 @@ so I copied over these helper functions rather than enforce a dependency for the
 """
 import re
 
-__all__ = ["to_camel_case", "to_pascal_case"]
+__all__ = ["to_camel_case", "to_pascal_case", "to_snake_case"]
 
 
 def replace_multi_with_single(string: str, char="_") -> str:
@@ -62,3 +62,28 @@ def to_pascal_case(string):
         lambda m: m.group(1).upper(),
         string[1:],
     )
+
+
+def to_snake_case(string: str) -> str:
+    """
+    Make an underscored, lowercase form from the expression in the string.
+
+
+    Example::
+
+
+        >>> to_snake_case("DeviceType")
+        'device_type'
+
+
+    """
+    string = string.replace("-", "_").replace(" ", "_")
+    # Short path: the field is already
+    # lower-cased, so we don't need to handle
+    # for camel or title case.
+    if string.islower():
+        return replace_multi_with_single(string)
+
+    result = re.sub(r"((?!^)(?<!_)[A-Z][a-z]+|(?<=[a-z0-9])[A-Z])", r"_\1", string)
+
+    return replace_multi_with_single(result.lower())
