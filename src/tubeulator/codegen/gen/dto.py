@@ -26,6 +26,7 @@ __all__ = [
 
 GenModes = Literal["patito", "pydantic", "jsonw"]
 
+
 def import_node(module: str, names: list[str]) -> ast.Import:
     if names:
         return ast.ImportFrom(module=module, names=[*map(ast.alias, names)], level=0)
