@@ -1,6 +1,6 @@
 #!/bin/bash
-echo "INSTALLING WGET"
-dnf install wget
+#echo "INSTALLING WGET"
+#dnf install wget
 
 echo "WGETTING MICROMAMBA"
 wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | tar -xvj bin/micromamba
