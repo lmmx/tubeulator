@@ -3,7 +3,8 @@
 #dnf install wget
 
 echo "WGETTING MICROMAMBA"
-wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | tar -xvj bin/micromamba
+#wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | tar -xvj bin/micromamba
+curl -sL https://micromamba.snakepit.net/api/micromamba/linux-64/latest | tar -xvj bin/micromamba
 
 echo "INITIALISING MICROMAMBA"
 ./bin/micromamba shell init -s bash -p ~/micromamba
