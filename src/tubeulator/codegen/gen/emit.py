@@ -1,4 +1,5 @@
 """Emit DTO code generated for TfL APIs (detected from their loaded Swagger schemas)."""
+
 from ...openapi.scan import scan_namespace
 from ...utils.paths import to_enum_friendly_str
 from ...utils.schemas import load_endpoint_component_schemas

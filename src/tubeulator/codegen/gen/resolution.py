@@ -1,4 +1,5 @@
 """Functions for the unique resolution of schema identifiers."""
+
 from ...utils.lcp_trie import Trie
 from ...utils.paths import SchemaPath
 

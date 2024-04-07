@@ -8,6 +8,7 @@ direction (DCW consider conversions going from JSON key to model field). Unfortu
 Pydantic's string conversion helpers do not actually do the job required here,
 so I copied over these helper functions rather than enforce a dependency for them.
 """
+
 import re
 
 __all__ = ["to_camel_case", "to_pascal_case", "to_snake_case"]
