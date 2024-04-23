@@ -3,4 +3,4 @@
 __all__ = ["fetch", "load_transport_network", "load_stations"]
 
 from .api import fetch
-from .network import load_transport_network, load_stations
+from .network import load_stations, load_transport_network
