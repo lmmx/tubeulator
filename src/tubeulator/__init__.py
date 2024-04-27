@@ -5,18 +5,20 @@ __all__ = ["fetch"]
 from .api import fetch
 from .network import (
     load_lines,
+    load_lines_by_station,
     load_platform_services,
     load_platforms,
+    load_platforms_with_stations_and_services,
     load_station_points,
-    load_station_services,
     load_stations,
 )
 
 __all__ = [
     "load_lines",
+    "load_lines_by_station",
     "load_platform_services",
     "load_platforms",
+    "load_platforms_with_stations_and_services",
     "load_station_points",
-    "load_station_services",
     "load_stations",
 ]

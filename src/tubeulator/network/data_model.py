@@ -48,8 +48,7 @@ class Platform(Model):
     FriendlyName: str
     IsCustomerFacing: bool
     HasServiceInterchange: bool
-    # AccessibleEntranceName: str | None
-    # HasStepFreeRouteInformation: bool
+    # Other fields not included here...
 
 
 class PlatformService(Model):
