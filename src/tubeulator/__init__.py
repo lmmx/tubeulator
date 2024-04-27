@@ -3,7 +3,7 @@
 __all__ = ["fetch"]
 
 from .api import fetch
-from .load import (
+from .network.load import (
     load_lines,
     load_platform_services,
     load_platforms,
