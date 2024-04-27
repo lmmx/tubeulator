@@ -1,38 +1,49 @@
-from pathlib import Path
+from typing import TypeVar
 
 import patito as pt
 
-from tubeulator.utils.paths import stationdata_gtfs_path
+from ..utils.paths import stationdata_detailed_path
+from .data_model import (
+    ModeAndLine,
+    Platform,
+    PlatformService,
+    Station,
+    StationPoint,
+)
 
-from .data_model import Stop
+__all__ = [
+    "load_model",
+    "load_lines",
+    "load_platforms",
+    "load_platform_services",
+    "load_stations",
+    "load_station_points",
+]
 
-__all__ = ["load_transport_network", "load_stations"]
+M = TypeVar("M", bound=pt.Model)
 
 
-def load_transport_network(
-    source: Path = stationdata_gtfs_path / "stops.txt",
-) -> pt.DataFrame:
-    stops = Stop.DataFrame.read_csv(source)
-    stops.validate()
-    return stops
+def load_model(model_class: M) -> pt.DataFrame:
+    """Load the CSV file associated with a patito model `model_class`."""
+    source_csv = stationdata_detailed_path / model_class._source
+    return model_class.DataFrame.read_csv(source_csv)
+
+
+def load_lines() -> pt.DataFrame:
+    return load_model(ModeAndLine)
+
+
+def load_platforms() -> pt.DataFrame:
+    return load_model(Platform)
+
+
+def load_platform_services() -> pt.DataFrame:
+    return load_model(PlatformService)
 
 
 def load_stations() -> pt.DataFrame:
-    """Load a DataFrame of ID and name for all stations.
-
-    The stop_id and stop_code are identical for the stations."""
-    network = load_transport_network()
-    stations = network.filter(pt.col("location_type") == 1)
-    station_columns = ["stop_id", "stop_name"]  # stations.columns[:3]
-    return stations[station_columns]
+    return load_model(Station)
 
 
-def load_stops() -> pt.DataFrame:
-    """Load a DataFrame of ID and name for all stops.
-
-    The stop_id and stop_code are not identical for the stops."""
-    network = load_transport_network()
-    stations = network.filter(pt.col("location_type") != 1)
-    return stations
-    # station_columns = ["stop_id", "stop_name"]  # stations.columns[:3]
-    # return stations[station_columns]
+def load_station_points() -> pt.DataFrame:
+    return load_model(StationPoint)
