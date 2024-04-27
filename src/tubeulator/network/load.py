@@ -25,3 +25,14 @@ def load_stations() -> pt.DataFrame:
     stations = network.filter(pt.col("location_type") == 1)
     station_columns = ["stop_id", "stop_name"]  # stations.columns[:3]
     return stations[station_columns]
+
+
+def load_stops() -> pt.DataFrame:
+    """Load a DataFrame of ID and name for all stops.
+
+    The stop_id and stop_code are not identical for the stops."""
+    network = load_transport_network()
+    stations = network.filter(pt.col("location_type") != 1)
+    return stations
+    # station_columns = ["stop_id", "stop_name"]  # stations.columns[:3]
+    # return stations[station_columns]
