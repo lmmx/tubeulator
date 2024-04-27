@@ -12,7 +12,7 @@ source ~/.bashrc
 
 # activate the environment and install a new version of Python
 echo "ACTIVATING MICROMAMBA ENV"
-micromamba activate
+micromamba activate base
 echo "INSTALLING PYTHON 3.11 IN MICROMAMBA ENV"
 micromamba install python=3.11 -c conda-forge -y
 
