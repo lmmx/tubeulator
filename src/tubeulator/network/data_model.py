@@ -6,26 +6,36 @@ from patito import Model
 from pydantic import PrivateAttr
 
 __all__ = [
-    "ModeAndLine",
-    "CardinalDirectionEnum",
+    "StationPoint",
+    "Station",
     "Platform",
     "PlatformService",
-    "Station",
-    "StationPoint",
+    "ModeAndLine",
+    "CardinalDirectionEnum",
 ]
 
 
-class ModeAndLine(Model):
-    _source: str = PrivateAttr("ModesAndLines.csv")
-    Mode: str
+class StationPoint(Model):
+    _source: str = PrivateAttr("StationPoints.csv")
+    UniqueId: str
+    StationUniqueId: str  # corresponds to UniqueId in the Station model
+    AreaName: str
+    AreaId: int
+    Level: int
+    Lat: float
+    Lon: float
+    FriendlyName: str
+
+
+class Station(Model):
+    _source: str = PrivateAttr("Stations.csv")
+    UniqueId: str
     Name: str
-
-
-class CardinalDirectionEnum(Enum):
-    Westbound = "WB"
-    Eastbound = "EB"
-    Northbound = "NB"
-    Southbound = "SB"
+    FareZones: str  # |-separated list[str]
+    HubNaptanCode: str | None
+    Wifi: bool
+    OutsideStationUniqueId: str
+    # Other fields not included here...
 
 
 class Platform(Model):
@@ -52,24 +62,14 @@ class PlatformService(Model):
     GroupName: str | None
 
 
-class Station(Model):
-    _source: str = PrivateAttr("Stations.csv")
-    UniqueId: str
+class ModeAndLine(Model):
+    _source: str = PrivateAttr("ModesAndLines.csv")
+    Mode: str
     Name: str
-    FareZones: str  # |-separated list[str]
-    HubNaptanCode: str | None
-    Wifi: bool
-    OutsideStationUniqueId: str
-    # Other fields not included here...
 
 
-class StationPoint(Model):
-    _source: str = PrivateAttr("StationPoints.csv")
-    UniqueId: str
-    StationUniqueId: str  # corresponds to UniqueId in the Station model
-    AreaName: str
-    AreaId: int
-    Level: int
-    Lat: float
-    Lon: float
-    FriendlyName: str
+class CardinalDirectionEnum(Enum):
+    Westbound = "WB"
+    Eastbound = "EB"
+    Northbound = "NB"
+    Southbound = "SB"
