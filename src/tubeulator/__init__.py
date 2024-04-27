@@ -11,6 +11,7 @@ from .network import (
     load_platforms_with_stations_and_services,
     load_station_points,
     load_stations,
+    load_stations_by_line,
 )
 
 __all__ = [
@@ -21,4 +22,5 @@ __all__ = [
     "load_platforms_with_stations_and_services",
     "load_station_points",
     "load_stations",
+    "load_stations_by_line",
 ]

@@ -1,6 +1,6 @@
 """Transport network analysis."""
 
-from .combine import load_lines_by_station, load_platforms_with_stations_and_services
+from .combine import load_lines_by_station, load_stations_by_line, load_platforms_with_stations_and_services
 from .load import (
     load_lines,
     load_platform_services,
@@ -16,5 +16,6 @@ __all__ = [
     "load_platform_services",
     "load_platforms_with_stations_and_services",
     "load_stations",
+    "load_stations_by_line",
     "load_station_points",
 ]
