@@ -1,6 +1,11 @@
 import polars as pl
 
-from .load import load_platform_services, load_platforms, load_stations
+from .load import (
+    load_platform_services,
+    load_platforms,
+    load_station_points,
+    load_stations,
+)
 
 __all__ = [
     "load_platforms_with_stations_and_services",
@@ -48,3 +53,10 @@ def load_stations_by_line():
         .agg(pl.col("StationName"))
     )
     return line2stations
+
+
+def load_station_points_with_lines():
+    stn_points = load_station_points()
+    stn2lines = load_lines_by_station()
+    stn_points_with_lines = stn_points.join(stn2lines, on="StationUniqueId")
+    return stn_points_with_lines
