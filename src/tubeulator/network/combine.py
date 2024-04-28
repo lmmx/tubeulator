@@ -2,7 +2,11 @@ import polars as pl
 
 from .load import load_platform_services, load_platforms, load_stations
 
-__all__ = ["load_platforms_with_stations_and_services", "load_lines_by_station", "load_stations_by_line"]
+__all__ = [
+    "load_platforms_with_stations_and_services",
+    "load_lines_by_station",
+    "load_stations_by_line",
+]
 
 
 def load_platforms_with_stations_and_services():
@@ -41,7 +45,10 @@ def load_lines_by_station():
     )
     return station2lines
 
+
 def load_stations_by_line():
     station2lines = load_lines_by_station()
-    line2stations = station2lines.explode("Lines").group_by("Lines").agg(pl.col("StationName"))
+    line2stations = (
+        station2lines.explode("Lines").group_by("Lines").agg(pl.col("StationName"))
+    )
     return line2stations
