@@ -33,6 +33,9 @@ version = "0.0.7"
 text = "MIT"
 
 [project.optional-dependencies]
+folium = [
+    "folium>=0.16.0",
+]
 polars = [
     "patito>=0.6.1",
     "polars>=0.20.17",
