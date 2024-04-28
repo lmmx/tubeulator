@@ -16,16 +16,13 @@ def load_platforms_with_stations_and_services():
     #      giving in effect a 'global column namespace'
 
     # There are about 1400 platforms
-    platform_renamings = {k: f"Platform{k}" for k in ["UniqueId", "FriendlyName"]}
-    platforms = load_platforms().rename(platform_renamings)
+    platforms = load_platforms()
     # There are around 500 stations
-    station_renamings = {k: f"Station{k}" for k in ["UniqueId", "Name"]}
-    stations = load_stations().rename(station_renamings)
+    stations = load_stations()
     # There are around 1600 platform services.
     # There are more than the number of physical platforms because multiple services use
     # the same platform (stopping at different times, e.g. Hammersmith & City/District)
-    platform_service_renamings = {k: f"Platform{k}" for k in ["GroupName"]}
-    platform_svcs = load_platform_services().rename(platform_service_renamings)
+    platform_svcs = load_platform_services()
     # There are the same number of platforms with stations as platforms
     platforms_with_stns = platforms.join(stations, on="StationUniqueId")
     # There are the same number of platforms with stations and services as platform services

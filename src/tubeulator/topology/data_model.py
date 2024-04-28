@@ -59,7 +59,7 @@ class PlatformService(Model):
     Line: str  # corresponds to Name in the ModesAndLines model
     DirectionTowards: str | None
     # Other fields not included here...
-    GroupName: str | None
+    PlatformServiceGroupName: str | None = pt.Field(derived_from="GroupName")
 
 
 class ModeAndLine(Model):
