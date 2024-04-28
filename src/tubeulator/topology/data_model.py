@@ -1,4 +1,5 @@
 from __future__ import annotations
+import patito as pt
 
 from enum import Enum
 
@@ -29,8 +30,8 @@ class StationPoint(Model):
 
 class Station(Model):
     _source: str = PrivateAttr("Stations.csv")
-    UniqueId: str
-    Name: str
+    StationUniqueId: str = pt.Field(derived_from="UniqueId")
+    StationName: str = pt.Field(derived_from="Name")
     FareZones: str  # |-separated list[str]
     HubNaptanCode: str | None
     Wifi: bool
@@ -40,12 +41,12 @@ class Station(Model):
 
 class Platform(Model):
     _source: str = PrivateAttr("Platforms.csv")
-    UniqueId: str
+    PlatformUniqueId: str = pt.Field(derived_from="UniqueId")
     StationUniqueId: str
     PlatformNumber: str | None
     CardinalDirection: str | None  # CardinalDirectionEnum
     PlatformNaptanCode: str | None
-    FriendlyName: str
+    PlatformFriendlyName: str = pt.Field(derived_from="FriendlyName")
     IsCustomerFacing: bool
     HasServiceInterchange: bool
     # Other fields not included here...
