@@ -10,7 +10,7 @@ def show_station_points_map(zoom: int = 12) -> None:
         import folium
     except:
         raise ImportError(
-            "Please install the folium package: `pip install tubeulator[folium]`."
+            "Please install the folium package: `pip install tubeulator[folium]`.",
         )
     centre_of_london = [51.5074, -0.1278]
     map_style = "cartodbpositron"
