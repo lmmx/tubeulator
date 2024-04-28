@@ -1,5 +1,5 @@
 import polars as pl
-from tubeulator.topology import load_lines_by_station, load_stations_by_line
+from tubeulator.topology.combine import load_lines_by_station, load_stations_by_line
 
 __all__ = ["test_load_stations_by_line", "test_load_lines_by_station"]
 
