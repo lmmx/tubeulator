@@ -11,10 +11,6 @@ __all__ = [
 
 def load_platforms_with_stations_and_services():
     """Annotate platform services with their platform and station info."""
-    # TODO move all of these renamings into the data model instead (alias).
-    #      This prevents having to rename multiple times (at sites of use)
-    #      giving in effect a 'global column namespace'
-
     # There are about 1400 platforms
     platforms = load_platforms()
     # There are around 500 stations
