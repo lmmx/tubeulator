@@ -16,20 +16,20 @@ __all__ = [
 
 
 def test_load_lines():
-    lines = load_lines()
+    load_lines()
 
 
 def test_load_platforms():
-    platforms = load_platforms()
+    load_platforms()
 
 
 def test_load_platform_services():
-    platform_services = load_platform_services()
+    load_platform_services()
 
 
 def test_load_stations():
-    stations = load_stations()
+    load_stations()
 
 
 def test_load_station_points():
-    station_points = load_station_points()
+    load_station_points()
