@@ -1,9 +1,9 @@
 from tubeulator.topology.load import (
     load_lines,
-    load_platforms,
     load_platform_services,
-    load_stations,
+    load_platforms,
     load_station_points,
+    load_stations,
 )
 
 __all__ = [
@@ -29,6 +29,7 @@ def test_load_platform_services():
 
 def test_load_stations():
     stations = load_stations()
+
 
 def test_load_station_points():
     station_points = load_station_points()

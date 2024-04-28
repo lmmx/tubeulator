@@ -1,8 +1,8 @@
 from __future__ import annotations
-import patito as pt
 
 from enum import Enum
 
+import patito as pt
 from patito import Model
 from pydantic import PrivateAttr
 
