@@ -10,6 +10,7 @@ __all__ = [
     "load_station_points",
     "load_stations",
     "load_stations_by_line",
+    "show_station_points_map",
 ]
 
 from .api import fetch
@@ -22,4 +23,5 @@ from .topology import (
     load_station_points,
     load_stations,
     load_stations_by_line,
+    show_station_points_map,
 )
