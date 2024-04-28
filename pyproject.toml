@@ -6,7 +6,7 @@ requires = [
 
 [project]
 authors = [
-    {email = "louismmx@gmail.com", name = "Louis Maddox"},
+    { email = "louismmx@gmail.com", name = "Louis Maddox" },
 ]
 classifiers = [
     "Intended Audience :: Developers",
@@ -27,7 +27,7 @@ description = "TfL open data interface library."
 name = "tubeulator"
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
-version = "0.0.7"
+version = "0.0.8"
 
 [project.license]
 text = "MIT"
@@ -40,7 +40,6 @@ polars = [
     "patito>=0.6.1",
     "polars>=0.20.17",
 ]
-# Note: the following will not work: https://github.com/JakobGM/patito/issues/50
 polars-lts-cpu = [
     "patito>=0.6.1",
     "polars-lts-cpu>=0.20.17",
