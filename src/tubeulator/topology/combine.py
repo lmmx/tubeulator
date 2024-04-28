@@ -49,6 +49,9 @@ def load_lines_by_station():
 def load_stations_by_line():
     station2lines = load_lines_by_station()
     line2stations = (
-        station2lines.explode("Lines").group_by("Lines").agg(pl.col("StationName"))
+        station2lines.rename({"Lines": "Line"})
+        .explode("Line")
+        .group_by("Line")
+        .agg(pl.col("StationName"))
     )
     return line2stations
