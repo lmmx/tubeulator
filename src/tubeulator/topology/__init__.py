@@ -1,4 +1,4 @@
-"""Transport network analysis."""
+"""Transport network station topology (i.e. the network without its connectivity)."""
 
 from .combine import (
     load_lines_by_station,
