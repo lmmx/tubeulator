@@ -27,7 +27,7 @@ description = "TfL open data interface library."
 name = "tubeulator"
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
-version = "0.0.8"
+version = "0.0.9"
 
 [project.license]
 text = "MIT"
