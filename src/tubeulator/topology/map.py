@@ -8,7 +8,7 @@ def show_station_points_map(zoom: int = 12) -> None:
     # TODO: ideally handle this using a Pydantic model `ImportPath`
     try:
         import folium
-    except:
+    except ImportError:
         raise ImportError(
             "Please install the folium package: `pip install tubeulator[folium]`.",
         )
