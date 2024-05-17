@@ -50,7 +50,6 @@ jobs:
         run: |
           set -ex
           test_target=tests/${{ matrix.testtarget }}
-          target_dir=$(dirname "$test_target")
 
           INSTALL_START_TIME=$(date +%s)
           echo "- Installing tubeulator :: $(date)"
