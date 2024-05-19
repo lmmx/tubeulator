@@ -53,17 +53,18 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install PDM
-        run: |
-          python -m pip install --user pdm
-          pdm config install.cache on
-
       - uses: actions/cache@v4
         with:
           path: |
             ~/.cache/pdm
+            ~/.cache/pip
             ~/.cache/.venv
           key: v1-${{ hashFiles('pdm.lock') }}
+
+      - name: Install PDM
+        run: |
+          python -m pip install --user pdm
+          pdm config install.cache on
 
       - name: Install package dependencies and run unit tests
         timeout-minutes: 5
