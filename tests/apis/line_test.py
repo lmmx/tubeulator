@@ -1,7 +1,6 @@
 """Tests for the line API."""
 
 import tubeulator
-from inline_snapshot import snapshot
 from line_data import line_snapshot_album as snapshot_album
 from pytest import mark
 
