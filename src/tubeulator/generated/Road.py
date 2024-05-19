@@ -100,7 +100,7 @@ class Street(BaseModel):
     Name: str = None
     Closure: str = None
     Directions: str = None
-    Segments: list["StreetSegmentModel"]
+    Segments: list["StreetSegmentModel"] = []
     SourceSystemId: int = None
     SourceSystemKey: str = None
     _source_schema_name: str = PrivateAttr(default='Road')
@@ -129,7 +129,7 @@ class RoadProject(BaseModel):
     ConsultationEndDate: datetime = None
     ConstructionStartDate: datetime = None
     ConstructionEndDate: datetime = None
-    BoroughsBenefited: list[str]
+    BoroughsBenefited: list[str] = []
     CycleSuperhighwayId: str = None
     Phase: str = None
     ContactName: str = None
@@ -227,7 +227,7 @@ class RoadDisruption(BaseModel):
     Comments: str = None
     CurrentUpdate: str = None
     CurrentUpdateDateTime: datetime = None
-    CorridorIds: list[str]
+    CorridorIds: list[str] = []
     StartDateTime: datetime = None
     EndDateTime: datetime = None
     LastModifiedTime: datetime = None
@@ -236,7 +236,7 @@ class RoadDisruption(BaseModel):
     Status: str = None
     Geography: DbGeographyModel = None
     Geometry: DbGeographyModel = None
-    Streets: list["StreetModel"]
+    Streets: list["StreetModel"] = []
     IsProvisional: bool = None
     HasClosures: bool = None
     LinkText: str = None
@@ -245,9 +245,9 @@ class RoadDisruption(BaseModel):
     PublishStartDate: datetime = None
     PublishEndDate: datetime = None
     TimeFrame: str = None
-    RoadDisruptionLines: list["RoadDisruptionLineModel"]
-    RoadDisruptionImpactAreas: list["RoadDisruptionImpactAreaModel"]
-    RecurringSchedules: list["RoadDisruptionScheduleModel"]
+    RoadDisruptionLines: list["RoadDisruptionLineModel"] = []
+    RoadDisruptionImpactAreas: list["RoadDisruptionImpactAreaModel"] = []
+    RecurringSchedules: list["RoadDisruptionScheduleModel"] = []
     _source_schema_name: str = PrivateAttr(default='Road')
     _component_schema_name: str = PrivateAttr(default='Tfl-8')
 

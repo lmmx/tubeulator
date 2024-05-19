@@ -36,9 +36,9 @@ class Place(BaseModel):
     CommonName: str = None
     Distance: float = None
     PlaceType: str = None
-    AdditionalProperties: list["AdditionalPropertiesModel"]
-    Children: list["PlaceModel"]
-    ChildrenUrls: list[str]
+    AdditionalProperties: list["AdditionalPropertiesModel"] = []
+    Children: list["PlaceModel"] = []
+    ChildrenUrls: list[str] = []
     Lat: float = None
     Lon: float = None
     _source_schema_name: str = PrivateAttr(default='BikePoint')

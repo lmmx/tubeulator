@@ -38,8 +38,8 @@ class AccidentDetail(BaseModel):
     Date: datetime = None
     Severity: str = None
     Borough: str = None
-    Casualties: list["CasualtyModel"]
-    Vehicles: list["VehicleModel"]
+    Casualties: list["CasualtyModel"] = []
+    Vehicles: list["VehicleModel"] = []
     _source_schema_name: str = PrivateAttr(default='AccidentStats')
     _component_schema_name: str = PrivateAttr(default='Tfl.Api.Presentation.Entities.AccidentStats.AccidentDetail')
 

@@ -16,7 +16,7 @@ class StopPointCategory(BaseModel):
     )
 
     Category: str = None
-    AvailableKeys: list[str]
+    AvailableKeys: list[str] = []
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl.Api.Presentation.Entities.StopPointCategory')
 
@@ -94,8 +94,8 @@ class Crowding(BaseModel):
         alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
-    PassengerFlows: list["PassengerFlowModel"]
-    TrainLoadings: list["TrainLoadingModel"]
+    PassengerFlows: list["PassengerFlowModel"] = []
+    TrainLoadings: list["TrainLoadingModel"] = []
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl.Api.Presentation.Entities.Crowding')
 
@@ -138,7 +138,7 @@ class LineGroup(BaseModel):
 
     NaptanIdReference: str = None
     StationAtcoCode: str = None
-    LineIdentifier: list[str]
+    LineIdentifier: list[str] = []
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl.Api.Presentation.Entities.LineGroup')
 
@@ -156,7 +156,7 @@ class LineModeGroup(BaseModel):
     )
 
     ModeName: str = None
-    LineIdentifier: list[str]
+    LineIdentifier: list[str] = []
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl.Api.Presentation.Entities.LineModeGroup')
 
@@ -199,9 +199,9 @@ class Place(BaseModel):
     CommonName: str = None
     Distance: float = None
     PlaceType: str = None
-    AdditionalProperties: list["AdditionalPropertiesModel"]
-    Children: list["PlaceModel"]
-    ChildrenUrls: list[str]
+    AdditionalProperties: list["AdditionalPropertiesModel"] = []
+    Children: list["PlaceModel"] = []
+    ChildrenUrls: list[str] = []
     Lat: float = None
     Lon: float = None
     _source_schema_name: str = PrivateAttr(default='StopPoint')
@@ -224,16 +224,16 @@ class StopPoint(BaseModel):
     PlatformName: str = None
     Indicator: str = None
     StopLetter: str = None
-    Modes: list[str]
+    Modes: list[str] = []
     IcsCode: str = None
     SmsCode: str = None
     StopType: str = None
     StationNaptan: str = None
     AccessibilitySummary: str = None
     HubNaptanCode: str = None
-    Lines: list["IdentifierModel"]
-    LineGroup: list["LineGroupModel"]
-    LineModeGroups: list["LineModeGroupModel"]
+    Lines: list["IdentifierModel"] = []
+    LineGroup: list["LineGroupModel"] = []
+    LineModeGroups: list["LineModeGroupModel"] = []
     FullName: str = None
     NaptanMode: str = None
     Status: bool = None
@@ -242,9 +242,9 @@ class StopPoint(BaseModel):
     CommonName: str = None
     Distance: float = None
     PlaceType: str = None
-    AdditionalProperties: list["AdditionalPropertiesModel"]
-    Children: list["PlaceModel"]
-    ChildrenUrls: list[str]
+    AdditionalProperties: list["AdditionalPropertiesModel"] = []
+    Children: list["PlaceModel"] = []
+    ChildrenUrls: list[str] = []
     Lat: float = None
     Lon: float = None
     _source_schema_name: str = PrivateAttr(default='StopPoint')
@@ -300,7 +300,7 @@ class LineServiceType(BaseModel):
     )
 
     LineName: str = None
-    LineSpecificServiceTypes: list["LineSpecificServiceTypeModel"]
+    LineSpecificServiceTypes: list["LineSpecificServiceTypeModel"] = []
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl.Api.Presentation.Entities.LineServiceType')
 
@@ -459,8 +459,8 @@ class StopPointsResponse(BaseModel):
         alias_generator=AliasGenerator(validation_alias=to_camel_case),
     )
 
-    CentrePoint: list[float]
-    StopPoints: list["StopPointModel"]
+    CentrePoint: list[float] = []
+    StopPoints: list["StopPointModel"] = []
     PageSize: int = None
     Total: int = None
     Page: int = None
@@ -507,7 +507,7 @@ class SearchResponse(BaseModel):
     PageSize: int = None
     Provider: str = None
     Total: int = None
-    Matches: list["SearchMatchModel"]
+    Matches: list["SearchMatchModel"] = []
     MaxScore: float = None
     _source_schema_name: str = PrivateAttr(default='StopPoint')
     _component_schema_name: str = PrivateAttr(default='Tfl.Api.Presentation.Entities.SearchResponse')

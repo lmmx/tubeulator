@@ -36,7 +36,7 @@ class CarParkOccupancy(BaseModel):
     )
 
     Id: str = None
-    Bays: list["BayModel"]
+    Bays: list["BayModel"] = []
     Name: str = None
     CarParkDetailsUrl: str = None
     _source_schema_name: str = PrivateAttr(default='occupancy')
