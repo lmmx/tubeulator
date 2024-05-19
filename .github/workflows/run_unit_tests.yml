@@ -7,14 +7,14 @@ on:
       - src/**
       - tests/**
       - pyproject.toml
-      - .github/workflows/**
+      - .github/workflows/*.yml
   pull_request:
     branches: [master]
     paths:
       - src/**
       - tests/**
       - pyproject.toml
-      - .github/workflows/**
+      - .github/workflows/*.yml
 
 jobs:
   test-setup:
