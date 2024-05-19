@@ -96,6 +96,7 @@ jobs:
 
           TEST_ELAPSED_TIME=$(($TEST_END_TIME - $TEST_START_TIME))
           echo "- Installed tubeulator (target: <code>$test_target</code>) in $INSTALL_ELAPSED_TIME seconds, tests passed in $TEST_ELAPSED_TIME seconds," >> $GITHUB_STEP_SUMMARY
+
           # Take a backup of the virtual environment we just installed and cache it across runs
           mkdir -p ~/.cache
-          mv .venv ~/cache/.venv
+          mv .venv ~/.cache/.venv
