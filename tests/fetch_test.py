@@ -54,7 +54,7 @@ tube_line_snapshot = snapshot(
                 {
                     "Name": "Regular",
                     "Uri": "/Line/Route?ids=Bakerloo&serviceTypes=Regular",
-                }
+                },
             ],
             "Crowding": {"PassengerFlows": [], "TrainLoadings": []},
         },
@@ -89,7 +89,7 @@ tube_line_snapshot = snapshot(
                 {
                     "Name": "Regular",
                     "Uri": "/Line/Route?ids=Circle&serviceTypes=Regular",
-                }
+                },
             ],
             "Crowding": {"PassengerFlows": [], "TrainLoadings": []},
         },
@@ -106,7 +106,7 @@ tube_line_snapshot = snapshot(
                 {
                     "Name": "Regular",
                     "Uri": "/Line/Route?ids=District&serviceTypes=Regular",
-                }
+                },
             ],
             "Crowding": {"PassengerFlows": [], "TrainLoadings": []},
         },
@@ -123,7 +123,7 @@ tube_line_snapshot = snapshot(
                 {
                     "Name": "Regular",
                     "Uri": "/Line/Route?ids=Hammersmith & City&serviceTypes=Regular",
-                }
+                },
             ],
             "Crowding": {"PassengerFlows": [], "TrainLoadings": []},
         },
@@ -158,7 +158,7 @@ tube_line_snapshot = snapshot(
                 {
                     "Name": "Regular",
                     "Uri": "/Line/Route?ids=Metropolitan&serviceTypes=Regular",
-                }
+                },
             ],
             "Crowding": {"PassengerFlows": [], "TrainLoadings": []},
         },
@@ -232,11 +232,11 @@ tube_line_snapshot = snapshot(
                 {
                     "Name": "Regular",
                     "Uri": "/Line/Route?ids=Waterloo & City&serviceTypes=Regular",
-                }
+                },
             ],
             "Crowding": {"PassengerFlows": [], "TrainLoadings": []},
         },
-    ]
+    ],
 )
 
 
