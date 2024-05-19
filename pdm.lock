@@ -5,7 +5,7 @@
 groups = ["default", "docs", "test", "vercel", "folium"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.1"
-content_hash = "sha256:cd0a066c53a58abf94967bd33793dfd56348ea2977f789ec04fd1e8826846a20"
+content_hash = "sha256:09c7e678bef7f6ed4e34dede54ef1f3d444a1520c08fceaa99d6747198cc5ab7"
 
 [[package]]
 name = "annotated-types"
