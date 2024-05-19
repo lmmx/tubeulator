@@ -58,6 +58,13 @@ jobs:
           python -m pip install --user pdm
           pdm config install.cache on
 
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/pdm
+            ~/.cache/venv
+          key: v1-${{ hashFiles('pdm.lock') }}
+
       - name: Install package dependencies and run unit tests
         timeout-minutes: 5
         run: |
@@ -70,7 +77,10 @@ jobs:
             echo "pyproject.toml does not exist"
             exit 1
           fi
-          # This would become useful if .venv caching was introduced
+          # If the `pdm.lock` lockfile hash is unchanged we will retain a `.venv` directory (i.e. instant installation)
+          if [[ -d ~/.cache/venv ]]; then
+            mv ~/.cache/venv ./.venv;
+          fi
           if [[ ! -d ".venv" ]]; then
             echo "Creating new venv from the test group of 'pyproject.toml'"
             pdm install -dG test
@@ -86,3 +96,6 @@ jobs:
 
           TEST_ELAPSED_TIME=$(($TEST_END_TIME - $TEST_START_TIME))
           echo "- Installed tubeulator (target: <code>$test_target</code>) in $INSTALL_ELAPSED_TIME seconds, tests passed in $TEST_ELAPSED_TIME seconds," >> $GITHUB_STEP_SUMMARY
+          # Take a backup of the virtual environment we just installed and cache it across runs
+          mkdir -p ~/.cache
+          mv .venv ~/cache/.venv
