@@ -1,6 +1,5 @@
 import tubeulator
 from inline_snapshot import snapshot
-from pytest import mark
 
 
 def test_interface():
@@ -24,6 +23,6 @@ def test_interface():
             "search",
             "stop_point",
             "vehicle",
-        ]
+        ],
     )
     list(vars(tubeulator.fetch)) == interfaces

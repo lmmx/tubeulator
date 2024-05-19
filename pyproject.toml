@@ -6,7 +6,7 @@ requires = [
 
 [project]
 authors = [
-    { email = "louismmx@gmail.com", name = "Louis Maddox" },
+    {email = "louismmx@gmail.com", name = "Louis Maddox"},
 ]
 classifiers = [
     "Intended Audience :: Developers",
