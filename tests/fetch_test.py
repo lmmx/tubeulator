@@ -114,14 +114,6 @@ meta_modes_snapshot = snapshot(
         },
     ],
 )
-
-
-@mark.parametrize("expected,", [meta_modes_snapshot])
-def test_meta_modes(expected):
-    modes = tubeulator.fetch.line.meta_modes()
-    assert [m.model_dump(mode="json") for m in modes] == expected
-
-
 wc_line_snapshot = snapshot(
     [
         {
@@ -143,15 +135,6 @@ wc_line_snapshot = snapshot(
         },
     ],
 )
-
-
-@mark.parametrize("line_id,expected", [("waterloo-city", wc_line_snapshot)])
-def test_lines_by_ids(line_id, expected):
-    """Relies on correct codegen of arrays (previously had a bug)."""
-    lines = tubeulator.fetch.line.lines_by_ids(line_id)
-    assert [l.model_dump(mode="json") for l in lines] == expected
-
-
 tube_line_snapshot = snapshot(
     [
         {
@@ -353,7 +336,32 @@ tube_line_snapshot = snapshot(
 )
 
 
-@mark.parametrize("mode_id,expected", [("tube", tube_line_snapshot)])
+line_album = {
+    "waterloo-city": wc_line_snapshot,
+}
+
+snapshot_album = {
+    "meta_modes": meta_modes_snapshot,
+    "lines_by_ids": line_album,
+    "lines_by_modes": tube_line_snapshot,
+}
+
+
+@mark.parametrize("expected", [snapshot_album["meta_modes"]])
+def test_meta_modes(expected):
+    modes = tubeulator.fetch.line.meta_modes()
+    assert [m.model_dump(mode="json") for m in modes] == expected
+
+
+@mark.parametrize("line_id", ["waterloo-city"])
+def test_lines_by_ids(line_id):
+    """Relies on correct codegen of arrays (previously had a bug)."""
+    expected = snapshot_album["lines_by_ids"][line_id]
+    lines = tubeulator.fetch.line.lines_by_ids(line_id)
+    assert [l.model_dump(mode="json") for l in lines] == expected
+
+
+@mark.parametrize("mode_id,expected", [("tube", snapshot_album["lines_by_modes"])])
 def test_lines_by_modes(mode_id, expected):
     lines = tubeulator.fetch.line.lines_by_modes(mode_id)
     assert [l.model_dump(mode="json") for l in lines] == expected
