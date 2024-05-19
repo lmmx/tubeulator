@@ -3,8 +3,18 @@ name: Build and Test
 on:
   push:
     branches: [master]
+    paths:
+      - src/**
+      - tests/**
+      - pyproject.toml
+      - .github/workflows/**
   pull_request:
     branches: [master]
+    paths:
+      - src/**
+      - tests/**
+      - pyproject.toml
+      - .github/workflows/**
 
 jobs:
   test-setup:
