@@ -2,7 +2,7 @@
 
 > It's time for the tubeulator
 
-TfL open data interface library
+TfL open data interface library.
 
 ## Key features
 
