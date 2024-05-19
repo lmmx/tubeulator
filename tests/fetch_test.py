@@ -25,10 +25,24 @@ def test_lines_by_ids():
                 "ModeName": "tube",
                 "Disruptions": [],
                 "Created": datetime.datetime(
-                    2024, 5, 14, 14, 35, 6, 617000, tzinfo=TzInfo(0)
+                    2024,
+                    5,
+                    14,
+                    14,
+                    35,
+                    6,
+                    617000,
+                    tzinfo=TzInfo(0),
                 ),
                 "Modified": datetime.datetime(
-                    2024, 5, 14, 14, 35, 6, 617000, tzinfo=TzInfo(0)
+                    2024,
+                    5,
+                    14,
+                    14,
+                    35,
+                    6,
+                    617000,
+                    tzinfo=TzInfo(0),
                 ),
                 "LineStatuses": [],
                 "RouteSections": [],
@@ -36,9 +50,9 @@ def test_lines_by_ids():
                     {
                         "Name": "Regular",
                         "Uri": "/Line/Route?ids=Waterloo & City&serviceTypes=Regular",
-                    }
+                    },
                 ],
                 "Crowding": {"PassengerFlows": [], "TrainLoadings": []},
-            }
-        ]
+            },
+        ],
     )
