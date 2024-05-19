@@ -2,11 +2,124 @@ import tubeulator
 from inline_snapshot import snapshot
 from pytest import mark
 
+meta_modes_snapshot = snapshot(
+    [
+        {
+            "IsTflService": True,
+            "IsFarePaying": True,
+            "IsScheduledService": True,
+            "ModeName": "bus",
+        },
+        {
+            "IsTflService": True,
+            "IsFarePaying": True,
+            "IsScheduledService": True,
+            "ModeName": "cable-car",
+        },
+        {
+            "IsTflService": False,
+            "IsFarePaying": True,
+            "IsScheduledService": True,
+            "ModeName": "coach",
+        },
+        {
+            "IsTflService": False,
+            "IsFarePaying": False,
+            "IsScheduledService": False,
+            "ModeName": "cycle",
+        },
+        {
+            "IsTflService": True,
+            "IsFarePaying": True,
+            "IsScheduledService": False,
+            "ModeName": "cycle-hire",
+        },
+        {
+            "IsTflService": True,
+            "IsFarePaying": True,
+            "IsScheduledService": True,
+            "ModeName": "dlr",
+        },
+        {
+            "IsTflService": True,
+            "IsFarePaying": True,
+            "IsScheduledService": True,
+            "ModeName": "elizabeth-line",
+        },
+        {
+            "IsTflService": False,
+            "IsFarePaying": False,
+            "IsScheduledService": False,
+            "ModeName": "interchange-keep-sitting",
+        },
+        {
+            "IsTflService": False,
+            "IsFarePaying": False,
+            "IsScheduledService": False,
+            "ModeName": "interchange-secure",
+        },
+        {
+            "IsTflService": False,
+            "IsFarePaying": True,
+            "IsScheduledService": True,
+            "ModeName": "national-rail",
+        },
+        {
+            "IsTflService": True,
+            "IsFarePaying": True,
+            "IsScheduledService": True,
+            "ModeName": "overground",
+        },
+        {
+            "IsTflService": True,
+            "IsFarePaying": True,
+            "IsScheduledService": True,
+            "ModeName": "replacement-bus",
+        },
+        {
+            "IsTflService": True,
+            "IsFarePaying": True,
+            "IsScheduledService": True,
+            "ModeName": "river-bus",
+        },
+        {
+            "IsTflService": True,
+            "IsFarePaying": True,
+            "IsScheduledService": True,
+            "ModeName": "river-tour",
+        },
+        {
+            "IsTflService": False,
+            "IsFarePaying": False,
+            "IsScheduledService": False,
+            "ModeName": "taxi",
+        },
+        {
+            "IsTflService": True,
+            "IsFarePaying": True,
+            "IsScheduledService": True,
+            "ModeName": "tram",
+        },
+        {
+            "IsTflService": True,
+            "IsFarePaying": True,
+            "IsScheduledService": True,
+            "ModeName": "tube",
+        },
+        {
+            "IsTflService": False,
+            "IsFarePaying": False,
+            "IsScheduledService": False,
+            "ModeName": "walking",
+        },
+    ],
+)
 
-def test_first_mode_is_bus():
+
+@mark.parametrize("expected,", [meta_modes_snapshot])
+def test_meta_modes(expected):
     modes = tubeulator.fetch.line.meta_modes()
-    first_mode_name = modes[0].ModeName
-    assert first_mode_name == "bus"
+    assert [m.model_dump(mode="json") for m in modes] == expected
 
 
 wc_line_snapshot = snapshot(
