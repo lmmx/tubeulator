@@ -22,6 +22,7 @@ python --version
 echo "PIP INSTALLING PDM"
 python -m pip install pdm 'urllib3<2'
 echo "PDM INSTALLING THE DOCS DEPS"
+pdm config python.use_venv false
 pdm install --no-default -dG docs -v
 echo "PDM RUNNING MKDOCS TO SHOW IT IS OK"
 pdm run mkdocs

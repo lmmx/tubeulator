@@ -26,7 +26,8 @@ M = TypeVar("M", bound=pt.Model)
 def load_model(model_class: M) -> pt.DataFrame:
     """Load the CSV file associated with a patito model `model_class`."""
     source_csv = stationdata_detailed_path / model_class._source.default
-    dataset = model_class.DataFrame.read_csv(source_csv)[model_class.columns]
+    dataset = model_class.DataFrame.read_csv(source_csv)
+    dataset = dataset[model_class.columns]
     dataset.validate()
     return dataset
 

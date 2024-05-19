@@ -12,6 +12,7 @@ from .load import (
     load_station_points,
     load_stations,
 )
+from .map import show_station_points_map
 
 __all__ = [
     "load_lines",
@@ -22,4 +23,5 @@ __all__ = [
     "load_stations",
     "load_stations_by_line",
     "load_station_points",
+    "show_station_points_map",
 ]

@@ -27,18 +27,21 @@ description = "TfL open data interface library."
 name = "tubeulator"
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
-version = "0.0.6"
+version = "0.0.9"
 
 [project.license]
 text = "MIT"
 
 [project.optional-dependencies]
+folium = [
+    "folium>=0.16.0",
+]
 polars = [
     "patito>=0.6.1",
     "polars>=0.20.17",
 ]
 polars-lts-cpu = [
-    "patito>=0.6.1",  # This will not work: https://github.com/JakobGM/patito/issues/50
+    "patito>=0.6.1",
     "polars-lts-cpu>=0.20.17",
 ]
 
@@ -69,7 +72,10 @@ vercel = [
 ]
 
 [tool.pdm.resolution]
-excludes = ["polars", "polars-lts-cpu"]
+excludes = [
+    "polars",
+    "polars-lts-cpu",
+]
 
 [tool.ruff.lint]
 ignore = [
