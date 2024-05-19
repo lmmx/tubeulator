@@ -6,7 +6,7 @@ requires = [
 
 [project]
 authors = [
-    {email = "louismmx@gmail.com", name = "Louis Maddox"},
+    { email = "louismmx@gmail.com", name = "Louis Maddox" },
 ]
 classifiers = [
     "Intended Audience :: Developers",
@@ -27,7 +27,7 @@ description = "TfL open data interface library."
 name = "tubeulator"
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
-version = "0.0.9"
+version = "0.1.0"
 
 [project.license]
 text = "MIT"
