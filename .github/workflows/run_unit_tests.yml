@@ -62,7 +62,7 @@ jobs:
         with:
           path: |
             ~/.cache/pdm
-            ~/.cache/venv
+            ~/.cache/.venv
           key: v1-${{ hashFiles('pdm.lock') }}
 
       - name: Install package dependencies and run unit tests
@@ -79,8 +79,8 @@ jobs:
           fi
 
           # If the `pdm.lock` lockfile hash is unchanged we will retain a `.venv` directory (i.e. instant installation)
-          if [[ -d ~/.cache/venv ]]; then
-            mv ~/.cache/venv ./.venv;
+          if [[ -d ~/.cache/.venv ]]; then
+            mv ~/.cache/.venv ./.venv;
           fi
 
           if [[ ! -d ".venv" ]]; then
@@ -101,5 +101,5 @@ jobs:
           echo "- Installed package (target: <code>$test_target</code>) in $INSTALL_ELAPSED_TIME seconds, tests passed in $TEST_ELAPSED_TIME seconds," >> $GITHUB_STEP_SUMMARY
 
           # Take a backup of the virtual environment we just installed and cache it across runs
-          mkdir -p ~/.cache
+          mkdir -p ~/.cache/
           mv .venv ~/.cache/.venv
