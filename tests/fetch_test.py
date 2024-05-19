@@ -1,8 +1,5 @@
-import datetime
-
 import tubeulator
 from inline_snapshot import snapshot
-from pydantic_core import TzInfo
 
 
 def test_first_mode_is_bus():
@@ -17,33 +14,15 @@ def test_lines_by_ids():
     Note: the `TzInfo(0)` snapshots as `TzInfo(UTC)` for unclear reasons.
     """
     lines = tubeulator.fetch.line.lines_by_ids("waterloo-city")
-    assert [l.model_dump() for l in lines] == snapshot(
+    assert [l.model_dump(mode="json") for l in lines] == snapshot(
         [
             {
                 "Id": "waterloo-city",
                 "Name": "Waterloo & City",
                 "ModeName": "tube",
                 "Disruptions": [],
-                "Created": datetime.datetime(
-                    2024,
-                    5,
-                    14,
-                    14,
-                    35,
-                    6,
-                    617000,
-                    tzinfo=TzInfo(0),
-                ),
-                "Modified": datetime.datetime(
-                    2024,
-                    5,
-                    14,
-                    14,
-                    35,
-                    6,
-                    617000,
-                    tzinfo=TzInfo(0),
-                ),
+                "Created": "2024-05-14T14:35:06.617000Z",
+                "Modified": "2024-05-14T14:35:06.617000Z",
                 "LineStatuses": [],
                 "RouteSections": [],
                 "ServiceTypes": [

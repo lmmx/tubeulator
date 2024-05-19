@@ -21,7 +21,7 @@ def check_creds() -> dict[str, str]:
     database if none has been stored there before. Interactive only.
     """
     try:
-        env_creds = EnvCredentials.parse_obj(os.environ)
+        env_creds = EnvCredentials.model_validate(os.environ)
         credential = env_creds.model_dump()
     except ValidationError:
         # No API keys in environment variables, get it from the MongoDB database
