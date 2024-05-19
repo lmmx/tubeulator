@@ -74,7 +74,7 @@ jobs:
           if [[ ! -d ".venv" ]]; then
             echo "Creating new venv from the test group of 'pyproject.toml'"
             pdm install -dG test
-            pdm install "patito>=0.6.1" "polars>=0.20.17" # from pyproject.toml
+            pdm add "patito>=0.6.1" "polars>=0.20.17" # from pyproject.toml
           fi
           INSTALL_END_TIME=$(date +%s)
           INSTALL_ELAPSED_TIME=$(($INSTALL_END_TIME - $INSTALL_START_TIME))
