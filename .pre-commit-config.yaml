@@ -28,6 +28,9 @@ repos:
                            generated
                           )
       - id: name-tests-test
+        exclude: |
+          (?x)
+          ^tests/apis/.*_data.py
       - id: trailing-whitespace
         exclude: |
           (?x)
