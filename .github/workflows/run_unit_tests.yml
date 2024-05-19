@@ -26,7 +26,7 @@ jobs:
 
       - id: set-matrix
         run: |
-          ALL_TEST_TARGETS=$(find tests -mindepth 1 -type d -name *_test.py -exec realpath --relative-to=tests {} \;)
+          ALL_TEST_TARGETS=$(find . -mindepth 2 -type f -name *_test.py -exec realpath --relative-to=tests {} \; | grep -v "^\.\." | sort)
           PACKAGE_MATRIX_JSON=$(echo "$ALL_TEST_TARGETS" | sort | jq -R -s -c 'split("\n")[:-1] | map({testtarget: .})')
           echo "Setting test_matrix to: $PACKAGE_MATRIX_JSON"
           echo "test_matrix=$PACKAGE_MATRIX_JSON" >> $GITHUB_OUTPUT
@@ -81,7 +81,7 @@ jobs:
 
           # If the `pdm.lock` lockfile hash is unchanged we will retain a `.venv` directory (i.e. instant installation)
           if [[ -d ~/.cache/.venv ]]; then
-            mv ~/.cache/.venv ./.venv;
+            cp -r -T ~/.cache/.venv ./.venv;
           fi
 
           if [[ ! -d ".venv" ]]; then
@@ -103,4 +103,4 @@ jobs:
 
           # Take a backup of the virtual environment we just installed and cache it across runs
           mkdir -p ~/.cache/
-          mv .venv ~/.cache/.venv
+          cp -r -T .venv ~/.cache/.venv
