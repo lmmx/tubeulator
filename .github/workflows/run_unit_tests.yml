@@ -77,15 +77,18 @@ jobs:
             echo "pyproject.toml does not exist"
             exit 1
           fi
+
           # If the `pdm.lock` lockfile hash is unchanged we will retain a `.venv` directory (i.e. instant installation)
           if [[ -d ~/.cache/venv ]]; then
             mv ~/.cache/venv ./.venv;
           fi
+
           if [[ ! -d ".venv" ]]; then
             echo "Creating new venv from the test group of 'pyproject.toml'"
             pdm install -dG test
             pdm add "patito>=0.6.1" "polars>=0.20.17" # from pyproject.toml
           fi
+
           INSTALL_END_TIME=$(date +%s)
           INSTALL_ELAPSED_TIME=$(($INSTALL_END_TIME - $INSTALL_START_TIME))
           echo "- Finished installing $service, now running tests :: $(date)"
@@ -95,7 +98,7 @@ jobs:
           TEST_END_TIME=$(date +%s)
 
           TEST_ELAPSED_TIME=$(($TEST_END_TIME - $TEST_START_TIME))
-          echo "- Installed tubeulator (target: <code>$test_target</code>) in $INSTALL_ELAPSED_TIME seconds, tests passed in $TEST_ELAPSED_TIME seconds," >> $GITHUB_STEP_SUMMARY
+          echo "- Installed package (target: <code>$test_target</code>) in $INSTALL_ELAPSED_TIME seconds, tests passed in $TEST_ELAPSED_TIME seconds," >> $GITHUB_STEP_SUMMARY
 
           # Take a backup of the virtual environment we just installed and cache it across runs
           mkdir -p ~/.cache
