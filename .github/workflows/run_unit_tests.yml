@@ -104,3 +104,11 @@ jobs:
           # Take a backup of the virtual environment we just installed and cache it across runs
           mkdir -p ~/.cache/
           cp -r -T .venv ~/.cache/.venv
+
+  finalise:
+    runs-on: ubuntu-latest
+    needs: test
+    if: ${{ always() && success() }}
+    steps:
+      - name: Complete CI
+        run: echo "All matrix jobs completed successfully"
