@@ -25,7 +25,7 @@ all_endpoints = snapshot(
         "stop_points_by_id",
         "timetable_by_id_from_stop",
         "timetable_by_id_from_to_stop",
-    ]
+    ],
 )
 
 meta_modes_snapshot = snapshot(
