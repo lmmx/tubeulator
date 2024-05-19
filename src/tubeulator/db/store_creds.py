@@ -15,16 +15,16 @@ class EnvCredentials(BaseModel):
 
 @lru_cache
 def check_creds() -> dict[str, str]:
-    """Store the API credentials in a simple singleton collection "tfl_cred" in the "creds"
+    """Either pick up API credentials or retrieve from MongoDB.
+
+    Store the API credentials in a simple singleton collection "tfl_cred" in the "creds"
     database if none has been stored there before. Interactive only.
     """
     try:
         env_creds = EnvCredentials.parse_obj(os.environ)
         credential = env_creds.model_dump()
     except ValidationError:
-        # No API keys in environment variables
-        pass
-    else:
+        # No API keys in environment variables, get it from the MongoDB database
         with MongodExceptionGuard():
             client = MongoClient()
             creds_collection = client.creds.tfl_cred
