@@ -271,7 +271,7 @@ def generate_source(
             if is_array_prop:
                 contains_list = True
                 if is_pydantic:
-                    default = ""
+                    default = " = []"
                 else:
                     default = " = field(default_factory=list)"
             else:

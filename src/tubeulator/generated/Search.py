@@ -42,7 +42,7 @@ class SearchResponse(BaseModel):
     PageSize: int = None
     Provider: str = None
     Total: int = None
-    Matches: list["SearchMatchModel"]
+    Matches: list["SearchMatchModel"] = []
     MaxScore: float = None
     _source_schema_name: str = PrivateAttr(default='Search')
     _component_schema_name: str = PrivateAttr(default='Tfl-2')
