@@ -3,8 +3,8 @@
 from journey_data import all_endpoints
 from tubeulator import fetch
 
-tested_eps = {}
-untested_eps = {}
+tested_eps = set()
+untested_eps = {"forward_requests", "journey_results", "modes"}
 
 
 def test_journey_endpoints():

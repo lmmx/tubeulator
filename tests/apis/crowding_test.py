@@ -3,8 +3,8 @@
 from crowding_data import all_endpoints
 from tubeulator import fetch
 
-tested_eps = {}
-untested_eps = {}
+tested_eps = set()
+untested_eps = {"naptan_crowding", "live_crowding", "dow_crowding"}
 
 
 def test_crowding_endpoints():

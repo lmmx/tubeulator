@@ -3,8 +3,8 @@
 from accident_stats_data import all_endpoints
 from tubeulator import fetch
 
-tested_eps = {}
-untested_eps = {}
+tested_eps = set()
+untested_eps = {"year_accidents"}
 
 
 def test_accident_stats_endpoints():

@@ -3,8 +3,8 @@
 from tubeulator import fetch
 from vehicle_data import all_endpoints
 
-tested_eps = {}
-untested_eps = {}
+tested_eps = set()
+untested_eps = {"emission_surcharge", "ulez_compliance", "vehicle_arrivals"}
 
 
 def test_vehicle_endpoints():
