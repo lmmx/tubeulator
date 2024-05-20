@@ -37,10 +37,12 @@ untested_eps = {
 
 def test_arrivals_by_ids():
     arrivals_by_ids = fetch.line.arrivals_by_ids(ids="waterloo-city")
+    assert arrivals_by_ids
 
 
 def test_all_routes():
     all_routes = fetch.line.all_routes()
+    assert all_routes
 
 
 def test_arrivals_by_ids_stop():
@@ -48,39 +50,48 @@ def test_arrivals_by_ids_stop():
         ids="waterloo-city",
         stopPointId="940GZZLUASL",
     )
+    assert arrivals_by_ids_stop
 
 
 def test_disruption_by_ids():
     disruption_by_ids = fetch.line.disruption_by_ids(ids="waterloo-city")
+    assert disruption_by_ids
 
 
 def test_disruption_by_modes():
     disruption_by_modes = fetch.line.disruption_by_modes(modes="tube")
+    assert disruption_by_modes
 
 
 @mark.skip()
 def test_forward_requests():
     forward_requests = fetch.line.forward_requests()
+    assert forward_requests
 
 
 def test_meta_disruption_categories():
     meta_disruption_categories = fetch.line.meta_disruption_categories()
+    assert meta_disruption_categories
 
 
 def test_meta_service_types():
     meta_service_types = fetch.line.meta_service_types()
+    assert meta_service_types
 
 
 def test_meta_severity():
     meta_severity = fetch.line.meta_severity()
+    assert meta_severity
 
 
 def test_route_by_ids():
     route_by_ids = fetch.line.route_by_ids(ids="waterloo-city")
+    assert route_by_ids
 
 
 def test_route_by_modes():
     route_by_modes = fetch.line.route_by_modes(modes="tube")
+    assert route_by_modes
 
 
 def test_route_sequence_by_id_direction():
@@ -88,14 +99,17 @@ def test_route_sequence_by_id_direction():
         id="waterloo-city",
         direction="outbound",
     )
+    assert route_sequence_by_id_direction
 
 
 def test_search_lines_routes():
     search_lines_routes = fetch.line.search_lines_routes(query="Downing Street")
+    assert search_lines_routes
 
 
 def test_status_by_ids():
     status_by_ids = fetch.line.status_by_ids(ids="waterloo-city")
+    assert status_by_ids
 
 
 def test_status_by_ids_dates():
@@ -107,18 +121,22 @@ def test_status_by_ids_dates():
         startDate=start,
         endDate=end,
     )
+    assert status_by_ids_dates
 
 
 def test_status_by_modes():
     status_by_modes = fetch.line.status_by_modes(modes="tube")
+    assert status_by_modes
 
 
 def test_status_by_severity():
     status_by_severity = fetch.line.status_by_severity(severity=0)
+    assert status_by_severity
 
 
 def test_stop_points_by_id():
     stop_points_by_id = fetch.line.stop_points_by_id(id="waterloo-city")
+    assert stop_points_by_id
 
 
 def test_timetable_by_id_from_stop():
@@ -126,6 +144,7 @@ def test_timetable_by_id_from_stop():
         id="piccadilly",
         fromStopPointId="940GZZLUASL",
     )
+    assert timetable_by_id_from_stop
 
 
 def test_timetable_by_id_from_to_stop():
@@ -135,6 +154,7 @@ def test_timetable_by_id_from_to_stop():
         fromStopPointId="940GZZLUASL",
         toStopPointId="940GZZLUPCC",
     )
+    assert timetable_by_id_from_to_stop
 
 
 def test_line_endpoints():
