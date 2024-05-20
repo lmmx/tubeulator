@@ -3,22 +3,14 @@ The `Minder` context manager keeps failure modes **contained** with minimal **le
 ???+ success
 
     ```py
-    from minder import Minder
+    from tubeulator import fetch
 
-
-    def succeed() -> dict:
-        with Minder() as guard:
-            with guard.duty("winning"):
-                guard.result = 100
-        return guard.report()
-
-
-    response = succeed()
-    print(response)
+    response = fetch.stop_point.meta_modes()
+    coords = Matches[0].model_dump(include=["Lat","Lon"])
     ```
 
     ```py
-    {'result': 100, 'success': True}
+    {'Lat': 51.52918, 'Lon': -0.132944}
     ```
 
 When an error is encountered, we get the same interface.
@@ -48,6 +40,3 @@ When an error is encountered, we get the same interface.
     ```
 
 In this example we expose a reliable interface of a `result` and `success` boolean.
-
-We could also return `guard` (the `Minder` instance) and handle success/failure at the call site,
-but the assumption is we would rather have this prepared for us.
