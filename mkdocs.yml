@@ -102,3 +102,20 @@ nav:
       - Usage Guide: usage/index.md
   - APIs:
       - api/index.md
+      - api/endpoint_apis.md
+      - api/endpoint_routes.md
+      - api/accident.md
+      - api/air.md
+      - api/bike.md
+      - api/crowding.md
+      - api/disruption_lifts.md
+      - api/journey.md
+      - api/line.md
+      - api/mode.md
+      - api/occupancy.md
+      - api/place.md
+      - api/road.md
+      - api/search.md
+      - api/stop.md
+      - api/types.md
+      - api/vehicle.md
