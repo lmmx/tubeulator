@@ -42,7 +42,8 @@ def test_line_endpoints():
 
 def test_arrivals_by_ids():
     arrivals_by_ids = fetch.line.arrivals_by_ids(ids="waterloo-city")
-    assert arrivals_by_ids
+    for arrival in arrivals_by_ids:
+        assert arrival
 
 
 def test_all_routes():
