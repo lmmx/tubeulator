@@ -11,6 +11,7 @@ def test_mode_endpoints():
     assert list(vars(fetch.mode)) == all_endpoints
     assert set(vars(fetch.mode)) == tested_eps.union(untested_eps)
 
+
 def test_active_service_types():
     active_service_types = fetch.mode.active_service_types()
     assert active_service_types
