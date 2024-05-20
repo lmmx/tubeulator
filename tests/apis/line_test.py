@@ -45,7 +45,8 @@ def test_all_routes():
 
 def test_arrivals_by_ids_stop():
     arrivals_by_ids_stop = fetch.line.arrivals_by_ids_stop(
-        ids="waterloo-city", stopPointId="940GZZLUASL"
+        ids="waterloo-city",
+        stopPointId="940GZZLUASL",
     )
 
 
@@ -84,7 +85,8 @@ def test_route_by_modes():
 
 def test_route_sequence_by_id_direction():
     route_sequence_by_id_direction = fetch.line.route_sequence_by_id_direction(
-        id="waterloo-city", direction="outbound"
+        id="waterloo-city",
+        direction="outbound",
     )
 
 
@@ -101,7 +103,9 @@ def test_status_by_ids_dates():
     start = (now + timedelta(days=6)).strftime("%Y-%m-%dT%H:%M:%S-00:00")
     end = (now + timedelta(days=7)).strftime("%Y-%m-%dT%H:%M:%S-00:00")
     status_by_ids_dates = fetch.line.status_by_ids_dates(
-        ids="waterloo-city", startDate=start, endDate=end
+        ids="waterloo-city",
+        startDate=start,
+        endDate=end,
     )
 
 
@@ -119,14 +123,17 @@ def test_stop_points_by_id():
 
 def test_timetable_by_id_from_stop():
     timetable_by_id_from_stop = fetch.line.timetable_by_id_from_stop(
-        id="piccadilly", fromStopPointId="940GZZLUASL"
+        id="piccadilly",
+        fromStopPointId="940GZZLUASL",
     )
 
 
 def test_timetable_by_id_from_to_stop():
     """Arsenal to Piccadilly Circus, via Piccadilly line."""
     timetable_by_id_from_to_stop = fetch.line.timetable_by_id_from_to_stop(
-        id="piccadilly", fromStopPointId="940GZZLUASL", toStopPointId="940GZZLUPCC"
+        id="piccadilly",
+        fromStopPointId="940GZZLUASL",
+        toStopPointId="940GZZLUPCC",
     )
 
 
