@@ -58,7 +58,6 @@ def test_meta_categories():
     assert meta_categories
 
 
-@mark.skip(reason="KeyError: '$ref' in response_refpath")
 def test_meta_modes():
     meta_modes = fetch.stop_point.meta_modes()
     assert meta_modes
