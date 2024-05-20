@@ -46,7 +46,7 @@ def test_search_places():
     assert search_places
 
 
-@mark.parametrize("place_type", ["CarPark", "BikePoint"])
+@mark.parametrize("place_type", ["CarPark", "BikePoint", "ChargeConnector"])
 def test_places_by_type(place_type):
     places_by_type = fetch.place.places_by_type(types=place_type)
     assert places_by_type
