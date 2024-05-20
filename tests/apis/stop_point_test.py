@@ -169,7 +169,6 @@ def test_direction_to():
     assert direction_to
 
 
-@mark.skip(reason="KeyError: '$ref' in response_refpath")
 def test_route():
     route = fetch.stop_point.route(id="940GZZLUASL")
     assert route
@@ -181,13 +180,13 @@ def test_place_types():
     assert place_types
 
 
-@mark.skip(reason="KeyError: '$ref' in response_refpath")
 def test_car_parks():
     car_parks = fetch.stop_point.car_parks(stopPointId="HUBWAT")
-    assert car_parks
+    for parking in car_parks:
+        assert parking
 
 
-@mark.skip(reason="KeyError: '$ref' in response_refpath")
 def test_taxi_ranks():
     taxi_ranks = fetch.stop_point.taxi_ranks(stopPointId="HUBWAT")
-    assert taxi_ranks
+    for taxis in taxi_ranks:
+        assert taxis
