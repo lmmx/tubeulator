@@ -55,12 +55,14 @@ def test_arrivals_by_ids_stop():
         ids="waterloo-city",
         stopPointId="940GZZLUASL",
     )
-    assert arrivals_by_ids_stop
+    for arrival in arrivals_by_ids_stop:
+        assert arrival
 
 
 def test_disruption_by_ids():
     disruption_by_ids = fetch.line.disruption_by_ids(ids="waterloo-city")
-    assert disruption_by_ids
+    for disruption in disruption_by_ids:
+        assert disruption
 
 
 def test_disruption_by_modes():
