@@ -53,7 +53,6 @@ def test_forward_requests():
     assert forward_requests
 
 
-@mark.skip(reason="KeyError: '$ref' in response_refpath")
 def test_meta_categories():
     meta_categories = fetch.stop_point.meta_categories()
     assert meta_categories
