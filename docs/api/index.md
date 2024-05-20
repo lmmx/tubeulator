@@ -1,3 +1,1 @@
-::: tubeulator
-    options:
-      show_root_heading: false
+Hello world, the tubeulator docs are in progress.
