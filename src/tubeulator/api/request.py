@@ -501,7 +501,9 @@ class Request:
             singleton_schema = response_schema["items"]
         else:
             singleton_schema = response_schema
-        response_ref = singleton_schema["$ref" if "$ref" in singleton_schema else "type"]
+        response_ref = singleton_schema[
+            "$ref" if "$ref" in singleton_schema else "type"
+        ]
         return RefPath(response_ref)
 
     def parse(self, response: httpx.Response):
@@ -528,7 +530,9 @@ class Request:
                     ).Deserialisers
                 except Exception as exc:
                     hint = "(did the import from `generated` get removed by a linter?)"
-                    fail_msg = f"The API endpoint wasn't attached to `load_test` ({hint})"
+                    fail_msg = (
+                        f"The API endpoint wasn't attached to `load_test` ({hint})"
+                    )
                     raise RuntimeError(f"{fail_msg} -- {exc}")
                 dto = marshals.select_component(ref_name).value
                 is_pydantic = issubclass(dto, BaseModel)

@@ -144,7 +144,9 @@ def test_arrivals():
         assert arrival
 
 
-@mark.skip(reason="Non-bool status: 'Unknown'. Should be enum not bool? Schema line 2214")
+@mark.skip(
+    reason="Non-bool status: 'Unknown'. Should be enum not bool? Schema line 2214",
+)
 def test_can_reach_on_line():
     can_reach_on_line = fetch.stop_point.can_reach_on_line(
         id="940GZZLUASL",
