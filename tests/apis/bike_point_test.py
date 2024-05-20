@@ -3,8 +3,8 @@
 from bike_point_data import all_endpoints
 from tubeulator import fetch
 
-tested_eps = {}
-untested_eps = {}
+tested_eps = set()
+untested_eps = {"all_locations", "search_stations", "bike_point_by_id"}
 
 
 def test_bike_point_endpoints():

@@ -3,8 +3,14 @@
 from search_data import all_endpoints
 from tubeulator import fetch
 
-tested_eps = {}
-untested_eps = {}
+tested_eps = set()
+untested_eps = {
+    "search",
+    "bus_schedules",
+    "meta_categories",
+    "meta_search_providers",
+    "meta_sorts",
+}
 
 
 def test_search_endpoints():

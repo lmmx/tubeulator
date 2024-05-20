@@ -3,8 +3,8 @@
 from disruptions_lifts_v2_data import all_endpoints
 from tubeulator import fetch
 
-tested_eps = {}
-untested_eps = {}
+tested_eps = set()
+untested_eps = {"all"}
 
 
 def test_disruptions_lifts_v2_endpoints():

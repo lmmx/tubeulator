@@ -3,8 +3,8 @@
 from air_quality_data import all_endpoints
 from tubeulator import fetch
 
-tested_eps = {}
-untested_eps = {}
+tested_eps = set()
+untested_eps = {"air_quality_data"}
 
 
 def test_air_quality_endpoints():

@@ -3,8 +3,8 @@
 from mode_data import all_endpoints
 from tubeulator import fetch
 
-tested_eps = {}
-untested_eps = {}
+tested_eps = set()
+untested_eps = {"active_service_types", "mode_arrivals"}
 
 
 def test_mode_endpoints():
