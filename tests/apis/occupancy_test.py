@@ -20,7 +20,6 @@ def test_occupancy_endpoints():
     assert set(vars(fetch.occupancy)) == tested_eps.union(untested_eps)
 
 
-@mark.skip(reason="KeyError: '$ref' in response_refpath")
 def test_bike_points():
     bike_points = fetch.occupancy.bike_points(ids="BikePoints_100")
     assert bike_points
@@ -38,13 +37,11 @@ def test_car_park_id():
     assert car_park_id
 
 
-@mark.skip(reason="KeyError: '$ref' in response_refpath")
 def test_charge_connector():
     charge_connector = fetch.occupancy.charge_connector()
     assert charge_connector
 
 
-@mark.skip(reason="KeyError: '$ref' in response_refpath")
 def test_charge_connector_ids():
     charge_connector_ids = fetch.occupancy.charge_connector_ids(
         ids="ChargePointCM-BPT62200886-143260",

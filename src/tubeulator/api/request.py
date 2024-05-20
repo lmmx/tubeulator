@@ -497,7 +497,10 @@ class Request:
         response_schema = route_info["get"]["responses"]["200"]["content"][
             "application/json"
         ]["schema"]
-        response_ref = response_schema["$ref"]
+        if response_schema.get("type") == "array":
+            response_ref = response_schema["items"]["$ref"]
+        else:
+            response_ref = response_schema["$ref"]
         return RefPath(response_ref)
 
     def parse(self, response: httpx.Response):
