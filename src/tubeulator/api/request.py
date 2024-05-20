@@ -498,12 +498,10 @@ class Request:
             "application/json"
         ]["schema"]
         if response_schema.get("type") == "array":
-            if "$ref" in response_schema["items"]:
-                response_ref = response_schema["items"]["$ref"]
-            else:
-                response_ref = response_schema["items"]["type"]
+            singleton_schema = response_schema["items"]
         else:
-            response_ref = response_schema["$ref"]
+            singleton_schema = response_schema
+        response_ref = singleton_schema["$ref" if "$ref" in singleton_schema else "type"]
         return RefPath(response_ref)
 
     def parse(self, response: httpx.Response):

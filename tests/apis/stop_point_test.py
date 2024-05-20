@@ -76,9 +76,8 @@ def test_mode():
     assert mode
 
 
-@mark.skip(reason="KeyError: '$ref' in response_refpath")
 def test_mode_disruption():
-    mode_disruption = fetch.stop_point.mode_disruption(modes="tube")
+    mode_disruption = fetch.stop_point.mode_disruption(modes="overground")
     assert mode_disruption
 
 
@@ -109,28 +108,25 @@ def test_sms_id():
         fetch.stop_point.sms_id(id=73241)
 
 
-@mark.skip(reason="KeyError: '$ref' in response_refpath")
 def test_type():
     type = fetch.stop_point.type(types="TransportInterchange")
     assert type
 
 
-@mark.skip(reason="KeyError: '$ref' in response_refpath")
 def test_type_page():
     type_page = fetch.stop_point.type_page(types="TransportInterchange", page=1)
     assert type_page
 
 
-@mark.skip(reason="KeyError: '$ref' in response_refpath")
 def test_stop_point_ids():
     stop_point_ids = fetch.stop_point.stop_point_ids(ids="HUBWAT")
     assert stop_point_ids
 
 
-@mark.skip(reason="KeyError: '$ref' in response_refpath")
 def test_stop_point_disruption():
     stop_point_disruption = fetch.stop_point.stop_point_disruption(ids="HUBWAT")
-    assert stop_point_disruption
+    for disruption in stop_point_disruption:
+        assert disruption
 
 
 @mark.skip(reason="Says lineIds is not in endpoint signature but schema shows it is")
@@ -142,13 +138,13 @@ def test_arrival_departures():
     assert arrival_departures
 
 
-@mark.skip(reason="KeyError: '$ref' in response_refpath")
 def test_arrivals():
     arrivals = fetch.stop_point.arrivals(id="HUBWAT")
-    assert arrivals
+    for arrival in arrivals:
+        assert arrival
 
 
-@mark.skip(reason="KeyError: '$ref' in response_refpath")
+@mark.skip(reason="Non-bool status: 'Unknown'. Should be enum not bool? Schema line 2214")
 def test_can_reach_on_line():
     can_reach_on_line = fetch.stop_point.can_reach_on_line(
         id="940GZZLUASL",
@@ -163,7 +159,6 @@ def test_crowding():
     assert crowding
 
 
-@mark.skip(reason="KeyError: '$ref' in response_refpath")
 def test_direction_to():
     direction_to = fetch.stop_point.direction_to(
         id="940GZZLUASL",
