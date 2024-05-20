@@ -35,6 +35,11 @@ untested_eps = {
 }
 
 
+def test_line_endpoints():
+    assert list(vars(fetch.line)) == all_endpoints
+    assert set(vars(fetch.line)) == tested_eps.union(untested_eps)
+
+
 def test_arrivals_by_ids():
     arrivals_by_ids = fetch.line.arrivals_by_ids(ids="waterloo-city")
     assert arrivals_by_ids
@@ -155,11 +160,6 @@ def test_timetable_by_id_from_to_stop():
         toStopPointId="940GZZLUPCC",
     )
     assert timetable_by_id_from_to_stop
-
-
-def test_line_endpoints():
-    assert list(vars(fetch.line)) == all_endpoints
-    assert set(vars(fetch.line)) == tested_eps.union(untested_eps)
 
 
 @mark.parametrize("expected", [snapshot_album["meta_modes"]])
