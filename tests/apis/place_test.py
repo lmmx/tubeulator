@@ -5,16 +5,16 @@ from tubeulator import fetch
 from pytest import mark
 
 tested_eps = {
-    "places_by_geo_region",
     "meta_categories",
-    "search_places",
     "places_by_type",
     "place_by_id",
 }
 untested_eps = {
     "forward_requests",
+    "places_by_geo_region",
     "meta_place_types",
     "place_by_type_at_coordinates",
+    "search_places",
 }
 
 
@@ -22,6 +22,8 @@ def test_place_endpoints():
     assert list(vars(fetch.place)) == all_endpoints
     assert set(vars(fetch.place)) == tested_eps.union(untested_eps)
 
+
+@mark.skip(reason="404 (endpoint not found)?")
 def test_places_by_geo_region():
     places_by_geo_region = fetch.place.places_by_geo_region()
     assert places_by_geo_region
@@ -35,6 +37,7 @@ def test_meta_place_types():
     meta_place_types = fetch.place.meta_place_types()
     assert meta_place_types
 
+@mark.skip(reason="404 (endpoint not found)?")
 def test_search_places():
     search_places = fetch.place.search_places()
     assert search_places
@@ -45,7 +48,7 @@ def test_places_by_type():
     assert places_by_type
 
 def test_place_by_id():
-    place_by_id = fetch.place.place_by_id()
+    place_by_id = fetch.place.place_by_id(id="CarParks_800503")
     assert place_by_id
 
 @mark.skip(reason="Value is returned empty, despite coming from places_by_type result.")
