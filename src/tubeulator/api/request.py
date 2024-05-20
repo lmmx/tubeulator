@@ -498,7 +498,10 @@ class Request:
             "application/json"
         ]["schema"]
         if response_schema.get("type") == "array":
-            response_ref = response_schema["items"]["$ref"]
+            if "$ref" in response_schema["items"]:
+                response_ref = response_schema["items"]["$ref"]
+            else:
+                response_ref = response_schema["items"]["type"]
         else:
             response_ref = response_schema["$ref"]
         return RefPath(response_ref)
@@ -506,44 +509,47 @@ class Request:
     def parse(self, response: httpx.Response):
         response_refpath = self.response_refpath()
         component_schemas = load_endpoint_component_schemas(self.ep_name())
-        response_component_schema = component_schemas[response_refpath.name]
-        if response_component_schema.get("items", {}).get("type") == "string":
+        if response_refpath.name == "string":
             parsed = response.json()
         else:
-            try:
-                # Take a 2nd order reference
-                ref_type = SchemaPath(response_component_schema)
-                ref_name = ref_type.ref.name
-            except Exception:
-                # Not a 2nd order reference
-                ref_name = response_refpath.name
-            try:
-                marshals = getattr(
-                    load_test,
-                    self.ep_name(dehyphenate=True),
-                ).Deserialisers
-            except Exception as exc:
-                hint = "(did the import from `generated` get removed by a linter?)"
-                fail_msg = f"The API endpoint wasn't attached to `load_test` ({hint})"
-                raise RuntimeError(f"{fail_msg} -- {exc}")
-            dto = marshals.select_component(ref_name).value
-            is_pydantic = issubclass(dto, BaseModel)
-            try:
-                if is_pydantic:
-                    # Peek at the first character, let Pydantic deserialise the JSON
-                    is_array = response.text[0] == "["
-                    # data = response.json()
-                    # is_array = isinstance(data, list)
-                    if is_array:
-                        validate = TypeAdapter(list[dto]).validate_json
+            response_component_schema = component_schemas[response_refpath.name]
+            if response_component_schema.get("items", {}).get("type") == "string":
+                parsed = response.json()
+            else:
+                try:
+                    # Take a 2nd order reference
+                    ref_type = SchemaPath(response_component_schema)
+                    ref_name = ref_type.ref.name
+                except Exception:
+                    # Not a 2nd order reference
+                    ref_name = response_refpath.name
+                try:
+                    marshals = getattr(
+                        load_test,
+                        self.ep_name(dehyphenate=True),
+                    ).Deserialisers
+                except Exception as exc:
+                    hint = "(did the import from `generated` get removed by a linter?)"
+                    fail_msg = f"The API endpoint wasn't attached to `load_test` ({hint})"
+                    raise RuntimeError(f"{fail_msg} -- {exc}")
+                dto = marshals.select_component(ref_name).value
+                is_pydantic = issubclass(dto, BaseModel)
+                try:
+                    if is_pydantic:
+                        # Peek at the first character, let Pydantic deserialise the JSON
+                        is_array = response.text[0] == "["
+                        # data = response.json()
+                        # is_array = isinstance(data, list)
+                        if is_array:
+                            validate = TypeAdapter(list[dto]).validate_json
+                        else:
+                            validate = dto.model_validate_json
+                        parsed = validate(response.content)
                     else:
-                        validate = dto.model_validate_json
-                    parsed = validate(response.content)
-                else:
-                    # Assume JSONWizard
-                    parsed = dto.from_json(response.content)
-            except:
-                raise
+                        # Assume JSONWizard
+                        parsed = dto.from_json(response.content)
+                except:
+                    raise
         return parsed
 
 
