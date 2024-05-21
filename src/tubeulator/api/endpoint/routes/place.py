@@ -1,7 +1,7 @@
 """Accessed via dynamic method resolution under `tubeulator.fetch.place`.
 
 !!! example "Example: `tubeulator.fetch.place.meta_categories()`"
- 
+
     Unfortunately most of these methods don't work. This one isn't much use on its own:
 
     ```py

@@ -11,7 +11,7 @@
       "Id": 62824,
       "SourceSystemPlaceId": "ChargePointCM-BPT62200886-143260",
       "Status": "Available"
-    } 
+    }
     ```
 """
 

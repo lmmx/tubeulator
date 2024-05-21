@@ -1,7 +1,7 @@
 """Accessed via dynamic method resolution under `tubeulator.fetch.crowding`.
 
 !!! example "Example: `tubeulator.fetch.crowding.dow_crowding()`"
-    
+
     This method isn't working right now, but it's called like this:
 
     ```py
