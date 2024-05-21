@@ -1,4 +1,13 @@
-"""Accessed via dynamic method resolution under `tubeulator.fetch.line`."""
+"""Accessed via dynamic method resolution under `tubeulator.fetch.line`.
+
+!!! example "Example: `tubeulator.fetch.line.meta_modes()`"
+
+    ```py
+    >>> modes = fetch.line.meta_modes()
+    >>> modes[0]
+    Mode(IsTflService=True, IsFarePaying=True, IsScheduledService=True, ModeName='bus')
+    ```
+"""
 
 from .types import RouteEnum
 

@@ -1,4 +1,19 @@
-"""Accessed via dynamic method resolution under `tubeulator.fetch.occupancy`."""
+"""Accessed via dynamic method resolution under `tubeulator.fetch.occupancy`.
+
+!!! example "Example: `tubeulator.fetch.occupancy.meta_modes()`"
+
+    ```py
+    >>> ccs = fetch.occupancy.charge_connector_ids(ids="ChargePointCM-BPT62200886-143260")
+    >>> len(ccs)
+    1
+    >>> print(ccs[0].model_dump_json(indent=2))
+    {
+      "Id": 62824,
+      "SourceSystemPlaceId": "ChargePointCM-BPT62200886-143260",
+      "Status": "Available"
+    } 
+    ```
+"""
 
 from .types import RouteEnum
 

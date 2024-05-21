@@ -1,4 +1,24 @@
-"""Accessed via dynamic method resolution under `tubeulator.fetch.road`."""
+"""Accessed via dynamic method resolution under `tubeulator.fetch.road`.
+
+!!! example "Example: `tubeulator.fetch.road.meta_modes()`"
+
+    ```py
+    >>> road_by_ids = fetch.road.road_by_ids(ids="A1")
+    >>> print(road_by_ids[0].model_dump_json(indent=2))
+    {
+      "Id": "a1",
+      "DisplayName": "A1",
+      "Group": null,
+      "StatusSeverity": "Good",
+      "StatusSeverityDescription": "No Exceptional Delays",
+      "Bounds": "[[-0.25616,51.5319],[-0.10234,51.6562]]",
+      "Envelope": "[[-0.25616,51.5319],[-0.25616,51.6562],[-0.10234,51.6562],[-0.10234,51.5319],[-0.25616,51.5319]]",
+      "StatusAggregationStartDate": null,
+      "StatusAggregationEndDate": null,
+      "Url": "/Road/a1"
+    }
+    ```
+"""
 
 from .types import RouteEnum
 

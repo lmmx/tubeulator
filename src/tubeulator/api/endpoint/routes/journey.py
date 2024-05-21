@@ -1,4 +1,13 @@
-"""Accessed via dynamic method resolution under `tubeulator.fetch.journey`."""
+"""Accessed via dynamic method resolution under `tubeulator.fetch.journey`.
+
+!!! example "Example: `tubeulator.fetch.journey.modes()`"
+
+    ```py
+    >>> modes = fetch.journey.modes()
+    >>> modes[0]
+    Mode(IsTflService=False, IsFarePaying=True, IsScheduledService=False, ModeName='black-cab-as-customer')
+    ```
+"""
 
 from .types import RouteEnum
 
