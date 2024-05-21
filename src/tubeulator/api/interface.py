@@ -11,14 +11,14 @@ class EndpointInfo:
         for route in endpoint.value:
             endpoint_name = EndpointNames[endpoint.name]
             request = Request(path=Path(endpoint=endpoint_name, route=route))
-            setattr(self, route.name.lower(), request)
+            setattr(self, route.name, request)
 
 
 class AllEndpointInterface:
     def __init__(self):
         for endpoint in EndpointRoute:
             interface = EndpointInfo(endpoint=endpoint)
-            setattr(self, endpoint.name.lower(), interface)
+            setattr(self, endpoint.name, interface)
 
 
 fetch = AllEndpointInterface()

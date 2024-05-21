@@ -2,5 +2,5 @@ from .types import RouteEnum
 
 
 class AccidentStatsEndpointRoutes(RouteEnum):
-    YEAR_ACCIDENTS = "/{year}"
+    year_accidents = "/{year}"
     """Gets all accident details for accidents occuring in the specified year"""

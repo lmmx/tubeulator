@@ -2,5 +2,5 @@ from .types import RouteEnum
 
 
 class AirQualityEndpointRoutes(RouteEnum):
-    AIR_QUALITY_DATA = "/"
+    air_quality_data = "/"
     """Gets air quality data feed"""
