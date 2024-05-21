@@ -1,3 +1,4 @@
+"""Accessed via dispatch method under `tubeulator.fetch.accident`."""
 from .types import RouteEnum
 
 

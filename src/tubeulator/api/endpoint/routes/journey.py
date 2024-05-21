@@ -1,3 +1,4 @@
+"""Accessed via dispatch method under `tubeulator.fetch.journey`."""
 from .types import RouteEnum
 
 

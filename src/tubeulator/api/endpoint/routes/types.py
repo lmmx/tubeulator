@@ -1,3 +1,4 @@
+"""Accessed via dispatch method under `tubeulator.fetch.types`."""
 from enum import Enum
 from typing import TypeVar
 
