@@ -1,3 +1,5 @@
+"""All API endpoints are accessed via dispatch method under `tubeulator.fetch`."""
+
 from enum import Enum
 
 from .accident import AccidentStatsEndpointRoutes
@@ -19,17 +21,17 @@ __all__ = ["EndpointRoute"]
 
 
 class EndpointRoute(Enum):
-    ACCIDENT_STATS = AccidentStatsEndpointRoutes
-    AIR_QUALITY = AirQualityEndpointRoutes
-    BIKE_POINT = BikePointEndpointRoutes
-    CROWDING = CrowdingEndpointRoutes
-    DISRUPTIONS_LIFTS_V2 = DisruptionsLiftsEndpointRoutes
-    JOURNEY = JourneyEndpointRoutes
-    LINE = LineEndpointRoutes
-    MODE = ModeEndpointRoutes
-    OCCUPANCY = OccupancyEndpointRoutes
-    PLACE = PlaceEndpointRoutes
-    ROAD = RoadEndpointRoutes
-    SEARCH = SearchEndpointRoutes
-    STOP_POINT = StopPointEndpointRoutes
-    VEHICLE = VehicleEndpointRoutes
+    accident_stats = AccidentStatsEndpointRoutes
+    air_quality = AirQualityEndpointRoutes
+    bike_point = BikePointEndpointRoutes
+    crowding = CrowdingEndpointRoutes
+    disruptions_lifts_v2 = DisruptionsLiftsEndpointRoutes
+    journey = JourneyEndpointRoutes
+    line = LineEndpointRoutes
+    mode = ModeEndpointRoutes
+    occupancy = OccupancyEndpointRoutes
+    place = PlaceEndpointRoutes
+    road = RoadEndpointRoutes
+    search = SearchEndpointRoutes
+    stop_point = StopPointEndpointRoutes
+    vehicle = VehicleEndpointRoutes

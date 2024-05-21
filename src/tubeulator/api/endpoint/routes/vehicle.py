@@ -1,10 +1,12 @@
+"""Accessed via dynamic method resolution under `tubeulator.fetch.vehicle`."""
+
 from .types import RouteEnum
 
 
 class VehicleEndpointRoutes(RouteEnum):
-    EMISSION_SURCHARGE = "/EmissionSurcharge"
+    emission_surcharge = "/EmissionSurcharge"
     """Gets the Emissions Surcharge compliance for the Vehicle"""
-    ULEZ_COMPLIANCE = "/UlezCompliance"
+    ulez_compliance = "/UlezCompliance"
     """Gets the Ulez Surcharge compliance for the Vehicle"""
-    VEHICLE_ARRIVALS = "/{ids}/Arrivals"
+    vehicle_arrivals = "/{ids}/Arrivals"
     """Gets the predictions for a given list of vehicle Id's."""

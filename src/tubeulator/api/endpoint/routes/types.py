@@ -1,3 +1,5 @@
+"""Accessed via dynamic method resolution under `tubeulator.fetch.types`."""
+
 from enum import Enum
 from typing import TypeVar
 

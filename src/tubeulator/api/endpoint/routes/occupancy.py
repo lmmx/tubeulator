@@ -1,14 +1,16 @@
+"""Accessed via dynamic method resolution under `tubeulator.fetch.occupancy`."""
+
 from .types import RouteEnum
 
 
 class OccupancyEndpointRoutes(RouteEnum):
-    BIKE_POINTS = "/BikePoints/{ids}"
+    bike_points = "/BikePoints/{ids}"
     """Get the occupancy for bike points."""
-    CAR_PARK = "/CarPark"
+    car_park = "/CarPark"
     """Gets the occupancy for all car parks that have occupancy data"""
-    CAR_PARK_ID = "/CarPark/{id}"
+    car_park_id = "/CarPark/{id}"
     """Gets the occupancy for a car park with a given id"""
-    CHARGE_CONNECTOR = "/ChargeConnector"
+    charge_connector = "/ChargeConnector"
     """Gets the occupancy for all charge connectors"""
-    CHARGE_CONNECTOR_IDS = "/ChargeConnector/{ids}"
+    charge_connector_ids = "/ChargeConnector/{ids}"
     """Gets the occupancy for a charge connectors with a given id (sourceSystemPlaceId)"""

@@ -1,10 +1,12 @@
+"""Accessed via dynamic method resolution under `tubeulator.fetch.journey`."""
+
 from .types import RouteEnum
 
 
 class JourneyEndpointRoutes(RouteEnum):
-    FORWARD_REQUESTS = "/*"
+    forward_requests = "/*"
     """Forwards any remaining requests to the back-end"""
-    JOURNEY_RESULTS = "/JourneyResults/{from}/to/{to}"
+    journey_results = "/JourneyResults/{from}/to/{to}"
     """Perform a Journey Planner search from the parameters specified in simple types"""
-    MODES = "/Meta/Modes"
+    modes = "/Meta/Modes"
     """Gets a list of all of the available journey planner modes"""
