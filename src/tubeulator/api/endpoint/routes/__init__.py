@@ -1,4 +1,5 @@
 """All API endpoints are accessed via dispatch method under `tubeulator.fetch`."""
+
 from enum import Enum
 
 from .accident import AccidentStatsEndpointRoutes

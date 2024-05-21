@@ -1,4 +1,5 @@
 """Accessed via dynamic method resolution under `tubeulator.fetch.mode`."""
+
 from .types import RouteEnum
 
 
