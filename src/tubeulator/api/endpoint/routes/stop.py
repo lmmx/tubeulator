@@ -1,4 +1,16 @@
-"""Accessed via dynamic method resolution under `tubeulator.fetch.stop`."""
+"""Accessed via dynamic method resolution under `tubeulator.fetch.stop_point`.
+
+!!! example "Example: `tubeulator.fetch.stop_point.direction_to()`"
+
+    ```py
+    >>> direction_to = fetch.stop_point.direction_to(
+    ...         id="940GZZLUASL",
+    ...         toStopPointId="940GZZLUHWY",
+    ... )
+    >>> direction_to
+    'inbound'
+    ```
+"""
 
 from .types import RouteEnum
 

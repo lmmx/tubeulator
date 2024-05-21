@@ -1,4 +1,25 @@
-"""Accessed via dynamic method resolution under `tubeulator.fetch.place`."""
+"""Accessed via dynamic method resolution under `tubeulator.fetch.place`.
+
+!!! example "Example: `tubeulator.fetch.place.meta_categories()`"
+
+    Unfortunately most of these methods don't work. This one isn't much use on its own:
+
+    ```py
+    >>> categories = fetch.place.meta_categories()
+    >>> print(categories[11].model_dump_json(indent=2))
+    {
+      "Category": "Load",
+      "AvailableKeys": [
+        "Pallets/bagged",
+        "Liquids/gas",
+        "Containers",
+        "Bulks",
+        "General Cargo",
+        "Can accommodate a crane"
+      ]
+    }
+    ```
+"""
 
 from .types import RouteEnum
 
