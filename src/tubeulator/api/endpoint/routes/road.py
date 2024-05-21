@@ -1,4 +1,4 @@
-"""Accessed via dispatch method under `tubeulator.fetch.road`."""
+"""Accessed via dynamic method resolution under `tubeulator.fetch.road`."""
 from .types import RouteEnum
 
 

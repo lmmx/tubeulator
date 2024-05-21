@@ -1,4 +1,4 @@
-"""Accessed via dispatch method under `tubeulator.fetch.journey`."""
+"""Accessed via dynamic method resolution under `tubeulator.fetch.journey`."""
 from .types import RouteEnum
 
 

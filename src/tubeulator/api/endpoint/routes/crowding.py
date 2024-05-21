@@ -1,4 +1,4 @@
-"""Accessed via dispatch method under `tubeulator.fetch.crowding`."""
+"""Accessed via dynamic method resolution under `tubeulator.fetch.crowding`."""
 from .types import RouteEnum
 
 
