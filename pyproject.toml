@@ -19,6 +19,8 @@ dependencies = [
     "httpx",
     "jsonschema",
     "orjson",
+    "patito>=0.6.1",
+    "polars>=0.20.17",
     "pydantic>=2.6.4",
     "pymongo",
     "urllib3<2",
@@ -35,10 +37,6 @@ text = "MIT"
 [project.optional-dependencies]
 folium = [
     "folium>=0.16.0",
-]
-polars = [
-    "patito>=0.6.1",
-    "polars>=0.20.17",
 ]
 polars-lts-cpu = [
     "patito>=0.6.1",
