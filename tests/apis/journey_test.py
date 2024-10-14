@@ -1,6 +1,7 @@
 """Tests for the journey API."""
 
 from journey_data import all_endpoints
+
 from tubeulator import fetch
 
 tested_eps = {"journey_results", "modes"}
