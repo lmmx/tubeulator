@@ -2,6 +2,7 @@
 
 from bike_point_data import all_endpoints
 from pytest import mark
+
 from tubeulator import fetch
 
 tested_eps = {"all_locations", "bike_point_by_id"}
