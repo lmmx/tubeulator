@@ -2,6 +2,7 @@
 
 from air_quality_data import all_endpoints
 from pytest import mark
+
 from tubeulator import fetch
 
 tested_eps = {"air_quality_data"}
