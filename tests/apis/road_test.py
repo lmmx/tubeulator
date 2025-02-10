@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 
 from pytest import mark
 from road_data import all_endpoints
+
 from tubeulator import fetch
 
 tested_eps = {

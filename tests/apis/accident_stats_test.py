@@ -2,6 +2,7 @@
 
 from accident_stats_data import all_endpoints
 from pytest import mark
+
 from tubeulator import fetch
 
 tested_eps = {"year_accidents"}
