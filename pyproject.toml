@@ -35,6 +35,9 @@ version = "0.1.0"
 text = "MIT"
 
 [project.optional-dependencies]
+dev = [
+    "pre-commit>=4.1.0",
+]
 folium = [
     "folium>=0.16.0",
 ]
