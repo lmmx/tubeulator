@@ -57,9 +57,9 @@ def find_arrays(chased: list[str]) -> list[str]:
                 array_shortlist.append(stem)
             else:
                 substem, substem_node = next(iter(stem_node.data.items()))
-                assert (
-                    substem_node.is_word
-                ), "Descended 2 trie levels and didn't get a word"
+                assert substem_node.is_word, (
+                    "Descended 2 trie levels and didn't get a word"
+                )
                 array_shortlist.append(f"{stem}{substem}")
     except AssertionError:
         # It's an assortment of responses, just pull out the ones we want
