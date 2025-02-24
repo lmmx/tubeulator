@@ -2,6 +2,7 @@
 
 from pytest import mark
 from search_data import all_endpoints
+
 from tubeulator import fetch
 
 tested_eps = {
