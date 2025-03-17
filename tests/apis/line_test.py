@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 
 from line_data import all_endpoints, snapshot_album
 from pytest import mark
+
 from tubeulator import fetch
 
 tested_eps = {

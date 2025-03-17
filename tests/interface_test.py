@@ -1,5 +1,6 @@
-import tubeulator
 from inline_snapshot import snapshot
+
+import tubeulator
 
 
 def test_interface():

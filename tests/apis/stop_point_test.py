@@ -3,6 +3,7 @@
 from inline_snapshot import snapshot
 from pytest import mark, raises
 from stop_point_data import all_endpoints
+
 from tubeulator import fetch
 from tubeulator.exc import RequestError
 

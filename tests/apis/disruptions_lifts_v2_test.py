@@ -2,6 +2,7 @@
 
 from disruptions_lifts_v2_data import all_endpoints
 from pytest import mark
+
 from tubeulator import fetch
 
 tested_eps = set()

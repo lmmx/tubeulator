@@ -1,6 +1,7 @@
 """Tests for the mode API."""
 
 from mode_data import all_endpoints
+
 from tubeulator import fetch
 
 tested_eps = {"active_service_types", "mode_arrivals"}
