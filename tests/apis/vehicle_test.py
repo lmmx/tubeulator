@@ -1,8 +1,9 @@
 """Tests for the vehicle API."""
 
 from pytest import mark
-from tubeulator import fetch
 from vehicle_data import all_endpoints
+
+from tubeulator import fetch
 
 tested_eps = {"vehicle_arrivals"}
 untested_eps = {"emission_surcharge", "ulez_compliance"}

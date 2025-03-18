@@ -135,7 +135,7 @@ def generate_dataclass(
                 # The list of namespace lookups is empty
                 dealiased_ref = source_schema_name
             # referent_class_name = f'{dealiased_ref.rsplit(".", 1)[-1]}'
-            class_name = f'{dealiased_ref.rsplit(".", 1)[-1]}Response'
+            class_name = f"{dealiased_ref.rsplit('.', 1)[-1]}Response"
             gen_source = ref_name
         elif name in schema_arrays:
             if name not in schema_array_shortlist:

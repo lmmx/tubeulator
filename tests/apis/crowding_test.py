@@ -2,6 +2,7 @@
 
 from crowding_data import all_endpoints
 from pytest import mark
+
 from tubeulator import fetch
 
 tested_eps = {"naptan_crowding", "live_crowding", "dow_crowding"}
