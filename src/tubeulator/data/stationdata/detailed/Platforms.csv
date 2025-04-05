@@ -99,8 +99,8 @@ HUBABW-Plat04-WB-elizabeth,HUBABW,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,
 910GDENMRKH-Plat04-EB-national-rail,910GDENMRKH,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
 910GDEPTFD-Plat01-WB-thameslink,910GDEPTFD,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
 910GDEPTFD-Plat02-EB-thameslink,910GDEPTFD,2,Eastbound,,Eastbound Platform 2 ,TRUE,FALSE,,TRUE
-910GEDMNGRN-Plat01-SB-london-overground|national-rail,910GEDMNGRN,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
-910GEDMNGRN-Plat02-NB-london-overground|national-rail,910GEDMNGRN,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
+910GEDMNGRN-Plat01-SB-london-overground,910GEDMNGRN,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GEDMNGRN-Plat02-NB-london-overground,910GEDMNGRN,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
 910GELTR-Plat01-SB-thameslink,910GELTR,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
 910GELTR-Plat02-NB-thameslink,910GELTR,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
 910GELTR-Plat03-SB-thameslink,910GELTR,3,Southbound,,Southbound Platform 3,TRUE,FALSE,,TRUE
@@ -180,8 +180,8 @@ HUBABW-Plat04-WB-elizabeth,HUBABW,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,
 910GILFORD-Plat02-EB-elizabeth,910GILFORD,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
 910GILFORD-Plat03-WB-elizabeth,910GILFORD,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
 910GILFORD-Plat04-EB-elizabeth,910GILFORD,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
-910GIVER-Plat01-WB-elizabeth,910GIVER,1,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
-910GIVER-Plat02-EB-elizabeth,910GIVER,2,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GIVER-Plat01-WB-elizabeth,910GIVER,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GIVER-Plat02-EB-elizabeth,910GIVER,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
 910GIVER-Plat03-WB-elizabeth,910GIVER,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
 910GIVER-Plat04-EB-elizabeth,910GIVER,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
 910GKENR-Plat01-WB-london-overground,910GKENR,1,Westbound,,Westbound Platform 1,TRUE,FALSE,Station Terrace,TRUE
@@ -190,8 +190,8 @@ HUBABW-Plat04-WB-elizabeth,HUBABW,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,
 910GKLBRNHR-Plat02-NB-london-overground,910GKLBRNHR,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
 910GKNTSHTW-Plat01-WB-london-overground,910GKNTSHTW,1,Westbound,,Westbound Platform 1 ,TRUE,FALSE,,TRUE
 910GKNTSHTW-Plat02-EB-london-overground,910GKNTSHTW,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
-910GLANGLEY-Plat01-WB-elizabeth,910GLANGLEY,1,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
-910GLANGLEY-Plat02-EB-elizabeth,910GLANGLEY,2,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GLANGLEY-Plat01-WB-elizabeth,910GLANGLEY,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GLANGLEY-Plat02-EB-elizabeth,910GLANGLEY,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
 910GLANGLEY-Plat03-WB-elizabeth,910GLANGLEY,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
 910GLANGLEY-Plat04-EB-elizabeth,910GLANGLEY,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
 910GLBGHJN-Plat01-NB-thameslink,910GLBGHJN,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
@@ -245,10 +245,12 @@ HUBABW-Plat04-WB-elizabeth,HUBABW,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,
 910GPCKHMRY-Plat04-SB-thameslink,910GPCKHMRY,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,FALSE
 910GPENEW-Plat01-NB-london-overground,910GPENEW,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
 910GPENEW-Plat02-SB-london-overground,910GPENEW,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
-910GPETSWD-Plat03-NB-thameslink,910GPETSWD,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,FALSE
-910GPETSWD-Plat04-SB-thameslink,910GPETSWD,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,FALSE
-910GPLMS-Plat01-EB-thameslink,910GPLMS,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,FALSE
-910GPLMS-Plat02-WB-thameslink,910GPLMS,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,FALSE
+910GPETSWD-Plat01-NB-national-rail,910GPETSWD,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+910GPETSWD-Plat02-SB-national-rail,910GPETSWD,2,Southbound,,Southbound Platform 2 ,TRUE,FALSE,,TRUE
+910GPETSWD-Plat03-NB-national-rail,910GPETSWD,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,TRUE
+910GPETSWD-Plat04-SB-national-rail,910GPETSWD,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,TRUE
+910GPLMS-Plat01-WB-national-rail,910GPLMS,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GPLMS-Plat02-EB-national-rail,910GPLMS,2,Eastbound,,Eastbound Platform 2 ,TRUE,FALSE,,TRUE
 910GPURLEY-Plat03-NB-thameslink,910GPURLEY,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,FALSE
 910GPURLEY-Plat04-SB-thameslink,910GPURLEY,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,FALSE
 910GRBRN-Plat01-NB-thameslink,910GRBRN,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
@@ -257,6 +259,8 @@ HUBABW-Plat04-WB-elizabeth,HUBABW,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,
 910GRCTRYRD-Plat02-NB-london-overground,910GRCTRYRD,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
 910GRDNGSTN-Plat14-EB-elizabeth,910GRDNGSTN,14,Eastbound,,Eastbound Platform 14,TRUE,FALSE,,TRUE
 910GROMFORD-Plat01-EB-london-overground,910GROMFORD,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
+910GROMFORD-Plat02-WB-national-rail,910GROMFORD,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+910GROMFORD-Plat03-EB-national-rail,910GROMFORD,3,Eastbound,,Eastbound Platform 3,TRUE,FALSE,,TRUE
 910GROMFORD-Plat04-WB-elizabeth,910GROMFORD,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,TRUE
 910GROMFORD-Plat05-EB-elizabeth,910GROMFORD,5,Eastbound,,Eastbound Platform 5,TRUE,FALSE,,TRUE
 910GRTHERHI-Plat01-NB-london-overground,910GRTHERHI,1,Northbound,,Northbound Platform 1 ,TRUE,FALSE,,TRUE
@@ -267,6 +271,10 @@ HUBABW-Plat04-WB-elizabeth,HUBABW,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,
 910GSBURY-Plat02-NB-london-overground,910GSBURY,2,Northbound,,Northbound Platform 2 ,TRUE,FALSE,,TRUE
 910GSCROYDN-Plat03-NB-thameslink,910GSCROYDN,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,FALSE
 910GSCROYDN-Plat05-SB-thameslink,910GSCROYDN,5,Southbound,,Southbound Platform 5,TRUE,FALSE,,FALSE
+910GSHENFLD-Plat01-WB-national-rail,910GSHENFLD,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,FALSE
+910GSHENFLD-Plat02-WB-national-rail,910GSHENFLD,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,FALSE
+910GSHENFLD-Plat03-EB-national-rail,910GSHENFLD,3,Eastbound,,Eastbound Platform 3,TRUE,FALSE,,FALSE
+910GSHENFLD-Plat04-EB-national-rail,910GSHENFLD,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,FALSE
 910GSHENFLD-Plat05-WB-elizabeth,910GSHENFLD,5,Westbound,,Westbound Platform 5,TRUE,FALSE,,TRUE
 910GSHENFLD-Plat06-WB-elizabeth,910GSHENFLD,6,Westbound,,Westbound Platform 6,TRUE,FALSE,,TRUE
 910GSHLIER-Plat01-NB-thameslink,910GSHLIER,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
@@ -281,8 +289,9 @@ HUBABW-Plat04-WB-elizabeth,HUBABW,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,
 910GSIVRST-Plat02-NB-london-overground,910GSIVRST,2,Northbound,,Northbound Platform 2 ,TRUE,FALSE,,TRUE
 910GSLADEGN-Plat01-WB-thameslink,910GSLADEGN,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,FALSE
 910GSLADEGN-Plat02-EB-thameslink,910GSLADEGN,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,FALSE
-910GSLOUGH-Plat02-WB-elizabeth,910GSLOUGH,2,Westbound,,Westbound Platform 4,TRUE,FALSE,,TRUE
-910GSLOUGH-Plat03-EB-elizabeth,910GSLOUGH,3,Eastbound,,Eastbound Platform 5,TRUE,FALSE,,TRUE
+910GSLOUGH-Plat01-WB-national-rail,910GSLOUGH,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GSLOUGH-Plat02-WB-elizabeth,910GSLOUGH,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
+910GSLOUGH-Plat03-EB-elizabeth,910GSLOUGH,3,Eastbound,,Eastbound Platform 3,TRUE,FALSE,,TRUE
 910GSLOUGH-Plat04-WB-elizabeth,910GSLOUGH,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,TRUE
 910GSLOUGH-Plat05-EB-elizabeth,910GSLOUGH,5,Eastbound,,Eastbound Platform 5,TRUE,FALSE,,TRUE
 910GSMERTON-Plat01-NB-thameslink,910GSMERTON,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
@@ -310,8 +319,8 @@ HUBABW-Plat04-WB-elizabeth,HUBABW,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,
 910GSTPADOM-Plat11-EB-national-rail,HUBKGX,11,Eastbound,,Eastbound Platform 11,TRUE,FALSE,,TRUE
 910GSTPADOM-Plat12-EB-national-rail,HUBKGX,12,Eastbound,,Eastbound Platform 12,TRUE,FALSE,,TRUE
 910GSTPADOM-Plat13-EB-national-rail,HUBKGX,13,Eastbound,,Eastbound Platform 13,TRUE,FALSE,,TRUE
-910GSTRETHM-Plat01-SB-thameslink,910GSTRETHM,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
-910GSTRETHM-Plat02-NB-thameslink,910GSTRETHM,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,FALSE
+910GSTRETHM-Plat01-SB-national-rail,910GSTRETHM,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
+910GSTRETHM-Plat02-NB-national-rail,910GSTRETHM,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
 910GSURREYQ-Plat01-NB-london-overground,910GSURREYQ,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
 910GSURREYQ-Plat02-SB-london-overground,910GSURREYQ,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
 910GSUTTONC-Plat01-NB-thameslink,910GSUTTONC,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
@@ -326,14 +335,14 @@ HUBABW-Plat04-WB-elizabeth,HUBABW,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,
 910GSWLY-Plat02-SB-thameslink,910GSWLY,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
 910GSWLY-Plat03-NB-thameslink,910GSWLY,3,Northbound,,Northbound Platform 3,TRUE,FALSE,,TRUE
 910GSWLY-Plat04-SB-thameslink,910GSWLY,4,Southbound,,Southbound Platform 4,TRUE,FALSE,,TRUE
-910GTAPLOW-Plat01-WB-elizabeth,910GTAPLOW,1,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
-910GTAPLOW-Plat02-EB-elizabeth,910GTAPLOW,2,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GTAPLOW-Plat01-WB-elizabeth,910GTAPLOW,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
+910GTAPLOW-Plat02-EB-elizabeth,910GTAPLOW,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
 910GTAPLOW-Plat03-WB-elizabeth,910GTAPLOW,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
 910GTAPLOW-Plat04-EB-elizabeth,910GTAPLOW,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
 910GTHBLDSG-Plat01-SB-london-overground,910GTHBLDSG,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
 910GTHBLDSG-Plat02-NB-london-overground,910GTHBLDSG,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
-910GTOOTING-Plat01-NB-thameslink,910GTOOTING,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
-910GTOOTING-Plat02-SB-thameslink,910GTOOTING,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
+910GTOOTING-Plat01-NB-thameslink,910GTOOTING,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,TRUE
+910GTOOTING-Plat02-SB-thameslink,910GTOOTING,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
 910GTULSEH-Plat01-NB-thameslink,910GTULSEH,1,Northbound,,Northbound Platform 1,TRUE,FALSE,,FALSE
 910GTULSEH-Plat02-SB-thameslink,910GTULSEH,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,FALSE
 910GTURKYST-Plat01-SB-london-overground,910GTURKYST,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
@@ -361,6 +370,7 @@ HUBABW-Plat04-WB-elizabeth,HUBABW,4,Westbound,,Westbound Platform 4,TRUE,FALSE,,
 910GWDST-Plat02-NB-london-overground,910GWDST,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
 910GWEALING-Plat03-WB-elizabeth,910GWEALING,3,Westbound,,Westbound Platform 3,TRUE,FALSE,,TRUE
 910GWEALING-Plat04-EB-elizabeth,910GWEALING,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
+910GWEALING-Plat05-WB-national-rail,910GWEALING,5,Westbound,,Westbound Platform 5,TRUE,FALSE,,TRUE
 910GWHHRTLA-Plat01-SB-london-overground,910GWHHRTLA,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
 910GWHHRTLA-Plat02-NB-london-overground,910GWHHRTLA,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
 910GWHMDSTD-Plat01-EB-london-overground,910GWHMDSTD,1,Eastbound,,Eastbound Platform 1,TRUE,FALSE,,TRUE
@@ -592,6 +602,7 @@ HUBBDS-PlatB-WB-elizabeth,HUBBDS,B,Westbound,,Westbound Platform B,TRUE,FALSE,,T
 940GZZLUCHL-Plat02-EB-central,940GZZLUCHL,2,Eastbound,9400ZZLUCHL1,Eastbound Platform 2,TRUE,FALSE,,TRUE
 940GZZLUCKS-Plat01-WB-piccadilly,940GZZLUCKS,1,Westbound,9400ZZLUCKS1,Westbound Platform 1,TRUE,FALSE,,TRUE
 940GZZLUCKS-Plat02-WB-piccadilly,940GZZLUCKS,2,Westbound,9400ZZLUCKS1,Westbound Platform 2,TRUE,FALSE,,TRUE
+940GZZLUCKS-Plat03-WB-piccadilly,940GZZLUCKS,3,Westbound,9400ZZLUCKS2,Westbound Platform 3,TRUE,FALSE,,TRUE
 940GZZLUCKS-Plat04-WB-piccadilly,940GZZLUCKS,4,Westbound,9400ZZLUCKS1,Westbound Platform 4,TRUE,FALSE,,TRUE
 940GZZLUCND-Plat01-NB-northern,940GZZLUCND,1,Northbound,9400ZZLUCND1,Northbound Platform 1,TRUE,FALSE,,TRUE
 940GZZLUCND-Plat02-SB-northern,940GZZLUCND,2,Southbound,9400ZZLUCND1,Southbound Platform 2,TRUE,FALSE,,TRUE
@@ -1037,7 +1048,7 @@ HUBBAN-Plat06-EB-central,HUBBAN,6,Eastbound,9400ZZLUBNK1,Eastbound Platform 6,TR
 HUBBAN-Plat07-WB-waterloo-city,HUBBAN,7,Westbound,9400ZZLUBNK3,Westbound Platform 7,TRUE,FALSE,,TRUE
 HUBBAN-Plat08-WB-waterloo-city,HUBBAN,8,Westbound,9400ZZLUBNK8,Westbound Platform 8,TRUE,FALSE,,TRUE
 HUBBAN-Plat09-EB-dlr,HUBBAN,9,Eastbound,,Eastbound Platform 9,TRUE,FALSE,,TRUE
-HUBBAN-Plat10-EB-dlr,HUBBAN,10,Eastbound,,Eastbound Platform 10,TRUE,FALSE,,TRUE
+HUBBAN-Plat10-WB-dlr,HUBBAN,10,Westbound,,Westbound Platform 10,TRUE,FALSE,,TRUE
 HUBBEK-WB-tram,HUBBEK,,Westbound,,Westbound,TRUE,FALSE,,TRUE
 HUBBEK-Plat01-WB-national-rail,HUBBEK,1,Westbound,,Westbound Platform 1,TRUE,FALSE,,TRUE
 HUBBEK-Plat02-WB-national-rail,HUBBEK,2,Westbound,,Westbound Platform 2,TRUE,FALSE,,TRUE
@@ -1263,7 +1274,6 @@ HUBLST-Plat08-EB-london-overground,HUBLST,8,Eastbound,,Eastbound Platform 8,TRUE
 HUBLST-Plat15-EB-elizabeth,HUBLST,15,Eastbound,,Eastbound Platform 15,TRUE,FALSE,,TRUE
 HUBLST-Plat16-EB-elizabeth,HUBLST,16,Eastbound,,Eastbound Platform 16,TRUE,FALSE,,TRUE
 HUBLST-Plat17-EB-elizabeth,HUBLST,17,Eastbound,,Eastbound Platform 17,TRUE,FALSE,,TRUE
-HUBLST-Plat18-EB-elizabeth,HUBLST,18,Eastbound,,Eastbound Platform 18,TRUE,FALSE,,TRUE
 HUBLST-PlatA-EB-elizabeth,HUBLST,A,Eastbound,,Eastbound Platform A,TRUE,FALSE,,TRUE
 HUBLST-PlatB-WB-elizabeth,HUBLST,B,Westbound,,Westbound Platform B,TRUE,FALSE,,TRUE
 HUBMJT-EB-tram,HUBMJT,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
@@ -1380,6 +1390,8 @@ HUBWEH-Plat03-SB-dlr,HUBWEH,3,Southbound,9400ZZDLWHM1,Southbound Platform 3,TRUE
 HUBWEH-Plat04-NB-dlr,HUBWEH,4,Northbound,9400ZZDLWHM1,Northbound Platform 4,TRUE,FALSE,,TRUE
 HUBWEH-Plat05-WB-jubilee,HUBWEH,5,Westbound,9400ZZLUWHM2,Westbound Platform 5,TRUE,FALSE,,TRUE
 HUBWEH-Plat06-EB-jubilee,HUBWEH,6,Eastbound,9400ZZLUWHM2,Eastbound Platform 6,TRUE,FALSE,,TRUE
+HUBWEH-Plat07-WB-national-rail,HUBWEH,7,Westbound,,Westbound Platform 7,TRUE,FALSE,,TRUE
+HUBWEH-Plat08-EB-national-rail,HUBWEH,8,Eastbound,,Eastbound Platform 8,TRUE,FALSE,,TRUE
 HUBWFJ-Plat01-SB-london-overground,HUBWFJ,1,Southbound,,Southbound Platform 1,TRUE,FALSE,,TRUE
 HUBWFJ-Plat02-SB-london-overground,HUBWFJ,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
 HUBWFJ-Plat03-SB-london-overground,HUBWFJ,3,Southbound,,Southbound Platform 3,TRUE,FALSE,,TRUE
@@ -1389,9 +1401,9 @@ HUBWHC-Plat01-SB-victoria,HUBWHC,1,Southbound,9400ZZLUWWL1,Southbound Platform 1
 HUBWHC-Plat02-NB-london-overground,HUBWHC,2,Northbound,,Northbound Platform 2,TRUE,FALSE,,TRUE
 HUBWHC-Plat02-SB-victoria,HUBWHC,2,Southbound,9400ZZLUWWL1,Southbound Platform 2,TRUE,FALSE,,TRUE
 HUBWIJ-Plat01-SB-bakerloo|london-overground,HUBWIJ,1,Southbound,9400ZZLUWJN1,Southbound Platform 1,TRUE,TRUE,,TRUE
-HUBWIJ-Plat02-SB-london-overground,HUBWIJ,2,Southbound,,Southbound Platform 2,TRUE,FALSE,,TRUE
+HUBWIJ-Plat02-EB-london-overground,HUBWIJ,2,Eastbound,,Eastbound Platform 2,TRUE,FALSE,,TRUE
 HUBWIJ-Plat03-NB-bakerloo|london-overground,HUBWIJ,3,Northbound,9400ZZLUWJN1,Northbound Platform 3,TRUE,TRUE,,TRUE
-HUBWIJ-Plat04-NB-london-overground,HUBWIJ,4,Northbound,,Northbound Platform 4,TRUE,FALSE,,TRUE
+HUBWIJ-Plat04-EB-london-overground,HUBWIJ,4,Eastbound,,Eastbound Platform 4,TRUE,FALSE,,TRUE
 HUBWIJ-Plat05-WB-london-overground,HUBWIJ,5,Westbound,,Westbound Platform 5,TRUE,FALSE,,TRUE
 HUBWIM-EB-tram,HUBWIM,,Eastbound,,Eastbound,TRUE,FALSE,,TRUE
 HUBWIM-Plat01-EB-district,HUBWIM,1,Eastbound,9400ZZLUWIM1,Eastbound Platform 1,TRUE,FALSE,,TRUE
