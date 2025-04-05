@@ -124,11 +124,8 @@ StationUniqueId,Id,IsAccessible,HasBabyChanging,IsInsideGateLine,Location,IsFeeC
 940GZZLUDOH,1,FALSE,FALSE,TRUE,Located on platform,FALSE,Male,TRUE
 940GZZLUDOH,2,FALSE,TRUE,TRUE,Located on platform,FALSE,Female,TRUE
 940GZZLUDOH,3,TRUE,FALSE,TRUE,Located on platform,FALSE,Unisex,TRUE
-940GZZLUEAE,1,FALSE,FALSE,FALSE,Located in ticket hall,FALSE,Male,TRUE
-940GZZLUEAE,2,FALSE,FALSE,FALSE,Located in ticket hall,FALSE,Female,TRUE
 940GZZLUECM,1,FALSE,FALSE,TRUE,Located on platform 2,FALSE,Male,TRUE
 940GZZLUECM,2,FALSE,FALSE,TRUE,Located on platform 1,FALSE,Female,TRUE
-940GZZLUECT,3,TRUE,FALSE,TRUE,Located in Earl's Court Road ticket hall,FALSE,Unisex,FALSE
 940GZZLUEPG,1,FALSE,FALSE,TRUE,Located on platform 1,FALSE,Male,TRUE
 940GZZLUEPG,2,FALSE,FALSE,TRUE,Located on platform 1,FALSE,Female,TRUE
 940GZZLUEPG,3,TRUE,TRUE,TRUE,Located on platform 2,FALSE,Unisex,TRUE
@@ -216,8 +213,6 @@ StationUniqueId,Id,IsAccessible,HasBabyChanging,IsInsideGateLine,Location,IsFeeC
 940GZZLURSP,2,FALSE,FALSE,TRUE,Located on platform 2,FALSE,Female,TRUE
 940GZZLURVY,1,FALSE,FALSE,FALSE,Located on platform 2,FALSE,Male,TRUE
 940GZZLURVY,2,FALSE,FALSE,FALSE,Located on platform 2,FALSE,Female,TRUE
-940GZZLURYL,1,FALSE,FALSE,TRUE,Located in ticket hall,FALSE,Male,TRUE
-940GZZLURYL,2,FALSE,FALSE,TRUE,Located in ticket hall,FALSE,Female,TRUE
 940GZZLUSFB,1,FALSE,FALSE,TRUE,Located in ticket hall,FALSE,Male,TRUE
 940GZZLUSFB,2,FALSE,FALSE,TRUE,Located in ticket hall,FALSE,Female,TRUE
 940GZZLUSJW,1,FALSE,FALSE,FALSE,Located in ticket hall,FALSE,Male,TRUE
