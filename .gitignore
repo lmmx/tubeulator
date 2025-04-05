@@ -18,3 +18,4 @@ _build
 version.py
 
 site/
+.pdm-python
