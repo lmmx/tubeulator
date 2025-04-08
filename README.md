@@ -12,7 +12,6 @@ TfL open data interface library.
 ## Requires
 
 - Python 3.9+
-- MongoDB
 
 ## Installation
 
@@ -32,8 +31,6 @@ conda create -n tubeulator "python=3.11"
 conda activate tubeulator
 pip install -r requirements.txt
 ```
-
-You can install MongoDB globally or just in the environment (`conda install mongodb`)
 
 ## Usage
 
@@ -139,27 +136,11 @@ Possible features to customise the `Journey`:
 
 ## Storage
 
-A good option for storage would be to use MongoDB
-([PyMongo](https://pymongo.readthedocs.io/en/stable/tutorial.html))
-as done in [this project](https://github.com/milh0use/tfl/blob/master/monitor_buses.py).
-This would require the user to set up and run a MongoDB client with `mongod`,
-then the program would connect to it on localhost.
+This library previously used MongoDB for persistent storage but now uses TinyDB.
 
 For simplicity, I store the data in the package itself (under `src/tubeulator` in this repo,
 which would be retained when distributed as an installed package in `site-packages`),
 rather than the default `/data/db` at the root of my file system.
-
-The program will not create this directory within its package directory if there is already an
-instance of MongoDB running (`mongod`) to connect to. To supply a different database path, run
-the following and substitute your path of choice:
-
-```
-mkdir -p data/db
-mongod --dbpath data/db
-```
-
-Data is stored in JSON-style documents (represented as dictionaries in PyMongo),
-converted from Python types to BSON types under the hood.
 
 ## API fetching and parsing into DTO dataclasses
 

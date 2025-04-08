@@ -1,12 +1,12 @@
 At a high level, this project aims to create a transport data processing application using the TfL
-data API, OpenAPI schema, MongoDB, and Python. The main components of the project are:
+data API, OpenAPI schema, TinyDB, and Python. The main components of the project are:
 
 1. OpenAPI schema processing: This part of the project uses the OpenAPI schema provided by TfL to
 understand the structure and types of data available through their API. The schema helps in parsing
 the data and defining the data models used in the application.
 
-2. MongoDB database: The MongoDB database is used to store the data retrieved from the TfL API. The
-data is stored in JSON-style documents, which are then converted to BSON types for MongoDB. This
+2. TinyDB database: The TinyDB database is used to store the data retrieved from the TfL API. The
+data is stored in JSON-style documents, which are then converted to BSON types for TinyDB. This
 allows efficient storage and retrieval of the transport data for further processing and analysis.
 
 3. Python code for core abstractions: The project uses Python to implement the core abstractions,
@@ -20,7 +20,7 @@ The project can work as follows:
 underground, overground, bus, and walking routes. The fetched data is parsed using the OpenAPI
 schema to create Python objects corresponding to the core abstractions.
 
-2. The data is then stored in the MongoDB database for efficient storage and retrieval. This allows
+2. The data is then stored in the TinyDB database for efficient storage and retrieval. This allows
 the application to quickly access the transport data as needed, without having to fetch it from the
 TfL API each time.
 
@@ -32,6 +32,6 @@ interconnections.
 4. The application can be further customized by allowing users to specify preferences, such as
 avoiding certain areas, preferring faster routes, or minimizing walking time.
 
-Overall, this project combines the power of the TfL data API, OpenAPI schema, MongoDB, and Python to
+Overall, this project combines the power of the TfL data API, OpenAPI schema, TinyDB, and Python to
 create a comprehensive transport data processing application that provides valuable insights and
 features for users navigating the transport network.

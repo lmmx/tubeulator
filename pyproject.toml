@@ -23,7 +23,7 @@ dependencies = [
     "patito>=0.6.1",
     "polars>=0.20.17",
     "pydantic>=2.6.4",
-    "pymongo",
+    "tinydb>=4.8.2",
     "urllib3<2",
 ]
 description = "TfL open data interface library."
