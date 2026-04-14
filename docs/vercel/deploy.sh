@@ -1,28 +1,12 @@
 #!/bin/bash
-#echo "INSTALLING WGET"
+set -euo pipefail
 
-echo "CURLING MICROMAMBA"
-curl -sL https://micromamba.snakepit.net/api/micromamba/linux-64/latest | tar -xvj bin/micromamba
+echo "INSTALLING UV"
+curl -LsSf https://astral.sh/uv/install.sh | sh
+export PATH="$HOME/.local/bin:$PATH"
 
-echo "INITIALISING MICROMAMBA"
-./bin/micromamba shell init -s bash -p ~/micromamba
-# Python interpreter lives at /vercel/micromamba/bin/python
-echo "SOURCING BASHRC"
-source ~/.bashrc
+echo "UV VERSION"
+uv --version
 
-# activate the environment and install a new version of Python
-echo "ACTIVATING MICROMAMBA ENV"
-micromamba activate base
-echo "INSTALLING PYTHON 3.11 IN MICROMAMBA ENV"
-micromamba install python=3.11 -c conda-forge -y
-
-# install the dependencies
-echo "PRINTING PYTHON VERSION"
-python --version
-echo "PIP INSTALLING PDM"
-python -m pip install pdm 'urllib3<2'
-echo "PDM INSTALLING THE DOCS DEPS"
-pdm config python.use_venv false
-pdm install --no-default -dG docs -v
-echo "PDM RUNNING MKDOCS TO SHOW IT IS OK"
-pdm run mkdocs
+echo "SYNCING DOCS DEPS"
+uv sync --frozen --no-default-groups --group docs

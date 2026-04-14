@@ -1,4 +1,9 @@
-echo "MICROMAMBA VERSION REPORT"
-~/micromamba/bin/python --version
+#!/bin/bash
+set -euo pipefail
+export PATH="$HOME/.local/bin:$PATH"
+
+echo "PYTHON VERSION"
+uv run --no-sync python --version
+
 echo "MKDOCS BUILD"
-~/micromamba/bin/python -m pdm run mkdocs build -v
+uv run --no-sync mkdocs build -v
