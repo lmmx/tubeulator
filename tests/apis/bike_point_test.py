@@ -26,5 +26,5 @@ def test_search_stations():
 
 
 def test_bike_point_by_id():
-    bike_point_by_id = fetch.bike_point.bike_point_by_id(id="BikePoints_100")
+    bike_point_by_id = fetch.bike_point.bike_point_by_id(id="BikePoints_101")
     assert bike_point_by_id

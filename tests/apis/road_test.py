@@ -40,6 +40,9 @@ def test_meta_severities():
     assert meta_severities
 
 
+@mark.skip(
+    reason="404",
+)
 def test_disruption_by_ids():
     """Incident from website, may not be able to keep it?
 

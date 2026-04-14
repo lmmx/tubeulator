@@ -6,6 +6,7 @@ requires = [
 
 [dependency-groups]
 dev = [
+    "pdbpp>=0.12.1",
     "pre-commit>=4.1.0",
 ]
 docs = [
