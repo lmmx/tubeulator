@@ -9,4 +9,4 @@ echo "UV VERSION"
 uv --version
 
 echo "SYNCING DOCS + VERCEL DEPS"
-uv sync --python 3.11 --frozen --no-default-groups --group docs --group vercel
+uv sync --python 3.11 --frozen --no-default-groups --group docs

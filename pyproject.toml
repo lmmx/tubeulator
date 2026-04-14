@@ -21,9 +21,6 @@ test = [
     "pytest-xdist>=3.6.1",
     "pytest>=7.4.0",
 ]
-vercel = [
-    "urllib3<2",
-]
 
 [project]
 authors = [
