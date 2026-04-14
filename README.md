@@ -22,7 +22,17 @@ Requires Python 3.10+.
 ```python
 >>> from tubeulator.topology.combine import load_stations_by_line
 >>> df = load_stations_by_line()
->>> df.sort("StationName").head(3)
+>>> df.sort("Line").head(3)
+shape: (3, 2)
+┌──────────┬─────────────────────────────────┐
+│ Line     ┆ StationName                     │
+│ ---      ┆ ---                             │
+│ str      ┆ list[str]                       │
+╞══════════╪═════════════════════════════════╡
+│ bakerloo ┆ ["Kilburn Park", "Edgware Road… │
+│ central  ┆ ["Wanstead", "Barkingside", … … │
+│ circle   ┆ ["King's Cross St Pancras", "R… │
+└──────────┴─────────────────────────────────┘
 ```
 
 Every TfL API is available through a typed fetch interface:
@@ -31,22 +41,21 @@ Every TfL API is available through a typed fetch interface:
 >>> from tubeulator import fetch
 >>> result = fetch.stop_point.search_query(query="Euston")
 >>> result.Total
-6
+14
 ```
 
-Responses are pydantic models, so autocomplete and static analysis work
+Responses are Pydantic models, so autocomplete and static analysis work
 end-to-end.
 
 ## Related projects
 
-tubeulator is the data layer. Built on top of it:
+If you want the typed API client, you're in the right place. For the research
+models or a running server, see the related projects built on top of this
+library's data layer:
 
-- **[tubeulator-models](https://github.com/lmmx/tubeulator-models)** — experimental
-  GNN route planning and travel-time prediction trained on TfL timetable data.
-  Models and datasets published to Hugging Face.
 - **[tb8](https://github.com/lmmx/tb8)** — FastAPI server and React frontend.
 - **[tb8-rs](https://github.com/lmmx/tb8-rs)** — Rust reimplementation of the
   tb8 server.
-
-If you want the typed API client, you're in the right place. For the research
-models or a running server, follow the links.
+- **[tubeulator-models](https://github.com/lmmx/tubeulator-models)** — experimental
+  GNN route planning and travel-time prediction trained on TfL timetable data.
+  Models and datasets published to Hugging Face.
