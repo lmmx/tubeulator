@@ -8,5 +8,5 @@ export PATH="$HOME/.local/bin:$PATH"
 echo "UV VERSION"
 uv --version
 
-echo "SYNCING DOCS DEPS"
-uv sync --frozen --no-default-groups --group docs
+echo "SYNCING DOCS + VERCEL DEPS"
+uv sync --python 3.11 --frozen --no-default-groups --group docs --group vercel

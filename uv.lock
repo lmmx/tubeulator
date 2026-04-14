@@ -3,7 +3,7 @@ revision = 3
 requires-python = ">=3.10, <3.14"
 
 [options]
-exclude-newer = "2026-04-11T13:40:21.453508254Z"
+exclude-newer = "2026-04-11T14:16:13.876907219Z"
 exclude-newer-span = "P3D"
 
 [[package]]
@@ -1780,7 +1780,6 @@ dependencies = [
     { name = "polars" },
     { name = "pydantic" },
     { name = "tinydb" },
-    { name = "urllib3" },
 ]
 
 [package.optional-dependencies]
@@ -1808,6 +1807,9 @@ test = [
     { name = "pytest-custom-exit-code" },
     { name = "pytest-xdist" },
 ]
+vercel = [
+    { name = "urllib3" },
+]
 
 [package.metadata]
 requires-dist = [
@@ -1821,7 +1823,6 @@ requires-dist = [
     { name = "polars", extras = ["rtcompat"], marker = "extra == 'lts-cpu'", specifier = ">=1.39.3" },
     { name = "pydantic", specifier = ">=2.6.4" },
     { name = "tinydb", specifier = ">=4.8.2" },
-    { name = "urllib3", specifier = "<2" },
 ]
 provides-extras = ["folium", "lts-cpu"]
 
@@ -1842,6 +1843,7 @@ test = [
     { name = "pytest-custom-exit-code", specifier = ">=0.3.0" },
     { name = "pytest-xdist", specifier = ">=3.6.1" },
 ]
+vercel = [{ name = "urllib3", specifier = "<2" }]
 
 [[package]]
 name = "typing-extensions"

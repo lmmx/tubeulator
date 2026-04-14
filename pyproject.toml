@@ -21,6 +21,9 @@ test = [
     "pytest-xdist>=3.6.1",
     "pytest>=7.4.0",
 ]
+vercel = [
+    "urllib3<2",
+]
 
 [project]
 authors = [
@@ -42,7 +45,6 @@ dependencies = [
     "polars>=1.39.3",
     "pydantic>=2.6.4",
     "tinydb>=4.8.2",
-    "urllib3<2",
 ]
 description = "TfL open data interface library."
 name = "tubeulator"
@@ -104,4 +106,4 @@ spaces_indent_inline_array = 4
 trailing_comma_inline_array = true
 
 [tool.uv]
-default-groups = "all"
+default-groups = ["dev", "docs", "test"]
