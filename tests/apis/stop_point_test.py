@@ -90,7 +90,7 @@ def test_search():
 
 @mark.parametrize(
     "query_input,result_size",
-    [("Bromley-By-Bow", 1), ("Euston", snapshot(6))],
+    [("Bromley-By-Bow", 1), ("Euston", snapshot(14))],
 )
 def test_search_query(query_input, result_size):
     search_query = fetch.stop_point.search_query(query=query_input)

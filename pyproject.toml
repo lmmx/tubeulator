@@ -1,7 +1,25 @@
 [build-system]
-build-backend = "pdm.backend"
+build-backend = "uv_build"
 requires = [
-    "pdm-backend",
+    "uv_build>=0.9.26,<0.10.0",
+]
+
+[dependency-groups]
+dev = [
+    "pdbpp>=0.12.1",
+    "pre-commit>=4.1.0",
+]
+docs = [
+    "mkdocs-material[imaging,recommended]>=9.5.2",
+    "mkdocs-section-index>=0.3.8",
+    "mkdocs>=1.5.3",
+    "mkdocstrings[python]>=0.24.0",
+]
+test = [
+    "inline-snapshot>=0.9.0",
+    "pytest-custom-exit-code>=0.3.0",
+    "pytest-xdist>=3.6.1",
+    "pytest>=7.4.0",
 ]
 
 [project]
@@ -20,11 +38,10 @@ dependencies = [
     "httpx",
     "jsonschema",
     "orjson",
-    "patito>=0.6.1",
-    "polars>=0.20.17",
+    "patito>=0.8.6",
+    "polars>=1.39.3",
     "pydantic>=2.6.4",
     "tinydb>=4.8.2",
-    "urllib3<2",
 ]
 description = "TfL open data interface library."
 name = "tubeulator"
@@ -36,15 +53,11 @@ version = "0.1.3"
 text = "MIT"
 
 [project.optional-dependencies]
-dev = [
-    "pre-commit>=4.1.0",
-]
 folium = [
     "folium>=0.16.0",
 ]
-polars-lts-cpu = [
-    "patito>=0.6.1",
-    "polars-lts-cpu>=0.20.17",
+lts-cpu = [
+    "polars[rtcompat]>=1.39.3",
 ]
 
 [project.scripts]
@@ -53,32 +66,6 @@ tubeulator = "tubeulator.cli:main"
 [project.urls]
 Homepage = "https://github.com/lmmx/tubeulator"
 Repository = "https://github.com/lmmx/tubeulator.git"
-
-[tool.pdm]
-distribution = true
-
-[tool.pdm.dev-dependencies]
-docs = [
-    "mkdocs-material[recommended,imaging]>=9.5.2",
-    "mkdocs-section-index>=0.3.8",
-    "mkdocs>=1.5.3",
-    "mkdocstrings[python]>=0.24.0",
-]
-test = [
-    "inline-snapshot>=0.9.0",
-    "pytest-custom-exit-code>=0.3.0",
-    "pytest-xdist>=3.6.1",
-    "pytest>=7.4.0",
-]
-vercel = [
-    "urllib3<2",
-]
-
-[tool.pdm.resolution]
-excludes = [
-    "polars",
-    "polars-lts-cpu",
-]
 
 [tool.ruff.lint]
 ignore = [
@@ -114,3 +101,6 @@ in_place = true
 spaces_before_inline_comment = 2
 spaces_indent_inline_array = 4
 trailing_comma_inline_array = true
+
+[tool.uv]
+default-groups = ["dev", "docs", "test"]

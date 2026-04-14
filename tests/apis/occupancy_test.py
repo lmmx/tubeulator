@@ -22,7 +22,7 @@ def test_occupancy_endpoints():
 
 
 def test_bike_points():
-    bike_points = fetch.occupancy.bike_points(ids="BikePoints_100")
+    bike_points = fetch.occupancy.bike_points(ids="BikePoints_101")
     assert bike_points
 
 
@@ -45,6 +45,6 @@ def test_charge_connector():
 
 def test_charge_connector_ids():
     charge_connector_ids = fetch.occupancy.charge_connector_ids(
-        ids="ChargePointCM-BPT62200886-143260",
+        ids="ChargePointESB-UT08YZ-2",
     )
     assert charge_connector_ids

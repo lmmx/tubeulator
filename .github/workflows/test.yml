@@ -1,0 +1,52 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - src/**
+      - tests/**
+      - pyproject.toml
+      - uv.lock
+      - .github/workflows/*.yml
+  pull_request:
+    branches: [master]
+    paths:
+      - src/**
+      - tests/**
+      - pyproject.toml
+      - uv.lock
+      - .github/workflows/*.yml
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    env:
+      TFL_API_KEY_ID: ${{ vars.TFL_API_KEY_ID }}
+      TFL_API_PRIMARY_ACCESS_KEY: ${{ secrets.TFL_API_PRIMARY_ACCESS_KEY }}
+      TFL_API_SECONDARY_ACCESS_KEY: ${{ secrets.TFL_API_SECONDARY_ACCESS_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Run tests
+        run: |
+          uv run --no-sync --frozen pytest tests/ \
+            -m "not skiponci" \
+            -n auto \
+            --disable-warnings \
+            --suppress-no-test-exit-code
