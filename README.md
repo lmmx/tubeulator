@@ -56,12 +56,12 @@ A brief overview of the package:
   endpoint is a method that builds a validated URL from a typed path template,
   sends the request, and parses the response into the Pydantic model declared
   for that route's 200 response.
-  
+
 - **Generated pydantic DTOs.** One module per API under `tubeulator.generated`,
   containing every response model TfL's schemas describe. Models use Pydantic's
   `AliasGenerator` to handle TfL's PascalCase / camelCase mix transparently.
   Regenerable via `tubeulator populate`.
-  
+
 - **Codegen pipeline.** `tubeulator.openapi` and `tubeulator.codegen` implement
   the route from upstream OpenAPI to emitted Python: schemas are fetched and
   vendored under `src/tubeulator/data/openapi/`; entity names in the
@@ -69,22 +69,22 @@ A brief overview of the package:
   canonical names; JSON references are chased across schema boundaries; and
   Pydantic classes are emitted via `ast`. A longest-common-prefix trie is used
   to disambiguate array and back-reference names during emission.
-  
+
 - **Endpoint discoverability.** Every endpoint is registered as a `RouteEnum`
   member (one enum per API, composed into a top-level `EndpointRoute`). This
   is what makes `fetch.line.<tab>` show you every valid route at the REPL, and
   what `api/request.py` uses to validate path variables before sending.
-  
+
 - **Station network as DataFrames.** The NaPTAN detailed station dataset and
   TfL's GTFS feed are shipped with the package and loaded as polars DataFrames
   validated with patito — useful for structural queries that don't map cleanly
   onto the JSON API:
-  
+
 ```python
 from tubeulator.topology.combine import load_stations_by_line
 df = load_stations_by_line()
 ```
- 
+
 - **Reproducible schema refresh.** `tubeulator refresh-schemas` pulls current
   schemas from TfL for a given API version; `tubeulator populate` regenerates
   the entire `generated/` subpackage from them. The vendored schemas mean the
