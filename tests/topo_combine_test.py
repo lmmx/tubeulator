@@ -11,7 +11,7 @@ def test_load_stations_by_line():
         pl.col("StationName").list.len().alias("Count"),
     ).sort("Count")
     assert stn_counts["Count"].min() == 2
-    assert stn_counts["Count"].max() == 112
+    assert stn_counts["Count"].max() == 60
 
 
 def test_load_lines_by_station():

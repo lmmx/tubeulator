@@ -25,9 +25,14 @@ def load_platforms_with_stations_and_services():
     # the same platform (stopping at different times, e.g. Hammersmith & City/District)
     platform_svcs = load_platform_services()
     # There are the same number of platforms with stations as platforms
-    platforms_with_stns = platforms.join(stations, on="StationUniqueId")
+    #   (!) Patito joins broken 2026: https://github.com/JakobGM/patito/issues/164
+    platforms_with_stns = pl.DataFrame._from_pydf(platforms._df).join(
+        pl.DataFrame._from_pydf(stations._df), on="StationUniqueId"
+    )
     # There are the same number of platforms with stations and services as platform services
-    plts_stns_svcs = platforms_with_stns.join(platform_svcs, on="PlatformUniqueId")
+    plts_stns_svcs = pl.DataFrame._from_pydf(platforms_with_stns._df).join(
+        pl.DataFrame._from_pydf(platform_svcs._df), on="PlatformUniqueId"
+    )
     return plts_stns_svcs
 
 
