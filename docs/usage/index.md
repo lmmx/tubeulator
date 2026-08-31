@@ -6,11 +6,11 @@ The `tubeulator` interface to the TfL APIs always returns results in Pydantic da
     from tubeulator import fetch
 
     response = fetch.stop_point.meta_modes()
-    coords = Matches[0].model_dump(include=["Lat","Lon"])
+    coords = Matches[0].model_dump(include=["Lat", "Lon"])
     ```
 
     ```py
-    {'Lat': 51.52918, 'Lon': -0.132944}
+    {"Lat": 51.52918, "Lon": -0.132944}
     ```
 
 As shown here, you can retrieve regular Python dicts with the `model_dump()` method,
