@@ -53,8 +53,9 @@ class Line(BaseModel):
     RouteSections: list["MatchedRouteModel"]
     ServiceTypes: list["LineServiceTypeInfoModel"]
     Crowding: CrowdingModel = None
-    _source_schema_name: str = PrivateAttr(default='Line')
-    _component_schema_name: str = PrivateAttr(default='Tfl-19')
+    _source_schema_name: str = PrivateAttr(default="Line")
+    _component_schema_name: str = PrivateAttr(default="Tfl-19")
+
 
 LineModel = Line
 ```
